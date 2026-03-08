@@ -4,7 +4,7 @@
 
 Unity 2D puzzle-platformer about putting order in space.
 
-## Used tools
+### Used tools
 
 * Unity 6000.3.7f1.
 
