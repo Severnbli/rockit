@@ -4,9 +4,9 @@
 
 Unity 2D puzzle-platformer about putting order in space.
 
-## Used utils
+## Used tools
 
-// TODO: Add utils
+* Unity 6000.3.7f1.
 
 ## Getting Started
 
