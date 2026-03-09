@@ -318,6 +318,13 @@
       "dependencies": {},
       "hash": "25706dfcd3017cfd43d2ae7cfb8b2da1465d50e0"
     },
+    "ru.leopotam.ecsproto.unity.ugui": {
+      "version": "https://gitverse.ru/leopotam/ecsproto.unity.ugui.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "28f9aa9e0e01cc0eece8f7b0f8a9b40e98c20357"
+    },
     "severnbli.smart-merge-registrator": {
       "version": "https://github.com/Severnbli/smart-merge-registrator.git#upm",
       "depth": 0,

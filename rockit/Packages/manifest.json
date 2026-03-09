@@ -57,6 +57,7 @@
     "ru.leopotam.ecsproto": "https://gitverse.ru/leopotam/ecsproto.git",
     "ru.leopotam.ecsproto-qol": "https://gitverse.ru/leopotam/ecsproto-qol.git",
     "ru.leopotam.ecsproto.conditionalsystems": "https://gitverse.ru/leopotam/ecsproto.conditionalsystems.git",
-    "ru.leopotam.ecsproto.unity": "https://gitverse.ru/leopotam/ecsproto.unity.git"
+    "ru.leopotam.ecsproto.unity": "https://gitverse.ru/leopotam/ecsproto.unity.git",
+    "ru.leopotam.ecsproto.unity.ugui": "https://gitverse.ru/leopotam/ecsproto.unity.ugui.git"
   }
 }
