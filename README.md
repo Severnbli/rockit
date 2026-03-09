@@ -19,7 +19,7 @@ Unity 2D puzzle-platformer about putting order in space.
 
 1. Download project via `git clone`.
 2. Go to Unity and open project.
-3. Download and install [Odin](https://odininspector.com/).
+3. Download and [import](https://docs.unity3d.com/6000.3/Documentation/Manual/AssetPackagesImport.html) [Odin](https://odininspector.com/) package.
 4. In Editor go to File → Build Profiles.
 5. Build project.
 
