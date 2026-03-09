@@ -8,6 +8,7 @@ Unity 2D puzzle-platformer about putting order in space.
 
 * Unity 6000.3.7f1.
 * [Odin](https://odininspector.com/) 4.0.1.4.
+* [LeoEcs Proto](https://gitverse.ru/leopotam/ecsproto) (extensions: [QoL](https://gitverse.ru/leopotam/ecsproto-qol), [Conditional Systems](https://gitverse.ru/leopotam/ecsproto.conditionalsystems), [Unity](https://gitverse.ru/leopotam/ecsproto.unity), [Unity uGui](https://gitverse.ru/leopotam/ecsproto.unity.ugui), [Unity Physics2D](https://gitverse.ru/leopotam/ecsproto.unity.physics2d))
 
 ## Getting Started
 
