@@ -8,7 +8,7 @@ Unity 2D puzzle-platformer about putting order in space.
 
 * Unity 6000.3.7f1.
 * [Odin](https://odininspector.com/) 4.0.1.4. `#proprietary`
-* [LeoEcs Proto](https://gitverse.ru/leopotam/ecsproto) (extensions: [QoL](https://gitverse.ru/leopotam/ecsproto-qol), [Conditional Systems](https://gitverse.ru/leopotam/ecsproto.conditionalsystems), [Unity](https://gitverse.ru/leopotam/ecsproto.unity), [Unity uGui](https://gitverse.ru/leopotam/ecsproto.unity.ugui), [Unity Physics2D](https://gitverse.ru/leopotam/ecsproto.unity.physics2d))
+* [LeoEcs Proto](https://gitverse.ru/leopotam/ecsproto) (extensions: [QoL](https://gitverse.ru/leopotam/ecsproto-qol), [Conditional Systems](https://gitverse.ru/leopotam/ecsproto.conditionalsystems), [Unity](https://gitverse.ru/leopotam/ecsproto.unity), [Unity uGui](https://gitverse.ru/leopotam/ecsproto.unity.ugui), [Unity Physics2D](https://gitverse.ru/leopotam/ecsproto.unity.physics2d)).
 * [Zenject](https://github.com/modesttree/Zenject) 9.2.0.
 * [UniTask](https://github.com/Cysharp/UniTask) 2.5.10.
 * [DOTween](https://dotween.demigiant.com/index.php) 1.2.825.
