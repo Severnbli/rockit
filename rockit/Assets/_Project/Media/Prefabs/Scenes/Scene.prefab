@@ -497,6 +497,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Overlay
       objectReference: {fileID: 0}
+    - target: {fileID: 7945608626161689838, guid: 199ab841bcf7bd14ba0198aceaa4f4da, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 2559371854952609564}
+    - target: {fileID: 7945608626161689838, guid: 199ab841bcf7bd14ba0198aceaa4f4da, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1198074685
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
