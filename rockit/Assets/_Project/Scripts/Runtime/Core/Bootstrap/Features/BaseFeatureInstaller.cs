@@ -15,9 +15,6 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Features
         
         protected virtual void RegisterBindings(DiContainer container) {}
 
-        public void AddSystems(ProtoSystems systems)
-        {
-            throw new System.NotImplementedException();
-        }
+        public virtual void AddSystems(ProtoSystems systems) {}
     }
 }
