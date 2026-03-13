@@ -7,7 +7,8 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Features
     {
         public void InstallBindings(DiContainer container)
         {
-            throw new System.NotImplementedException();
+            BindServices(container);
+            RegisterBindings(container);
         }
 
         protected virtual void BindServices(DiContainer container) {}
