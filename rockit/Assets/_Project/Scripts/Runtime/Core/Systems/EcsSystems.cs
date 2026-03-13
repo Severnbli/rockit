@@ -40,5 +40,15 @@ namespace _Project.Scripts.Runtime.Core.Systems
             }
             _inited = true;
         }
+
+        public virtual void FixedRun()
+        {
+#if DEBUG
+            if (!IsInited()) { throw new Exception ("системы не инициализированы"); }
+#endif
+            for (int i = 0, iMax = _fixedRunsystems.Len(); i < iMax; i++) {
+                _fixedRunsystems.Get(i).FixedRun();
+            }
+        }
     }
 }
