@@ -2,7 +2,7 @@
 
 namespace _Project.Scripts.Runtime.Core.Bootstrap
 {
-    public class BaseInstaller : MonoInstaller
+    public class BaseEngineInstaller : MonoInstaller
     {
         
     }
