@@ -10,6 +10,8 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Features
             throw new System.NotImplementedException();
         }
 
+        protected virtual void BindServices(DiContainer container) {}
+
         public void AddSystems(ProtoSystems systems)
         {
             throw new System.NotImplementedException();
