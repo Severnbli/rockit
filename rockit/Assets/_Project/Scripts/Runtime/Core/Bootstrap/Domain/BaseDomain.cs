@@ -29,7 +29,13 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
 
         public bool TryInstallFeature<T>() where T : BaseFeatureInstaller<T>
         {
-            throw new System.NotImplementedException();
+            if (!FeatureInstallers.Add(typeof(T)))
+            {
+                return false;
+            }
+
+            Installer<T>.Install(Container);
+            return true;
         }
     }
 }
