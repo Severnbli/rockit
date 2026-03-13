@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿using _Project.Scripts.Runtime.Core.Systems;
 using Leopotam.EcsProto;
 using UnityEngine;
 using Zenject;
@@ -7,26 +7,14 @@ namespace _Project.Scripts.Runtime.Core.Engine
 {
     public class MonoEngine : MonoBehaviour, IEngine
     {
-        [Inject] private ProtoWorld _world;
-        private ProtoSystems _runSystems;
-        private ProtoSystems _fixedRunSystems;
-        
-        public void ConstructRunSystems(List<IProtoSystem> systems)
+        protected ProtoWorld _world;
+        protected EcsSystems _systems;
+
+        [Inject]
+        public void Construct(ProtoWorld world, EcsSystems systems)
         {
-            _runSystems = new ProtoSystems(_world);
-            foreach (var system in systems)
-            {
-                _runSystems.AddSystem(system);
-            }
-        }
-        
-        public void Construct(List<IProtoSystem> systems)
-        {
-            _fixedRunSystems = new ProtoSystems(_world);
-            foreach (var system in systems)
-            {
-                _fixedRunSystems.AddSystem(system);
-            }
+            _world = world;
+            _systems = systems;
         }
 
         protected virtual void Start()
@@ -36,7 +24,7 @@ namespace _Project.Scripts.Runtime.Core.Engine
         
         public void Init()
         {
-            _runSystems?.Init();
+            _systems?.Init();
         }
 
         protected virtual void Update()
@@ -46,7 +34,7 @@ namespace _Project.Scripts.Runtime.Core.Engine
 
         public void Run()
         {
-            _runSystems?.Run();
+            _systems?.Run();
         }
 
         protected virtual void FixedUpdate()
@@ -56,7 +44,7 @@ namespace _Project.Scripts.Runtime.Core.Engine
 
         public void FixedRun()
         {
-            _fixedRunSystems?.Run();
+            _systems?.FixedRun();
         }
 
         protected virtual void OnDestroy()
@@ -66,11 +54,8 @@ namespace _Project.Scripts.Runtime.Core.Engine
 
         public void Destroy()
         {
-            _runSystems?.Destroy();
-            _runSystems = null;
-            
-            _fixedRunSystems?.Destroy();
-            _fixedRunSystems = null;
+            _systems?.Destroy();
+            _systems = null;
             
             _world?.Destroy();
             _world = null;
