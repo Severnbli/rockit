@@ -1,4 +1,4 @@
-﻿namespace _Project.Scripts.Runtime.Core.Bootstrap.Engine
+﻿namespace _Project.Scripts.Runtime.Core.Bootstrap.Base
 {
     public interface IEngineInstaller
     {
