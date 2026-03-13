@@ -3,20 +3,19 @@ using Zenject;
 
 namespace _Project.Scripts.Runtime.Core.Bootstrap.Features
 {
-    public abstract class BaseFeatureInstaller : IFeatureInstaller
+    public abstract class BaseFeatureInstaller<T> : Installer<T> 
+        where T : BaseFeatureInstaller<T>
     {
-        protected readonly DiContainer Container;
         protected readonly EcsSystems Systems;
         protected readonly PausableSystemsSolver PausableSystemsSolver;
         
-        public BaseFeatureInstaller(DiContainer container, EcsSystems systems, PausableSystemsSolver pausableSystemsSolver)
+        public BaseFeatureInstaller(EcsSystems systems, PausableSystemsSolver pausableSystemsSolver)
         {
-            Container = container;
             Systems = systems;
             PausableSystemsSolver = pausableSystemsSolver;
         }
         
-        public void InstallBindings()
+        public override void InstallBindings()
         {
             BindServices();
             RegisterBindings();
