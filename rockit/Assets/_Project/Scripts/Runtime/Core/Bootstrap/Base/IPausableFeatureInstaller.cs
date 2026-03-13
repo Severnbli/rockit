@@ -1,4 +1,4 @@
-﻿namespace _Project.Scripts.Runtime.Core.Bootstrap.Features
+﻿namespace _Project.Scripts.Runtime.Core.Bootstrap.Base
 {
     public interface IPausableFeatureInstaller : IFeatureInstaller
     {
