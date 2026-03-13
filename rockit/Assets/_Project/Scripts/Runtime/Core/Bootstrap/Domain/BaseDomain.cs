@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using _Project.Scripts.Runtime.Core.Bootstrap.Features;
 using _Project.Scripts.Runtime.Core.Engine;
 using _Project.Scripts.Runtime.Core.Systems;
@@ -11,7 +12,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
     {
         protected readonly ProtoWorld World;
         protected readonly EcsSystems Systems;
-        protected readonly HashSet<IFeatureInstaller> FeatureInstallers = new();
+        protected readonly HashSet<Type> FeatureInstallers = new();
 
         public BaseDomain(ProtoWorld world)
         {
