@@ -4,6 +4,6 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
 {
     public interface IDomain
     {
-        bool TryInstallFeature<T>() where T : IFeatureInstaller;
+        bool TryInstallFeature<T>() where T : IFeatureInstaller, new();
     }
 }
