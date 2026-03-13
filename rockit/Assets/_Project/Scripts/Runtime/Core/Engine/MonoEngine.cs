@@ -11,7 +11,6 @@ namespace _Project.Scripts.Runtime.Core.Engine
         private ProtoSystems _runSystems;
         private ProtoSystems _fixedRunSystems;
         
-        [Inject(Id = Contracts.RunSystems)]
         public void ConstructRunSystems(List<IProtoSystem> systems)
         {
             _runSystems = new ProtoSystems(_world);
@@ -21,7 +20,6 @@ namespace _Project.Scripts.Runtime.Core.Engine
             }
         }
         
-        [Inject(Id = Contracts.FixedRunSystems)]
         public void Construct(List<IProtoSystem> systems)
         {
             _fixedRunSystems = new ProtoSystems(_world);
