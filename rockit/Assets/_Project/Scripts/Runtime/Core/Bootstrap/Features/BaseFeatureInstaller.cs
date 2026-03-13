@@ -1,20 +1,17 @@
-﻿using Leopotam.EcsProto;
-using Zenject;
-
-namespace _Project.Scripts.Runtime.Core.Bootstrap.Features
+﻿namespace _Project.Scripts.Runtime.Core.Bootstrap.Features
 {
     public abstract class BaseFeatureInstaller : IFeatureInstaller
     {
-        public void InstallBindings(DiContainer container)
+        public void InstallBindings()
         {
-            BindServices(container);
-            RegisterBindings(container);
+            BindServices();
+            RegisterBindings();
         }
 
-        protected virtual void BindServices(DiContainer container) {}
+        protected virtual void BindServices() {}
         
-        protected virtual void RegisterBindings(DiContainer container) {}
+        protected virtual void RegisterBindings() {}
 
-        public virtual void AddSystems(ProtoSystems systems) {}
+        public virtual void AddSystems() {}
     }
 }
