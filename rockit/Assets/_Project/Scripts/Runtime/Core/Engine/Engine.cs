@@ -1,27 +1,41 @@
-﻿using Leopotam.EcsProto;
+﻿using _Project.Scripts.Runtime.Core.Systems;
+using Leopotam.EcsProto;
 
 namespace _Project.Scripts.Runtime.Core.Engine
 {
     public class Engine : IEngine
     {
-        public void Init()
+        protected ProtoWorld _world;
+        protected EcsSystems _systems;
+
+        public Engine(ProtoWorld world, EcsSystems systems)
         {
-            throw new System.NotImplementedException();
+            _world = world;
+            _systems = systems;
+        }
+        
+        public virtual void Init()
+        {
+            _systems?.Init();
         }
 
-        public void Run()
+        public virtual void Run()
         {
-            throw new System.NotImplementedException();
+            _systems?.Run();
         }
 
-        public void FixedRun()
+        public virtual void FixedRun()
         {
-            throw new System.NotImplementedException();
+            _systems?.FixedRun();
         }
 
-        public void Destroy()
+        public virtual void Destroy()
         {
-            throw new System.NotImplementedException();
+            _systems?.Destroy();
+            _systems = null;
+            
+            _world?.Destroy();
+            _world = null;
         }
     }
 }
