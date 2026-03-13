@@ -7,6 +7,11 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
     public class BaseDomain : MonoInstaller
     {
         protected ProtoWorld World;
+
+        public BaseDomain(ProtoWorld world)
+        {
+            World = world;
+        }
         
         public sealed override void InstallBindings()
         {
