@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using _Project.Scripts.Runtime.Core.Systems;
 using Leopotam.EcsProto;
 using UnityEngine;
 using Zenject;
@@ -8,25 +7,27 @@ namespace _Project.Scripts.Runtime.Core.Engine
 {
     public class MonoEngine : MonoBehaviour, IEngine
     {
-        private ProtoWorld _world;
+        [Inject] private ProtoWorld _world;
         private ProtoSystems _runSystems;
         private ProtoSystems _fixedRunSystems;
-
-        [Inject]
-        public void Construct(ProtoWorld world, List<IRunSystems> runSystems, List<IFixedRunSystems> fixedRunSystems)
+        
+        [Inject(Id = Contracts.RunSystems)]
+        public void ConstructRunSystems(List<IProtoSystem> systems)
         {
-            _world = world;
-
             _runSystems = new ProtoSystems(_world);
-            foreach (var runSystem in runSystems)
+            foreach (var system in systems)
             {
-                _runSystems.AddSystem(runSystem);
+                _runSystems.AddSystem(system);
             }
-            
+        }
+        
+        [Inject(Id = Contracts.FixedRunSystems)]
+        public void Construct(List<IProtoSystem> systems)
+        {
             _fixedRunSystems = new ProtoSystems(_world);
-            foreach (var fixedRunSystem in fixedRunSystems)
+            foreach (var system in systems)
             {
-                _fixedRunSystems.AddSystem(fixedRunSystem);
+                _fixedRunSystems.AddSystem(system);
             }
         }
 
@@ -72,6 +73,9 @@ namespace _Project.Scripts.Runtime.Core.Engine
             
             _fixedRunSystems?.Destroy();
             _fixedRunSystems = null;
+            
+            _world?.Destroy();
+            _world = null;
         }
     }
 }
