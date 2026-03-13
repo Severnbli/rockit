@@ -11,6 +11,8 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Features
         }
 
         protected virtual void BindServices(DiContainer container) {}
+        
+        protected virtual void RegisterBindings(DiContainer container) {}
 
         public void AddSystems(ProtoSystems systems)
         {
