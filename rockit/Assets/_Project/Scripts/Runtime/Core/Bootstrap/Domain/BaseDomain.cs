@@ -27,7 +27,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
             Container.Bind<MonoEngine>().FromNewComponentOn(gameObject).AsSingle().NonLazy();
         }
 
-        public bool TryInstallFeature<T>() where T : IFeatureInstaller, new()
+        public bool TryInstallFeature<T>() where T : BaseFeatureInstaller<T>
         {
             throw new System.NotImplementedException();
         }
