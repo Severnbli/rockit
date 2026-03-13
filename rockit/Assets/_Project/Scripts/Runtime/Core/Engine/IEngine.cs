@@ -2,6 +2,9 @@
 {
     public interface IEngine
     {
-        
+        void Init();
+        void Run();
+        void FixedRun();
+        void Destroy();
     }
 }
