@@ -5,7 +5,7 @@ using Zenject;
 
 namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
 {
-    public class BaseDomain : MonoInstaller
+    public abstract class BaseDomain : MonoInstaller
     {
         protected readonly ProtoWorld World;
         protected readonly EcsSystems Systems;
