@@ -6,7 +6,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
 {
     public class BaseDomain : MonoInstaller
     {
-        protected ProtoWorld World;
+        protected readonly ProtoWorld World;
 
         public BaseDomain(ProtoWorld world)
         {
