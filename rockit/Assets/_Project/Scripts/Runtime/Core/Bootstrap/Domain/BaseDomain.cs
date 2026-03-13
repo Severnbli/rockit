@@ -18,6 +18,8 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
         
         public sealed override void InstallBindings()
         {
+            Container.Bind<ProtoWorld>().FromInstance(World).AsSingle();
+            Container.Bind<EcsSystems>().FromInstance(Systems).AsSingle();
             Container.Bind<MonoEngine>().FromNewComponentOn(gameObject).AsSingle().NonLazy();
         }
     }
