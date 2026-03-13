@@ -2,7 +2,6 @@
 {
     public interface IFeatureInstaller
     {
-        void InstallBindings();
-        void AddSystems();
+        
     }
 }
