@@ -6,5 +6,6 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.StateMachine
     {
         UniTask ChangeState<T>() where T : IState;
         UniTask ChangeState(IState state);
+        void SetupSceneStates(params IState[] states);
     }
 }

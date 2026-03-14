@@ -22,5 +22,10 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.StateMachine
             ActiveState = state;
             if (ActiveState is not null) await ActiveState.OnEnter();
         }
+
+        public void SetupSceneStates(params IState[] states)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
