@@ -25,6 +25,8 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
             Container.Bind<ProtoWorld>().FromInstance(World).AsSingle();
             Container.Bind<EcsSystems>().FromInstance(Systems).AsSingle();
             Container.Bind<MonoEngine>().FromNewComponentOn(gameObject).AsSingle().NonLazy();
+            
+            InstallFeatures();
         }
 
         public bool TryInstallFeature<T>() where T : BaseFeatureInstaller<T>
@@ -37,5 +39,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
             Installer<T>.Install(Container);
             return true;
         }
+        
+        protected virtual void InstallFeatures() {}
     }
 }
