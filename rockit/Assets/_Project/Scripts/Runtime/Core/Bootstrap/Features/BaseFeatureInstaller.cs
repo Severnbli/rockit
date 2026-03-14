@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using _Project.Scripts.Runtime.Core.Systems;
 using Leopotam.EcsProto;
 using Zenject;
@@ -22,6 +23,15 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Features
         {
             BindServices();
             RegisterBindings();
+        }
+
+        private void InstallSystems()
+        {
+            AddSystems();
+
+            if (!PausableSystems.Any()) return;
+
+            Systems.AddSystem(new PausableSystems(PausableSystemsSolver, PausableSystems.ToArray()));
         }
 
         protected virtual void BindServices() {}
