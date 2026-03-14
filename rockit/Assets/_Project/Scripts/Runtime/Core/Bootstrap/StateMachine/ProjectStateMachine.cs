@@ -2,11 +2,11 @@
 
 namespace _Project.Scripts.Runtime.Core.Bootstrap.StateMachine
 {
-    public class StateMachine : IStateMachine
+    public class ProjectStateMachine : IProjectStateMachine
     {
         protected IState ActiveState;
         
-        public StateMachine(IProjectSetupState state)
+        public ProjectStateMachine(IProjectSetupState state)
         {
             ChangeState(state);
         }
