@@ -22,6 +22,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Project
             base.RegisterStates();
             
             Container.BindInterfacesAndSelfTo<ProjectSetupState>().AsSingle();
+            Container.BindInterfacesAndSelfTo<ProjectCloseState>().AsSingle();
         }
     }
 }
