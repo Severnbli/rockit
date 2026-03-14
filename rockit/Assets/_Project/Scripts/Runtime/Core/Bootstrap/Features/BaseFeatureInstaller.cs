@@ -1,4 +1,5 @@
-﻿using _Project.Scripts.Runtime.Core.Systems;
+﻿using System.Collections.Generic;
+using _Project.Scripts.Runtime.Core.Systems;
 using Leopotam.EcsProto;
 using Zenject;
 
@@ -31,9 +32,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Features
 
         public bool TryAddSystem<Tk>() where Tk : IProtoSystem
         {
-            var system = (IProtoSystem) Container.Instantiate<Tk>();
-            if (system is null) return false;
-            
+            if (!TryInstantiateSystem<Tk>(out var system)) return false;
             Systems.AddSystem(system);
             return true;
         }
