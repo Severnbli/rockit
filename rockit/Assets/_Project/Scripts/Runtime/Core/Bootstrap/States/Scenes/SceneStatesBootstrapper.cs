@@ -3,10 +3,12 @@
     public class SceneStatesBootstrapper
     {
         protected readonly IStateMachine StateMachine;
+        protected readonly ISceneState[] SceneStates;
         
-        public SceneStatesBootstrapper(IStateMachine stateMachine)
+        public SceneStatesBootstrapper(IStateMachine stateMachine, ISceneState[] sceneStates)
         {
             StateMachine = stateMachine;
+            SceneStates = sceneStates;
             Bootstrap();
         }
 
