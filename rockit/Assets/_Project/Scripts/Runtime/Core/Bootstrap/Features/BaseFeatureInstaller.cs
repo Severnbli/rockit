@@ -23,6 +23,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Features
         {
             BindServices();
             RegisterBindings();
+            InstallSystems();
         }
 
         private void InstallSystems()
