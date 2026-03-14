@@ -14,7 +14,7 @@
 
         private void Bootstrap()
         {
-            ;
+            StateMachine.BootstrapSceneStates(SceneStates);
         }
     }
 }
