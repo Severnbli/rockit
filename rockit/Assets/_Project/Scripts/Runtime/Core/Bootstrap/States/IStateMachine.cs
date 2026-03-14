@@ -7,6 +7,6 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States
     {
         UniTask ChangeState<T>() where T : IState;
         UniTask ChangeState(IState state);
-        void SetupSceneStates(params ISceneState[] states);
+        void BootstrapSceneStates(params ISceneState[] states);
     }
 }
