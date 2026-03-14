@@ -18,7 +18,9 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.StateMachine
 
         public async UniTask ChangeState(IState state)
         {
-            throw new System.NotImplementedException();
+            if (ActiveState is not null) await ActiveState.OnLeave();
+            ActiveState = state;
+            if (ActiveState is not null) await ActiveState.OnEnter();
         }
     }
 }
