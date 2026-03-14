@@ -11,12 +11,12 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.StateMachine
             ChangeState(state);
         }
         
-        public UniTask ChangeState<T>() where T : IState
+        public async UniTask ChangeState<T>() where T : IState
         {
             throw new System.NotImplementedException();
         }
 
-        public UniTask ChangeState(IState state)
+        public async UniTask ChangeState(IState state)
         {
             throw new System.NotImplementedException();
         }
