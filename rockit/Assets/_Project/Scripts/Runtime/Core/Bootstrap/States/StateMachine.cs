@@ -43,7 +43,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States
             if (ActiveState is not null) await ActiveState.OnEnter();
         }
 
-        public void SetupSceneStates(params ISceneState[] states)
+        public void BootstrapSceneStates(params ISceneState[] states)
         {
             SceneStates.Clear();
             foreach (var state in states)
