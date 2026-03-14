@@ -6,8 +6,9 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Project
 {
     public class ProjectDomain : BaseDomain
     {
-        public ProjectDomain(ProtoWorld world) : base(world)
+        protected override ProtoWorld ConstructWorld()
         {
+            throw new System.NotImplementedException();
         }
 
         protected override void RegisterBindings()
