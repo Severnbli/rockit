@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using _Project.Scripts.Runtime.Core.Bootstrap.States.Project;
+using _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes;
 using Cysharp.Threading.Tasks;
 
 namespace _Project.Scripts.Runtime.Core.Bootstrap.States
@@ -49,9 +50,12 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States
                 SceneStates.Add(state.GetType(), state);
             }
 
-            if (Inited) return;
+            if (Inited)
+            {
+                ChangeState<ISceneSetupState>().Forget();
+                return;
+            }
             
-            Inited = true;
             ChangeState<IProjectSetupState>().Forget();
         }
     }
