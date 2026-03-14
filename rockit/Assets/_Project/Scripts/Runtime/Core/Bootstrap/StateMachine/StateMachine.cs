@@ -40,7 +40,16 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.StateMachine
 
         public void SetupSceneStates(params IState[] states)
         {
-            throw new System.NotImplementedException();
+            SceneStates.Clear();
+            foreach (var state in states)
+            {
+                SceneStates.Add(state.GetType(), state);
+            }
+
+            if (Inited) return;
+            
+            Inited = true;
+            ChangeState<IProjectSetupState>().Forget();
         }
     }
 }
