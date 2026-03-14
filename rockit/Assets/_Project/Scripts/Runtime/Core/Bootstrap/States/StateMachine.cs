@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using _Project.Scripts.Runtime.Core.Bootstrap.States.Project;
 using _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes;
+using _Project.Scripts.Runtime.Shared.Extensions;
 using Cysharp.Threading.Tasks;
 
 namespace _Project.Scripts.Runtime.Core.Bootstrap.States
@@ -24,7 +25,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States
         
         public async UniTask ChangeState<T>() where T : IState
         {
-            if (!SceneStates.TryGetValue(typeof(T), out var state) && !ProjectStates.TryGetValue(typeof(T), out state))
+            if (!SceneStates.TryGetByAssignableType(out T state) && !ProjectStates.TryGetByAssignableType(out state))
             {
 #if DEBUG
                 throw new Exception($"Did not find state with type {typeof(T)}");
