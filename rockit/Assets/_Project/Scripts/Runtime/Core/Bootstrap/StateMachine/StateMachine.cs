@@ -5,13 +5,13 @@ using Cysharp.Threading.Tasks;
 
 namespace _Project.Scripts.Runtime.Core.Bootstrap.StateMachine
 {
-    public class ProjectStateMachine : IProjectStateMachine
+    public class StateMachine : IStateMachine
     {
         protected IState ActiveState;
         protected readonly Dictionary<Type, IState> ProjectStates = new();
         protected readonly Dictionary<Type, IState> SceneStates = new();
 
-        public ProjectStateMachine(List<IProjectState> states)
+        public StateMachine(List<IProjectState> states)
         {
             foreach (var state in states)
             {
