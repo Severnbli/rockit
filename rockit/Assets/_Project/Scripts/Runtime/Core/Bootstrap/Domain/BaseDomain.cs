@@ -27,7 +27,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
             Container.Bind<MonoEngine>().FromNewComponentOn(gameObject).AsSingle().NonLazy();
             
             RegisterBindings();
-            InstallFeatures();
+            RegisterFeatures();
         }
 
         public bool TryInstallFeature<T>() where T : BaseFeatureInstaller<T>
@@ -43,6 +43,6 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
         
         protected virtual void RegisterBindings() {}
         
-        protected virtual void InstallFeatures() {}
+        protected virtual void RegisterFeatures() {}
     }
 }
