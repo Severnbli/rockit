@@ -19,7 +19,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Features
             PausableSystemsSolver = pausableSystemsSolver;
         }
         
-        public override void InstallBindings()
+        public sealed override void InstallBindings()
         {
             BindServices();
             RegisterBindings();
