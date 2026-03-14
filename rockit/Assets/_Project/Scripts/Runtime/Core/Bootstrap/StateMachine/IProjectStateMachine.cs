@@ -2,7 +2,7 @@
 
 namespace _Project.Scripts.Runtime.Core.Bootstrap.StateMachine
 {
-    public interface IStateMachine
+    public interface IProjectStateMachine
     {
         UniTask ChangeState<T>() where T : IState;
         UniTask ChangeState(IState state);
