@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using _Project.Scripts.Runtime.Core.Bootstrap.StateMachine.Project;
 using Cysharp.Threading.Tasks;
 
 namespace _Project.Scripts.Runtime.Core.Bootstrap.StateMachine
@@ -10,9 +11,12 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.StateMachine
         protected readonly Dictionary<Type, IState> ProjectStates = new();
         protected readonly Dictionary<Type, IState> SceneStates = new();
 
-        public ProjectStateMachine(IProjectSetupState state)
+        public ProjectStateMachine(List<IProjectState> states)
         {
-            ChangeState(state);
+            foreach (var state in states)
+            {
+                ProjectStates.Add(state.GetType(), state);
+            }
         }
         
         public async UniTask ChangeState<T>() where T : IState
