@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using _Project.Scripts.Runtime.Core.Bootstrap.StateMachine.Project;
+using _Project.Scripts.Runtime.Core.Bootstrap.States.Project;
 using Cysharp.Threading.Tasks;
 
-namespace _Project.Scripts.Runtime.Core.Bootstrap.StateMachine
+namespace _Project.Scripts.Runtime.Core.Bootstrap.States
 {
     public class StateMachine : IStateMachine
     {
