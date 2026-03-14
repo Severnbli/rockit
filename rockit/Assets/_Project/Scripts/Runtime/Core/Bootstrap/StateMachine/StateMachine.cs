@@ -6,6 +6,11 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.StateMachine
     {
         protected IState ActiveState;
         
+        public StateMachine(IProjectSetupState state)
+        {
+            ChangeState(state);
+        }
+        
         public UniTask ChangeState<T>() where T : IState
         {
             throw new System.NotImplementedException();
