@@ -10,5 +10,10 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.StateMachine
         {
             throw new System.NotImplementedException();
         }
+
+        public UniTask ChangeState(IState state)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
