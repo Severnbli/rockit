@@ -1,4 +1,5 @@
-﻿using Cysharp.Threading.Tasks;
+﻿using _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes;
+using Cysharp.Threading.Tasks;
 
 namespace _Project.Scripts.Runtime.Core.Bootstrap.States
 {
@@ -6,6 +7,6 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States
     {
         UniTask ChangeState<T>() where T : IState;
         UniTask ChangeState(IState state);
-        void SetupSceneStates(params IState[] states);
+        void SetupSceneStates(params ISceneState[] states);
     }
 }
