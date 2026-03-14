@@ -2,6 +2,14 @@
 {
     public class SceneStatesBootstrapper
     {
-        
+        public SceneStatesBootstrapper()
+        {
+            Bootstrap();
+        }
+
+        private void Bootstrap()
+        {
+            ;
+        }
     }
 }
