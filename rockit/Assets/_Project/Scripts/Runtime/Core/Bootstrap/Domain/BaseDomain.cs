@@ -26,6 +26,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
             Container.Bind<EcsSystems>().FromInstance(Systems).AsSingle();
             Container.Bind<MonoEngine>().FromNewComponentOn(gameObject).AsSingle().NonLazy();
             
+            RegisterBindings();
             InstallFeatures();
         }
 
@@ -39,6 +40,8 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
             Installer<T>.Install(Container);
             return true;
         }
+        
+        protected virtual void RegisterBindings() {}
         
         protected virtual void InstallFeatures() {}
     }
