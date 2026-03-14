@@ -37,5 +37,11 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Features
             Systems.AddSystem(system);
             return true;
         }
+
+        protected bool TryInstantiateSystem<Tk>(out IProtoSystem system) where Tk : IProtoSystem
+        {
+            system = Container.Instantiate<Tk>();
+            return system is not null;
+        }
     }
 }
