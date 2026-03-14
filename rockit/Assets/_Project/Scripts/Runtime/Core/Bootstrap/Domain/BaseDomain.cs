@@ -28,6 +28,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
             
             RegisterBindings();
             RegisterFeatures();
+            RegisterStates();
         }
 
         public bool TryInstallFeature<T>() where T : BaseFeatureInstaller<T>
@@ -44,5 +45,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
         protected virtual void RegisterBindings() {}
         
         protected virtual void RegisterFeatures() {}
+        
+        protected virtual void RegisterStates() {}
     }
 }
