@@ -2,7 +2,7 @@
 
 namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Scenes
 {
-    public class PlaySceneDomain : SceneDomain
+    public class GameSceneDomain : SceneDomain
     {
         protected override ProtoWorld ConstructWorld()
         {
