@@ -10,18 +10,22 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
 {
     public abstract class BaseDomain : MonoInstaller, IDomain
     {
-        protected readonly ProtoWorld World;
-        protected readonly EcsSystems Systems;
+        protected ProtoWorld World { get; private set; }
+        protected EcsSystems Systems { get; private set; }
         protected readonly HashSet<Type> FeatureInstallers = new();
-
-        public BaseDomain(ProtoWorld world)
+        
+        protected abstract ProtoWorld ConstructWorld();
+        
+        private void SetupWorldAndSystems()
         {
-            World = world;
-            Systems = new EcsSystems(world);
+            World = ConstructWorld();
+            Systems = new EcsSystems(World);
         }
         
         public sealed override void InstallBindings()
         {
+            SetupWorldAndSystems();
+            
             Container.Bind<ProtoWorld>().FromInstance(World).AsSingle();
             Container.Bind<EcsSystems>().FromInstance(Systems).AsSingle();
             Container.Bind<MonoEngine>().FromNewComponentOn(gameObject).AsSingle().NonLazy();
