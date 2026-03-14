@@ -41,17 +41,19 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Features
 
         public virtual void AddSystems() {}
 
-        public bool TryAddSystem<Tk>() where Tk : IProtoSystem
+        public bool TryAddSystem<Tk>(bool pausable = false) where Tk : IProtoSystem
         {
             if (!TryInstantiateSystem<Tk>(out var system)) return false;
-            Systems.AddSystem(system);
-            return true;
-        }
 
-        public bool TryAddPausableSystem<Tk>() where Tk : IProtoSystem
-        {
-            if (!TryInstantiateSystem<Tk>(out var system)) return false;
-            PausableSystems.Add(system);
+            if (pausable)
+            {
+                PausableSystems.Add(system);
+            }
+            else
+            {
+                Systems.AddSystem(system);
+            }
+            
             return true;
         }
 
