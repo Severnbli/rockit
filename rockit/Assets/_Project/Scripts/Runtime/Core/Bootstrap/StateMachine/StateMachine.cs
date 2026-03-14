@@ -10,6 +10,8 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.StateMachine
         protected IState ActiveState;
         protected readonly Dictionary<Type, IState> ProjectStates = new();
         protected readonly Dictionary<Type, IState> SceneStates = new();
+        
+        public bool Inited { get; private set; } = false;
 
         public StateMachine(List<IProjectState> states)
         {
