@@ -2,8 +2,11 @@
 {
     public class SceneStatesBootstrapper
     {
-        public SceneStatesBootstrapper()
+        protected readonly IStateMachine StateMachine;
+        
+        public SceneStatesBootstrapper(IStateMachine stateMachine)
         {
+            StateMachine = stateMachine;
             Bootstrap();
         }
 
