@@ -25,6 +25,9 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.StateMachine
         {
             if (!SceneStates.TryGetValue(typeof(T), out var state) && !ProjectStates.TryGetValue(typeof(T), out state))
             {
+#if DEBUG
+                throw new Exception($"Did not find state with type {typeof(T)}");
+#endif
                 return;
             }
             
