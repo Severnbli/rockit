@@ -23,7 +23,12 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.StateMachine
         
         public async UniTask ChangeState<T>() where T : IState
         {
-            throw new System.NotImplementedException();
+            if (!SceneStates.TryGetValue(typeof(T), out var state) && !ProjectStates.TryGetValue(typeof(T), out state))
+            {
+                return;
+            }
+            
+            await ChangeState(state);
         }
 
         public async UniTask ChangeState(IState state)
