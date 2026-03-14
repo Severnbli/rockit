@@ -11,7 +11,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Features
     {
         protected readonly EcsSystems Systems;
         protected readonly PausableSystemsSolver PausableSystemsSolver;
-        protected readonly HashSet<IProtoSystem> PausableSystems;
+        protected readonly HashSet<IProtoSystem> PausableSystems = new();
         
         public BaseFeatureInstaller(EcsSystems systems, PausableSystemsSolver pausableSystemsSolver)
         {
