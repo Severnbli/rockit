@@ -1,4 +1,5 @@
 ﻿using _Project.Scripts.Runtime.Core.Systems;
+using Leopotam.EcsProto;
 using Zenject;
 
 namespace _Project.Scripts.Runtime.Core.Bootstrap.Features
@@ -26,5 +27,14 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Features
         protected virtual void RegisterBindings() {}
 
         public virtual void AddSystems() {}
+
+        public bool TryAddSystem<Tk>() where Tk : IProtoSystem
+        {
+            var system = (IProtoSystem) Container.Instantiate<Tk>();
+            if (system is null) return false;
+            
+            Systems.AddSystem(system);
+            return true;
+        }
     }
 }
