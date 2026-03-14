@@ -37,6 +37,13 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Features
             return true;
         }
 
+        public bool TryAddPausableSystem<Tk>() where Tk : IProtoSystem
+        {
+            if (!TryInstantiateSystem<Tk>(out var system)) return false;
+            PausableSystems.Add(system);
+            return true;
+        }
+
         protected bool TryInstantiateSystem<Tk>(out IProtoSystem system) where Tk : IProtoSystem
         {
             system = Container.Instantiate<Tk>();
