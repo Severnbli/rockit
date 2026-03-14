@@ -1,10 +1,13 @@
-﻿using Cysharp.Threading.Tasks;
+﻿using System;
+using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 
 namespace _Project.Scripts.Runtime.Core.Bootstrap.StateMachine
 {
     public class ProjectStateMachine : IProjectStateMachine
     {
         protected IState ActiveState;
+        protected readonly Dictionary<Type, IState> SceneStates = new();
         
         public ProjectStateMachine(IProjectSetupState state)
         {
