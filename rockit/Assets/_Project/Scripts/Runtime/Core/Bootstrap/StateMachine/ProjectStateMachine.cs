@@ -7,8 +7,9 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.StateMachine
     public class ProjectStateMachine : IProjectStateMachine
     {
         protected IState ActiveState;
+        protected readonly Dictionary<Type, IState> ProjectStates = new();
         protected readonly Dictionary<Type, IState> SceneStates = new();
-        
+
         public ProjectStateMachine(IProjectSetupState state)
         {
             ChangeState(state);
