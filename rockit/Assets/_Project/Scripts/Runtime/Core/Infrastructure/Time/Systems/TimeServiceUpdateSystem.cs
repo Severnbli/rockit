@@ -15,7 +15,10 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Time.Systems
 
         public void Run()
         {
-            throw new System.NotImplementedException();
+            _timeService.Time = UnityEngine.Time.time;
+            _timeService.DeltaTime = UnityEngine.Time.deltaTime;
+            _timeService.UnscaledTime = UnityEngine.Time.unscaledTime;
+            _timeService.UnscaledDeltaTime = UnityEngine.Time.unscaledDeltaTime;
         }
 
         public void FixedRun()
