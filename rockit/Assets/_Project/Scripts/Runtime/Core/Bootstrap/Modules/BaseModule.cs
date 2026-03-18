@@ -28,7 +28,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules
 
         private void InstallSystems()
         {
-            AddSystems();
+            BindSystems();
 
             if (!PausableSystems.Any()) return;
 
@@ -44,7 +44,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules
         
         protected virtual void RegisterBindings() {}
 
-        protected virtual void AddSystems() {}
+        protected virtual void BindSystems() {}
 
         public bool TryAddSystem<Tk>(bool pausable = false) where Tk : IProtoSystem
         {
