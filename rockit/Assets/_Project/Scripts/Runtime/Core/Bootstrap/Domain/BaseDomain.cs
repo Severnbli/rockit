@@ -4,6 +4,7 @@ using _Project.Scripts.Runtime.Core.Bootstrap.Modules;
 using _Project.Scripts.Runtime.Core.Engine;
 using _Project.Scripts.Runtime.Core.Systems;
 using Leopotam.EcsProto;
+using Leopotam.EcsProto.QoL;
 using Leopotam.EcsProto.Unity;
 using Zenject;
 
@@ -21,8 +22,10 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
         {
             World = ConstructWorld();
             Systems = new EcsSystems(World);
-
-            Systems.AddModule(new UnityModule());
+            
+            Systems
+                .AddModule(new AutoInjectModule())
+                .AddModule(new UnityModule());
         }
         
         public sealed override void InstallBindings()
