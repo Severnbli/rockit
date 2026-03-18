@@ -32,19 +32,9 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules
 
         protected virtual void BindSystems() {}
 
-        public bool TryAddSystem<Tk>() where Tk : IProtoSystem
+        public void BindSystem<TSystem>() where TSystem : IProtoSystem
         {
-            if (!TryInstantiateSystem<Tk>(out var system)) return false;
-
-            Systems.AddSystem(system);
-            
-            return true;
-        }
-
-        protected bool TryInstantiateSystem<Tk>(out IProtoSystem system) where Tk : IProtoSystem
-        {
-            system = Container.Instantiate<Tk>();
-            return system is not null;
+            Container.Bind<IProtoSystem>().To<TSystem>().AsSingle();
         }
     }
 }

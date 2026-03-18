@@ -21,7 +21,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure
         {
             base.BindSystems();
             
-            TryAddSystem<TimeServiceUpdateSystem>();
+            BindSystem<TimeServiceUpdateSystem>();
         }
     }
 }
