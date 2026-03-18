@@ -15,7 +15,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure
         {
             base.BindServices();
             
-            Container.Bind<TimeService>().ToSelf().AsSingle();
+            BindService<TimeService>();
         }
 
         protected override void AddSystems()
