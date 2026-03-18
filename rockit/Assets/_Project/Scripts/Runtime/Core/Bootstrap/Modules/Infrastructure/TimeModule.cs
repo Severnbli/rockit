@@ -1,4 +1,5 @@
 ﻿using _Project.Scripts.Runtime.Core.Infrastructure.Time.Services;
+using _Project.Scripts.Runtime.Core.Infrastructure.Time.Systems;
 using _Project.Scripts.Runtime.Core.Systems;
 
 namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure
@@ -14,6 +15,12 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure
         {
             base.BindServices();
             Container.Bind<TimeService>().ToSelf().AsSingle();
+        }
+
+        protected override void AddSystems()
+        {
+            base.AddSystems();
+            TryAddSystem<TimeServiceUpdateSystem>();
         }
     }
 }
