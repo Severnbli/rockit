@@ -18,7 +18,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
         
         protected abstract ProtoWorld ConstructWorld();
         
-        private void SetupWorldAndSystems()
+        protected virtual void SetupWorldAndSystems()
         {
             World = ConstructWorld();
             Systems = new EcsSystems(World);
