@@ -14,12 +14,14 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure
         protected override void BindServices()
         {
             base.BindServices();
+            
             Container.Bind<TimeService>().ToSelf().AsSingle();
         }
 
         protected override void AddSystems()
         {
             base.AddSystems();
+            
             TryAddSystem<TimeServiceUpdateSystem>();
         }
     }
