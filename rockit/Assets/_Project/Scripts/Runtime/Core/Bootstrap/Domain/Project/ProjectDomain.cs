@@ -2,17 +2,11 @@
 using _Project.Scripts.Runtime.Core.Bootstrap.States;
 using _Project.Scripts.Runtime.Core.Bootstrap.States.Project;
 using _Project.Scripts.Runtime.Core.Systems;
-using Leopotam.EcsProto;
 
 namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Project
 {
     public class ProjectDomain : BaseDomain
     {
-        protected override ProtoWorld ConstructWorld()
-        {
-            throw new System.NotImplementedException();
-        }
-
         protected override void RegisterBindings()
         {
             base.RegisterBindings();
