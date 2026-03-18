@@ -17,8 +17,11 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
         protected ProtoWorld World { get; private set; }
         protected EcsSystems Systems { get; private set; }
         protected readonly HashSet<Type> ModuleInstallers = new();
-        
-        protected abstract ProtoWorld ConstructWorld();
+
+        protected virtual ProtoWorld ConstructWorld()
+        {
+            return new ProtoWorld(new DomainAspect());
+        }
         
         protected virtual void SetupWorldAndSystems()
         {
