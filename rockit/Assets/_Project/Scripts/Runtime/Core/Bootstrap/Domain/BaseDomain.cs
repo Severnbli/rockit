@@ -68,7 +68,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
 
         public string GetDescriptor()
         {
-            throw new NotImplementedException();
+            return GetType().Name;
         }
 
         protected virtual void RegisterBindings() {}
