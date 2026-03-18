@@ -32,9 +32,14 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules
 
         protected virtual void BindSystems() {}
 
-        public void BindSystem<TSystem>() where TSystem : IProtoSystem
+        public void BindSystem<TSystem>(bool pausable = false) where TSystem : IProtoSystem
         {
-            Container.Bind<IProtoSystem>().To<TSystem>().AsSingle();
+            Container
+                .Bind<IProtoSystem>()
+                .WithId(!pausable ? Contracts.NonPausableSystemsId : Contracts.PausableSystemsId)
+                .To<TSystem>()
+                .AsSingle()
+                .WhenInjectedIntoInstance(Systems);
         }
     }
 }
