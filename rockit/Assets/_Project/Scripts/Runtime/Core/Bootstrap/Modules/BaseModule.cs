@@ -1,17 +1,17 @@
-﻿using _Project.Scripts.Runtime.Core.Systems;
+﻿using _Project.Scripts.Runtime.Core.Bootstrap.Domain;
 using Leopotam.EcsProto;
 using Zenject;
 
 namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules
 {
-    public abstract class BaseModule<T> : Installer<T> 
+    public abstract class BaseModule<T> : Installer<IDomain, T> 
         where T : BaseModule<T>
     {
-        protected readonly EcsSystems Systems;
+        protected readonly IDomain Domain;
         
-        public BaseModule(EcsSystems systems)
+        public BaseModule(IDomain domain)
         {
-            Systems = systems;
+            Domain = domain;
         }
         
         public sealed override void InstallBindings()
@@ -39,7 +39,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules
                 .WithId(!pausable ? Contracts.NonPausableSystemsId : Contracts.PausableSystemsId)
                 .To<TSystem>()
                 .AsSingle()
-                .WhenInjectedIntoInstance(Systems);
+                .WhenInjectedIntoInstance(Domain);
         }
     }
 }

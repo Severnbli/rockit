@@ -63,7 +63,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
                 return false;
             }
 
-            Installer<T>.Install(Container);
+            Installer<IDomain, T>.Install(Container, this);
             return true;
         }
 
