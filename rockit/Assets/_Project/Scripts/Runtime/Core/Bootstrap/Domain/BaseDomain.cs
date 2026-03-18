@@ -6,6 +6,7 @@ using _Project.Scripts.Runtime.Core.Systems;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 using Leopotam.EcsProto.Unity;
+using Leopotam.EcsProto.Unity.Physics2D;
 using Leopotam.EcsProto.Unity.Ugui;
 using Zenject;
 
@@ -32,7 +33,8 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
         protected virtual void PostSetupWorldAndSystems()
         {
             Systems
-                .AddModule(new UnityUguiModule());
+                .AddModule(new UnityUguiModule())
+                .AddModule(new UnityPhysics2DModule());
         }
         
         public sealed override void InstallBindings()
