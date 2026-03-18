@@ -44,6 +44,8 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
             RegisterBindings();
             RegisterModules();
             RegisterStates();
+            
+            PostSetupWorldAndSystems();
         }
 
         public bool TryRegisterModule<T>() where T : BaseModule<T>
