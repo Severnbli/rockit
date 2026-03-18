@@ -6,8 +6,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure
 {
     public sealed class TimeModule : BaseModule<TimeModule>
     {
-        public TimeModule(EcsSystems systems, PausableSystemsSolver pausableSystemsSolver) : base(systems,
-            pausableSystemsSolver)
+        public TimeModule(EcsSystems systems) : base(systems)
         {
         }
 
