@@ -1,4 +1,5 @@
-﻿using _Project.Scripts.Runtime.Core.Systems;
+﻿using _Project.Scripts.Runtime.Core.Infrastructure.Time.Services;
+using _Project.Scripts.Runtime.Core.Systems;
 
 namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure
 {
@@ -7,6 +8,12 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure
         public TimeModule(EcsSystems systems, PausableSystemsSolver pausableSystemsSolver) : base(systems,
             pausableSystemsSolver)
         {
+        }
+
+        protected override void BindServices()
+        {
+            base.BindServices();
+            Container.Bind<TimeService>().ToSelf().AsSingle();
         }
     }
 }
