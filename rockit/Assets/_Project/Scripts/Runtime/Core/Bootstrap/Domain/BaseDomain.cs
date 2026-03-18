@@ -65,7 +65,12 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
             Installer<T>.Install(Container);
             return true;
         }
-        
+
+        public string GetDescriptor()
+        {
+            throw new NotImplementedException();
+        }
+
         protected virtual void RegisterBindings() {}
         
         protected virtual void RegisterModules() {}
