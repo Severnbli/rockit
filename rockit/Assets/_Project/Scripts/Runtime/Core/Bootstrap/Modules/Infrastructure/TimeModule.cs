@@ -18,9 +18,9 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure
             BindService<TimeService>();
         }
 
-        protected override void AddSystems()
+        protected override void BindSystems()
         {
-            base.AddSystems();
+            base.BindSystems();
             
             TryAddSystem<TimeServiceUpdateSystem>();
         }
