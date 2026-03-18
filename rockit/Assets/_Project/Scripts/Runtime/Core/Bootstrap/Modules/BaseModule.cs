@@ -6,14 +6,14 @@ using Zenject;
 
 namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules
 {
-    public abstract class BaseModuleInstaller<T> : Installer<T> 
-        where T : BaseModuleInstaller<T>
+    public abstract class BaseModule<T> : Installer<T> 
+        where T : BaseModule<T>
     {
         protected readonly EcsSystems Systems;
         protected readonly PausableSystemsSolver PausableSystemsSolver;
         protected readonly HashSet<IProtoSystem> PausableSystems = new();
         
-        public BaseModuleInstaller(EcsSystems systems, PausableSystemsSolver pausableSystemsSolver)
+        public BaseModule(EcsSystems systems, PausableSystemsSolver pausableSystemsSolver)
         {
             Systems = systems;
             PausableSystemsSolver = pausableSystemsSolver;
