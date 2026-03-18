@@ -36,6 +36,11 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules
         }
 
         protected virtual void BindServices() {}
+
+        public void BindService<TService>() where TService : class
+        {
+            Container.Bind<TService>().ToSelf().AsSingle();
+        }
         
         protected virtual void RegisterBindings() {}
 
