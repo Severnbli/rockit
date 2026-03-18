@@ -27,6 +27,11 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
                 .AddModule(new AutoInjectModule())
                 .AddModule(new UnityModule());
         }
+
+        protected virtual void PostSetupWorldAndSystems()
+        {
+            
+        }
         
         public sealed override void InstallBindings()
         {
