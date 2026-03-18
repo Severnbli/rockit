@@ -39,7 +39,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules
         
         protected virtual void RegisterBindings() {}
 
-        public virtual void AddSystems() {}
+        protected virtual void AddSystems() {}
 
         public bool TryAddSystem<Tk>(bool pausable = false) where Tk : IProtoSystem
         {
