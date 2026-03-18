@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using _Project.Scripts.Runtime.Core.Bootstrap.Features;
+using _Project.Scripts.Runtime.Core.Bootstrap.Modules;
 using _Project.Scripts.Runtime.Core.Engine;
 using _Project.Scripts.Runtime.Core.Systems;
 using Leopotam.EcsProto;
@@ -12,7 +12,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
     {
         protected ProtoWorld World { get; private set; }
         protected EcsSystems Systems { get; private set; }
-        protected readonly HashSet<Type> FeatureInstallers = new();
+        protected readonly HashSet<Type> ModuleInstallers = new();
         
         protected abstract ProtoWorld ConstructWorld();
         
@@ -31,13 +31,13 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
             Container.Bind<MonoEngine>().FromNewComponentOn(gameObject).AsSingle().NonLazy();
             
             RegisterBindings();
-            RegisterFeatures();
+            RegisterModules();
             RegisterStates();
         }
 
-        public bool TryInstallFeature<T>() where T : BaseFeatureInstaller<T>
+        public bool TryInstallModule<T>() where T : BaseModuleInstaller<T>
         {
-            if (!FeatureInstallers.Add(typeof(T)))
+            if (!ModuleInstallers.Add(typeof(T)))
             {
                 return false;
             }
@@ -48,7 +48,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
         
         protected virtual void RegisterBindings() {}
         
-        protected virtual void RegisterFeatures() {}
+        protected virtual void RegisterModules() {}
         
         protected virtual void RegisterStates() {}
     }
