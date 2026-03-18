@@ -35,7 +35,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
             RegisterStates();
         }
 
-        public bool TryInstallModule<T>() where T : BaseModule<T>
+        public bool TryRegisterModule<T>() where T : BaseModule<T>
         {
             if (!ModuleInstallers.Add(typeof(T)))
             {

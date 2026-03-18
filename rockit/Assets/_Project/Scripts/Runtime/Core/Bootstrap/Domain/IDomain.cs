@@ -4,6 +4,6 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
 {
     public interface IDomain
     {
-        bool TryInstallModule<T>() where T : BaseModule<T>;
+        bool TryRegisterModule<T>() where T : BaseModule<T>;
     }
 }
