@@ -1,4 +1,5 @@
-﻿using _Project.Scripts.Runtime.Core.Bootstrap.States;
+﻿using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure;
+using _Project.Scripts.Runtime.Core.Bootstrap.States;
 using _Project.Scripts.Runtime.Core.Bootstrap.States.Project;
 using _Project.Scripts.Runtime.Core.Systems;
 using Leopotam.EcsProto;
@@ -26,6 +27,13 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Project
             
             Container.BindInterfacesAndSelfTo<ProjectSetupState>().AsSingle();
             Container.BindInterfacesAndSelfTo<ProjectCloseState>().AsSingle();
+        }
+
+        protected override void RegisterModules()
+        {
+            base.RegisterModules();
+
+            TryRegisterModule<TimeModule>();
         }
     }
 }
