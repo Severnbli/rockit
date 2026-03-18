@@ -4,16 +4,16 @@ using _Project.Scripts.Runtime.Core.Systems;
 using Leopotam.EcsProto;
 using Zenject;
 
-namespace _Project.Scripts.Runtime.Core.Bootstrap.Features
+namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules
 {
-    public abstract class BaseFeatureInstaller<T> : Installer<T> 
-        where T : BaseFeatureInstaller<T>
+    public abstract class BaseModuleInstaller<T> : Installer<T> 
+        where T : BaseModuleInstaller<T>
     {
         protected readonly EcsSystems Systems;
         protected readonly PausableSystemsSolver PausableSystemsSolver;
         protected readonly HashSet<IProtoSystem> PausableSystems = new();
         
-        public BaseFeatureInstaller(EcsSystems systems, PausableSystemsSolver pausableSystemsSolver)
+        public BaseModuleInstaller(EcsSystems systems, PausableSystemsSolver pausableSystemsSolver)
         {
             Systems = systems;
             PausableSystemsSolver = pausableSystemsSolver;
