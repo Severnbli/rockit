@@ -23,7 +23,10 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Time.Systems
 
         public void FixedRun()
         {
-            throw new System.NotImplementedException();
+            _timeService.FixedTime = UnityEngine.Time.fixedTime;
+            _timeService.FixedDeltaTime = UnityEngine.Time.fixedDeltaTime;
+            _timeService.UnscaledFixedTime = UnityEngine.Time.fixedUnscaledTime;
+            _timeService.UnscaledFixedDeltaTime = UnityEngine.Time.fixedUnscaledDeltaTime;
         }
     }
 }
