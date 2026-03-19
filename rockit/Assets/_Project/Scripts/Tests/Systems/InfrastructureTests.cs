@@ -1,4 +1,5 @@
-﻿using _Project.Scripts.Runtime.Core.Infrastructure.Requests.Systems;
+﻿using _Project.Scripts.Runtime.Core.Infrastructure.Requests;
+using _Project.Scripts.Runtime.Core.Infrastructure.Requests.Systems;
 using NUnit.Framework;
 
 namespace _Project.Scripts.Tests.Systems
@@ -28,6 +29,8 @@ namespace _Project.Scripts.Tests.Systems
             systems.AddSystem(new ActivateRequestsSystem());
             
             systems.Init();
+
+            var requestAspect = systems.World().Aspect(typeof(RequestsAspect)) as RequestsAspect;
         }
     }
 }
