@@ -1,5 +1,4 @@
-﻿using System;
-using _Project.Scripts.Runtime.Core.Systems;
+﻿using _Project.Scripts.Runtime.Core.Systems;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 
