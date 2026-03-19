@@ -21,7 +21,7 @@ namespace _Project.Scripts.Tests.Systems
         [Test]
         public void TestRequestsSystems()
         {
-            
+            var systems = _systemsContainerProvider.GetSystemsContainer();
         }
     }
 }
