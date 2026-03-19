@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules;
+using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure;
 using _Project.Scripts.Runtime.Core.Engine;
 using _Project.Scripts.Runtime.Core.Systems;
 using Leopotam.EcsProto;
@@ -8,6 +9,7 @@ using Leopotam.EcsProto.QoL;
 using Leopotam.EcsProto.Unity;
 using Leopotam.EcsProto.Unity.Physics2D;
 using Leopotam.EcsProto.Unity.Ugui;
+using UnityEngine;
 using Zenject;
 
 namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
@@ -65,6 +67,10 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
         {
             if (!ModuleInstallers.Add(typeof(T)))
             {
+#if DEBUG
+                Debug.LogWarning($"Module {typeof(T).Name} already registered");
+#endif
+                
                 return false;
             }
 
@@ -78,8 +84,11 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
         }
 
         protected virtual void RegisterBindings() {}
-        
-        protected virtual void RegisterModules() {}
+
+        protected virtual void RegisterModules()
+        {
+            TryRegisterModule<RequestsModule>();
+        }
         
         protected virtual void RegisterStates() {}
     }
