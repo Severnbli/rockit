@@ -14,7 +14,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
 {
     public abstract class BaseDomain : MonoInstaller, IDomain
     {
-        private SystemsBindResolver _systemsBindResolver = new();
+        private SystemsBindResolver _systemsBindResolver;
         
         protected ProtoWorld World { get; private set; }
         protected EcsSystems Systems { get; private set; }
@@ -37,17 +37,19 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
 
         protected virtual void PostSetupWorldAndSystems()
         {
-            Systems
-                .AddModule(new UnityUguiModule())
-                .AddModule(new UnityPhysics2DModule());
+            // Systems
+            //     .AddModule(new UnityUguiModule())
+            //     .AddModule(new UnityPhysics2DModule());
         }
         
         public sealed override void InstallBindings()
         {
+            _systemsBindResolver = new SystemsBindResolver(Container);
+            
             SetupWorldAndSystems();
             
             Container.Bind<IDomain>().FromInstance(this).AsSingle();
-            Container.BindInstance(_systemsBindResolver).AsSingle();
+            Container.BindInterfacesAndSelfTo<SystemsBindResolver>().FromInstance(_systemsBindResolver).AsSingle();
             Container.Bind<ProtoWorld>().FromInstance(World).AsSingle();
             Container.Bind<EcsSystems>().FromInstance(Systems).AsSingle();
             Container.Bind<MonoEngine>().FromNewComponentOn(gameObject).AsSingle().NonLazy();
