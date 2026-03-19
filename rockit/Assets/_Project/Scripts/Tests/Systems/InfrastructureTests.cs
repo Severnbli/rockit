@@ -37,6 +37,12 @@ namespace _Project.Scripts.Tests.Systems
         }
 
         [Test]
+        public void TestTimeSystems()
+        {
+            
+        }
+
+        [Test]
         public void TestRequestsSystems()
         {
             _systems.AddSystem(new DelActivatedRequestsSystem());
