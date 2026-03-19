@@ -21,8 +21,6 @@ namespace _Project.Scripts.Runtime.Core.Systems
         {
             var systems = _container.Resolve<EcsSystems>();
             var solver = _container.Resolve<PausableSystemsSolver>();
-            var nonPausableSystems = _container.ResolveId<IProtoSystem[]>(Contracts.NonPausableSystemsId);
-            var pausableSystems = _container.ResolveId<IProtoSystem[]>(Contracts.PausableSystemsId);
             var nonPausableSystems =
                 _container.ResolveId<IProtoSystem[]>(_domain.GetDescriptor(Contracts.NonPausableSystemsId));
             var pausableSystems =
