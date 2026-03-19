@@ -32,7 +32,8 @@ namespace _Project.Scripts.Tests.Systems
         [TearDown]
         private void TearDown()
         {
-            
+            _systems?.Destroy();
+            _systems = null;
         }
 
         [Test]
