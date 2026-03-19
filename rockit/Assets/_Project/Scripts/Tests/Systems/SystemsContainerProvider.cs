@@ -9,7 +9,8 @@ namespace _Project.Scripts.Tests.Systems
         public EcsSystems GetSystemsContainer()
         {
             var world = new ProtoWorld(new DomainAspect());
-            return null;
+            var systems = new EcsSystems(world);
+            return systems;
         }
     }
 }
