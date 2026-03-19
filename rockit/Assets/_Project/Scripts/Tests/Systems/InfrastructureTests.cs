@@ -23,6 +23,12 @@ namespace _Project.Scripts.Tests.Systems
             _systemsContainerProvider = null;
         }
 
+        [SetUp]
+        private void SetUp()
+        {
+            
+        }
+
         [Test]
         public void TestRequestsSystems()
         {
