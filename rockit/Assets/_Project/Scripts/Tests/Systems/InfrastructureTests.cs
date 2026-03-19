@@ -7,7 +7,7 @@ namespace _Project.Scripts.Tests.Systems
         private ISystemsContainerProvider _systemsContainerProvider;
 
         [OneTimeSetUp]
-        private void Setup()
+        private void SetUp()
         {
             _systemsContainerProvider = new SystemsContainerProvider();
         }
