@@ -26,6 +26,8 @@ namespace _Project.Scripts.Tests.Systems
 
             systems.AddSystem(new DelActivatedRequestsSystem());
             systems.AddSystem(new ActivateRequestsSystem());
+            
+            systems.Init();
         }
     }
 }
