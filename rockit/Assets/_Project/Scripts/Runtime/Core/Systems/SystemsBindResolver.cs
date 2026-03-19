@@ -1,5 +1,7 @@
 ﻿using System.Linq;
+using _Project.Scripts.Runtime.Core.Bootstrap.Domain;
 using Leopotam.EcsProto;
+using UnityEngine;
 using Zenject;
 
 namespace _Project.Scripts.Runtime.Core.Systems
@@ -7,10 +9,12 @@ namespace _Project.Scripts.Runtime.Core.Systems
     public class SystemsBindResolver : IInitializable
     {
         private DiContainer _container;
+        private readonly IDomain _domain;
 
-        public SystemsBindResolver(DiContainer container)
+        public SystemsBindResolver(DiContainer container, IDomain domain)
         {
             _container = container;
+            _domain = domain;
         }
 
         public void Initialize()
