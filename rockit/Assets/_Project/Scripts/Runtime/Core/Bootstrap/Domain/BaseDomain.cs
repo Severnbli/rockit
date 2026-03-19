@@ -37,9 +37,9 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
 
         protected virtual void PostSetupWorldAndSystems()
         {
-            // Systems
-            //     .AddModule(new UnityUguiModule())
-            //     .AddModule(new UnityPhysics2DModule());
+            Systems
+                .AddModule(new UnityUguiModule())
+                .AddModule(new UnityPhysics2DModule());
         }
         
         public sealed override void InstallBindings()
