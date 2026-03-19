@@ -9,6 +9,7 @@ using Leopotam.EcsProto.QoL;
 using Leopotam.EcsProto.Unity;
 using Leopotam.EcsProto.Unity.Physics2D;
 using Leopotam.EcsProto.Unity.Ugui;
+using UnityEngine;
 using Zenject;
 
 namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
@@ -66,6 +67,10 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
         {
             if (!ModuleInstallers.Add(typeof(T)))
             {
+#if DEBUG
+                Debug.LogWarning($"Module {typeof(T).Name} already registered");
+#endif
+                
                 return false;
             }
 
