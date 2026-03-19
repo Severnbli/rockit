@@ -29,6 +29,12 @@ namespace _Project.Scripts.Tests.Systems
             _systems = _systemsContainerProvider.GetSystemsContainer();
         }
 
+        [TearDown]
+        private void TearDown()
+        {
+            
+        }
+
         [Test]
         public void TestRequestsSystems()
         {
