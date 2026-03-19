@@ -4,6 +4,7 @@ using _Project.Scripts.Runtime.Core.Bootstrap.States.Project;
 using _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes;
 using _Project.Scripts.Runtime.Shared.Extensions;
 using Cysharp.Threading.Tasks;
+using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Core.Bootstrap.States
 {
@@ -28,7 +29,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States
             if (!SceneStates.TryGetByAssignableType(out T state) && !ProjectStates.TryGetByAssignableType(out state))
             {
 #if DEBUG
-                throw new Exception($"Did not find state with type {typeof(T)}");
+                Debug.LogError($"Did not find state with type {typeof(T)}");
 #endif
                 return;
             }
