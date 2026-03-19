@@ -1,5 +1,6 @@
 ﻿using _Project.Scripts.Runtime.Core.Infrastructure.Requests;
 using _Project.Scripts.Runtime.Core.Infrastructure.Requests.Systems;
+using _Project.Scripts.Runtime.Core.Systems;
 using _Project.Scripts.Runtime.Shared.Extensions;
 using NUnit.Framework;
 
@@ -8,6 +9,7 @@ namespace _Project.Scripts.Tests.Systems
     public class InfrastructureTests
     {
         private ISystemsContainerProvider _systemsContainerProvider;
+        private EcsSystems _systems;
 
         [OneTimeSetUp]
         private void OneTimeSetUp()
