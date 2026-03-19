@@ -17,5 +17,11 @@ namespace _Project.Scripts.Tests.Systems
         {
             _systemsContainerProvider = null;
         }
+
+        [Test]
+        public void TestRequestsSystems()
+        {
+            
+        }
     }
 }
