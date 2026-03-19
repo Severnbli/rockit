@@ -25,6 +25,7 @@ namespace _Project.Scripts.Tests.Systems
             var systems = _systemsContainerProvider.GetSystemsContainer();
 
             systems.AddSystem(new DelActivatedRequestsSystem());
+            systems.AddSystem(new ActivateRequestsSystem());
         }
     }
 }
