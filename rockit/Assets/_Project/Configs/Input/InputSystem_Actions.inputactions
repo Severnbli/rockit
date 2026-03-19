@@ -186,7 +186,7 @@
                 {
                     "name": "",
                     "id": "8ee649ac-489f-4580-984a-1a988177fced",
-                    "path": "<Gamepad>/dpad/left",
+                    "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
