@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules;
+using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure;
 using _Project.Scripts.Runtime.Core.Engine;
 using _Project.Scripts.Runtime.Core.Systems;
 using Leopotam.EcsProto;
@@ -78,8 +79,11 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
         }
 
         protected virtual void RegisterBindings() {}
-        
-        protected virtual void RegisterModules() {}
+
+        protected virtual void RegisterModules()
+        {
+            TryRegisterModule<RequestsModule>();
+        }
         
         protected virtual void RegisterStates() {}
     }
