@@ -5,5 +5,6 @@ namespace _Project.Scripts.Tests.Systems
     public class InfrastructureTests
     {
         private EcsSystems _systems;
+        private ISystemsContainerProvider _systemsContainerProvider;
     }
 }
