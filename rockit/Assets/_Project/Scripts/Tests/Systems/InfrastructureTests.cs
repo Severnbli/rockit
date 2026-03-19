@@ -39,14 +39,12 @@ namespace _Project.Scripts.Tests.Systems
         [Test]
         public void TestRequestsSystems()
         {
-            var systems = _systemsContainerProvider.GetSystemsContainer();
-
-            systems.AddSystem(new DelActivatedRequestsSystem());
-            systems.AddSystem(new ActivateRequestsSystem());
+            _systems.AddSystem(new DelActivatedRequestsSystem());
+            _systems.AddSystem(new ActivateRequestsSystem());
             
-            systems.Init();
+            _systems.Init();
 
-            var requestAspect = systems.World().Aspect(typeof(RequestsAspect)) as RequestsAspect;
+            var requestAspect = _systems.World().Aspect(typeof(RequestsAspect)) as RequestsAspect;
 
             requestAspect.CreateRequest();
             requestAspect.CreateRequest(fixedRun: true);
@@ -56,16 +54,16 @@ namespace _Project.Scripts.Tests.Systems
             Assert.AreEqual(requestAspect!.RunActivated.LenSlow(), 0);
             Assert.AreEqual(requestAspect!.FixedRunActivated.LenSlow(), 0);
             
-            systems.Run();
-            systems.FixedRun();
+            _systems.Run();
+            _systems.FixedRun();
             
             Assert.AreEqual(requestAspect!.RunNotActivated.LenSlow(), 0);
             Assert.AreEqual(requestAspect!.FixedRunNotActivated.LenSlow(), 0);
             Assert.AreEqual(requestAspect!.RunActivated.LenSlow(), 1);
             Assert.AreEqual(requestAspect!.FixedRunActivated.LenSlow(), 1);
             
-            systems.Run();
-            systems.FixedRun();
+            _systems.Run();
+            _systems.FixedRun();
             
             Assert.AreEqual(requestAspect!.RunNotActivated.LenSlow(), 0);
             Assert.AreEqual(requestAspect!.FixedRunNotActivated.LenSlow(), 0);
