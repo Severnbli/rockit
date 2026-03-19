@@ -10,7 +10,7 @@ namespace _Project.Scripts.Runtime.Core.Systems
         [Inject(Id = Contracts.PausableSystemsId)] private List<IProtoSystem> _pausableSystems;
 
         [Inject]
-        private void Construct(EcsSystems systems)
+        private void Construct(EcsSystems systems, PausableSystemsSolver solver)
         {
             
         }
