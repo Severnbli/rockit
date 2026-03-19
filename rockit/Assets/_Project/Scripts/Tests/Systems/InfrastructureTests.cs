@@ -10,13 +10,13 @@ namespace _Project.Scripts.Tests.Systems
         private ISystemsContainerProvider _systemsContainerProvider;
 
         [OneTimeSetUp]
-        private void SetUp()
+        private void OneTimeSetUp()
         {
             _systemsContainerProvider = new SystemsContainerProvider();
         }
 
         [OneTimeTearDown]
-        private void TearDown()
+        private void OneTimeTearDown()
         {
             _systemsContainerProvider = null;
         }
