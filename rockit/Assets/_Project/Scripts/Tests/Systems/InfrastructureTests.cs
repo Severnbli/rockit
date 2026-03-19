@@ -1,5 +1,6 @@
 ﻿using _Project.Scripts.Runtime.Core.Infrastructure.Requests;
 using _Project.Scripts.Runtime.Core.Infrastructure.Requests.Systems;
+using _Project.Scripts.Runtime.Shared.Extensions;
 using NUnit.Framework;
 
 namespace _Project.Scripts.Tests.Systems
@@ -31,6 +32,30 @@ namespace _Project.Scripts.Tests.Systems
             systems.Init();
 
             var requestAspect = systems.World().Aspect(typeof(RequestsAspect)) as RequestsAspect;
+
+            requestAspect.CreateRequest();
+            requestAspect.CreateRequest(fixedRun: true);
+
+            Assert.AreEqual(requestAspect!.RunNotActivated.LenSlow(), 1);
+            Assert.AreEqual(requestAspect!.FixedRunNotActivated.LenSlow(), 1);
+            Assert.AreEqual(requestAspect!.RunActivated.LenSlow(), 0);
+            Assert.AreEqual(requestAspect!.FixedRunActivated.LenSlow(), 0);
+            
+            systems.Run();
+            systems.FixedRun();
+            
+            Assert.AreEqual(requestAspect!.RunNotActivated.LenSlow(), 0);
+            Assert.AreEqual(requestAspect!.FixedRunNotActivated.LenSlow(), 0);
+            Assert.AreEqual(requestAspect!.RunActivated.LenSlow(), 1);
+            Assert.AreEqual(requestAspect!.FixedRunActivated.LenSlow(), 1);
+            
+            systems.Run();
+            systems.FixedRun();
+            
+            Assert.AreEqual(requestAspect!.RunNotActivated.LenSlow(), 0);
+            Assert.AreEqual(requestAspect!.FixedRunNotActivated.LenSlow(), 0);
+            Assert.AreEqual(requestAspect!.RunActivated.LenSlow(), 0);
+            Assert.AreEqual(requestAspect!.FixedRunActivated.LenSlow(), 0);
         }
     }
 }
