@@ -8,7 +8,7 @@ namespace _Project.Scripts.Runtime.Core.Systems
 {
     public class SystemsBindResolver : IInitializable
     {
-        private DiContainer _container;
+        private readonly DiContainer _container;
         private readonly IDomain _domain;
 
         public SystemsBindResolver(DiContainer container, IDomain domain)
