@@ -5,6 +5,6 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
     public interface IDomain
     {
         bool TryRegisterModule<T>() where T : BaseModule<T>;
-        string GetDescriptor();
+        string GetDescriptor(string additionalValue);
     }
 }

@@ -72,9 +72,9 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
             return true;
         }
 
-        public string GetDescriptor()
+        public string GetDescriptor(string additionalValue)
         {
-            return GetType().Name;
+            return $"{GetType().Name}_{additionalValue}";
         }
 
         protected virtual void RegisterBindings() {}
