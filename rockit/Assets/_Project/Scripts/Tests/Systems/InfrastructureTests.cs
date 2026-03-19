@@ -1,7 +1,15 @@
-﻿namespace _Project.Scripts.Tests.Systems
+﻿using NUnit.Framework;
+
+namespace _Project.Scripts.Tests.Systems
 {
     public class InfrastructureTests
     {
         private ISystemsContainerProvider _systemsContainerProvider;
+
+        [OneTimeSetUp]
+        private void Setup()
+        {
+            _systemsContainerProvider = new SystemsContainerProvider();
+        }
     }
 }
