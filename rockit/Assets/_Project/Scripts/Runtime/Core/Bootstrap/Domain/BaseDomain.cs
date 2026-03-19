@@ -14,6 +14,8 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
 {
     public abstract class BaseDomain : MonoInstaller, IDomain
     {
+        private SystemsBindResolver _systemsBindResolver = new();
+        
         protected ProtoWorld World { get; private set; }
         protected EcsSystems Systems { get; private set; }
         protected readonly HashSet<Type> ModuleInstallers = new();
