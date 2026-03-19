@@ -11,5 +11,11 @@ namespace _Project.Scripts.Tests.Systems
         {
             _systemsContainerProvider = new SystemsContainerProvider();
         }
+
+        [OneTimeTearDown]
+        private void TearDown()
+        {
+            _systemsContainerProvider = null;
+        }
     }
 }
