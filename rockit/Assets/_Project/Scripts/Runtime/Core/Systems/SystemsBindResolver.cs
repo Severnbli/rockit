@@ -11,7 +11,12 @@ namespace _Project.Scripts.Runtime.Core.Systems
         [Inject]
         private void Construct(EcsSystems systems, PausableSystemsSolver solver)
         {
+            foreach (var system in _nonPausableSystems)
+            {
+                systems.AddSystem(system);
+            }
             
+            systems.AddSystem(new PausableSystems(solver, _pausableSystems));
         }
     }
 }
