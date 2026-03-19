@@ -23,6 +23,10 @@ namespace _Project.Scripts.Runtime.Core.Systems
             var solver = _container.Resolve<PausableSystemsSolver>();
             var nonPausableSystems = _container.ResolveId<IProtoSystem[]>(Contracts.NonPausableSystemsId);
             var pausableSystems = _container.ResolveId<IProtoSystem[]>(Contracts.PausableSystemsId);
+            var nonPausableSystems =
+                _container.ResolveId<IProtoSystem[]>(_domain.GetDescriptor(Contracts.NonPausableSystemsId));
+            var pausableSystems =
+                _container.ResolveId<IProtoSystem[]>(_domain.GetDescriptor(Contracts.PausableSystemsId));
             
             foreach (var system in nonPausableSystems)
             {

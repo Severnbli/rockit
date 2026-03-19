@@ -44,7 +44,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
         
         public sealed override void InstallBindings()
         {
-            _systemsBindResolver = new SystemsBindResolver(Container);
+            _systemsBindResolver = new SystemsBindResolver(Container, this);
             
             SetupWorldAndSystems();
             
