@@ -10,7 +10,10 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Requests.Systems
         
         public void Run()
         {
-            throw new System.NotImplementedException();
+            foreach (var e in _requestsAspect.RunNotActivated)
+            {
+                _requestsAspect.ActiveRequestTagPool.Add(e);
+            }
         }
 
         public void FixedRun()
