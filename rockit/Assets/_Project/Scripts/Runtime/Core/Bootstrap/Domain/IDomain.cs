@@ -1,9 +1,10 @@
-﻿using _Project.Scripts.Runtime.Core.Bootstrap.Features;
+﻿using _Project.Scripts.Runtime.Core.Bootstrap.Modules;
 
 namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
 {
     public interface IDomain
     {
-        bool TryInstallFeature<T>() where T : BaseFeatureInstaller<T>;
+        bool TryRegisterModule<T>() where T : BaseModule<T>;
+        string GetDescriptor(string additionalValue);
     }
 }
