@@ -10,7 +10,10 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Requests.Systems
         
         public void Run()
         {
-            throw new System.NotImplementedException();
+            foreach (var e in _requestsAspect.RunActivated)
+            {
+                _requestsAspect.World().DelEntity(e);
+            }
         }
 
         public void FixedRun()
