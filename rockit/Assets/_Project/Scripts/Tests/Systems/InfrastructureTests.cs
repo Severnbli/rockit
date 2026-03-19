@@ -26,7 +26,7 @@ namespace _Project.Scripts.Tests.Systems
         [SetUp]
         private void SetUp()
         {
-            
+            _systems = _systemsContainerProvider.GetSystemsContainer();
         }
 
         [Test]
