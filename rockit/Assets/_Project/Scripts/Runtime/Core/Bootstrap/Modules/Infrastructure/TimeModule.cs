@@ -1,12 +1,12 @@
-﻿using _Project.Scripts.Runtime.Core.Infrastructure.Time.Services;
+﻿using _Project.Scripts.Runtime.Core.Bootstrap.Domain;
+using _Project.Scripts.Runtime.Core.Infrastructure.Time.Services;
 using _Project.Scripts.Runtime.Core.Infrastructure.Time.Systems;
-using _Project.Scripts.Runtime.Core.Systems;
 
 namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure
 {
     public sealed class TimeModule : BaseModule<TimeModule>
     {
-        public TimeModule(SystemsBindResolver systemsBindResolver) : base(systemsBindResolver)
+        public TimeModule(IDomain domain) : base(domain)
         {
         }
 

@@ -68,7 +68,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
                 return false;
             }
 
-            Installer<SystemsBindResolver, T>.Install(Container, _systemsBindResolver);
+            Installer<IDomain, T>.Install(Container, this);
             return true;
         }
 
