@@ -1,17 +1,26 @@
-﻿using Leopotam.EcsProto;
+﻿using System.Linq;
+using Leopotam.EcsProto;
 using Zenject;
 
 namespace _Project.Scripts.Runtime.Core.Systems
 {
-    public class SystemsBindResolver
+    public class SystemsBindResolver : IInitializable
     {
-        [Inject(Id = Contracts.NonPausableSystemsId)] private IProtoSystem[] _nonPausableSystems;
-        [Inject(Id = Contracts.PausableSystemsId)] private IProtoSystem[] _pausableSystems;
+        private DiContainer _container;
 
-        [Inject]
-        private void Construct(EcsSystems systems, PausableSystemsSolver solver)
+        public SystemsBindResolver(DiContainer container)
         {
-            foreach (var system in _nonPausableSystems)
+            _container = container;
+        }
+
+        public void Initialize()
+        {
+            var systems = _container.Resolve<EcsSystems>();
+            var solver = _container.Resolve<PausableSystemsSolver>();
+            var nonPausableSystems = _container.ResolveId<IProtoSystem[]>(Contracts.NonPausableSystemsId);
+            var pausableSystems = _container.ResolveId<IProtoSystem[]>(Contracts.PausableSystemsId);
+            
+            foreach (var system in nonPausableSystems)
             {
                 systems.AddSystem(system);
             }
