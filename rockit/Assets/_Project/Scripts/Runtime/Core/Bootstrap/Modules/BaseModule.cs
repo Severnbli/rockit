@@ -1,17 +1,17 @@
-﻿using _Project.Scripts.Runtime.Core.Bootstrap.Domain;
+﻿using _Project.Scripts.Runtime.Core.Systems;
 using Leopotam.EcsProto;
 using Zenject;
 
 namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules
 {
-    public abstract class BaseModule<T> : Installer<IDomain, T> 
+    public abstract class BaseModule<T> : Installer<SystemsBindResolver, T> 
         where T : BaseModule<T>
     {
-        protected readonly IDomain Domain;
+        protected readonly SystemsBindResolver SystemsBindResolver;
         
-        public BaseModule(IDomain domain)
+        public BaseModule(SystemsBindResolver systemsBindResolver)
         {
-            Domain = domain;
+            SystemsBindResolver = systemsBindResolver;
         }
         
         public sealed override void InstallBindings()
@@ -39,7 +39,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules
                 .WithId(!pausable ? Contracts.NonPausableSystemsId : Contracts.PausableSystemsId)
                 .To<TSystem>()
                 .AsSingle()
-                .WhenInjectedIntoInstance(Domain);
+                .WhenInjectedIntoInstance(SystemsBindResolver);
         }
     }
 }
