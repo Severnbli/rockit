@@ -47,6 +47,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
             SetupWorldAndSystems();
             
             Container.Bind<IDomain>().FromInstance(this).AsSingle();
+            Container.BindInstance(_systemsBindResolver).AsSingle();
             Container.Bind<ProtoWorld>().FromInstance(World).AsSingle();
             Container.Bind<EcsSystems>().FromInstance(Systems).AsSingle();
             Container.Bind<MonoEngine>().FromNewComponentOn(gameObject).AsSingle().NonLazy();
