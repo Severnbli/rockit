@@ -12,25 +12,25 @@ namespace _Project.Scripts.Tests.Systems
         private EcsSystems _systems;
 
         [OneTimeSetUp]
-        private void OneTimeSetUp()
+        public void OneTimeSetUp()
         {
             _systemsContainerProvider = new SystemsContainerProvider();
         }
 
         [OneTimeTearDown]
-        private void OneTimeTearDown()
+        public void OneTimeTearDown()
         {
             _systemsContainerProvider = null;
         }
 
         [SetUp]
-        private void SetUp()
+        public void SetUp()
         {
             _systems = _systemsContainerProvider.GetSystemsContainer();
         }
 
         [TearDown]
-        private void TearDown()
+        public void TearDown()
         {
             _systems?.Destroy();
             _systems = null;
