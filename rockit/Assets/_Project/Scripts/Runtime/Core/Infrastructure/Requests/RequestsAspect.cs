@@ -11,5 +11,6 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Requests
         public ProtoPool<ActiveRequestTag> ActiveRequestTagPool;
         public ProtoPool<RunRequestTag> RunRequestTagPool;
         public ProtoPool<FixedRunRequestTag> FixedRunRequestTagPool;
+        public ProtoItExc RunNotActivated = new(It.Inc<RequestComponent, RunRequestTag>(), It.Exc<ActiveRequestTag>());
     }
 }
