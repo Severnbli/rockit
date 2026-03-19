@@ -9,5 +9,6 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Requests
     {
         public ProtoPool<RequestComponent> RequestComponentPool;
         public ProtoPool<ActiveRequestTag> ActiveRequestTagPool;
+        public ProtoPool<RunRequestTag> RunRequestTagPool;
     }
 }
