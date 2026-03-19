@@ -1,4 +1,6 @@
-﻿using _Project.Scripts.Runtime.Core.Systems;
+﻿using _Project.Scripts.Runtime.Core.Bootstrap.Domain;
+using _Project.Scripts.Runtime.Core.Systems;
+using Leopotam.EcsProto;
 
 namespace _Project.Scripts.Tests.Systems
 {
@@ -6,7 +8,8 @@ namespace _Project.Scripts.Tests.Systems
     {
         public EcsSystems GetSystemsContainer()
         {
-            throw new System.NotImplementedException();
+            var world = new ProtoWorld(new DomainAspect());
+            return null;
         }
     }
 }
