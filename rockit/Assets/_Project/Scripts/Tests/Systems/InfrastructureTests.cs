@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using _Project.Scripts.Runtime.Core.Infrastructure.Requests.Systems;
+using NUnit.Framework;
 
 namespace _Project.Scripts.Tests.Systems
 {
@@ -22,6 +23,8 @@ namespace _Project.Scripts.Tests.Systems
         public void TestRequestsSystems()
         {
             var systems = _systemsContainerProvider.GetSystemsContainer();
+
+            systems.AddSystem(new DelActivatedRequestsSystem());
         }
     }
 }
