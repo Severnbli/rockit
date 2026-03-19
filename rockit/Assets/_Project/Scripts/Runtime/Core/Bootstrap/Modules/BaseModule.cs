@@ -36,7 +36,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules
         {
             Container
                 .Bind<IProtoSystem>()
-                .WithId(!pausable ? Contracts.NonPausableSystemsId : Contracts.PausableSystemsId)
+                .WithId(Domain.GetDescriptor(!pausable ? Contracts.NonPausableSystemsId : Contracts.PausableSystemsId))
                 .To<TSystem>()
                 .AsSingle();
         }
