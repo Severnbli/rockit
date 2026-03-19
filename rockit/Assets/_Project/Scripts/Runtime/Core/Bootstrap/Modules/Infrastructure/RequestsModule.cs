@@ -15,6 +15,8 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure
             
             BindSystem<DelActivatedRequestsSystem>();
             BindSystem<ActivateRequestsSystem>();
+            
+            BindSystem<DebugSystem>();
         }
     }
 }
