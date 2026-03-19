@@ -16,7 +16,10 @@ namespace _Project.Scripts.Runtime.Core.Systems
                 systems.AddSystem(system);
             }
             
-            systems.AddSystem(new PausableSystems(solver, _pausableSystems));
+            if (pausableSystems.Any())
+            {
+                systems.AddSystem(new PausableSystems(solver, pausableSystems));
+            }
         }
     }
 }
