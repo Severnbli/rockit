@@ -1,4 +1,5 @@
-﻿using _Project.Scripts.Runtime.Core.Systems;
+﻿using System;
+using _Project.Scripts.Runtime.Core.Systems;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 
@@ -18,7 +19,10 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Requests.Systems
 
         public void FixedRun()
         {
-            throw new System.NotImplementedException();
+            foreach (var e in _requestsAspect.FixedRunActivated)
+            {
+                _requestsAspect.World().DelEntity(e);
+            }
         }
     }
 }
