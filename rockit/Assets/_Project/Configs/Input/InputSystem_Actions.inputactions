@@ -208,7 +208,7 @@
                 {
                     "name": "",
                     "id": "dc954c6a-0d17-4f6b-af1a-996e29f01513",
-                    "path": "<Gamepad>/dpad/up",
+                    "path": "<Gamepad>/buttonNorth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
