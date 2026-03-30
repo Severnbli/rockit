@@ -1,5 +1,5 @@
 ﻿using _Project.Scripts.Runtime.Core.Bootstrap.Domain;
-using _Project.Scripts.Runtime.Core.Infrastructure.Storage;
+using _Project.Scripts.Runtime.Core.Infrastructure.Storage.Core;
 
 namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure
 {

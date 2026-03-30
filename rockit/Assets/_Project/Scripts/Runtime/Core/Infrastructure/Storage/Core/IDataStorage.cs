@@ -1,4 +1,4 @@
-﻿namespace _Project.Scripts.Runtime.Core.Infrastructure.Storage
+﻿namespace _Project.Scripts.Runtime.Core.Infrastructure.Storage.Core
 {
     public interface IDataStorage
     {
