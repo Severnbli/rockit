@@ -68,7 +68,11 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Storage
 
         public void RemoveTracked<T>()
         {
+            var added = TrackedData.Remove(typeof(T));
             
+#if DEBUG
+            Debug.Log($"Detect removing of not existing tracked data by type {typeof(T).Name}");
+#endif
         }
 
         public void LoadTracked()
