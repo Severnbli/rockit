@@ -1,5 +1,6 @@
 ﻿using _Project.Scripts.Runtime.Core.Bootstrap.Domain;
 using _Project.Scripts.Runtime.Core.Infrastructure.Storage.Core;
+using _Project.Scripts.Runtime.Core.Infrastructure.Storage.Systems;
 
 namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure
 {
@@ -16,6 +17,13 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure
             Container.BindInterfacesAndSelfTo<TypeNameDataStorageKeyProvider>().AsSingle();
             Container.BindInterfacesAndSelfTo<PlayerPrefsDataStorage>().AsSingle();
             Container.BindInterfacesAndSelfTo<DataProvider>().AsSingle();
+        }
+
+        protected override void BindSystems()
+        {
+            base.BindSystems();
+            
+            BindSystem<LoadTrackedDataOnInitSystem>();
         }
     }
 }
