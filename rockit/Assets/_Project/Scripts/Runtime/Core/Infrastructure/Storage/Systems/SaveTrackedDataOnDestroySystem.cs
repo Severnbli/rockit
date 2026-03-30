@@ -5,7 +5,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Storage.Systems
 {
     public sealed class SaveTrackedDataOnDestroySystem : IProtoDestroySystem
     {
-        private IDataProvider _dataProvider;
+        private readonly IDataProvider _dataProvider;
 
         public SaveTrackedDataOnDestroySystem(IDataProvider dataProvider)
         {
