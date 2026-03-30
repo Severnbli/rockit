@@ -54,5 +54,25 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Storage
 #endif
             }
         }
+
+        public void AddTracked<T>(T item) where T : new()
+        {
+            
+        }
+
+        public void RemoveTracked<T>()
+        {
+            
+        }
+
+        public void LoadTracked()
+        {
+            
+        }
+
+        public void SaveTracked()
+        {
+            
+        }
     }
 }
