@@ -4,7 +4,7 @@
     {
         public string GetKey<T>()
         {
-            return "";
+            return typeof(T).Name;
         }
     }
 }
