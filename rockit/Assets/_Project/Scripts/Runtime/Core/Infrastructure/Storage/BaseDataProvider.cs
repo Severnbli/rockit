@@ -6,19 +6,19 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Storage
 {
     public class BaseDataProvider : IDataProvider
     {
-        private readonly IDataStorageKeyProvider _keyProvider;
-        private readonly IDataStorage _dataStorage;
+        protected readonly IDataStorageKeyProvider KeyProvider;
+        protected readonly IDataStorage DataStorage;
 
         public BaseDataProvider(IDataStorageKeyProvider keyProvider, IDataStorage dataStorage)
         {
-            _keyProvider = keyProvider;
-            _dataStorage = dataStorage;
+            KeyProvider = keyProvider;
+            DataStorage = dataStorage;
         }
 
         public T Load<T>()  where T : new()
         {
-            var key = _keyProvider.GetKey<T>();
-            var data = _dataStorage.GetData(key);
+            var key = KeyProvider.GetKey<T>();
+            var data = DataStorage.GetData(key);
 
             var item = default(T);
             
@@ -40,12 +40,12 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Storage
 
         public void Save<T>(T item)
         {
-            var key = _keyProvider.GetKey<T>();
+            var key = KeyProvider.GetKey<T>();
             
             try
             {
                 var data = JsonConvert.SerializeObject(item);
-                _dataStorage.PutData(key, data);
+                DataStorage.PutData(key, data);
             }
             catch (Exception e)
             {
