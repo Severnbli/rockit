@@ -55,12 +55,12 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Storage
             }
         }
 
-        public void LoadTracked()
+        public virtual void LoadTracked()
         {
             
         }
 
-        public void SaveTracked()
+        public virtual void SaveTracked()
         {
             
         }
