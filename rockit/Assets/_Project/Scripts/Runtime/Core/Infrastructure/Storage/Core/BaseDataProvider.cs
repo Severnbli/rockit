@@ -1,6 +1,6 @@
 ﻿using System;
+using _Project.Scripts.Runtime.Shared.Utils;
 using Newtonsoft.Json;
-using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Core.Infrastructure.Storage.Core
 {
@@ -28,9 +28,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Storage.Core
             }
             catch (Exception e)
             {
-#if DEBUG
-                Debug.Log($"Cannot load data of type \"{typeof(T).Name}\" with \"{key}\" key: {e.Message}");
-#endif
+                LogUtils.LogWarning($"Cannot load data of type \"{typeof(T).Name}\" with \"{key}\" key: {e.Message}");
                 
                 item ??= new T();
             }
@@ -49,9 +47,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Storage.Core
             }
             catch (Exception e)
             {
-#if DEBUG
-                Debug.Log($"Cannot save data of type \"{typeof(T).Name}\" with \"{key}\" key: {e.Message}");
-#endif
+                LogUtils.LogWarning($"Cannot save data of type \"{typeof(T).Name}\" with \"{key}\" key: {e.Message}");
             }
         }
 
