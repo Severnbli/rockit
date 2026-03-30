@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using Newtonsoft.Json;
 using UnityEngine;
 
@@ -9,7 +8,6 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Storage
     {
         protected readonly IDataStorageKeyProvider KeyProvider;
         protected readonly IDataStorage DataStorage;
-        protected readonly Dictionary<Type, object> TrackedData = new ();
 
         public BaseDataProvider(IDataStorageKeyProvider keyProvider, IDataStorage dataStorage)
         {
