@@ -2,7 +2,7 @@
 {
     public interface IDataStorage
     {
-        void Load<T>();
+        T Load<T>() where T : new();
         void Save<T>(T item);
     }
 }

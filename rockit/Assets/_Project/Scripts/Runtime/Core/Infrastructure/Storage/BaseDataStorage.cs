@@ -9,9 +9,9 @@
             _keyProvider = keyProvider;
         }
 
-        public void Load<T>()
+        public T Load<T>()  where T : new()
         {
-            
+            return new T();
         }
 
         public void Save<T>(T item)
