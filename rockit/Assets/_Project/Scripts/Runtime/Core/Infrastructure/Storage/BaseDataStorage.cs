@@ -1,4 +1,6 @@
-﻿using Newtonsoft.Json;
+﻿using System;
+using Newtonsoft.Json;
+using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Core.Infrastructure.Storage
 {
@@ -17,9 +19,21 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Storage
         {
             var key = _keyProvider.GetKey<T>();
             var data = _dataProvider.GetData(key);
+
+            var item = default(T);
             
-            var item = JsonConvert.DeserializeObject<T>(data);
-            item ??= new T();
+            try
+            {
+                item = JsonConvert.DeserializeObject<T>(data);
+            }
+            catch (Exception e)
+            {
+#if DEBUG
+                Debug.Log($"Cannot load data of type \"{typeof(T).Name}\" by \"{key}\" key: {e.Message}");
+#endif
+                
+                item ??= new T();
+            }
             
             return item;
         }
