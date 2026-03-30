@@ -40,7 +40,19 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Storage
 
         public void Save<T>(T item)
         {
+            var key = _keyProvider.GetKey<T>();
             
+            try
+            {
+                var data = JsonConvert.SerializeObject(item);
+                _dataProvider.PutData(key, data);
+            }
+            catch (Exception e)
+            {
+#if DEBUG
+                Debug.Log($"Cannot save data of type \"{typeof(T).Name}\" with \"{key}\" key: {e.Message}");
+#endif
+            }
         }
     }
 }
