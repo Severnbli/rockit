@@ -2,7 +2,7 @@
 
 namespace _Project.Scripts.Runtime.Core.Infrastructure.Storage
 {
-    public class PlayerPrefsDataProvider : IDataProvider
+    public class PlayerPrefsDataStorage : IDataStorage
     {
         public string GetData(string key)
         {
