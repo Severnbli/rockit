@@ -3,5 +3,6 @@
     public interface IDataProvider
     {
         string GetData(string key);
+        void PutData(string key, string data);
     }
 }

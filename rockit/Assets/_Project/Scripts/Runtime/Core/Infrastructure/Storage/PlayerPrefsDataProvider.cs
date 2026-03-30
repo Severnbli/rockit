@@ -8,5 +8,10 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Storage
         {
             return PlayerPrefs.GetString(key);
         }
+
+        public void PutData(string key, string data)
+        {
+            
+        }
     }
 }
