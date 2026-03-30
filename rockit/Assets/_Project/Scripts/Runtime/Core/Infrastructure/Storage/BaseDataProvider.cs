@@ -57,24 +57,6 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Storage
             }
         }
 
-        public void AddTracked<T>(T item) where T : new()
-        {
-            var added = TrackedData.TryAdd(typeof(T), item);
-            
-#if DEBUG
-            Debug.Log($"Detect duplication of tracked data by type {typeof(T).Name}");
-#endif
-        }
-
-        public void RemoveTracked<T>()
-        {
-            var added = TrackedData.Remove(typeof(T));
-            
-#if DEBUG
-            Debug.Log($"Detect removing of not existing tracked data by type {typeof(T).Name}");
-#endif
-        }
-
         public void LoadTracked()
         {
             
