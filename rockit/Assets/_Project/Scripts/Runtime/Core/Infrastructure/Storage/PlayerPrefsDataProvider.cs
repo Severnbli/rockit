@@ -1,0 +1,10 @@
+﻿namespace _Project.Scripts.Runtime.Core.Infrastructure.Storage
+{
+    public class PlayerPrefsDataProvider : IDataProvider
+    {
+        public string GetData(string key)
+        {
+            return string.Empty;
+        }
+    }
+}
