@@ -11,7 +11,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Storage
 
         public void PutData(string key, string data)
         {
-            
+            PlayerPrefs.SetString(key, data);
         }
     }
 }
