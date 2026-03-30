@@ -55,6 +55,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
             Container.Bind<ProtoWorld>().FromInstance(World).AsSingle();
             Container.Bind<EcsSystems>().FromInstance(Systems).AsSingle();
             Container.Bind<MonoEngine>().FromNewComponentOn(gameObject).AsSingle().NonLazy();
+            Container.Bind<IDomainCancellationTokenProvider>().To<MonoEngineCancellationTokenProvider>().AsSingle();
             
             RegisterBindings();
             RegisterModules();
