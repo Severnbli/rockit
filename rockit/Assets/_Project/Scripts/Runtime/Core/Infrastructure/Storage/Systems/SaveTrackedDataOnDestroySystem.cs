@@ -14,7 +14,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Storage.Systems
 
         public void Destroy()
         {
-            
+            _dataProvider.SaveTracked();
         }
     }
 }
