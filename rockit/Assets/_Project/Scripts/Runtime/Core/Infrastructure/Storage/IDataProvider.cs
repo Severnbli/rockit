@@ -2,7 +2,7 @@
 {
     public interface IDataProvider
     {
-        string GetData(string key);
-        void PutData(string key, string data);
+        T Load<T>() where T : new();
+        void Save<T>(T item);
     }
 }

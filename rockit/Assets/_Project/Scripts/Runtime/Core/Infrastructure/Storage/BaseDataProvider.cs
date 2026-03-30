@@ -4,21 +4,21 @@ using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Core.Infrastructure.Storage
 {
-    public class BaseDataStorage : IDataStorage
+    public class BaseDataProvider : IDataProvider
     {
         private readonly IDataStorageKeyProvider _keyProvider;
-        private readonly IDataProvider _dataProvider;
+        private readonly IDataStorage _dataStorage;
 
-        public BaseDataStorage(IDataStorageKeyProvider keyProvider, IDataProvider dataProvider)
+        public BaseDataProvider(IDataStorageKeyProvider keyProvider, IDataStorage dataStorage)
         {
             _keyProvider = keyProvider;
-            _dataProvider = dataProvider;
+            _dataStorage = dataStorage;
         }
 
         public T Load<T>()  where T : new()
         {
             var key = _keyProvider.GetKey<T>();
-            var data = _dataProvider.GetData(key);
+            var data = _dataStorage.GetData(key);
 
             var item = default(T);
             
@@ -45,7 +45,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Storage
             try
             {
                 var data = JsonConvert.SerializeObject(item);
-                _dataProvider.PutData(key, data);
+                _dataStorage.PutData(key, data);
             }
             catch (Exception e)
             {
