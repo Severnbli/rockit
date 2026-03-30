@@ -1,10 +1,12 @@
-﻿namespace _Project.Scripts.Runtime.Core.Infrastructure.Storage
+﻿using UnityEngine;
+
+namespace _Project.Scripts.Runtime.Core.Infrastructure.Storage
 {
     public class PlayerPrefsDataProvider : IDataProvider
     {
         public string GetData(string key)
         {
-            return string.Empty;
+            return PlayerPrefs.GetString(key);
         }
     }
 }
