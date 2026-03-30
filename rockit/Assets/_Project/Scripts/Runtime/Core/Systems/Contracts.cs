@@ -1,4 +1,4 @@
-﻿namespace _Project.Scripts.Runtime.Core
+﻿namespace _Project.Scripts.Runtime.Core.Systems
 {
     public static class Contracts
     {
