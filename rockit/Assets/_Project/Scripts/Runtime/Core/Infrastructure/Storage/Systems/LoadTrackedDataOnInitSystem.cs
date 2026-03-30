@@ -14,7 +14,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Storage.Systems
 
         public void Init(IProtoSystems systems)
         {
-            
+            _dataProvider.LoadTracked();
         }
     }
 }
