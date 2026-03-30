@@ -1,10 +1,8 @@
-﻿using Cysharp.Threading.Tasks;
-
-namespace _Project.Scripts.Runtime.Core.Infrastructure.Storage
+﻿namespace _Project.Scripts.Runtime.Core.Infrastructure.Storage
 {
     public interface IDataStorage
     {
-        UniTask Load<T>();
-        UniTask Save<T>(T item);
+        void Load<T>();
+        void Save<T>(T item);
     }
 }
