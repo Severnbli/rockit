@@ -1,5 +1,6 @@
 ﻿using System.Threading;
 using Cysharp.Threading.Tasks;
+using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Core.Infrastructure.Storage
 {
@@ -14,12 +15,12 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Storage
             _ct = ct;
         }
 
-        public async UniTask Load<T>()
+        public void Load<T>()
         {
             
         }
 
-        public async UniTask Save<T>(T item)
+        public void Save<T>(T item)
         {
             
         }
