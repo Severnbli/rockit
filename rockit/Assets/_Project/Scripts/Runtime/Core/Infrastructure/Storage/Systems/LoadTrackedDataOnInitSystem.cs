@@ -1,9 +1,17 @@
-﻿using Leopotam.EcsProto;
+﻿using _Project.Scripts.Runtime.Core.Infrastructure.Storage.Core;
+using Leopotam.EcsProto;
 
 namespace _Project.Scripts.Runtime.Core.Infrastructure.Storage.Systems
 {
     public class LoadTrackedDataOnInitSystem : IProtoInitSystem
     {
+        private IDataProvider _dataProvider;
+
+        public LoadTrackedDataOnInitSystem(IDataProvider dataProvider)
+        {
+            _dataProvider = dataProvider;
+        }
+
         public void Init(IProtoSystems systems)
         {
             
