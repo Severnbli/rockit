@@ -3,16 +3,16 @@ using _Project.Scripts.Runtime.Core.Engine;
 
 namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
 {
-    public class MonoEngineCancellationTokenSourceProvider : IDomainCancellationTokenSourceProvider
+    public class MonoEngineCancellationTokenProvider : IDomainCancellationTokenProvider
     {
         private MonoEngine _monoEngine;
 
-        public MonoEngineCancellationTokenSourceProvider(MonoEngine monoEngine)
+        public MonoEngineCancellationTokenProvider(MonoEngine monoEngine)
         {
             _monoEngine = monoEngine;
         }
 
-        public CancellationTokenSource GetCancellationTokenSource()
+        public CancellationToken GetCancellationToken()
         {
             return null;
         }
