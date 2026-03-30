@@ -14,7 +14,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
 
         public CancellationToken GetCancellationToken()
         {
-            return null;
+            return _monoEngine.destroyCancellationToken;
         }
     }
 }
