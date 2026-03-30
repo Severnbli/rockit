@@ -1,4 +1,6 @@
-﻿namespace _Project.Scripts.Runtime.Core.Infrastructure.Storage
+﻿using Newtonsoft.Json;
+
+namespace _Project.Scripts.Runtime.Core.Infrastructure.Storage
 {
     public class BaseDataStorage : IDataStorage
     {
@@ -13,7 +15,13 @@
 
         public T Load<T>()  where T : new()
         {
-            return new T();
+            var key = _keyProvider.GetKey<T>();
+            var data = _dataProvider.GetData(key);
+            
+            var item = JsonConvert.DeserializeObject<T>(data);
+            item ??= new T();
+            
+            return item;
         }
 
         public void Save<T>(T item)
