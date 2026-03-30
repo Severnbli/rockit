@@ -2,8 +2,8 @@
 
 namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
 {
-    public interface IDomainCancellationTokenSourceProvider
+    public interface IDomainCancellationTokenProvider
     {
-        CancellationTokenSource GetCancellationTokenSource();
+        CancellationToken GetCancellationToken();
     }
 }
