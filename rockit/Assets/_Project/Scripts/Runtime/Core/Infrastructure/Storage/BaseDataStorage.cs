@@ -3,10 +3,12 @@
     public class BaseDataStorage : IDataStorage
     {
         private readonly IDataStorageKeyProvider _keyProvider;
+        private readonly IDataProvider _dataProvider;
 
-        public BaseDataStorage(IDataStorageKeyProvider keyProvider)
+        public BaseDataStorage(IDataStorageKeyProvider keyProvider, IDataProvider dataProvider)
         {
             _keyProvider = keyProvider;
+            _dataProvider = dataProvider;
         }
 
         public T Load<T>()  where T : new()
