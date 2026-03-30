@@ -29,7 +29,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Storage
             catch (Exception e)
             {
 #if DEBUG
-                Debug.Log($"Cannot load data of type \"{typeof(T).Name}\" by \"{key}\" key: {e.Message}");
+                Debug.Log($"Cannot load data of type \"{typeof(T).Name}\" with \"{key}\" key: {e.Message}");
 #endif
                 
                 item ??= new T();
