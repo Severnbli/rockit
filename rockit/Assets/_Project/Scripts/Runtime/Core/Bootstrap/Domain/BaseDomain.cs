@@ -4,12 +4,12 @@ using _Project.Scripts.Runtime.Core.Bootstrap.Modules;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure;
 using _Project.Scripts.Runtime.Core.Engine;
 using _Project.Scripts.Runtime.Core.Systems;
+using _Project.Scripts.Runtime.Shared.Utils;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 using Leopotam.EcsProto.Unity;
 using Leopotam.EcsProto.Unity.Physics2D;
 using Leopotam.EcsProto.Unity.Ugui;
-using UnityEngine;
 using Zenject;
 
 namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
@@ -68,9 +68,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
         {
             if (!ModuleInstallers.Add(typeof(T)))
             {
-#if DEBUG
-                Debug.LogWarning($"Module {typeof(T).Name} already registered");
-#endif
+                LogUtils.Log($"Module {typeof(T).Name} already registered");
                 
                 return false;
             }
