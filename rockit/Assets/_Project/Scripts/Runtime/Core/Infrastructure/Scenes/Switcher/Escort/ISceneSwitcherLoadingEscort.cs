@@ -1,4 +1,4 @@
-﻿using System.ComponentModel;
+﻿using UnityEngine;
 using Cysharp.Threading.Tasks;
 
 namespace _Project.Scripts.Runtime.Core.Infrastructure.Scenes.Switcher.Escort
