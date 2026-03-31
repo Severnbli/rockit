@@ -6,6 +6,7 @@ namespace _Project.Scripts.Runtime.Shared.Extensions
     public static class SceneSwitcherServiceExtensions
     {
         private const float Progress01Progress0100Multiplier = 100f;
+        private const float DefaultProgress = 0f;
 
         public static void SetProgress(this SceneSwitcherService service, AsyncOperation operation)
         {
@@ -17,8 +18,8 @@ namespace _Project.Scripts.Runtime.Shared.Extensions
 
         public static void ResetProgress(this SceneSwitcherService service)
         {
-            service.Progress01 = 0;
-            service.Progress0100 = 0;
+            service.Progress01 = DefaultProgress;
+            service.Progress0100 = DefaultProgress;
         }
     }
 }
