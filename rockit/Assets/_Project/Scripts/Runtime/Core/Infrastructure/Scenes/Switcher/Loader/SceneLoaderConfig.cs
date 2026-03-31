@@ -2,7 +2,7 @@
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace _Project.Scripts.Runtime.Core.Infrastructure.Scenes.Switcher
+namespace _Project.Scripts.Runtime.Core.Infrastructure.Scenes.Switcher.Loader
 {
     public class SceneLoaderConfig : ScriptableObjectAutoInstaller<SceneLoaderConfig>
     {
