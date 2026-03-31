@@ -8,12 +8,14 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Scenes.Switcher
     {
         private CancellationToken _ct;
         private SceneSwitcherConfig _config;
+        private SceneSwitcherService _service;
         private AsyncOperation _loadingOperation;
 
-        public SceneSwitcher(CancellationToken ct, SceneSwitcherConfig config)
+        public SceneSwitcher(CancellationToken ct, SceneSwitcherConfig config, SceneSwitcherService service)
         {
             _ct = ct;
             _config = config;
+            _service = service;
         }
 
         public async UniTask SwitchScene(string sceneName)
