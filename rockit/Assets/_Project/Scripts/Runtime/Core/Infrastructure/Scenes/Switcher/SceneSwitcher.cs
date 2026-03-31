@@ -48,8 +48,6 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Scenes.Switcher
 
         private async UniTask EscortSceneLoading()
         {
-            _service.Reset();
-            
             while (!_loadingOperation.isDone)
             {
                 if (_ct.IsCancellationRequested) return;
@@ -60,8 +58,6 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Scenes.Switcher
                 
                 await UniTask.Yield();
             }
-            
-            _service.CompleteLoading();
         }
     }
 }
