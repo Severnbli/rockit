@@ -35,7 +35,8 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Scenes.Switcher
             await LoadSceneWithSimulation();
             
             _service.CompleteLoading();
-            _loadingOperation.allowSceneActivation = switchOnLoad;
+            
+            if (switchOnLoad) TrySwitchToLoadedScene();
         }
 
         public bool TrySwitchToLoadedScene()
