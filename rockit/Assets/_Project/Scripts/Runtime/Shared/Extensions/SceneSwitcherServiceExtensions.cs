@@ -7,6 +7,7 @@ namespace _Project.Scripts.Runtime.Shared.Extensions
     {
         private const float Progress01Progress0100Multiplier = 100f;
         private const float DefaultProgress = 0f;
+        private const float Progress01MaxValue = 1f;
 
         public static void SetProgress(this SceneSwitcherService service, AsyncOperation operation)
         {
