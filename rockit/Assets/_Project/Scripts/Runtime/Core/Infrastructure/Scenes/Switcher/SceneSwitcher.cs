@@ -60,5 +60,14 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Scenes.Switcher
                 await UniTask.Yield();
             }
         }
+
+        private async UniTask LoadSceneWithSimulation()
+        {
+            var spentTime = await _timeService.GetFuncSpentTime(EscortSceneLoading);
+            
+            if (!_config.SimulateLoading) return;
+
+            await UniTaskUtils.WaitForRemainingTime(spentTime, _config.SimulationLoadingDuration, _ct);
+        }
     }
 }
