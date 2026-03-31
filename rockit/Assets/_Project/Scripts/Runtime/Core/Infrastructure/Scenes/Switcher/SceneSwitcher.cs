@@ -1,4 +1,5 @@
-﻿using Cysharp.Threading.Tasks;
+﻿using _Project.Scripts.Runtime.Core.Infrastructure.Scenes.Switcher.Loader;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Core.Infrastructure.Scenes.Switcher
@@ -6,11 +7,13 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Scenes.Switcher
     public class SceneSwitcher : ISceneSwitcher
     {
         private readonly SceneSwitcherService _service;
+        private readonly ISceneLoader _loader;
         private AsyncOperation _loadingOperation;
 
-        public SceneSwitcher(SceneSwitcherService service)
+        public SceneSwitcher(SceneSwitcherService service, ISceneLoader loader)
         {
             _service = service;
+            _loader = loader;
         }
 
         public async UniTask SwitchScene(string sceneName, bool switchOnLoad = true)
