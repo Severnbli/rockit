@@ -1,6 +1,8 @@
 ﻿using System.Threading;
 using _Project.Scripts.Runtime.Core.Infrastructure.Scenes.Switcher.Escort;
 using _Project.Scripts.Runtime.Core.Infrastructure.Time.Services;
+using _Project.Scripts.Runtime.Shared.Extensions;
+using _Project.Scripts.Runtime.Shared.Utils;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
@@ -27,6 +29,15 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Scenes.Switcher.Loader
         public async UniTask<bool> TryLoadScene(string sceneName, AsyncOperation loadingOperation)
         {
             await UniTask.CompletedTask;
+        }
+
+        private async UniTask LoadScene(AsyncOperation operation)
+        {
+            var spentTime = await _timeService.GetUniTaskSpentTime(() => _loadingEscort.EscortLoading(operation));
+            
+            if (!_config.SimulateLoading) return;
+
+            await UniTaskUtils.WaitForRemainingTime(spentTime, _config.SimulationLoadingDuration, _ct);
         }
     }
 }
