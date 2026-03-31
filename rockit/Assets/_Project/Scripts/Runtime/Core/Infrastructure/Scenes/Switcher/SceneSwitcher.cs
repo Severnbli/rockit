@@ -38,6 +38,11 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Scenes.Switcher
             _loadingOperation.allowSceneActivation = switchOnLoad;
         }
 
+        public bool TrySwitchToLoadedScene()
+        {
+            return false;
+        }
+
         private bool TryStartLoading(string sceneName, out AsyncOperation operation)
         {
             operation = null;
