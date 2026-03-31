@@ -8,9 +8,9 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Scenes.Switcher
 {
     public class SceneSwitcher : ISceneSwitcher
     {
-        private CancellationToken _ct;
-        private SceneSwitcherConfig _config;
-        private SceneSwitcherService _service;
+        private readonly CancellationToken _ct;
+        private readonly SceneSwitcherConfig _config;
+        private readonly SceneSwitcherService _service;
         private AsyncOperation _loadingOperation;
 
         public SceneSwitcher(CancellationToken ct, SceneSwitcherConfig config, SceneSwitcherService service)
