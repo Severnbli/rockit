@@ -42,5 +42,23 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Scenes.Switcher
             LogUtils.LogError($"Scene {sceneName} failed to load");
             return false;
         }
+
+        private async UniTask EscortSceneLoading()
+        {
+            _service.Reset();
+            
+            while (!_loadingOperation.isDone)
+            {
+                if (_ct.IsCancellationRequested) return;
+                
+                _service.SetProgress(_loadingOperation);
+                
+                if (_loadingOperation.Completed()) break;
+                
+                await UniTask.Yield();
+            }
+            
+            _service.CompleteLoading();
+        }
     }
 }
