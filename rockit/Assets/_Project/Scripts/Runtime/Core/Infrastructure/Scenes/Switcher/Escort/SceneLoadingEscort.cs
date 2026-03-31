@@ -14,7 +14,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Scenes.Switcher.Escort
             _ct = ct;
         }
 
-        public async UniTask EscortLoading(AsyncOperation operation, SceneSwitcherService service)
+        public async UniTask EscortLoading(AsyncOperation operation)
         {
             if (operation is null) return;
             
