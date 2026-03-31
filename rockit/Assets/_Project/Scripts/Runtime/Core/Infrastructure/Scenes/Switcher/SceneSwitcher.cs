@@ -26,7 +26,16 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Scenes.Switcher
 
         public async UniTask LoadScene(string sceneName, bool switchOnLoad = true)
         {
-            await UniTask.CompletedTask;
+            if (!TryStartLoading(sceneName, out var operation)) return;
+            _loadingOperation = operation;
+
+            _loadingOperation.allowSceneActivation = false;
+            _service.Reset();
+            
+            await LoadSceneWithSimulation();
+            
+            _service.CompleteLoading();
+            _loadingOperation.allowSceneActivation = switchOnLoad;
         }
 
         private bool TryStartLoading(string sceneName, out AsyncOperation operation)
