@@ -24,7 +24,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Scenes.Switcher.Escort
             {
                 if (_ct.IsCancellationRequested) return;
                 
-                service.SetProgress(operation);
+                _service.SetProgress(operation);
                 
                 if (operation.Completed()) break;
                 
