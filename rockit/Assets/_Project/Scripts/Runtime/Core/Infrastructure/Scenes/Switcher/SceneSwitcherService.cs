@@ -3,5 +3,6 @@
     public sealed class SceneSwitcherService
     {
         public float Progress01;
+        public float Progress0100;
     }
 }
