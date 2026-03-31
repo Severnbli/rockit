@@ -5,11 +5,11 @@ using Cysharp.Threading.Tasks;
 
 namespace _Project.Scripts.Runtime.Core.Infrastructure.Scenes.Switcher.Escort
 {
-    public class SceneSwitcherLoadingEscort : ISceneSwitcherLoadingEscort
+    public class SceneLoadingEscort : ISceneLoadingEscort
     {
         private CancellationToken _ct;
 
-        public SceneSwitcherLoadingEscort(CancellationToken ct)
+        public SceneLoadingEscort(CancellationToken ct)
         {
             _ct = ct;
         }
