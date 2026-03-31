@@ -21,6 +21,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Scenes.Switcher
             _ct = ct;
             _config = config;
             _service = service;
+            _timeService = timeService;
         }
 
         public async UniTask LoadScene(string sceneName, bool switchOnLoad = true)
