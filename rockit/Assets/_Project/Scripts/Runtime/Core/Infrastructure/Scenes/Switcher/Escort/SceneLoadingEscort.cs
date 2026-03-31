@@ -7,7 +7,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Scenes.Switcher.Escort
 {
     public class SceneLoadingEscort : ISceneLoadingEscort
     {
-        private CancellationToken _ct;
+        private readonly CancellationToken _ct;
 
         public SceneLoadingEscort(CancellationToken ct)
         {
