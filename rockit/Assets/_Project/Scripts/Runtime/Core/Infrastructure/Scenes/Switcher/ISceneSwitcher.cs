@@ -4,6 +4,6 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Scenes.Switcher
 {
     public interface ISceneSwitcher
     {
-        UniTask SwitchScene(string sceneName);
+        UniTask LoadScene(string sceneName);
     }
 }
