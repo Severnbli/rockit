@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Threading;
+using _Project.Scripts.Runtime.Shared.Extensions;
 using Cysharp.Threading.Tasks;
 
 namespace _Project.Scripts.Runtime.Core.Infrastructure.Scenes.Switcher.Escort
@@ -15,7 +16,18 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Scenes.Switcher.Escort
 
         public async UniTask EscortLoading(AsyncOperation operation, SceneSwitcherService service)
         {
-            await UniTask.CompletedTask;
+            if (operation is null) return;
+            
+            while (!operation.isDone)
+            {
+                if (_ct.IsCancellationRequested) return;
+                
+                service.SetProgress(operation);
+                
+                if (operation.Completed()) break;
+                
+                await UniTask.Yield();
+            }
         }
     }
 }
