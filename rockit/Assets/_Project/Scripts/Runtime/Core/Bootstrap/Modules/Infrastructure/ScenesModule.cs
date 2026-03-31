@@ -1,4 +1,5 @@
 ﻿using _Project.Scripts.Runtime.Core.Bootstrap.Domain;
+using _Project.Scripts.Runtime.Core.Infrastructure.Scenes.Switcher;
 
 namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure
 {
@@ -6,6 +7,13 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure
     {
         public ScenesModule(IDomain domain) : base(domain)
         {
+        }
+
+        protected override void BindServices()
+        {
+            base.BindServices();
+            
+            BindService<SceneSwitcherService>();
         }
     }
 }
