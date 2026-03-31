@@ -4,5 +4,6 @@
     {
         public float Progress01;
         public float Progress0100;
+        public bool Loaded;
     }
 }
