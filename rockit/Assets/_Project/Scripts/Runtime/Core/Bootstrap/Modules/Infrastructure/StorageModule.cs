@@ -14,7 +14,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure
         {
             base.RegisterBindings();
             
-            Container.BindInterfacesAndSelfTo<TypeNameDataStorageKeyProvider>().AsSingle();
+            Container.BindInterfacesTo<TypeNameDataStorageKeyProvider>().AsSingle();
             Container.BindInterfacesAndSelfTo<PlayerPrefsDataStorage>().AsSingle();
             Container.BindInterfacesAndSelfTo<DataProvider>().AsSingle();
         }
