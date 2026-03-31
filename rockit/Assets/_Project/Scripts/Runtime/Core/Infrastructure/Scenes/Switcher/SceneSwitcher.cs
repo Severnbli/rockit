@@ -83,7 +83,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Scenes.Switcher
 
         private async UniTask LoadSceneWithSimulation()
         {
-            var spentTime = await _timeService.GetFuncSpentTime(EscortSceneLoading);
+            var spentTime = await _timeService.GetUniTaskSpentTime(EscortSceneLoading);
             
             if (!_config.SimulateLoading) return;
 
