@@ -35,5 +35,11 @@ namespace _Project.Scripts.Runtime.Shared.Extensions
             service.ResetProgress();
             service.Loaded = false;
         }
+
+        public static void CompleteLoading(this SceneSwitcherService service)
+        {
+            service.SetMaxProgress();
+            service.Loaded = true;
+        }
     }
 }
