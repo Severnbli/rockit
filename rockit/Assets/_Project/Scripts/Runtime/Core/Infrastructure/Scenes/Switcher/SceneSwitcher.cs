@@ -1,6 +1,8 @@
 ﻿using System.Threading;
+using _Project.Scripts.Runtime.Shared.Extensions;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace _Project.Scripts.Runtime.Core.Infrastructure.Scenes.Switcher
 {
@@ -20,7 +22,27 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Scenes.Switcher
 
         public async UniTask SwitchScene(string sceneName)
         {
-            await UniTask.CompletedTask;
+            if (_loadingOperation is not null) return;
+            
+            _loadingOperation = SceneManager.LoadSceneAsync(sceneName);
+            if (_loadingOperation is null) return;
+            
+            _loadingOperation.allowSceneActivation = false;
+
+            while (!_loadingOperation.isDone)
+            {
+                if (_ct.IsCancellationRequested) return;
+                
+                _service.SetProgress(_loadingOperation);
+
+                if (_loadingOperation.Completed()) break;
+                
+                await UniTask.Yield();
+            }
+            
+            _service.SetMaxProgress();
+            _service.Loaded = true;
+            _loadingOperation.allowSceneActivation = true;
         }
     }
 }
