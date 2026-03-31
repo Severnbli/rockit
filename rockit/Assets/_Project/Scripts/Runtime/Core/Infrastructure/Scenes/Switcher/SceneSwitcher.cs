@@ -25,7 +25,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Scenes.Switcher
             _timeService = timeService;
         }
 
-        public async UniTask LoadScene(string sceneName, bool switchOnLoad = true)
+        public async UniTask SwitchScene(string sceneName, bool switchOnLoad = true)
         {
             if (!TryStartLoading(sceneName, out var operation)) return;
             _loadingOperation = operation;
