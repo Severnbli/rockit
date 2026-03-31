@@ -1,4 +1,5 @@
 ﻿using _Project.Scripts.Modules.Zenject;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Core.Infrastructure.Scenes.Switcher
@@ -6,7 +7,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Scenes.Switcher
     public class SceneSwitcherConfig : ScriptableObjectAutoInstaller<SceneSwitcherConfig>
     {
         [SerializeField] private bool _simulateLoading = false;
-        [SerializeField] private float _simulationLoadingDuration = 2f;
+        [SerializeField, ShowIf(nameof(SimulateLoading))] private float _simulationLoadingDuration = 2f;
         
         public bool SimulateLoading => _simulateLoading;
         public float SimulationLoadingDuration => _simulationLoadingDuration;
