@@ -14,5 +14,11 @@ namespace _Project.Scripts.Runtime.Shared.Extensions
             service.Progress01 = operation.progress;
             service.Progress0100 = service.Progress01 * Progress01Progress0100Multiplier;
         }
+
+        public static void ResetProgress(this SceneSwitcherService service)
+        {
+            service.Progress01 = 0;
+            service.Progress0100 = 0;
+        }
     }
 }
