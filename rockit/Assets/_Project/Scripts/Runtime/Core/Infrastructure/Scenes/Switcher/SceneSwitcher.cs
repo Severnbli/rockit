@@ -1,4 +1,5 @@
 ﻿using System.Threading;
+using _Project.Scripts.Runtime.Core.Infrastructure.Time.Services;
 using _Project.Scripts.Runtime.Shared.Extensions;
 using _Project.Scripts.Runtime.Shared.Utils;
 using Cysharp.Threading.Tasks;
@@ -12,9 +13,10 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Scenes.Switcher
         private readonly CancellationToken _ct;
         private readonly SceneSwitcherConfig _config;
         private readonly SceneSwitcherService _service;
+        private readonly TimeService _timeService;
         private AsyncOperation _loadingOperation;
 
-        public SceneSwitcher(CancellationToken ct, SceneSwitcherConfig config, SceneSwitcherService service)
+        public SceneSwitcher(CancellationToken ct, SceneSwitcherConfig config, SceneSwitcherService service, TimeService timeService)
         {
             _ct = ct;
             _config = config;
