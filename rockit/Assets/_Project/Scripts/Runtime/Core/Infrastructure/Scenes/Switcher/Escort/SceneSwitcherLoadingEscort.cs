@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using Cysharp.Threading.Tasks;
 
-namespace _Project.Scripts.Runtime.Core.Infrastructure.Scenes.Switcher
+namespace _Project.Scripts.Runtime.Core.Infrastructure.Scenes.Switcher.Escort
 {
     public class SceneSwitcherLoadingEscort : ISceneSwitcherLoadingEscort
     {
