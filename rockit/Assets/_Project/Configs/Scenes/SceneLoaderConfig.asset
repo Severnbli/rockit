@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 64d340fd08c34338aca7165a9257bba7, type: 3}
-  m_Name: SceneSwitcherConfig
+  m_Name: SceneLoaderConfig
   m_EditorClassIdentifier: Runtime::_Project.Scripts.Runtime.Core.Infrastructure.Scenes.Switcher.SceneSwitcherConfig
   _simulateLoading: 0
   _simulationLoadingDuration: 2
