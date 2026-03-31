@@ -1,5 +1,6 @@
 ﻿using _Project.Scripts.Runtime.Core.Bootstrap.Domain;
 using _Project.Scripts.Runtime.Core.Infrastructure.Scenes.Switcher;
+using _Project.Scripts.Runtime.Core.Infrastructure.Scenes.Switcher.Escort;
 
 namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure
 {
@@ -20,6 +21,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure
         {
             base.RegisterBindings();
 
+            Container.BindInterfacesTo<SceneLoadingEscort>().AsSingle();
             Container.BindInterfacesTo<SceneSwitcher>().AsSingle();
         }
     }
