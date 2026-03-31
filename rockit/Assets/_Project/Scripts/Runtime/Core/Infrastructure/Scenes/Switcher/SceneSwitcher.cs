@@ -18,9 +18,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Scenes.Switcher
 
         public async UniTask SwitchScene(string sceneName, bool switchOnLoad = true)
         {
-            _loadingOperation.allowSceneActivation = false;
-
-            await UniTask.CompletedTask;
+            if (!await _loader.TryLoadScene(sceneName, _loadingOperation)) return;
             
             if (switchOnLoad) TrySwitchToLoadedScene();
         }
