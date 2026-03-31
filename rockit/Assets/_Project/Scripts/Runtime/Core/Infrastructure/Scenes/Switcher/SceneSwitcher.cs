@@ -40,7 +40,11 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Scenes.Switcher
 
         public bool TrySwitchToLoadedScene()
         {
-            return false;
+            if (_loadingOperation is null || !_service.Loaded) return false;
+            
+            _loadingOperation.allowSceneActivation = true;
+            _loadingOperation = null;
+            return true;
         }
 
         private bool TryStartLoading(string sceneName, out AsyncOperation operation)
