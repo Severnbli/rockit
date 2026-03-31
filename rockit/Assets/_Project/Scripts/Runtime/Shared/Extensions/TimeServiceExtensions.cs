@@ -6,7 +6,7 @@ namespace _Project.Scripts.Runtime.Shared.Extensions
 {
     public static class TimeServiceExtensions
     {
-        public static async UniTask<float> GetFuncSpentTime(this TimeService timeService, Func<UniTask> func)
+        public static async UniTask<float> GetUniTaskSpentTime(this TimeService timeService, Func<UniTask> func)
         {
             var startTime = timeService.UnscaledTime;
             await func();
