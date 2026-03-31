@@ -29,5 +29,11 @@ namespace _Project.Scripts.Runtime.Shared.Extensions
             service.Progress01 = Progress01MaxValue;
             service.Progress0100 = Progress0100MaxValue;
         }
+
+        public static void Reset(this SceneSwitcherService service)
+        {
+            service.ResetProgress();
+            service.Loaded = false;
+        }
     }
 }
