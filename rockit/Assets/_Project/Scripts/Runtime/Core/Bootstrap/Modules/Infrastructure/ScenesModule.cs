@@ -15,5 +15,12 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure
             
             BindService<SceneSwitcherService>();
         }
+
+        protected override void RegisterBindings()
+        {
+            base.RegisterBindings();
+
+            Container.BindInterfacesTo<SceneSwitcher>().AsSingle();
+        }
     }
 }
