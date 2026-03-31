@@ -23,5 +23,11 @@ namespace _Project.Scripts.Runtime.Shared.Extensions
             service.Progress01 = DefaultProgress;
             service.Progress0100 = DefaultProgress;
         }
+
+        public static void SetMaxProgress(this SceneSwitcherService service)
+        {
+            service.Progress01 = Progress01MaxValue;
+            service.Progress0100 = Progress0100MaxValue;
+        }
     }
 }
