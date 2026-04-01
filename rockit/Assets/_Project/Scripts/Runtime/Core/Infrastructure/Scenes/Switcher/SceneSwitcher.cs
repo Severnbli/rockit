@@ -1,4 +1,5 @@
 ﻿using _Project.Scripts.Runtime.Core.Infrastructure.Scenes.Switcher.Loader;
+using _Project.Scripts.Runtime.Shared.Utils;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
@@ -18,7 +19,14 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Scenes.Switcher
 
         public async UniTask SwitchScene(string sceneName, bool switchOnLoad = true)
         {
-            if (!await _loader.TryLoadScene(sceneName, _loadingOperation)) return;
+            if (_service.LoadStatus != SceneLoadStatus.NotLoaded)
+            {
+                LogUtils.LogWarning($"Detect start loading {sceneName} scene invocation while another loading " +
+                                    $"operation is still running");
+                return;
+            }
+            
+            _loadingOperation = await _loader.LoadScene(sceneName);
             
             if (switchOnLoad) TrySwitchToLoadedScene();
         }
