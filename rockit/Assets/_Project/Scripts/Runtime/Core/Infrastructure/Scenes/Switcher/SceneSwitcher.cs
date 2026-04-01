@@ -20,7 +20,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Scenes.Switcher
 
         public async UniTask SwitchScene(string sceneName, bool switchOnLoad = true)
         {
-            if (_service.LoadStatus != SceneLoadStatus.NotLoaded)
+            if (_loadingOperation is not null || _service.LoadStatus != SceneLoadStatus.NotLoaded)
             {
                 LogUtils.LogWarning($"Detect start loading {sceneName} scene invocation while another loading " +
                                     $"operation is still running");
