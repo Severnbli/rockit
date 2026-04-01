@@ -9,17 +9,25 @@ namespace _Project.Scripts.Tests.NonSystems.Scenes.Switcher
 {
     public class SceneSwitcherTests
     {
+        private SceneSwitcherService _switcherService;
+        private TimeService _timeService;
+        private SceneLoaderConfig _loaderConfig;
+        private CancellationTokenSource _cts;
+        private ISceneLoadingEscort _loadingEscort;
+        private ISceneLoader _loader;
+        private ISceneSwitcher _switcher;
+        
         private void OneTimeSetUp()
         {
-            var switcherService = new SceneSwitcherService();
-            var timeService = new TimeService();
-            var loaderConfig = ScriptableObject.CreateInstance<SceneLoaderConfig>();
+            _switcherService = new SceneSwitcherService();
+            _timeService = new TimeService();
+            _loaderConfig = ScriptableObject.CreateInstance<SceneLoaderConfig>();
             
-            var cts = new CancellationTokenSource();
+            _cts = new CancellationTokenSource();
             
-            var loadingEscort = new SceneLoadingEscort(cts.Token, switcherService);
-            var loader = new SceneLoader(switcherService, loadingEscort, timeService, loaderConfig, cts.Token);
-            var sceneSwitcher = new SceneSwitcher(switcherService, loader);
+            _loadingEscort = new SceneLoadingEscort(_cts.Token, _switcherService);
+            _loader = new SceneLoader(_switcherService, _loadingEscort, _timeService, _loaderConfig, _cts.Token);
+            _switcher = new SceneSwitcher(_switcherService, _loader);
         }
     }
 }
