@@ -66,5 +66,23 @@ namespace _Project.Scripts.Tests.NonSystems.Scenes.Switcher
             
             Assert.False(_switcher.TrySwitchToLoadedScene());
         }
+        
+        [Test]
+        public async Task TestUnableToLoadAnotherSceneOnOtherLoaded()
+        {
+            var startTime = Time.time;
+            await _switcher.SwitchScene(ScenesContracts.MenuScene, false);
+            var endTime = Time.time;
+            
+            var idealTime = endTime - startTime;
+            
+            startTime = Time.time;
+            await _switcher.SwitchScene(ScenesContracts.MenuScene, false);
+            endTime = Time.time;
+            
+            var estimatedTime = endTime - startTime;
+            
+            Assert.Less(estimatedTime, idealTime / 2f);
+        }
     }
 }
