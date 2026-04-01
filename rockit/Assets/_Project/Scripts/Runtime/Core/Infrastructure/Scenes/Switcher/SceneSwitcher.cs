@@ -1,4 +1,5 @@
 ﻿using _Project.Scripts.Runtime.Core.Infrastructure.Scenes.Switcher.Loader;
+using _Project.Scripts.Runtime.Shared.Extensions;
 using _Project.Scripts.Runtime.Shared.Utils;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
@@ -37,6 +38,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Scenes.Switcher
             
             _loadingOperation.allowSceneActivation = true;
             _loadingOperation = null;
+            _service.Reset();
             return true;
         }
     }
