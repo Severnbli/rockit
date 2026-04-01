@@ -55,5 +55,16 @@ namespace _Project.Scripts.Tests.NonSystems.Scenes.Switcher
 
             Assert.Greater(simulatedTime, timeout);
         }
+
+        [Test]
+        public async Task TestTrySwitchToLoadedScene()
+        {
+            Assert.False(_switcher.TrySwitchToLoadedScene());
+            
+            await _switcher.SwitchScene(ScenesContracts.MenuScene, false);
+            Assert.True(_switcher.TrySwitchToLoadedScene());
+            
+            Assert.False(_switcher.TrySwitchToLoadedScene());
+        }
     }
 }
