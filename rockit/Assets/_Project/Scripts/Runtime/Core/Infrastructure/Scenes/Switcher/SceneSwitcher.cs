@@ -25,7 +25,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Scenes.Switcher
 
         public bool TrySwitchToLoadedScene()
         {
-            if (_loadingOperation is null || !_service.Loaded) return false;
+            if (_loadingOperation is null || _service.LoadStatus != SceneLoadStatus.Loaded) return false;
             
             _loadingOperation.allowSceneActivation = true;
             _loadingOperation = null;

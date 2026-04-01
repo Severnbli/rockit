@@ -1,4 +1,5 @@
 ﻿using _Project.Scripts.Runtime.Core.Infrastructure.Scenes.Switcher;
+using _Project.Scripts.Runtime.Core.Infrastructure.Scenes.Switcher.Loader;
 using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Shared.Extensions
@@ -33,13 +34,13 @@ namespace _Project.Scripts.Runtime.Shared.Extensions
         public static void Reset(this SceneSwitcherService service)
         {
             service.ResetProgress();
-            service.Loaded = false;
+            service.LoadStatus = SceneLoadStatus.NotLoaded;
         }
 
         public static void CompleteLoading(this SceneSwitcherService service)
         {
             service.SetMaxProgress();
-            service.Loaded = true;
+            service.LoadStatus = SceneLoadStatus.Loaded;
         }
     }
 }
