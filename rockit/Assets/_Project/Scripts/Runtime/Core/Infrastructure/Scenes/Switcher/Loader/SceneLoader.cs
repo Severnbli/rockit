@@ -40,6 +40,8 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Scenes.Switcher.Loader
 
         private async UniTask LoadScene(AsyncOperation operation)
         {
+            _switcherService.LoadStatus = SceneLoadStatus.Loading;
+            
             var spentTime = await _timeService.GetUniTaskSpentTime(() => _loadingEscort.EscortLoading(operation));
             
             if (!_config.SimulateLoading) return;
