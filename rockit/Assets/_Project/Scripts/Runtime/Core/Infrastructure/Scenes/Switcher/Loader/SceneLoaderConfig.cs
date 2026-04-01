@@ -11,5 +11,12 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Scenes.Switcher.Loader
         
         public bool SimulateLoading => _simulateLoading;
         public float SimulationLoadingDuration => _simulationLoadingDuration;
+        
+#if DEBUG
+        public void SetSimulateLoading(bool simulateLoading) => _simulateLoading = simulateLoading;
+        
+        public void SetSimulateLoadingDuration(float simulateLoadingDuration) =>
+            _simulationLoadingDuration = simulateLoadingDuration;
+#endif
     }
 }
