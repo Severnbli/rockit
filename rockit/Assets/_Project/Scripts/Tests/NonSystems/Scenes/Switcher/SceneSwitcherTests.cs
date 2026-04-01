@@ -1,4 +1,6 @@
 ﻿using System.Threading;
+using System.Threading.Tasks;
+using _Project.Scripts.Runtime.Core.Infrastructure.Scenes;
 using _Project.Scripts.Runtime.Core.Infrastructure.Scenes.Switcher;
 using _Project.Scripts.Runtime.Core.Infrastructure.Scenes.Switcher.Escort;
 using _Project.Scripts.Runtime.Core.Infrastructure.Scenes.Switcher.Loader;
@@ -28,6 +30,30 @@ namespace _Project.Scripts.Tests.NonSystems.Scenes.Switcher
             _loadingEscort = new SceneLoadingEscort(_cts.Token, _switcherService);
             _loader = new SceneLoader(_switcherService, _loadingEscort, _timeService, _loaderConfig, _cts.Token);
             _switcher = new SceneSwitcher(_switcherService, _loader);
+        }
+
+        [Test]
+        public async Task TestLoadingSimulation()
+        {
+            _loaderConfig.SetSimulateLoading(false);
+            
+            var startTime = Time.time;
+            await _switcher.SwitchScene(ScenesContracts.MenuScene);
+            var endTime = Time.time;
+            
+            var idealTime = endTime - startTime;
+            
+            var timeout = idealTime * 2f;
+            _loaderConfig.SetSimulateLoading(true);
+            _loaderConfig.SetSimulateLoadingDuration(timeout);
+            
+            startTime = Time.time;
+            await _switcher.SwitchScene(ScenesContracts.MenuScene);
+            endTime = Time.time;
+            
+            var simulatedTime = endTime - startTime;
+
+            Assert.Greater(simulatedTime, timeout);
         }
     }
 }
