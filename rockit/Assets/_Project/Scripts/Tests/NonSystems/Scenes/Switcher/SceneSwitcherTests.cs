@@ -17,16 +17,14 @@ namespace _Project.Scripts.Tests.NonSystems.Scenes.Switcher
         private ISceneLoadingEscort _loadingEscort;
         private ISceneLoader _loader;
         private ISceneSwitcher _switcher;
-        
-        [OneTimeSetUp]
-        private void OneTimeSetUp()
+
+        [SetUp]
+        private void SetUp()
         {
             _switcherService = new SceneSwitcherService();
             _timeService = new TimeService();
             _loaderConfig = ScriptableObject.CreateInstance<SceneLoaderConfig>();
-            
             _cts = new CancellationTokenSource();
-            
             _loadingEscort = new SceneLoadingEscort(_cts.Token, _switcherService);
             _loader = new SceneLoader(_switcherService, _loadingEscort, _timeService, _loaderConfig, _cts.Token);
             _switcher = new SceneSwitcher(_switcherService, _loader);
