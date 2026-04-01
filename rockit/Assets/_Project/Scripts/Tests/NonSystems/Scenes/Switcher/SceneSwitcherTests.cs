@@ -19,7 +19,7 @@ namespace _Project.Scripts.Tests.NonSystems.Scenes.Switcher
         private ISceneSwitcher _switcher;
 
         [SetUp]
-        private void SetUp()
+        public void SetUp()
         {
             _switcherService = new SceneSwitcherService();
             _timeService = new TimeService();
