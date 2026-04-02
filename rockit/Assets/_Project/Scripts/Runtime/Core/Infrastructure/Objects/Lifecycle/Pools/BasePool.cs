@@ -5,7 +5,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Objects.Lifecycle.Pools
 {
     public class BasePool<T> : BaseFactory<T>, IPool<T> where T : new()
     {
-        protected readonly HashSet<T> Instances = new ();
+        protected readonly Stack<T> Instances = new ();
         
         public T Spawn()
         {
