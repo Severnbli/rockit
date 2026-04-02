@@ -22,9 +22,9 @@ namespace _Project.Scripts.Runtime.Core.Systems
             var systems = _container.Resolve<EcsSystems>();
             var solver = _container.Resolve<PausableSystemsSolver>();
             var nonPausableSystems =
-                _container.ResolveId<IProtoSystem[]>(_domain.GetDescriptor(Contracts.NonPausableSystemsId));
+                _container.ResolveId<IProtoSystem[]>(_domain.GetDescriptor(SystemsContracts.NonPausableSystemsId));
             var pausableSystems =
-                _container.ResolveId<IProtoSystem[]>(_domain.GetDescriptor(Contracts.PausableSystemsId));
+                _container.ResolveId<IProtoSystem[]>(_domain.GetDescriptor(SystemsContracts.PausableSystemsId));
             
             foreach (var system in nonPausableSystems)
             {

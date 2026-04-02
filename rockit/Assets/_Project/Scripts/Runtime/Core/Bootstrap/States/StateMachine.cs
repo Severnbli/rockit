@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using _Project.Scripts.Runtime.Core.Bootstrap.States.Project;
 using _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes;
 using _Project.Scripts.Runtime.Shared.Extensions;
+using _Project.Scripts.Runtime.Shared.Utils;
 using Cysharp.Threading.Tasks;
-using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Core.Bootstrap.States
 {
@@ -28,9 +28,8 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States
         {
             if (!SceneStates.TryGetByAssignableType(out T state) && !ProjectStates.TryGetByAssignableType(out state))
             {
-#if DEBUG
-                Debug.LogError($"Did not find state with type {typeof(T)}");
-#endif
+                LogUtils.LogError($"Did not find state with type {typeof(T)}");
+                
                 return;
             }
             
