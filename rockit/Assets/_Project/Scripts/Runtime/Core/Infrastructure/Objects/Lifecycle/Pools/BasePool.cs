@@ -19,7 +19,9 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Objects.Lifecycle.Pools
 
         protected virtual T SpawnInstance()
         {
-            return Create();
+            return Instances.TryPop(out var instance)
+                ? instance
+                : Create();
         }
         
         protected virtual void PostSpawn(T instance) {}
