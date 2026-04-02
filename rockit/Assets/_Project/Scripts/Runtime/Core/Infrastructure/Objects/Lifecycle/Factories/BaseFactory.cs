@@ -14,7 +14,7 @@
 
         protected virtual T CreateInstance()
         {
-            return default;
+            return new T();
         }
         
         protected virtual void PostCreate(T instance) {}
