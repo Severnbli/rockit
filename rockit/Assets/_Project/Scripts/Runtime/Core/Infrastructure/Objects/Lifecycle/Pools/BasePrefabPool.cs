@@ -6,7 +6,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Objects.Lifecycle.Pools
 {
     public abstract class BasePrefabPool<T> : BasePrefabFactory<T>, IPrefabPool<T> where T : Component
     {
-        protected Stack<T> Instances = new ();
+        protected Stack<GameObject> Instances = new ();
         
         public T Spawn(Transform at = null)
         {
