@@ -4,6 +4,10 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Objects.Lifecycle.Factori
 {
     public class BasePrefabFactory<T> : BaseFactory<T> where T : MonoBehaviour
     {
-        
+        protected override T CreateInstance()
+        {
+            var emptyGameObject = new GameObject();
+            return emptyGameObject.AddComponent<T>();
+        }
     }
 }
