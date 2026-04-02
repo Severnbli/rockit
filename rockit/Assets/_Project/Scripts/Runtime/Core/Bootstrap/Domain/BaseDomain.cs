@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure;
 using _Project.Scripts.Runtime.Core.Engine;
 using _Project.Scripts.Runtime.Core.Systems;
 using _Project.Scripts.Runtime.Shared.Utils;
+using Cysharp.Threading.Tasks;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 using Leopotam.EcsProto.Unity;
@@ -55,7 +57,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
             Container.Bind<ProtoWorld>().FromInstance(World).AsSingle();
             Container.Bind<EcsSystems>().FromInstance(Systems).AsSingle();
             Container.Bind<MonoEngine>().FromNewComponentOn(gameObject).AsSingle().NonLazy();
-            Container.Bind<IDomainCancellationTokenProvider>().To<MonoEngineCancellationTokenProvider>().AsSingle();
+            Container.Bind<CancellationToken>().FromInstance(destroyCancellationToken).AsSingle();
             
             RegisterBindings();
             RegisterModules();
