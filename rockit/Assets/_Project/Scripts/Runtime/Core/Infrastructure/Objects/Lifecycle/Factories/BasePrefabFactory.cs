@@ -9,5 +9,10 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Objects.Lifecycle.Factori
             var emptyGameObject = new GameObject();
             return emptyGameObject.AddComponent<T>();
         }
+
+        public virtual GameObject GetPrefab()
+        {
+            return new GameObject();
+        }
     }
 }
