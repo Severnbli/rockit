@@ -44,7 +44,10 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Objects.Lifecycle.Pools
         {
             Instances.Push(instance.gameObject);
         }
-        
-        protected virtual void PostDespawn(T instance) {}
+
+        protected virtual void PostDespawn(T instance)
+        {
+            instance.gameObject.SetActive(false);
+        }
     }
 }
