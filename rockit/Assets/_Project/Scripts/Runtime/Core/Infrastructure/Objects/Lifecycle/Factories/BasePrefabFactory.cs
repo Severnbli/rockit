@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Core.Infrastructure.Objects.Lifecycle.Factories
 {
-    public class BasePrefabFactory<T> : IPrefabFactory<T> where T: Component
+    public abstract class BasePrefabFactory<T> : IPrefabFactory<T> where T: Component
     {
         public T Create(Transform at = null)
         {
@@ -23,10 +23,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Objects.Lifecycle.Factori
         }
         
         protected virtual void PostCreate(T instance) {}
-        
-        protected virtual GameObject GetPrefab()
-        {
-            return new GameObject();
-        }
+
+        protected abstract GameObject GetPrefab();
     }
 }
