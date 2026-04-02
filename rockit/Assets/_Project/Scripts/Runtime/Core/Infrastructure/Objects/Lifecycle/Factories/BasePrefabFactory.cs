@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using _Project.Scripts.Runtime.Shared.Extensions;
+using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Core.Infrastructure.Objects.Lifecycle.Factories
 {
@@ -6,8 +7,9 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Objects.Lifecycle.Factori
     {
         protected override T CreateInstance()
         {
-            var emptyGameObject = new GameObject();
-            return emptyGameObject.AddComponent<T>();
+            var gameObject = GetPrefab();
+            gameObject.TryGet(out T component);
+            return component;
         }
 
         public virtual GameObject GetPrefab()
