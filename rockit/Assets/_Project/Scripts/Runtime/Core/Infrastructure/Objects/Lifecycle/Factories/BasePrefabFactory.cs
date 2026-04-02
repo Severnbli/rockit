@@ -2,7 +2,7 @@
 
 namespace _Project.Scripts.Runtime.Core.Infrastructure.Objects.Lifecycle.Factories
 {
-    public class BasePrefabFactory<T> : BaseFactory<T> where T : MonoBehaviour
+    public class BasePrefabFactory<T> : BaseFactory<T> where T : Component
     {
         protected override T CreateInstance()
         {
