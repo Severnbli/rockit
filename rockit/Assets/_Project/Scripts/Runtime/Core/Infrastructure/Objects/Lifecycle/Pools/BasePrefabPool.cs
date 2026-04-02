@@ -20,7 +20,10 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Objects.Lifecycle.Pools
 
         protected virtual T SpawnInstance(Transform at = null)
         {
-            return Create(at);
+            if (!Instances.TryPop(out var instance)) return Create(at);
+            
+            instance.TryGetComponent(out T component);
+            return component;
         }
         
         protected virtual void PostSpawn(T instance, Transform at = null) {}
