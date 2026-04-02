@@ -25,8 +25,11 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Objects.Lifecycle.Pools
             instance.TryGetComponent(out T component);
             return component;
         }
-        
-        protected virtual void PostSpawn(T instance, Transform at = null) {}
+
+        protected virtual void PostSpawn(T instance, Transform at = null)
+        {
+            instance.gameObject.SetActive(true);
+        }
 
         public void Despawn(T instance)
         {
