@@ -9,8 +9,20 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Objects.Lifecycle.Pools
         
         public T Spawn()
         {
+            PreSpawn();
+            var instance = SpawnInstance();
+            PostSpawn(instance);
+            return instance;
+        }
+        
+        protected virtual void PreSpawn() {}
+
+        protected virtual T SpawnInstance()
+        {
             return Create();
         }
+        
+        protected virtual void PostSpawn(T instance) {}
 
         public void Despawn(T instance)
         {
