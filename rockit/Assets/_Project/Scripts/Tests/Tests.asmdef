@@ -7,7 +7,9 @@
         "Modules",
         "Runtime",
         "Leopotam.EcsProto",
-        "Leopotam.EcsProto.QoL"
+        "Leopotam.EcsProto.QoL",
+        "Zenject",
+        "UniTask"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

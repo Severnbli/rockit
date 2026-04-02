@@ -1,0 +1,30 @@
+﻿using _Project.Scripts.Runtime.Core.Bootstrap.Domain;
+using _Project.Scripts.Runtime.Core.Infrastructure.Storage.Core;
+using _Project.Scripts.Runtime.Core.Infrastructure.Storage.Systems;
+
+namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure
+{
+    public class StorageModule : BaseModule<StorageModule>
+    {
+        public StorageModule(IDomain domain) : base(domain)
+        {
+        }
+
+        protected override void RegisterBindings()
+        {
+            base.RegisterBindings();
+            
+            Container.BindInterfacesTo<TypeNameDataStorageKeyProvider>().AsSingle();
+            Container.BindInterfacesTo<PlayerPrefsDataStorage>().AsSingle();
+            Container.BindInterfacesAndSelfTo<DataProvider>().AsSingle();
+        }
+
+        protected override void BindSystems()
+        {
+            base.BindSystems();
+            
+            BindSystem<LoadTrackedDataOnInitSystem>();
+            BindSystem<SaveTrackedDataOnDestroySystem>();
+        }
+    }
+}

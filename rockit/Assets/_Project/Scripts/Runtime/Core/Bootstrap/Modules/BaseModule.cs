@@ -1,4 +1,5 @@
 ﻿using _Project.Scripts.Runtime.Core.Bootstrap.Domain;
+using _Project.Scripts.Runtime.Core.Systems;
 using Leopotam.EcsProto;
 using Zenject;
 
@@ -36,7 +37,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules
         {
             Container
                 .Bind<IProtoSystem>()
-                .WithId(Domain.GetDescriptor(!pausable ? Contracts.NonPausableSystemsId : Contracts.PausableSystemsId))
+                .WithId(Domain.GetDescriptor(!pausable ? SystemsContracts.NonPausableSystemsId : SystemsContracts.PausableSystemsId))
                 .To<TSystem>()
                 .AsSingle();
         }

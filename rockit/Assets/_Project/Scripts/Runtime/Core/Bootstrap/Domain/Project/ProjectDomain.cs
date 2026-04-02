@@ -28,6 +28,8 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Project
             base.RegisterModules();
 
             TryRegisterModule<TimeModule>();
+            TryRegisterModule<StorageModule>();
+            TryRegisterModule<ScenesModule>();
         }
     }
 }
