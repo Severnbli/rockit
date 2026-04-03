@@ -9,7 +9,7 @@ using UnityEngine;
 
 namespace _Project.Scripts.Tests.Infrastructure
 {
-    public class InfrastructureTests
+    public class InfrastructureSystemsTests
     {
         private ISystemsContainerProvider _systemsContainerProvider;
         private EcsSystems _systems;
