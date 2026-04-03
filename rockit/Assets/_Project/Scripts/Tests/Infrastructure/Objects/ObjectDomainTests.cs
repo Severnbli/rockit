@@ -31,7 +31,7 @@ namespace _Project.Scripts.Tests.Infrastructure.Objects
         {
             var item1 = _objectDomain.Get<List<int>>();
             var item2 = _objectDomain.Get<List<int>>();
-            Assert.Equals(item1, item2);
+            Assert.AreEqual(item1, item2);
         }
     }
 }
