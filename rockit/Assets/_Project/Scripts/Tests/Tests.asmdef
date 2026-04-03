@@ -9,7 +9,8 @@
         "Leopotam.EcsProto",
         "Leopotam.EcsProto.QoL",
         "Zenject",
-        "UniTask"
+        "UniTask",
+        "Zenject-TestFramework"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
