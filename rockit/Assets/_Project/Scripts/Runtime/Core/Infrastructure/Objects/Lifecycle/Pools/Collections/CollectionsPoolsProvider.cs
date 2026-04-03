@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using Zenject;
 
 namespace _Project.Scripts.Runtime.Core.Infrastructure.Objects.Lifecycle.Pools.Collections
 {
     public class CollectionsPoolsProvider : ICollectionsPoolsProvider
     {
         protected readonly Dictionary<Type, object> Pools = new();
-        protected readonly CollectionsPoolsConfig Config;
+        protected readonly DiContainer Container;
 
-        public CollectionsPoolsProvider(CollectionsPoolsConfig config)
+        public CollectionsPoolsProvider(DiContainer container)
         {
-            Config = config;
+            Container = container;
         }
 
         public BaseCollectionPool<TCollection, TItem> GetCollectionPool<TCollection, TItem>()
