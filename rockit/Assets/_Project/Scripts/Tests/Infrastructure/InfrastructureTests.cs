@@ -7,7 +7,7 @@ using _Project.Scripts.Runtime.Shared.Extensions;
 using NUnit.Framework;
 using UnityEngine;
 
-namespace _Project.Scripts.Tests.Systems
+namespace _Project.Scripts.Tests.Infrastructure
 {
     public class InfrastructureTests
     {
