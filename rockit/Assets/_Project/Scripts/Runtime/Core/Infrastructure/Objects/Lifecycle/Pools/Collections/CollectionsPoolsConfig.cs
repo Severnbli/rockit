@@ -5,7 +5,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Objects.Lifecycle.Pools.C
 {
     public class CollectionsPoolsConfig : ScriptableObjectAutoInstaller<CollectionsPoolsConfig>
     {
-        [SerializeField] private int _initSize;
+        [SerializeField] private int _initSize = 20;
         
         public int InitSize => _initSize;
     }
