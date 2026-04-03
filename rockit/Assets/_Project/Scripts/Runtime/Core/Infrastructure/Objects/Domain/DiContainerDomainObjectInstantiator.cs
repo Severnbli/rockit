@@ -13,7 +13,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Objects.Domain
 
         public TValue Instantiate<TValue>()
         {
-            return default;
+            return Container.Instantiate<TValue>();
         }
     }
 }
