@@ -8,7 +8,7 @@ using ListPool = _Project.Scripts.Runtime.Core.Infrastructure.Objects.Lifecycle.
 
 namespace _Project.Scripts.Tests.Infrastructure.Objects
 {
-    public class ObjectDomainTests : ZenjectUnitTestFixture
+    public class DiContainerDomainObjectInstantiatorTests : ZenjectUnitTestFixture
     {
         private IObjectDomain _objectDomain;
         private IDomainObjectInstantiator _instantiator;
