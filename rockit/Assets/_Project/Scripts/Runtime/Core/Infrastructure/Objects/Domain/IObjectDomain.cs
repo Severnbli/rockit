@@ -2,6 +2,6 @@
 {
     public interface IObjectDomain
     {
-        
+        TValue Get<TValue>();
     }
 }
