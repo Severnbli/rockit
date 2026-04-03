@@ -1,5 +1,7 @@
-﻿using _Project.Scripts.Runtime.Core.Infrastructure.Objects.Domain;
+﻿using System.Collections.Generic;
+using _Project.Scripts.Runtime.Core.Infrastructure.Objects.Domain;
 using NUnit.Framework;
+using UnityEditor.VersionControl;
 using Zenject;
 
 namespace _Project.Scripts.Tests.Infrastructure.Objects
@@ -16,6 +18,12 @@ namespace _Project.Scripts.Tests.Infrastructure.Objects
             
             _instantiator = new DiContainerDomainObjectInstantiator(Container);
             _objectDomain = new ObjectDomain(_instantiator);
+        }
+
+        [Test]
+        public void TestObjectDomainInstantiateAbility()
+        {
+            Assert.NotNull(_objectDomain.Get<List<int>>());
         }
     }
 }
