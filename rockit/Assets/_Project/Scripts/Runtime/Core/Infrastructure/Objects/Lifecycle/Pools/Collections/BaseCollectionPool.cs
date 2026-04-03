@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace _Project.Scripts.Runtime.Core.Infrastructure.Objects.Lifecycle.Pools
+namespace _Project.Scripts.Runtime.Core.Infrastructure.Objects.Lifecycle.Pools.Collections
 {
     public class BaseCollectionPool<T, K> : BasePool<T> where T : ICollection<K>, new()
     {
