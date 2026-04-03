@@ -14,16 +14,17 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Objects.Lifecycle.Pools.C
             Container = container;
         }
 
-        public BaseCollectionPool<TCollection, TItem> GetCollectionPool<TCollection, TItem>()
-            where TCollection : ICollection<TItem>, new()
+        public TCollectionPool GetCollectionPool<TCollectionPool, TCollection, TItem>()
+            where TCollectionPool : BaseCollectionPool<TCollection, TItem>
+            where TCollection : ICollection<TItem>, new ()
         {
-            if (Pools.TryGetValue(typeof(BaseCollectionPool<TCollection, TItem>), out var pool))
+            if (Pools.TryGetValue(typeof(TCollectionPool), out var pool))
             {
-                return (BaseCollectionPool<TCollection, TItem>) pool;
+                return (TCollectionPool) pool;
             }
 
-            var poolInstance = new BaseCollectionPool<TCollection, TItem>(Config);
-            Pools.Add(typeof(BaseCollectionPool<TCollection, TItem>), poolInstance);
+            var poolInstance = Container.Instantiate<TCollectionPool>();
+            Pools.Add(typeof(TCollectionPool), poolInstance);
 
             return poolInstance;
         }

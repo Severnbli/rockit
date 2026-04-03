@@ -4,7 +4,8 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Objects.Lifecycle.Pools.C
 {
     public interface ICollectionsPoolsProvider
     {
-        BaseCollectionPool<TCollection, TItem> GetCollectionPool<TCollection, TItem>()
-            where TCollection : ICollection<TItem>, new();
+        TCollectionPool GetCollectionPool<TCollectionPool, TCollection, TItem>()
+            where TCollectionPool: BaseCollectionPool<TCollection, TItem>
+            where TCollection : ICollection<TItem>, new ();
     }
 }
