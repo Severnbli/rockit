@@ -8,7 +8,7 @@ using _Project.Scripts.Runtime.Core.Infrastructure.Time.Services;
 using NUnit.Framework;
 using UnityEngine;
 
-namespace _Project.Scripts.Tests.NonSystems.Scenes.Switcher
+namespace _Project.Scripts.Tests.Infrastructure.Scenes.Switcher
 {
     public class SceneSwitcherTests
     {
