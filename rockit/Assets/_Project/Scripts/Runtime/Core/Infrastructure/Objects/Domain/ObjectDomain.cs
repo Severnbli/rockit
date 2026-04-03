@@ -15,7 +15,11 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Objects.Domain
 
         public TValue Get<TValue>()
         {
-            return default;
+            if (Instances.TryGetValue(typeof(TValue), out var instance)) return (TValue) instance;
+            
+            var newInstance = Instantiator.Instantiate<TValue>();
+            Instances.Add(typeof(TValue), newInstance);
+            return newInstance;
         }
     }
 }
