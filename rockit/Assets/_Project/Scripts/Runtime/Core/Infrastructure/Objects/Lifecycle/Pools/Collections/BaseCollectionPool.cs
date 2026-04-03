@@ -2,7 +2,7 @@
 
 namespace _Project.Scripts.Runtime.Core.Infrastructure.Objects.Lifecycle.Pools.Collections
 {
-    public class BaseCollectionPool<T, K> : BasePool<T> where T : ICollection<K>, new()
+    public class BaseCollectionPool<TCollection, K> : BasePool<TCollection> where TCollection : ICollection<K>, new()
     {
         protected readonly CollectionsPoolsConfig Config;
 
@@ -11,7 +11,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Objects.Lifecycle.Pools.C
             Config = config;
         }
 
-        protected override void PostDespawn(T instance)
+        protected override void PostDespawn(TCollection instance)
         {
             base.PostDespawn(instance);
             
