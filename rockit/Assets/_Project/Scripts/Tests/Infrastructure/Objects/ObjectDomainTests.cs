@@ -5,6 +5,7 @@ namespace _Project.Scripts.Tests.Infrastructure.Objects
     public class ObjectDomainTests
     {
         private IObjectDomain _objectDomain;
+        private IDomainObjectInstantiator _instantiator;
         
     }
 }
