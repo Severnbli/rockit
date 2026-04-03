@@ -3,7 +3,7 @@ using _Project.Scripts.Runtime.Core.Systems;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 
-namespace _Project.Scripts.Tests.Infrastructure
+namespace _Project.Scripts.Tests
 {
     public class SystemsContainerProvider : ISystemsContainerProvider
     {
