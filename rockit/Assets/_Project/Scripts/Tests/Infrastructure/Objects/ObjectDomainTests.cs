@@ -13,6 +13,9 @@ namespace _Project.Scripts.Tests.Infrastructure.Objects
         public override void Setup()
         {
             base.Setup();
+            
+            _instantiator = new DiContainerDomainObjectInstantiator(Container);
+            _objectDomain = new ObjectDomain(_instantiator);
         }
     }
 }
