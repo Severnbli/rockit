@@ -1,4 +1,5 @@
 ﻿using _Project.Scripts.Runtime.Core.Infrastructure.Objects.Domain;
+using NUnit.Framework;
 
 namespace _Project.Scripts.Tests.Infrastructure.Objects
 {
@@ -7,5 +8,10 @@ namespace _Project.Scripts.Tests.Infrastructure.Objects
         private IObjectDomain _objectDomain;
         private IDomainObjectInstantiator _instantiator;
         
+        [SetUp]
+        public void SetUp()
+        {
+            
+        }
     }
 }
