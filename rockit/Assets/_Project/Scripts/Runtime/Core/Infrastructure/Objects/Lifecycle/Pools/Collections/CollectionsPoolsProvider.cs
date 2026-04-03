@@ -6,7 +6,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Objects.Lifecycle.Pools.C
 {
     public class CollectionsPoolsProvider : ICollectionsPoolsProvider
     {
-        protected readonly Dictionary<Type, object> Pools = new();
+        protected readonly Dictionary<Type, object> Pools = new ();
         protected readonly DiContainer Container;
 
         public CollectionsPoolsProvider(DiContainer container)
