@@ -15,6 +15,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Project
             Container.Bind<IStateMachine>().To<StateMachine>().AsSingle();
             Container.Bind<PausableSystemsSolver>().ToSelf().AsSingle();
             Container.BindInterfacesTo<DiContainerDomainObjectInstantiator>().AsSingle();
+            Container.BindInterfacesTo<ObjectDomain>().AsSingle();
         }
 
         protected override void RegisterStates()
