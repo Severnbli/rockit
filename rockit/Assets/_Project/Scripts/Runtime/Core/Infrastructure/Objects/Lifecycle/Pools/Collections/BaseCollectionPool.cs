@@ -2,7 +2,7 @@
 
 namespace _Project.Scripts.Runtime.Core.Infrastructure.Objects.Lifecycle.Pools.Collections
 {
-    public class BaseCollectionPool<TCollection, K> : BasePool<TCollection> where TCollection : ICollection<K>, new()
+    public class BaseCollectionPool<TCollection, TItem> : BasePool<TCollection> where TCollection : ICollection<TItem>, new()
     {
         protected readonly CollectionsPoolsConfig Config;
 
