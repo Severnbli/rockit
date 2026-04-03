@@ -16,7 +16,15 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Objects.Lifecycle.Pools.C
         public BaseCollectionPool<TCollection, TItem> GetCollectionPool<TCollection, TItem>()
             where TCollection : ICollection<TItem>, new()
         {
-            return null;
+            if (Pools.TryGetValue(typeof(BaseCollectionPool<TCollection, TItem>), out var pool))
+            {
+                return (BaseCollectionPool<TCollection, TItem>) pool;
+            }
+
+            var poolInstance = new BaseCollectionPool<TCollection, TItem>(Config);
+            Pools.Add(typeof(BaseCollectionPool<TCollection, TItem>), poolInstance);
+
+            return poolInstance;
         }
     }
 }
