@@ -1,6 +1,7 @@
 ﻿using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure;
 using _Project.Scripts.Runtime.Core.Bootstrap.States;
 using _Project.Scripts.Runtime.Core.Bootstrap.States.Project;
+using _Project.Scripts.Runtime.Core.Infrastructure.Objects.Domain;
 using _Project.Scripts.Runtime.Core.Systems;
 
 namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Project
@@ -13,6 +14,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Project
 
             Container.Bind<IStateMachine>().To<StateMachine>().AsSingle();
             Container.Bind<PausableSystemsSolver>().ToSelf().AsSingle();
+            Container.BindInterfacesTo<DiContainerDomainObjectInstantiator>().AsSingle();
         }
 
         protected override void RegisterStates()
