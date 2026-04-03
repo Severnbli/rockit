@@ -10,9 +10,9 @@ namespace _Project.Scripts.Tests.Infrastructure.Objects
         private IDomainObjectInstantiator _instantiator;
         
         [SetUp]
-        public void SetUp()
+        public override void Setup()
         {
-            
+            base.Setup();
         }
     }
 }
