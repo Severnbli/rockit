@@ -1,8 +1,10 @@
 ﻿using System.Collections.Generic;
 using _Project.Scripts.Runtime.Core.Infrastructure.Objects.Domain;
+using _Project.Scripts.Runtime.Core.Infrastructure.Objects.Lifecycle.Pools.Collections;
 using NUnit.Framework;
-using UnityEditor.VersionControl;
+using UnityEngine;
 using Zenject;
+using ListPool = _Project.Scripts.Runtime.Core.Infrastructure.Objects.Lifecycle.Pools.Collections.ListPool<int>;
 
 namespace _Project.Scripts.Tests.Infrastructure.Objects
 {
@@ -32,6 +34,19 @@ namespace _Project.Scripts.Tests.Infrastructure.Objects
             var item1 = _objectDomain.Get<List<int>>();
             var item2 = _objectDomain.Get<List<int>>();
             Assert.AreEqual(item1, item2);
+        }
+
+        [Test]
+        public void TestNoParameterlessConstructorObjectDomainInstantiate()
+        {
+            Assert.Throws<ZenjectException>(() => _objectDomain.Get<ListPool>());
+
+            var so = ScriptableObject.CreateInstance<CollectionsPoolsConfig>();
+            Container.Bind<CollectionsPoolsConfig>().FromInstance(so);
+
+            ListPool listPool = null;
+            Assert.DoesNotThrow(() => listPool = _objectDomain.Get<ListPool>());
+            Assert.AreNotEqual(listPool, null);
         }
     }
 }
