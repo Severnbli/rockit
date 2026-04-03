@@ -25,5 +25,13 @@ namespace _Project.Scripts.Tests.Infrastructure.Objects
         {
             Assert.NotNull(_objectDomain.Get<List<int>>());
         }
+        
+        [Test]
+        public void TestObjectDomainGiveSameObjectOnEachSameRequest()
+        {
+            var item1 = _objectDomain.Get<List<int>>();
+            var item2 = _objectDomain.Get<List<int>>();
+            Assert.Equals(item1, item2);
+        }
     }
 }
