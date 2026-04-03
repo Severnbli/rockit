@@ -2,6 +2,6 @@
 {
     public interface IDomainObjectInstantiator
     {
-        
+        TValue Instantiate<TValue>();
     }
 }
