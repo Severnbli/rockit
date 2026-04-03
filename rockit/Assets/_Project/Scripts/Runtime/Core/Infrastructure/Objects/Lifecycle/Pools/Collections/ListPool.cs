@@ -12,5 +12,12 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Objects.Lifecycle.Pools.C
         {
             return new List<TItem>(Config.InitCapacity);
         }
+
+        protected override void PostDespawn(List<TItem> instance)
+        {
+            base.PostDespawn(instance);
+            
+            instance.Clear();
+        }
     }
 }
