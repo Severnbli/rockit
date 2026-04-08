@@ -13,9 +13,6 @@ namespace _Project.Scripts.Runtime.Core.Systems
             _world = new ProtoWorld(aspect);
         }
 
-        public ProtoWorld GetWorld()
-        {
-            return null;
-        }
+        public ProtoWorld GetWorld() => _world;
     }
 }
