@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using _Project.Scripts.Runtime.Features.Input.Configs;
 using _Project.Scripts.Runtime.Features.Input.Services;
+using _Project.Scripts.Runtime.Features.Input.Systems;
 using _Project.Scripts.Runtime.Shared.Utils.Input;
 using _Project.Scripts.Tests.Shared;
 using Leopotam.EcsProto;
@@ -23,6 +24,12 @@ namespace _Project.Scripts.Tests.Features.Input
             AssertRequestsEmpty();
             ActivateRequests(entities);
             AssertRequestsOnlyOne();
+        }
+
+        private void AddPlatformsSystems(PlatformsInputService service, PlatformsInputConfig config)
+        {
+            Systems.AddSystem(new DisablePlatformsInputOnRequestSystem(service, config));
+            Systems.AddSystem(new EnablePlatformsInputOnRequestSystem(service, config));
         }
 
         private void ResetInputFeatureFields()
