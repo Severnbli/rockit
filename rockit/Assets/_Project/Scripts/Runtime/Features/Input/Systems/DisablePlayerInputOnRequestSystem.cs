@@ -1,5 +1,6 @@
 ﻿using _Project.Scripts.Runtime.Features.Input.Configs;
 using _Project.Scripts.Runtime.Features.Input.Services;
+using _Project.Scripts.Runtime.Shared.Utils;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 
@@ -19,7 +20,9 @@ namespace _Project.Scripts.Runtime.Features.Input.Systems
 
         public void Run()
         {
+            if (!_service.Enabled || _inputAspect.DisablePlayerInputRequests.IsEmptySlow()) return;
             
+            PlayerInputUtils.DisableInput(_service, _config);
         }
     }
 }
