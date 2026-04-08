@@ -11,7 +11,7 @@ namespace _Project.Scripts.Runtime.Features.Input.Systems
         
         public void Destroy()
         {
-            PlatformsInputUtils.CreateDisablePlatformsInputRequest(_domainAspect);
+            PlatformsInputUtils.CreateDisableRequest(_domainAspect);
         }
     }
 }

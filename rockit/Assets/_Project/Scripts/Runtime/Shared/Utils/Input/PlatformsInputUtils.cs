@@ -6,14 +6,14 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Input
 {
     public static class PlatformsInputUtils
     {
-        public static ProtoEntity CreateEnablePlatformsInputRequest(DomainAspect domainAspect)
+        public static ProtoEntity CreateEnableRequest(DomainAspect domainAspect)
         {
             var entity = domainAspect.RequestsAspect.CreateRequest();
             domainAspect.InputAspect.EnablePlatformsInputRequestPool.Add(entity);
             return entity;
         }
         
-        public static ProtoEntity CreateDisablePlatformsInputRequest(DomainAspect domainAspect)
+        public static ProtoEntity CreateDisableRequest(DomainAspect domainAspect)
         {
             var entity = domainAspect.RequestsAspect.CreateRequest();
             domainAspect.InputAspect.DisablePlatformsInputRequestPool.Add(entity);
