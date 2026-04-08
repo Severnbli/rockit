@@ -12,5 +12,13 @@ namespace _Project.Scripts.Runtime.Shared.Utils
             config.Jump.Enable();
             config.Dash.Enable();
         }
+
+        public static void DisableInput(PlayerInputService service, PlayerInputConfig config)
+        {
+            service.Enabled = false;
+            config.Walk.Disable();
+            config.Jump.Disable();
+            config.Dash.Disable();
+        }
     }
 }
