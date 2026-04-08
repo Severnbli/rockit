@@ -32,6 +32,12 @@ namespace _Project.Scripts.Tests.Features.Input
             Systems.AddSystem(new EnablePlatformsInputOnRequestSystem(service, config));
         }
 
+        private void AddPlayerInputSystems(PlayerInputService service, PlayerInputConfig config)
+        {
+            Systems.AddSystem(new DisablePlayerInputOnRequestSystem(service, config));
+            Systems.AddSystem(new EnablePlayerInputOnRequestSystem(service, config));
+        }
+
         private void ResetInputFeatureFields()
         {
             var testsConfigs = TestsUtils.GetTestsConfigs();
