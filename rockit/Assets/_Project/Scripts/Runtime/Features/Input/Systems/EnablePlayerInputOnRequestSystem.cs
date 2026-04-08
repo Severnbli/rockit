@@ -1,5 +1,6 @@
 ﻿using _Project.Scripts.Runtime.Features.Input.Configs;
 using _Project.Scripts.Runtime.Features.Input.Services;
+using _Project.Scripts.Runtime.Shared.Utils;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 
@@ -21,10 +22,7 @@ namespace _Project.Scripts.Runtime.Features.Input.Systems
         {
             if (_service.Enabled || _inputAspect.EnablePlayerInputRequests.IsEmptySlow()) return;
 
-            _service.Enabled = true;
-            _config.Walk.Enable();
-            _config.Jump.Enable();
-            _config.Dash.Enable();
+            PlayerInputUtils.EnableInput(_service, _config);
         }
     }
 }
