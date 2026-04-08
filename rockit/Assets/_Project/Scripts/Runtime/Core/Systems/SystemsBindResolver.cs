@@ -1,7 +1,8 @@
 ﻿using System.Linq;
 using _Project.Scripts.Runtime.Core.Bootstrap.Domain;
+using _Project.Scripts.Runtime.Core.Infrastructure.Requests;
+using _Project.Scripts.Runtime.Core.Infrastructure.Requests.World;
 using Leopotam.EcsProto;
-using UnityEngine;
 using Zenject;
 
 namespace _Project.Scripts.Runtime.Core.Systems
@@ -35,6 +36,9 @@ namespace _Project.Scripts.Runtime.Core.Systems
             {
                 systems.AddSystem(new PausableSystems(solver, pausableSystems));
             }
+
+            var requestsWorld = _container.Resolve<RequestsWorldProvider>().GetWorld();
+            systems.AddWorld(requestsWorld, RequestsContracts.RequestsIdentifier);
         }
     }
 }
