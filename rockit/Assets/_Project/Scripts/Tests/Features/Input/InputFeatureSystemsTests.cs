@@ -117,5 +117,13 @@ namespace _Project.Scripts.Tests.Features.Input
             Assert.True(config.Jump.enabled);
             Assert.True(config.Dash.enabled);
         }
+        
+        private void AssertPlayerInputDisabled(PlayerInputService service, PlayerInputConfig config)
+        {
+            Assert.False(service.Enabled);
+            Assert.False(config.Walk.enabled);
+            Assert.False(config.Jump.enabled);
+            Assert.False(config.Dash.enabled);
+        }
     }
 }
