@@ -12,5 +12,13 @@ namespace _Project.Scripts.Tests.Features.Input
             Assert.True(RequestsWorldAspect.InputAspect.EnablePlatformsInputRequests.IsEmptySlow());
             Assert.True(RequestsWorldAspect.InputAspect.DisablePlatformsInputRequests.IsEmptySlow());
         }
+
+        private void AssertRequestsOnlyOne()
+        {
+            Assert.AreEqual(RequestsWorldAspect.InputAspect.EnablePlayerInputRequests.LenSlow(), 1);
+            Assert.AreEqual(RequestsWorldAspect.InputAspect.DisablePlayerInputRequests.LenSlow(), 1);
+            Assert.AreEqual(RequestsWorldAspect.InputAspect.EnablePlatformsInputRequests.LenSlow(), 1);
+            Assert.AreEqual(RequestsWorldAspect.InputAspect.DisablePlatformsInputRequests.LenSlow(), 1);
+        }
     }
 }
