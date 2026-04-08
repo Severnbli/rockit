@@ -125,5 +125,13 @@ namespace _Project.Scripts.Tests.Features.Input
             Assert.False(config.Jump.enabled);
             Assert.False(config.Dash.enabled);
         }
+        
+        private void AssertPlatformsInputEnabled(PlatformsInputService service, PlatformsInputConfig config)
+        {
+            Assert.True(service.Enabled);
+            Assert.True(config.Position.enabled);
+            Assert.True(config.Rotation.enabled);
+            Assert.True(config.Scale.enabled);
+        }
     }
 }
