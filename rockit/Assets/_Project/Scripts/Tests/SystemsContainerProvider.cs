@@ -1,4 +1,6 @@
 ﻿using _Project.Scripts.Runtime.Core.Bootstrap.Domain;
+using _Project.Scripts.Runtime.Core.Infrastructure.Requests;
+using _Project.Scripts.Runtime.Core.Infrastructure.Requests.World;
 using _Project.Scripts.Runtime.Core.Systems;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
@@ -11,6 +13,7 @@ namespace _Project.Scripts.Tests
         {
             var world = new ProtoWorld(new DomainAspect());
             var systems = new EcsSystems(world);
+            systems.AddWorld(new ProtoWorld(new RequestsWorldAspect()), RequestsContracts.RequestsIdentifier);
 
             systems.AddModule(new AutoInjectModule());
             
