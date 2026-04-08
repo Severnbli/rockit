@@ -26,5 +26,12 @@ namespace _Project.Scripts.Runtime.Shared.Utils
             domainAspect.InputAspect.EnablePlatformsInputRequestPool.Add(entity);
             return entity;
         }
+        
+        public static ProtoEntity CreateDisablePlatformsInputRequest(DomainAspect domainAspect)
+        {
+            var entity = domainAspect.RequestsAspect.CreateRequest();
+            domainAspect.InputAspect.DisablePlatformsInputRequestPool.Add(entity);
+            return entity;
+        }
     }
 }
