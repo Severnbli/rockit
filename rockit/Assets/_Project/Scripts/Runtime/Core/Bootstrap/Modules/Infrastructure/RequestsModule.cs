@@ -1,5 +1,6 @@
 ﻿using _Project.Scripts.Runtime.Core.Bootstrap.Domain;
 using _Project.Scripts.Runtime.Core.Infrastructure.Requests.Systems;
+using _Project.Scripts.Runtime.Core.Infrastructure.Requests.World;
 
 namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure
 {
@@ -15,6 +16,13 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure
             
             BindSystem<DelActivatedRequestsSystem>();
             BindSystem<ActivateRequestsSystem>();
+        }
+
+        protected override void RegisterBindings()
+        {
+            base.RegisterBindings();
+
+            Container.Bind<RequestsWorldAspect>().ToSelf().AsSingle();
         }
     }
 }
