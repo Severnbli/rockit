@@ -13,5 +13,6 @@ namespace _Project.Scripts.Runtime.Features.Input
         public ProtoPool<EnablePlatformsInputRequest> EnablePlatformsInputRequestPool;
         public ProtoPool<DisablePlatformsInputRequest> DisablePlatformsInputRequestPool;
         public ProtoIt EnablePlayerInputRequests = new (It.Inc<RequestComponent, ActiveRequestTag, EnablePlayerInputRequest>());
+        public ProtoIt DisablePlayerInputRequests = new (It.Inc<RequestComponent, ActiveRequestTag, DisablePlayerInputRequest>());
     }
 }
