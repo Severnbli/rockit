@@ -17,6 +17,12 @@ namespace _Project.Scripts.Tests.Features.Input
             ActivateRequests(entities);
             AssertRequestsOnlyOne();
         }
+
+        [Test]
+        public void TestRequestsSystems()
+        {
+            
+        }
         
         private List<ProtoEntity> CreateRequests()
         {
