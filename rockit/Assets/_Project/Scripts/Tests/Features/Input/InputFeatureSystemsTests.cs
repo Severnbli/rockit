@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using _Project.Scripts.Runtime.Features.Input.Configs;
+using _Project.Scripts.Runtime.Features.Input.Services;
 using _Project.Scripts.Runtime.Shared.Utils.Input;
 using _Project.Scripts.Tests.Shared;
 using Leopotam.EcsProto;
@@ -8,6 +10,11 @@ namespace _Project.Scripts.Tests.Features.Input
 {
     public class InputFeatureSystemsTests : BaseSystemsTests
     {
+        private PlayerInputService _playerInputService;
+        private PlayerInputConfig _playerInputConfig;
+        private PlatformsInputService _platformsInputService;
+        private PlatformsInputConfig _platformsInputConfig;
+        
         [Test]
         public void TestRequestsCreation()
         {
