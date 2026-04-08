@@ -7,6 +7,16 @@ namespace _Project.Scripts.Tests.Features.Input
 {
     public class InputFeatureSystemsTests : BaseSystemsTests
     {
+        [Test]
+        public void TestRequestsCreation()
+        {
+            AssertRequestsEmpty();
+            var entities = CreateRequests();
+            AssertRequestsEmpty();
+            ActivateRequests(entities);
+            AssertRequestsOnlyOne();
+        }
+
         private List<ProtoEntity> CreateRequests()
         {
             var list = new List<ProtoEntity>();
