@@ -45,6 +45,7 @@ namespace _Project.Scripts.Tests.Shared
         {
             Systems?.Destroy();
             Systems = null;
+            MainWorld.Destroy();
         }
     }
 }
