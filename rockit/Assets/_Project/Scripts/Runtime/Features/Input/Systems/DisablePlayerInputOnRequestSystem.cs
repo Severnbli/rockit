@@ -1,6 +1,7 @@
 ﻿using _Project.Scripts.Runtime.Features.Input.Configs;
 using _Project.Scripts.Runtime.Features.Input.Services;
 using _Project.Scripts.Runtime.Shared.Utils;
+using _Project.Scripts.Runtime.Shared.Utils.Input;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 
