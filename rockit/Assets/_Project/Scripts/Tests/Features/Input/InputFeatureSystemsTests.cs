@@ -1,9 +1,23 @@
-﻿using NUnit.Framework;
+﻿using System.Collections.Generic;
+using _Project.Scripts.Runtime.Shared.Utils.Input;
+using Leopotam.EcsProto;
+using NUnit.Framework;
 
 namespace _Project.Scripts.Tests.Features.Input
 {
     public class InputFeatureSystemsTests : BaseSystemsTests
     {
+        private List<ProtoEntity> CreateRequests()
+        {
+            var list = new List<ProtoEntity>();
+            
+            list.Add(PlayerInputUtils.CreateEnableRequest(RequestsWorldAspect));
+            list.Add(PlayerInputUtils.CreateDisableRequest(RequestsWorldAspect));
+            list.Add(PlatformsInputUtils.CreateEnableRequest(RequestsWorldAspect));
+            list.Add(PlatformsInputUtils.CreateDisableRequest(RequestsWorldAspect));
+            
+            return list;
+        }
 
         private void AssertRequestsEmpty()
         {
