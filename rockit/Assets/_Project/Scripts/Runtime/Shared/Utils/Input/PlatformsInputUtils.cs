@@ -15,6 +15,14 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Input
             config.Rotation.Enable();
             config.Scale.Enable();
         }
+
+        public static void DisableInput(PlatformsInputService service, PlatformsInputConfig config)
+        {
+            service.Enabled = false;
+            config.Position.Disable();
+            config.Rotation.Disable();
+            config.Scale.Disable();
+        }
         
         public static ProtoEntity CreateEnableRequest(DomainAspect domainAspect)
         {
