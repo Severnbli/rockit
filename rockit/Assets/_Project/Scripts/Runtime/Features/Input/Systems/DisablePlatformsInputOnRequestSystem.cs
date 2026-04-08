@@ -1,14 +1,14 @@
-﻿using _Project.Scripts.Runtime.Features.Input.Configs;
+﻿using _Project.Scripts.Runtime.Core.Infrastructure.Requests;
+using _Project.Scripts.Runtime.Features.Input.Configs;
 using _Project.Scripts.Runtime.Features.Input.Services;
 using _Project.Scripts.Runtime.Shared.Utils.Input;
 using Leopotam.EcsProto;
-using Leopotam.EcsProto.QoL;
 
 namespace _Project.Scripts.Runtime.Features.Input.Systems
 {
     public sealed class DisablePlatformsInputOnRequestSystem : IProtoRunSystem
     {
-        [DI] private readonly InputAspect _inputAspect;
+        [DIRequests] private readonly InputAspect _inputAspect;
         private readonly PlatformsInputService _service;
         private readonly PlatformsInputConfig _config;
 
