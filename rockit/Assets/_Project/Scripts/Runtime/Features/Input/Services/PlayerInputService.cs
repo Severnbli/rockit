@@ -2,6 +2,9 @@
 {
     public sealed class PlayerInputService
     {
-        
+        public bool WalkPerformed;
+        public float Walk;
+        public bool JumpPerformed;
+        public bool DashPerformed;
     }
 }
