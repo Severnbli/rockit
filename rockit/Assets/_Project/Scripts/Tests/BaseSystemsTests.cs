@@ -1,4 +1,5 @@
-﻿using _Project.Scripts.Runtime.Core.Systems;
+﻿using _Project.Scripts.Runtime.Core.Bootstrap.Domain;
+using _Project.Scripts.Runtime.Core.Systems;
 using NUnit.Framework;
 
 namespace _Project.Scripts.Tests
@@ -7,6 +8,7 @@ namespace _Project.Scripts.Tests
     {
         protected ISystemsContainerProvider SystemsContainerProvider;
         protected EcsSystems Systems;
+        protected DomainAspect MainAspect;
 
         [OneTimeSetUp]
         public virtual void OneTimeSetUp()
@@ -24,6 +26,7 @@ namespace _Project.Scripts.Tests
         public virtual void SetUp()
         {
             Systems = SystemsContainerProvider.GetSystemsContainer();
+            MainAspect = Systems.World().Aspect(typeof(DomainAspect)) as DomainAspect;
         }
 
         [TearDown]
