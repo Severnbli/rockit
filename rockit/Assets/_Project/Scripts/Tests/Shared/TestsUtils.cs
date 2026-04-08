@@ -1,4 +1,4 @@
-﻿namespace _Project.Scripts.Tests
+﻿namespace _Project.Scripts.Tests.Shared
 {
     public static class TestsUtils
     {

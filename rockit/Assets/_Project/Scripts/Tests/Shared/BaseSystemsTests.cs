@@ -4,7 +4,7 @@ using _Project.Scripts.Runtime.Core.Infrastructure.Requests.World;
 using _Project.Scripts.Runtime.Core.Systems;
 using NUnit.Framework;
 
-namespace _Project.Scripts.Tests
+namespace _Project.Scripts.Tests.Shared
 {
     public class BaseSystemsTests
     {
