@@ -23,6 +23,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure
             base.RegisterBindings();
 
             Container.Bind<RequestsWorldAspect>().ToSelf().AsSingle();
+            Container.Bind<RequestsWorldProvider>().ToSelf().AsSingle();
         }
     }
 }
