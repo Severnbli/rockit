@@ -24,6 +24,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure
 
             Container.Bind<RequestsWorldAspect>().ToSelf().AsSingle();
             Container.Bind<RequestsWorldProvider>().ToSelf().AsSingle();
+            Container.Bind<RequestsWorldDestroyer>().ToSelf().AsSingle();
         }
     }
 }
