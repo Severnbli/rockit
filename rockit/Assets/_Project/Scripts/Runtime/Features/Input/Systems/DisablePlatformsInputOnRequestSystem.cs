@@ -1,4 +1,4 @@
-﻿using _Project.Scripts.Runtime.Core.Infrastructure.Requests;
+﻿using _Project.Scripts.Runtime.Core.Infrastructure.Requests.World;
 using _Project.Scripts.Runtime.Features.Input.Configs;
 using _Project.Scripts.Runtime.Features.Input.Services;
 using _Project.Scripts.Runtime.Shared.Utils.Input;
