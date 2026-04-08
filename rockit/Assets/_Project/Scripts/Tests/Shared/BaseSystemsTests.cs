@@ -2,6 +2,7 @@
 using _Project.Scripts.Runtime.Core.Infrastructure.Requests;
 using _Project.Scripts.Runtime.Core.Infrastructure.Requests.World;
 using _Project.Scripts.Runtime.Core.Systems;
+using Leopotam.EcsProto;
 using NUnit.Framework;
 
 namespace _Project.Scripts.Tests.Shared
@@ -12,6 +13,7 @@ namespace _Project.Scripts.Tests.Shared
         protected EcsSystems Systems;
         protected DomainAspect MainAspect;
         protected RequestsWorldAspect RequestsWorldAspect;
+        protected ProtoWorld MainWorld;
 
         [OneTimeSetUp]
         public virtual void OneTimeSetUp()
@@ -33,6 +35,7 @@ namespace _Project.Scripts.Tests.Shared
             RequestsWorldAspect =
                 Systems.World(RequestsContracts.RequestsIdentifier).Aspect(typeof(RequestsWorldAspect)) as
                     RequestsWorldAspect;
+            MainWorld = Systems.World();
         }
 
         [TearDown]
