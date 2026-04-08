@@ -12,7 +12,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Requests
 
         public void AddToSystems(EcsSystems systems)
         {
-            systems.AddWorld(this, RequestsContracts.Requests);
+            systems.AddWorld(this, RequestsContracts.RequestsIdentifier);
         }
     }
 }

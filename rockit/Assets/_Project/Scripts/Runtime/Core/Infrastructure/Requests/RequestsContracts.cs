@@ -2,6 +2,6 @@
 {
     public static class RequestsContracts
     {
-        public const string Requests = "Requests";
+        public const string RequestsIdentifier = "Requests";
     }
 }
