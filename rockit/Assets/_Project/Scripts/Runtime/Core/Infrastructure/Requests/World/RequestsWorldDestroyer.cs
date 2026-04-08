@@ -13,7 +13,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Requests.World
 
         public void Dispose()
         {
-            
+            _worldProvider.GetWorld()?.Destroy();
         }
     }
 }
