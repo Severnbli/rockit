@@ -26,6 +26,15 @@ namespace _Project.Scripts.Tests.Features.Input
             AssertRequestsOnlyOne();
         }
 
+        [Test]
+        public void TestRequestsSystems()
+        {
+            ResetInputFeatureFields();
+            
+            AddPlatformsSystems(_platformsInputService, _platformsInputConfig);
+            AddPlayerInputSystems(_playerInputService, _playerInputConfig);
+        }
+
         private void AddPlatformsSystems(PlatformsInputService service, PlatformsInputConfig config)
         {
             Systems.AddSystem(new DisablePlatformsInputOnRequestSystem(service, config));
