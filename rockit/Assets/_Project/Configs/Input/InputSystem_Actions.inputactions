@@ -32,33 +32,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
-                },
-                {
-                    "name": "Position",
-                    "type": "Button",
-                    "id": "bc54c3c9-d3d8-438e-bfbf-9678556d26e6",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Rotation",
-                    "type": "Button",
-                    "id": "4b4834b6-35d5-4f1b-bbc0-07153e29a21e",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Scale",
-                    "type": "Button",
-                    "id": "d30c1e53-49c2-4d83-b7c7-5185c73f1513",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -171,10 +144,45 @@
                     "action": "Dash",
                     "isComposite": false,
                     "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Platforms",
+            "id": "44bee7c5-d612-4d4c-b719-37bda0057b91",
+            "actions": [
+                {
+                    "name": "Position",
+                    "type": "Button",
+                    "id": "f1e312fe-0dc5-437f-a314-b7f6c34b8b9c",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
+                    "name": "Rotation",
+                    "type": "Button",
+                    "id": "8a674334-f580-4b0a-86c0-728b44f16654",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Scale",
+                    "type": "Button",
+                    "id": "e0c2573b-9270-4bf3-87ef-f0ab8e8aea0b",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
                     "name": "",
-                    "id": "b30683d0-ac65-4c6a-8201-092367fd9b7d",
+                    "id": "70b3bf3d-d10e-4671-b87d-10f556140b56",
                     "path": "<Keyboard>/leftArrow",
                     "interactions": "",
                     "processors": "",
@@ -185,7 +193,7 @@
                 },
                 {
                     "name": "",
-                    "id": "8ee649ac-489f-4580-984a-1a988177fced",
+                    "id": "32d5e291-f6e2-4180-9b28-07f7f680b289",
                     "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
@@ -196,29 +204,7 @@
                 },
                 {
                     "name": "",
-                    "id": "2e3587df-4d4b-4617-aa5f-f9874c4370c5",
-                    "path": "<Keyboard>/upArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Rotation",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "dc954c6a-0d17-4f6b-af1a-996e29f01513",
-                    "path": "<Gamepad>/buttonNorth",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Rotation",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "ab26d04d-2a32-44e8-a7d1-24b241fdc784",
+                    "id": "9e205274-2bc4-430f-9f65-8e7c84b60258",
                     "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
@@ -229,12 +215,34 @@
                 },
                 {
                     "name": "",
-                    "id": "d6fcff38-f703-441f-b1ce-4274689eb3a1",
+                    "id": "48be6b72-ab88-4d09-9f08-2dbe15c89ec7",
                     "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Scale",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5f08ff7c-8319-4a23-a323-a3ebde2b0f62",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Rotation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1825305c-a318-4e60-84bc-27437ddb00cd",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Rotation",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
