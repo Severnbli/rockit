@@ -10,8 +10,8 @@ namespace _Project.Scripts.Runtime.Features.Input.Configs
         [SerializeField] private InputActionReference _rotation;
         [SerializeField] private InputActionReference _scale;
         
-        public InputActionReference Position => _position;
-        public InputActionReference Rotation => _rotation;
-        public InputActionReference Scale => _scale;
+        public InputAction Position => _position?.action;
+        public InputAction Rotation => _rotation?.action;
+        public InputAction Scale => _scale?.action;
     }
 }
