@@ -2,6 +2,8 @@
 {
     public sealed class PlatformsInputService
     {
-        
+        public bool PositionPerformed;
+        public bool RotationPerformed;
+        public bool ScalePerformed;
     }
 }
