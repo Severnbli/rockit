@@ -6,7 +6,7 @@ using Leopotam.EcsProto.QoL;
 
 namespace _Project.Scripts.Runtime.Features.Input.Systems
 {
-    public class EnablePlayerInputOnRequestSystem : IProtoRunSystem
+    public sealed class EnablePlayerInputOnRequestSystem : IProtoRunSystem
     {
         [DI] private readonly InputAspect _inputAspect;
         private readonly PlayerInputService _service;
