@@ -13,6 +13,6 @@ namespace _Project.Scripts.Runtime.Core.Systems
             _world = new ProtoWorld(aspect);
         }
 
-        public ProtoWorld GetWorld() => _world;
+        public virtual ProtoWorld GetWorld() => _world;
     }
 }
