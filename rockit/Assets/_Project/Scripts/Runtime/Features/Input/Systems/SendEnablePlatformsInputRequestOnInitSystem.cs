@@ -11,7 +11,7 @@ namespace _Project.Scripts.Runtime.Features.Input.Systems
         
         public void Init(IProtoSystems systems)
         {
-            PlatformsInputUtils.CreateEnablePlatformsInputRequest(_domainAspect);
+            PlatformsInputUtils.CreateEnableRequest(_domainAspect);
         }
     }
 }
