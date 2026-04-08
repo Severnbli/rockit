@@ -109,5 +109,13 @@ namespace _Project.Scripts.Tests.Features.Input
             Assert.AreEqual(RequestsWorldAspect.InputAspect.EnablePlatformsInputRequests.LenSlow(), 1);
             Assert.AreEqual(RequestsWorldAspect.InputAspect.DisablePlatformsInputRequests.LenSlow(), 1);
         }
+
+        private void AssertPlayerInputEnabled(PlayerInputService service, PlayerInputConfig config)
+        {
+            Assert.True(service.Enabled);
+            Assert.True(config.Walk.enabled);
+            Assert.True(config.Jump.enabled);
+            Assert.True(config.Dash.enabled);
+        }
     }
 }
