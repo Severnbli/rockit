@@ -9,5 +9,6 @@ namespace _Project.Scripts.Runtime.Features.Input
         public ProtoPool<EnablePlayerInputRequest> EnablePlayerInputRequestPool;
         public ProtoPool<DisablePlayerInputRequest> DisablePlayerInputRequestPool;
         public ProtoPool<EnablePlatformsInputRequest> EnablePlatformsInputRequestPool;
+        public ProtoPool<DisablePlatformsInputRequest> DisablePlatformsInputRequestPool;
     }
 }
