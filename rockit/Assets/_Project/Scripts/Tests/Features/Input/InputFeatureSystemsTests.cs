@@ -133,5 +133,13 @@ namespace _Project.Scripts.Tests.Features.Input
             Assert.True(config.Rotation.enabled);
             Assert.True(config.Scale.enabled);
         }
+        
+        private void AssertPlatformsInputDisabled(PlatformsInputService service, PlatformsInputConfig config)
+        {
+            Assert.False(service.Enabled);
+            Assert.False(config.Position.enabled);
+            Assert.False(config.Rotation.enabled);
+            Assert.False(config.Scale.enabled);
+        }
     }
 }
