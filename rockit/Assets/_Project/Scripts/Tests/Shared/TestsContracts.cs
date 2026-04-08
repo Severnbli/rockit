@@ -2,6 +2,6 @@
 {
     public static class TestsContracts
     {
-        
+        public const string TestsConfigsResourcesPath = "TestsConfigs";
     }
 }
