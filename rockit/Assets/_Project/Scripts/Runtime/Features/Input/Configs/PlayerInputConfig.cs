@@ -10,8 +10,8 @@ namespace _Project.Scripts.Runtime.Features.Input.Configs
         [SerializeField] private InputActionReference _jump;
         [SerializeField] private InputActionReference _dash;
         
-        public InputActionReference Walk => _walk;
-        public InputActionReference Jump => _jump;
-        public InputActionReference Dash => _dash;
+        public InputAction Walk => _walk?.action;
+        public InputAction Jump => _jump?.action;
+        public InputAction Dash => _dash?.action;
     }
 }
