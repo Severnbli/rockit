@@ -1,10 +1,12 @@
-﻿namespace _Project.Scripts.Tests.Shared
+﻿using UnityEngine;
+
+namespace _Project.Scripts.Tests.Shared
 {
     public static class TestsUtils
     {
         public static TestsConfigs GetTestsConfigs()
         {
-            return null;
+            return Resources.Load<TestsConfigs>(TestsContracts.TestsConfigsResourcesPath);
         }
     }
 }
