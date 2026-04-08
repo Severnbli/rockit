@@ -14,6 +14,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features
             base.BindServices();
             
             BindService<PlayerInputService>();
+            BindService<PlatformsInputService>();
         }
     }
 }
