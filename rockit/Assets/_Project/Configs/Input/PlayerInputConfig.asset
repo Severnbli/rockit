@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: debd69e7cc1a4a97a34941b72935b442, type: 3}
   m_Name: PlayerInputConfig
   m_EditorClassIdentifier: Runtime::_Project.Scripts.Runtime.Features.Input.Configs.PlayerInputConfig
-  _walk: {fileID: 0}
-  _jump: {fileID: 0}
-  _dash: {fileID: 0}
+  _walk: {fileID: -6678921414412189813, guid: 31a8b2597b0ff30439874337fb5a9801, type: 3}
+  _jump: {fileID: -1725715116707547832, guid: 31a8b2597b0ff30439874337fb5a9801, type: 3}
+  _dash: {fileID: -8674799417610564058, guid: 31a8b2597b0ff30439874337fb5a9801, type: 3}
