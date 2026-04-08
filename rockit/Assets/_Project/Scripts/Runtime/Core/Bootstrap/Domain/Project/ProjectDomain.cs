@@ -35,6 +35,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Project
             TryRegisterModule<StorageModule>();
             TryRegisterModule<ScenesModule>();
             TryRegisterModule<InputModule>();
+            TryRegisterModule<RequestsModule>();
         }
     }
 }

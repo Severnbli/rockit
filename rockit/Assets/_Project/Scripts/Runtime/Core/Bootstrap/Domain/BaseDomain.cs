@@ -86,10 +86,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
 
         protected virtual void RegisterBindings() {}
 
-        protected virtual void RegisterModules()
-        {
-            TryRegisterModule<RequestsModule>();
-        }
+        protected virtual void RegisterModules() {}
         
         protected virtual void RegisterStates() {}
     }
