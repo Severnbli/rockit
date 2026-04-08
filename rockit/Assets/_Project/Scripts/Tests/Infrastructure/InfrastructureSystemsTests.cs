@@ -9,46 +9,18 @@ using UnityEngine;
 
 namespace _Project.Scripts.Tests.Infrastructure
 {
-    public class InfrastructureSystemsTests
+    public class InfrastructureSystemsTests : BaseSystemsTests
     {
-        private ISystemsContainerProvider _systemsContainerProvider;
-        private EcsSystems _systems;
-
-        [OneTimeSetUp]
-        public void OneTimeSetUp()
-        {
-            _systemsContainerProvider = new SystemsContainerProvider();
-        }
-
-        [OneTimeTearDown]
-        public void OneTimeTearDown()
-        {
-            _systemsContainerProvider = null;
-        }
-
-        [SetUp]
-        public void SetUp()
-        {
-            _systems = _systemsContainerProvider.GetSystemsContainer();
-        }
-
-        [TearDown]
-        public void TearDown()
-        {
-            _systems?.Destroy();
-            _systems = null;
-        }
-
         [Test]
         public void TestTimeSystems()
         {
             var timeService = new TimeService();
-            _systems.AddSystem(new TimeServiceUpdateSystem(timeService));
+            Systems.AddSystem(new TimeServiceUpdateSystem(timeService));
             
-            _systems.Init();
+            Systems.Init();
             
-            _systems.Run();
-            _systems.FixedRun();
+            Systems.Run();
+            Systems.FixedRun();
             
             Assert.AreEqual(timeService.Time, Time.time);
             Assert.AreEqual(timeService.FixedTime, Time.fixedTime);
@@ -63,12 +35,12 @@ namespace _Project.Scripts.Tests.Infrastructure
         [Test]
         public void TestRequestsSystems()
         {
-            _systems.AddSystem(new DelActivatedRequestsSystem());
-            _systems.AddSystem(new ActivateRequestsSystem());
+            Systems.AddSystem(new DelActivatedRequestsSystem());
+            Systems.AddSystem(new ActivateRequestsSystem());
             
-            _systems.Init();
+            Systems.Init();
 
-            var requestAspect = _systems.World().Aspect(typeof(RequestsAspect)) as RequestsAspect;
+            var requestAspect = Systems.World().Aspect(typeof(RequestsAspect)) as RequestsAspect;
 
             requestAspect.CreateRequest();
             requestAspect.CreateRequest(fixedRun: true);
@@ -78,16 +50,16 @@ namespace _Project.Scripts.Tests.Infrastructure
             Assert.AreEqual(requestAspect!.RunActivated.LenSlow(), 0);
             Assert.AreEqual(requestAspect!.FixedRunActivated.LenSlow(), 0);
             
-            _systems.Run();
-            _systems.FixedRun();
+            Systems.Run();
+            Systems.FixedRun();
             
             Assert.AreEqual(requestAspect!.RunNotActivated.LenSlow(), 0);
             Assert.AreEqual(requestAspect!.FixedRunNotActivated.LenSlow(), 0);
             Assert.AreEqual(requestAspect!.RunActivated.LenSlow(), 1);
             Assert.AreEqual(requestAspect!.FixedRunActivated.LenSlow(), 1);
             
-            _systems.Run();
-            _systems.FixedRun();
+            Systems.Run();
+            Systems.FixedRun();
             
             Assert.AreEqual(requestAspect!.RunNotActivated.LenSlow(), 0);
             Assert.AreEqual(requestAspect!.FixedRunNotActivated.LenSlow(), 0);
