@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bb45b47413a445fa6f01e63833ee226, type: 3}
   m_Name: TestsConfigs
   m_EditorClassIdentifier: Tests::_Project.Scripts.Tests.TestsConfigs
+  _playerInputConfig: {fileID: 11400000, guid: c177ea15b87c7fe40a413accc944c948, type: 2}
+  _platformsInputConfig: {fileID: 11400000, guid: 7a8a97460da9d00408b304b970dd515d, type: 2}
