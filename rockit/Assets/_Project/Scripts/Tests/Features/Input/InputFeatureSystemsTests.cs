@@ -25,10 +25,13 @@ namespace _Project.Scripts.Tests.Features.Input
             AssertRequestsOnlyOne();
         }
 
-        [Test]
-        public void TestRequestsSystems()
+        private void ResetInputFeatureFields()
         {
-            
+            var testsConfigs = TestsUtils.GetTestsConfigs();
+            _playerInputConfig = testsConfigs.PlayerInputConfig;
+            _platformsInputConfig = testsConfigs.PlatformsInputConfig;
+            _playerInputService = new PlayerInputService();
+            _platformsInputService = new PlatformsInputService();
         }
         
         private List<ProtoEntity> CreateRequests()
