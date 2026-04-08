@@ -1,5 +1,4 @@
 ﻿using _Project.Scripts.Runtime.Core.Bootstrap.Domain;
-using _Project.Scripts.Runtime.Shared.Utils;
 using _Project.Scripts.Runtime.Shared.Utils.Input;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
@@ -12,7 +11,7 @@ namespace _Project.Scripts.Runtime.Features.Input.Systems
         
         public void Destroy()
         {
-            InputUtils.CreateDisablePlayerInputRequest(_domainAspect);
+            PlayerInputUtils.CreateDisableRequest(_domainAspect);
         }
     }
 }

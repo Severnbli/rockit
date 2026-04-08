@@ -6,20 +6,6 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Input
 {
     public static class InputUtils
     {
-        public static ProtoEntity CreateEnablePlayerInputRequest(DomainAspect domainAspect)
-        {
-            var entity = domainAspect.RequestsAspect.CreateRequest();
-            domainAspect.InputAspect.EnablePlayerInputRequestPool.Add(entity);
-            return entity;
-        }
-        
-        public static ProtoEntity CreateDisablePlayerInputRequest(DomainAspect domainAspect)
-        {
-            var entity = domainAspect.RequestsAspect.CreateRequest();
-            domainAspect.InputAspect.DisablePlayerInputRequestPool.Add(entity);
-            return entity;
-        }
-        
         public static ProtoEntity CreateEnablePlatformsInputRequest(DomainAspect domainAspect)
         {
             var entity = domainAspect.RequestsAspect.CreateRequest();
