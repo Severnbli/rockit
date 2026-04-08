@@ -14,6 +14,7 @@ namespace _Project.Scripts.Tests.Shared
         protected DomainAspect MainAspect;
         protected RequestsWorldAspect RequestsWorldAspect;
         protected ProtoWorld MainWorld;
+        protected ProtoWorld RequestsWorld;
 
         [OneTimeSetUp]
         public virtual void OneTimeSetUp()
@@ -36,6 +37,7 @@ namespace _Project.Scripts.Tests.Shared
                 Systems.World(RequestsContracts.RequestsIdentifier).Aspect(typeof(RequestsWorldAspect)) as
                     RequestsWorldAspect;
             MainWorld = Systems.World();
+            RequestsWorld = Systems.World(RequestsContracts.RequestsIdentifier);
         }
 
         [TearDown]
