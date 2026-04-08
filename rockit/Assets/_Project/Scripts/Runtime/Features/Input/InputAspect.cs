@@ -1,4 +1,6 @@
-﻿using _Project.Scripts.Runtime.Features.Input.Requests;
+﻿using _Project.Scripts.Runtime.Core.Infrastructure.Requests.Components;
+using _Project.Scripts.Runtime.Core.Infrastructure.Requests.Tags;
+using _Project.Scripts.Runtime.Features.Input.Requests;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 
@@ -10,5 +12,6 @@ namespace _Project.Scripts.Runtime.Features.Input
         public ProtoPool<DisablePlayerInputRequest> DisablePlayerInputRequestPool;
         public ProtoPool<EnablePlatformsInputRequest> EnablePlatformsInputRequestPool;
         public ProtoPool<DisablePlatformsInputRequest> DisablePlatformsInputRequestPool;
+        public ProtoIt EnablePlayerInputRequest = new (It.Inc<RequestComponent, ActiveRequestTag, EnablePlayerInputRequest>());
     }
 }
