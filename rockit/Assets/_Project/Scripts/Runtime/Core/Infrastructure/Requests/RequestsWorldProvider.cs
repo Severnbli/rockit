@@ -14,9 +14,6 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Requests
             _world = new ProtoWorld(aspect);
         }
 
-        public ProtoWorld GetWorld()
-        {
-            return null;
-        }
+        public ProtoWorld GetWorld() => _world;
     }
 }
