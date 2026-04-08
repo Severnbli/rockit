@@ -1,5 +1,6 @@
 ﻿using _Project.Scripts.Runtime.Core.Bootstrap.Domain;
 using _Project.Scripts.Runtime.Shared.Utils;
+using _Project.Scripts.Runtime.Shared.Utils.Input;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 

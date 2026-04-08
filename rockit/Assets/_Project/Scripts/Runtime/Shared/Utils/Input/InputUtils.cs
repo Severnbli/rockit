@@ -2,7 +2,7 @@
 using _Project.Scripts.Runtime.Shared.Extensions;
 using Leopotam.EcsProto;
 
-namespace _Project.Scripts.Runtime.Shared.Utils
+namespace _Project.Scripts.Runtime.Shared.Utils.Input
 {
     public static class InputUtils
     {
