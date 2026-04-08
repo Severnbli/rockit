@@ -6,7 +6,7 @@ namespace _Project.Scripts.Runtime.Shared.Extensions
 {
     public static class RequestsExtensions
     {
-        public static ProtoEntity CreateRequest(this RequestsAspect aspect, ProtoPackedEntity targetEntity = default,
+        public static ProtoEntity CreateRequest(this RequestsAspect aspect, ProtoPackedEntityWithWorld targetEntity = default,
             bool fixedRun = false)
         {
             ref var request = ref aspect.RequestComponentPool.NewEntity(out var entity);
