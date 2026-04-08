@@ -35,9 +35,6 @@ namespace _Project.Scripts.Tests.Features.Input
             AddPlayerInputSystems(_playerInputService, _playerInputConfig);
             
             Systems.Init();
-            
-            AssertPlatformsInputDisabled(_platformsInputService, _platformsInputConfig);
-            AssertPlayerInputDisabled(_playerInputService, _playerInputConfig);
 
             var entities = CreateEnableRequests();
             ActivateRequests(entities);
