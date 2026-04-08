@@ -2,6 +2,6 @@
 {
     public interface IWorldInstaller
     {
-        
+        void Install(EcsSystems systems);
     }
 }
