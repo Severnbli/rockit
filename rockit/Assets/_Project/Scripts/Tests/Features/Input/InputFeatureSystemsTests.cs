@@ -61,8 +61,7 @@ namespace _Project.Scripts.Tests.Features.Input
             var list = new List<ProtoEntity>();
             
             list.AddRange(CreateEnableRequests());
-            list.Add(PlayerInputUtils.CreateDisableRequest(RequestsWorldAspect));
-            list.Add(PlatformsInputUtils.CreateDisableRequest(RequestsWorldAspect));
+            list.AddRange(CreateDisableRequests());
             
             return list;
         }
@@ -73,6 +72,16 @@ namespace _Project.Scripts.Tests.Features.Input
             
             list.Add(PlayerInputUtils.CreateEnableRequest(RequestsWorldAspect));
             list.Add(PlatformsInputUtils.CreateEnableRequest(RequestsWorldAspect));
+            
+            return list;
+        }
+
+        private List<ProtoEntity> CreateDisableRequests()
+        {
+            var list = new List<ProtoEntity>();
+            
+            list.Add(PlayerInputUtils.CreateDisableRequest(RequestsWorldAspect));
+            list.Add(PlatformsInputUtils.CreateDisableRequest(RequestsWorldAspect));
             
             return list;
         }
