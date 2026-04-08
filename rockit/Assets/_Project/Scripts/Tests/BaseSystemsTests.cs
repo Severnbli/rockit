@@ -3,7 +3,7 @@ using NUnit.Framework;
 
 namespace _Project.Scripts.Tests
 {
-    public class SystemsTestsBase
+    public class BaseSystemsTests
     {
         protected ISystemsContainerProvider SystemsContainerProvider;
         protected EcsSystems Systems;
