@@ -1,4 +1,6 @@
 ﻿using _Project.Scripts.Runtime.Core.Bootstrap.Domain;
+using _Project.Scripts.Runtime.Core.Infrastructure.Requests;
+using _Project.Scripts.Runtime.Core.Infrastructure.Requests.World;
 using _Project.Scripts.Runtime.Core.Systems;
 using NUnit.Framework;
 
@@ -9,6 +11,7 @@ namespace _Project.Scripts.Tests
         protected ISystemsContainerProvider SystemsContainerProvider;
         protected EcsSystems Systems;
         protected DomainAspect MainAspect;
+        protected RequestsWorldAspect RequestsWorldAspect;
 
         [OneTimeSetUp]
         public virtual void OneTimeSetUp()
@@ -27,6 +30,9 @@ namespace _Project.Scripts.Tests
         {
             Systems = SystemsContainerProvider.GetSystemsContainer();
             MainAspect = Systems.World().Aspect(typeof(DomainAspect)) as DomainAspect;
+            RequestsWorldAspect =
+                Systems.World(RequestsContracts.RequestsIdentifier).Aspect(typeof(RequestsWorldAspect)) as
+                    RequestsWorldAspect;
         }
 
         [TearDown]
