@@ -5,14 +5,14 @@ namespace _Project.Scripts.Runtime.Core.Systems
     public class BaseWorldProvider : IWorldProvider
     {
         protected readonly IProtoAspect Aspect;
-        private readonly ProtoWorld _world;
+        protected readonly ProtoWorld World;
 
         public BaseWorldProvider(IProtoAspect aspect)
         {
             Aspect = aspect;
-            _world = new ProtoWorld(aspect);
+            World = new ProtoWorld(aspect);
         }
 
-        public virtual ProtoWorld GetWorld() => _world;
+        public virtual ProtoWorld GetWorld() => World;
     }
 }
