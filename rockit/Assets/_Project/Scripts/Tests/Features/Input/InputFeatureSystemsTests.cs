@@ -51,10 +51,19 @@ namespace _Project.Scripts.Tests.Features.Input
         {
             var list = new List<ProtoEntity>();
             
-            list.Add(PlayerInputUtils.CreateEnableRequest(RequestsWorldAspect));
+            list.AddRange(CreateEnableRequests());
             list.Add(PlayerInputUtils.CreateDisableRequest(RequestsWorldAspect));
-            list.Add(PlatformsInputUtils.CreateEnableRequest(RequestsWorldAspect));
             list.Add(PlatformsInputUtils.CreateDisableRequest(RequestsWorldAspect));
+            
+            return list;
+        }
+
+        private List<ProtoEntity> CreateEnableRequests()
+        {
+            var list = new List<ProtoEntity>();
+            
+            list.Add(PlayerInputUtils.CreateEnableRequest(RequestsWorldAspect));
+            list.Add(PlatformsInputUtils.CreateEnableRequest(RequestsWorldAspect));
             
             return list;
         }
