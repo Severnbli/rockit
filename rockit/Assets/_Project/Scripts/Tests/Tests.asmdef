@@ -10,7 +10,8 @@
         "Leopotam.EcsProto.QoL",
         "Zenject",
         "UniTask",
-        "Zenject-TestFramework"
+        "Zenject-TestFramework",
+        "Unity.InputSystem"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
