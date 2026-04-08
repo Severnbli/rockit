@@ -19,6 +19,14 @@ namespace _Project.Scripts.Tests.Features.Input
             return list;
         }
 
+        private void ActivateRequests(List<ProtoEntity> entities)
+        {
+            foreach (var entity in entities)
+            {
+                RequestsWorldAspect.RequestsAspect.ActiveRequestTagPool.Add(entity);
+            }
+        }
+
         private void AssertRequestsEmpty()
         {
             Assert.True(RequestsWorldAspect.InputAspect.EnablePlayerInputRequests.IsEmptySlow());
