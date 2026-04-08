@@ -33,6 +33,29 @@ namespace _Project.Scripts.Tests.Features.Input
             
             AddPlatformsSystems(_platformsInputService, _platformsInputConfig);
             AddPlayerInputSystems(_playerInputService, _playerInputConfig);
+            
+            Systems.Init();
+            
+            AssertPlatformsInputDisabled(_platformsInputService, _platformsInputConfig);
+            AssertPlayerInputDisabled(_playerInputService, _playerInputConfig);
+
+            var entities = CreateEnableRequests();
+            ActivateRequests(entities);
+            
+            Systems.Run();
+            
+            AssertPlatformsInputEnabled(_platformsInputService, _platformsInputConfig);
+            AssertPlayerInputEnabled(_playerInputService, _playerInputConfig);
+            
+            RequestsWorld.Clear();
+            
+            entities = CreateDisableRequests();
+            ActivateRequests(entities);
+            
+            Systems.Run();
+            
+            AssertPlatformsInputDisabled(_platformsInputService, _platformsInputConfig);
+            AssertPlayerInputDisabled(_playerInputService, _playerInputConfig);
         }
 
         private void AddPlatformsSystems(PlatformsInputService service, PlatformsInputConfig config)
