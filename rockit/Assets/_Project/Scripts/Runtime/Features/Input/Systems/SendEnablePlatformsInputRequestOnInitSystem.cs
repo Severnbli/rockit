@@ -12,7 +12,7 @@ namespace _Project.Scripts.Runtime.Features.Input.Systems
         
         public void Init(IProtoSystems systems)
         {
-            InputUtils.CreateEnablePlatformsInputRequest(_domainAspect);
+            PlatformsInputUtils.CreateEnablePlatformsInputRequest(_domainAspect);
         }
     }
 }

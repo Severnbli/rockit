@@ -4,7 +4,7 @@ using Leopotam.EcsProto;
 
 namespace _Project.Scripts.Runtime.Shared.Utils.Input
 {
-    public static class InputUtils
+    public static class PlatformsInputUtils
     {
         public static ProtoEntity CreateEnablePlatformsInputRequest(DomainAspect domainAspect)
         {
