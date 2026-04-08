@@ -1,4 +1,5 @@
-﻿using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure;
+﻿using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features;
+using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure;
 using _Project.Scripts.Runtime.Core.Bootstrap.States;
 using _Project.Scripts.Runtime.Core.Bootstrap.States.Project;
 using _Project.Scripts.Runtime.Core.Infrastructure.Objects.Domain;
@@ -33,6 +34,8 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Project
             TryRegisterModule<TimeModule>();
             TryRegisterModule<StorageModule>();
             TryRegisterModule<ScenesModule>();
+            TryRegisterModule<InputModule>();
+            TryRegisterModule<RequestsModule>();
         }
     }
 }
