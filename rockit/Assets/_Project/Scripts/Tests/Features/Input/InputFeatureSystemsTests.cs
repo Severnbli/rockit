@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using _Project.Scripts.Runtime.Shared.Utils.Input;
+using _Project.Scripts.Tests.Shared;
 using Leopotam.EcsProto;
 using NUnit.Framework;
 
@@ -16,7 +17,7 @@ namespace _Project.Scripts.Tests.Features.Input
             ActivateRequests(entities);
             AssertRequestsOnlyOne();
         }
-
+        
         private List<ProtoEntity> CreateRequests()
         {
             var list = new List<ProtoEntity>();

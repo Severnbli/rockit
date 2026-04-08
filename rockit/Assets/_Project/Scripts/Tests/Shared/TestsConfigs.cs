@@ -1,7 +1,7 @@
 ﻿using _Project.Scripts.Runtime.Features.Input.Configs;
 using UnityEngine;
 
-namespace _Project.Scripts.Tests
+namespace _Project.Scripts.Tests.Shared
 {
     public class TestsConfigs : ScriptableObject
     {
