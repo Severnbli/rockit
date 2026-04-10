@@ -2,7 +2,6 @@
 using _Project.Scripts.Runtime.Core.Infrastructure.Requests.Systems;
 using _Project.Scripts.Runtime.Core.Infrastructure.Time.Services;
 using _Project.Scripts.Runtime.Core.Infrastructure.Time.Systems;
-using _Project.Scripts.Runtime.Core.Systems;
 using _Project.Scripts.Runtime.Shared.Extensions;
 using _Project.Scripts.Tests.Shared;
 using NUnit.Framework;
@@ -41,31 +40,33 @@ namespace _Project.Scripts.Tests.Infrastructure
             
             Systems.Init();
 
-            var requestAspect = Systems.World().Aspect(typeof(RequestsAspect)) as RequestsAspect;
+            var coreRequestsAspect = Systems.World().Aspect(typeof(CoreRequestsAspect)) as CoreRequestsAspect;
 
-            requestAspect.CreateRequest();
-            requestAspect.CreateRequest(fixedRun: true);
+            Assert.NotNull(coreRequestsAspect);
+            
+            coreRequestsAspect.CreateRequest();
+            coreRequestsAspect.CreateRequest(fixedRun: true);
 
-            Assert.AreEqual(requestAspect!.RunNotActivated.LenSlow(), 1);
-            Assert.AreEqual(requestAspect!.FixedRunNotActivated.LenSlow(), 1);
-            Assert.AreEqual(requestAspect!.RunActivated.LenSlow(), 0);
-            Assert.AreEqual(requestAspect!.FixedRunActivated.LenSlow(), 0);
+            Assert.AreEqual(coreRequestsAspect.RunNotActivated.LenSlow(), 1);
+            Assert.AreEqual(coreRequestsAspect.FixedRunNotActivated.LenSlow(), 1);
+            Assert.AreEqual(coreRequestsAspect.RunActivated.LenSlow(), 0);
+            Assert.AreEqual(coreRequestsAspect.FixedRunActivated.LenSlow(), 0);
             
             Systems.Run();
             Systems.FixedRun();
             
-            Assert.AreEqual(requestAspect!.RunNotActivated.LenSlow(), 0);
-            Assert.AreEqual(requestAspect!.FixedRunNotActivated.LenSlow(), 0);
-            Assert.AreEqual(requestAspect!.RunActivated.LenSlow(), 1);
-            Assert.AreEqual(requestAspect!.FixedRunActivated.LenSlow(), 1);
+            Assert.AreEqual(coreRequestsAspect.RunNotActivated.LenSlow(), 0);
+            Assert.AreEqual(coreRequestsAspect.FixedRunNotActivated.LenSlow(), 0);
+            Assert.AreEqual(coreRequestsAspect.RunActivated.LenSlow(), 1);
+            Assert.AreEqual(coreRequestsAspect.FixedRunActivated.LenSlow(), 1);
             
             Systems.Run();
             Systems.FixedRun();
             
-            Assert.AreEqual(requestAspect!.RunNotActivated.LenSlow(), 0);
-            Assert.AreEqual(requestAspect!.FixedRunNotActivated.LenSlow(), 0);
-            Assert.AreEqual(requestAspect!.RunActivated.LenSlow(), 0);
-            Assert.AreEqual(requestAspect!.FixedRunActivated.LenSlow(), 0);
+            Assert.AreEqual(coreRequestsAspect.RunNotActivated.LenSlow(), 0);
+            Assert.AreEqual(coreRequestsAspect.FixedRunNotActivated.LenSlow(), 0);
+            Assert.AreEqual(coreRequestsAspect.RunActivated.LenSlow(), 0);
+            Assert.AreEqual(coreRequestsAspect.FixedRunActivated.LenSlow(), 0);
         }
     }
 }

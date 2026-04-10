@@ -1,4 +1,4 @@
-﻿using _Project.Scripts.Runtime.Core.Infrastructure.Requests.World;
+﻿using _Project.Scripts.Runtime.Core.Infrastructure.Requests;
 using _Project.Scripts.Runtime.Features.Input.Configs;
 using _Project.Scripts.Runtime.Features.Input.Services;
 using _Project.Scripts.Runtime.Shared.Extensions;
@@ -24,17 +24,17 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Input
             config.Dash.Disable();
         }
         
-        public static ProtoEntity CreateEnableRequest(RequestsWorldAspect aspect)
+        public static ProtoEntity CreateEnableRequest(RequestsAspect aspect)
         {
-            var entity = aspect.RequestsAspect.CreateRequest();
-            aspect.InputAspect.EnablePlayerInputRequestPool.Add(entity);
+            var entity = aspect.CreateRequest();
+            aspect.InputRequestsAspect.EnablePlayerInputRequestPool.Add(entity);
             return entity;
         }
         
-        public static ProtoEntity CreateDisableRequest(RequestsWorldAspect aspect)
+        public static ProtoEntity CreateDisableRequest(RequestsAspect aspect)
         {
-            var entity = aspect.RequestsAspect.CreateRequest();
-            aspect.InputAspect.DisablePlayerInputRequestPool.Add(entity);
+            var entity = aspect.CreateRequest();
+            aspect.InputRequestsAspect.DisablePlayerInputRequestPool.Add(entity);
             return entity;
         }
     }

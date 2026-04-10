@@ -1,4 +1,5 @@
 ﻿using _Project.Scripts.Runtime.Core.Bootstrap.Domain;
+using _Project.Scripts.Runtime.Core.Infrastructure.Requests;
 using _Project.Scripts.Runtime.Core.Infrastructure.Requests.Systems;
 using _Project.Scripts.Runtime.Core.Infrastructure.Requests.World;
 
@@ -22,7 +23,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure
         {
             base.RegisterBindings();
 
-            Container.Bind<RequestsWorldAspect>().ToSelf().AsSingle();
+            Container.Bind<RequestsAspect>().ToSelf().AsSingle();
             Container.Bind<RequestsWorldProvider>().ToSelf().AsSingle();
             Container.Bind<RequestsWorldDestroyer>().ToSelf().AsSingle();
         }
