@@ -9,16 +9,22 @@ namespace _Project.Scripts.Runtime.Shared.Extensions
         public static ProtoEntity CreateRequest(this RequestsAspect aspect, ProtoPackedEntityWithWorld targetEntity = default,
             bool fixedRun = false)
         {
-            ref var request = ref aspect.CoreRequestsAspect.RequestComponentPool.NewEntity(out var entity);
+            return CreateRequest(aspect.CoreRequestsAspect, targetEntity, fixedRun);
+        }
+        
+        public static ProtoEntity CreateRequest(this CoreRequestsAspect aspect, ProtoPackedEntityWithWorld targetEntity = default,
+            bool fixedRun = false)
+        {
+            ref var request = ref aspect.RequestComponentPool.NewEntity(out var entity);
             request.Entity = targetEntity;
 
             if (!fixedRun)
             {
-                aspect.CoreRequestsAspect.RunRequestTagPool.Add(entity);
+                aspect.RunRequestTagPool.Add(entity);
             }
             else
             {
-                aspect.CoreRequestsAspect.FixedRunRequestTagPool.Add(entity);
+                aspect.FixedRunRequestTagPool.Add(entity);
             }
             
             return entity;
