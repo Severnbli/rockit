@@ -10,7 +10,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
     {
         public UnityUguiAspect UguiAspect;
         public UnityPhysics2DAspect Physics2DAspect;
-        public RequestsAspect RequestsAspect;
+        public CoreRequestsAspect CoreRequestsAspect;
         public InputAspect InputAspect;
     }
 }

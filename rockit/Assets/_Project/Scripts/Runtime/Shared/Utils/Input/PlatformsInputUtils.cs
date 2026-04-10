@@ -26,14 +26,14 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Input
         
         public static ProtoEntity CreateEnableRequest(RequestsWorldAspect aspect)
         {
-            var entity = aspect.RequestsAspect.CreateRequest();
+            var entity = aspect.CoreRequestsAspect.CreateRequest();
             aspect.InputAspect.EnablePlatformsInputRequestPool.Add(entity);
             return entity;
         }
         
         public static ProtoEntity CreateDisableRequest(RequestsWorldAspect aspect)
         {
-            var entity = aspect.RequestsAspect.CreateRequest();
+            var entity = aspect.CoreRequestsAspect.CreateRequest();
             aspect.InputAspect.DisablePlatformsInputRequestPool.Add(entity);
             return entity;
         }

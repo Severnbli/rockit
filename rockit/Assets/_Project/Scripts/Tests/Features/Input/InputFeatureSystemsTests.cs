@@ -110,7 +110,7 @@ namespace _Project.Scripts.Tests.Features.Input
         {
             foreach (var entity in entities)
             {
-                RequestsWorldAspect.RequestsAspect.ActiveRequestTagPool.Add(entity);
+                RequestsWorldAspect.CoreRequestsAspect.ActiveRequestTagPool.Add(entity);
             }
         }
 

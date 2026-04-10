@@ -6,21 +6,21 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Requests.Systems
 {
     public class ActivateRequestsSystem : IProtoRunSystem, IProtoFixedRunSystem
     {
-        [DIRequests] private RequestsAspect _requestsAspect;
+        [DIRequests] private CoreRequestsAspect _coreRequestsAspect;
         
         public void Run()
         {
-            foreach (var e in _requestsAspect.RunNotActivated)
+            foreach (var e in _coreRequestsAspect.RunNotActivated)
             {
-                _requestsAspect.ActiveRequestTagPool.Add(e);
+                _coreRequestsAspect.ActiveRequestTagPool.Add(e);
             }
         }
 
         public void FixedRun()
         {
-            foreach (var e in _requestsAspect.FixedRunNotActivated)
+            foreach (var e in _coreRequestsAspect.FixedRunNotActivated)
             {
-                _requestsAspect.ActiveRequestTagPool.Add(e);
+                _coreRequestsAspect.ActiveRequestTagPool.Add(e);
             }
         }
     }
