@@ -40,14 +40,12 @@ namespace _Project.Scripts.Tests.Infrastructure
             
             Systems.Init();
 
-            var requestsAspect = Systems.World().Aspect(typeof(RequestsAspect)) as RequestsAspect;
+            var coreRequestsAspect = Systems.World().Aspect(typeof(CoreRequestsAspect)) as CoreRequestsAspect;
 
-            Assert.NotNull(requestsAspect);
+            Assert.NotNull(coreRequestsAspect);
             
-            requestsAspect.CreateRequest();
-            requestsAspect.CreateRequest(fixedRun: true);
-
-            var coreRequestsAspect = requestsAspect.CoreRequestsAspect;
+            coreRequestsAspect.CreateRequest();
+            coreRequestsAspect.CreateRequest(fixedRun: true);
 
             Assert.AreEqual(coreRequestsAspect.RunNotActivated.LenSlow(), 1);
             Assert.AreEqual(coreRequestsAspect.FixedRunNotActivated.LenSlow(), 1);
