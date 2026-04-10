@@ -8,7 +8,7 @@ namespace _Project.Scripts.Runtime.Features.Input.Systems
 {
     public sealed class DisablePlatformsInputOnRequestSystem : IProtoRunSystem
     {
-        [DIRequests] private readonly InputAspect _inputAspect;
+        [DIRequests] private readonly InputRequestsAspect _inputAspect;
         private readonly PlatformsInputService _service;
         private readonly PlatformsInputConfig _config;
 

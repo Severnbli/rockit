@@ -13,7 +13,7 @@ namespace _Project.Scripts.Tests.Shared
         {
             var world = new ProtoWorld(new DomainAspect());
             var systems = new EcsSystems(world);
-            systems.AddWorld(new ProtoWorld(new RequestsWorldAspect()), RequestsContracts.RequestsIdentifier);
+            systems.AddWorld(new ProtoWorld(new RequestsAspect()), RequestsContracts.RequestsIdentifier);
 
             systems.AddModule(new AutoInjectModule());
             
