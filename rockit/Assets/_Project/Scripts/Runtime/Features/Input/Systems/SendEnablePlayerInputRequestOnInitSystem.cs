@@ -7,7 +7,7 @@ namespace _Project.Scripts.Runtime.Features.Input.Systems
 {
     public sealed class SendEnablePlayerInputRequestOnInitSystem : IProtoInitSystem
     {
-        [DIRequests] private readonly RequestsWorldAspect _aspect;
+        [DIRequests] private readonly RequestsAspect _aspect;
         
         public void Init(IProtoSystems systems)
         {
