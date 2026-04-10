@@ -1,6 +1,5 @@
 ﻿using _Project.Scripts.Runtime.Core.Bootstrap.Domain;
 using _Project.Scripts.Runtime.Core.Infrastructure.Requests;
-using _Project.Scripts.Runtime.Core.Infrastructure.Requests.World;
 using _Project.Scripts.Runtime.Core.Systems;
 using Leopotam.EcsProto;
 using NUnit.Framework;
@@ -12,7 +11,7 @@ namespace _Project.Scripts.Tests.Shared
         protected ISystemsContainerProvider SystemsContainerProvider;
         protected EcsSystems Systems;
         protected DomainAspect MainAspect;
-        protected RequestsWorldAspect RequestsWorldAspect;
+        protected RequestsAspect RequestsAspect;
         protected ProtoWorld MainWorld;
         protected ProtoWorld RequestsWorld;
 
@@ -33,9 +32,9 @@ namespace _Project.Scripts.Tests.Shared
         {
             Systems = SystemsContainerProvider.GetSystemsContainer();
             MainAspect = Systems.World().Aspect(typeof(DomainAspect)) as DomainAspect;
-            RequestsWorldAspect =
-                Systems.World(RequestsContracts.RequestsIdentifier).Aspect(typeof(RequestsWorldAspect)) as
-                    RequestsWorldAspect;
+            RequestsAspect =
+                Systems.World(RequestsContracts.RequestsIdentifier).Aspect(typeof(RequestsAspect)) as
+                    RequestsAspect;
             MainWorld = Systems.World();
             RequestsWorld = Systems.World(RequestsContracts.RequestsIdentifier);
         }

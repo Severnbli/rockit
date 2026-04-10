@@ -8,7 +8,7 @@ namespace _Project.Scripts.Runtime.Features.Input.Systems
 {
     public sealed class EnablePlayerInputOnRequestSystem : IProtoRunSystem
     {
-        [DIRequests] private readonly InputAspect _inputAspect;
+        [DIRequests] private readonly InputRequestsAspect _inputAspect;
         private readonly PlayerInputService _service;
         private readonly PlayerInputConfig _config;
 

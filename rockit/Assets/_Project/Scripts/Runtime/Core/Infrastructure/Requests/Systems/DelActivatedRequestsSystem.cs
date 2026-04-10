@@ -6,21 +6,21 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Requests.Systems
 {
     public class DelActivatedRequestsSystem : IProtoRunSystem, IProtoFixedRunSystem
     {
-        [DIRequests] private RequestsAspect _requestsAspect;
+        [DIRequests] private CoreRequestsAspect _coreRequestsAspect;
         
         public void Run()
         {
-            foreach (var e in _requestsAspect.RunActivated)
+            foreach (var e in _coreRequestsAspect.RunActivated)
             {
-                _requestsAspect.World().DelEntity(e);
+                _coreRequestsAspect.World().DelEntity(e);
             }
         }
 
         public void FixedRun()
         {
-            foreach (var e in _requestsAspect.FixedRunActivated)
+            foreach (var e in _coreRequestsAspect.FixedRunActivated)
             {
-                _requestsAspect.World().DelEntity(e);
+                _coreRequestsAspect.World().DelEntity(e);
             }
         }
     }

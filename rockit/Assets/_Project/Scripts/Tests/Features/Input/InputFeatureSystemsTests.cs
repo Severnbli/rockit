@@ -90,8 +90,8 @@ namespace _Project.Scripts.Tests.Features.Input
         {
             var list = new List<ProtoEntity>();
             
-            list.Add(PlayerInputUtils.CreateEnableRequest(RequestsWorldAspect));
-            list.Add(PlatformsInputUtils.CreateEnableRequest(RequestsWorldAspect));
+            list.Add(PlayerInputUtils.CreateEnableRequest(RequestsAspect));
+            list.Add(PlatformsInputUtils.CreateEnableRequest(RequestsAspect));
             
             return list;
         }
@@ -100,8 +100,8 @@ namespace _Project.Scripts.Tests.Features.Input
         {
             var list = new List<ProtoEntity>();
             
-            list.Add(PlayerInputUtils.CreateDisableRequest(RequestsWorldAspect));
-            list.Add(PlatformsInputUtils.CreateDisableRequest(RequestsWorldAspect));
+            list.Add(PlayerInputUtils.CreateDisableRequest(RequestsAspect));
+            list.Add(PlatformsInputUtils.CreateDisableRequest(RequestsAspect));
             
             return list;
         }
@@ -110,24 +110,24 @@ namespace _Project.Scripts.Tests.Features.Input
         {
             foreach (var entity in entities)
             {
-                RequestsWorldAspect.RequestsAspect.ActiveRequestTagPool.Add(entity);
+                RequestsAspect.CoreRequestsAspect.ActiveRequestTagPool.Add(entity);
             }
         }
 
         private void AssertRequestsEmpty()
         {
-            Assert.True(RequestsWorldAspect.InputAspect.EnablePlayerInputRequests.IsEmptySlow());
-            Assert.True(RequestsWorldAspect.InputAspect.DisablePlayerInputRequests.IsEmptySlow());
-            Assert.True(RequestsWorldAspect.InputAspect.EnablePlatformsInputRequests.IsEmptySlow());
-            Assert.True(RequestsWorldAspect.InputAspect.DisablePlatformsInputRequests.IsEmptySlow());
+            Assert.True(RequestsAspect.InputRequestsAspect.EnablePlayerInputRequests.IsEmptySlow());
+            Assert.True(RequestsAspect.InputRequestsAspect.DisablePlayerInputRequests.IsEmptySlow());
+            Assert.True(RequestsAspect.InputRequestsAspect.EnablePlatformsInputRequests.IsEmptySlow());
+            Assert.True(RequestsAspect.InputRequestsAspect.DisablePlatformsInputRequests.IsEmptySlow());
         }
 
         private void AssertRequestsOnlyOne()
         {
-            Assert.AreEqual(RequestsWorldAspect.InputAspect.EnablePlayerInputRequests.LenSlow(), 1);
-            Assert.AreEqual(RequestsWorldAspect.InputAspect.DisablePlayerInputRequests.LenSlow(), 1);
-            Assert.AreEqual(RequestsWorldAspect.InputAspect.EnablePlatformsInputRequests.LenSlow(), 1);
-            Assert.AreEqual(RequestsWorldAspect.InputAspect.DisablePlatformsInputRequests.LenSlow(), 1);
+            Assert.AreEqual(RequestsAspect.InputRequestsAspect.EnablePlayerInputRequests.LenSlow(), 1);
+            Assert.AreEqual(RequestsAspect.InputRequestsAspect.DisablePlayerInputRequests.LenSlow(), 1);
+            Assert.AreEqual(RequestsAspect.InputRequestsAspect.EnablePlatformsInputRequests.LenSlow(), 1);
+            Assert.AreEqual(RequestsAspect.InputRequestsAspect.DisablePlatformsInputRequests.LenSlow(), 1);
         }
 
         private void AssertPlayerInputEnabled(PlayerInputService service, PlayerInputConfig config)
