@@ -41,7 +41,7 @@ namespace _Project.Scripts.Tests.Infrastructure
             
             Systems.Init();
 
-            var requestAspect = Systems.World().Aspect(typeof(RequestsAspect)) as RequestsAspect;
+            var requestAspect = Systems.World().Aspect(typeof(CoreRequestsAspect)) as CoreRequestsAspect;
 
             requestAspect.CreateRequest();
             requestAspect.CreateRequest(fixedRun: true);
