@@ -31,6 +31,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features
             BindSystem<EnablePlatformsInputOnRequestSystem>();
             BindSystem<DisablePlatformsInputOnRequestSystem>();
             BindSystem<PlatformsInputServiceUpdateSystem>();
+            BindSystem<PlayerInputServiceUpdateSystem>();
         }
     }
 }
