@@ -3,9 +3,9 @@
     public sealed class PlayerInputService
     {
         public bool Enabled;
-        public bool WalkPerformed;
+        public bool WalkTriggered;
         public float Walk;
-        public bool JumpPerformed;
-        public bool DashPerformed;
+        public bool JumpTriggered;
+        public bool DashTriggered;
     }
 }
