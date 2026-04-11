@@ -8,9 +8,9 @@ namespace _Project.Scripts.Runtime.Shared.Extensions
         {
             if (service.Enabled) return false;
             
-            service.PositionPerformed = false;
-            service.RotationPerformed = false;
-            service.ScalePerformed = false;
+            service.PositionTriggered = false;
+            service.RotationTriggered = false;
+            service.ScaleTriggered = false;
             return true;
         }
     }
