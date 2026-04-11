@@ -40,9 +40,7 @@ namespace _Project.Scripts.Tests.Infrastructure
             
             Systems.Init();
 
-            var coreRequestsAspect = Systems.World().Aspect(typeof(CoreRequestsAspect)) as CoreRequestsAspect;
-
-            Assert.NotNull(coreRequestsAspect);
+            var coreRequestsAspect = RequestsAspect.CoreRequestsAspect;
             
             coreRequestsAspect.CreateRequest();
             coreRequestsAspect.CreateRequest(fixedRun: true);
