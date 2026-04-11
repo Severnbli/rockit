@@ -1,5 +1,6 @@
 ﻿using _Project.Scripts.Runtime.Features.Input.Configs;
 using _Project.Scripts.Runtime.Features.Input.Services;
+using _Project.Scripts.Runtime.Shared.Extensions;
 using Leopotam.EcsProto;
 
 namespace _Project.Scripts.Runtime.Features.Input.Systems
@@ -17,7 +18,11 @@ namespace _Project.Scripts.Runtime.Features.Input.Systems
 
         public void Run()
         {
-            
+            if (_service.TryResetOnDisabled()) return;
+
+            _service.PositionTriggered = _config.Position.triggered;
+            _service.RotationTriggered = _config.Rotation.triggered;
+            _service.ScaleTriggered = _config.Scale.triggered;
         }
     }
 }
