@@ -1,6 +1,8 @@
 ﻿using _Project.Scripts.Runtime.Features.Input.Configs;
 using _Project.Scripts.Runtime.Features.Input.Services;
+using _Project.Scripts.Runtime.Shared.Extensions;
 using Leopotam.EcsProto;
+using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Features.Input.Systems
 {
@@ -17,7 +19,11 @@ namespace _Project.Scripts.Runtime.Features.Input.Systems
 
         public void Run()
         {
+            if (_service.TryResetOnDisabled()) return;
             
+            _service.SetWalkFieldsByVector2(_config.Walk.ReadValue<Vector2>());
+            _service.JumpTriggered = _config.Jump.triggered;
+            _service.DashTriggered = _config.Dash.triggered;
         }
     }
 }
