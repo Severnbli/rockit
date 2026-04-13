@@ -8,5 +8,6 @@ namespace _Project.Scripts.Runtime.Features.Moving
     {
         public ProtoPool<WalkRequest> WalkRequestPool;
         public ProtoPool<JumpRequest> JumpRequestPool;
+        public ProtoPool<DashRequest> DashRequestPool;
     }
 }
