@@ -12,5 +12,12 @@ namespace _Project.Scripts.Runtime.Shared.Utils
             aspect.MovingRequestsAspect.WalkRequestPool.Add(entity);
             return entity;
         }
+        
+        public static ProtoEntity CreateJumpRequest(RequestsAspect aspect)
+        {
+            var entity = aspect.CreateRequest();
+            aspect.MovingRequestsAspect.JumpRequestPool.Add(entity);
+            return entity;
+        }
     }
 }
