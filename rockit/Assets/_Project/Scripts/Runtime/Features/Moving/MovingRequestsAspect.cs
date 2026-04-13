@@ -1,9 +1,11 @@
-﻿using Leopotam.EcsProto.QoL;
+﻿using _Project.Scripts.Runtime.Features.Moving.Requests;
+using Leopotam.EcsProto;
+using Leopotam.EcsProto.QoL;
 
 namespace _Project.Scripts.Runtime.Features.Moving
 {
     public class MovingRequestsAspect : ProtoAspectInject
     {
-        
+        public ProtoPool<WalkRequest> WalkRequestPool;
     }
 }
