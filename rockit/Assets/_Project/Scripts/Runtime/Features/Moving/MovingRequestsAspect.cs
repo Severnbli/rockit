@@ -14,5 +14,6 @@ namespace _Project.Scripts.Runtime.Features.Moving
         public ProtoPool<DashRequest> DashRequestPool;
         public ProtoIt PlayerWalkRequests = new (It.Inc<RequestComponent, ActiveRequestTag, WalkRequest, PlayerTag>());
         public ProtoIt PlayerJumpRequests = new (It.Inc<RequestComponent, ActiveRequestTag, JumpRequest, PlayerTag>());
+        public ProtoIt PlayerDashRequests = new (It.Inc<RequestComponent, ActiveRequestTag, DashRequest, PlayerTag>());
     }
 }
