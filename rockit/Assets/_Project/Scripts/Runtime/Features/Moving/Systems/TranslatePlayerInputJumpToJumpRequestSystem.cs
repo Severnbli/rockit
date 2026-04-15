@@ -7,7 +7,7 @@ using Leopotam.EcsProto;
 
 namespace _Project.Scripts.Runtime.Features.Moving.Systems
 {
-    public class TranslatePlayerInputJumpToJumpRequestSystem : IProtoRunSystem
+    public sealed class TranslatePlayerInputJumpToJumpRequestSystem : IProtoRunSystem
     {
         [DIRequests] private readonly RequestsAspect _aspect;
         private readonly PlayerInputService _service;
