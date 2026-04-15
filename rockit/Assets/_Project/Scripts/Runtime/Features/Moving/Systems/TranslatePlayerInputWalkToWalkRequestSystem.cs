@@ -13,7 +13,7 @@ namespace _Project.Scripts.Runtime.Features.Moving.Systems
 {
     public sealed class TranslatePlayerInputWalkToWalkRequestSystem : IProtoRunSystem
     {
-        [DIRequests] private readonly RequestsAspect _aspect;
+        [DIRequests] private readonly RequestsAspect _requestsAspect;
         [DI] private readonly SharedAspect _sharedAspect;
         private readonly PlayerInputService _service;
         private readonly PlayerMovingConfig _config;
@@ -36,7 +36,7 @@ namespace _Project.Scripts.Runtime.Features.Moving.Systems
             foreach (var e in _sharedAspect.Players)
             {
                 var packed = _sharedAspect.World().PackEntityWithWorld(e);
-                MovingUtils.CreateWalkRequest(_aspect, packed, prepared).AddPlayerTagToRequest(_aspect);
+                MovingUtils.CreateWalkRequest(_requestsAspect, packed, prepared).AddPlayerTagToRequest(_requestsAspect);
             }
         }
     }
