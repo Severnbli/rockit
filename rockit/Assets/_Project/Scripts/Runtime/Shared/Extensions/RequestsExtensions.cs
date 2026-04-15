@@ -29,5 +29,15 @@ namespace _Project.Scripts.Runtime.Shared.Extensions
             
             return entity;
         }
+
+        public static ProtoEntity CreateRequest<T>(this RequestsAspect aspect, ProtoPool<T> pool,
+            ProtoPackedEntityWithWorld targetEntity = default, bool fixedRun = false, T prepared = default) 
+            where T : struct
+        {
+            var entity = aspect.CreateRequest(targetEntity, fixedRun);
+            ref var request = ref pool.Add(entity);
+            request = prepared;
+            return entity;
+        }
     }
 }
