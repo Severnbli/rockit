@@ -27,7 +27,7 @@ namespace _Project.Scripts.Runtime.Features.Moving.Systems
 
             var prepared = new WalkRequest
             {
-                Factor = _service.Walk
+                Factor = _service.Walk * _config.WalkSpeed
             };
             MovingUtils.CreateWalkRequest(_aspect, prepared).AddPlayerTagToRequest(_aspect);
         }
