@@ -15,6 +15,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features
             
             BindSystem<TranslatePlayerInputWalkToWalkRequestSystem>();
             BindSystem<TranslatePlayerInputJumpToJumpRequestSystem>();
+            BindSystem<TranslatePlayerInputDashToDashRequestSystem>();
         }
     }
 }
