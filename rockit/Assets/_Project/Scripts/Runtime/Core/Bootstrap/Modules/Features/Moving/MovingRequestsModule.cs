@@ -1,11 +1,11 @@
 ﻿using _Project.Scripts.Runtime.Core.Bootstrap.Domain;
 using _Project.Scripts.Runtime.Features.Moving.Systems;
 
-namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features
+namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Moving
 {
-    public sealed class MovingModule : BaseModule<MovingModule>
+    public sealed class MovingRequestsModule : BaseModule<MovingRequestsModule>
     {
-        public MovingModule(IDomain domain) : base(domain)
+        public MovingRequestsModule(IDomain domain) : base(domain)
         {
         }
 
