@@ -3,11 +3,11 @@ using Leopotam.EcsProto;
 
 namespace _Project.Scripts.Runtime.Features.Moving.Systems
 {
-    public class TranslatePlayerInputWalkIntoMovingWalkRequestSystem : IProtoRunSystem
+    public class TranslatePlayerInputWalkToWalkRequestSystem : IProtoRunSystem
     {
         private readonly PlayerInputService _service;
 
-        public TranslatePlayerInputWalkIntoMovingWalkRequestSystem(PlayerInputService service)
+        public TranslatePlayerInputWalkToWalkRequestSystem(PlayerInputService service)
         {
             _service = service;
         }
