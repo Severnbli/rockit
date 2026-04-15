@@ -2,6 +2,6 @@
 {
     public struct JumpRequest
     {
-        
+        public float Factor;
     }
 }
