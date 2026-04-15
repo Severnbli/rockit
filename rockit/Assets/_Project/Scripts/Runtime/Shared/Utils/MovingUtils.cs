@@ -9,24 +9,22 @@ namespace _Project.Scripts.Runtime.Shared.Utils
     {
         public static ProtoEntity CreateWalkRequest(RequestsAspect aspect, WalkRequest prepared = default)
         {
-            var entity = aspect.CreateRequest(fixedRun: true);
-            ref var request = ref aspect.MovingRequestsAspect.WalkRequestPool.Add(entity);
-            request = prepared;
+            var entity = aspect.CreateRequest(aspect.MovingRequestsAspect.WalkRequestPool, fixedRun: true,
+                prepared: prepared);
             return entity;
         }
         
         public static ProtoEntity CreateJumpRequest(RequestsAspect aspect, JumpRequest prepared = default)
         {
-            var entity = aspect.CreateRequest(fixedRun: true);
-            ref var request = ref aspect.MovingRequestsAspect.JumpRequestPool.Add(entity);
-            request = prepared;
+            var entity = aspect.CreateRequest(aspect.MovingRequestsAspect.JumpRequestPool, fixedRun: true,
+                prepared: prepared);
             return entity;
         }
         
         public static ProtoEntity CreateDashRequest(RequestsAspect aspect, DashRequest prepared = default)
         {
-            var entity = aspect.CreateRequest(fixedRun: true);
-            ref var request = ref aspect.MovingRequestsAspect.DashRequestPool.Add(entity);
+            var entity = aspect.CreateRequest(aspect.MovingRequestsAspect.DashRequestPool, fixedRun: true,
+                prepared: prepared);
             return entity;
         }
     }
