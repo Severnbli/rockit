@@ -8,21 +8,21 @@ namespace _Project.Scripts.Runtime.Shared.Utils
     {
         public static ProtoEntity CreateWalkRequest(RequestsAspect aspect)
         {
-            var entity = aspect.CreateRequest();
+            var entity = aspect.CreateRequest(fixedRun: true);
             aspect.MovingRequestsAspect.WalkRequestPool.Add(entity);
             return entity;
         }
         
         public static ProtoEntity CreateJumpRequest(RequestsAspect aspect)
         {
-            var entity = aspect.CreateRequest();
+            var entity = aspect.CreateRequest(fixedRun: true);
             aspect.MovingRequestsAspect.JumpRequestPool.Add(entity);
             return entity;
         }
         
         public static ProtoEntity CreateDashRequest(RequestsAspect aspect)
         {
-            var entity = aspect.CreateRequest();
+            var entity = aspect.CreateRequest(fixedRun: true);
             aspect.MovingRequestsAspect.DashRequestPool.Add(entity);
             return entity;
         }
