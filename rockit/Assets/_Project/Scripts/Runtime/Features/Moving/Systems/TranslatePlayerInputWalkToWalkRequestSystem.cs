@@ -1,5 +1,6 @@
 ﻿using _Project.Scripts.Runtime.Core.Infrastructure.Requests;
 using _Project.Scripts.Runtime.Core.Infrastructure.Requests.World;
+using _Project.Scripts.Runtime.Features.Input.Configs;
 using _Project.Scripts.Runtime.Features.Input.Services;
 using _Project.Scripts.Runtime.Features.Moving.Requests;
 using _Project.Scripts.Runtime.Shared.Extensions;
@@ -12,10 +13,12 @@ namespace _Project.Scripts.Runtime.Features.Moving.Systems
     {
         [DIRequests] private readonly RequestsAspect _aspect;
         private readonly PlayerInputService _service;
+        private readonly PlayerInputConfig _config;
 
-        public TranslatePlayerInputWalkToWalkRequestSystem(PlayerInputService service)
+        public TranslatePlayerInputWalkToWalkRequestSystem(PlayerInputService service, PlayerInputConfig config)
         {
             _service = service;
+            _config = config;
         }
 
         public void Run()
