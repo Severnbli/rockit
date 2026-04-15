@@ -2,6 +2,6 @@
 {
     public struct WalkRequest
     {
-        
+        public float Factor;
     }
 }
