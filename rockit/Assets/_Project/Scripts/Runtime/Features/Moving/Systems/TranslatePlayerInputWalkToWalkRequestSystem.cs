@@ -8,7 +8,7 @@ using Leopotam.EcsProto;
 
 namespace _Project.Scripts.Runtime.Features.Moving.Systems
 {
-    public class TranslatePlayerInputWalkToWalkRequestSystem : IProtoRunSystem
+    public sealed class TranslatePlayerInputWalkToWalkRequestSystem : IProtoRunSystem
     {
         [DIRequests] private readonly RequestsAspect _aspect;
         private readonly PlayerInputService _service;
