@@ -2,6 +2,6 @@
 {
     public struct DashRequest
     {
-        
+        public float Factor;
     }
 }
