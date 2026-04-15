@@ -23,10 +23,10 @@ namespace _Project.Scripts.Runtime.Shared.Utils
             return entity;
         }
         
-        public static ProtoEntity CreateDashRequest(RequestsAspect aspect)
+        public static ProtoEntity CreateDashRequest(RequestsAspect aspect, DashRequest prepared = default)
         {
             var entity = aspect.CreateRequest(fixedRun: true);
-            aspect.MovingRequestsAspect.DashRequestPool.Add(entity);
+            ref var request = ref aspect.MovingRequestsAspect.DashRequestPool.Add(entity);
             return entity;
         }
     }
