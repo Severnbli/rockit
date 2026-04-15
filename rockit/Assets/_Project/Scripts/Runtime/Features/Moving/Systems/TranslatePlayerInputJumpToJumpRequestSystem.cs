@@ -9,7 +9,7 @@ namespace _Project.Scripts.Runtime.Features.Moving.Systems
 {
     public sealed class TranslatePlayerInputJumpToJumpRequestSystem : IProtoRunSystem
     {
-        [DIRequests] private readonly RequestsAspect _aspect;
+        [DIRequests] private readonly RequestsAspect _requestsAspect;
         private readonly PlayerInputService _service;
 
         public TranslatePlayerInputJumpToJumpRequestSystem(PlayerInputService service)
@@ -21,7 +21,7 @@ namespace _Project.Scripts.Runtime.Features.Moving.Systems
         {
             if (!_service.JumpTriggered) return;
             
-            MovingUtils.CreateJumpRequest(_aspect).AddPlayerTagToRequest(_aspect);
+            MovingUtils.CreateJumpRequest(_requestsAspect).AddPlayerTagToRequest(_requestsAspect);
         }
     }
 }
