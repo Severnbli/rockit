@@ -15,10 +15,11 @@ namespace _Project.Scripts.Runtime.Shared.Utils
             return entity;
         }
         
-        public static ProtoEntity CreateJumpRequest(RequestsAspect aspect)
+        public static ProtoEntity CreateJumpRequest(RequestsAspect aspect, JumpRequest prepared = default)
         {
             var entity = aspect.CreateRequest(fixedRun: true);
-            aspect.MovingRequestsAspect.JumpRequestPool.Add(entity);
+            ref var request = ref aspect.MovingRequestsAspect.JumpRequestPool.Add(entity);
+            request = prepared;
             return entity;
         }
         
