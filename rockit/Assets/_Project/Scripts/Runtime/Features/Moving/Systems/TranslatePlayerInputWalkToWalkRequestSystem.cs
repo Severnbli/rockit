@@ -3,15 +3,18 @@ using _Project.Scripts.Runtime.Core.Infrastructure.Requests.World;
 using _Project.Scripts.Runtime.Features.Input.Services;
 using _Project.Scripts.Runtime.Features.Moving.Configs;
 using _Project.Scripts.Runtime.Features.Moving.Requests;
+using _Project.Scripts.Runtime.Shared;
 using _Project.Scripts.Runtime.Shared.Extensions;
 using _Project.Scripts.Runtime.Shared.Utils;
 using Leopotam.EcsProto;
+using Leopotam.EcsProto.QoL;
 
 namespace _Project.Scripts.Runtime.Features.Moving.Systems
 {
     public sealed class TranslatePlayerInputWalkToWalkRequestSystem : IProtoRunSystem
     {
         [DIRequests] private readonly RequestsAspect _aspect;
+        [DI] private readonly SharedAspect _sharedAspect;
         private readonly PlayerInputService _service;
         private readonly PlayerMovingConfig _config;
 
@@ -29,7 +32,12 @@ namespace _Project.Scripts.Runtime.Features.Moving.Systems
             {
                 Factor = _service.Walk * _config.WalkSpeed
             };
-            MovingUtils.CreateWalkRequest(_aspect, prepared).AddPlayerTagToRequest(_aspect);
+            
+            foreach (var e in _sharedAspect.Players)
+            {
+                var packed = _sharedAspect.World().PackEntityWithWorld(e);
+                MovingUtils.CreateWalkRequest(_aspect, packed, prepared).AddPlayerTagToRequest(_aspect);
+            }
         }
     }
 }
