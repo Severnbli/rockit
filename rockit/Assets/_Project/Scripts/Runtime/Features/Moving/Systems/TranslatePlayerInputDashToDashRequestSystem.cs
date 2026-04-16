@@ -36,7 +36,8 @@ namespace _Project.Scripts.Runtime.Features.Moving.Systems
 
             var prepared = new DashRequest
             {
-                Factor = _config.DashPower
+                Factor = _config.DashPower,
+                TimeOut = _config.DashTimeout
             };
             
             foreach (var e in _sharedAspect.Players)
