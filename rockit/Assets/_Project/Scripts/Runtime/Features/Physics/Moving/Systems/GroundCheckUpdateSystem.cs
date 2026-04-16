@@ -27,8 +27,8 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Systems
         {
             foreach (var e in _movingAspect.GroundCheckable)
             {
-                var groundCheck = _movingAspect.GroundCheckComponentPool.Get(e);
-                var transform = _sharedAspect.TransformComponentPool.Get(e);
+                ref var groundCheck = ref _movingAspect.GroundCheckComponentPool.Get(e);
+                ref var transform = ref _sharedAspect.TransformComponentPool.Get(e);
                 ref var result = ref _movingAspect.GroundCheckResultComponentPool.GetOrAdd(e);
 
                 var grounded = MovingUtils.Grounded(transform.Transform.position, groundCheck, _layersConfig,
