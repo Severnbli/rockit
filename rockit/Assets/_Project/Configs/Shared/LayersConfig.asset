@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Runtime::_Project.Scripts.Runtime.Shared.Configs.LayersConfig
   _groundLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
