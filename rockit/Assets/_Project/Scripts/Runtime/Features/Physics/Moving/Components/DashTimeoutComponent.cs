@@ -3,5 +3,6 @@
     public struct DashTimeoutComponent
     {
         public float CreationTime;
+        public float Timeout;
     }
 }
