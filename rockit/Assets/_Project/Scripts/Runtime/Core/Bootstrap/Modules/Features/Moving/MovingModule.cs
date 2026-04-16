@@ -14,6 +14,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Moving
             base.BindSystems();
             
             BindSystem<GroundCheckUpdateSystem>();
+            BindSystem<ApplyGroundVelocityToGroundedObjectSystem>();
         }
     }
 }
