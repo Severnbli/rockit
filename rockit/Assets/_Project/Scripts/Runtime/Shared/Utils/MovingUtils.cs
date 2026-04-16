@@ -35,7 +35,7 @@ namespace _Project.Scripts.Runtime.Shared.Utils
 
         public static Vector3 GetGroundCheckPosition(Vector3 characterPosition, Vector3 groundCheckPosition)
         {
-            return characterPosition - groundCheckPosition;
+            return characterPosition + groundCheckPosition;
         }
     }
 }
