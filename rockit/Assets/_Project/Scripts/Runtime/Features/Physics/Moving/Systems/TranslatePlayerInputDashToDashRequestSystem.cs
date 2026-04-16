@@ -42,8 +42,8 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Systems
             
             foreach (var e in _sharedAspect.Players)
             {
-                var packed = _world.PackEntityWithWorld(e); 
-                MovingUtils.CreateDashRequest(_requestsAspect, packed, prepared).AddPlayerTagToRequest(_requestsAspect);
+                var packed = _world.PackEntityWithWorld(e);
+                MovingUtils.CreateDashRequest(_requestsAspect, packed, prepared);
             }
         }
     }

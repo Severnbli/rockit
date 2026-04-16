@@ -42,7 +42,7 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Systems
             foreach (var e in _sharedAspect.Players)
             {
                 var packed = _world.PackEntityWithWorld(e);
-                MovingUtils.CreateJumpRequest(_requestsAspect, packed, prepared).AddPlayerTagToRequest(_requestsAspect);
+                MovingUtils.CreateJumpRequest(_requestsAspect, packed, prepared);
             }
         }
     }
