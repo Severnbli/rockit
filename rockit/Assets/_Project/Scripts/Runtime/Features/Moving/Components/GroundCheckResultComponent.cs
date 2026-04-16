@@ -1,6 +1,6 @@
 ﻿namespace _Project.Scripts.Runtime.Features.Moving.Components
 {
-    public struct GroundCheckResult
+    public struct GroundCheckResultComponent
     {
         public bool Grounded;
     }
