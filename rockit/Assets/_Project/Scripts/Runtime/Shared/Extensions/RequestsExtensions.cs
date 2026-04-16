@@ -50,5 +50,11 @@ namespace _Project.Scripts.Runtime.Shared.Extensions
             entity = packed.Id;
             return true;
         }
+        
+        public static bool TryCompareRequestWorld(this RequestsAspect aspect, ProtoPackedEntityWithWorld packed,
+            ProtoWorld world, out ProtoEntity entity)
+        {
+            return TryCompareRequestWorld(aspect.CoreRequestsAspect, packed, world, out entity);
+        }
     }
 }
