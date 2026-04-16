@@ -44,10 +44,22 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Systems
                     TryCreateBuffer(jRequest, tarE);
                     continue;
                 }
-                
-                ref var rbComponent = ref _psAspect.Rigidbody2DComponentPool.Get(tarE);
-                rbComponent.Rigidbody2D.ApplyJump(jRequest.Factor);
+
+                ApplyJump(jRequest, tarE);
             }
+        }
+
+        private void ApplyJump(JumpRequest jRequest, ProtoEntity tarE)
+        {
+            if (_mAspect.JumpBufferingComponentPool.Has(tarE))
+            {
+                ref var jbComponent = ref _mAspect.JumpBufferingComponentPool.Get(tarE);
+                jRequest = jbComponent.Request;
+                _mAspect.JumpBufferingComponentPool.Del(tarE);
+            }
+                
+            ref var rbComponent = ref _psAspect.Rigidbody2DComponentPool.Get(tarE);
+            rbComponent.Rigidbody2D.ApplyJump(jRequest.Factor);
         }
 
         private bool TryCreateBuffer(JumpRequest jRequest, ProtoEntity tarE)
