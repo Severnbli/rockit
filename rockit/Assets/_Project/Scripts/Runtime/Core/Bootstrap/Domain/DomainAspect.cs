@@ -10,11 +10,11 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
 {
     public class DomainAspect : ProtoAspectInject
     {
-        public UnityUguiAspect UguiAspect;
-        public UnityPhysics2DAspect Physics2DAspect;
-        public InputAspect InputAspect;
-        public PhysicsSharedAspect PhysicsSharedAspect;
-        public MovingAspect MovingAspect;
-        public SharedAspect SharedAspect;
+        public readonly UnityUguiAspect UguiAspect;
+        public readonly UnityPhysics2DAspect Physics2DAspect;
+        public readonly InputAspect InputAspect;
+        public readonly PhysicsSharedAspect PhysicsSharedAspect;
+        public readonly MovingAspect MovingAspect;
+        public readonly SharedAspect SharedAspect;
     }
 }

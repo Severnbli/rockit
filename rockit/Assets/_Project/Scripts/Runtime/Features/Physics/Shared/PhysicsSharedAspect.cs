@@ -7,9 +7,9 @@ namespace _Project.Scripts.Runtime.Features.Physics.Shared
 {
     public class PhysicsSharedAspect : ProtoAspectInject
     {
-        public ProtoPool<Collider2DComponent> Collider2DComponentPool;
-        public ProtoPool<Rigidbody2DComponent> Rigidbody2DComponentPool;
-        public ProtoIt Rigidbody2DPlayers = new (It.Inc<PlayerTag, Rigidbody2DComponent>());
-        public ProtoIt Rigidbody2DColliders2D = new (It.Inc<Rigidbody2DComponent, Collider2DComponent>());
+        public readonly ProtoPool<Collider2DComponent> Collider2DComponentPool;
+        public readonly ProtoPool<Rigidbody2DComponent> Rigidbody2DComponentPool;
+        public readonly ProtoIt Rigidbody2DPlayers = new (It.Inc<PlayerTag, Rigidbody2DComponent>());
+        public readonly ProtoIt Rigidbody2DColliders2D = new (It.Inc<Rigidbody2DComponent, Collider2DComponent>());
     }
 }

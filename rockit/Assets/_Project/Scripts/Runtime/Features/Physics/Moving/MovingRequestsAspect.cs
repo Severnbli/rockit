@@ -9,11 +9,11 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving
 {
     public class MovingRequestsAspect : ProtoAspectInject
     {
-        public ProtoPool<WalkRequest> WalkRequestPool;
-        public ProtoPool<JumpRequest> JumpRequestPool;
-        public ProtoPool<DashRequest> DashRequestPool;
-        public ProtoIt PlayerWalkRequests = new (It.Inc<RequestComponent, ActiveRequestTag, WalkRequest, PlayerTag>());
-        public ProtoIt PlayerJumpRequests = new (It.Inc<RequestComponent, ActiveRequestTag, JumpRequest, PlayerTag>());
-        public ProtoIt PlayerDashRequests = new (It.Inc<RequestComponent, ActiveRequestTag, DashRequest, PlayerTag>());
+        public readonly ProtoPool<WalkRequest> WalkRequestPool;
+        public readonly ProtoPool<JumpRequest> JumpRequestPool;
+        public readonly ProtoPool<DashRequest> DashRequestPool;
+        public readonly ProtoIt PlayerWalkRequests = new (It.Inc<RequestComponent, ActiveRequestTag, WalkRequest, PlayerTag>());
+        public readonly ProtoIt PlayerJumpRequests = new (It.Inc<RequestComponent, ActiveRequestTag, JumpRequest, PlayerTag>());
+        public readonly ProtoIt PlayerDashRequests = new (It.Inc<RequestComponent, ActiveRequestTag, DashRequest, PlayerTag>());
     }
 }
