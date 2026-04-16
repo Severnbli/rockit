@@ -2,7 +2,10 @@
 using _Project.Scripts.Runtime.Core.Infrastructure.Requests.World;
 using _Project.Scripts.Runtime.Core.Infrastructure.Time.Services;
 using _Project.Scripts.Runtime.Core.Systems;
+using _Project.Scripts.Runtime.Features.Physics.Moving.Components;
+using _Project.Scripts.Runtime.Features.Physics.Moving.Requests;
 using _Project.Scripts.Runtime.Features.Physics.Shared;
+using _Project.Scripts.Runtime.Shared.Extensions;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 
@@ -15,7 +18,7 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Systems
         [DI] private readonly MovingAspect _mAspect;
         [DI] private readonly PhysicsSharedAspect _psAspect;
         private ProtoWorld _world;
-        private TimeService _tService;
+        private readonly TimeService _tService;
 
         public ApplyDashOnDashRequestSystem(TimeService tService)
         {
