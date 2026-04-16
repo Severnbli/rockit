@@ -2,7 +2,9 @@
 using _Project.Scripts.Runtime.Core.Infrastructure.Requests.World;
 using _Project.Scripts.Runtime.Core.Infrastructure.Time.Services;
 using _Project.Scripts.Runtime.Core.Systems;
+using _Project.Scripts.Runtime.Features.Physics.Moving.Requests;
 using _Project.Scripts.Runtime.Features.Physics.Shared;
+using _Project.Scripts.Runtime.Shared.Extensions;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 
@@ -31,8 +33,32 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Systems
         {
             foreach (var reqE in _mrAspect.JumpRequests)
             {
+                if (!_crAspect.TryCompareRequestWorld(reqE, _world, out var tarE)) continue;
+                if (!_mAspect.Rigidbody2DGroundCheckResults.Has(tarE)) continue;
                 
+                ref var jRequest = ref _mrAspect.JumpRequestPool.Get(reqE);
+                ref var gcResult = ref _mAspect.GroundCheckResultComponentPool.Get(tarE);
+                
+                if (!gcResult.Grounded)
+                {
+                    TryCreateBuffer(jRequest, tarE);
+                    continue;
+                }
+                
+                ref var rbComponent = ref _psAspect.Rigidbody2DComponentPool.Get(tarE);
+                rbComponent.Rigidbody2D.ApplyJump(jRequest.Factor);
             }
+        }
+
+        private bool TryCreateBuffer(JumpRequest jRequest, ProtoEntity tarE)
+        {
+            if (jRequest.Buffered) return false;
+
+            jRequest.Buffered = true;
+            ref var jBuffering = ref _mAspect.JumpBufferingComponentPool.GetOrAdd(tarE);
+            jBuffering.Request = jRequest;
+            jBuffering.LastJumpBufferingTiming = _timeService.UnscaledTime;
+            return true;
         }
     }
 }
