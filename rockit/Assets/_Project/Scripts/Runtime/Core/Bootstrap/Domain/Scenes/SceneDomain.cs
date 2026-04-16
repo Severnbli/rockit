@@ -1,4 +1,4 @@
-﻿using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Moving;
+﻿using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Physics.Moving;
 using _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes;
 
 namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Scenes
