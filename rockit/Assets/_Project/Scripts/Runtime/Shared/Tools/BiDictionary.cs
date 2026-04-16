@@ -42,5 +42,15 @@ namespace _Project.Scripts.Runtime.Shared.Tools
         public HashSet<TFirst> GetFirsts() => _forward.Keys.ToHashSet();
         
         public HashSet<TSecond> GetSeconds() => _reverse.Keys.ToHashSet();
+
+        public void KeepOnly(HashSet<TFirst> firsts)
+        {
+            foreach (var key in _forward.Keys)
+            {
+                if (firsts.Contains(key)) continue;
+
+                TryRemoveByFirst(key);
+            }
+        }
     }
 }
