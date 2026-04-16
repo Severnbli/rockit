@@ -10,7 +10,7 @@ using Leopotam.EcsProto.QoL;
 
 namespace _Project.Scripts.Runtime.Features.Physics.Moving.Systems
 {
-    public sealed class ApplyJumpOnJumpRequest : IProtoInitSystem, IProtoFixedRunSystem
+    public sealed class ApplyJumpOnJumpRequestSystem : IProtoInitSystem, IProtoFixedRunSystem
     {
         [DIRequests] private readonly MovingRequestsAspect _mrAspect;
         [DIRequests] private readonly CoreRequestsAspect _crAspect;
@@ -19,7 +19,7 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Systems
         private ProtoWorld _world;
         private readonly TimeService _timeService;
 
-        public ApplyJumpOnJumpRequest(TimeService timeService)
+        public ApplyJumpOnJumpRequestSystem(TimeService timeService)
         {
             _timeService = timeService;
         }
