@@ -20,12 +20,12 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Systems
         {
             foreach (var e in _movingAspect.Rigidbody2DGroundCheckResults)
             {
-                var result = _movingAspect.GroundCheckResultComponentPool.Get(e);
+                ref var result = ref _movingAspect.GroundCheckResultComponentPool.Get(e);
 
                 if (!result.Grounded ||
                     !_service.PhysicsMatcher.TryGetByFirst(result.GroundCollider, out var groundRigidbody)) continue;
                 
-                var rigidbody = _physicsSharedAspect.Rigidbody2DComponentPool.Get(e);
+                ref var rigidbody = ref _physicsSharedAspect.Rigidbody2DComponentPool.Get(e);
                 
                 rigidbody.Rigidbody2D.linearVelocity += groundRigidbody.linearVelocity;
             }
