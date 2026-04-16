@@ -50,7 +50,7 @@ namespace _Project.Scripts.Runtime.Shared.Extensions
 
             var request = aspect.RequestComponentPool.Get(entity);
             var packed = request.Entity;
-            if (packed.World != world) return false;
+            if (packed.FromExactWorld(world)) return false;
 
             targetEntity = packed.Id;
             return true;
