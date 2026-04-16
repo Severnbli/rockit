@@ -15,7 +15,7 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Systems
         [DI] private readonly MovingAspect _mAspect;
         [DI] private readonly PhysicsSharedAspect _psAspect;
         private ProtoWorld _world;
-        private TimeService _timeService;
+        private readonly TimeService _timeService;
 
         public ApplyJumpOnJumpRequest(TimeService timeService)
         {
