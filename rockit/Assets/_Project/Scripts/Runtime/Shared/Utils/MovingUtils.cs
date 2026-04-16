@@ -1,5 +1,7 @@
 ﻿using _Project.Scripts.Runtime.Core.Infrastructure.Requests;
+using _Project.Scripts.Runtime.Features.Moving.Components;
 using _Project.Scripts.Runtime.Features.Moving.Requests;
+using _Project.Scripts.Runtime.Shared.Configs;
 using _Project.Scripts.Runtime.Shared.Extensions;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
@@ -36,6 +38,13 @@ namespace _Project.Scripts.Runtime.Shared.Utils
         public static Vector3 GetGroundCheckPosition(Vector3 characterPosition, Vector3 groundCheckPosition)
         {
             return characterPosition + groundCheckPosition;
+        }
+
+        public static bool Grounded(Vector3 characterPosition, GroundCheckComponent groundCheck,
+            LayersConfig layersConfig)
+        {
+            var position = GetGroundCheckPosition(characterPosition, groundCheck.Position);
+            return Physics2D.OverlapCircle(position, groundCheck.Radius, layersConfig.GroundLayer) != null;
         }
     }
 }
