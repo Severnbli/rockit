@@ -15,6 +15,7 @@ namespace _Project.Scripts.Runtime.Features.Moving.Systems
     {
         [DIRequests] private readonly RequestsAspect _requestsAspect;
         [DI] private readonly SharedAspect _sharedAspect;
+        private ProtoWorld _world;
         private readonly PlayerInputService _service;
         private readonly PlayerMovingConfig _config;
 
@@ -26,7 +27,7 @@ namespace _Project.Scripts.Runtime.Features.Moving.Systems
         
         public void Init(IProtoSystems systems)
         {
-            
+            _world = _sharedAspect.World();
         }
 
         public void Run()
@@ -38,10 +39,9 @@ namespace _Project.Scripts.Runtime.Features.Moving.Systems
                 Factor = _config.DashPower
             };
             
-            var world = _sharedAspect.World();
             foreach (var e in _sharedAspect.Players)
             {
-                var packed = world.PackEntityWithWorld(e); 
+                var packed = _world.PackEntityWithWorld(e); 
                 MovingUtils.CreateDashRequest(_requestsAspect, packed, prepared).AddPlayerTagToRequest(_requestsAspect);
             }
         }
