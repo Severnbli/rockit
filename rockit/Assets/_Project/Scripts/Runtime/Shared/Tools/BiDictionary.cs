@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace _Project.Scripts.Runtime.Shared.Tools
 {
@@ -37,5 +38,7 @@ namespace _Project.Scripts.Runtime.Shared.Tools
             _forward.Remove(first);
             return true;
         }
+
+        public HashSet<TFirst> GetFirsts() => _forward.Keys.ToHashSet();
     }
 }
