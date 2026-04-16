@@ -4,5 +4,6 @@
     {
         public float Factor;
         public float TimeOut;
+        public int AirQuantity;
     }
 }
