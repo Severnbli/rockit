@@ -8,5 +8,6 @@ namespace _Project.Scripts.Runtime.Features.Moving.Components
     public struct GroundCheckComponent
     {
         public Vector3 Position;
+        public float Radius;
     }
 }
