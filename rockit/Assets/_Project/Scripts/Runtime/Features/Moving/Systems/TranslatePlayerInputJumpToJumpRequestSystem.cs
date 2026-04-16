@@ -11,7 +11,7 @@ using Leopotam.EcsProto.QoL;
 
 namespace _Project.Scripts.Runtime.Features.Moving.Systems
 {
-    public sealed class TranslatePlayerInputJumpToJumpRequestSystem : IProtoRunSystem
+    public sealed class TranslatePlayerInputJumpToJumpRequestSystem : IProtoInitSystem, IProtoRunSystem
     {
         [DIRequests] private readonly RequestsAspect _requestsAspect;
         [DI] private readonly SharedAspect _sharedAspect;
@@ -22,6 +22,11 @@ namespace _Project.Scripts.Runtime.Features.Moving.Systems
         {
             _service = service;
             _config = config;
+        }
+        
+        public void Init(IProtoSystems systems)
+        {
+            
         }
 
         public void Run()
