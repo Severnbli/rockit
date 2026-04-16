@@ -1,9 +1,9 @@
-﻿using _Project.Scripts.Runtime.Features.Moving.Components;
+﻿using _Project.Scripts.Runtime.Features.Physics.Moving.Components;
 using _Project.Scripts.Runtime.Shared.Components;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 
-namespace _Project.Scripts.Runtime.Features.Moving
+namespace _Project.Scripts.Runtime.Features.Physics.Moving
 {
     public class MovingAspect : ProtoAspectInject
     {

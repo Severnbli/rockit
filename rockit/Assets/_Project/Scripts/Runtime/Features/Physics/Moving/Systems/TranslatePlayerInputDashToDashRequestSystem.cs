@@ -1,17 +1,17 @@
 ﻿using _Project.Scripts.Runtime.Core.Infrastructure.Requests;
 using _Project.Scripts.Runtime.Core.Infrastructure.Requests.World;
 using _Project.Scripts.Runtime.Features.Input.Services;
-using _Project.Scripts.Runtime.Features.Moving.Configs;
-using _Project.Scripts.Runtime.Features.Moving.Requests;
+using _Project.Scripts.Runtime.Features.Physics.Moving.Configs;
+using _Project.Scripts.Runtime.Features.Physics.Moving.Requests;
 using _Project.Scripts.Runtime.Shared;
 using _Project.Scripts.Runtime.Shared.Extensions;
 using _Project.Scripts.Runtime.Shared.Utils;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 
-namespace _Project.Scripts.Runtime.Features.Moving.Systems
+namespace _Project.Scripts.Runtime.Features.Physics.Moving.Systems
 {
-    public sealed class TranslatePlayerInputWalkToWalkRequestSystem : IProtoInitSystem, IProtoRunSystem
+    public sealed class TranslatePlayerInputDashToDashRequestSystem : IProtoInitSystem, IProtoRunSystem
     {
         [DIRequests] private readonly RequestsAspect _requestsAspect;
         [DI] private readonly SharedAspect _sharedAspect;
@@ -19,7 +19,7 @@ namespace _Project.Scripts.Runtime.Features.Moving.Systems
         private readonly PlayerInputService _service;
         private readonly PlayerMovingConfig _config;
 
-        public TranslatePlayerInputWalkToWalkRequestSystem(PlayerInputService service, PlayerMovingConfig config)
+        public TranslatePlayerInputDashToDashRequestSystem(PlayerInputService service, PlayerMovingConfig config)
         {
             _service = service;
             _config = config;
@@ -32,17 +32,18 @@ namespace _Project.Scripts.Runtime.Features.Moving.Systems
 
         public void Run()
         {
-            if (!_service.WalkTriggered) return;
+            if (!_service.DashTriggered) return;
 
-            var prepared = new WalkRequest
+            var prepared = new DashRequest
             {
-                Factor = _service.Walk * _config.WalkSpeed
+                Factor = _config.DashPower,
+                TimeOut = _config.DashTimeout
             };
             
             foreach (var e in _sharedAspect.Players)
             {
-                var packed = _world.PackEntityWithWorld(e);
-                MovingUtils.CreateWalkRequest(_requestsAspect, packed, prepared).AddPlayerTagToRequest(_requestsAspect);
+                var packed = _world.PackEntityWithWorld(e); 
+                MovingUtils.CreateDashRequest(_requestsAspect, packed, prepared).AddPlayerTagToRequest(_requestsAspect);
             }
         }
     }
