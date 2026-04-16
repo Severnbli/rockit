@@ -12,8 +12,8 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving
         public readonly ProtoPool<WalkRequest> WalkRequestPool;
         public readonly ProtoPool<JumpRequest> JumpRequestPool;
         public readonly ProtoPool<DashRequest> DashRequestPool;
-        public readonly ProtoIt PlayerWalkRequests = new (It.Inc<RequestComponent, ActiveRequestTag, WalkRequest, PlayerTag>());
-        public readonly ProtoIt PlayerJumpRequests = new (It.Inc<RequestComponent, ActiveRequestTag, JumpRequest, PlayerTag>());
-        public readonly ProtoIt PlayerDashRequests = new (It.Inc<RequestComponent, ActiveRequestTag, DashRequest, PlayerTag>());
+        public readonly ProtoIt WalkRequests = new (It.Inc<RequestComponent, ActiveRequestTag, WalkRequest>());
+        public readonly ProtoIt JumpRequests = new (It.Inc<RequestComponent, ActiveRequestTag, JumpRequest>());
+        public readonly ProtoIt DashRequests = new (It.Inc<RequestComponent, ActiveRequestTag, DashRequest>());
     }
 }
