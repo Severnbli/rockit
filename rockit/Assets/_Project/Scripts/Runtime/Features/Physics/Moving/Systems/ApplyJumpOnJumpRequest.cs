@@ -55,9 +55,9 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Systems
             {
                 ref var jbComponent = ref _mAspect.JumpBufferingComponentPool.Get(tarE);
                 jRequest = jbComponent.Request;
-                _mAspect.JumpBufferingComponentPool.Del(tarE);
             }
-                
+            
+            _mAspect.JumpBufferingComponentPool.DelIfExists(tarE);
             ref var rbComponent = ref _psAspect.Rigidbody2DComponentPool.Get(tarE);
             rbComponent.Rigidbody2D.ApplyJump(jRequest.Factor);
         }
