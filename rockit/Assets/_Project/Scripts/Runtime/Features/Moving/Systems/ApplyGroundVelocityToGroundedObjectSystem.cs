@@ -11,7 +11,14 @@ namespace _Project.Scripts.Runtime.Features.Moving.Systems
         
         public void FixedRun()
         {
-            
+            foreach (var e in _movingAspect.Rigidbody2DGroundCheckResults)
+            {
+                var result = _movingAspect.GroundCheckResultComponentPool.Get(e);
+
+                if (!result.Grounded) continue;
+                    
+                var rigidbody = _sharedAspect.Rigidbody2DComponentPool.Get(e);
+            }
         }
     }
 }
