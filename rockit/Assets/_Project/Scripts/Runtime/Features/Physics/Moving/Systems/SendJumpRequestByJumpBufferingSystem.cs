@@ -7,7 +7,7 @@ using Leopotam.EcsProto.QoL;
 
 namespace _Project.Scripts.Runtime.Features.Physics.Moving.Systems
 {
-    public sealed class SendJumpRequestByJumpBufferingSystem : IProtoRunSystem
+    public sealed class SendJumpRequestByJumpBufferingSystem : IProtoInitSystem, IProtoRunSystem
     {
         [DI] private readonly MovingAspect _mAspect;
         [DIRequests] private readonly RequestsAspect _rAspect;
@@ -18,6 +18,11 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Systems
         {
             _tService = tService;
             _smConfig = smConfig;
+        }
+        
+        public void Init(IProtoSystems systems)
+        {
+            
         }
 
         public void Run()
