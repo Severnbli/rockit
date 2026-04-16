@@ -1,4 +1,5 @@
 ﻿using _Project.Scripts.Runtime.Core.Infrastructure.Requests;
+using _Project.Scripts.Runtime.Core.Infrastructure.Requests.Components;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 
@@ -40,21 +41,25 @@ namespace _Project.Scripts.Runtime.Shared.Extensions
             return entity;
         }
 
-        public static bool TryCompareRequestWorld(this CoreRequestsAspect aspect, ProtoPackedEntityWithWorld packed,
-            ProtoWorld world, out ProtoEntity entity)
+        public static bool TryCompareRequestWorld(this CoreRequestsAspect aspect, ProtoEntity entity, ProtoWorld world, 
+            out ProtoEntity targetEntity)
         {
-            entity = default;
+            targetEntity = default;
             
+            if (!aspect.RequestComponentPool.Has(entity)) return false;
+
+            var request = aspect.RequestComponentPool.Get(entity);
+            var packed = request.Entity;
             if (packed.World != world) return false;
 
-            entity = packed.Id;
+            targetEntity = packed.Id;
             return true;
         }
         
-        public static bool TryCompareRequestWorld(this RequestsAspect aspect, ProtoPackedEntityWithWorld packed,
-            ProtoWorld world, out ProtoEntity entity)
+        public static bool TryCompareRequestWorld(this RequestsAspect aspect, ProtoEntity entity, ProtoWorld world, 
+            out ProtoEntity targetEntity)
         {
-            return TryCompareRequestWorld(aspect.CoreRequestsAspect, packed, world, out entity);
+            return TryCompareRequestWorld(aspect.CoreRequestsAspect, entity, world, out targetEntity);
         }
     }
 }
