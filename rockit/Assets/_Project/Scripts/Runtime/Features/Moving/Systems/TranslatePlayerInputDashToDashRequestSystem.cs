@@ -9,7 +9,7 @@ namespace _Project.Scripts.Runtime.Features.Moving.Systems
 {
     public sealed class TranslatePlayerInputDashToDashRequestSystem : IProtoRunSystem
     {
-        [DIRequests] private readonly RequestsAspect _aspect;
+        [DIRequests] private readonly RequestsAspect _requestsAspect;
         private readonly PlayerInputService _service;
 
         public TranslatePlayerInputDashToDashRequestSystem(PlayerInputService service)
@@ -21,7 +21,7 @@ namespace _Project.Scripts.Runtime.Features.Moving.Systems
         {
             if (!_service.DashTriggered) return;
             
-            MovingUtils.CreateDashRequest(_aspect).AddPlayerTagToRequest(_aspect);
+            MovingUtils.CreateDashRequest(_requestsAspect).AddPlayerTagToRequest(_requestsAspect);
         }
     }
 }
