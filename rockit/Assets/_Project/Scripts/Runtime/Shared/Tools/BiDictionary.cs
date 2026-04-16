@@ -52,5 +52,15 @@ namespace _Project.Scripts.Runtime.Shared.Tools
                 TryRemoveByFirst(key);
             }
         }
+        
+        public void KeepOnly(HashSet<TSecond> firsts)
+        {
+            foreach (var key in _reverse.Keys)
+            {
+                if (firsts.Contains(key)) continue;
+
+                TryRemoveBySecond(key);
+            }
+        }
     }
 }
