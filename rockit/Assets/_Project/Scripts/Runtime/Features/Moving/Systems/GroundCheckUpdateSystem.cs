@@ -8,7 +8,7 @@ namespace _Project.Scripts.Runtime.Features.Moving.Systems
 {
     public sealed class GroundCheckUpdateSystem : IProtoRunSystem
     {
-        [DI] private readonly MovingAspect _aspect;
+        [DI] private readonly MovingAspect _movingAspect;
         private readonly SharedMovingConfig _sharedMovingConfig;
         private readonly TimeService _timeService;
         private readonly LayersConfig _layersConfig;
