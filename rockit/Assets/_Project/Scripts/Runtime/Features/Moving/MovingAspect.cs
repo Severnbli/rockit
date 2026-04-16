@@ -10,6 +10,6 @@ namespace _Project.Scripts.Runtime.Features.Moving
         public ProtoPool<GroundCheckComponent> GroundCheckComponentPool;
         public ProtoPool<GroundCheckResultComponent> GroundCheckResultComponentPool;
         public ProtoIt GroundCheckable = new (It.Inc<TransformComponent, GroundCheckComponent>());
-        public ProtoIt Rigidbody2DGroundCheckResults = new(It.Inc<Rigidbody2DComponent, GroundCheckResultComponent>());
+        public ProtoIt Rigidbody2DGroundCheckResults = new (It.Inc<Rigidbody2DComponent, GroundCheckResultComponent>());
     }
 }
