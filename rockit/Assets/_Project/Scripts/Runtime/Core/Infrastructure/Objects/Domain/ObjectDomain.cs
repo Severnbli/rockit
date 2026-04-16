@@ -21,5 +21,10 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Objects.Domain
             Instances.Add(typeof(TValue), newInstance);
             return newInstance;
         }
+
+        public void Get<TValue>(out TValue value)
+        {
+            value = Get<TValue>();
+        }
     }
 }
