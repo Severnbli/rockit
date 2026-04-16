@@ -52,7 +52,7 @@ namespace _Project.Scripts.Runtime.Shared.Utils
         public static bool CoyoteTimeExpired(GroundCheckResultComponent groundCheckResult, TimeService timeService,
             SharedMovingConfig sharedMovingConfig)
         {
-            return timeService.UnscaledTime - groundCheckResult.LastGroundedTiming < sharedMovingConfig.CoyoteTime;
+            return timeService.UnscaledTime - groundCheckResult.LastGroundedTiming > sharedMovingConfig.CoyoteTime;
         }
     }
 }
