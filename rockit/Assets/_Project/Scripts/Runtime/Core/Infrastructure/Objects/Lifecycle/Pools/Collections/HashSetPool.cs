@@ -12,5 +12,12 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Objects.Lifecycle.Pools.C
         {
             return new HashSet<TItem>(Config.InitCapacity);
         }
+
+        protected override void PostDespawn(HashSet<TItem> instance)
+        {
+            base.PreDespawn(instance);
+            
+            instance.Clear();
+        }
     }
 }
