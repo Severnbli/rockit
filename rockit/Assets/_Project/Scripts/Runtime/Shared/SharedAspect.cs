@@ -7,8 +7,8 @@ namespace _Project.Scripts.Runtime.Shared
 {
     public class SharedAspect : ProtoAspectInject
     {
-        public ProtoPool<PlayerTag> PlayerTagPool;
-        public ProtoPool<TransformComponent> TransformComponentPool;
-        public ProtoIt Players = new (It.Inc<PlayerTag>());
+        public readonly ProtoPool<PlayerTag> PlayerTagPool;
+        public readonly ProtoPool<TransformComponent> TransformComponentPool;
+        public readonly ProtoIt Players = new (It.Inc<PlayerTag>());
     }
 }

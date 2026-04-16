@@ -7,9 +7,9 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Requests
 {
     public class RequestsAspect : ProtoAspectInject
     {
-        public CoreRequestsAspect CoreRequestsAspect;
-        public InputRequestsAspect InputRequestsAspect;
-        public MovingRequestsAspect MovingRequestsAspect;
-        public SharedAspect SharedAspect;
+        public readonly CoreRequestsAspect CoreRequestsAspect;
+        public readonly InputRequestsAspect InputRequestsAspect;
+        public readonly MovingRequestsAspect MovingRequestsAspect;
+        public readonly SharedAspect SharedAspect;
     }
 }
