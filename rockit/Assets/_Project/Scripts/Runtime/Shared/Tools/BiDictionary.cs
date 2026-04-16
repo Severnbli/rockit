@@ -17,5 +17,7 @@ namespace _Project.Scripts.Runtime.Shared.Tools
             _reverse.Add(second, first);
             return true;
         }
+
+        public bool TryGetByFirst(TFirst first, out TSecond second) => _forward.TryGetValue(first, out second);
     }
 }
