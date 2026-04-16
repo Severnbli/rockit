@@ -1,4 +1,4 @@
-﻿namespace _Project.Scripts.Runtime.Features.Moving.Requests
+﻿namespace _Project.Scripts.Runtime.Features.Physics.Moving.Requests
 {
     public struct DashRequest
     {

@@ -1,8 +1,8 @@
 ﻿using _Project.Scripts.Runtime.Core.Infrastructure.Requests;
 using _Project.Scripts.Runtime.Core.Infrastructure.Time.Services;
-using _Project.Scripts.Runtime.Features.Moving.Components;
-using _Project.Scripts.Runtime.Features.Moving.Configs;
-using _Project.Scripts.Runtime.Features.Moving.Requests;
+using _Project.Scripts.Runtime.Features.Physics.Moving.Components;
+using _Project.Scripts.Runtime.Features.Physics.Moving.Configs;
+using _Project.Scripts.Runtime.Features.Physics.Moving.Requests;
 using _Project.Scripts.Runtime.Shared.Configs;
 using _Project.Scripts.Runtime.Shared.Extensions;
 using Leopotam.EcsProto;

@@ -1,5 +1,5 @@
 ﻿using _Project.Scripts.Runtime.Features.Input;
-using _Project.Scripts.Runtime.Features.Moving;
+using _Project.Scripts.Runtime.Features.Physics.Moving;
 using _Project.Scripts.Runtime.Shared;
 using Leopotam.EcsProto.QoL;
 using Leopotam.EcsProto.Unity.Physics2D;

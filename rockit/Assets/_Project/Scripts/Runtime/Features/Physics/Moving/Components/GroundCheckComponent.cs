@@ -2,7 +2,7 @@
 using Leopotam.EcsProto.Unity;
 using UnityEngine;
 
-namespace _Project.Scripts.Runtime.Features.Moving.Components
+namespace _Project.Scripts.Runtime.Features.Physics.Moving.Components
 {
     [Serializable, ProtoUnityAuthoring]
     public struct GroundCheckComponent

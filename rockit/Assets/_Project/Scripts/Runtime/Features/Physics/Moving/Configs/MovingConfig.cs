@@ -1,7 +1,7 @@
 ﻿using _Project.Scripts.Modules.Zenject;
 using UnityEngine;
 
-namespace _Project.Scripts.Runtime.Features.Moving.Configs
+namespace _Project.Scripts.Runtime.Features.Physics.Moving.Configs
 {
     public class MovingConfig<T> : ScriptableObjectAutoInstaller<T> where T : MovingConfig<T>
     {

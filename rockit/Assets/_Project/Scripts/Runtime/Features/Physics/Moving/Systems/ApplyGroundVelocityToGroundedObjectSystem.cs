@@ -2,7 +2,7 @@
 using _Project.Scripts.Runtime.Shared;
 using Leopotam.EcsProto.QoL;
 
-namespace _Project.Scripts.Runtime.Features.Moving.Systems
+namespace _Project.Scripts.Runtime.Features.Physics.Moving.Systems
 {
     public sealed class ApplyGroundVelocityToGroundedObjectSystem : IProtoFixedRunSystem
     {

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace _Project.Scripts.Runtime.Features.Moving.Components
+namespace _Project.Scripts.Runtime.Features.Physics.Moving.Components
 {
     public struct GroundCheckResultComponent
     {
