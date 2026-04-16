@@ -62,5 +62,10 @@ namespace _Project.Scripts.Runtime.Shared.Utils
             return timeService.UnscaledTime - jumpBufferingComponent.CreationTiming >
                    sharedMovingConfig.JumpBufferingTime;
         }
+
+        public static bool DashTimeoutExpired(DashTimeoutComponent dashTimeoutComponent, TimeService timeService)
+        {
+            return timeService.UnscaledTime - dashTimeoutComponent.CreationTime > dashTimeoutComponent.Timeout;
+        }
     }
 }
