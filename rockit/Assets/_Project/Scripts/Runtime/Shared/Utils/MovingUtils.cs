@@ -55,5 +55,12 @@ namespace _Project.Scripts.Runtime.Shared.Utils
         {
             return timeService.UnscaledTime - groundCheckResult.LastGroundedTiming > sharedMovingConfig.CoyoteTime;
         }
+
+        public static bool JumpBufferingTimeExpired(JumpBufferingComponent jumpBufferingComponent,
+            TimeService timeService, SharedMovingConfig sharedMovingConfig)
+        {
+            return timeService.UnscaledTime - jumpBufferingComponent.CreationTiming >
+                   sharedMovingConfig.JumpBufferingTime;
+        }
     }
 }
