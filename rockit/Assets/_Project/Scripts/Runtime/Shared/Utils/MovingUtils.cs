@@ -1,5 +1,7 @@
 ﻿using _Project.Scripts.Runtime.Core.Infrastructure.Requests;
+using _Project.Scripts.Runtime.Core.Infrastructure.Time.Services;
 using _Project.Scripts.Runtime.Features.Moving.Components;
+using _Project.Scripts.Runtime.Features.Moving.Configs;
 using _Project.Scripts.Runtime.Features.Moving.Requests;
 using _Project.Scripts.Runtime.Shared.Configs;
 using _Project.Scripts.Runtime.Shared.Extensions;
@@ -45,6 +47,12 @@ namespace _Project.Scripts.Runtime.Shared.Utils
         {
             var position = GetGroundCheckPosition(characterPosition, groundCheck.Position);
             return Physics2D.OverlapCircle(position, groundCheck.Radius, layersConfig.GroundLayer) != null;
+        }
+
+        public static bool CoyoteTimeExpired(GroundCheckResultComponent groundCheckResult, TimeService timeService,
+            SharedMovingConfig sharedMovingConfig)
+        {
+            return timeService.UnscaledTime - groundCheckResult.LastGroundedTiming < sharedMovingConfig.CoyoteTime;
         }
     }
 }
