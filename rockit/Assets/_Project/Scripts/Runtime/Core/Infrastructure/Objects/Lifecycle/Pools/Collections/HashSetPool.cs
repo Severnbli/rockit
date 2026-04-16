@@ -7,5 +7,10 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Objects.Lifecycle.Pools.C
         public HashSetPool(CollectionsPoolsConfig config) : base(config)
         {
         }
+
+        protected override HashSet<TItem> CreateInstance()
+        {
+            return new HashSet<TItem>(Config.InitCapacity);
+        }
     }
 }
