@@ -18,6 +18,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Physics.Movin
             BindSystem<ApplyJumpOnJumpRequestSystem>();
             BindSystem<SendJumpRequestByJumpBufferingSystem>();
             BindSystem<JumpBufferingExpireSystem>();
+            BindSystem<DashTimeoutExpireSystem>();
         }
     }
 }
