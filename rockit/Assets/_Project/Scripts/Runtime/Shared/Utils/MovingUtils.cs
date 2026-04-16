@@ -3,6 +3,7 @@ using _Project.Scripts.Runtime.Features.Moving.Requests;
 using _Project.Scripts.Runtime.Shared.Extensions;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
+using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Shared.Utils
 {
@@ -30,6 +31,11 @@ namespace _Project.Scripts.Runtime.Shared.Utils
             var entity = aspect.CreateRequest(aspect.MovingRequestsAspect.DashRequestPool, targetEntity, true,
                 prepared);
             return entity;
+        }
+
+        public static Vector3 GetGroundCheckPosition(Vector3 characterPosition, Vector3 groundCheckPosition)
+        {
+            return characterPosition - groundCheckPosition;
         }
     }
 }
