@@ -8,5 +8,14 @@ namespace _Project.Scripts.Runtime.Shared.Tools
     {
         private readonly Dictionary<TFirst, TSecond> _forward = new ();
         private readonly Dictionary<TSecond, TFirst> _reverse = new ();
+
+        public bool TryAdd(TFirst first, TSecond second)
+        {
+            if (_forward.ContainsKey(first) || _reverse.ContainsKey(second)) return false;
+            
+            _forward.Add(first, second);
+            _reverse.Add(second, first);
+            return true;
+        }
     }
 }
