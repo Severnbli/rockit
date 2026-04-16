@@ -39,5 +39,16 @@ namespace _Project.Scripts.Runtime.Shared.Extensions
             request = prepared;
             return entity;
         }
+
+        public static bool TryCompareRequestWorld(this CoreRequestsAspect aspect, ProtoPackedEntityWithWorld packed,
+            ProtoWorld world, out ProtoEntity entity)
+        {
+            entity = default;
+            
+            if (packed.World != world) return false;
+
+            entity = packed.Id;
+            return true;
+        }
     }
 }
