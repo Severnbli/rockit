@@ -8,7 +8,7 @@ using UnityEngine;
 namespace _Project.Scripts.Runtime.Features.Moving.Monos
 {
     [DebugOnlyBehaviour]
-    public class GroundCheckVisualizer : DebugBehaviour
+    public class GroundCheckDebug : DebugBehaviour
     {
         private void OnDrawGizmos()
         {
