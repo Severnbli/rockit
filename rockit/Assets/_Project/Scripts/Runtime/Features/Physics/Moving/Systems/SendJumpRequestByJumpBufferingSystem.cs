@@ -1,4 +1,5 @@
 ﻿using _Project.Scripts.Runtime.Core.Infrastructure.Time.Services;
+using _Project.Scripts.Runtime.Features.Physics.Moving.Configs;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 
@@ -8,10 +9,12 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Systems
     {
         [DI] private readonly MovingAspect _mAspect;
         private readonly TimeService _tService;
+        private readonly SharedMovingConfig _smConfig;
 
-        public SendJumpRequestByJumpBufferingSystem(TimeService tService)
+        public SendJumpRequestByJumpBufferingSystem(TimeService tService, SharedMovingConfig smConfig)
         {
             _tService = tService;
+            _smConfig = smConfig;
         }
 
         public void Run()
