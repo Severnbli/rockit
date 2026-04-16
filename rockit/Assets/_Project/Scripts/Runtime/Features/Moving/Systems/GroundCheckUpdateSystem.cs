@@ -2,6 +2,7 @@
 using _Project.Scripts.Runtime.Features.Moving.Configs;
 using _Project.Scripts.Runtime.Shared;
 using _Project.Scripts.Runtime.Shared.Configs;
+using _Project.Scripts.Runtime.Shared.Utils;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 
@@ -24,7 +25,27 @@ namespace _Project.Scripts.Runtime.Features.Moving.Systems
 
         public void Run()
         {
-            
+            foreach (var e in _movingAspect.GroundCheckable)
+            {
+                var groundCheck = _movingAspect.GroundCheckComponentPool.Get(e);
+                var transform = _sharedAspect.TransformComponentPool.Get(e);
+                ref var result = ref _movingAspect.GroundCheckResultComponentPool.GetOrAdd(e);
+                
+                var grounded = MovingUtils.Grounded(transform.Transform.position, groundCheck, _layersConfig);
+
+                result.Grounded = true;
+                
+                if (grounded)
+                {
+                    result.LastGroundedTiming = _timeService.UnscaledTime;
+                    return;
+                }
+
+                if (MovingUtils.CoyoteTimeExpired(result, _timeService, _sharedMovingConfig))
+                {
+                    result.Grounded = false;
+                }
+            }
         }
     }
 }
