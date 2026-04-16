@@ -8,6 +8,7 @@ namespace _Project.Scripts.Runtime.Features.Moving
     public class MovingAspect : ProtoAspectInject
     {
         public ProtoPool<GroundCheckComponent> GroundCheckComponentPool;
+        public ProtoPool<GroundCheckResultComponent> GroundCheckResultComponentPool;
         public ProtoIt GroundCheckable = new (It.Inc<TransformComponent, GroundCheckComponent>());
     }
 }
