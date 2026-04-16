@@ -2,6 +2,6 @@
 {
     public struct DashComponent
     {
-        
+        public int AirQuantity;
     }
 }
