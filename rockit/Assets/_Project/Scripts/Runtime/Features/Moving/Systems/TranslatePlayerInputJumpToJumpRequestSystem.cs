@@ -2,6 +2,7 @@
 using _Project.Scripts.Runtime.Core.Infrastructure.Requests.World;
 using _Project.Scripts.Runtime.Features.Input.Services;
 using _Project.Scripts.Runtime.Features.Moving.Configs;
+using _Project.Scripts.Runtime.Features.Moving.Requests;
 using _Project.Scripts.Runtime.Shared;
 using _Project.Scripts.Runtime.Shared.Extensions;
 using _Project.Scripts.Runtime.Shared.Utils;
@@ -26,8 +27,17 @@ namespace _Project.Scripts.Runtime.Features.Moving.Systems
         public void Run()
         {
             if (!_service.JumpTriggered) return;
-            
-            MovingUtils.CreateJumpRequest(_requestsAspect).AddPlayerTagToRequest(_requestsAspect);
+
+            var prepared = new JumpRequest
+            {
+                Factor = _config.JumpPower
+            };
+
+            foreach (var e in _sharedAspect.Players)
+            {
+                var packed = _sharedAspect.World().PackEntityWithWorld(e);
+                MovingUtils.CreateJumpRequest(_requestsAspect, packed, prepared).AddPlayerTagToRequest(_requestsAspect);
+            }
         }
     }
 }
