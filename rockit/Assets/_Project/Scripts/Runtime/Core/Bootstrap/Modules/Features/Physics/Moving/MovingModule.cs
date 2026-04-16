@@ -17,7 +17,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Physics.Movin
             BindSystem<ApplyGroundVelocityToGroundedObjectSystem>();
             BindSystem<ApplyJumpOnJumpRequest>();
             BindSystem<SendJumpRequestByJumpBufferingSystem>();
-            BindSystem<JumpBufferingUpdateSystem>();
+            BindSystem<JumpBufferingExpireSystem>();
         }
     }
 }

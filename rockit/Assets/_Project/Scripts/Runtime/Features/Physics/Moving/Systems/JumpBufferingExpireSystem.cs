@@ -6,13 +6,13 @@ using Leopotam.EcsProto.QoL;
 
 namespace _Project.Scripts.Runtime.Features.Physics.Moving.Systems
 {
-    public sealed class JumpBufferingUpdateSystem : IProtoRunSystem
+    public sealed class JumpBufferingExpireSystem : IProtoRunSystem
     {
         [DI] private MovingAspect _mAspect; 
         private readonly TimeService _tService;
         private readonly SharedMovingConfig _smConfig;
 
-        public JumpBufferingUpdateSystem(TimeService tService, SharedMovingConfig smConfig)
+        public JumpBufferingExpireSystem(TimeService tService, SharedMovingConfig smConfig)
         {
             _tService = tService;
             _smConfig = smConfig;
