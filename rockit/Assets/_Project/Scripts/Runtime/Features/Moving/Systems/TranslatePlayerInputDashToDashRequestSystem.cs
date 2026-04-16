@@ -2,6 +2,7 @@
 using _Project.Scripts.Runtime.Core.Infrastructure.Requests.World;
 using _Project.Scripts.Runtime.Features.Input.Services;
 using _Project.Scripts.Runtime.Features.Moving.Configs;
+using _Project.Scripts.Runtime.Features.Moving.Requests;
 using _Project.Scripts.Runtime.Shared;
 using _Project.Scripts.Runtime.Shared.Extensions;
 using _Project.Scripts.Runtime.Shared.Utils;
@@ -26,8 +27,18 @@ namespace _Project.Scripts.Runtime.Features.Moving.Systems
         public void Run()
         {
             if (!_service.DashTriggered) return;
+
+            var prepared = new DashRequest
+            {
+                Factor = _config.DashPower
+            };
             
-            MovingUtils.CreateDashRequest(_requestsAspect).AddPlayerTagToRequest(_requestsAspect);
+            var world = _sharedAspect.World();
+            foreach (var e in _sharedAspect.Players)
+            {
+                var packed = world.PackEntityWithWorld(e); 
+                MovingUtils.CreateDashRequest(_requestsAspect, packed, prepared).AddPlayerTagToRequest(_requestsAspect);
+            }
         }
     }
 }
