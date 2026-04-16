@@ -19,5 +19,6 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving
         public readonly ProtoIt JumpBuffers = new (It.Inc<JumpBufferingComponent>());
         public readonly ProtoIt DashTimeouts = new ProtoIt(It.Inc<DashTimeoutComponent>());
         public readonly ProtoIt DashGroundCheckResults = new (It.Inc<DashComponent, GroundCheckResultComponent>());
+        public readonly ProtoIt Dashables = new (It.Exc<DashTimeoutComponent, Rigidbody2DComponent>());
     }
 }
