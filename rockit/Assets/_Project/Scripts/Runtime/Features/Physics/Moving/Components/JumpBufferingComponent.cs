@@ -1,7 +1,9 @@
-﻿namespace _Project.Scripts.Runtime.Features.Physics.Moving.Components
+﻿using _Project.Scripts.Runtime.Features.Physics.Moving.Requests;
+
+namespace _Project.Scripts.Runtime.Features.Physics.Moving.Components
 {
     public struct JumpBufferingComponent
     {
-        
+        public JumpRequest Request;
     }
 }
