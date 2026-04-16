@@ -30,13 +30,15 @@ namespace _Project.Scripts.Runtime.Features.Moving.Systems
                 var groundCheck = _movingAspect.GroundCheckComponentPool.Get(e);
                 var transform = _sharedAspect.TransformComponentPool.Get(e);
                 ref var result = ref _movingAspect.GroundCheckResultComponentPool.GetOrAdd(e);
-                
-                var grounded = MovingUtils.Grounded(transform.Transform.position, groundCheck, _layersConfig);
+
+                var grounded = MovingUtils.Grounded(transform.Transform.position, groundCheck, _layersConfig,
+                    out var groundCollider);
 
                 result.Grounded = true;
                 
                 if (grounded)
                 {
+                    result.GroundCollider = groundCollider;
                     result.LastGroundedTiming = _timeService.UnscaledTime;
                     return;
                 }
