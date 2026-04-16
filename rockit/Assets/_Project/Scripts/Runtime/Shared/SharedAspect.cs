@@ -13,5 +13,6 @@ namespace _Project.Scripts.Runtime.Shared
         public ProtoPool<Rigidbody2DComponent> Rigidbody2DComponentPool;
         public ProtoIt Rigidbody2DPlayers = new (It.Inc<PlayerTag, Rigidbody2DComponent>());
         public ProtoIt Players = new (It.Inc<PlayerTag>());
+        public ProtoIt Rigidbody2DColliders2D = new (It.Inc<Rigidbody2DComponent, Collider2DComponent>());
     }
 }
