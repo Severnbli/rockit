@@ -29,5 +29,13 @@ namespace _Project.Scripts.Runtime.Shared.Tools
             _reverse.Remove(second);
             return true;
         }
+
+        public bool TryRemoveBySecond(TSecond second)
+        {
+            if (_reverse.Remove(second, out var first)) return false;
+            
+            _forward.Remove(first);
+            return true;
+        }
     }
 }
