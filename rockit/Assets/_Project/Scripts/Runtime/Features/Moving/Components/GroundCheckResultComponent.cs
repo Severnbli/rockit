@@ -3,5 +3,6 @@
     public struct GroundCheckResultComponent
     {
         public bool Grounded;
+        public float LastGroundedTiming;
     }
 }
