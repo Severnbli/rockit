@@ -22,9 +22,12 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Systems
             {
                 var result = _movingAspect.GroundCheckResultComponentPool.Get(e);
 
-                if (!result.Grounded) continue;
-                    
-                var rigidbody = _sharedAspect.Rigidbody2DComponentPool.Get(e);
+                if (!result.Grounded ||
+                    !_service.PhysicsMatcher.TryGetByFirst(result.GroundCollider, out var groundRigidbody)) continue;
+                
+                var rigidbody = _physicsSharedAspect.Rigidbody2DComponentPool.Get(e);
+                
+                rigidbody.Rigidbody2D.linearVelocity += groundRigidbody.linearVelocity;
             }
         }
     }
