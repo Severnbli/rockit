@@ -43,10 +43,11 @@ namespace _Project.Scripts.Runtime.Shared.Utils
         }
 
         public static bool Grounded(Vector3 characterPosition, GroundCheckComponent groundCheck,
-            LayersConfig layersConfig)
+            LayersConfig layersConfig, out Collider2D groundCollider)
         {
             var position = GetGroundCheckPosition(characterPosition, groundCheck.Position);
-            return Physics2D.OverlapCircle(position, groundCheck.Radius, layersConfig.GroundLayer) != null;
+            groundCollider = Physics2D.OverlapCircle(position, groundCheck.Radius, layersConfig.GroundLayer);
+            return groundCollider != null;
         }
 
         public static bool CoyoteTimeExpired(GroundCheckResultComponent groundCheckResult, TimeService timeService,
