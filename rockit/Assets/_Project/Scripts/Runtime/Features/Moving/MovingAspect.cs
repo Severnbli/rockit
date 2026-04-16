@@ -1,9 +1,12 @@
-﻿using Leopotam.EcsProto.QoL;
+﻿using _Project.Scripts.Runtime.Features.Moving.Components;
+using _Project.Scripts.Runtime.Shared.Components;
+using Leopotam.EcsProto;
+using Leopotam.EcsProto.QoL;
 
 namespace _Project.Scripts.Runtime.Features.Moving
 {
     public class MovingAspect : ProtoAspectInject
     {
-        
+        public ProtoIt GroundCheckable = new (It.Inc<TransformComponent, GroundCheckComponent>());
     }
 }
