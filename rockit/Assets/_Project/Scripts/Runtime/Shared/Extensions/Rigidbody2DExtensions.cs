@@ -1,7 +1,15 @@
-﻿namespace _Project.Scripts.Runtime.Shared.Extensions
+﻿using UnityEngine;
+
+namespace _Project.Scripts.Runtime.Shared.Extensions
 {
     public static class Rigidbody2DExtensions
     {
-        
+        public static void ApplyJump(this Rigidbody2D rigidbody2D, float factor)
+        {
+            var velocity = rigidbody2D.linearVelocity;
+            velocity.y = 0f;
+            rigidbody2D.linearVelocity = velocity;
+            rigidbody2D.AddForce(Vector2.up * factor, ForceMode2D.Impulse);
+        }
     }
 }
