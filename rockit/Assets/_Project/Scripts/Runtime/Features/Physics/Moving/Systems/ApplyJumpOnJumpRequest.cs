@@ -68,7 +68,7 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Systems
 
             ref var jBuffering = ref _mAspect.JumpBufferingComponentPool.GetOrAdd(tarE);
             jBuffering.Request = jRequest;
-            jBuffering.LastJumpBufferingTiming = _timeService.UnscaledTime;
+            jBuffering.CreationTiming = _timeService.UnscaledTime;
             return true;
         }
     }

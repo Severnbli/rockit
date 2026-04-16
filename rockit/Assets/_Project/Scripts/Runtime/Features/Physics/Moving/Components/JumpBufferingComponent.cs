@@ -5,6 +5,6 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Components
     public struct JumpBufferingComponent
     {
         public JumpRequest Request;
-        public float LastJumpBufferingTiming;
+        public float CreationTiming;
     }
 }
