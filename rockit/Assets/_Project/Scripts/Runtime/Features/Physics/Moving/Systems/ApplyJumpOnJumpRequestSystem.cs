@@ -11,10 +11,11 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Systems
         [DI] private readonly MovingAspect _movingAspect;
         [DIRequests] private readonly MovingRequestsAspect _movingRequestsAspect;
         [DIRequests] private readonly CoreRequestsAspect _coreRequestsAspect;
+        private ProtoWorld _world;
         
         public void Init(IProtoSystems systems)
         {
-            
+            _world = _movingAspect.World();
         }
         
         public void FixedRun()
