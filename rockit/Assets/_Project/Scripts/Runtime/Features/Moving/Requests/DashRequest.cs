@@ -3,5 +3,6 @@
     public struct DashRequest
     {
         public float Factor;
+        public float TimeOut;
     }
 }
