@@ -1,4 +1,5 @@
 ﻿using _Project.Scripts.Runtime.Features.Physics.Moving.Components;
+using _Project.Scripts.Runtime.Features.Physics.Moving.Tags;
 using _Project.Scripts.Runtime.Features.Physics.Shared.Components;
 using _Project.Scripts.Runtime.Shared.Components;
 using Leopotam.EcsProto;
@@ -20,8 +21,8 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving
         public readonly ProtoIt JumpBuffers = new (It.Inc<JumpBufferingComponent>());
         public readonly ProtoIt DashTimeouts = new ProtoIt(It.Inc<DashTimeoutComponent>());
         public readonly ProtoIt DashGroundCheckResults = new (It.Inc<DashComponent, GroundCheckResultComponent>());
-        public readonly ProtoItExc Dashables = new (It.Inc<Rigidbody2DComponent, GroundCheckResultComponent>(), It.Exc<DashTimeoutComponent>());
-        public readonly ProtoIt Jumpables = new(It.Inc<Rigidbody2DComponent, GroundCheckResultComponent>());
-        public readonly ProtoItExc Walkables = new (It.Inc<Rigidbody2DComponent>(), It.Exc<DashTimeoutComponent>());
+        public readonly ProtoItExc Dashables = new (It.Inc<Rigidbody2DComponent, GroundCheckResultComponent, MovableTag>(), It.Exc<DashTimeoutComponent>());
+        public readonly ProtoIt Jumpables = new(It.Inc<Rigidbody2DComponent, GroundCheckResultComponent, MovableTag>());
+        public readonly ProtoItExc Walkables = new (It.Inc<Rigidbody2DComponent, MovableTag>(), It.Exc<DashTimeoutComponent>());
     }
 }
