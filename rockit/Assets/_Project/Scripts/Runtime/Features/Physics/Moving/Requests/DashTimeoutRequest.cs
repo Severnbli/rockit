@@ -2,6 +2,6 @@
 {
     public struct DashTimeoutRequest
     {
-        
+        public float Timeout;
     }
 }
