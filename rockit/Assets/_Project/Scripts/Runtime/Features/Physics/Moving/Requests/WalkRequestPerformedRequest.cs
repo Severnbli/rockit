@@ -1,6 +1,6 @@
 ﻿namespace _Project.Scripts.Runtime.Features.Physics.Moving.Requests
 {
-    public struct WalkPerformedRequest
+    public struct WalkRequestPerformedRequest
     {
         
     }
