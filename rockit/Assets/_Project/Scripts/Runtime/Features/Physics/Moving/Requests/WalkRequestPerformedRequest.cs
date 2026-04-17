@@ -2,6 +2,6 @@
 {
     public struct WalkRequestPerformedRequest
     {
-        
+        public WalkRequest PerformedRequest;
     }
 }
