@@ -14,9 +14,12 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Monos
         {
             if (!gameObject.TryGetAuthored(out GroundCheckComponent component)) return;
             
-            Gizmos.DrawWireSphere(
-                MovingUtils.GetGroundCheckPosition(gameObject.transform.position, component.Position),
-                component.Radius);
+            DrawGizmoWithMainColor(() =>
+            {
+                Gizmos.DrawWireSphere(
+                    MovingUtils.GetGroundCheckPosition(gameObject.transform.position, component.Position),
+                    component.Radius);
+            });
         }
     }
 }
