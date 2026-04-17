@@ -26,7 +26,6 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Systems
 
                 if (!gcResult.Grounded) continue;
                 
-                jbComponent.Request.Buffered = true;
                 MovingUtils.CreateJumpRequest(_rAspect, _world.PackEntityWithWorld(e), jbComponent.Request);
                 _mAspect.JumpBufferingComponentPool.Del(e);
             }

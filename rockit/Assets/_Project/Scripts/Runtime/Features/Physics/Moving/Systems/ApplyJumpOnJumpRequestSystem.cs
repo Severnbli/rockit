@@ -67,6 +67,7 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Systems
             if (jRequest.Buffered) return false;
 
             ref var jBuffering = ref _mAspect.JumpBufferingComponentPool.GetOrAdd(tarE);
+            jRequest.Buffered = true;
             jBuffering.Request = jRequest;
             jBuffering.CreationTiming = _timeService.UnscaledTime;
             return true;
