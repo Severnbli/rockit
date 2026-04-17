@@ -2,6 +2,7 @@
 using _Project.Scripts.Runtime.Core.Infrastructure.Requests.Components;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
+using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Shared.Extensions
 {
@@ -50,10 +51,7 @@ namespace _Project.Scripts.Runtime.Shared.Extensions
 
             var request = aspect.RequestComponentPool.Get(entity);
             var packed = request.Entity;
-            if (packed.FromExactWorld(world)) return false;
-
-            targetEntity = packed.Id;
-            return true;
+            return packed.TryUnpack(out var packedWorld, out targetEntity) && packedWorld.Equals(world);
         }
         
         public static bool TryCompareRequestWorld(this RequestsAspect aspect, ProtoEntity entity, ProtoWorld world, 
