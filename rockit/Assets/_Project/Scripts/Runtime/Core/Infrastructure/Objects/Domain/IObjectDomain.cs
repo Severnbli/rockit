@@ -3,5 +3,6 @@
     public interface IObjectDomain
     {
         TValue Get<TValue>();
+        void Get<TValue>(out TValue value);
     }
 }
