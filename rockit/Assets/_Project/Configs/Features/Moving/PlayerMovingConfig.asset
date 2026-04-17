@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: PlayerMovingConfig
   m_EditorClassIdentifier: Runtime::_Project.Scripts.Runtime.Features.Moving.Configs.PlayerMovingConfig
   _walkSpeed: 5
-  _jumpPower: 4
-  _dashPower: 4
-  _dashTimeout: 0.5
+  _jumpPower: 8
+  _dashPower: 12
+  _airDashes: 2
+  _dashTimeout: 0.3
