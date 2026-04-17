@@ -55,6 +55,7 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Systems
             {
                 ref var jbComponent = ref _mAspect.JumpBufferingComponentPool.Get(tarE);
                 jRequest = jbComponent.Request;
+                _mAspect.JumpBufferingComponentPool.Del(tarE);
             }
             
             _mAspect.JumpBufferingComponentPool.DelIfExists(tarE);
