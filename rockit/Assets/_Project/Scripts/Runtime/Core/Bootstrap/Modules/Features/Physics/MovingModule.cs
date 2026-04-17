@@ -23,8 +23,8 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Physics
             BindSystem<JumpBufferingExpireSystem>();
             BindSystem<DashTimeoutExpireSystem>();
             BindSystem<DashAirQuantityResetOnGroundedSystem>();
-            BindSystem<ApplyDashOnDashRequestSystem>();
             BindSystem<ApplyWalkOnWalkRequestSystem>();
+            BindSystem<ApplyDashOnDashRequestSystem>();
             BindSystem<ApplyDashTimeoutOnDashTimeoutRequestSystem>();
             BindSystem<UpdateMoveDirectionByVelocitySystem>();
         }
