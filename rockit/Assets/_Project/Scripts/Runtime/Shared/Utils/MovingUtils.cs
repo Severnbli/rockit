@@ -8,6 +8,7 @@ using _Project.Scripts.Runtime.Shared.Extensions;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace _Project.Scripts.Runtime.Shared.Utils
 {
@@ -66,6 +67,16 @@ namespace _Project.Scripts.Runtime.Shared.Utils
         public static bool DashTimeoutExpired(DashTimeoutComponent dashTimeoutComponent, TimeService timeService)
         {
             return timeService.UnscaledTime - dashTimeoutComponent.CreationTime > dashTimeoutComponent.Timeout;
+        }
+
+        public static int GetMoveXDirection(MoveDirection direction)
+        {
+            return direction switch
+            {
+                MoveDirection.Left => -1,
+                MoveDirection.Right => 1,
+                _ => 0
+            };
         }
     }
 }
