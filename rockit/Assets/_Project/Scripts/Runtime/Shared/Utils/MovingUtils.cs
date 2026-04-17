@@ -86,5 +86,12 @@ namespace _Project.Scripts.Runtime.Shared.Utils
                 _ => 0
             };
         }
+
+        public static MoveDirection GetMoveDirectionByVector2(Vector2 vector)
+        {
+            return vector.x > 0 
+                ? MoveDirection.Right 
+                : MoveDirection.Left;
+        }
     }
 }
