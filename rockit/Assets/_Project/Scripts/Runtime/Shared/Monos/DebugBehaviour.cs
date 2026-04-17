@@ -1,5 +1,6 @@
 ﻿using System;
 using _Project.Scripts.Runtime.Shared.Tools;
+using _Project.Scripts.Runtime.Shared.Utils;
 using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Shared.Monos
@@ -16,6 +17,11 @@ namespace _Project.Scripts.Runtime.Shared.Monos
             }
 #endif
             OnAwake();
+        }
+
+        protected void DrawGizmoWithMainColor(Action action)
+        {
+            DebugUtils.DrawGizmosWithColorBackup(MainGizmoColor, action);
         }
         
         protected virtual void OnAwake() {}
