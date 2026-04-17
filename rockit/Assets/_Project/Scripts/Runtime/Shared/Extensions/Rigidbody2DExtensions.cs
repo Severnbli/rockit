@@ -11,5 +11,12 @@ namespace _Project.Scripts.Runtime.Shared.Extensions
             rigidbody2D.linearVelocity = velocity;
             rigidbody2D.AddForce(Vector2.up * factor, ForceMode2D.Impulse);
         }
+
+        public static void ApplyDash(this Rigidbody2D rigidbody2D, float factor, int direction)
+        {
+            factor = Mathf.Abs(factor);
+            direction = Mathf.Clamp(direction, -1, 1);
+            rigidbody2D.linearVelocity = new Vector2(factor * direction, 0f);
+        }
     }
 }
