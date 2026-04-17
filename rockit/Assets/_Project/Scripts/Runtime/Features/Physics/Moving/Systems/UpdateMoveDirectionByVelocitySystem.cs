@@ -7,6 +7,7 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Systems
     public sealed class UpdateMoveDirectionByVelocitySystem : IProtoRunSystem
     {
         [DI] private readonly PhysicsSharedAspect _psAspect;
+        [DI] private readonly MovingAspect _mAspect;
         
         public void Run()
         {
