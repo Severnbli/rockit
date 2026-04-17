@@ -33,18 +33,9 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
         {
             World = ConstructWorld();
             Systems = new EcsSystems(World);
-            
-            Systems
-                .AddModule(new AutoInjectModule())
-                .AddModule(new UnityModule());
         }
 
-        protected virtual void PostSetupWorldAndSystems()
-        {
-            Systems
-                .AddModule(new UnityUguiModule())
-                .AddModule(new UnityPhysics2DModule());
-        }
+        protected virtual void PostSetupWorldAndSystems() {}
         
         public sealed override void InstallBindings()
         {
