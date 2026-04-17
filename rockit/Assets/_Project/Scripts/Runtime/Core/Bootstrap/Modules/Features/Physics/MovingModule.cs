@@ -25,6 +25,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Physics
             BindSystem<DashAirQuantityResetOnGroundedSystem>();
             BindSystem<ApplyDashOnDashRequestSystem>();
             BindSystem<ApplyWalkOnWalkRequestSystem>();
+            BindSystem<ApplyDashTimeoutOnDashTimeoutRequestSystem>();
         }
     }
 }
