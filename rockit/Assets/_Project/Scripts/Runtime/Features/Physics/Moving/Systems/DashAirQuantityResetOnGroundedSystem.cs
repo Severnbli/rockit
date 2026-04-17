@@ -3,7 +3,7 @@ using Leopotam.EcsProto.QoL;
 
 namespace _Project.Scripts.Runtime.Features.Physics.Moving.Systems
 {
-    public sealed class DashAirQuantityResetSystem : IProtoRunSystem
+    public sealed class DashAirQuantityResetOnGroundedSystem : IProtoRunSystem
     {
         [DI] private readonly MovingAspect _mAspect;
         
