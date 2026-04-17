@@ -13,6 +13,7 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving
         public readonly ProtoPool<JumpBufferingComponent> JumpBufferingComponentPool;
         public readonly ProtoPool<DashTimeoutComponent> DashTimeoutComponentPool;
         public readonly ProtoPool<DashComponent> DashComponentPool;
+        public readonly ProtoPool<MoveComponent> MoveComponentPool;
         public readonly ProtoIt GroundCheckable = new (It.Inc<TransformComponent, GroundCheckComponent>());
         public readonly ProtoIt Rigidbody2DGroundCheckResults = new (It.Inc<Rigidbody2DComponent, GroundCheckResultComponent>());
         public readonly ProtoIt JumpBufferingGroundCheckResults = new (It.Inc<JumpBufferingComponent, GroundCheckResultComponent>());
