@@ -3,6 +3,10 @@ using _Project.Scripts.Runtime.Core.Bootstrap.Domain;
 using _Project.Scripts.Runtime.Core.Infrastructure.Requests;
 using _Project.Scripts.Runtime.Core.Infrastructure.Requests.World;
 using Leopotam.EcsProto;
+using Leopotam.EcsProto.QoL;
+using Leopotam.EcsProto.Unity;
+using Leopotam.EcsProto.Unity.Physics2D;
+using Leopotam.EcsProto.Unity.Ugui;
 using Zenject;
 
 namespace _Project.Scripts.Runtime.Core.Systems
@@ -11,6 +15,12 @@ namespace _Project.Scripts.Runtime.Core.Systems
     {
         private readonly DiContainer _container;
         private readonly IDomain _domain;
+        
+        private EcsSystems _systems;
+        private PausableSystemsSolver _solver;
+        private IProtoSystem[] _nonPausableSystems;
+        private IProtoSystem[] _pausableSystems;
+        private ProtoWorld _requestsWorld;
 
         public SystemsBindResolver(DiContainer container, IDomain domain)
         {
@@ -20,25 +30,45 @@ namespace _Project.Scripts.Runtime.Core.Systems
 
         public void Initialize()
         {
-            var systems = _container.Resolve<EcsSystems>();
-            var solver = _container.Resolve<PausableSystemsSolver>();
-            var nonPausableSystems =
+            _systems = _container.Resolve<EcsSystems>();
+            _solver = _container.Resolve<PausableSystemsSolver>();
+            _nonPausableSystems =
                 _container.ResolveId<IProtoSystem[]>(_domain.GetDescriptor(SystemsContracts.NonPausableSystemsId));
-            var pausableSystems =
+            _pausableSystems =
                 _container.ResolveId<IProtoSystem[]>(_domain.GetDescriptor(SystemsContracts.PausableSystemsId));
             
-            foreach (var system in nonPausableSystems)
+            ResolveSystems();
+            ResolveRequestsWorld();
+            ResolvePredefinedModules();
+        }
+
+        private void ResolveSystems()
+        {
+            _systems.AddModule(new AutoInjectModule());
+            
+            foreach (var system in _nonPausableSystems)
             {
-                systems.AddSystem(system);
+                _systems.AddSystem(system);
             }
             
-            if (pausableSystems.Any())
+            if (_pausableSystems.Any())
             {
-                systems.AddSystem(new PausableSystems(solver, pausableSystems));
+                _systems.AddSystem(new PausableSystems(_solver, _pausableSystems));
             }
+        }
 
-            var requestsWorld = _container.Resolve<RequestsWorldProvider>().GetWorld();
-            systems.AddWorld(requestsWorld, RequestsContracts.RequestsIdentifier);
+        private void ResolveRequestsWorld()
+        {
+            _requestsWorld = _container.Resolve<RequestsWorldProvider>().GetWorld();
+            _systems.AddWorld(_requestsWorld, RequestsContracts.RequestsIdentifier);
+        }
+
+        private void ResolvePredefinedModules()
+        {
+            _systems
+                .AddModule(new UnityModule())
+                .AddModule(new UnityUguiModule())
+                .AddModule(new UnityPhysics2DModule());
         }
     }
 }
