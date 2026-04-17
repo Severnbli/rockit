@@ -15,7 +15,7 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Systems
     public sealed class ApplyDashOnDashRequestSystem : IProtoInitSystem, IProtoFixedRunSystem
     {
         [DIRequests] private readonly MovingRequestsAspect _mrAspect;
-        [DIRequests] private readonly CoreRequestsAspect _crAspect;
+        [DIRequests] private readonly RequestsAspect _rAspect;
         [DI] private readonly MovingAspect _mAspect;
         [DI] private readonly PhysicsSharedAspect _psAspect;
         private ProtoWorld _world;
@@ -35,7 +35,7 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Systems
         {
             foreach (var reqE in _mrAspect.DashRequests)
             {
-                if (!_crAspect.TryCompareRequestWorld(reqE, _world, out var tarE)) continue;
+                if (!_rAspect.TryCompareRequestWorld(reqE, _world, out var tarE)) continue;
                 if (!_mAspect.Dashables.Has(tarE)) continue;
 
                 ref var dRequest = ref _mrAspect.DashRequestPool.Get(reqE);
