@@ -26,5 +26,10 @@ namespace _Project.Scripts.Runtime.Shared.Extensions
             direction = Mathf.Clamp(direction, -1, 1);
             rigidbody2D.linearVelocity = new Vector2(factor * direction, 0f);
         }
+
+        public static bool VelocityXZero(this Rigidbody2D rigidbody2D)
+        {
+            return Mathf.Approximately(rigidbody2D.linearVelocityX, 0f);
+        }
     }
 }
