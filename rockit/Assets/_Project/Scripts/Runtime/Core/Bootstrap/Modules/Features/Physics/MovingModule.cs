@@ -1,7 +1,7 @@
 ﻿using _Project.Scripts.Runtime.Core.Bootstrap.Domain;
 using _Project.Scripts.Runtime.Features.Physics.Moving.Systems;
 
-namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Physics.Moving
+namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Physics
 {
     public sealed class MovingModule : BaseModule<MovingModule>
     {
@@ -13,6 +13,9 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Physics.Movin
         {
             base.BindSystems();
             
+            BindSystem<TranslatePlayerInputWalkToWalkRequestSystem>();
+            BindSystem<TranslatePlayerInputJumpToJumpRequestSystem>();
+            BindSystem<TranslatePlayerInputDashToDashRequestSystem>();
             BindSystem<GroundCheckUpdateSystem>();
             BindSystem<ApplyGroundVelocityToGroundedObjectSystem>();
             BindSystem<ApplyJumpOnJumpRequestSystem>();
