@@ -13,7 +13,7 @@ namespace _Project.Scripts.Runtime.Features.Physics.Shared.Systems
         private readonly PhysicsService _service;
         private readonly HashSetPool<Collider2D> _collider2DSetPool;
 
-        public PhysicsServiceUpdateSystem(PhysicsService service, ObjectDomain objectDomain)
+        public PhysicsServiceUpdateSystem(PhysicsService service, IObjectDomain objectDomain)
         {
             _service = service;
             objectDomain.Get(out _collider2DSetPool);
