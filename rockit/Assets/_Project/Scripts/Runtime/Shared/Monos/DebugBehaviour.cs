@@ -6,6 +6,8 @@ namespace _Project.Scripts.Runtime.Shared.Monos
 {
     public class DebugBehaviour : MonoBehaviour
     {
+        [SerializeField] protected Color MainGizmoColor = Color.red;
+        
         private void Awake()
         {
 #if !DEBUG
