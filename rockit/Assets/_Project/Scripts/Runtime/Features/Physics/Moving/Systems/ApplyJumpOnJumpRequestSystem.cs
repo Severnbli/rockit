@@ -26,7 +26,7 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Systems
 
         public void Init(IProtoSystems systems)
         {
-            _world = _mrAspect.World();
+            _world = systems.World();
         }
         
         public void FixedRun()
