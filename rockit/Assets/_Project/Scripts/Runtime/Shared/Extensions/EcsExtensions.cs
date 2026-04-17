@@ -7,7 +7,7 @@ namespace _Project.Scripts.Runtime.Shared.Extensions
     {
         public static bool FromExactWorld(this ProtoPackedEntityWithWorld packed, ProtoWorld world)
         {
-            return packed.World == world;
+            return packed.World.Equals(world);
         }
     }
 }
