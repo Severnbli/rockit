@@ -34,7 +34,7 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Systems
             foreach (var reqE in _mrAspect.JumpRequests)
             {
                 if (!_crAspect.TryCompareRequestWorld(reqE, _world, out var tarE)) continue;
-                if (!_mAspect.Rigidbody2DGroundCheckResults.Has(tarE)) continue;
+                if (!_mAspect.Jumpables.Has(tarE)) continue;
                 
                 ref var jRequest = ref _mrAspect.JumpRequestPool.Get(reqE);
                 ref var gcResult = ref _mAspect.GroundCheckResultComponentPool.Get(tarE);
