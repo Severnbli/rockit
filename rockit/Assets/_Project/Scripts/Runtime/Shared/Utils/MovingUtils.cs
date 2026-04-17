@@ -38,6 +38,14 @@ namespace _Project.Scripts.Runtime.Shared.Utils
             return entity;
         }
 
+        public static ProtoEntity CreateDashTimeoutRequest(RequestsAspect aspect,
+            ProtoPackedEntityWithWorld targetEntity, DashTimeoutRequest prepared)
+        {
+            var entity = aspect.CreateRequest(aspect.MovingRequestsAspect.DashTimeoutRequestPool, targetEntity, 
+                false, prepared);
+            return entity;
+        }
+
         public static Vector3 GetGroundCheckPosition(Vector3 characterPosition, Vector3 groundCheckPosition)
         {
             return characterPosition + groundCheckPosition;
