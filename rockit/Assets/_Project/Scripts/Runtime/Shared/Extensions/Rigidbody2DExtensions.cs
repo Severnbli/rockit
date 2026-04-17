@@ -1,9 +1,17 @@
-﻿using UnityEngine;
+﻿using _Project.Scripts.Runtime.Features.Physics.Moving.Requests;
+using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Shared.Extensions
 {
     public static class Rigidbody2DExtensions
     {
+        public static void ApplyWalk(this Rigidbody2D rigidbody2D, float factor)
+        {
+            var velocity = rigidbody2D.linearVelocity;
+            velocity.x = factor;
+            rigidbody2D.linearVelocity = velocity;
+        }
+        
         public static void ApplyJump(this Rigidbody2D rigidbody2D, float factor)
         {
             var velocity = rigidbody2D.linearVelocity;
