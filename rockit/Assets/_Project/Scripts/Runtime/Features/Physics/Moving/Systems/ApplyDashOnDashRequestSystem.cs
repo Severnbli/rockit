@@ -1,6 +1,5 @@
 ﻿using _Project.Scripts.Runtime.Core.Infrastructure.Requests;
 using _Project.Scripts.Runtime.Core.Infrastructure.Requests.World;
-using _Project.Scripts.Runtime.Core.Infrastructure.Time.Services;
 using _Project.Scripts.Runtime.Core.Systems;
 using _Project.Scripts.Runtime.Features.Physics.Moving.Components;
 using _Project.Scripts.Runtime.Features.Physics.Moving.Requests;
@@ -19,12 +18,6 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Systems
         [DI] private readonly MovingAspect _mAspect;
         [DI] private readonly PhysicsSharedAspect _psAspect;
         private ProtoWorld _world;
-        private readonly TimeService _tService;
-
-        public ApplyDashOnDashRequestSystem(TimeService tService)
-        {
-            _tService = tService;
-        }
 
         public void Init(IProtoSystems systems)
         {
@@ -44,7 +37,7 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Systems
                 if (dComponent.AirQuantity >= dRequest.AirQuantity) continue;
                 
                 IncreaseAirQuantity(ref dComponent, tarE);
-                CreateDashTimeout(dRequest, tarE);
+                CreateDashTimeoutRequest(dRequest, tarE);
                 ApplyDash(dRequest, tarE);
             }
         }
@@ -55,11 +48,15 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Systems
             if (!gcResult.Grounded) dComponent.AirQuantity++;
         }
 
-        private void CreateDashTimeout(DashRequest dRequest, ProtoEntity tarE)
+        private void CreateDashTimeoutRequest(DashRequest dRequest, ProtoEntity tarE)
         {
-            ref var dtComponent = ref _mAspect.DashTimeoutComponentPool.Add(tarE);
-            dtComponent.CreationTime = _tService.UnscaledTime;
-            dtComponent.Timeout = dRequest.TimeOut;
+            var prepared = new DashTimeoutRequest
+            {
+                Timeout = dRequest.TimeOut
+            };
+            var packed = _world.PackEntityWithWorld(tarE);
+
+            MovingUtils.CreateDashTimeoutRequest(_rAspect, packed, prepared);
         }
         
         private void ApplyDash(DashRequest dRequest, ProtoEntity tarE)
