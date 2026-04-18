@@ -27,5 +27,6 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving
         public readonly ProtoItExc Walkables = new (It.Inc<Rigidbody2DComponent, MovableTag>(), It.Exc<DashTimeoutComponent>());
         public readonly ProtoIt Movables = new (It.Inc<MovableTag>());
         public readonly ProtoIt Rigidbody2DMovables = new (It.Inc<Rigidbody2DComponent, MovableTag>());
+        public readonly ProtoItExc Deceleratables = new (It.Inc<Rigidbody2DComponent, MoveComponent>(), It.Exc<DashTimeoutComponent>());
     }
 }
