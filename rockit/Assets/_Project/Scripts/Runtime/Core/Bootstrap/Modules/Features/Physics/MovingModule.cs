@@ -13,6 +13,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Physics
         {
             base.BindSystems();
             
+            BindSystem<SetPlayerWalkDecelerationOnInitializeRequestSystem>();
             BindSystem<TranslatePlayerInputWalkToWalkRequestSystem>();
             BindSystem<TranslatePlayerInputJumpToJumpRequestSystem>();
             BindSystem<TranslatePlayerInputDashToDashRequestSystem>();
