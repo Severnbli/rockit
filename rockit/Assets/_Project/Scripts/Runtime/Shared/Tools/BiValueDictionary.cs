@@ -31,5 +31,11 @@ namespace _Project.Scripts.Runtime.Shared.Tools
             FirstValues.UpdateOrAdd(first, value);
             SecondValues.UpdateOrAdd(second, value);
         }
+        
+        private void Remove(TFirst first, TSecond second)
+        {
+            FirstValues.Remove(first);
+            SecondValues.Remove(second);
+        }
     }
 }
