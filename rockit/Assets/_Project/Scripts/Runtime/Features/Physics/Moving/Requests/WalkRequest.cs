@@ -3,5 +3,6 @@
     public struct WalkRequest
     {
         public float Factor;
+        public float Deceleration;
     }
 }
