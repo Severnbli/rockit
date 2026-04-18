@@ -1,0 +1,9 @@
+﻿namespace _Project.Scripts.Runtime.Shared.Tools
+{
+    public class BiValueDictionary<TFirst, TSecond, TValue> : BiDictionary<TFirst, TSecond> 
+        where TFirst : notnull
+        where TSecond : notnull
+    {
+        
+    }
+}
