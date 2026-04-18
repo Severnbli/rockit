@@ -305,10 +305,11 @@ MonoBehaviour:
   Components:
   - rid: 1430329792471498829
   - rid: 1430329792471498830
-  - rid: 1430329792471498831
-  - rid: 1430329792471498832
   - rid: 1430329792471498833
   - rid: 1430329792471498834
+  - rid: 1430329806561738830
+  - rid: 1430329806561738831
+  - rid: 1430329806561738832
   references:
     version: 2
     RefIds:
@@ -320,13 +321,6 @@ MonoBehaviour:
       type: {class: Collider2DComponent, ns: _Project.Scripts.Runtime.Features.Physics.Shared.Components, asm: Runtime}
       data:
         Collider: {fileID: 326885609}
-    - rid: 1430329792471498831
-      type: {class: TransformComponent, ns: _Project.Scripts.Runtime.Shared.Components, asm: Runtime}
-      data:
-        Transform: {fileID: 326885608}
-    - rid: 1430329792471498832
-      type: {class: PlayerTag, ns: _Project.Scripts.Runtime.Shared.Tags, asm: Runtime}
-      data: 
     - rid: 1430329792471498833
       type: {class: MovableTag, ns: _Project.Scripts.Runtime.Features.Physics.Moving.Tags, asm: Runtime}
       data: 
@@ -335,6 +329,16 @@ MonoBehaviour:
       data:
         Position: {x: 0, y: -0.5, z: 0}
         Radius: 0.2
+    - rid: 1430329806561738830
+      type: {class: TransformComponent, ns: _Project.Scripts.Runtime.Core.Infrastructure.Shared.Components, asm: Runtime}
+      data:
+        Transform: {fileID: 326885608}
+    - rid: 1430329806561738831
+      type: {class: PlayerTag, ns: _Project.Scripts.Runtime.Core.Infrastructure.Shared.Tags, asm: Runtime}
+      data: 
+    - rid: 1430329806561738832
+      type: {class: InitializableTag, ns: _Project.Scripts.Runtime.Core.Infrastructure.Shared.Tags, asm: Runtime}
+      data: 
 --- !u!114 &326885613
 MonoBehaviour:
   m_ObjectHideFlags: 0
