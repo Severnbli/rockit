@@ -7,7 +7,7 @@ using Leopotam.EcsProto.QoL;
 
 namespace _Project.Scripts.Runtime.Features.Physics.Moving.Systems
 {
-    public class UpdateMoveDecelerationOnWalkRequestSystem : IProtoInitSystem, IProtoFixedRunSystem
+    public class UpdateWalkDecelerationOnWalkRequestSystem : IProtoInitSystem, IProtoFixedRunSystem
     {
         [DIRequests] private readonly MovingRequestsAspect _mrAspect;
         [DIRequests] private readonly CoreRequestsAspect _crAspect;
