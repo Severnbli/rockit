@@ -5,7 +5,7 @@ using Leopotam.EcsProto.QoL;
 
 namespace _Project.Scripts.Runtime.Features.Physics.Moving.Systems
 {
-    public class LoadPlayersWalkDecelerationSystem : IProtoInitSystem
+    public class LoadPlayersWalkDecelerationSystem : IProtoRunSystem
     {
         [DI] private readonly SharedAspect _sAspect;
         private readonly PlayerMovingConfig _pmConfig;
@@ -15,7 +15,7 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Systems
             _pmConfig = pmConfig;
         }
 
-        public void Init(IProtoSystems systems)
+        public void Run()
         {
             
         }
