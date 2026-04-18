@@ -1,9 +1,8 @@
-﻿using System;
-using Leopotam.EcsProto.Unity;
+﻿using Leopotam.EcsProto.Unity;
 
 namespace _Project.Scripts.Runtime.Core.Infrastructure.Shared.Tags
 {
-    [Serializable, ProtoUnityAuthoring]
+    [ProtoUnityAuthoring]
     public struct CharacterTag
     {
         
