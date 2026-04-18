@@ -37,6 +37,11 @@ namespace _Project.Scripts.Runtime.Shared.Tools
             return FirstValues.TryGetValue(first, out value);
         }
 
+        public bool TryObtainBySecond(TSecond second, out TValue value)
+        {
+            return SecondValues.TryGetValue(second, out value);
+        }
+
         public override bool TryRemoveByFirst(TFirst first)
         {
             if (TryGetByFirst(first, out var second)) Remove(first, second);
