@@ -25,6 +25,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Physics
             BindSystem<DashTimeoutExpireSystem>();
             BindSystem<DashAirQuantityResetOnGroundedSystem>();
             BindSystem<UpdateMoveDirectionOnWalkRequestSystem>();
+            BindSystem<ApplyWalkDecelerationOnFixedRunSystem>();
             BindSystem<ApplyWalkOnWalkRequestSystem>();
             BindSystem<UpdateWalkDecelerationOnWalkRequestSystem>();
             BindSystem<ApplyDashOnDashRequestSystem>();
