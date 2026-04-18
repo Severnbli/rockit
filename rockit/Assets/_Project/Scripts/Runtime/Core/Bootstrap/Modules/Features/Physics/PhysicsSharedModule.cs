@@ -22,6 +22,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Physics
             base.BindSystems();
             
             BindSystem<PhysicsServiceUpdateSystem>();
+            BindSystem<CharactersVelocityResetOnSideCollisionEnterSystem>();
         }
     }
 }
