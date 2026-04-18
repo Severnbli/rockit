@@ -33,7 +33,7 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Systems
 
                 if (!_sAspect.Characters.Has(tarE)) continue;
                 
-                rigidbody.ResetVelocityOnSideCollision(data.Normal);
+                rigidbody.ResetVelocityOnSideCollision(data.Normal, _smConfig.SideCollisionTolerance);
             }
         }
     }
