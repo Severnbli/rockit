@@ -6,11 +6,16 @@ using Leopotam.EcsProto.QoL;
 
 namespace _Project.Scripts.Runtime.Features.Physics.Moving.Systems
 {
-    public sealed class SetPlayerWalkDecelerationOnInitializeRequestSystem : IProtoRunSystem
+    public sealed class SetPlayerWalkDecelerationOnInitializeRequestSystem : IProtoInitSystem, IProtoRunSystem
     {
         [DIRequests] private readonly SharedRequestsAspect _srAspect;
         [DIRequests] private readonly CoreRequestsAspect _crAspect;
         [DI] private readonly MovingAspect _mAspect;
+        
+        public void Init(IProtoSystems systems)
+        {
+            
+        }
         
         public void Run()
         {
