@@ -1,4 +1,6 @@
-﻿using _Project.Scripts.Runtime.Features.Physics.Shared.Services;
+﻿using _Project.Scripts.Runtime.Core.Infrastructure.Shared;
+using _Project.Scripts.Runtime.Features.Physics.Shared.Services;
+using _Project.Scripts.Runtime.Shared.Extensions;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 
@@ -17,7 +19,18 @@ namespace _Project.Scripts.Runtime.Features.Physics.Shared.Systems
         
         public void Run()
         {
-            
+            foreach (var e in _psAspect.CollisionEnterEvents)
+            {
+                ref var data = ref _psAspect.CollisionEnterEventPool.Get(e);
+                var matcher = _pService.GameObjectRigidbody2DMatcher;
+
+                if (!matcher.TryGetByFirst(data.Sender, out var rigidbody) ||
+                    !matcher.TryObtainByFirst(data.Sender, out var tarE)) continue;
+
+                if (!_sAspect.Characters.Has(tarE)) continue;
+                
+                rigidbody.ResetVelocityOnSideCollision(data.Normal);
+            }
         }
     }
 }
