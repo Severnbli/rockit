@@ -15,5 +15,13 @@ namespace _Project.Scripts.Runtime.Shared.Utils
                 prepared);
             return entity;
         }
+        
+        public static ProtoEntity CreateInitializeFixedRunRequest(RequestsAspect aspect,
+            ProtoPackedEntityWithWorld targetEntity = default, InitializeRequest prepared = default)
+        {
+            var entity = aspect.CreateRequest(aspect.SharedRequestsAspect.InitializeRequestPool, targetEntity, true,
+                prepared);
+            return entity;
+        }
     }
 }
