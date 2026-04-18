@@ -20,5 +20,12 @@ namespace _Project.Scripts.Runtime.Shared.Extensions
             
             return false;
         }
+
+        public static void UpdateOrAdd<TKey, TValue>(this Dictionary<TKey, TValue> dict, TKey key, TValue value)
+        {
+            if (dict.TryAdd(key, value)) return;
+            
+            dict.Add(key, value);
+        }
     }
 }
