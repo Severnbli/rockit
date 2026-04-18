@@ -2,6 +2,6 @@
 {
     public struct WalkDecelerationComponent
     {
-        
+        public float Factor;
     }
 }
