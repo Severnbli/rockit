@@ -7,25 +7,25 @@ namespace _Project.Scripts.Runtime.Shared.Tools
         where TFirst : notnull 
         where TSecond : notnull
     {
-        private readonly Dictionary<TFirst, TSecond> _forward = new ();
+        protected readonly Dictionary<TFirst, TSecond> Forward = new ();
         private readonly Dictionary<TSecond, TFirst> _reverse = new ();
 
         public bool TryAdd(TFirst first, TSecond second)
         {
-            if (_forward.ContainsKey(first) || _reverse.ContainsKey(second)) return false;
+            if (Forward.ContainsKey(first) || _reverse.ContainsKey(second)) return false;
             
-            _forward.Add(first, second);
+            Forward.Add(first, second);
             _reverse.Add(second, first);
             return true;
         }
 
-        public bool TryGetByFirst(TFirst first, out TSecond second) => _forward.TryGetValue(first, out second);
+        public bool TryGetByFirst(TFirst first, out TSecond second) => Forward.TryGetValue(first, out second);
         
         public bool TryGetBySecond(TSecond second, out TFirst first) => _reverse.TryGetValue(second, out first);
 
         public bool TryRemoveByFirst(TFirst first)
         {
-            if (!_forward.Remove(first, out var second)) return false;
+            if (!Forward.Remove(first, out var second)) return false;
 
             _reverse.Remove(second);
             return true;
@@ -35,17 +35,17 @@ namespace _Project.Scripts.Runtime.Shared.Tools
         {
             if (_reverse.Remove(second, out var first)) return false;
             
-            _forward.Remove(first);
+            Forward.Remove(first);
             return true;
         }
 
-        public HashSet<TFirst> GetFirsts() => _forward.Keys.ToHashSet();
+        public HashSet<TFirst> GetFirsts() => Forward.Keys.ToHashSet();
         
         public HashSet<TSecond> GetSeconds() => _reverse.Keys.ToHashSet();
 
         public void KeepOnly(HashSet<TFirst> firsts)
         {
-            foreach (var key in _forward.Keys)
+            foreach (var key in Forward.Keys)
             {
                 if (firsts.Contains(key)) continue;
 
