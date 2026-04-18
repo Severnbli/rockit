@@ -25,7 +25,7 @@ namespace _Project.Scripts.Runtime.Shared.Extensions
         {
             if (dict.TryAdd(key, value)) return;
             
-            dict.Add(key, value);
+            dict[key] = value;
         }
     }
 }
