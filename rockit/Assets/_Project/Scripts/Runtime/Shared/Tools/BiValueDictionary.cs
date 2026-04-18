@@ -17,6 +17,14 @@ namespace _Project.Scripts.Runtime.Shared.Tools
             Set(first, second, value);
             return true;
         }
+        
+        public bool TrySet(TSecond second, TValue value)
+        {
+            if (!TryGetBySecond(second, out var first)) return false;
+            
+            Set(first, second, value);
+            return true;
+        }
 
         private void Set(TFirst first, TSecond second, TValue value)
         {
