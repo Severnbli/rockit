@@ -11,5 +11,6 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Shared
         public readonly ProtoPool<TransformComponent> TransformComponentPool;
         public readonly ProtoPool<InitializableTag> InitializableTagPool;
         public readonly ProtoIt Players = new (It.Inc<PlayerTag>());
+        public readonly ProtoIt Initializables = new (It.Inc<InitializableTag>());
     }
 }
