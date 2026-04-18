@@ -93,5 +93,12 @@ namespace _Project.Scripts.Runtime.Shared.Utils
                 ? MoveDirection.Right 
                 : MoveDirection.Left;
         }
+
+        public static MoveDirection GetMoveDirectionXByFloat(float value)
+        {
+            return value > 0
+                ? MoveDirection.Right
+                : MoveDirection.Left;
+        }
     }
 }
