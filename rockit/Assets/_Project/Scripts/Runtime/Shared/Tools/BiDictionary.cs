@@ -8,32 +8,32 @@ namespace _Project.Scripts.Runtime.Shared.Tools
         where TSecond : notnull
     {
         protected readonly Dictionary<TFirst, TSecond> Forward = new ();
-        private readonly Dictionary<TSecond, TFirst> _reverse = new ();
+        protected readonly Dictionary<TSecond, TFirst> Reverse = new ();
 
         public bool TryAdd(TFirst first, TSecond second)
         {
-            if (Forward.ContainsKey(first) || _reverse.ContainsKey(second)) return false;
+            if (Forward.ContainsKey(first) || Reverse.ContainsKey(second)) return false;
             
             Forward.Add(first, second);
-            _reverse.Add(second, first);
+            Reverse.Add(second, first);
             return true;
         }
 
         public bool TryGetByFirst(TFirst first, out TSecond second) => Forward.TryGetValue(first, out second);
         
-        public bool TryGetBySecond(TSecond second, out TFirst first) => _reverse.TryGetValue(second, out first);
+        public bool TryGetBySecond(TSecond second, out TFirst first) => Reverse.TryGetValue(second, out first);
 
         public bool TryRemoveByFirst(TFirst first)
         {
             if (!Forward.Remove(first, out var second)) return false;
 
-            _reverse.Remove(second);
+            Reverse.Remove(second);
             return true;
         }
 
         public bool TryRemoveBySecond(TSecond second)
         {
-            if (_reverse.Remove(second, out var first)) return false;
+            if (Reverse.Remove(second, out var first)) return false;
             
             Forward.Remove(first);
             return true;
@@ -41,7 +41,7 @@ namespace _Project.Scripts.Runtime.Shared.Tools
 
         public HashSet<TFirst> GetFirsts() => Forward.Keys.ToHashSet();
         
-        public HashSet<TSecond> GetSeconds() => _reverse.Keys.ToHashSet();
+        public HashSet<TSecond> GetSeconds() => Reverse.Keys.ToHashSet();
 
         public void KeepOnly(HashSet<TFirst> firsts)
         {
@@ -55,7 +55,7 @@ namespace _Project.Scripts.Runtime.Shared.Tools
         
         public void KeepOnly(HashSet<TSecond> firsts)
         {
-            foreach (var key in _reverse.Keys)
+            foreach (var key in Reverse.Keys)
             {
                 if (firsts.Contains(key)) continue;
 
