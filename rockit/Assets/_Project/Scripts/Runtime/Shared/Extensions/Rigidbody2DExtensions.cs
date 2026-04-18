@@ -44,5 +44,11 @@ namespace _Project.Scripts.Runtime.Shared.Extensions
             
             rigidbody2D.linearVelocity = velocity;
         }
+
+        public static void ResetVelocityOnSideCollision(this Rigidbody2D rigidbody2D, Vector2 normal)
+        {
+            if (Mathf.Approximately(Mathf.Abs(normal.x), 0f)) return;
+            rigidbody2D.linearVelocity = Vector2.zero;
+        }
     }
 }
