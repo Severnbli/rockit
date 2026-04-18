@@ -9,10 +9,11 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Shared.Systems
     {
         [DIRequests] private readonly RequestsAspect _rAspect;
         [DI] private readonly SharedAspect _sAspect;
+        private ProtoWorld _world;
         
         public void Init(IProtoSystems systems)
         {
-            
+            _world = systems.World();
         }
         
         public void Run()
