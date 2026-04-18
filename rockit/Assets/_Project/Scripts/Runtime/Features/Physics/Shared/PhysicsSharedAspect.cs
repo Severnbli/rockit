@@ -18,5 +18,9 @@ namespace _Project.Scripts.Runtime.Features.Physics.Shared
         public readonly ProtoIt Rigidbody2DCharacters = new (It.Inc<CharacterTag, Rigidbody2DComponent>());
         public readonly ProtoIt Rigidbody2DColliders2D = new (It.Inc<Rigidbody2DComponent, Collider2DComponent>());
         public readonly ProtoIt Rigidbodies2D = new(It.Inc<Rigidbody2DComponent>());
+        public readonly ProtoIt CollisionEnterEvents = new (It.Inc<UnityPhysics2DCollisionEnterEvent>());
+        public readonly ProtoIt CollisionExitEvents = new (It.Inc<UnityPhysics2DCollisionExitEvent>());
+        public readonly ProtoIt TriggerEnterEvents = new (It.Inc<UnityPhysics2DTriggerEnterEvent>());
+        public readonly ProtoIt TriggerExitEvents = new (It.Inc<UnityPhysics2DTriggerExitEvent>());
     }
 }
