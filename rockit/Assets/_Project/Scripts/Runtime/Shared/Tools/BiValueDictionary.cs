@@ -10,6 +10,14 @@ namespace _Project.Scripts.Runtime.Shared.Tools
         protected readonly Dictionary<TFirst, TValue> FirstValues = new ();
         protected readonly Dictionary<TSecond, TValue> SecondValues = new ();
 
+        public bool TrySet(TFirst first, TValue value)
+        {
+            if (!TryGetByFirst(first, out var second)) return false;
+            
+            Set(first, second, value);
+            return true;
+        }
+
         private void Set(TFirst first, TSecond second, TValue value)
         {
             FirstValues.UpdateOrAdd(first, value);
