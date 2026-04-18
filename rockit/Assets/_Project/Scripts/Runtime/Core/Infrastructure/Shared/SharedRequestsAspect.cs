@@ -10,5 +10,6 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Shared
     {
         public readonly ProtoPool<InitializeRequest> InitializeRequestPool;
         public readonly ProtoIt InitializeRunRequests = new(It.Inc<RequestComponent, ActiveRequestTag, RunRequestTag, InitializeRequest>());
+        public readonly ProtoIt InitializeFixedRunRequests = new(It.Inc<RequestComponent, ActiveRequestTag, FixedRunRequestTag, InitializeRequest>());
     }
 }
