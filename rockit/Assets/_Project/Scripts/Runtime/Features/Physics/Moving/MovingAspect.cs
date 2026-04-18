@@ -1,7 +1,7 @@
-﻿using _Project.Scripts.Runtime.Features.Physics.Moving.Components;
+﻿using _Project.Scripts.Runtime.Core.Infrastructure.Shared.Components;
+using _Project.Scripts.Runtime.Features.Physics.Moving.Components;
 using _Project.Scripts.Runtime.Features.Physics.Moving.Tags;
 using _Project.Scripts.Runtime.Features.Physics.Shared.Components;
-using _Project.Scripts.Runtime.Shared.Components;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 

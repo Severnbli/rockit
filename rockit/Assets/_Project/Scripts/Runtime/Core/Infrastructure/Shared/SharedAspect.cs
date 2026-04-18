@@ -1,9 +1,9 @@
-﻿using _Project.Scripts.Runtime.Shared.Components;
-using _Project.Scripts.Runtime.Shared.Tags;
+﻿using _Project.Scripts.Runtime.Core.Infrastructure.Shared.Components;
+using _Project.Scripts.Runtime.Core.Infrastructure.Shared.Tags;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 
-namespace _Project.Scripts.Runtime.Shared
+namespace _Project.Scripts.Runtime.Core.Infrastructure.Shared
 {
     public class SharedAspect : ProtoAspectInject
     {

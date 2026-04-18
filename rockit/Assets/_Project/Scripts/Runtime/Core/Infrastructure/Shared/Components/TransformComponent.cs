@@ -2,7 +2,7 @@
 using Leopotam.EcsProto.Unity;
 using UnityEngine;
 
-namespace _Project.Scripts.Runtime.Shared.Components
+namespace _Project.Scripts.Runtime.Core.Infrastructure.Shared.Components
 {
     [Serializable, ProtoUnityAuthoring]
     public struct TransformComponent

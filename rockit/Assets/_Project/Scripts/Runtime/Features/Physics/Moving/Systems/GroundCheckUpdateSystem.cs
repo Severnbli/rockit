@@ -1,7 +1,7 @@
-﻿using _Project.Scripts.Runtime.Core.Infrastructure.Time.Services;
+﻿using _Project.Scripts.Runtime.Core.Infrastructure.Shared;
+using _Project.Scripts.Runtime.Core.Infrastructure.Shared.Configs;
+using _Project.Scripts.Runtime.Core.Infrastructure.Time.Services;
 using _Project.Scripts.Runtime.Features.Physics.Moving.Configs;
-using _Project.Scripts.Runtime.Shared;
-using _Project.Scripts.Runtime.Shared.Configs;
 using _Project.Scripts.Runtime.Shared.Utils;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
