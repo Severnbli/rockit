@@ -36,7 +36,8 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Systems
 
             var prepared = new WalkRequest
             {
-                Factor = _service.Walk * _config.WalkSpeed
+                Factor = _service.Walk * _config.WalkSpeed,
+                Deceleration = _config.WalkDeceleration
             };
             
             foreach (var e in _sharedAspect.Players)
