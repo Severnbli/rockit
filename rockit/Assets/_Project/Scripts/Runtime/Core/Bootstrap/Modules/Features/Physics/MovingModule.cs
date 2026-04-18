@@ -30,6 +30,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Physics
             BindSystem<UpdateWalkDecelerationOnWalkRequestSystem>();
             BindSystem<ApplyDashOnDashRequestSystem>();
             BindSystem<ApplyDashTimeoutOnDashTimeoutRequestSystem>();
+            BindSystem<CharactersVelocityResetOnSideCollisionEnterSystem>();
         }
     }
 }

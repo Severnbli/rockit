@@ -1,10 +1,11 @@
 ﻿using _Project.Scripts.Runtime.Core.Infrastructure.Shared;
+using _Project.Scripts.Runtime.Features.Physics.Shared;
 using _Project.Scripts.Runtime.Features.Physics.Shared.Services;
 using _Project.Scripts.Runtime.Shared.Extensions;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 
-namespace _Project.Scripts.Runtime.Features.Physics.Shared.Systems
+namespace _Project.Scripts.Runtime.Features.Physics.Moving.Systems
 {
     public sealed class CharactersVelocityResetOnSideCollisionEnterSystem : IProtoRunSystem
     {
