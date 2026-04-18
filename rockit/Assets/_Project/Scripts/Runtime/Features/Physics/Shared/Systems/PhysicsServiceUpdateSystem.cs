@@ -29,6 +29,7 @@ namespace _Project.Scripts.Runtime.Features.Physics.Shared.Systems
                 var rigidbody = _physicsSharedAspect.Rigidbody2DComponentPool.Get(e).Rigidbody2D;
                 collider2DSet.Add(collider);
                 _service.PhysicsMatcher.TryAdd(collider, rigidbody);
+                _service.PhysicsMatcher.TrySet(collider, e);
             }
             
             _service.PhysicsMatcher.KeepOnly(collider2DSet);
