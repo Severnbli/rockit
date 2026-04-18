@@ -7,5 +7,6 @@ namespace _Project.Scripts.Runtime.Shared.Tools
         where TSecond : notnull
     {
         protected readonly Dictionary<TFirst, TValue> FirstValues = new ();
+        protected readonly Dictionary<TSecond, TValue> SecondValues = new ();
     }
 }
