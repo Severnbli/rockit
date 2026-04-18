@@ -23,7 +23,7 @@ namespace _Project.Scripts.Runtime.Shared.Tools
         
         public bool TryGetBySecond(TSecond second, out TFirst first) => Reverse.TryGetValue(second, out first);
 
-        public bool TryRemoveByFirst(TFirst first)
+        public virtual bool TryRemoveByFirst(TFirst first)
         {
             if (!Forward.Remove(first, out var second)) return false;
 
@@ -31,7 +31,7 @@ namespace _Project.Scripts.Runtime.Shared.Tools
             return true;
         }
 
-        public bool TryRemoveBySecond(TSecond second)
+        public virtual bool TryRemoveBySecond(TSecond second)
         {
             if (Reverse.Remove(second, out var first)) return false;
             
