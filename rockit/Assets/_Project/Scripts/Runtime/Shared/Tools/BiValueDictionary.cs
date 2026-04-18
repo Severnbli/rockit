@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using _Project.Scripts.Runtime.Shared.Extensions;
 
 namespace _Project.Scripts.Runtime.Shared.Tools
 {
@@ -8,5 +9,11 @@ namespace _Project.Scripts.Runtime.Shared.Tools
     {
         protected readonly Dictionary<TFirst, TValue> FirstValues = new ();
         protected readonly Dictionary<TSecond, TValue> SecondValues = new ();
+
+        private void Set(TFirst first, TSecond second, TValue value)
+        {
+            FirstValues.UpdateOrAdd(first, value);
+            SecondValues.UpdateOrAdd(second, value);
+        }
     }
 }
