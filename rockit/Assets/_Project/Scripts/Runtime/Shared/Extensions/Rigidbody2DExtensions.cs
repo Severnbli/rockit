@@ -31,5 +31,18 @@ namespace _Project.Scripts.Runtime.Shared.Extensions
         {
             return Mathf.Approximately(rigidbody2D.linearVelocityX, 0f);
         }
+
+        public static void ApplyWalkDeceleration(this Rigidbody2D rigidbody2D, float factor, float deltaTime)
+        {
+            var velocity = rigidbody2D.linearVelocity;
+
+            velocity.x = Mathf.MoveTowards(
+                velocity.x,
+                0f,
+                factor * deltaTime
+            );
+            
+            rigidbody2D.linearVelocity = velocity;
+        }
     }
 }
