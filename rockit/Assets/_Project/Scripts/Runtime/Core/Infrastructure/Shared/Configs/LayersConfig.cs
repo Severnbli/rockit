@@ -1,7 +1,7 @@
 ﻿using _Project.Scripts.Modules.Zenject;
 using UnityEngine;
 
-namespace _Project.Scripts.Runtime.Shared.Configs
+namespace _Project.Scripts.Runtime.Core.Infrastructure.Shared.Configs
 {
     public class LayersConfig : ScriptableObjectAutoInstaller<LayersConfig>
     {

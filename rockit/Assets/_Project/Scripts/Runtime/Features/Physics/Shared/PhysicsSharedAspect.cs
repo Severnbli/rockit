@@ -1,5 +1,5 @@
-﻿using _Project.Scripts.Runtime.Features.Physics.Shared.Components;
-using _Project.Scripts.Runtime.Shared.Tags;
+﻿using _Project.Scripts.Runtime.Core.Infrastructure.Shared.Tags;
+using _Project.Scripts.Runtime.Features.Physics.Shared.Components;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 
