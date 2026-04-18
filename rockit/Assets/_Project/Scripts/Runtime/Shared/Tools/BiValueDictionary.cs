@@ -38,6 +38,13 @@ namespace _Project.Scripts.Runtime.Shared.Tools
             
             return base.TryRemoveByFirst(first);
         }
+
+        public override bool TryRemoveBySecond(TSecond second)
+        {
+            if (TryGetBySecond(second, out var first)) Remove(first, second);
+            
+            return base.TryRemoveBySecond(second);
+        }
         
         private void Remove(TFirst first, TSecond second)
         {
