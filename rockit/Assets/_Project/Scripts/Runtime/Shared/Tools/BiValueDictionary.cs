@@ -31,6 +31,13 @@ namespace _Project.Scripts.Runtime.Shared.Tools
             FirstValues.UpdateOrAdd(first, value);
             SecondValues.UpdateOrAdd(second, value);
         }
+
+        public override bool TryRemoveByFirst(TFirst first)
+        {
+            if (TryGetByFirst(first, out var second)) Remove(first, second);
+            
+            return base.TryRemoveByFirst(first);
+        }
         
         private void Remove(TFirst first, TSecond second)
         {
