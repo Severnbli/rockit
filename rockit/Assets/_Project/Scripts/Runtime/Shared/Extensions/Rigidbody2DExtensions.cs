@@ -1,4 +1,5 @@
 ﻿using _Project.Scripts.Runtime.Features.Physics.Moving.Requests;
+using _Project.Scripts.Runtime.Shared.Utils;
 using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Shared.Extensions
@@ -45,9 +46,13 @@ namespace _Project.Scripts.Runtime.Shared.Extensions
             rigidbody2D.linearVelocity = velocity;
         }
 
-        public static void ResetVelocityOnSideCollision(this Rigidbody2D rigidbody2D, Vector2 normal)
+        public static void ResetVelocityOnSideCollision(this Rigidbody2D rigidbody2D, Vector2 normal, float tolerance)
         {
-            if (Mathf.Approximately(Mathf.Abs(normal.x), 0f)) return;
+            if (Mathf.Abs(normal.x) < tolerance) return;
+            
+            var dot = Vector2.Dot(rigidbody2D.linearVelocity, normal);
+            if (dot >= 0f) return;
+            
             rigidbody2D.linearVelocity = Vector2.zero;
         }
     }
