@@ -8,18 +8,10 @@ namespace _Project.Scripts.Runtime.Shared.Utils
 {
     public static class SharedUtils
     {
-        public static ProtoEntity CreateInitializeRunRequest(RequestsAspect aspect,
+        public static ProtoEntity CreateInitializeRequest(RequestsAspect aspect, bool fixedRun = false,
             ProtoPackedEntityWithWorld targetEntity = default, InitializeRequest prepared = default)
         {
-            var entity = aspect.CreateRequest(aspect.SharedRequestsAspect.InitializeRequestPool, targetEntity, false,
-                prepared);
-            return entity;
-        }
-        
-        public static ProtoEntity CreateInitializeFixedRunRequest(RequestsAspect aspect,
-            ProtoPackedEntityWithWorld targetEntity = default, InitializeRequest prepared = default)
-        {
-            var entity = aspect.CreateRequest(aspect.SharedRequestsAspect.InitializeRequestPool, targetEntity, true,
+            var entity = aspect.CreateRequest(aspect.SharedRequestsAspect.InitializeRequestPool, targetEntity, fixedRun,
                 prepared);
             return entity;
         }
