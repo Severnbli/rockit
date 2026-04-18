@@ -1,10 +1,10 @@
-﻿using _Project.Scripts.Runtime.Core.Systems;
+﻿using Leopotam.EcsProto;
 
 namespace _Project.Scripts.Runtime.Features.Physics.Shared.Systems
 {
-    public sealed class CharactersVelocityResetOnSideCollisionEnterSystem : IProtoFixedRunSystem
+    public sealed class CharactersVelocityResetOnSideCollisionEnterSystem : IProtoRunSystem
     {
-        public void FixedRun()
+        public void Run()
         {
             
         }
