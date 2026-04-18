@@ -1,4 +1,5 @@
 ﻿using _Project.Scripts.Runtime.Core.Infrastructure.Shared;
+using _Project.Scripts.Runtime.Features.Physics.Moving.Configs;
 using _Project.Scripts.Runtime.Features.Physics.Shared;
 using _Project.Scripts.Runtime.Features.Physics.Shared.Services;
 using _Project.Scripts.Runtime.Shared.Extensions;
@@ -12,10 +13,12 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Systems
         [DI] private readonly PhysicsSharedAspect _psAspect;
         [DI] private readonly SharedAspect _sAspect;
         private readonly PhysicsService _pService;
+        private readonly SharedMovingConfig _smConfig;
 
-        public CharactersVelocityResetOnSideCollisionEnterSystem(PhysicsService pService)
+        public CharactersVelocityResetOnSideCollisionEnterSystem(PhysicsService pService, SharedMovingConfig smConfig)
         {
             _pService = pService;
+            _smConfig = smConfig;
         }
         
         public void Run()
