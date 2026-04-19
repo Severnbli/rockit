@@ -10,7 +10,7 @@ namespace _Project.Scripts.Runtime.Features.Graphics.Animations.Characters
     {
         public readonly ProtoPool<KillCharacterRequest> KillCharacterRequestPool;
         public readonly ProtoPool<ReviveCharacterRequest> ReviveCharacterRequestPool;
-        public readonly ProtoIt KillCharacterRequests = new (It.Inc<RequestComponent, ActiveRequestTag, KillCharacterRequest>());
-        public readonly ProtoIt ReviveCharacterRequests = new (It.Inc<RequestComponent, ActiveRequestTag, ReviveCharacterRequest>());
+        public readonly ProtoIt KillCharacterRunRequests = new (It.Inc<RequestComponent, ActiveRequestTag, RunRequestTag, KillCharacterRequest>());
+        public readonly ProtoIt ReviveCharacterRunRequests = new (It.Inc<RequestComponent, ActiveRequestTag, RunRequestTag, ReviveCharacterRequest>());
     }
 }
