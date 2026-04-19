@@ -17,6 +17,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Animations
             BindSystem<UpdateDashedBoolOnRunSystem>();
             BindSystem<UpdateFallBoolByVelocityOnFixedRunSystem>();
             BindSystem<UpdateRunBoolByVelocityOnFixedRunSystem>();
+            BindSystem<SendJumpTriggerOnJumpAppliedRequestSystem>();
         }
     }
 }
