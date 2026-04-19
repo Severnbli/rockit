@@ -46,6 +46,14 @@ namespace _Project.Scripts.Runtime.Shared.Utils
             return entity;
         }
 
+        public static ProtoEntity CreateJumpAppliedRequest(RequestsAspect aspect, bool fixedRun = false,
+            ProtoPackedEntityWithWorld targetEntity = default, JumpAppliedRequest prepared = default)
+        {
+            var entity = aspect.CreateRequest(aspect.MovingRequestsAspect.JumpAppliedRequestPool, targetEntity,
+                fixedRun, prepared);
+            return entity;
+        }
+
         public static Vector3 GetGroundCheckPosition(Vector3 characterPosition, Vector3 groundCheckPosition)
         {
             return characterPosition + groundCheckPosition;
