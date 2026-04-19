@@ -5,6 +5,7 @@ using _Project.Scripts.Runtime.Core.Systems;
 using _Project.Scripts.Runtime.Features.Physics.Moving.Requests;
 using _Project.Scripts.Runtime.Features.Physics.Shared;
 using _Project.Scripts.Runtime.Shared.Extensions;
+using _Project.Scripts.Runtime.Shared.Utils;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 
@@ -14,6 +15,7 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Systems
     {
         [DIRequests] private readonly MovingRequestsAspect _mrAspect;
         [DIRequests] private readonly CoreRequestsAspect _crAspect;
+        [DIRequests] private readonly RequestsAspect _rAspect;
         [DI] private readonly MovingAspect _mAspect;
         [DI] private readonly PhysicsSharedAspect _psAspect;
         private ProtoWorld _world;
@@ -46,7 +48,14 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Systems
                 }
 
                 ApplyJump(jRequest, tarE);
+                CreateJumpAppliedRequests(tarE);
             }
+        }
+
+        private void CreateJumpAppliedRequests(ProtoEntity tarE)
+        {
+            MovingUtils.CreateJumpAppliedRequest(_rAspect, false, _world.PackEntityWithWorld(tarE));
+            MovingUtils.CreateJumpAppliedRequest(_rAspect, true, _world.PackEntityWithWorld(tarE));
         }
 
         private void ApplyJump(JumpRequest jRequest, ProtoEntity tarE)
