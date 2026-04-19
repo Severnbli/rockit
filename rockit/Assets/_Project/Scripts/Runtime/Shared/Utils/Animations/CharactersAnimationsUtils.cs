@@ -12,5 +12,11 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Animations
             return aspect.CreateRequest(aspect.CharactersAnimationsRequestsAspect.KillCharacterRequestPool, 
                 world.PackEntityWithWorld(entity));
         }
+        
+        public static ProtoEntity CreateReviveRequest(RequestsAspect aspect, ProtoWorld world, ProtoEntity entity)
+        {
+            return aspect.CreateRequest(aspect.CharactersAnimationsRequestsAspect.ReviveCharacterRequestPool, 
+                world.PackEntityWithWorld(entity));
+        }
     }
 }
