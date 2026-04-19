@@ -9,8 +9,8 @@ namespace _Project.Scripts.Runtime.Features.Graphics.Animations.Characters.Syste
 {
     public sealed class UpdateFallBoolByVelocityOnFixedRunSystem : IProtoFixedRunSystem
     {
-        [DI] private AnimationsSharedAspect _asAspect;
-        [DI] private PhysicsSharedAspect _psAspect;
+        [DI] private readonly AnimationsSharedAspect _asAspect;
+        [DI] private readonly PhysicsSharedAspect _psAspect;
         private readonly CharacterAnimationConfig _caConfig;
 
         public UpdateFallBoolByVelocityOnFixedRunSystem(CharacterAnimationConfig caConfig)
