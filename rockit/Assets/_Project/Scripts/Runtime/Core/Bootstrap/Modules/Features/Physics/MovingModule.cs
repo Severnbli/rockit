@@ -31,6 +31,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Physics
             BindSystem<ApplyDashOnDashRequestSystem>();
             BindSystem<ApplyDashTimeoutOnDashTimeoutRequestSystem>();
             BindSystem<PreventCharactersSlidingUpOnSideCollisionEnterSystem>();
+            BindSystem<PreventCharacterSideHookingSystem>();
         }
     }
 }
