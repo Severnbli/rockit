@@ -1,4 +1,4 @@
-﻿using _Project.Scripts.Runtime.Shared.Tools;
+﻿using System.Collections.Generic;
 using Leopotam.EcsProto.QoL;
 using UnityEngine;
 
@@ -6,6 +6,6 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Shared.Services
 {
     public sealed class SharedIndexService
     {
-        public BiDictionary<GameObject, ProtoPackedEntityWithWorld> GameObjectIndex = new ();
+        public readonly Dictionary<GameObject, ProtoPackedEntityWithWorld> GameObjectIndex = new ();
     }
 }
