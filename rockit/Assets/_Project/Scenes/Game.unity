@@ -315,6 +315,7 @@ MonoBehaviour:
   - rid: 1430329807939305549
   - rid: 1430329830837583949
   - rid: 1430329830837583950
+  - rid: 1430329838170800205
   references:
     version: 2
     RefIds:
@@ -354,6 +355,10 @@ MonoBehaviour:
     - rid: 1430329830837583950
       type: {class: IndexableTag, ns: _Project.Scripts.Runtime.Core.Infrastructure.Shared.Tags, asm: Runtime}
       data: 
+    - rid: 1430329838170800205
+      type: {class: FaceComponent, ns: _Project.Scripts.Runtime.Features.Graphics.Sprites.Shared.Components, asm: Runtime}
+      data:
+        Direction: 0
 --- !u!114 &326885613
 MonoBehaviour:
   m_ObjectHideFlags: 0
