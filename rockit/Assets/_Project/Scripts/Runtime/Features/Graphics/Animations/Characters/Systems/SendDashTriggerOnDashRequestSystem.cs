@@ -10,7 +10,7 @@ using Leopotam.EcsProto.QoL;
 
 namespace _Project.Scripts.Runtime.Features.Graphics.Animations.Characters.Systems
 {
-    public sealed class SendCharacterAnimatorDashTriggerOnDashRequestSystem : IProtoInitSystem, IProtoFixedRunSystem
+    public sealed class SendDashTriggerOnDashRequestSystem : IProtoInitSystem, IProtoFixedRunSystem
     {
         [DIRequests] private readonly MovingRequestsAspect _mrAspect;
         [DIRequests] private readonly CoreRequestsAspect _crAspect;
@@ -19,7 +19,7 @@ namespace _Project.Scripts.Runtime.Features.Graphics.Animations.Characters.Syste
         private readonly CharacterAnimationConfig _caConfig;
         private ProtoWorld _world;
 
-        public SendCharacterAnimatorDashTriggerOnDashRequestSystem(CharacterAnimationConfig caConfig)
+        public SendDashTriggerOnDashRequestSystem(CharacterAnimationConfig caConfig)
         {
             _caConfig = caConfig;
         }
