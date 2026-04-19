@@ -7,14 +7,14 @@ using Leopotam.EcsProto.QoL;
 
 namespace _Project.Scripts.Runtime.Features.Physics.Moving.Systems
 {
-    public sealed class CharactersVelocityYResetOnSideCollisionEnterSystem : IProtoInitSystem, IProtoRunSystem
+    public sealed class PreventCharactersSlidingUpOnSideCollisionEnterSystem : IProtoInitSystem, IProtoRunSystem
     {
         [DI] private readonly PhysicsSharedAspect _psAspect;
         private readonly SharedMovingConfig _smConfig;
         private readonly SharedIndexService _siService;
         private ProtoWorld _world;
 
-        public CharactersVelocityYResetOnSideCollisionEnterSystem(SharedMovingConfig smConfig, SharedIndexService siService)
+        public PreventCharactersSlidingUpOnSideCollisionEnterSystem(SharedMovingConfig smConfig, SharedIndexService siService)
         {
             _smConfig = smConfig;
             _siService = siService;
@@ -40,7 +40,7 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Systems
                 
                 ref var rComponent = ref _psAspect.Rigidbody2DComponentPool.Get(tarE);
                 
-                rComponent.Rigidbody2D.ResetVelocityYOnSideCollision(data.Normal, _smConfig.SideCollisionTolerance);
+                rComponent.Rigidbody2D.ResetPositiveVelocityYOnSideCollision(data.Normal, _smConfig.SideCollisionTolerance);
             }
         }
     }
