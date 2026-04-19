@@ -80,5 +80,10 @@ namespace _Project.Scripts.Runtime.Shared.Extensions
         {
             return rigidbody2D.linearVelocity.y < 0f;
         }
+
+        public static bool MoveSideways(this Rigidbody2D rigidbody2D)
+        {
+            return !Mathf.Approximately(rigidbody2D.linearVelocity.x, 0f);
+        }
     }
 }
