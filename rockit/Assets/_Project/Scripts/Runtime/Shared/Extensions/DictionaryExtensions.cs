@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace _Project.Scripts.Runtime.Shared.Extensions
 {
@@ -26,6 +27,11 @@ namespace _Project.Scripts.Runtime.Shared.Extensions
             if (dict.TryAdd(key, value)) return;
             
             dict[key] = value;
+        }
+
+        public static void KeepOnly<TKey, TValue>(this Dictionary<TKey, TValue> dict, IEnumerable<TKey> keys)
+        {
+            foreach (var key in keys.Where(key => !dict.ContainsKey(key))) dict.Remove(key);
         }
     }
 }
