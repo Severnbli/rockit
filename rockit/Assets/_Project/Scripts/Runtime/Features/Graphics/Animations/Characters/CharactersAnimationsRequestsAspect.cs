@@ -2,7 +2,7 @@
 
 namespace _Project.Scripts.Runtime.Features.Graphics.Animations.Characters
 {
-    public class CharactersAnimationRequestsAspect : ProtoAspectInject
+    public class CharactersAnimationsRequestsAspect : ProtoAspectInject
     {
         
     }
