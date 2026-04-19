@@ -19,6 +19,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Animations
             BindSystem<UpdateRunBoolByVelocityOnFixedRunSystem>();
             BindSystem<SendJumpTriggerOnJumpAppliedRequestSystem>();
             BindSystem<KillCharacterOnKillCharacterRequestSystem>();
+            BindSystem<ReviveCharacterOnReviveCharacterRequestSystem>();
         }
     }
 }
