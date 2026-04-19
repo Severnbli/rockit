@@ -18,5 +18,6 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Shared
         public readonly ProtoIt Characters = new (It.Inc<CharacterTag>());
         public readonly ProtoIt GameObjects = new (It.Inc<GameObjectComponent>());
         public readonly ProtoIt Indexables = new (It.Inc<IndexableTag>());
+        public readonly ProtoIt IndexableGameObjects = new (It.Inc<IndexableTag, GameObjectComponent>());
     }
 }
