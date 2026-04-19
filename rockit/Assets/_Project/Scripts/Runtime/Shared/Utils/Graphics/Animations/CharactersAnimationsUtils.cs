@@ -3,7 +3,7 @@ using _Project.Scripts.Runtime.Shared.Extensions;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 
-namespace _Project.Scripts.Runtime.Shared.Utils.Animations
+namespace _Project.Scripts.Runtime.Shared.Utils.Graphics.Animations
 {
     public static class CharactersAnimationsUtils
     {
