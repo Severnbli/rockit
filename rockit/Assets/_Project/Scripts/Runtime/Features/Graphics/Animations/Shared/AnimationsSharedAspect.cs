@@ -1,7 +1,8 @@
-﻿using Leopotam.EcsProto;
+﻿using _Project.Scripts.Runtime.Features.Graphics.Animations.Shared.Components;
+using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 
-namespace _Project.Scripts.Runtime.Features.Graphics.Animations.Shared.Components
+namespace _Project.Scripts.Runtime.Features.Graphics.Animations.Shared
 {
     public class AnimationsSharedAspect : ProtoAspectInject
     {
