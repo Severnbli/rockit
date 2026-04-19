@@ -33,8 +33,7 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Systems
             {
                 ref var data = ref _psAspect.CollisionEnterEventPool.Get(e);
                 
-                if (!goIndex.TryGetValue(data.Sender, out var packed) ||
-                    !packed.TryUnpackCompletely(_world, out var tarE)) continue;
+                if (!goIndex.TryGetEntityFromIndex(data.Sender, _world, out var tarE)) continue;
 
                 if (!_psAspect.Rigidbody2DCharacters.Has(tarE)) continue;
                 
