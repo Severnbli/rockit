@@ -51,7 +51,7 @@ namespace _Project.Scripts.Runtime.Shared.Extensions
 
             var request = aspect.RequestComponentPool.Get(entity);
             var packed = request.Entity;
-            return packed.TryUnpack(out var packedWorld, out targetEntity) && packedWorld.Equals(world);
+            return packed.TryUnpackCompletely(world, out targetEntity);
         }
         
         public static bool TryCompareRequestWorld(this RequestsAspect aspect, ProtoEntity entity, ProtoWorld world, 
