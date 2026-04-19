@@ -16,6 +16,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Animations
             BindSystem<SendDashTriggerOnDashRequestSystem>();
             BindSystem<UpdateDashedBoolOnRunSystem>();
             BindSystem<UpdateFallBoolByVelocityOnFixedRunSystem>();
+            BindSystem<UpdateRunBoolByVelocityOnFixedRunSystem>();
         }
     }
 }
