@@ -7,14 +7,14 @@ using Leopotam.EcsProto.QoL;
 
 namespace _Project.Scripts.Runtime.Features.Physics.Moving.Systems
 {
-    public sealed class CharactersVelocityResetOnSideCollisionEnterSystem : IProtoInitSystem, IProtoRunSystem
+    public sealed class CharactersVelocityYResetOnSideCollisionEnterSystem : IProtoInitSystem, IProtoRunSystem
     {
         [DI] private readonly PhysicsSharedAspect _psAspect;
         private readonly SharedMovingConfig _smConfig;
         private readonly SharedIndexService _siService;
         private ProtoWorld _world;
 
-        public CharactersVelocityResetOnSideCollisionEnterSystem(SharedMovingConfig smConfig, SharedIndexService siService)
+        public CharactersVelocityYResetOnSideCollisionEnterSystem(SharedMovingConfig smConfig, SharedIndexService siService)
         {
             _smConfig = smConfig;
             _siService = siService;
