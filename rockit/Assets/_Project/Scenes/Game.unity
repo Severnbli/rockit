@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 326885612}
   - component: {fileID: 326885613}
   - component: {fileID: 326885614}
+  - component: {fileID: 326885615}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -215,7 +216,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDamping: 0
+  m_LinearDamping: 1
   m_AngularDamping: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
@@ -380,6 +381,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Leopotam.EcsProto.Unity.Physics2D::Leopotam.EcsProto.Unity.Physics2D.UnityPhysics2DCollisionEnterAction
   _senderName: 
   _worldName: 
+--- !u!114 &326885615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 326885607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94d159551c284ce0807df824f97a8b96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Runtime::_Project.Scripts.Runtime.Shared.Callback.Actions.UnityPhysics2DCollisionStayAction
+  _senderName: 
+  _worldName: 
 --- !u!1 &435612673
 GameObject:
   m_ObjectHideFlags: 0
@@ -430,10 +445,10 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 0
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 360
+  m_SurfaceArc: 180
   m_UseSideFriction: 0
   m_UseSideBounce: 0
-  m_SideArc: 1
+  m_SideArc: 180
 --- !u!50 &435612676
 Rigidbody2D:
   serializedVersion: 5
@@ -616,10 +631,10 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 0
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 360
+  m_SurfaceArc: 180
   m_UseSideFriction: 0
   m_UseSideBounce: 0
-  m_SideArc: 1
+  m_SideArc: 180
 --- !u!50 &448080085
 Rigidbody2D:
   serializedVersion: 5
@@ -802,10 +817,10 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 0
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 360
+  m_SurfaceArc: 180
   m_UseSideFriction: 0
   m_UseSideBounce: 0
-  m_SideArc: 1
+  m_SideArc: 180
 --- !u!50 &805150951
 Rigidbody2D:
   serializedVersion: 5
@@ -1154,10 +1169,10 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 0
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 360
+  m_SurfaceArc: 180
   m_UseSideFriction: 0
   m_UseSideBounce: 0
-  m_SideArc: 1
+  m_SideArc: 180
 --- !u!50 &1213574474
 Rigidbody2D:
   serializedVersion: 5
@@ -1340,10 +1355,10 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 0
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 360
+  m_SurfaceArc: 180
   m_UseSideFriction: 0
   m_UseSideBounce: 0
-  m_SideArc: 1
+  m_SideArc: 180
 --- !u!50 &1473983657
 Rigidbody2D:
   serializedVersion: 5
