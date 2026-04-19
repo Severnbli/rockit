@@ -2,6 +2,7 @@
 using _Project.Scripts.Runtime.Shared.Callback.Events;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
+using Leopotam.EcsProto.Unity;
 
 namespace _Project.Scripts.Runtime.Shared.Callback
 {
@@ -28,9 +29,6 @@ namespace _Project.Scripts.Runtime.Shared.Callback
                 : new IProtoAspect[] { new CallbackAspect() };
         }
 
-        public Type[] Dependencies()
-        {
-            throw new NotImplementedException();
-        }
+        public Type[] Dependencies() => new Type[] { typeof(UnityModule) };
     }
 }
