@@ -75,5 +75,15 @@ namespace _Project.Scripts.Runtime.Shared.Extensions
             if (Mathf.Abs(normal.x) < tolerance) return;
             rigidbody2D.ResetVelocityX();
         }
+
+        public static bool Falling(this Rigidbody2D rigidbody2D)
+        {
+            return rigidbody2D.linearVelocity.y < 0f;
+        }
+
+        public static bool MoveSideways(this Rigidbody2D rigidbody2D)
+        {
+            return !Mathf.Approximately(rigidbody2D.linearVelocity.x, 0f);
+        }
     }
 }
