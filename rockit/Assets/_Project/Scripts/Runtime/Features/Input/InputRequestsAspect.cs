@@ -8,13 +8,13 @@ namespace _Project.Scripts.Runtime.Features.Input
 {
     public class InputRequestsAspect : ProtoAspectInject
     {
-        public ProtoPool<EnablePlayerInputRequest> EnablePlayerInputRequestPool;
-        public ProtoPool<DisablePlayerInputRequest> DisablePlayerInputRequestPool;
-        public ProtoPool<EnablePlatformsInputRequest> EnablePlatformsInputRequestPool;
-        public ProtoPool<DisablePlatformsInputRequest> DisablePlatformsInputRequestPool;
-        public ProtoIt EnablePlayerInputRequests = new (It.Inc<RequestComponent, ActiveRequestTag, EnablePlayerInputRequest>());
-        public ProtoIt DisablePlayerInputRequests = new (It.Inc<RequestComponent, ActiveRequestTag, DisablePlayerInputRequest>());
-        public ProtoIt EnablePlatformsInputRequests = new (It.Inc<RequestComponent, ActiveRequestTag, EnablePlatformsInputRequest>());
-        public ProtoIt DisablePlatformsInputRequests = new (It.Inc<RequestComponent, ActiveRequestTag, DisablePlatformsInputRequest>());
+        public readonly ProtoPool<EnablePlayerInputRequest> EnablePlayerInputRequestPool;
+        public readonly ProtoPool<DisablePlayerInputRequest> DisablePlayerInputRequestPool;
+        public readonly ProtoPool<EnablePlatformsInputRequest> EnablePlatformsInputRequestPool;
+        public readonly ProtoPool<DisablePlatformsInputRequest> DisablePlatformsInputRequestPool;
+        public readonly ProtoIt EnablePlayerInputRequests = new (It.Inc<RequestComponent, ActiveRequestTag, EnablePlayerInputRequest>());
+        public readonly ProtoIt DisablePlayerInputRequests = new (It.Inc<RequestComponent, ActiveRequestTag, DisablePlayerInputRequest>());
+        public readonly ProtoIt EnablePlatformsInputRequests = new (It.Inc<RequestComponent, ActiveRequestTag, EnablePlatformsInputRequest>());
+        public readonly ProtoIt DisablePlatformsInputRequests = new (It.Inc<RequestComponent, ActiveRequestTag, DisablePlatformsInputRequest>());
     }
 }

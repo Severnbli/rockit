@@ -7,13 +7,13 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Requests
 {
     public class CoreRequestsAspect : ProtoAspectInject
     {
-        public ProtoPool<RequestComponent> RequestComponentPool;
-        public ProtoPool<ActiveRequestTag> ActiveRequestTagPool;
-        public ProtoPool<RunRequestTag> RunRequestTagPool;
-        public ProtoPool<FixedRunRequestTag> FixedRunRequestTagPool;
-        public ProtoItExc RunNotActivated = new(It.Inc<RequestComponent, RunRequestTag>(), It.Exc<ActiveRequestTag>());
-        public ProtoItExc FixedRunNotActivated = new(It.Inc<RequestComponent, FixedRunRequestTag>(), It.Exc<ActiveRequestTag>());
-        public ProtoIt RunActivated = new(It.Inc<RequestComponent, RunRequestTag, ActiveRequestTag>());
-        public ProtoIt FixedRunActivated = new(It.Inc<RequestComponent, FixedRunRequestTag, ActiveRequestTag>());
+        public readonly ProtoPool<RequestComponent> RequestComponentPool;
+        public readonly ProtoPool<ActiveRequestTag> ActiveRequestTagPool;
+        public readonly ProtoPool<RunRequestTag> RunRequestTagPool;
+        public readonly ProtoPool<FixedRunRequestTag> FixedRunRequestTagPool;
+        public readonly ProtoItExc RunNotActivated = new(It.Inc<RequestComponent, RunRequestTag>(), It.Exc<ActiveRequestTag>());
+        public readonly ProtoItExc FixedRunNotActivated = new(It.Inc<RequestComponent, FixedRunRequestTag>(), It.Exc<ActiveRequestTag>());
+        public readonly ProtoIt RunActivated = new(It.Inc<RequestComponent, RunRequestTag, ActiveRequestTag>());
+        public readonly ProtoIt FixedRunActivated = new(It.Inc<RequestComponent, FixedRunRequestTag, ActiveRequestTag>());
     }
 }

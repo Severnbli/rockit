@@ -2,16 +2,10 @@
 using System.Collections.Generic;
 using System.Threading;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules;
-using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure;
 using _Project.Scripts.Runtime.Core.Engine;
 using _Project.Scripts.Runtime.Core.Systems;
 using _Project.Scripts.Runtime.Shared.Utils;
-using Cysharp.Threading.Tasks;
 using Leopotam.EcsProto;
-using Leopotam.EcsProto.QoL;
-using Leopotam.EcsProto.Unity;
-using Leopotam.EcsProto.Unity.Physics2D;
-using Leopotam.EcsProto.Unity.Ugui;
 using Zenject;
 
 namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
@@ -33,18 +27,9 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
         {
             World = ConstructWorld();
             Systems = new EcsSystems(World);
-            
-            Systems
-                .AddModule(new AutoInjectModule())
-                .AddModule(new UnityModule());
         }
 
-        protected virtual void PostSetupWorldAndSystems()
-        {
-            Systems
-                .AddModule(new UnityUguiModule())
-                .AddModule(new UnityPhysics2DModule());
-        }
+        protected virtual void PostSetupWorldAndSystems() {}
         
         public sealed override void InstallBindings()
         {
