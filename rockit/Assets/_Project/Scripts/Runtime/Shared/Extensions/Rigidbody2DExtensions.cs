@@ -51,6 +51,13 @@ namespace _Project.Scripts.Runtime.Shared.Extensions
             rigidbody2D.linearVelocity = velocity;
         }
 
+        public static void ResetVelocityX(this Rigidbody2D rigidbody2D)
+        {
+            var velocity = rigidbody2D.linearVelocity;
+            velocity.x = 0f;
+            rigidbody2D.linearVelocity = velocity;
+        }
+
         public static void ResetPositiveVelocityY(this Rigidbody2D rigidbody2D)
         {
             if (rigidbody2D.linearVelocity.y < 0f) return;
@@ -61,6 +68,12 @@ namespace _Project.Scripts.Runtime.Shared.Extensions
         {
             if (Mathf.Abs(normal.x) < tolerance) return;
             rigidbody2D.ResetPositiveVelocityY();
+        }
+
+        public static void ResetVelocityXOnSideCollision(this Rigidbody2D rigidbody2D, Vector2 normal, float tolerance)
+        {
+            if (Mathf.Abs(normal.x) < tolerance) return;
+            rigidbody2D.ResetVelocityX();
         }
     }
 }
