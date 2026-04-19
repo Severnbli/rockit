@@ -13,7 +13,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Animations
         {
             base.BindSystems();
             
-            BindSystem<SendCharacterAnimatorDashTriggerOnDashRequestSystem>();
+            BindSystem<SendDashTriggerOnDashRequestSystem>();
         }
     }
 }
