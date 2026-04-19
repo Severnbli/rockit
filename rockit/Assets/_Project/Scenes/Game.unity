@@ -312,6 +312,8 @@ MonoBehaviour:
   - rid: 1430329806561738831
   - rid: 1430329806561738832
   - rid: 1430329807939305549
+  - rid: 1430329830837583949
+  - rid: 1430329830837583950
   references:
     version: 2
     RefIds:
@@ -343,6 +345,13 @@ MonoBehaviour:
       data: 
     - rid: 1430329807939305549
       type: {class: CharacterTag, ns: _Project.Scripts.Runtime.Core.Infrastructure.Shared.Tags, asm: Runtime}
+      data: 
+    - rid: 1430329830837583949
+      type: {class: GameObjectComponent, ns: _Project.Scripts.Runtime.Core.Infrastructure.Shared.Components, asm: Runtime}
+      data:
+        GameObject: {fileID: 326885607}
+    - rid: 1430329830837583950
+      type: {class: IndexableTag, ns: _Project.Scripts.Runtime.Core.Infrastructure.Shared.Tags, asm: Runtime}
       data: 
 --- !u!114 &326885613
 MonoBehaviour:
