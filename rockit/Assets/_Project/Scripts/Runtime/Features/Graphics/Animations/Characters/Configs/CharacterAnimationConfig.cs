@@ -9,7 +9,7 @@ namespace _Project.Scripts.Runtime.Features.Graphics.Animations.Characters.Confi
         [SerializeField] private string _deadBool = "Dead";
         [SerializeField] private string _jumpTrigger = "Jump";
         [SerializeField] private string _dashTrigger = "Dash";
-        [SerializeField] private string _dashedBool = "Dash";
+        [SerializeField] private string _dashedBool = "Dashed";
         [SerializeField] private string _fallBool = "Fall";
         [SerializeField] private string _runBool = "Run";
 
