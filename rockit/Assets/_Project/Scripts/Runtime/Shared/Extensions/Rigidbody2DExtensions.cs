@@ -51,14 +51,16 @@ namespace _Project.Scripts.Runtime.Shared.Extensions
             rigidbody2D.linearVelocity = velocity;
         }
 
-        public static void ResetVelocityYOnSideCollision(this Rigidbody2D rigidbody2D, Vector2 normal, float tolerance)
+        public static void ResetPositiveVelocityY(this Rigidbody2D rigidbody2D)
+        {
+            if (rigidbody2D.linearVelocity.y < 0f) return;
+            rigidbody2D.ResetVelocityY();
+        }
+
+        public static void ResetPositiveVelocityYOnSideCollision(this Rigidbody2D rigidbody2D, Vector2 normal, float tolerance)
         {
             if (Mathf.Abs(normal.x) < tolerance) return;
-            
-            var dot = Vector2.Dot(rigidbody2D.linearVelocity, normal);
-            if (dot >= 0f) return;
-            
-            rigidbody2D.ResetVelocityY();
+            rigidbody2D.ResetPositiveVelocityY();
         }
     }
 }
