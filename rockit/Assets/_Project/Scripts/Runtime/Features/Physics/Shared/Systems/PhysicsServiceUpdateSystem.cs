@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Features.Physics.Shared.Systems
 {
-    public sealed class PhysicsServiceUpdateSystem : IProtoRunSystem
+    public sealed class PhysicsServiceUpdateSystem : IProtoInitSystem, IProtoRunSystem
     {
         [DI] private readonly PhysicsSharedAspect _physicsSharedAspect;
         private readonly PhysicsService _service;
@@ -19,6 +19,11 @@ namespace _Project.Scripts.Runtime.Features.Physics.Shared.Systems
             _service = service;
             objectDomain.Get(out _collider2DSetPool);
             objectDomain.Get(out _rigidbody2DSetPool);
+        }
+        
+        public void Init(IProtoSystems systems)
+        {
+            
         }
 
         public void Run()
