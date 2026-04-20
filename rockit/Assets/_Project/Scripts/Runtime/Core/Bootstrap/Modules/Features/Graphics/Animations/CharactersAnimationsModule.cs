@@ -1,7 +1,7 @@
 ﻿using _Project.Scripts.Runtime.Core.Bootstrap.Domain;
 using _Project.Scripts.Runtime.Features.Graphics.Animations.Characters.Systems;
 
-namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Animations
+namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.Animations
 {
     public sealed class CharactersAnimationsModule : BaseModule<CharactersAnimationsModule>
     {

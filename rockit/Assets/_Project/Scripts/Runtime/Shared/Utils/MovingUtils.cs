@@ -3,12 +3,12 @@ using _Project.Scripts.Runtime.Core.Infrastructure.Shared.Configs;
 using _Project.Scripts.Runtime.Core.Infrastructure.Time.Services;
 using _Project.Scripts.Runtime.Features.Physics.Moving.Components;
 using _Project.Scripts.Runtime.Features.Physics.Moving.Configs;
+using _Project.Scripts.Runtime.Features.Physics.Moving.Enums;
 using _Project.Scripts.Runtime.Features.Physics.Moving.Requests;
 using _Project.Scripts.Runtime.Shared.Extensions;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 namespace _Project.Scripts.Runtime.Shared.Utils
 {
