@@ -1,5 +1,4 @@
 ﻿using _Project.Scripts.Runtime.Core.Bootstrap.Domain;
-using _Project.Scripts.Runtime.Features.Physics.Moving.Systems;
 using _Project.Scripts.Runtime.Features.Physics.Shared.Services;
 using _Project.Scripts.Runtime.Features.Physics.Shared.Systems;
 
