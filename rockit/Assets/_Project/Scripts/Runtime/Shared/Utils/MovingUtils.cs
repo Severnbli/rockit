@@ -1,10 +1,10 @@
 ﻿using _Project.Scripts.Runtime.Core.Infrastructure.Requests;
 using _Project.Scripts.Runtime.Core.Infrastructure.Shared.Configs;
 using _Project.Scripts.Runtime.Core.Infrastructure.Time.Services;
-using _Project.Scripts.Runtime.Features.Physics.Moving.Components;
-using _Project.Scripts.Runtime.Features.Physics.Moving.Configs;
-using _Project.Scripts.Runtime.Features.Physics.Moving.Enums;
-using _Project.Scripts.Runtime.Features.Physics.Moving.Requests;
+using _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Components;
+using _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Configs;
+using _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Requests;
+using _Project.Scripts.Runtime.Features.Physics.Moving.Shared.Enums;
 using _Project.Scripts.Runtime.Shared.Extensions;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
@@ -17,7 +17,7 @@ namespace _Project.Scripts.Runtime.Shared.Utils
         public static ProtoEntity CreateWalkRequest(RequestsAspect aspect,
             ProtoPackedEntityWithWorld targetEntity = default, WalkRequest prepared = default)
         {
-            var entity = aspect.CreateRequest(aspect.MovingRequestsAspect.WalkRequestPool, targetEntity, true,
+            var entity = aspect.CreateRequest(aspect.CharactersMovingRequestsAspect.WalkRequestPool, targetEntity, true,
                 prepared);
             return entity;
         }
@@ -25,7 +25,7 @@ namespace _Project.Scripts.Runtime.Shared.Utils
         public static ProtoEntity CreateJumpRequest(RequestsAspect aspect,
             ProtoPackedEntityWithWorld targetEntity = default, JumpRequest prepared = default)
         {
-            var entity = aspect.CreateRequest(aspect.MovingRequestsAspect.JumpRequestPool, targetEntity, true,
+            var entity = aspect.CreateRequest(aspect.CharactersMovingRequestsAspect.JumpRequestPool, targetEntity, true,
                 prepared);
             return entity;
         }
@@ -33,7 +33,7 @@ namespace _Project.Scripts.Runtime.Shared.Utils
         public static ProtoEntity CreateDashRequest(RequestsAspect aspect,
             ProtoPackedEntityWithWorld targetEntity = default, DashRequest prepared = default)
         {
-            var entity = aspect.CreateRequest(aspect.MovingRequestsAspect.DashRequestPool, targetEntity, true,
+            var entity = aspect.CreateRequest(aspect.CharactersMovingRequestsAspect.DashRequestPool, targetEntity, true,
                 prepared);
             return entity;
         }
@@ -41,7 +41,7 @@ namespace _Project.Scripts.Runtime.Shared.Utils
         public static ProtoEntity CreateDashTimeoutRequest(RequestsAspect aspect,
             ProtoPackedEntityWithWorld targetEntity, DashTimeoutRequest prepared)
         {
-            var entity = aspect.CreateRequest(aspect.MovingRequestsAspect.DashTimeoutRequestPool, targetEntity, 
+            var entity = aspect.CreateRequest(aspect.CharactersMovingRequestsAspect.DashTimeoutRequestPool, targetEntity, 
                 false, prepared);
             return entity;
         }
@@ -49,7 +49,7 @@ namespace _Project.Scripts.Runtime.Shared.Utils
         public static ProtoEntity CreateJumpAppliedRequest(RequestsAspect aspect, bool fixedRun = false,
             ProtoPackedEntityWithWorld targetEntity = default, JumpAppliedRequest prepared = default)
         {
-            var entity = aspect.CreateRequest(aspect.MovingRequestsAspect.JumpAppliedRequestPool, targetEntity,
+            var entity = aspect.CreateRequest(aspect.CharactersMovingRequestsAspect.JumpAppliedRequestPool, targetEntity,
                 fixedRun, prepared);
             return entity;
         }
@@ -68,16 +68,16 @@ namespace _Project.Scripts.Runtime.Shared.Utils
         }
 
         public static bool CoyoteTimeExpired(GroundCheckResultComponent groundCheckResult, TimeService timeService,
-            SharedMovingConfig sharedMovingConfig)
+            SharedCharacterMovingConfig sharedCharacterMovingConfig)
         {
-            return timeService.UnscaledTime - groundCheckResult.LastGroundedTiming > sharedMovingConfig.CoyoteTime;
+            return timeService.UnscaledTime - groundCheckResult.LastGroundedTiming > sharedCharacterMovingConfig.CoyoteTime;
         }
 
         public static bool JumpBufferingTimeExpired(JumpBufferingComponent jumpBufferingComponent,
-            TimeService timeService, SharedMovingConfig sharedMovingConfig)
+            TimeService timeService, SharedCharacterMovingConfig sharedCharacterMovingConfig)
         {
             return timeService.UnscaledTime - jumpBufferingComponent.CreationTiming >
-                   sharedMovingConfig.JumpBufferingTime;
+                   sharedCharacterMovingConfig.JumpBufferingTime;
         }
 
         public static bool DashTimeoutExpired(DashTimeoutComponent dashTimeoutComponent, TimeService timeService)

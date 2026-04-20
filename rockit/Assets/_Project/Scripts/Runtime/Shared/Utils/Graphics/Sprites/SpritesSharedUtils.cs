@@ -1,5 +1,5 @@
 ﻿using _Project.Scripts.Runtime.Features.Graphics.Sprites.Shared.Enums;
-using _Project.Scripts.Runtime.Features.Physics.Moving.Enums;
+using _Project.Scripts.Runtime.Features.Physics.Moving.Shared.Enums;
 
 namespace _Project.Scripts.Runtime.Shared.Utils.Graphics.Sprites
 {
