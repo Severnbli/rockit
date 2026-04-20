@@ -1,6 +1,7 @@
 ﻿using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.Animations;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.Sprites;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Physics;
+using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Physics.Moving;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure;
 using _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes;
 
@@ -21,6 +22,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Scenes
 
             TryRegisterModule<SharedModule>();
             TryRegisterModule<PhysicsSharedModule>();
+            TryRegisterModule<CharactersMovingModule>();
             TryRegisterModule<MovingModule>();
             TryRegisterModule<CharactersAnimationsModule>();
             TryRegisterModule<SpritesSharedModule>();

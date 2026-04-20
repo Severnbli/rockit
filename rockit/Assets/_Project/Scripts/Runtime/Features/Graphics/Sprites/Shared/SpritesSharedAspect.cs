@@ -1,5 +1,5 @@
 ﻿using _Project.Scripts.Runtime.Features.Graphics.Sprites.Shared.Components;
-using _Project.Scripts.Runtime.Features.Physics.Moving.Components;
+using _Project.Scripts.Runtime.Features.Physics.Moving.Shared.Components;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 
