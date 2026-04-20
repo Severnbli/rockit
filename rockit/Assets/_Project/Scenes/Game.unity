@@ -307,8 +307,6 @@ MonoBehaviour:
   Components:
   - rid: 1430329792471498829
   - rid: 1430329792471498830
-  - rid: 1430329792471498833
-  - rid: 1430329792471498834
   - rid: 1430329806561738830
   - rid: 1430329806561738831
   - rid: 1430329806561738832
@@ -316,6 +314,8 @@ MonoBehaviour:
   - rid: 1430329830837583949
   - rid: 1430329830837583950
   - rid: 1430329838170800205
+  - rid: 1430329848479350784
+  - rid: 1430329848479350785
   references:
     version: 2
     RefIds:
@@ -327,14 +327,6 @@ MonoBehaviour:
       type: {class: Collider2DComponent, ns: _Project.Scripts.Runtime.Features.Physics.Shared.Components, asm: Runtime}
       data:
         Collider: {fileID: 326885609}
-    - rid: 1430329792471498833
-      type: {class: MovableTag, ns: _Project.Scripts.Runtime.Features.Physics.Moving.Tags, asm: Runtime}
-      data: 
-    - rid: 1430329792471498834
-      type: {class: GroundCheckComponent, ns: _Project.Scripts.Runtime.Features.Physics.Moving.Components, asm: Runtime}
-      data:
-        Position: {x: 0, y: -0.5, z: 0}
-        Radius: 0.4
     - rid: 1430329806561738830
       type: {class: TransformComponent, ns: _Project.Scripts.Runtime.Core.Infrastructure.Shared.Components, asm: Runtime}
       data:
@@ -359,6 +351,14 @@ MonoBehaviour:
       type: {class: FaceComponent, ns: _Project.Scripts.Runtime.Features.Graphics.Sprites.Shared.Components, asm: Runtime}
       data:
         Direction: 0
+    - rid: 1430329848479350784
+      type: {class: GroundCheckComponent, ns: _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Components, asm: Runtime}
+      data:
+        Position: {x: 0, y: -0.5, z: 0}
+        Radius: 0.3
+    - rid: 1430329848479350785
+      type: {class: MovableTag, ns: _Project.Scripts.Runtime.Features.Physics.Moving.Shared.Tags, asm: Runtime}
+      data: 
 --- !u!114 &326885613
 MonoBehaviour:
   m_ObjectHideFlags: 0
