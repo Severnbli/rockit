@@ -7,7 +7,7 @@ using Leopotam.EcsProto.QoL;
 
 namespace _Project.Scripts.Runtime.Features.Physics.Moving.Platforms.Systems
 {
-    public sealed class UpdateBufferOnUpdatePlatformPositionRequestSystem : IProtoInitSystem, IProtoRunSystem
+    public sealed class UpdatePlatformUpdatesBufferOnUpdateStateRequestSystem : IProtoInitSystem, IProtoRunSystem
     {
         [DIRequests] private readonly PlatformsMovingRequestsAspect _pmrAspect;
         [DIRequests] private readonly CoreRequestsAspect _crAspect;
@@ -24,12 +24,29 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Platforms.Systems
         {
             foreach (var reqE in _pmrAspect.UpdatePlatformPositionRequests)
             {
-                if (!_crAspect.TryCompareRequestWorld(reqE, _world, out var tarE)) continue;
-                if (!_psAspect.Platforms.Has(tarE)) continue;
-
+                if (!CompatibleRequest(reqE, out var tarE)) continue;
                 ref var pubComponent = ref _pmAspect.PlatformUpdatesBufferComponentPool.GetOrAdd(tarE);
                 pubComponent.PositionUpdates++;
             }
+            
+            foreach (var reqE in _pmrAspect.UpdatePlatformRotationRequests)
+            {
+                if (!CompatibleRequest(reqE, out var tarE)) continue;
+                ref var pubComponent = ref _pmAspect.PlatformUpdatesBufferComponentPool.GetOrAdd(tarE);
+                pubComponent.RotationUpdates++;
+            }
+            
+            foreach (var reqE in _pmrAspect.UpdatePlatformScaleRequests)
+            {
+                if (!CompatibleRequest(reqE, out var tarE)) continue;
+                ref var pubComponent = ref _pmAspect.PlatformUpdatesBufferComponentPool.GetOrAdd(tarE);
+                pubComponent.ScaleUpdates++;
+            }
+        }
+
+        private bool CompatibleRequest(ProtoEntity reqE, out ProtoEntity tarE)
+        {
+            return _crAspect.TryCompareRequestWorld(reqE, _world, out tarE) && _psAspect.Platforms.Has(tarE);
         }
     }
 }
