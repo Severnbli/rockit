@@ -1,17 +1,15 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using _Project.Scripts.Runtime.Core.Infrastructure.Requests;
 using _Project.Scripts.Runtime.Core.Infrastructure.Requests.World;
 using _Project.Scripts.Runtime.Core.Infrastructure.Shared;
 using _Project.Scripts.Runtime.Shared.Extensions;
-using _Project.Scripts.Runtime.Shared.Tools;
+using _Project.Scripts.Runtime.Shared.Utils;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
-using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Features.Platforms.Shared.Systems
 {
-    public sealed class LoadPlatformRotationStatesOnInitializeRequestSystem : IProtoInitSystem, IProtoRunSystem
+    public sealed class LoadPlatformStartStatesOnInitializeRequestSystem : IProtoInitSystem, IProtoRunSystem
     {
         [DIRequests] private readonly SharedRequestsAspect _srAspect;
         [DIRequests] private readonly CoreRequestsAspect _crAspect;
@@ -31,32 +29,14 @@ namespace _Project.Scripts.Runtime.Features.Platforms.Shared.Systems
                 if (!_psAspect.Platforms.Has(tarE)) continue;
 
                 ref var pComponent = ref _psAspect.PlatformComponentPool.Get(tarE);
-                var rStates = pComponent.Platform.RotationStates;
+                var pStates = pComponent.Platform.PositionStates.Select(x => x.position).ToList();
+                var rStates = pComponent.Platform.RotationStates.Select(x => x.rotation).ToList();
+                var sStates = pComponent.Platform.ScaleStates.Select(x => x.localScale).ToList();
 
-                if (!rStates.Any()) return;
-                
-                CreateSequence(rStates, out var first);
-                pComponent.StartRotState = first;
+                SequenceElementUtils.TryCreateLoopedSequence(pStates, out pComponent.StartPosState);
+                SequenceElementUtils.TryCreateLoopedSequence(rStates, out pComponent.StartRotState);
+                SequenceElementUtils.TryCreateLoopedSequence(sStates, out pComponent.StartScaleState);
             }
-        }
-
-        private void CreateSequence(List<Transform> pStates, out SequenceElement<Quaternion> first)
-        {
-            first = new SequenceElement<Quaternion>(pStates[0].rotation);
-            var prev = first;
-
-            for (var i = 1; i < pStates.Count; i++)
-            {
-                var curr = new SequenceElement<Quaternion>(pStates[i].rotation);
-                prev.Next = curr;
-                curr.Prev = prev;
-                prev = curr;
-            }
-
-            if (prev == first) return;
-            
-            prev.Next = first;
-            first.Prev = prev;
         }
     }
 }
