@@ -1,6 +1,7 @@
 ﻿using _Project.Scripts.Runtime.Features.Physics.Shared;
 using _Project.Scripts.Runtime.Shared.Extensions;
 using _Project.Scripts.Runtime.Shared.Utils;
+using _Project.Scripts.Runtime.Shared.Utils.Moving;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 
@@ -19,7 +20,7 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Shared.Systems
                 if (rComponent.Rigidbody2D.VelocityXZero()) continue;
                 
                 ref var mComponent = ref _mSharedAspect.MoveComponentPool.GetOrAdd(e);
-                mComponent.Direction = MovingUtils.GetMoveDirectionByVector2(rComponent.Rigidbody2D.linearVelocity);
+                mComponent.Direction = CharactersMovingUtils.GetMoveDirectionByVector2(rComponent.Rigidbody2D.linearVelocity);
             }
         }
     }

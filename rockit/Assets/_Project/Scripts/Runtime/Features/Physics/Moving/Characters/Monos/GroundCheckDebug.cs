@@ -3,6 +3,7 @@ using _Project.Scripts.Runtime.Shared.Extensions;
 using _Project.Scripts.Runtime.Shared.Monos;
 using _Project.Scripts.Runtime.Shared.Tools;
 using _Project.Scripts.Runtime.Shared.Utils;
+using _Project.Scripts.Runtime.Shared.Utils.Moving;
 using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Monos
@@ -17,7 +18,7 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Monos
             DrawGizmoWithMainColor(() =>
             {
                 Gizmos.DrawWireSphere(
-                    MovingUtils.GetGroundCheckPosition(gameObject.transform.position, component.Position),
+                    CharactersMovingUtils.GetGroundCheckPosition(gameObject.transform.position, component.Position),
                     component.Radius);
             });
         }

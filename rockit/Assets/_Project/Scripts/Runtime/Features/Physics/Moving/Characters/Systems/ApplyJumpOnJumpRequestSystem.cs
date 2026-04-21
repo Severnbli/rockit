@@ -6,6 +6,7 @@ using _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Requests;
 using _Project.Scripts.Runtime.Features.Physics.Shared;
 using _Project.Scripts.Runtime.Shared.Extensions;
 using _Project.Scripts.Runtime.Shared.Utils;
+using _Project.Scripts.Runtime.Shared.Utils.Moving;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 
@@ -54,8 +55,8 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Systems
 
         private void CreateJumpAppliedRequests(ProtoEntity tarE)
         {
-            MovingUtils.CreateJumpAppliedRequest(_rAspect, false, _world.PackEntityWithWorld(tarE));
-            MovingUtils.CreateJumpAppliedRequest(_rAspect, true, _world.PackEntityWithWorld(tarE));
+            CharactersMovingUtils.CreateJumpAppliedRequest(_rAspect, false, _world.PackEntityWithWorld(tarE));
+            CharactersMovingUtils.CreateJumpAppliedRequest(_rAspect, true, _world.PackEntityWithWorld(tarE));
         }
 
         private void ApplyJump(JumpRequest jRequest, ProtoEntity tarE)
