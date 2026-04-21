@@ -36,7 +36,7 @@ namespace _Project.Scripts.Runtime.Features.Platforms.Shared.Systems
                 if (!pStates.Any()) return;
                 
                 CreateSequence(pStates, out var first);
-                pComponent.CurPosState = first;
+                pComponent.StartPosState = first;
             }
         }
 
