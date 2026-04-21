@@ -14,9 +14,9 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Physics.Movin
             base.BindSystems();
             
             BindSystem<SendUpdatePlatformStatesRequestsOnInitializeRequestSystem>();
-            BindSystem<UpdateChangesBufferOnUpdateStatesRequestsSystem>();
-            BindSystem<SpecifyPositionChangeOnRunSystem>();
-            BindSystem<SpecifyRotationChangeOnRunSystem>();
+            BindSystem<UpdatePlatformChangesBufferOnUpdateStatesRequestsSystem>();
+            BindSystem<SpecifyPlatformPositionChangeOnRunSystem>();
+            BindSystem<SpecifyPlatformRotationChangeOnRunSystem>();
             BindSystem<SpecifyScaleChangeOnRunSystem>();
         }
     }

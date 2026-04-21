@@ -7,16 +7,16 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Platforms
 {
     public class PlatformsMovingAspect : ProtoAspectInject
     {
-        public readonly ProtoPool<ChangesBufferComponent> ChangesBufferComponentPool;
-        public readonly ProtoPool<PositionChangeComponent> PositionChangeComponentPool;
-        public readonly ProtoPool<RotationChangeComponent> RotationChangeComponentPool;
-        public readonly ProtoPool<ScaleChangeComponent> ScaleChangeComponentPool;
-        public readonly ProtoIt UpdatesBuffers = new (It.Inc<ChangesBufferComponent>());
-        public readonly ProtoIt PositionChanges = new (It.Inc<PositionChangeComponent>());
-        public readonly ProtoIt RotationChanges = new (It.Inc<RotationChangeComponent>());
-        public readonly ProtoIt ScaleChanges = new (It.Inc<ScaleChangeComponent>());
-        public readonly ProtoItExc PositionChangeCreatables = new (It.Inc<PlatformComponent, ChangesBufferComponent>(), It.Exc<PositionChangeComponent>());
-        public readonly ProtoItExc RotationChangeCreatables = new (It.Inc<PlatformComponent, ChangesBufferComponent>(), It.Exc<RotationChangeComponent>());
-        public readonly ProtoItExc ScaleChangeCreatables = new (It.Inc<PlatformComponent, ChangesBufferComponent>(), It.Exc<ScaleChangeComponent>());
+        public readonly ProtoPool<PlatformChangesBufferComponent> PlatformChangesBufferComponentPool;
+        public readonly ProtoPool<PlatformPositionChangeComponent> PlatformPositionChangeComponentPool;
+        public readonly ProtoPool<PlatformRotationChangeComponent> PlatformRotationChangeComponentPool;
+        public readonly ProtoPool<PlatformScaleChangeComponent> PlatformScaleChangeComponentPool;
+        public readonly ProtoIt PlatformChangesBuffers = new (It.Inc<PlatformChangesBufferComponent>());
+        public readonly ProtoIt PlatformPositionChanges = new (It.Inc<PlatformPositionChangeComponent>());
+        public readonly ProtoIt PlatformRotationChanges = new (It.Inc<PlatformRotationChangeComponent>());
+        public readonly ProtoIt PlatformScaleChanges = new (It.Inc<PlatformScaleChangeComponent>());
+        public readonly ProtoItExc PlatformPositionChangeCreatables = new (It.Inc<PlatformComponent, PlatformChangesBufferComponent>(), It.Exc<PlatformPositionChangeComponent>());
+        public readonly ProtoItExc PlatformRotationChangeCreatables = new (It.Inc<PlatformComponent, PlatformChangesBufferComponent>(), It.Exc<PlatformRotationChangeComponent>());
+        public readonly ProtoItExc PlatformScaleChangeCreatables = new (It.Inc<PlatformComponent, PlatformChangesBufferComponent>(), It.Exc<PlatformScaleChangeComponent>());
     }
 }
