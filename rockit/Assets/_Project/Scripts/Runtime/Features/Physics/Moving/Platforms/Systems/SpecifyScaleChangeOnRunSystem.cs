@@ -26,6 +26,7 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Platforms.Systems
                     cbComponent.ScaleUpdates = 0;
                     continue;
                 }
+                cbComponent.ScaleUpdates--;
                 
                 pComponent.CurrScaleState = target;
 

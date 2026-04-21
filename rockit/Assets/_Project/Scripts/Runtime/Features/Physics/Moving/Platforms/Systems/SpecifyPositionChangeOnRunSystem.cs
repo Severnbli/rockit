@@ -26,6 +26,7 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Platforms.Systems
                     cbComponent.PositionUpdates = 0;
                     continue;
                 }
+                cbComponent.PositionUpdates--;
                 
                 pComponent.CurrPosState = target;
 
