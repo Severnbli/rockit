@@ -1,4 +1,6 @@
-﻿using _Project.Scripts.Runtime.Shared.Utils;
+﻿using System.Collections.Generic;
+using System.Linq;
+using _Project.Scripts.Runtime.Shared.Utils;
 using Leopotam.EcsProto.Unity;
 using UnityEngine;
 
@@ -44,6 +46,31 @@ namespace _Project.Scripts.Runtime.Shared.Extensions
             }
             
             return false;
+        }
+
+        public static bool TryGetChildrenComponents<T>(this GameObject gameObject, out List<T> components,
+            bool logEmpty = true) 
+            where T : Component
+        {
+            components = gameObject.GetComponentsInChildren<T>().Where(x => x.gameObject != gameObject).ToList();
+
+            if (components.Any())
+            {
+                return true;
+            }
+
+            if (logEmpty)
+            {
+                LogUtils.LogWarning($"Components of type {typeof(T).Name} not found in children {gameObject.name}");
+            }
+            return false;
+        }
+
+        public static List<T> GetChildrenComponents<T>(this GameObject gameObject) 
+            where T : Component
+        {
+            TryGetChildrenComponents<T>(gameObject, out var components, false);
+            return components;
         }
     }
 }
