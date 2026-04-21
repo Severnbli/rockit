@@ -10,8 +10,11 @@ namespace _Project.Scripts.Runtime.Features.Platforms.Shared.Components
     public struct PlatformComponent
     {
         public Platform Platform;
-        public SequenceElement<Vector3> CurPosState;
-        public SequenceElement<Quaternion> CurRotState;
-        public SequenceElement<Vector3> CurScaleState;
+        public SequenceElement<Vector3> StartPosState;
+        public SequenceElement<Vector3> CurrPosState;
+        public SequenceElement<Quaternion> StartRotState;
+        public SequenceElement<Quaternion> CurrRotState;
+        public SequenceElement<Vector3> StartScaleState;
+        public SequenceElement<Vector3> CurrScaleState;
     }
 }
