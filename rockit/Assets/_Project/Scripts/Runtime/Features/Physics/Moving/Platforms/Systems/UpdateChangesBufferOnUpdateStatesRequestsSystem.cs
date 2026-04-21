@@ -25,21 +25,21 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Platforms.Systems
             foreach (var reqE in _pmrAspect.UpdatePlatformPositionRequests)
             {
                 if (!CompatibleRequest(reqE, out var tarE)) continue;
-                ref var pubComponent = ref _pmAspect.UpdatesBufferComponentPool.GetOrAdd(tarE);
+                ref var pubComponent = ref _pmAspect.ChangesBufferComponentPool.GetOrAdd(tarE);
                 pubComponent.PositionUpdates++;
             }
             
             foreach (var reqE in _pmrAspect.UpdatePlatformRotationRequests)
             {
                 if (!CompatibleRequest(reqE, out var tarE)) continue;
-                ref var pubComponent = ref _pmAspect.UpdatesBufferComponentPool.GetOrAdd(tarE);
+                ref var pubComponent = ref _pmAspect.ChangesBufferComponentPool.GetOrAdd(tarE);
                 pubComponent.RotationUpdates++;
             }
             
             foreach (var reqE in _pmrAspect.UpdatePlatformScaleRequests)
             {
                 if (!CompatibleRequest(reqE, out var tarE)) continue;
-                ref var pubComponent = ref _pmAspect.UpdatesBufferComponentPool.GetOrAdd(tarE);
+                ref var pubComponent = ref _pmAspect.ChangesBufferComponentPool.GetOrAdd(tarE);
                 pubComponent.ScaleUpdates++;
             }
         }
