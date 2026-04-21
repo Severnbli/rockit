@@ -7,7 +7,7 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Platforms
 {
     public class PlatformsMovingAspect : ProtoAspectInject
     {
-        public readonly ProtoPool<ChangesBufferComponent> UpdatesBufferComponentPool;
+        public readonly ProtoPool<ChangesBufferComponent> ChangesBufferComponentPool;
         public readonly ProtoPool<PositionChangeComponent> PositionChangeComponentPool;
         public readonly ProtoPool<RotationChangeComponent> RotationChangeComponentPool;
         public readonly ProtoPool<ScaleChangeComponent> ScaleChangeComponentPool;
