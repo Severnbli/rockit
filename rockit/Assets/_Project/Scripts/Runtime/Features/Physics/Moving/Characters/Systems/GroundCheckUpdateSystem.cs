@@ -3,6 +3,7 @@ using _Project.Scripts.Runtime.Core.Infrastructure.Shared.Configs;
 using _Project.Scripts.Runtime.Core.Infrastructure.Time.Services;
 using _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Configs;
 using _Project.Scripts.Runtime.Shared.Utils;
+using _Project.Scripts.Runtime.Shared.Utils.Moving;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 
@@ -31,7 +32,7 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Systems
                 ref var transform = ref _sAspect.TransformComponentPool.Get(e);
                 ref var result = ref _cmAspect.GroundCheckResultComponentPool.GetOrAdd(e);
 
-                var grounded = MovingUtils.Grounded(transform.Transform.position, groundCheck, _lConfig,
+                var grounded = CharactersMovingUtils.Grounded(transform.Transform.position, groundCheck, _lConfig,
                     out var groundCollider);
 
                 result.Grounded = true;
@@ -43,7 +44,7 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Systems
                     return;
                 }
 
-                if (MovingUtils.CoyoteTimeExpired(result, _tService, _scmConfig))
+                if (CharactersMovingUtils.CoyoteTimeExpired(result, _tService, _scmConfig))
                 {
                     result.Grounded = false;
                 }

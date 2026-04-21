@@ -1,6 +1,7 @@
 ﻿using _Project.Scripts.Runtime.Core.Infrastructure.Requests;
 using _Project.Scripts.Runtime.Core.Infrastructure.Requests.World;
 using _Project.Scripts.Runtime.Shared.Utils;
+using _Project.Scripts.Runtime.Shared.Utils.Moving;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 
@@ -26,7 +27,7 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Systems
 
                 if (!gcResult.Grounded) continue;
                 
-                MovingUtils.CreateJumpRequest(_rAspect, _world.PackEntityWithWorld(e), jbComponent.Request);
+                CharactersMovingUtils.CreateJumpRequest(_rAspect, _world.PackEntityWithWorld(e), jbComponent.Request);
                 _cmAspect.JumpBufferingComponentPool.Del(e);
             }
         }

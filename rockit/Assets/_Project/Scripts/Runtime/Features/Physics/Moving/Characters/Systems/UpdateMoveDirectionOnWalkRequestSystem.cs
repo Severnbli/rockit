@@ -4,6 +4,7 @@ using _Project.Scripts.Runtime.Core.Systems;
 using _Project.Scripts.Runtime.Features.Physics.Moving.Shared;
 using _Project.Scripts.Runtime.Shared.Extensions;
 using _Project.Scripts.Runtime.Shared.Utils;
+using _Project.Scripts.Runtime.Shared.Utils.Moving;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 
@@ -30,7 +31,7 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Systems
 
                 ref var mComponent = ref _mSharedAspect.MoveComponentPool.GetOrAdd(tarE);
                 ref var wRequest = ref _cmrAspect.WalkRequestPool.Get(reqE);
-                mComponent.Direction = MovingUtils.GetMoveDirectionXByFloat(wRequest.Factor);
+                mComponent.Direction = CharactersMovingUtils.GetMoveDirectionXByFloat(wRequest.Factor);
             }
         }
     }

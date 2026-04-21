@@ -1,6 +1,7 @@
 ﻿using _Project.Scripts.Runtime.Core.Infrastructure.Time.Services;
 using _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Configs;
 using _Project.Scripts.Runtime.Shared.Utils;
+using _Project.Scripts.Runtime.Shared.Utils.Moving;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 
@@ -24,7 +25,7 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Systems
             {
                 ref var jbComponent = ref _cmAspect.JumpBufferingComponentPool.Get(e);
                 
-                if (!MovingUtils.JumpBufferingTimeExpired(jbComponent, _tService, _smConfig)) continue;
+                if (!CharactersMovingUtils.JumpBufferingTimeExpired(jbComponent, _tService, _smConfig)) continue;
                 
                 _cmAspect.JumpBufferingComponentPool.Del(e);
             }

@@ -7,6 +7,7 @@ using _Project.Scripts.Runtime.Features.Physics.Moving.Shared;
 using _Project.Scripts.Runtime.Features.Physics.Shared;
 using _Project.Scripts.Runtime.Shared.Extensions;
 using _Project.Scripts.Runtime.Shared.Utils;
+using _Project.Scripts.Runtime.Shared.Utils.Moving;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 
@@ -58,14 +59,14 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Systems
             };
             var packed = _world.PackEntityWithWorld(tarE);
 
-            MovingUtils.CreateDashTimeoutRequest(_rAspect, packed, prepared);
+            CharactersMovingUtils.CreateDashTimeoutRequest(_rAspect, packed, prepared);
         }
         
         private void ApplyDash(DashRequest dRequest, ProtoEntity tarE)
         {
             ref var rbComponent = ref _psAspect.Rigidbody2DComponentPool.Get(tarE);
             ref var mComponent = ref _msAspect.MoveComponentPool.GetOrAdd(tarE);
-            rbComponent.Rigidbody2D.ApplyDash(dRequest.Factor, MovingUtils.GetMoveXDirection(mComponent.Direction));
+            rbComponent.Rigidbody2D.ApplyDash(dRequest.Factor, CharactersMovingUtils.GetMoveXDirection(mComponent.Direction));
         }
     }
 }

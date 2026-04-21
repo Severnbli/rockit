@@ -1,5 +1,6 @@
 ﻿using _Project.Scripts.Runtime.Core.Infrastructure.Time.Services;
 using _Project.Scripts.Runtime.Shared.Utils;
+using _Project.Scripts.Runtime.Shared.Utils.Moving;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 
@@ -20,7 +21,7 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Systems
             foreach (var e in _cmAspect.DashTimeouts)
             {
                 ref var dtComponent = ref _cmAspect.DashTimeoutComponentPool.Get(e);
-                if (!MovingUtils.DashTimeoutExpired(dtComponent, _tService)) continue;
+                if (!CharactersMovingUtils.DashTimeoutExpired(dtComponent, _tService)) continue;
                 _cmAspect.DashTimeoutComponentPool.Del(e);
             }
         }
