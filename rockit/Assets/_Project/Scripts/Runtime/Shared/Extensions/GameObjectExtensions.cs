@@ -48,11 +48,11 @@ namespace _Project.Scripts.Runtime.Shared.Extensions
             return false;
         }
 
-        public static bool TryGetChildrenComponents<T>(this GameObject gameObject, out IEnumerable<T> components,
+        public static bool TryGetChildrenComponents<T>(this GameObject gameObject, out List<T> components,
             bool logEmpty = true) 
             where T : Component
         {
-            components = gameObject.GetComponentsInChildren<T>().Where(x => x.gameObject != gameObject).ToArray();
+            components = gameObject.GetComponentsInChildren<T>().Where(x => x.gameObject != gameObject).ToList();
 
             if (components.Any())
             {
@@ -66,7 +66,7 @@ namespace _Project.Scripts.Runtime.Shared.Extensions
             return false;
         }
 
-        public static IEnumerable<T> GetChildrenComponents<T>(this GameObject gameObject) 
+        public static List<T> GetChildrenComponents<T>(this GameObject gameObject) 
             where T : Component
         {
             TryGetChildrenComponents<T>(gameObject, out var components, false);

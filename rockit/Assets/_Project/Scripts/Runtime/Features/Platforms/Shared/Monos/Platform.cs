@@ -10,8 +10,8 @@ namespace _Project.Scripts.Runtime.Features.Platforms.Shared.Monos
         [SerializeField] private GameObject _rotationStates;
         [SerializeField] private GameObject _scaleStates;
 
-        public IEnumerable<Transform> PositionStates => _positionStates.GetChildrenComponents<Transform>();
-        public IEnumerable<Transform> RotationStates => _rotationStates.GetChildrenComponents<Transform>();
-        public IEnumerable<Transform> ScaleStates => _scaleStates.GetChildrenComponents<Transform>();
+        public List<Transform> PositionStates => _positionStates.GetChildrenComponents<Transform>();
+        public List<Transform> RotationStates => _rotationStates.GetChildrenComponents<Transform>();
+        public List<Transform> ScaleStates => _scaleStates.GetChildrenComponents<Transform>();
     }
 }
