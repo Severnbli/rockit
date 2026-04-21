@@ -7,7 +7,7 @@ using Leopotam.EcsProto.QoL;
 
 namespace _Project.Scripts.Runtime.Features.Physics.Moving.Platforms.Systems
 {
-    public class UpdateBufferOnUpdatePlatformRotationRequestSystem : IProtoInitSystem, IProtoRunSystem
+    public sealed class UpdateBufferOnUpdatePlatformRotationRequestSystem : IProtoInitSystem, IProtoRunSystem
     {
         [DIRequests] private readonly PlatformsMovingRequestsAspect _pmrAspect;
         [DIRequests] private readonly CoreRequestsAspect _crAspect;
