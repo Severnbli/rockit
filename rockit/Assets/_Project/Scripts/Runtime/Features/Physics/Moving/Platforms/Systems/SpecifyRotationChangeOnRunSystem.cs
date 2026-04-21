@@ -26,6 +26,7 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Platforms.Systems
                     cbComponent.RotationUpdates = 0;
                     continue;
                 }
+                cbComponent.RotationUpdates--;
                 
                 pComponent.CurrRotState = target;
 
