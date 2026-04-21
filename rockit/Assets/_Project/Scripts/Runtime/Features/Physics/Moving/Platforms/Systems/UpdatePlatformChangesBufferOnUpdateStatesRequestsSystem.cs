@@ -7,7 +7,7 @@ using Leopotam.EcsProto.QoL;
 
 namespace _Project.Scripts.Runtime.Features.Physics.Moving.Platforms.Systems
 {
-    public sealed class UpdateChangesBufferOnUpdateStatesRequestsSystem : IProtoInitSystem, IProtoRunSystem
+    public sealed class UpdatePlatformChangesBufferOnUpdateStatesRequestsSystem : IProtoInitSystem, IProtoRunSystem
     {
         [DIRequests] private readonly PlatformsMovingRequestsAspect _pmrAspect;
         [DIRequests] private readonly CoreRequestsAspect _crAspect;
@@ -25,21 +25,21 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Platforms.Systems
             foreach (var reqE in _pmrAspect.UpdatePlatformPositionRequests)
             {
                 if (!CompatibleRequest(reqE, out var tarE)) continue;
-                ref var pubComponent = ref _pmAspect.ChangesBufferComponentPool.GetOrAdd(tarE);
-                pubComponent.PositionUpdates++;
+                ref var pcbComponent = ref _pmAspect.PlatformChangesBufferComponentPool.GetOrAdd(tarE);
+                pcbComponent.PositionUpdates++;
             }
             
             foreach (var reqE in _pmrAspect.UpdatePlatformRotationRequests)
             {
                 if (!CompatibleRequest(reqE, out var tarE)) continue;
-                ref var pubComponent = ref _pmAspect.ChangesBufferComponentPool.GetOrAdd(tarE);
-                pubComponent.RotationUpdates++;
+                ref var pcbComponent = ref _pmAspect.PlatformChangesBufferComponentPool.GetOrAdd(tarE);
+                pcbComponent.RotationUpdates++;
             }
             
             foreach (var reqE in _pmrAspect.UpdatePlatformScaleRequests)
             {
                 if (!CompatibleRequest(reqE, out var tarE)) continue;
-                ref var pubComponent = ref _pmAspect.ChangesBufferComponentPool.GetOrAdd(tarE);
+                ref var pubComponent = ref _pmAspect.PlatformChangesBufferComponentPool.GetOrAdd(tarE);
                 pubComponent.ScaleUpdates++;
             }
         }

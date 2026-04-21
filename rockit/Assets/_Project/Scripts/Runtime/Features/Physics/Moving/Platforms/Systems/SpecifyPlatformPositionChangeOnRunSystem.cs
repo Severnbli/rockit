@@ -4,17 +4,17 @@ using Leopotam.EcsProto.QoL;
 
 namespace _Project.Scripts.Runtime.Features.Physics.Moving.Platforms.Systems
 {
-    public sealed class SpecifyPositionChangeOnRunSystem : IProtoRunSystem
+    public sealed class SpecifyPlatformPositionChangeOnRunSystem : IProtoRunSystem
     {
         [DI] private readonly PlatformsMovingAspect _pmAspect;
         [DI] private readonly PlatformsSharedAspect _psAspect;
 
         public void Run()
         {
-            foreach (var e in _pmAspect.PositionChangeCreatables)
+            foreach (var e in _pmAspect.PlatformPositionChangeCreatables)
             {
-                ref var cbComponent = ref _pmAspect.ChangesBufferComponentPool.Get(e);
-                if (cbComponent.PositionUpdates <= 0) continue;
+                ref var pcbComponent = ref _pmAspect.PlatformChangesBufferComponentPool.Get(e);
+                if (pcbComponent.PositionUpdates <= 0) continue;
                 
                 ref var pComponent = ref _psAspect.PlatformComponentPool.Get(e);
                 var target = pComponent.CurrPosState == null 
@@ -23,15 +23,15 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Platforms.Systems
                 
                 if (target == null)
                 {
-                    cbComponent.PositionUpdates = 0;
+                    pcbComponent.PositionUpdates = 0;
                     continue;
                 }
-                cbComponent.PositionUpdates--;
+                pcbComponent.PositionUpdates--;
                 
                 pComponent.CurrPosState = target;
 
-                ref var pcComponent = ref _pmAspect.PositionChangeComponentPool.Add(e);
-                pcComponent.Target = target.Value;
+                ref var ppcComponent = ref _pmAspect.PlatformPositionChangeComponentPool.Add(e);
+                ppcComponent.Target = target.Value;
             }
         }
     }

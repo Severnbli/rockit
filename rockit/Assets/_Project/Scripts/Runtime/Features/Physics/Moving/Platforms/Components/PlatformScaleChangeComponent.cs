@@ -2,7 +2,7 @@
 
 namespace _Project.Scripts.Runtime.Features.Physics.Moving.Platforms.Components
 {
-    public struct ScaleChangeComponent
+    public struct PlatformScaleChangeComponent
     {
         public Vector3 Target;
     }

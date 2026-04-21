@@ -1,6 +1,6 @@
 ﻿namespace _Project.Scripts.Runtime.Features.Physics.Moving.Platforms.Components
 {
-    public struct ChangesBufferComponent
+    public struct PlatformChangesBufferComponent
     {
         public int PositionUpdates;
         public int RotationUpdates;
