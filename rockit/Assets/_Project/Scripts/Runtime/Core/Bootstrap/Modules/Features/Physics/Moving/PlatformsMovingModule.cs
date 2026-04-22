@@ -22,6 +22,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Physics.Movin
             BindSystem<RotateRigidbodyPlatformByPlatformRotationChangeSystem>();
             BindSystem<ScaleRigidbodyPlatformByPlatformScaleChangeSystem>();
             BindSystem<TranslatePlatformsInputPositionToUpdatePlatformPositionRequestSystem>();
+            BindSystem<TranslatePlatformsInputRotationToUpdatePlatformRotationRequestSystem>();
         }
     }
 }
