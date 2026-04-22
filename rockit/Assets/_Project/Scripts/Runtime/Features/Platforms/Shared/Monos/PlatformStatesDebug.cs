@@ -1,5 +1,4 @@
 ﻿using System.Linq;
-using _Project.Scripts.Runtime.Shared.Extensions;
 using _Project.Scripts.Runtime.Shared.Monos;
 using _Project.Scripts.Runtime.Shared.Tools;
 using _Project.Scripts.Runtime.Shared.Utils;
@@ -11,18 +10,20 @@ namespace _Project.Scripts.Runtime.Features.Platforms.Shared.Monos
     public class PlatformStatesDebug : DebugBehaviour
     {
         [SerializeField] private bool _active;
+        [SerializeField] private Platform _platform;
+        [SerializeField] private Collider2D _collider;
 
         private void OnDrawGizmos()
         {
-            if (!gameObject.TryGet(out Platform platform)) return;
-
-            var pStates = platform.PositionStates;
+            if (!_active || _platform is null || _collider is null) return;
+            
+            var pStates = _platform.PositionStates;
             if (!pStates.Any()) return;
             
-            var rStates = platform.RotationStates;
+            var rStates = _platform.RotationStates;
             if (!rStates.Any()) return;
 
-            var sStates = platform.ScaleStates;
+            var sStates = _platform.ScaleStates;
             if (!sStates.Any()) return;
 
             foreach (var pState in pStates)
@@ -37,7 +38,7 @@ namespace _Project.Scripts.Runtime.Features.Platforms.Shared.Monos
                     {
                         var scale = sState.localScale;
                         
-                        DrawState(platform, pos, rot, scale);
+                        DrawState(_platform, pos, rot, scale);
                     }
                 }
             }
@@ -45,10 +46,8 @@ namespace _Project.Scripts.Runtime.Features.Platforms.Shared.Monos
         
         private void DrawState(Platform platform, Vector3 pos, Quaternion rot, Vector3 scale)
         {
-            if (!platform.gameObject.TryGet(out Collider2D coll)) return;
-            
             DebugUtils.SetMatrix(pos, rot, scale);
-            DebugUtils.DrawCollider(coll, MainGizmoColor);
+            DebugUtils.DrawCollider(_collider, MainGizmoColor);
             DebugUtils.ResetMatrix();
         }
     }
