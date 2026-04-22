@@ -96,5 +96,16 @@ namespace _Project.Scripts.Runtime.Shared.Extensions
             
             rigidbody2D.MovePosition(newPosition);
         }
+        
+        public static void RotateTo(this Rigidbody2D rigidbody2D, Quaternion angle, float speed, float deltaTime)
+        {
+            var newAngle = Mathf.MoveTowardsAngle(
+                rigidbody2D.rotation,
+                angle.eulerAngles.z,
+                speed * deltaTime
+            );
+            
+            rigidbody2D.MoveRotation(newAngle);
+        }
     }
 }
