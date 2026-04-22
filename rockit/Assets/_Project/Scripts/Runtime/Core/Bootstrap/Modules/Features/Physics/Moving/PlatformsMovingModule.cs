@@ -18,9 +18,9 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Physics.Movin
             BindSystem<SpecifyPlatformPositionChangeOnRunSystem>();
             BindSystem<SpecifyPlatformRotationChangeOnRunSystem>();
             BindSystem<SpecifyScaleChangeOnRunSystem>();
-            BindSystem<MovePlatformByPlatformPositionChangeSystem>();
-            BindSystem<RotatePlatformByPlatformRotationChangeSystem>();
-            BindSystem<ScalePlatformByPlatformScaleChangeSystem>();
+            BindSystem<MoveRigidbodyPlatformByPlatformPositionChangeSystem>();
+            BindSystem<RotateRigidbodyPlatformByPlatformRotationChangeSystem>();
+            BindSystem<ScaleRigidbodyPlatformByPlatformScaleChangeSystem>();
         }
     }
 }

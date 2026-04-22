@@ -2,7 +2,7 @@
 
 namespace _Project.Scripts.Runtime.Features.Physics.Moving.Platforms.Systems
 {
-    public sealed class RotatePlatformByPlatformRotationChangeSystem : IProtoFixedRunSystem
+    public class ScaleRigidbodyPlatformByPlatformScaleChangeSystem : IProtoFixedRunSystem
     {
         public void FixedRun()
         {
