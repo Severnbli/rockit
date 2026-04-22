@@ -1,4 +1,4 @@
-name: PR Description Enrichment
+name: PR Description
 
 on:
   pull_request:
