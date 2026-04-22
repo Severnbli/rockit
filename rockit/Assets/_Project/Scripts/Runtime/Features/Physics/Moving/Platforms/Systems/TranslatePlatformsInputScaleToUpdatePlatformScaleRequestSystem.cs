@@ -14,7 +14,12 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Platforms.Systems
         [DI] private readonly PlatformsSharedAspect _psAspect;
         private readonly PlatformsInputService _piService;
         private ProtoWorld _world;
-        
+
+        public TranslatePlatformsInputScaleToUpdatePlatformScaleRequestSystem(PlatformsInputService piService)
+        {
+            _piService = piService;
+        }
+
         public void Init(IProtoSystems systems)
         {
             _world = systems.World();
