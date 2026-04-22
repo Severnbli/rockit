@@ -241,7 +241,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Leopotam.EcsProto.Unity::Leopotam.EcsProto.Unity.ProtoUnityAuthoring
   _worldName: 
   _authoringType: 0
-  _destroyAfterAuthoring: 2
+  _destroyAfterAuthoring: 0
   Components:
   - rid: 1430329893206884429
   - rid: 1430329893206884430
@@ -281,7 +281,7 @@ MonoBehaviour:
     - rid: 1430329893206884469
       type: {class: TransformComponent, ns: _Project.Scripts.Runtime.Core.Infrastructure.Shared.Components, asm: Runtime}
       data:
-        Transform: {fileID: 0}
+        Transform: {fileID: 8404677373987993712}
 --- !u!1 &6774882017377814434
 GameObject:
   m_ObjectHideFlags: 0
