@@ -35,7 +35,7 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Platforms.Systems
                         _spmConfig.PosTolerance))
                 {
                     rComponent.Rigidbody2D.MoveTo(ppcComponent.Target, _rpmConfig.PosChangeSpeed,
-                        _tService.UnscaledFixedTime);
+                        _tService.UnscaledFixedDeltaTime);
                     continue;
                 }
                 
