@@ -23,7 +23,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Scenes
             TryRegisterModule<SharedModule>();
             TryRegisterModule<PhysicsSharedModule>();
             TryRegisterModule<CharactersMovingModule>();
-            TryRegisterModule<MovingModule>();
+            TryRegisterModule<MovingSharedModule>();
             TryRegisterModule<CharactersAnimationsModule>();
             TryRegisterModule<SpritesSharedModule>();
         }
