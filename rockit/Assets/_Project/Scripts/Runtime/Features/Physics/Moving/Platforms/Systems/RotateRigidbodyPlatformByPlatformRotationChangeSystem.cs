@@ -35,7 +35,7 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Platforms.Systems
                 ref var tComponent = ref _sAspect.TransformComponentPool.Get(e);
 
                 if (!QuaternionUtils.AngleLessThanValue(prcComponent.Target, tComponent.Transform.rotation,
-                        _spmConfig.PosTolerance))
+                        _spmConfig.RotTolerance))
                 {
                     rComponent.Rigidbody2D.RotateTo(prcComponent.Target, _rpmConfig.RotChangeSpeed,
                         _tService.UnscaledFixedDeltaTime);
