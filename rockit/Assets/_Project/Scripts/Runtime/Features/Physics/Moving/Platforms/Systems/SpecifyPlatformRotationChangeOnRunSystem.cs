@@ -16,10 +16,10 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Platforms.Systems
                 ref var pcbComponent = ref _pmAspect.PlatformChangesBufferComponentPool.Get(e);
                 if (pcbComponent.PositionUpdates <= 0) continue;
                 
-                ref var pComponent = ref _psAspect.PlatformComponentPool.Get(e);
-                var target = pComponent.CurrRotState == null 
-                    ? pComponent.StartRotState
-                    : pComponent.CurrRotState.Next;
+                ref var psComponent = ref _psAspect.PlatformStatesComponentPool.Get(e);
+                var target = psComponent.CurrRotState == null 
+                    ? psComponent.StartRotState
+                    : psComponent.CurrRotState.Next;
                 
                 if (target == null)
                 {
@@ -28,7 +28,7 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Platforms.Systems
                 }
                 pcbComponent.RotationUpdates--;
                 
-                pComponent.CurrRotState = target;
+                psComponent.CurrRotState = target;
 
                 ref var prcComponent = ref _pmAspect.PlatformRotationChangeComponentPool.Add(e);
                 prcComponent.Target = target.Value;

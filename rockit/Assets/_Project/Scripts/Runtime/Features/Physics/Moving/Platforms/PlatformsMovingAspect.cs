@@ -15,8 +15,8 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Platforms
         public readonly ProtoIt PlatformPositionChanges = new (It.Inc<PlatformPositionChangeComponent>());
         public readonly ProtoIt PlatformRotationChanges = new (It.Inc<PlatformRotationChangeComponent>());
         public readonly ProtoIt PlatformScaleChanges = new (It.Inc<PlatformScaleChangeComponent>());
-        public readonly ProtoItExc PlatformPositionChangeCreatables = new (It.Inc<PlatformComponent, PlatformChangesBufferComponent>(), It.Exc<PlatformPositionChangeComponent>());
-        public readonly ProtoItExc PlatformRotationChangeCreatables = new (It.Inc<PlatformComponent, PlatformChangesBufferComponent>(), It.Exc<PlatformRotationChangeComponent>());
-        public readonly ProtoItExc PlatformScaleChangeCreatables = new (It.Inc<PlatformComponent, PlatformChangesBufferComponent>(), It.Exc<PlatformScaleChangeComponent>());
+        public readonly ProtoItExc PlatformPositionChangeCreatables = new (It.Inc<PlatformComponent, PlatformStatesComponent, PlatformChangesBufferComponent>(), It.Exc<PlatformPositionChangeComponent>());
+        public readonly ProtoItExc PlatformRotationChangeCreatables = new (It.Inc<PlatformComponent, PlatformStatesComponent, PlatformChangesBufferComponent>(), It.Exc<PlatformRotationChangeComponent>());
+        public readonly ProtoItExc PlatformScaleChangeCreatables = new (It.Inc<PlatformComponent, PlatformStatesComponent, PlatformChangesBufferComponent>(), It.Exc<PlatformScaleChangeComponent>());
     }
 }
