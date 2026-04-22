@@ -18,7 +18,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Physics.Movin
             BindSystem<TranslatePlayerInputJumpToJumpRequestSystem>();
             BindSystem<TranslatePlayerInputDashToDashRequestSystem>();
             BindSystem<GroundCheckUpdateSystem>();
-            BindSystem<ApplyGroundVelocityToGroundedObjectSystem>();
+            BindSystem<CreateMoveSnapByGroundCheckResultSystem>();
             BindSystem<ApplyJumpOnJumpRequestSystem>();
             BindSystem<SendJumpRequestByJumpBufferingSystem>();
             BindSystem<JumpBufferingExpireSystem>();
