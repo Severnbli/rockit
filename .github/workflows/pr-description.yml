@@ -1,4 +1,4 @@
-name: PR Description
+name: PR Description Enrichment
 
 on:
   pull_request:
@@ -39,24 +39,38 @@ jobs:
               commits,
             ].join("\n");
 
-            const current = context.payload.pull_request.body || "";
+            // For workflow_dispatch, find the open PR for the current branch
+            let pullNumber;
+            let currentBody;
 
-            if (current.includes("## Commit history")) {
-              const updated = current.replace(
-                /## Commit history[\s\S]*$/,
-                addition
-              );
-              await github.rest.pulls.update({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                pull_number: context.payload.pull_request.number,
-                body: updated
-              });
+            if (context.payload.pull_request) {
+              pullNumber = context.payload.pull_request.number;
+              currentBody = context.payload.pull_request.body || "";
             } else {
-              await github.rest.pulls.update({
+              const branch = context.ref.replace("refs/heads/", "");
+              const { data: prs } = await github.rest.pulls.list({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                pull_number: context.payload.pull_request.number,
-                body: current + "\n\n" + addition
+                head: `${context.repo.owner}:${branch}`,
+                state: "open",
               });
+
+              if (prs.length === 0) {
+                core.warning(`No open PR found for branch: ${branch}`);
+                return;
+              }
+
+              pullNumber = prs[0].number;
+              currentBody = prs[0].body || "";
             }
+
+            const addition_text = currentBody.includes("## Commit history")
+              ? currentBody.replace(/## Commit history[\s\S]*$/, addition)
+              : currentBody + "\n\n" + addition;
+
+            await github.rest.pulls.update({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: pullNumber,
+              body: addition_text
+            });
