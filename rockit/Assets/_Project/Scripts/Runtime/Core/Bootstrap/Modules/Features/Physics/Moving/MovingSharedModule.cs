@@ -2,9 +2,9 @@
 
 namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Physics.Moving
 {
-    public sealed class MovingModule : BaseModule<MovingModule>
+    public sealed class MovingSharedModule : BaseModule<MovingSharedModule>
     {
-        public MovingModule(IDomain domain) : base(domain)
+        public MovingSharedModule(IDomain domain) : base(domain)
         {
         }
     }
