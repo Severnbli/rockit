@@ -14,7 +14,7 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Platforms.Systems
             foreach (var e in _pmAspect.PlatformScaleChangeCreatables)
             {
                 ref var pcbComponent = ref _pmAspect.PlatformChangesBufferComponentPool.Get(e);
-                if (pcbComponent.PositionUpdates <= 0) continue;
+                if (pcbComponent.ScaleUpdates <= 0) continue;
                 
                 ref var psComponent = ref _psAspect.PlatformStatesComponentPool.Get(e);
                 var target = psComponent.CurrScaleState == null 
