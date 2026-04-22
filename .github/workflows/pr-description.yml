@@ -1,0 +1,40 @@
+name: PR Description Enrichment
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  enrich:
+    if: github.base_ref == 'main'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Collect commit messages
+        id: commits
+        run: |
+          echo "COMMITS<<EOF" >> $GITHUB_ENV
+          git log --pretty=format:"- %s" origin/${{ github.base_ref }}..HEAD >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
+
+      - name: Update PR body
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const commits = process.env.COMMITS;
+
+            const addition = `
+## Commit history
+${commits}
+`;
+
+            const current = context.payload.pull_request.body || "";
+
+            if (!current.includes("## Commit history")) {
+              await github.rest.pulls.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                pull_number: context.payload.pull_request.number,
+                body: current + "\n" + addition
+              });
+            }
