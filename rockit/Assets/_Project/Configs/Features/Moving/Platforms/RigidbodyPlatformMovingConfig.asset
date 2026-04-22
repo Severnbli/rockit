@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: RigidbodyPlatformMovingConfig
   m_EditorClassIdentifier: Runtime::_Project.Scripts.Runtime.Features.Physics.Moving.Platforms.Configs.RigidbodyPlatformMovingConfig
   _posChangeSpeed: 5
-  _rotChangeSpeed: 3
-  _scaleChangeSpeed: 2
+  _rotChangeSpeed: 60
+  _scaleChangeSpeed: 1.5
