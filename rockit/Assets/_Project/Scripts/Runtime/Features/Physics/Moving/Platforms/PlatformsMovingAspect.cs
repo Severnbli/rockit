@@ -2,6 +2,7 @@
 using _Project.Scripts.Runtime.Features.Physics.Moving.Platforms.Components;
 using _Project.Scripts.Runtime.Features.Physics.Shared.Components;
 using _Project.Scripts.Runtime.Features.Platforms.Shared.Components;
+using _Project.Scripts.Runtime.Features.Platforms.Shared.Tags;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 
@@ -17,9 +18,9 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Platforms
         public readonly ProtoIt PlatformPositionChanges = new (It.Inc<PlatformPositionChangeComponent>());
         public readonly ProtoIt PlatformRotationChanges = new (It.Inc<PlatformRotationChangeComponent>());
         public readonly ProtoIt PlatformScaleChanges = new (It.Inc<PlatformScaleChangeComponent>());
-        public readonly ProtoItExc PlatformPositionChangeCreatables = new (It.Inc<PlatformComponent, PlatformStatesComponent, PlatformChangesBufferComponent>(), It.Exc<PlatformPositionChangeComponent>());
-        public readonly ProtoItExc PlatformRotationChangeCreatables = new (It.Inc<PlatformComponent, PlatformStatesComponent, PlatformChangesBufferComponent>(), It.Exc<PlatformRotationChangeComponent>());
-        public readonly ProtoItExc PlatformScaleChangeCreatables = new (It.Inc<PlatformComponent, PlatformStatesComponent, PlatformChangesBufferComponent>(), It.Exc<PlatformScaleChangeComponent>());
+        public readonly ProtoItExc PlatformPositionChangeCreatables = new (It.Inc<PlatformComponent, PlatformStatesComponent, PlatformChangesBufferComponent, PositionPlatformTag>(), It.Exc<PlatformPositionChangeComponent>());
+        public readonly ProtoItExc PlatformRotationChangeCreatables = new (It.Inc<PlatformComponent, PlatformStatesComponent, PlatformChangesBufferComponent, RotationPlatformTag>(), It.Exc<PlatformRotationChangeComponent>());
+        public readonly ProtoItExc PlatformScaleChangeCreatables = new (It.Inc<PlatformComponent, PlatformStatesComponent, PlatformChangesBufferComponent, ScalePlatformTag>(), It.Exc<PlatformScaleChangeComponent>());
         public readonly ProtoIt PositionChangableRigidbodyPlatforms = new (It.Inc<PlatformPositionChangeComponent, Rigidbody2DComponent, TransformComponent>());
         public readonly ProtoIt RotationChangableRigidbodyPlatforms = new (It.Inc<PlatformRotationChangeComponent, Rigidbody2DComponent, TransformComponent>());
         public readonly ProtoIt ScaleChangableRigidbodyPlatforms = new (It.Inc<PlatformScaleChangeComponent, Rigidbody2DComponent, TransformComponent>());
