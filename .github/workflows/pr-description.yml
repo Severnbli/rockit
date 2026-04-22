@@ -22,7 +22,8 @@ jobs:
       - name: Collect commit messages
         id: commits
         run: |
-          COMMITS=$(git log --pretty=format:"- %s" origin/${{ github.base_ref }}..HEAD)
+          BASE_REF="${{ github.base_ref || 'main' }}"
+          COMMITS=$(git log --pretty=format:"- %s" origin/${BASE_REF}..HEAD)
           echo "COMMITS<<EOF" >> $GITHUB_ENV
           echo "$COMMITS" >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
