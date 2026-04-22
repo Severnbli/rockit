@@ -26,10 +26,10 @@ namespace _Project.Scripts.Runtime.Features.Platforms.Shared.Systems
             foreach (var reqE in _srAspect.InitializeRunRequests)
             {
                 if (!_crAspect.TryCompareRequestWorld(reqE, _world, out var tarE)) continue;
-                if (!_psAspect.PlatformsWithPlatformStates.Has(tarE)) continue;
+                if (!_psAspect.Platforms.Has(tarE)) continue;
 
                 ref var pComponent = ref _psAspect.PlatformComponentPool.Get(tarE);
-                ref var psComponent = ref _psAspect.PlatformStatesComponentPool.Get(tarE);
+                ref var psComponent = ref _psAspect.PlatformStatesComponentPool.GetOrAdd(tarE);
                 var pStates = pComponent.Platform.PositionStates.Select(x => x.position).ToList();
                 var rStates = pComponent.Platform.RotationStates.Select(x => x.rotation).ToList();
                 var sStates = pComponent.Platform.ScaleStates.Select(x => x.localScale).ToList();
