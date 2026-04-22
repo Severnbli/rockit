@@ -22,7 +22,7 @@ namespace _Project.Scripts.Runtime.Shared.Utils
                 prev = curr;
             }
             
-            if (prev != first) return true;
+            if (prev == first) return true;
             
             prev.Next = first;
             first.Prev = prev;
