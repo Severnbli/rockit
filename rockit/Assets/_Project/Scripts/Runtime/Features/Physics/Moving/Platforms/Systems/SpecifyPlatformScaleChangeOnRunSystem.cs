@@ -16,10 +16,10 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Platforms.Systems
                 ref var pcbComponent = ref _pmAspect.PlatformChangesBufferComponentPool.Get(e);
                 if (pcbComponent.PositionUpdates <= 0) continue;
                 
-                ref var pComponent = ref _psAspect.PlatformComponentPool.Get(e);
-                var target = pComponent.CurrScaleState == null 
-                    ? pComponent.StartScaleState
-                    : pComponent.CurrScaleState.Next;
+                ref var psComponent = ref _psAspect.PlatformStatesComponentPool.Get(e);
+                var target = psComponent.CurrScaleState == null 
+                    ? psComponent.StartScaleState
+                    : psComponent.CurrScaleState.Next;
                 
                 if (target == null)
                 {
@@ -28,7 +28,7 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Platforms.Systems
                 }
                 pcbComponent.ScaleUpdates--;
                 
-                pComponent.CurrScaleState = target;
+                psComponent.CurrScaleState = target;
 
                 ref var pscComponent = ref _pmAspect.PlatformScaleChangeComponentPool.Add(e);
                 pscComponent.Target = target.Value;
