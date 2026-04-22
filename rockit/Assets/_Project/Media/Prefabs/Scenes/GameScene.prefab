@@ -20,6 +20,14 @@ PrefabInstance:
       propertyPath: '_monoInstallers.Array.data[0]'
       value: 
       objectReference: {fileID: 7131283286446533958}
+    - target: {fileID: 5829299517290444849, guid: 47bf9f1d567b95945ac8649280703e57, type: 3}
+      propertyPath: _scriptableObjectInstallers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5829299517290444849, guid: 47bf9f1d567b95945ac8649280703e57, type: 3}
+      propertyPath: '_scriptableObjectInstallers.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: c1710bd6d940451418ce9625bac330a5, type: 2}
     - target: {fileID: 9012020303765671978, guid: 47bf9f1d567b95945ac8649280703e57, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
