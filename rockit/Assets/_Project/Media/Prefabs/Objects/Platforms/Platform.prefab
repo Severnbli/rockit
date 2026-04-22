@@ -250,6 +250,7 @@ MonoBehaviour:
   - rid: 1430329893206884434
   - rid: 1430329893206884435
   - rid: 1430329893206884436
+  - rid: 1430329893206884469
   references:
     version: 2
     RefIds:
@@ -277,6 +278,10 @@ MonoBehaviour:
     - rid: 1430329893206884436
       type: {class: ScalePlatformTag, ns: _Project.Scripts.Runtime.Features.Platforms.Shared.Tags, asm: Runtime}
       data: 
+    - rid: 1430329893206884469
+      type: {class: TransformComponent, ns: _Project.Scripts.Runtime.Core.Infrastructure.Shared.Components, asm: Runtime}
+      data:
+        Transform: {fileID: 0}
 --- !u!1 &6774882017377814434
 GameObject:
   m_ObjectHideFlags: 0
