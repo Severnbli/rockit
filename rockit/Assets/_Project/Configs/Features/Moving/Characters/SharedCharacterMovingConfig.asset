@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c310d66548a94d8595a002512cc6a28b, type: 3}
-  m_Name: SharedMovingConfig
+  m_Name: SharedCharacterMovingConfig
   m_EditorClassIdentifier: Runtime::_Project.Scripts.Runtime.Features.Moving.Configs.SharedMovingConfig
   _coyoteTime: 0.1

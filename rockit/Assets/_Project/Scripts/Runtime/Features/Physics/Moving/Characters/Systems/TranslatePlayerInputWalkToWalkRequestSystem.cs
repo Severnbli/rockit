@@ -5,6 +5,7 @@ using _Project.Scripts.Runtime.Features.Input.Services;
 using _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Configs;
 using _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Requests;
 using _Project.Scripts.Runtime.Shared.Utils;
+using _Project.Scripts.Runtime.Shared.Utils.Moving;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 
@@ -42,7 +43,7 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Systems
             foreach (var e in _sAspect.Players)
             {
                 var packed = _world.PackEntityWithWorld(e);
-                MovingUtils.CreateWalkRequest(_rAspect, packed, prepared);
+                CharactersMovingUtils.CreateWalkRequest(_rAspect, packed, prepared);
             }
         }
     }

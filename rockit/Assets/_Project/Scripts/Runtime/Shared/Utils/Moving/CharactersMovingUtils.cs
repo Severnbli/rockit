@@ -10,9 +10,9 @@ using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 using UnityEngine;
 
-namespace _Project.Scripts.Runtime.Shared.Utils
+namespace _Project.Scripts.Runtime.Shared.Utils.Moving
 {
-    public static class MovingUtils
+    public static class CharactersMovingUtils
     {
         public static ProtoEntity CreateWalkRequest(RequestsAspect aspect,
             ProtoPackedEntityWithWorld targetEntity = default, WalkRequest prepared = default)
