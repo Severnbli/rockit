@@ -19,10 +19,10 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Shared.Systems
             foreach (var e in _msAspect.MoveSnaps)
             {
                 ref var msComponent = ref _msAspect.MoveSnapComponentPool.Get(e);
-                var velocity = (msComponent.Host.position - msComponent.LastHostPos) / _tService.UnscaledFixedDeltaTime;
+                var direction = msComponent.Host.position - msComponent.LastHostPos;
                 msComponent.LastHostPos = msComponent.Host.position;
 
-                msComponent.Tied.linearVelocity += velocity;
+                msComponent.Tied.position += direction;
             }
         }
     }
