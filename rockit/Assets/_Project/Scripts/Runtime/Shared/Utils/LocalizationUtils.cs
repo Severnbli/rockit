@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using _Project.Scripts.Runtime.Core.Infrastructure.Localization.Types;
+using Newtonsoft.Json;
+using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Shared.Utils
 {
@@ -22,6 +25,12 @@ namespace _Project.Scripts.Runtime.Shared.Utils
         {
             var path = GetLanguageDataPath();
             return !System.IO.File.Exists(path) ? "" : System.IO.File.ReadAllText(path);
+        }
+
+        public static List<LanguageData> GetLanguageDataList()
+        {
+            var json = GetLanguageDataJson();
+            return JsonConvert.DeserializeObject<List<LanguageData>>(json) ?? new List<LanguageData>();
         }
     }
 }
