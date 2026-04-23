@@ -18,7 +18,7 @@ namespace _Project.Scripts.Runtime.Shared.Utils
             System.IO.File.WriteAllText(path, json);
         }
 
-        public static string GetLanguageData()
+        public static string GetLanguageDataJson()
         {
             var path = GetLanguageDataPath();
             return !System.IO.File.Exists(path) ? "" : System.IO.File.ReadAllText(path);
