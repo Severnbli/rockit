@@ -1,4 +1,5 @@
-﻿using Leopotam.EcsProto;
+﻿using _Project.Scripts.Runtime.Core.Infrastructure.Localization.Components;
+using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 
 namespace _Project.Scripts.Runtime.Core.Infrastructure.Localization
