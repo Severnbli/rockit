@@ -1,0 +1,86 @@
+name: stats-card
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+permissions:
+  pull-requests: write
+  contents: read
+
+jobs:
+  stats:
+    if: ${{ github.base_ref == 'main' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Collect git data
+        run: |
+          BASE_REF="${{ github.base_ref }}"
+          git log --no-merges --pretty=format:"%H|%ai|%s" origin/${BASE_REF}..HEAD > /tmp/commits.txt
+          git diff --stat origin/${BASE_REF}..HEAD > /tmp/diff_stat.txt
+
+      - name: Post Basic Stats Card
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const lines = fs.readFileSync('/tmp/commits.txt', 'utf8').trim().split('\n').filter(Boolean);
+            const diffStat = fs.readFileSync('/tmp/diff_stat.txt', 'utf8').trim();
+
+            const timestamps = lines.map(l => new Date(l.split('|')[1]));
+            const first = new Date(Math.min(...timestamps));
+            const last = new Date(Math.max(...timestamps));
+            const durationMs = last - first;
+            const hours = Math.floor(durationMs / 3600000);
+            const minutes = Math.floor((durationMs % 3600000) / 60000);
+            const days = (durationMs / 86400000).toFixed(1);
+            const commitsPerDay = durationMs > 0
+              ? (lines.length / (durationMs / 86400000)).toFixed(2)
+              : lines.length;
+
+            const statsMatch = diffStat.match(/(\d+) files? changed(?:, (\d+) insertions?)?(?:, (\d+) deletions?)?/);
+            const filesChanged = statsMatch?.[1] ?? '0';
+            const insertions = statsMatch?.[2] ?? '0';
+            const deletions = statsMatch?.[3] ?? '0';
+
+            const body = [
+              '## 📊 Basic Stats Card',
+              '',
+              `| Metric | Value |`,
+              `|--------|-------|`,
+              `| 🕐 First commit | ${first.toUTCString()} |`,
+              `| 🕐 Last commit  | ${last.toUTCString()} |`,
+              `| ⏱️ Duration | ${hours}h ${minutes}m (${days} days) |`,
+              `| 📝 Total commits | ${lines.length} |`,
+              `| 📁 Files changed | ${filesChanged} |`,
+              `| ➕ Insertions | ${insertions} |`,
+              `| ➖ Deletions | ${deletions} |`,
+              `| 🔄 Commits / day | ${commitsPerDay} |`,
+            ].join('\n');
+
+            const marker = '<!-- pr-insights-basic-stats -->';
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.payload.pull_request.number,
+            });
+            const existing = comments.find(c => c.body.includes(marker));
+            if (existing) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: existing.id,
+                body: marker + '\n' + body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.payload.pull_request.number,
+                body: marker + '\n' + body,
+              });
+            }
