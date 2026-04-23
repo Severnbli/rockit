@@ -1,4 +1,4 @@
-name: PR Description Enrichment
+name: pr-commit-history
 on:
   pull_request:
     types: [opened, synchronize]
