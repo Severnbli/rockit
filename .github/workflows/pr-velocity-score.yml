@@ -1,4 +1,4 @@
-name: velocity-score
+name: pr-velocity-score
 on:
   pull_request:
     types: [opened, synchronize]
