@@ -1,4 +1,5 @@
-﻿using _Project.Scripts.Runtime.Core.Infrastructure.Shared;
+﻿using _Project.Scripts.Runtime.Core.Infrastructure.Localization;
+using _Project.Scripts.Runtime.Core.Infrastructure.Shared;
 using _Project.Scripts.Runtime.Features.Graphics.Animations.Characters;
 using _Project.Scripts.Runtime.Features.Input;
 using _Project.Scripts.Runtime.Features.Physics.Moving.Characters;
@@ -14,6 +15,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Requests
         public readonly CharactersMovingRequestsAspect CharactersMovingRequestsAspect;
         public readonly CharactersAnimationsRequestsAspect CharactersAnimationsRequestsAspect;
         public readonly PlatformsMovingRequestsAspect PlatformsMovingRequestsAspect;
+        public readonly LocalizationRequestsAspect LocalizationRequestsAspect;
         public readonly SharedRequestsAspect SharedRequestsAspect;
     }
 }
