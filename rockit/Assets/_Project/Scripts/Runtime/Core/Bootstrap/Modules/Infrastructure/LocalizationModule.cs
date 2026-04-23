@@ -15,6 +15,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure
             
             BindSystem<LoadLocalizationServiceOnInitSystem>();
             BindSystem<ChangeLanguageOnChangeLanguageRequestSystem>();
+            BindSystem<SendUpdateLocalizationItemOnInitializeRequestSystem>();
         }
     }
 }
