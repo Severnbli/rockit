@@ -7,7 +7,7 @@ using Leopotam.EcsProto.QoL;
 
 namespace _Project.Scripts.Runtime.Features.Physics.Moving.Shared
 {
-    public class MovingSharedAspect : ProtoAspectInject
+    public sealed class MovingSharedAspect : ProtoAspectInject
     {
         public readonly ProtoPool<MoveComponent> MoveComponentPool;
         public readonly ProtoPool<MovableTag> MovableTagPool;

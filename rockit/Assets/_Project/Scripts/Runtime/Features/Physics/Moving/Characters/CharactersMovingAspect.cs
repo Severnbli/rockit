@@ -8,7 +8,7 @@ using Leopotam.EcsProto.QoL;
 
 namespace _Project.Scripts.Runtime.Features.Physics.Moving.Characters
 {
-    public class CharactersMovingAspect : ProtoAspectInject
+    public sealed class CharactersMovingAspect : ProtoAspectInject
     {
         public readonly ProtoPool<GroundCheckComponent> GroundCheckComponentPool;
         public readonly ProtoPool<GroundCheckResultComponent> GroundCheckResultComponentPool;

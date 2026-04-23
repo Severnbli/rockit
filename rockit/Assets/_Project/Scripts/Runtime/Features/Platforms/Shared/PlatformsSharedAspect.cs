@@ -5,7 +5,7 @@ using Leopotam.EcsProto.QoL;
 
 namespace _Project.Scripts.Runtime.Features.Platforms.Shared
 {
-    public class PlatformsSharedAspect : ProtoAspectInject
+    public sealed class PlatformsSharedAspect : ProtoAspectInject
     {
         public readonly ProtoPool<PlatformComponent> PlatformComponentPool;
         public readonly ProtoPool<PlatformStatesComponent> PlatformStatesComponentPool;
