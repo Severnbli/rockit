@@ -1,0 +1,127 @@
+name: velocity-score
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+permissions:
+  pull-requests: write
+  contents: read
+
+jobs:
+  velocity:
+    if: ${{ github.base_ref == 'main' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Collect git data
+        run: |
+          BASE_REF="${{ github.base_ref }}"
+          git log --no-merges --pretty=format:"%H|%ai|%s" origin/${BASE_REF}..HEAD > /tmp/commits.txt
+          git diff --stat origin/${BASE_REF}..HEAD > /tmp/diff_stat.txt
+
+      - name: Post PR Velocity Score
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const commits = fs.readFileSync('/tmp/commits.txt', 'utf8').trim().split('\n').filter(Boolean);
+            const diffStat = fs.readFileSync('/tmp/diff_stat.txt', 'utf8').trim();
+
+            const { data: mergedPRs } = await github.rest.pulls.list({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'closed',
+              base: 'main',
+              per_page: 50,
+            });
+
+            const historical = mergedPRs
+              .filter(pr => pr.merged_at)
+              .map(pr => ({
+                duration: new Date(pr.merged_at) - new Date(pr.created_at),
+                commits: pr.commits,
+                additions: pr.additions,
+                deletions: pr.deletions,
+                changed_files: pr.changed_files,
+              }));
+
+            const statsMatch = diffStat.match(/(\d+) files? changed(?:, (\d+) insertions?)?(?:, (\d+) deletions?)?/);
+            const filesChanged = parseInt(statsMatch?.[1] ?? '0');
+            const insertions = parseInt(statsMatch?.[2] ?? '0');
+            const deletions = parseInt(statsMatch?.[3] ?? '0');
+
+            const timestamps = commits.map(l => new Date(l.split('|')[1]));
+            const durationMs = new Date(Math.max(...timestamps)) - new Date(Math.min(...timestamps));
+
+            const avg = arr => arr.reduce((a, b) => a + b, 0) / arr.length;
+            const ratio = (val, avgVal) => avgVal > 0 ? (val / avgVal).toFixed(2) : 'N/A';
+            const fmt = ms => {
+              const h = Math.floor(ms / 3600000);
+              const m = Math.floor((ms % 3600000) / 60000);
+              return `${h}h ${m}m`;
+            };
+
+            const avgDuration = avg(historical.map(p => p.duration));
+            const avgCommits = avg(historical.map(p => p.commits));
+            const avgAdditions = avg(historical.map(p => p.additions));
+            const avgDeletions = avg(historical.map(p => p.deletions));
+            const avgFiles = avg(historical.map(p => p.changed_files));
+
+            const durationRatio = avgDuration > 0 ? durationMs / avgDuration : null;
+            const sizeScore = (filesChanged / avgFiles + (insertions + deletions) / (avgAdditions + avgDeletions)) / 2;
+
+            const verdictDuration = durationRatio === null ? '—'
+              : durationRatio < 0.5 ? '🚀 Much faster than average'
+              : durationRatio < 0.9 ? '✅ Faster than average'
+              : durationRatio < 1.1 ? '➡️ About average'
+              : durationRatio < 2 ? '🐢 Slower than average'
+              : '🐌 Much slower than average';
+
+            const verdictSize = sizeScore < 0.5 ? '🟢 Smaller than average'
+              : sizeScore < 0.9 ? '🟡 Slightly below average size'
+              : sizeScore < 1.1 ? '🟠 About average size'
+              : sizeScore < 2 ? '🔴 Larger than average'
+              : '🔴🔴 Much larger than average';
+
+            const body = [
+              `## ⚡ PR Velocity Score`,
+              `_Compared against the last ${historical.length} merged PRs_`,
+              '',
+              `| Metric | This PR | Avg of last ${historical.length} PRs | Ratio |`,
+              `|--------|---------|------|-------|`,
+              `| ⏱️ Duration | ${fmt(durationMs)} | ${fmt(avgDuration)} | ${ratio(durationMs, avgDuration)}x |`,
+              `| 📝 Commits | ${commits.length} | ${avgCommits.toFixed(1)} | ${ratio(commits.length, avgCommits)}x |`,
+              `| 📁 Files changed | ${filesChanged} | ${avgFiles.toFixed(1)} | ${ratio(filesChanged, avgFiles)}x |`,
+              `| ➕ Insertions | ${insertions} | ${avgAdditions.toFixed(1)} | ${ratio(insertions, avgAdditions)}x |`,
+              `| ➖ Deletions | ${deletions} | ${avgDeletions.toFixed(1)} | ${ratio(deletions, avgDeletions)}x |`,
+              '',
+              `**Speed:** ${verdictDuration}`,
+              `**Size:** ${verdictSize}`,
+            ].join('\n');
+
+            const marker = '<!-- pr-insights-velocity -->';
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.payload.pull_request.number,
+            });
+            const existing = comments.find(c => c.body.includes(marker));
+            if (existing) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: existing.id,
+                body: marker + '\n' + body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.payload.pull_request.number,
+                body: marker + '\n' + body,
+              });
+            }
