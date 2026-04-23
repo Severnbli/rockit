@@ -2,6 +2,6 @@
 {
     public static class LocalizationContracts
     {
-        public static string DefaultLanguage = "en";
+        public const string DefaultLanguage = "en";
     }
 }
