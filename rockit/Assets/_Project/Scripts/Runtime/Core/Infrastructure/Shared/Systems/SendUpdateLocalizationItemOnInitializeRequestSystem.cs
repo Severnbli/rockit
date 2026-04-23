@@ -1,12 +1,12 @@
-﻿using _Project.Scripts.Runtime.Core.Infrastructure.Requests;
+﻿using _Project.Scripts.Runtime.Core.Infrastructure.Localization;
+using _Project.Scripts.Runtime.Core.Infrastructure.Requests;
 using _Project.Scripts.Runtime.Core.Infrastructure.Requests.World;
-using _Project.Scripts.Runtime.Core.Infrastructure.Shared;
 using _Project.Scripts.Runtime.Shared.Extensions;
 using _Project.Scripts.Runtime.Shared.Utils;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 
-namespace _Project.Scripts.Runtime.Core.Infrastructure.Localization.Systems
+namespace _Project.Scripts.Runtime.Core.Infrastructure.Shared.Systems
 {
     public sealed class SendUpdateLocalizationItemOnInitializeRequestSystem : IProtoInitSystem, IProtoRunSystem
     {
