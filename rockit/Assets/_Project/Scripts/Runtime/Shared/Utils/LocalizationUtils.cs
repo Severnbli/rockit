@@ -5,6 +5,7 @@ using _Project.Scripts.Runtime.Core.Infrastructure.Localization.Types;
 using _Project.Scripts.Runtime.Core.Infrastructure.Requests;
 using _Project.Scripts.Runtime.Shared.Extensions;
 using Leopotam.EcsProto;
+using Leopotam.EcsProto.QoL;
 using Newtonsoft.Json;
 using UnityEngine;
 
@@ -48,6 +49,11 @@ namespace _Project.Scripts.Runtime.Shared.Utils
         public static ProtoEntity CreateChangeLanguageRequest(RequestsAspect aspect, ChangeLanguageRequest prepared)
         {
             return aspect.CreateRequest(aspect.LocalizationRequestsAspect.ChangeLanguageRequestPool, prepared: prepared);
+        }
+        
+        public static ProtoEntity CreateUpdateLocalizationItemRequest(RequestsAspect aspect, ProtoPackedEntityWithWorld packed)
+        {
+            return aspect.CreateRequest(aspect.LocalizationRequestsAspect.UpdateLocalizationItemRequestPool, packed);
         }
     }
 }
