@@ -9,6 +9,8 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Localization
     public sealed class LocalizationRequestsAspect : ProtoAspectInject
     {
         public readonly ProtoPool<ChangeLanguageRequest> ChangeLanguageRequestPool;
+        public readonly ProtoPool<UpdateLocalizationItemRequest> UpdateLocalizationItemRequestPool;
         public readonly ProtoIt ChangeLanguageRequests = new (It.Inc<RequestComponent, ActiveRequestTag, RunRequestTag, ChangeLanguageRequest>());
+        public readonly ProtoIt UpdateLocalizationItemRequests = new (It.Inc<RequestComponent, ActiveRequestTag, RunRequestTag, UpdateLocalizationItemRequest>());
     }
 }
