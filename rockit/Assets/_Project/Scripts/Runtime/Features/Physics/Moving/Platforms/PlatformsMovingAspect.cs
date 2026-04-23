@@ -8,7 +8,7 @@ using Leopotam.EcsProto.QoL;
 
 namespace _Project.Scripts.Runtime.Features.Physics.Moving.Platforms
 {
-    public class PlatformsMovingAspect : ProtoAspectInject
+    public sealed class PlatformsMovingAspect : ProtoAspectInject
     {
         public readonly ProtoPool<PlatformChangesBufferComponent> PlatformChangesBufferComponentPool;
         public readonly ProtoPool<PlatformPositionChangeComponent> PlatformPositionChangeComponentPool;

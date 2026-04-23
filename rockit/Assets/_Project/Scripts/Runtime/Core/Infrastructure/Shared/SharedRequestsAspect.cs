@@ -6,7 +6,7 @@ using Leopotam.EcsProto.QoL;
 
 namespace _Project.Scripts.Runtime.Core.Infrastructure.Shared
 {
-    public class SharedRequestsAspect : ProtoAspectInject
+    public sealed class SharedRequestsAspect : ProtoAspectInject
     {
         public readonly ProtoPool<InitializeRequest> InitializeRequestPool;
         public readonly ProtoIt InitializeRunRequests = new(It.Inc<RequestComponent, ActiveRequestTag, RunRequestTag, InitializeRequest>());

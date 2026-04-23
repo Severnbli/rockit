@@ -6,7 +6,7 @@ using Leopotam.EcsProto.QoL;
 
 namespace _Project.Scripts.Runtime.Features.Physics.Moving.Platforms
 {
-    public class PlatformsMovingRequestsAspect : ProtoAspectInject
+    public sealed class PlatformsMovingRequestsAspect : ProtoAspectInject
     {
         public readonly ProtoPool<UpdatePlatformPositionRequest> UpdatePlatformPositionRequestPool;
         public readonly ProtoPool<UpdatePlatformRotationRequest> UpdatePlatformRotationRequestPool;

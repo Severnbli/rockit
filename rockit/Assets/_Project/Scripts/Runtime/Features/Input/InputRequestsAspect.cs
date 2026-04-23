@@ -6,7 +6,7 @@ using Leopotam.EcsProto.QoL;
 
 namespace _Project.Scripts.Runtime.Features.Input
 {
-    public class InputRequestsAspect : ProtoAspectInject
+    public sealed class InputRequestsAspect : ProtoAspectInject
     {
         public readonly ProtoPool<EnablePlayerInputRequest> EnablePlayerInputRequestPool;
         public readonly ProtoPool<DisablePlayerInputRequest> DisablePlayerInputRequestPool;

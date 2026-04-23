@@ -1,0 +1,18 @@
+[
+  {
+    "LanguageCode": "en",
+    "Entries": {
+      "language_name": {
+        "String": "English"
+      }
+    }
+  },
+  {
+    "LanguageCode": "ru",
+    "Entries": {
+      "language_name": {
+        "String": "Русский"
+      }
+    }
+  }
+]
