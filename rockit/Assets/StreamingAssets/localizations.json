@@ -1,20 +1,18 @@
 [
   {
     "LanguageCode": "en",
-    "Entries": [
-      {
-        "Key": "language_name",
-        "Value": "English"
+    "Entries": {
+      "language_name": {
+        "String": "English"
       }
-    ]
+    }
   },
   {
     "LanguageCode": "ru",
-    "Entries": [
-      {
-        "Key": "language_name",
-        "Value": "Русский"
+    "Entries": {
+      "language_name": {
+        "String": "Русский"
       }
-    ]
+    }
   }
 ]
