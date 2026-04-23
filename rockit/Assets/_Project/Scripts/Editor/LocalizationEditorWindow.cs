@@ -36,17 +36,21 @@ namespace _Project.Scripts.Editor
         [Button("Add Language"), GUIColor(0.4f, 0.8f, 1f)]
         private void AddLanguage()
         {
-            _languages.Add(new LanguageData { LanguageCode = "new_lang" });
+            var lang = new LanguageData { LanguageCode = "new_lang" };
+            foreach (var key in _allKeys)
+                lang.Entries[key] = new LocalizationEntry { String = "" };
+            _languages.Add(lang);
         }
 
         [HorizontalGroup("Toolbar")]
         [Button("Add Key"), GUIColor(0.6f, 1f, 0.6f)]
         private void AddKey()
         {
-            _allKeys.Add("new_key");
+            var key = "new_key";
+            _allKeys.Add(key);
             foreach (var lang in _languages)
-                if (lang.Entries.All(e => e.Key != _allKeys.Last()))
-                    lang.Entries.Add(new LocalizationEntry { Key = _allKeys.Last(), Value = "" });
+                if (!lang.Entries.ContainsKey(key))
+                    lang.Entries[key] = new LocalizationEntry { String = "" };
         }
 
         [HorizontalGroup("Toolbar")]
@@ -109,20 +113,20 @@ namespace _Project.Scripts.Editor
                     _allKeys[r] = newKey;
                     foreach (var lang in _languages)
                     {
-                        var entry = lang.Entries.FirstOrDefault(e => e.Key == oldKey);
-                        if (entry != null) entry.Key = newKey;
+                        if (!lang.Entries.TryGetValue(oldKey, out var entry)) continue;
+                        lang.Entries.Remove(oldKey);
+                        lang.Entries[newKey] = entry;
                     }
                 }
 
                 foreach (var lang in _languages)
                 {
-                    var entry = lang.Entries.FirstOrDefault(e => e.Key == _allKeys[r]);
-                    if (entry == null)
+                    if (!lang.Entries.TryGetValue(_allKeys[r], out var locEntry))
                     {
-                        entry = new LocalizationEntry { Key = _allKeys[r], Value = "" };
-                        lang.Entries.Add(entry);
+                        locEntry = new LocalizationEntry { String = "" };
+                        lang.Entries[_allKeys[r]] = locEntry;
                     }
-                    entry.Value = EditorGUILayout.TextField(entry.Value, GUILayout.Width(LangColumnWidth), GUILayout.Height(RowHeight));
+                    locEntry.String = EditorGUILayout.TextField(locEntry.String, GUILayout.Width(LangColumnWidth), GUILayout.Height(RowHeight));
                 }
 
                 if (GUILayout.Button("✕", GUILayout.Width(18), GUILayout.Height(RowHeight)))
@@ -130,7 +134,7 @@ namespace _Project.Scripts.Editor
                     var keyToRemove = _allKeys[r];
                     _allKeys.RemoveAt(r);
                     foreach (var lang in _languages)
-                        lang.Entries.RemoveAll(e => e.Key == keyToRemove);
+                        lang.Entries.Remove(keyToRemove);
                     EditorGUILayout.EndHorizontal();
                     EditorGUILayout.EndScrollView();
                     return;
@@ -144,10 +148,7 @@ namespace _Project.Scripts.Editor
 
         private void DrawHeaderCell(string label, float width)
         {
-            var style = new GUIStyle(EditorStyles.boldLabel)
-            {
-                alignment = TextAnchor.MiddleLeft
-            };
+            var style = new GUIStyle(EditorStyles.boldLabel) { alignment = TextAnchor.MiddleLeft };
             GUILayout.Label(label, style, GUILayout.Width(width), GUILayout.Height(RowHeight));
         }
 
@@ -170,7 +171,7 @@ namespace _Project.Scripts.Editor
 
             _languages = LocalizationUtils.GetLanguageDataList();
             _allKeys = _languages
-                .SelectMany(l => l.Entries.Select(e => e.Key))
+                .SelectMany(l => l.Entries.Keys)
                 .Distinct()
                 .ToList();
         }
