@@ -1,0 +1,20 @@
+[
+  {
+    "LanguageCode": "en",
+    "Entries": [
+      {
+        "Key": "language_name",
+        "Value": "English"
+      }
+    ]
+  },
+  {
+    "LanguageCode": "ru",
+    "Entries": [
+      {
+        "Key": "language_name",
+        "Value": "Русский"
+      }
+    ]
+  }
+]
