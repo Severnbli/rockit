@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using _Project.Scripts.Runtime.Core.Infrastructure.Localization;
 using _Project.Scripts.Runtime.Core.Infrastructure.Localization.Requests;
 using _Project.Scripts.Runtime.Core.Infrastructure.Localization.Types;
 using _Project.Scripts.Runtime.Core.Infrastructure.Requests;
@@ -13,11 +14,10 @@ namespace _Project.Scripts.Runtime.Shared.Utils
 {
     public static class LocalizationUtils
     {
-        private const string LanguageDataFileName = "localizations";
-        
         public static string GetLanguageDataPath()
         {
-            return System.IO.Path.Combine(Application.streamingAssetsPath, $"{LanguageDataFileName}.json");
+            return System.IO.Path.Combine(Application.streamingAssetsPath, 
+                $"{LocalizationContracts.LanguageDataFileName}.json");
         }
 
         public static void WriteLanguageData(string json)
@@ -25,6 +25,12 @@ namespace _Project.Scripts.Runtime.Shared.Utils
             var path = GetLanguageDataPath();
             System.IO.Directory.CreateDirectory(System.IO.Path.GetDirectoryName(path) ?? "");
             System.IO.File.WriteAllText(path, json);
+        }
+
+        public static void WriteLanguageData(List<LanguageData> languageData)
+        {
+            var json = JsonConvert.SerializeObject(languageData, Formatting.Indented);
+            WriteLanguageData(json);
         }
 
         public static string GetLanguageDataJson()
