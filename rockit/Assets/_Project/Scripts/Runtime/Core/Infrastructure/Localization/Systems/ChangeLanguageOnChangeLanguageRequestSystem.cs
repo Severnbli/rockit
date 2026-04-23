@@ -2,6 +2,7 @@
 using _Project.Scripts.Runtime.Core.Infrastructure.Localization.Types;
 using _Project.Scripts.Runtime.Core.Infrastructure.Requests;
 using _Project.Scripts.Runtime.Core.Infrastructure.Requests.World;
+using _Project.Scripts.Runtime.Core.Infrastructure.Storage.Core;
 using _Project.Scripts.Runtime.Shared.Extensions;
 using _Project.Scripts.Runtime.Shared.Utils;
 using Leopotam.EcsProto;
@@ -15,11 +16,13 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Localization.Systems
         [DIRequests] private readonly RequestsAspect _rAspect;
         [DI] private readonly LocalizationAspect _lAspect;
         private readonly LocalizationService _lService;
+        private readonly DataProvider _dProvider;
         private ProtoWorld _world;
 
-        public ChangeLanguageOnChangeLanguageRequestSystem(LocalizationService lService)
+        public ChangeLanguageOnChangeLanguageRequestSystem(LocalizationService lService, DataProvider dProvider)
         {
             _lService = lService;
+            _dProvider = dProvider;
         }
 
         public void Init(IProtoSystems systems)
@@ -38,6 +41,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Localization.Systems
             {
                 _lService.CurrLang = new LanguageData();
             }
+            _dProvider.Language.Code = _lService.CurrLang.LanguageCode;
 
             foreach (var liEntity in _lAspect.LocalizationItems)
             {
