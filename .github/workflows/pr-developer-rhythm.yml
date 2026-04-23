@@ -1,4 +1,4 @@
-name: developer-rhythm
+name: pr-developer-rhythm
 on:
   pull_request:
     types: [opened, synchronize]
