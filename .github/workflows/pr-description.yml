@@ -17,7 +17,7 @@ jobs:
         id: commits
         run: |
           BASE_REF="${{ github.base_ref }}"
-          COMMITS=$(git log --no-merges --pretty=format:"- %s" origin/${BASE_REF}..HEAD)
+          COMMITS=$(git log --reverse --pretty=format:"- %s" origin/${BASE_REF}..HEAD)
           echo "COMMITS<<EOF" >> $GITHUB_ENV
           echo "$COMMITS" >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
