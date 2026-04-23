@@ -1,73 +1,40 @@
 name: PR Description Enrichment
-
 on:
   pull_request:
     types: [opened, synchronize]
-  workflow_dispatch:
-
 permissions:
   pull-requests: write
-
 jobs:
   enrich:
-    if: ${{ github.base_ref == 'main' || github.event_name == 'workflow_dispatch' }}
+    if: ${{ github.base_ref == 'main' }}
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
       - name: Collect commit messages
         id: commits
         run: |
-          BASE_REF="${{ github.base_ref || 'main' }}"
-          COMMITS=$(git log --pretty=format:"- %s" origin/${BASE_REF}..HEAD)
+          BASE_REF="${{ github.base_ref }}"
+          COMMITS=$(git log --no-merges --pretty=format:"- %s" origin/${BASE_REF}..HEAD)
           echo "COMMITS<<EOF" >> $GITHUB_ENV
           echo "$COMMITS" >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
-
       - name: Update PR body
         uses: actions/github-script@v7
         with:
           script: |
             const commits = process.env.COMMITS || "_No commits found._";
-
             const addition = [
               "## Commit history",
               commits,
             ].join("\n");
-
-            // For workflow_dispatch, find the open PR for the current branch
-            let pullNumber;
-            let currentBody;
-
-            if (context.payload.pull_request) {
-              pullNumber = context.payload.pull_request.number;
-              currentBody = context.payload.pull_request.body || "";
-            } else {
-              const branch = context.ref.replace("refs/heads/", "");
-              const { data: prs } = await github.rest.pulls.list({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                head: `${context.repo.owner}:${branch}`,
-                state: "open",
-              });
-
-              if (prs.length === 0) {
-                core.warning(`No open PR found for branch: ${branch}`);
-                return;
-              }
-
-              pullNumber = prs[0].number;
-              currentBody = prs[0].body || "";
-            }
-
+            const pullNumber = context.payload.pull_request.number;
+            const currentBody = context.payload.pull_request.body || "";
             const addition_text = currentBody.includes("## Commit history")
               ? currentBody.replace(/## Commit history[\s\S]*$/, addition)
               : currentBody + "\n\n" + addition;
-
             await github.rest.pulls.update({
               owner: context.repo.owner,
               repo: context.repo.repo,
