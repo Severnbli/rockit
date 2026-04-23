@@ -1,0 +1,92 @@
+name: developer-rhythm
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+permissions:
+  pull-requests: write
+  contents: read
+
+jobs:
+  rhythm:
+    if: ${{ github.base_ref == 'main' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Collect git data
+        run: |
+          BASE_REF="${{ github.base_ref }}"
+          git log --no-merges --pretty=format:"%H|%ai|%s" origin/${BASE_REF}..HEAD > /tmp/commits.txt
+
+      - name: Post Developer Rhythm Report
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const lines = fs.readFileSync('/tmp/commits.txt', 'utf8').trim().split('\n').filter(Boolean);
+
+            const days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+            const dayCounts = Object.fromEntries(days.map(d => [d, 0]));
+            let workHours = 0, evenings = 0, weekends = 0;
+
+            for (const line of lines) {
+              const ts = new Date(line.split('|')[1]);
+              const hour = ts.getUTCHours();
+              const day = ts.getUTCDay();
+              dayCounts[days[day]]++;
+              if (day === 0 || day === 6) weekends++;
+              else if (hour >= 9 && hour < 18) workHours++;
+              else evenings++;
+            }
+
+            const total = lines.length;
+            const pct = n => total > 0 ? ((n / total) * 100).toFixed(0) + '%' : '0%';
+            const bar = n => {
+              const filled = Math.round((n / total) * 10);
+              return '█'.repeat(filled) + '░'.repeat(10 - filled);
+            };
+
+            const busiest = Object.entries(dayCounts).sort((a, b) => b[1] - a[1])[0][0];
+
+            const body = [
+              '## 🥁 Developer Rhythm Report',
+              '',
+              `| Time Slot | Commits | Share |`,
+              `|-----------|---------|-------|`,
+              `| ☀️ Work hours (9–18 UTC) | ${workHours} | ${pct(workHours)} |`,
+              `| 🌙 Evenings / nights | ${evenings} | ${pct(evenings)} |`,
+              `| 🏖️ Weekends | ${weekends} | ${pct(weekends)} |`,
+              '',
+              '**Commits by day of week**',
+              '',
+              ...days.map(d => `\`${d}\` ${bar(dayCounts[d])} ${dayCounts[d]}`),
+              '',
+              `📅 Most active day: **${busiest}**`,
+            ].join('\n');
+
+            const marker = '<!-- pr-insights-rhythm -->';
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.payload.pull_request.number,
+            });
+            const existing = comments.find(c => c.body.includes(marker));
+            if (existing) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: existing.id,
+                body: marker + '\n' + body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.payload.pull_request.number,
+                body: marker + '\n' + body,
+              });
+            }
