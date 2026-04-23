@@ -2,7 +2,7 @@
 
 namespace _Project.Scripts.Runtime.Features.Input
 {
-    public class InputAspect : ProtoAspectInject
+    public sealed class InputAspect : ProtoAspectInject
     {
         
     }

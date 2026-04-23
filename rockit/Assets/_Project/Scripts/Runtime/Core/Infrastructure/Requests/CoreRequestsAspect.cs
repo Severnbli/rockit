@@ -5,7 +5,7 @@ using Leopotam.EcsProto.QoL;
 
 namespace _Project.Scripts.Runtime.Core.Infrastructure.Requests
 {
-    public class CoreRequestsAspect : ProtoAspectInject
+    public sealed class CoreRequestsAspect : ProtoAspectInject
     {
         public readonly ProtoPool<RequestComponent> RequestComponentPool;
         public readonly ProtoPool<ActiveRequestTag> ActiveRequestTagPool;

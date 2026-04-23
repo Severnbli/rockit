@@ -6,7 +6,7 @@ using Leopotam.EcsProto.QoL;
 
 namespace _Project.Scripts.Runtime.Features.Physics.Moving.Characters
 {
-    public class CharactersMovingRequestsAspect : ProtoAspectInject
+    public sealed class CharactersMovingRequestsAspect : ProtoAspectInject
     {
         public readonly ProtoPool<WalkRequest> WalkRequestPool;
         public readonly ProtoPool<JumpRequest> JumpRequestPool;

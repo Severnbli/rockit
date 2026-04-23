@@ -14,7 +14,7 @@ using Leopotam.EcsProto.Unity.Ugui;
 
 namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
 {
-    public class DomainAspect : ProtoAspectInject
+    public sealed class DomainAspect : ProtoAspectInject
     {
         public readonly UnityUguiAspect UguiAspect;
         public readonly UnityPhysics2DAspect Physics2DAspect;
