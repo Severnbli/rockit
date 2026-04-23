@@ -32,8 +32,8 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Project
             base.RegisterModules();
 
             TryRegisterModule<TimeModule>();
-            TryRegisterModule<LocalizationModule>();
             TryRegisterModule<StorageModule>();
+            TryRegisterModule<LocalizationModule>();
             TryRegisterModule<ScenesModule>();
             TryRegisterModule<InputModule>();
             TryRegisterModule<RequestsModule>();
