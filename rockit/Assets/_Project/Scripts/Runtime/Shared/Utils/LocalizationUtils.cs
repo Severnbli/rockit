@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using _Project.Scripts.Runtime.Core.Infrastructure.Localization.Types;
 using Newtonsoft.Json;
 using UnityEngine;
@@ -31,6 +32,13 @@ namespace _Project.Scripts.Runtime.Shared.Utils
         {
             var json = GetLanguageDataJson();
             return JsonConvert.DeserializeObject<List<LanguageData>>(json) ?? new List<LanguageData>();
+        }
+
+        public static Dictionary<string, LanguageData> GetLanguageDataDictionary()
+        {
+            var list = GetLanguageDataList();
+            var dict = list.ToDictionary(k => k.LanguageCode, v => v);
+            return dict;
         }
     }
 }
