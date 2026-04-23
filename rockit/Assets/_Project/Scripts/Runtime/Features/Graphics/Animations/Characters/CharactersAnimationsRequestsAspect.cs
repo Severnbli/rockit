@@ -6,7 +6,7 @@ using Leopotam.EcsProto.QoL;
 
 namespace _Project.Scripts.Runtime.Features.Graphics.Animations.Characters
 {
-    public class CharactersAnimationsRequestsAspect : ProtoAspectInject
+    public sealed class CharactersAnimationsRequestsAspect : ProtoAspectInject
     {
         public readonly ProtoPool<KillCharacterRequest> KillCharacterRequestPool;
         public readonly ProtoPool<ReviveCharacterRequest> ReviveCharacterRequestPool;

@@ -33,5 +33,16 @@ namespace _Project.Scripts.Runtime.Shared.Extensions
         {
             foreach (var key in keys.Where(key => !dict.ContainsKey(key))) dict.Remove(key);
         }
+
+        public static bool TryGetByKeyOrFirst<TKey, TValue>(this Dictionary<TKey, TValue> dict, TKey key, out TValue value)
+        {
+            value = default;
+            
+            if (dict.TryGetValue(key, out value)) return true;
+            if (!dict.Any()) return false;
+            
+            value = dict.First().Value;
+            return true;
+        }
     }
 }

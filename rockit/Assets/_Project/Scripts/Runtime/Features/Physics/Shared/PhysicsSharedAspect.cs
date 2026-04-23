@@ -7,7 +7,7 @@ using Leopotam.EcsProto.Unity.Physics2D;
 
 namespace _Project.Scripts.Runtime.Features.Physics.Shared
 {
-    public class PhysicsSharedAspect : ProtoAspectInject
+    public sealed class PhysicsSharedAspect : ProtoAspectInject
     {
         public readonly ProtoPool<Collider2DComponent> Collider2DComponentPool;
         public readonly ProtoPool<Rigidbody2DComponent> Rigidbody2DComponentPool;

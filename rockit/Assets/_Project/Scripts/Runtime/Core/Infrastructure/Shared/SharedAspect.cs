@@ -5,7 +5,7 @@ using Leopotam.EcsProto.QoL;
 
 namespace _Project.Scripts.Runtime.Core.Infrastructure.Shared
 {
-    public class SharedAspect : ProtoAspectInject
+    public sealed class SharedAspect : ProtoAspectInject
     {
         public readonly ProtoPool<PlayerTag> PlayerTagPool;
         public readonly ProtoPool<TransformComponent> TransformComponentPool;
