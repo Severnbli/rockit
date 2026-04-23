@@ -27,6 +27,12 @@ namespace _Project.Scripts.Runtime.Shared.Utils
             System.IO.File.WriteAllText(path, json);
         }
 
+        public static void WriteLanguageData(List<LanguageData> languageData)
+        {
+            var json = JsonConvert.SerializeObject(languageData, Formatting.Indented);
+            WriteLanguageData(json);
+        }
+
         public static string GetLanguageDataJson()
         {
             var path = GetLanguageDataPath();
