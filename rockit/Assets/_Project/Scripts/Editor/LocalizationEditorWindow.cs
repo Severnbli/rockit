@@ -168,8 +168,7 @@ namespace _Project.Scripts.Editor
                 return;
             }
 
-            var json = File.ReadAllText(path);
-            _languages = JsonConvert.DeserializeObject<List<LanguageData>>(json) ?? new List<LanguageData>();
+            _languages = LocalizationUtils.GetLanguageDataList();
             _allKeys = _languages
                 .SelectMany(l => l.Entries.Select(e => e.Key))
                 .Distinct()
