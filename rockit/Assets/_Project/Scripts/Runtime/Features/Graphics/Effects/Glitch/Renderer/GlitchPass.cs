@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using _Project.Scripts.Runtime.Features.Graphics.Effects.Glitch.Types;
+using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.RenderGraphModule;
 using UnityEngine.Rendering.Universal;
@@ -15,9 +16,7 @@ namespace _Project.Scripts.Runtime.Features.Graphics.Effects.Glitch.Renderer
         private const string PixelKeyword = "PIXEL";
 
         private readonly Material _material;
-        private readonly float _chromaticGlitch;
-        private readonly float _frameGlitch;
-        private readonly float _pixelGlitch;
+        private readonly GlitchSettings _settings;
         private readonly string _tag;
 
         private readonly Vector2 _rand1 = new (5.0f,   1.0f);
@@ -31,17 +30,10 @@ namespace _Project.Scripts.Runtime.Features.Graphics.Effects.Glitch.Renderer
             public Material Material;
         }
 
-        public GlitchPass(
-            Material material,
-            float chromaticGlitch,
-            float frameGlitch,
-            float pixelGlitch,
-            string tag)
+        public GlitchPass(Material material, GlitchSettings settings, string tag)
         {
             _material = material;
-            _chromaticGlitch = chromaticGlitch;
-            _frameGlitch = frameGlitch;
-            _pixelGlitch = pixelGlitch;
+            _settings = settings;
             _tag = tag;
         }
         
@@ -99,22 +91,22 @@ namespace _Project.Scripts.Runtime.Features.Graphics.Effects.Glitch.Renderer
 
             var t = Time.realtimeSinceStartup;
 
-            if (_chromaticGlitch != 0f)
+            if (_settings.ChromaticGlitch != 0f)
             {
                 var a = (1f + Mathf.Sin(t *  6f))
                         * (0.5f + Mathf.Sin(t * 16f) * 0.25f)
                         * (0.5f + Mathf.Sin(t * 19f) * 0.25f)
                         * (0.5f + Mathf.Sin(t * 27f) * 0.25f);
-                _material.SetFloat(AmountId, _chromaticGlitch * Mathf.Pow(a, 3f) * 0.5f);
+                _material.SetFloat(AmountId, _settings.ChromaticGlitch * Mathf.Pow(a, 3f) * 0.5f);
             }
             else
             {
                 _material.SetFloat(AmountId, 0f);
             }
 
-            if (_frameGlitch != 0f)
+            if (_settings.FrameGlitch != 0f)
             {
-                _material.SetFloat(FrameId, (1f + Mathf.Cos(t * 80f)) * 0.02f * _frameGlitch);
+                _material.SetFloat(FrameId, (1f + Mathf.Cos(t * 80f)) * 0.02f * _settings.FrameGlitch);
                 _material.EnableKeyword(FrameKeyword);
             }
             else
@@ -122,13 +114,13 @@ namespace _Project.Scripts.Runtime.Features.Graphics.Effects.Glitch.Renderer
                 _material.DisableKeyword(FrameKeyword);
             }
 
-            if (_pixelGlitch != 0f)
+            if (_settings.PixelGlitch != 0f)
             {
                 var b = Mathf.Sin(Vector2.Dot(_rand1 * Mathf.Floor(t * 12f), _randMul2)) * 43758.5453123f;
                 var c = Mathf.Sin(Vector2.Dot(_rand2 * Mathf.Floor(t * 12f), _randMul2)) * 43758.5453123f;
                 _material.SetVector(PixelId, new Vector2(
-                    (b - Mathf.Floor(b)) * _pixelGlitch * 0.1f,
-                    (c - Mathf.Floor(c)) * _pixelGlitch * 0.1f));
+                    (b - Mathf.Floor(b)) * _settings.PixelGlitch * 0.1f,
+                    (c - Mathf.Floor(c)) * _settings.PixelGlitch * 0.1f));
                 _material.EnableKeyword(PixelKeyword);
             }
             else
