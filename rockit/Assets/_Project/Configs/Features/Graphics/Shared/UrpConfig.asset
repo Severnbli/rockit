@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bfacd2765904afba4fb37ec3d78afd1, type: 3}
   m_Name: UrpConfig
   m_EditorClassIdentifier: Runtime::_Project.Scripts.Runtime.Features.Graphics.Shared.Configs.UrpConfig
-  _rendererData: {fileID: 0}
+  _rendererData: {fileID: 11400000, guid: b3dfc63d0a9712040a2ea1adff2c9327, type: 2}
