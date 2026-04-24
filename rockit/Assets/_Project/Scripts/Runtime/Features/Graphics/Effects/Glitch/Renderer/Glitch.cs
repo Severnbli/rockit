@@ -1,4 +1,4 @@
-﻿using System;
+﻿using _Project.Scripts.Runtime.Features.Graphics.Effects.Glitch.Types;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
@@ -7,26 +7,17 @@ namespace _Project.Scripts.Runtime.Features.Graphics.Effects.Glitch.Renderer
     public class Glitch : ScriptableRendererFeature
     {
         [SerializeField] private Material _material;
-        
-        [Serializable]
-        public class GlitchSettings
-        {
-            [Range(0, 1)] public float ChromaticGlitch;
-            [Range(0, 1)] public float FrameGlitch;
-            [Range(0, 1)] public float PixelGlitch;
-        }
-
-        public GlitchSettings Settings = new ();
+        [SerializeField] private GlitchSettings _settings = new ();
 
         private GlitchPass _pass;
+        
+        public GlitchSettings Settings => _settings;
 
         public override void Create()
         {
             _pass = new GlitchPass(
                 _material,
-                Settings.ChromaticGlitch,
-                Settings.FrameGlitch,
-                Settings.PixelGlitch,
+                _settings,
                 name
             );
         }
