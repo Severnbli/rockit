@@ -6,35 +6,36 @@ namespace _Project.Scripts.Runtime.Features.Graphics.Effects.Glitch
 {
     public class Glitch : ScriptableRendererFeature
     {
+        [SerializeField] private Material _material;
+        
         [Serializable]
         public class GlitchSettings
         {
-            public Material BlitMaterial;
             [Range(0, 1)] public float ChromaticGlitch;
             [Range(0, 1)] public float FrameGlitch;
             [Range(0, 1)] public float PixelGlitch;
         }
 
-        public GlitchSettings settings = new ();
+        public GlitchSettings Settings = new ();
 
-        private GlitchPass m_Pass;
+        private GlitchPass _pass;
 
         public override void Create()
         {
-            m_Pass = new GlitchPass(
-                settings.BlitMaterial,
-                settings.ChromaticGlitch,
-                settings.FrameGlitch,
-                settings.PixelGlitch,
+            _pass = new GlitchPass(
+                _material,
+                Settings.ChromaticGlitch,
+                Settings.FrameGlitch,
+                Settings.PixelGlitch,
                 name
             );
         }
 
         public override void AddRenderPasses(ScriptableRenderer renderer, ref RenderingData renderingData)
         {
-            if (settings.BlitMaterial == null) return;
+            if (_material == null) return;
 
-            renderer.EnqueuePass(m_Pass);
+            renderer.EnqueuePass(_pass);
         }
     }
 }
