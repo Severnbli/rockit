@@ -6,7 +6,7 @@ using UnityEngine.Rendering.Universal;
 
 namespace _Project.Scripts.Runtime.Features.Graphics.Effects.Glitch.Renderer
 {
-    internal class GlitchPass : ScriptableRenderPass
+    internal class GlitchFeaturePass : ScriptableRenderPass
     {
         private static readonly int AmountId = Shader.PropertyToID("_Amount");
         private static readonly int FrameId = Shader.PropertyToID("_Frame");
@@ -30,7 +30,7 @@ namespace _Project.Scripts.Runtime.Features.Graphics.Effects.Glitch.Renderer
             public Material Material;
         }
 
-        public GlitchPass(Material material, GlitchSettings settings, string tag)
+        public GlitchFeaturePass(Material material, GlitchSettings settings, string tag)
         {
             _material = material;
             _settings = settings;
