@@ -3,7 +3,7 @@ using UnityEngine.Rendering;
 using UnityEngine.Rendering.RenderGraphModule;
 using UnityEngine.Rendering.Universal;
 
-namespace _Project.Scripts.Runtime.Features.Graphics.Effects.Glitch
+namespace _Project.Scripts.Runtime.Features.Graphics.Effects.Glitch.Renderer
 {
     internal class GlitchPass : ScriptableRenderPass
     {

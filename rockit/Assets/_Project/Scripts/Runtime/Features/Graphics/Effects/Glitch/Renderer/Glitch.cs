@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
-namespace _Project.Scripts.Runtime.Features.Graphics.Effects.Glitch
+namespace _Project.Scripts.Runtime.Features.Graphics.Effects.Glitch.Renderer
 {
     public class Glitch : ScriptableRendererFeature
     {
