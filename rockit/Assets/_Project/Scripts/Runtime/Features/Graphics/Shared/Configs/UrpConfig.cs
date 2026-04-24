@@ -4,7 +4,7 @@ using UnityEngine.Rendering.Universal;
 
 namespace _Project.Scripts.Runtime.Features.Graphics.Shared.Configs
 {
-    public class UrpConfig : ScriptableObjectAutoInstaller<UrpConfig>
+    public sealed class UrpConfig : ScriptableObjectAutoInstaller<UrpConfig>
     {
         [SerializeField] private UniversalRendererData _rendererData;
         
