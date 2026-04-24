@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: de640fe3d0db1804a85f9fc8f5cadab6, type: 3}
-  m_Name: GlitchRender
+  m_Name: URender
   m_EditorClassIdentifier: 
   debugShaders:
     debugReplacementPS: {fileID: 4800000, guid: cf852408f2e174538bcd9b7fda1c5ae7, type: 3}
@@ -68,8 +68,8 @@ MonoBehaviour:
   m_Name: Glitch
   m_EditorClassIdentifier: 
   m_Active: 1
-  settings:
-    BlitMaterial: {fileID: 2100000, guid: e78cd3190be03e24ebf5d04a8f119594, type: 2}
-    ChromaticGlitch: 0.319
-    FrameGlitch: 0.352
-    PixelGlitch: 0.241
+  _material: {fileID: 2100000, guid: e78cd3190be03e24ebf5d04a8f119594, type: 2}
+  Settings:
+    ChromaticGlitch: 0.201
+    FrameGlitch: 0.28
+    PixelGlitch: 0.269
