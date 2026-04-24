@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 
 namespace _Project.Scripts.Runtime.Features.Input.Configs
 {
-    public class PlayerInputConfig : ScriptableObjectAutoInstaller<PlayerInputConfig>
+    public sealed class PlayerInputConfig : ScriptableObjectAutoInstaller<PlayerInputConfig>
     {
         [SerializeField] private InputActionReference _walk;
         [SerializeField] private InputActionReference _jump;

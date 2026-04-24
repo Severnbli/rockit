@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Core.Infrastructure.Objects.Lifecycle.Pools.Collections
 {
-    public class CollectionsPoolsConfig : ScriptableObjectAutoInstaller<CollectionsPoolsConfig>
+    public sealed class CollectionsPoolsConfig : ScriptableObjectAutoInstaller<CollectionsPoolsConfig>
     {
         [SerializeField] private int _initCapacity = 20;
         
