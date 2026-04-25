@@ -4,11 +4,11 @@ using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Features.Graphics.Effects.Glitch.Systems
 {
-    public sealed class ClampGlitchServiceFieldsOnRunSystem : IProtoRunSystem
+    public sealed class ClampGlitchServiceValuesFieldsOnRunSystem : IProtoRunSystem
     {
         private readonly GlitchService _gService;
 
-        public ClampGlitchServiceFieldsOnRunSystem(GlitchService gService)
+        public ClampGlitchServiceValuesFieldsOnRunSystem(GlitchService gService)
         {
             _gService = gService;
         }
