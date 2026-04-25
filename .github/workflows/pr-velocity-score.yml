@@ -39,15 +39,21 @@ jobs:
               per_page: 50,
             });
 
-            const historical = mergedPRs
-              .filter(pr => pr.merged_at)
-              .map(pr => ({
-                duration: new Date(pr.merged_at) - new Date(pr.created_at),
-                commits: pr.commits,
-                additions: pr.additions,
-                deletions: pr.deletions,
-                changed_files: pr.changed_files,
-              }));
+            const historical = (await Promise.all(
+              mergedPRs
+                .filter(pr => pr.merged_at)
+                .map(pr => github.rest.pulls.get({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  pull_number: pr.number,
+                }))
+            )).map(({ data: pr }) => ({
+              duration: new Date(pr.merged_at) - new Date(pr.created_at),
+              commits: pr.commits,
+              additions: pr.additions,
+              deletions: pr.deletions,
+              changed_files: pr.changed_files,
+            }));
 
             const statsMatch = diffStat.match(/(\d+) files? changed(?:, (\d+) insertions?)?(?:, (\d+) deletions?)?/);
             const filesChanged = parseInt(statsMatch?.[1] ?? '0');
