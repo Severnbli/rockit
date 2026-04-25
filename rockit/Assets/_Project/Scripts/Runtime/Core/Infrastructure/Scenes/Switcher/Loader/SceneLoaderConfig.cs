@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Core.Infrastructure.Scenes.Switcher.Loader
 {
-    public class SceneLoaderConfig : ScriptableObjectAutoInstaller<SceneLoaderConfig>
+    public sealed class SceneLoaderConfig : ScriptableObjectAutoInstaller<SceneLoaderConfig>
     {
         [SerializeField] private bool _simulateLoading = false;
         [SerializeField, ShowIf(nameof(SimulateLoading))] private float _simulationLoadingDuration = 2f;

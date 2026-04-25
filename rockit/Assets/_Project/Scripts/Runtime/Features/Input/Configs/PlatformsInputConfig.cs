@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 
 namespace _Project.Scripts.Runtime.Features.Input.Configs
 {
-    public class PlatformsInputConfig : ScriptableObjectAutoInstaller<PlatformsInputConfig>
+    public sealed class PlatformsInputConfig : ScriptableObjectAutoInstaller<PlatformsInputConfig>
     {
         [SerializeField] private InputActionReference _position;
         [SerializeField] private InputActionReference _rotation;
