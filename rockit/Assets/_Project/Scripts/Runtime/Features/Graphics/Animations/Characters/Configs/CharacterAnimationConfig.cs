@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Features.Graphics.Animations.Characters.Configs
 {
-    public class CharacterAnimationConfig : ScriptableObjectAutoInstaller<CharacterAnimationConfig>
+    public sealed class CharacterAnimationConfig : ScriptableObjectAutoInstaller<CharacterAnimationConfig>
     {
         [SerializeField] private string _deathTrigger = "Death";
         [SerializeField] private string _deadBool = "Dead";
