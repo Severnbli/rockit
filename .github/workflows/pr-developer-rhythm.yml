@@ -35,8 +35,8 @@ jobs:
 
             for (const line of lines) {
               const ts = new Date(line.split('|')[1]);
-              const hour = ts.getUTCHours();
-              const day = ts.getUTCDay();
+              const hour = (ts.getUTCHours() + 3) % 24;
+              const day = new Date(ts.getTime() + 3 * 3600000).getUTCDay();
               dayCounts[days[day]]++;
               if (day === 0 || day === 6) weekends++;
               else if (hour >= 9 && hour < 18) workHours++;
@@ -53,11 +53,11 @@ jobs:
             const busiest = Object.entries(dayCounts).sort((a, b) => b[1] - a[1])[0][0];
 
             const body = [
-              '## 🥁 Developer Rhythm Report',
+              '## 🥁 Developer Rhythm',
               '',
               `| Time Slot | Commits | Share |`,
               `|-----------|---------|-------|`,
-              `| ☀️ Work hours (9–18 UTC) | ${workHours} | ${pct(workHours)} |`,
+              `| ☀️ Work hours (9–18 UTC+3) | ${workHours} | ${pct(workHours)} |`,
               `| 🌙 Evenings / nights | ${evenings} | ${pct(evenings)} |`,
               `| 🏖️ Weekends | ${weekends} | ${pct(weekends)} |`,
               '',
