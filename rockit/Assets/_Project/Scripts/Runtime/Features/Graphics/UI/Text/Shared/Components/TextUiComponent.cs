@@ -2,7 +2,7 @@
 using Leopotam.EcsProto.Unity;
 using TMPro;
 
-namespace _Project.Scripts.Runtime.Features.Graphics.Text.Shared.Components
+namespace _Project.Scripts.Runtime.Features.Graphics.UI.Text.Shared.Components
 {
     [Serializable, ProtoUnityAuthoring]
     public struct TextUiComponent

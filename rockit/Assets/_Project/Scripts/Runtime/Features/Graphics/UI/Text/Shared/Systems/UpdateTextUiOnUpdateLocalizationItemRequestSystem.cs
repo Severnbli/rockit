@@ -6,7 +6,7 @@ using _Project.Scripts.Runtime.Shared.Extensions;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 
-namespace _Project.Scripts.Runtime.Features.Graphics.Text.Shared.Systems
+namespace _Project.Scripts.Runtime.Features.Graphics.UI.Text.Shared.Systems
 {
     public sealed class UpdateTextUiOnUpdateLocalizationItemRequestSystem : IProtoInitSystem, IProtoRunSystem
     {

@@ -1,9 +1,9 @@
 ﻿using _Project.Scripts.Runtime.Core.Infrastructure.Localization.Components;
-using _Project.Scripts.Runtime.Features.Graphics.Text.Shared.Components;
+using _Project.Scripts.Runtime.Features.Graphics.UI.Text.Shared.Components;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 
-namespace _Project.Scripts.Runtime.Features.Graphics.Text.Shared
+namespace _Project.Scripts.Runtime.Features.Graphics.UI.Text.Shared
 {
     public sealed class TextSharedAspect : ProtoAspectInject
     {
