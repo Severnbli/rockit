@@ -33,6 +33,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
         public readonly LocalizationAspect LocalizationAspect;
         public readonly TextSharedAspect TextSharedAspect;
         public readonly UISharedAspect UISharedAspect;
+        public readonly UIEventsAspect UIEventsAspect;
         public readonly SharedAspect SharedAspect;
     }
 }
