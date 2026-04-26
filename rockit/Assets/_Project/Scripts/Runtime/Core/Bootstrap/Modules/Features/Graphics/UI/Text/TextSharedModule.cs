@@ -1,7 +1,7 @@
 ﻿using _Project.Scripts.Runtime.Core.Bootstrap.Domain;
-using _Project.Scripts.Runtime.Features.Graphics.Text.Shared.Systems;
+using _Project.Scripts.Runtime.Features.Graphics.UI.Text.Shared.Systems;
 
-namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.Text
+namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.UI.Text
 {
     public sealed class TextSharedModule : BaseModule<TextSharedModule>
     {

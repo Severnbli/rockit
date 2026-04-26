@@ -1,6 +1,6 @@
 ﻿using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.Animations;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.Sprites;
-using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.Text;
+using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.UI.Text;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Physics;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Physics.Moving;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure;
