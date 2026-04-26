@@ -22,6 +22,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
         public readonly UnityPhysics2DAspect Physics2DAspect;
         public readonly InputAspect InputAspect;
         public readonly PhysicsSharedAspect PhysicsSharedAspect;
+        public readonly PhysicsEventsAspect PhysicsEventsAspect;
         public readonly CharactersMovingAspect CharactersMovingAspect;
         public readonly MovingSharedAspect MovingSharedAspect;
         public readonly AnimationsSharedAspect AnimationsSharedAspect;
