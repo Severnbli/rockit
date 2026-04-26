@@ -2,6 +2,7 @@
 using _Project.Scripts.Runtime.Core.Infrastructure.Shared;
 using _Project.Scripts.Runtime.Features.Graphics.Animations.Shared;
 using _Project.Scripts.Runtime.Features.Graphics.Sprites.Shared;
+using _Project.Scripts.Runtime.Features.Graphics.UI.Shared;
 using _Project.Scripts.Runtime.Features.Graphics.UI.Text.Shared;
 using _Project.Scripts.Runtime.Features.Input;
 using _Project.Scripts.Runtime.Features.Physics.Moving.Characters;
@@ -31,6 +32,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
         public readonly PlatformsSharedAspect PlatformsSharedAspect;
         public readonly LocalizationAspect LocalizationAspect;
         public readonly TextSharedAspect TextSharedAspect;
+        public readonly UISharedAspect UISharedAspect;
         public readonly SharedAspect SharedAspect;
     }
 }
