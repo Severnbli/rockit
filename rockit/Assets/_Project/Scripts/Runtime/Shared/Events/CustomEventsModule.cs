@@ -4,14 +4,14 @@ using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 using Leopotam.EcsProto.Unity;
 
-namespace _Project.Scripts.Runtime.Shared.Callback
+namespace _Project.Scripts.Runtime.Shared.Events
 {
-    public sealed class CallbackModule : IProtoModule
+    public sealed class CustomEventsModule : IProtoModule
     {
         private readonly string _worldName;
         private readonly int _clearPointWeight;
         
-        public CallbackModule (string worldName = default, int clearPointWeight = default) {
+        public CustomEventsModule (string worldName = default, int clearPointWeight = default) {
             _worldName = worldName;
             _clearPointWeight = clearPointWeight;
         }
@@ -24,9 +24,7 @@ namespace _Project.Scripts.Runtime.Shared.Callback
 
         public IProtoAspect[] Aspects()
         {
-            return _worldName != null 
-                ? null
-                : new IProtoAspect[] { new CallbackAspect() };
+            return null;
         }
 
         public Type[] Dependencies() => new Type[] { typeof(UnityModule) };
