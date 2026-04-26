@@ -452,16 +452,12 @@ MonoBehaviour:
   _authoringType: 0
   _destroyAfterAuthoring: 0
   Components:
-  - rid: 1430329917847371853
   - rid: 1430329917847371854
   - rid: 1430329917847371855
+  - rid: 1430329987389194240
   references:
     version: 2
     RefIds:
-    - rid: 1430329917847371853
-      type: {class: TextUiComponent, ns: _Project.Scripts.Runtime.Features.Graphics.Text.Shared.Components, asm: Runtime}
-      data:
-        Text: {fileID: 1539255609}
     - rid: 1430329917847371854
       type: {class: LocalizationItemComponent, ns: _Project.Scripts.Runtime.Core.Infrastructure.Localization.Components, asm: Runtime}
       data:
@@ -469,6 +465,10 @@ MonoBehaviour:
     - rid: 1430329917847371855
       type: {class: InitializableTag, ns: _Project.Scripts.Runtime.Core.Infrastructure.Shared.Tags, asm: Runtime}
       data: 
+    - rid: 1430329987389194240
+      type: {class: TextUiComponent, ns: _Project.Scripts.Runtime.Features.Graphics.UI.Text.Shared.Components, asm: Runtime}
+      data:
+        Text: {fileID: 1539255609}
 --- !u!114 &1539255609
 MonoBehaviour:
   m_ObjectHideFlags: 0
