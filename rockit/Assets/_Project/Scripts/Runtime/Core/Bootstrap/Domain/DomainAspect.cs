@@ -10,7 +10,6 @@ using _Project.Scripts.Runtime.Features.Physics.Moving.Platforms;
 using _Project.Scripts.Runtime.Features.Physics.Moving.Shared;
 using _Project.Scripts.Runtime.Features.Physics.Shared;
 using _Project.Scripts.Runtime.Features.Platforms.Shared;
-using _Project.Scripts.Runtime.Shared.Callback;
 using Leopotam.EcsProto.QoL;
 using Leopotam.EcsProto.Unity.Physics2D;
 using Leopotam.EcsProto.Unity.Ugui;
@@ -21,7 +20,6 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
     {
         public readonly UnityUguiAspect UguiAspect;
         public readonly UnityPhysics2DAspect Physics2DAspect;
-        public readonly CallbackAspect CallbackAspect;
         public readonly InputAspect InputAspect;
         public readonly PhysicsSharedAspect PhysicsSharedAspect;
         public readonly CharactersMovingAspect CharactersMovingAspect;

@@ -3,6 +3,7 @@ using _Project.Scripts.Runtime.Core.Bootstrap.Domain;
 using _Project.Scripts.Runtime.Core.Infrastructure.Requests;
 using _Project.Scripts.Runtime.Core.Infrastructure.Requests.World;
 using _Project.Scripts.Runtime.Shared.Callback;
+using _Project.Scripts.Runtime.Shared.Events;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 using Leopotam.EcsProto.Unity;
@@ -70,7 +71,7 @@ namespace _Project.Scripts.Runtime.Core.Systems
                 .AddModule(new UnityModule())
                 .AddModule(new UnityUguiModule())
                 .AddModule(new UnityPhysics2DModule())
-                .AddModule(new CallbackModule());
+                .AddModule(new CustomEventsModule());
         }
     }
 }

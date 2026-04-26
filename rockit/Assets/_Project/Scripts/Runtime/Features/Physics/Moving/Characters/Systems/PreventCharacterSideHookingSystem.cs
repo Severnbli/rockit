@@ -10,6 +10,7 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Systems
     public sealed class PreventCharacterSideHookingSystem : IProtoInitSystem, IProtoRunSystem
     {
         [DI] private readonly PhysicsSharedAspect _psAspect;
+        [DI] private readonly PhysicsEventsAspect _peAspect;
         private readonly SharedIndexService _siService;
         private readonly SharedCharacterMovingConfig _smConfig;
         private ProtoWorld _world;
@@ -29,9 +30,9 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Systems
         {
             var goIndex = _siService.GameObjectIndex;
             
-            foreach (var e in _psAspect.CollisionStayEvents)
+            foreach (var e in _peAspect.CollisionStayEvents)
             {
-                ref var data = ref _psAspect.CollisionStayEventPool.Get(e);
+                ref var data = ref _peAspect.CollisionStayEventPool.Get(e);
                 
                 if (!goIndex.TryGetEntityFromIndex(data.Sender, _world, out var tarE)) continue;
 
