@@ -15,7 +15,6 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States
         protected readonly Dictionary<Type, IState> SceneStates = new();
         
         public bool Inited { get; private set; } = false;
-        private bool _changing = false;
 
         public StateMachine(List<IProjectState> states)
         {
@@ -39,14 +38,9 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States
 
         public async UniTask ChangeState(IState state)
         {
-            if (_changing) return;
-            _changing = true;
-            
             if (ActiveState is not null) await ActiveState.OnLeave();
             ActiveState = state;
             if (ActiveState is not null) await ActiveState.OnEnter();
-            
-            _changing = false;
         }
 
         public void BootstrapSceneStates(params ISceneState[] states)
