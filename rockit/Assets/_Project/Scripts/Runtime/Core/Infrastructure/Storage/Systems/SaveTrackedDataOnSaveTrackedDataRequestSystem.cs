@@ -4,12 +4,12 @@ using Leopotam.EcsProto;
 
 namespace _Project.Scripts.Runtime.Core.Infrastructure.Storage.Systems
 {
-    public sealed class SaveTrackedDataOnRequestSystem : IProtoRunSystem
+    public sealed class SaveTrackedDataOnSaveTrackedDataRequestSystem : IProtoRunSystem
     {
         [DIRequests] private readonly StorageRequestsAspect _srAspect;
         private readonly IDataProvider _dProvider;
 
-        public SaveTrackedDataOnRequestSystem(IDataProvider dProvider)
+        public SaveTrackedDataOnSaveTrackedDataRequestSystem(IDataProvider dProvider)
         {
             _dProvider = dProvider;
         }
