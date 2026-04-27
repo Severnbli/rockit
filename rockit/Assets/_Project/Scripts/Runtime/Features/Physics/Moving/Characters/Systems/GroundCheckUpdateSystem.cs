@@ -3,7 +3,7 @@ using _Project.Scripts.Runtime.Core.Infrastructure.Shared.Configs;
 using _Project.Scripts.Runtime.Core.Infrastructure.Time.Services;
 using _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Configs;
 using _Project.Scripts.Runtime.Shared.Utils;
-using _Project.Scripts.Runtime.Shared.Utils.Moving;
+using _Project.Scripts.Runtime.Shared.Utils.Features.Physics.Moving;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 

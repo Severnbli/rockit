@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics;
 using Debug = UnityEngine.Debug;
 
-namespace _Project.Scripts.Runtime.Shared.Utils
+namespace _Project.Scripts.Runtime.Shared.Utils.Shared
 {
     public static class LogUtils
     {

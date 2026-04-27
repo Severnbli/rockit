@@ -1,6 +1,6 @@
 ﻿using _Project.Scripts.Runtime.Core.Infrastructure.Requests;
 using _Project.Scripts.Runtime.Core.Infrastructure.Requests.World;
-using _Project.Scripts.Runtime.Shared.Utils.Input;
+using _Project.Scripts.Runtime.Shared.Utils.Features.Input;
 using Leopotam.EcsProto;
 
 namespace _Project.Scripts.Runtime.Features.Input.Systems

@@ -4,7 +4,7 @@ using _Project.Scripts.Runtime.Shared.Extensions;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 
-namespace _Project.Scripts.Runtime.Shared.Utils
+namespace _Project.Scripts.Runtime.Shared.Utils.Infrastructure
 {
     public static class SharedUtils
     {

@@ -10,7 +10,7 @@ using Leopotam.EcsProto.QoL;
 using Newtonsoft.Json;
 using UnityEngine;
 
-namespace _Project.Scripts.Runtime.Shared.Utils
+namespace _Project.Scripts.Runtime.Shared.Utils.Infrastructure
 {
     public static class LocalizationUtils
     {
