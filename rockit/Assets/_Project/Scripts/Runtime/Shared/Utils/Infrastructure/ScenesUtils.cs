@@ -1,4 +1,8 @@
-﻿using _Project.Scripts.Runtime.Shared.Utils.Shared;
+﻿using _Project.Scripts.Runtime.Core.Infrastructure.Requests;
+using _Project.Scripts.Runtime.Core.Infrastructure.Scenes.Requests;
+using _Project.Scripts.Runtime.Shared.Extensions.Infrastructure;
+using _Project.Scripts.Runtime.Shared.Utils.Shared;
+using Leopotam.EcsProto;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -13,6 +17,11 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Infrastructure
             
             LogUtils.LogError($"Scene {sceneName} failed to load");
             return false;
+        }
+
+        public static ProtoEntity CreateSwitchSceneRequest(RequestsAspect aspect, SwitchSceneRequest prepared)
+        {
+            return aspect.CreateRequest(aspect.ScenesRequestsAspect.SwitchSceneRequestPool, prepared: prepared);
         }
     }
 }
