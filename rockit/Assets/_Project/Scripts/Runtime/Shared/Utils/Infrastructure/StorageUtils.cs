@@ -10,5 +10,10 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Infrastructure
         {
             return aspect.CreateRequest(aspect.StorageRequestsAspect.SaveTrackedDataRequestPool);
         }
+
+        public static ProtoEntity CreateLoadTrackedDataRequest(RequestsAspect aspect)
+        {
+            return aspect.CreateRequest(aspect.StorageRequestsAspect.LoadTrackedDataRequestPool);
+        }
     }
 }
