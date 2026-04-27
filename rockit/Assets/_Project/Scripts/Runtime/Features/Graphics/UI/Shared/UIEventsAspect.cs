@@ -6,20 +6,20 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Shared
 {
     public sealed class UIEventsAspect : ProtoAspectInject
     {
-        public readonly ProtoPool<UnityUguiClickEvent> ClickEvent;
-        public readonly ProtoPool<UnityUguiDownEvent> DownEvent;
-        public readonly ProtoPool<UnityUguiDragEndEvent> DragEndEvent;
-        public readonly ProtoPool<UnityUguiDragMoveEvent> DragMoveEvent;
-        public readonly ProtoPool<UnityUguiDragStartEvent> DragStartEvent;
-        public readonly ProtoPool<UnityUguiDropEvent> DropEvent;
-        public readonly ProtoPool<UnityUguiEnterEvent> EnterEvent;
-        public readonly ProtoPool<UnityUguiExitEvent> ExitEvent;
-        public readonly ProtoPool<UnityUguiScrollViewEvent> ScrollViewEvent;
-        public readonly ProtoPool<UnityUguiSliderChangeEvent> SliderChangeEvent;
-        public readonly ProtoPool<UnityUguiDropdownChangeEvent> DropdownChangeEvent;
-        public readonly ProtoPool<UnityUguiInputChangeEvent> InputChangeEvent;
-        public readonly ProtoPool<UnityUguiInputEndEvent> InputEndEvent;
-        public readonly ProtoPool<UnityUguiUpEvent> UpEvent;
+        public readonly ProtoPool<UnityUguiClickEvent> ClickEventPool;
+        public readonly ProtoPool<UnityUguiDownEvent> DownEventPool;
+        public readonly ProtoPool<UnityUguiDragEndEvent> DragEndEventPool;
+        public readonly ProtoPool<UnityUguiDragMoveEvent> DragMoveEventPool;
+        public readonly ProtoPool<UnityUguiDragStartEvent> DragStartEventPool;
+        public readonly ProtoPool<UnityUguiDropEvent> DropEventPool;
+        public readonly ProtoPool<UnityUguiEnterEvent> EnterEventPool;
+        public readonly ProtoPool<UnityUguiExitEvent> ExitEventPool;
+        public readonly ProtoPool<UnityUguiScrollViewEvent> ScrollViewEventPool;
+        public readonly ProtoPool<UnityUguiSliderChangeEvent> SliderChangeEventPool;
+        public readonly ProtoPool<UnityUguiDropdownChangeEvent> DropdownChangeEventPool;
+        public readonly ProtoPool<UnityUguiInputChangeEvent> InputChangeEventPool;
+        public readonly ProtoPool<UnityUguiInputEndEvent> InputEndEventPool;
+        public readonly ProtoPool<UnityUguiUpEvent> UpEventPool;
         public readonly ProtoIt ClickEvents = new(It.Inc<UnityUguiClickEvent>());
         public readonly ProtoIt DownEvents = new(It.Inc<UnityUguiDownEvent>());
         public readonly ProtoIt DragEndEvents = new(It.Inc<UnityUguiDragEndEvent>());
