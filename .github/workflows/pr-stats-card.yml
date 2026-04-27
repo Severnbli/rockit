@@ -38,14 +38,19 @@ jobs:
             const hours = Math.floor(durationMs / 3600000);
             const minutes = Math.floor((durationMs % 3600000) / 60000);
             const days = (durationMs / 86400000).toFixed(1);
-            const commitsPerDay = durationMs > 0
-              ? (lines.length / (durationMs / 86400000)).toFixed(2)
-              : lines.length;
+            const effectiveDays = Math.max(durationMs / 86400000, 1);
+            const commitsPerDay = (lines.length / effectiveDays).toFixed(2);
+
+            const toUTCPlus3 = (date) => {
+              const offset = 3 * 60;
+              const local = new Date(date.getTime() + offset * 60000);
+              return local.toUTCString().replace('GMT', 'GMT+3');
+            };
 
             const statsMatch = diffStat.match(/(\d+) files? changed/);
             const insertMatch = diffStat.match(/(\d+) insertions?\(\+\)/);
             const deleteMatch = diffStat.match(/(\d+) deletions?\(-\)/);
-            
+
             const filesChanged = statsMatch?.[1] ?? '0';
             const insertions = insertMatch?.[1] ?? '0';
             const deletions = deleteMatch?.[1] ?? '0';
@@ -55,8 +60,8 @@ jobs:
               '',
               `| Metric | Value |`,
               `|--------|-------|`,
-              `| 🕐 First commit | ${first.toUTCString()} |`,
-              `| 🕐 Last commit  | ${last.toUTCString()} |`,
+              `| 🕐 First commit | ${toUTCPlus3(first)} |`,
+              `| 🕐 Last commit  | ${toUTCPlus3(last)} |`,
               `| ⏱️ Duration | ${hours}h ${minutes}m (${days} days) |`,
               `| 📝 Total commits | ${lines.length} |`,
               `| 📁 Files changed | ${filesChanged} |`,
