@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using Cysharp.Threading.Tasks;
+﻿using Cysharp.Threading.Tasks;
+using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Core.Infrastructure.Scenes.Switcher.Escort
 {

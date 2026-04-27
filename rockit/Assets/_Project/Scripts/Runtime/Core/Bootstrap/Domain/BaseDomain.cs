@@ -4,7 +4,7 @@ using System.Threading;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules;
 using _Project.Scripts.Runtime.Core.Engine;
 using _Project.Scripts.Runtime.Core.Systems;
-using _Project.Scripts.Runtime.Shared.Utils;
+using _Project.Scripts.Runtime.Shared.Utils.Shared;
 using Leopotam.EcsProto;
 using Zenject;
 

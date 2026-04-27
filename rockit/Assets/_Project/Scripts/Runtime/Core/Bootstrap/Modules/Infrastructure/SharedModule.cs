@@ -24,6 +24,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure
             BindSystem<SendInitializeRequestsOnRunSystem>();
             BindSystem<GameObjectIndexUpdateSystem>();
             BindSystem<SendUpdateLocalizationItemOnInitializeRequestSystem>();
+            BindSystem<SwitchToProjectCloseStateOnCloseAppRequestSystem>();
         }
     }
 }
