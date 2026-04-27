@@ -15,5 +15,10 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Infrastructure
                 prepared);
             return entity;
         }
+
+        public static ProtoEntity CreateCloseAppRequest(RequestsAspect aspect)
+        {
+            return aspect.CreateRequest(aspect.SharedRequestsAspect.CloseAppRequestPool);
+        }
     }
 }
