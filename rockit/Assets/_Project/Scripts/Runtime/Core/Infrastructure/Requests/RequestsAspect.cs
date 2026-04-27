@@ -1,4 +1,5 @@
 ﻿using _Project.Scripts.Runtime.Core.Infrastructure.Localization;
+using _Project.Scripts.Runtime.Core.Infrastructure.Scenes;
 using _Project.Scripts.Runtime.Core.Infrastructure.Shared;
 using _Project.Scripts.Runtime.Core.Infrastructure.Storage;
 using _Project.Scripts.Runtime.Features.Graphics.Animations.Characters;
@@ -18,6 +19,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Requests
         public readonly PlatformsMovingRequestsAspect PlatformsMovingRequestsAspect;
         public readonly LocalizationRequestsAspect LocalizationRequestsAspect;
         public readonly StorageRequestsAspect StorageRequestsAspect;
+        public readonly ScenesRequestsAspect ScenesRequestsAspect;
         public readonly SharedRequestsAspect SharedRequestsAspect;
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System.Threading;
+using _Project.Scripts.Runtime.Core.Infrastructure.Scenes.Services;
 using _Project.Scripts.Runtime.Core.Infrastructure.Scenes.Switcher.Escort;
 using _Project.Scripts.Runtime.Core.Infrastructure.Time.Services;
 using _Project.Scripts.Runtime.Shared.Extensions.Infrastructure;
@@ -29,7 +30,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Scenes.Switcher.Loader
 
         public async UniTask<AsyncOperation> LoadScene(string sceneName)
         {
-            if (!SceneLoaderUtils.TryStartLoading(sceneName, out var loadingOperation)) return null;
+            if (!ScenesUtils.TryStartLoading(sceneName, out var loadingOperation)) return null;
             loadingOperation.allowSceneActivation = false;
             
             _switcherService.Reset();
