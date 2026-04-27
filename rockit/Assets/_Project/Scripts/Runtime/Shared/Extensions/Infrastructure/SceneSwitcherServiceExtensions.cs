@@ -2,7 +2,7 @@
 using _Project.Scripts.Runtime.Core.Infrastructure.Scenes.Switcher.Loader;
 using UnityEngine;
 
-namespace _Project.Scripts.Runtime.Shared.Extensions
+namespace _Project.Scripts.Runtime.Shared.Extensions.Infrastructure
 {
     public static class SceneSwitcherServiceExtensions
     {

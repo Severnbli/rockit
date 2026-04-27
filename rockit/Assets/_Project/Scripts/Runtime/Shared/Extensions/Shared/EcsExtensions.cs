@@ -1,7 +1,7 @@
 ﻿using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 
-namespace _Project.Scripts.Runtime.Shared.Extensions
+namespace _Project.Scripts.Runtime.Shared.Extensions.Shared
 {
     public static class EcsExtensions
     {

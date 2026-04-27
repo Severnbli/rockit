@@ -1,10 +1,9 @@
 ﻿using _Project.Scripts.Runtime.Core.Infrastructure.Requests;
-using _Project.Scripts.Runtime.Core.Infrastructure.Requests.Components;
+using _Project.Scripts.Runtime.Shared.Extensions.Shared;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
-using UnityEngine;
 
-namespace _Project.Scripts.Runtime.Shared.Extensions
+namespace _Project.Scripts.Runtime.Shared.Extensions.Infrastructure
 {
     public static class RequestsExtensions
     {

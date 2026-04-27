@@ -1,6 +1,6 @@
 ﻿using _Project.Scripts.Runtime.Features.Input.Services;
 
-namespace _Project.Scripts.Runtime.Shared.Extensions.Input
+namespace _Project.Scripts.Runtime.Shared.Extensions.Features.Input
 {
     public static class PlatformsInputServiceExtensions
     {

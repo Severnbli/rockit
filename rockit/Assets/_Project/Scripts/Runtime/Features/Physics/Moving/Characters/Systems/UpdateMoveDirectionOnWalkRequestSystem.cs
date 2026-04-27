@@ -3,6 +3,7 @@ using _Project.Scripts.Runtime.Core.Infrastructure.Requests.World;
 using _Project.Scripts.Runtime.Core.Systems;
 using _Project.Scripts.Runtime.Features.Physics.Moving.Shared;
 using _Project.Scripts.Runtime.Shared.Extensions;
+using _Project.Scripts.Runtime.Shared.Extensions.Infrastructure;
 using _Project.Scripts.Runtime.Shared.Utils;
 using _Project.Scripts.Runtime.Shared.Utils.Features.Physics.Moving;
 using Leopotam.EcsProto;
