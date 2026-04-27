@@ -11,5 +11,6 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Buttons.Shared
         public readonly ProtoPool<ButtonComponent> ButtonComponentPool;
         public readonly ProtoIt CloseAppButtonTags = new (It.Inc<CloseAppButtonTag>());
         public readonly ProtoIt Buttons = new (It.Inc<ButtonComponent>());
+        public readonly ProtoIt CloseAppButtons = new (It.Inc<ButtonComponent, CloseAppButtonTag>());
     }
 }

@@ -35,7 +35,7 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Buttons.Shared.Systems
             {
                 ref var data = ref _ueAspect.ClickEventPool.Get(evE);
                 if (!_goIndex.TryGetEntityFromIndex(data.Sender, _world, out var tarE)) continue;
-                if (!_bsAspect.CloseAppButtonTags.Has(tarE)) continue;
+                if (!_bsAspect.CloseAppButtons.Has(tarE)) continue;
 
                 SharedUtils.CreateCloseAppRequest(_rAspect);
             }
