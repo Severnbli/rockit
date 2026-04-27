@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 namespace _Project.Scripts.Runtime.Shared.Utils.Infrastructure
 {
-    public static class SceneLoaderUtils
+    public static class ScenesUtils
     {
         public static bool TryStartLoading(string sceneName, out AsyncOperation loadingOperation)
         {
