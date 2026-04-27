@@ -26,6 +26,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Project
             
             Container.BindInterfacesAndSelfTo<ProjectSetupState>().AsSingle();
             Container.BindInterfacesAndSelfTo<ProjectCloseState>().AsSingle();
+            Container.BindInterfacesAndSelfTo<SwitchSceneState>().AsSingle();
         }
 
         protected override void RegisterModules()
