@@ -25,6 +25,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure
             
             BindSystem<LoadTrackedDataOnInitSystem>();
             BindSystem<SaveTrackedDataOnDestroySystem>();
+            BindSystem<SaveTrackedDataOnRequestSystem>();
         }
     }
 }
