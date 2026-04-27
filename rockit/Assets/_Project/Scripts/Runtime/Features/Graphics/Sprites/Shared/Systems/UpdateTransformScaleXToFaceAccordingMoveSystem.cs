@@ -1,7 +1,7 @@
 ﻿using _Project.Scripts.Runtime.Core.Infrastructure.Shared;
 using _Project.Scripts.Runtime.Features.Physics.Moving;
 using _Project.Scripts.Runtime.Features.Physics.Moving.Shared;
-using _Project.Scripts.Runtime.Shared.Utils.Graphics.Sprites;
+using _Project.Scripts.Runtime.Shared.Utils.Features.Graphics.Sprites;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 using UnityEngine;

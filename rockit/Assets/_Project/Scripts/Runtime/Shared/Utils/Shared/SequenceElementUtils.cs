@@ -2,7 +2,7 @@
 using System.Linq;
 using _Project.Scripts.Runtime.Shared.Tools;
 
-namespace _Project.Scripts.Runtime.Shared.Utils
+namespace _Project.Scripts.Runtime.Shared.Utils.Shared
 {
     public static class SequenceElementUtils
     {

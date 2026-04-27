@@ -1,7 +1,8 @@
-﻿using UnityEngine;
+﻿using _Project.Scripts.Runtime.Shared.Utils.Shared;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace _Project.Scripts.Runtime.Shared.Utils
+namespace _Project.Scripts.Runtime.Shared.Utils.Infrastructure
 {
     public static class SceneLoaderUtils
     {

@@ -3,7 +3,7 @@ using _Project.Scripts.Runtime.Shared.Extensions;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 
-namespace _Project.Scripts.Runtime.Shared.Utils.Moving
+namespace _Project.Scripts.Runtime.Shared.Utils.Features.Physics.Moving
 {
     public static class PlatformsMovingUtils
     {

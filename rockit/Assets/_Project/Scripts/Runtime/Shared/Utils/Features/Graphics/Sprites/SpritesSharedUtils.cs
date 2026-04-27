@@ -1,7 +1,7 @@
 ﻿using _Project.Scripts.Runtime.Features.Graphics.Sprites.Shared.Enums;
 using _Project.Scripts.Runtime.Features.Physics.Moving.Shared.Enums;
 
-namespace _Project.Scripts.Runtime.Shared.Utils.Graphics.Sprites
+namespace _Project.Scripts.Runtime.Shared.Utils.Features.Graphics.Sprites
 {
     public static class SpritesSharedUtils
     {

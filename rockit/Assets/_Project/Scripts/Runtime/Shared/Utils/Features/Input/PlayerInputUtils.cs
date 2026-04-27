@@ -4,37 +4,37 @@ using _Project.Scripts.Runtime.Features.Input.Services;
 using _Project.Scripts.Runtime.Shared.Extensions;
 using Leopotam.EcsProto;
 
-namespace _Project.Scripts.Runtime.Shared.Utils.Input
+namespace _Project.Scripts.Runtime.Shared.Utils.Features.Input
 {
-    public static class PlatformsInputUtils
+    public static class PlayerInputUtils
     {
-        public static void EnableInput(PlatformsInputService service, PlatformsInputConfig config)
+        public static void EnableInput(PlayerInputService service, PlayerInputConfig config)
         {
             service.Enabled = true;
-            config.Position.Enable();
-            config.Rotation.Enable();
-            config.Scale.Enable();
+            config.Walk.Enable();
+            config.Jump.Enable();
+            config.Dash.Enable();
         }
 
-        public static void DisableInput(PlatformsInputService service, PlatformsInputConfig config)
+        public static void DisableInput(PlayerInputService service, PlayerInputConfig config)
         {
             service.Enabled = false;
-            config.Position.Disable();
-            config.Rotation.Disable();
-            config.Scale.Disable();
+            config.Walk.Disable();
+            config.Jump.Disable();
+            config.Dash.Disable();
         }
         
         public static ProtoEntity CreateEnableRequest(RequestsAspect aspect)
         {
             var entity = aspect.CreateRequest();
-            aspect.InputRequestsAspect.EnablePlatformsInputRequestPool.Add(entity);
+            aspect.InputRequestsAspect.EnablePlayerInputRequestPool.Add(entity);
             return entity;
         }
         
         public static ProtoEntity CreateDisableRequest(RequestsAspect aspect)
         {
             var entity = aspect.CreateRequest();
-            aspect.InputRequestsAspect.DisablePlatformsInputRequestPool.Add(entity);
+            aspect.InputRequestsAspect.DisablePlayerInputRequestPool.Add(entity);
             return entity;
         }
     }

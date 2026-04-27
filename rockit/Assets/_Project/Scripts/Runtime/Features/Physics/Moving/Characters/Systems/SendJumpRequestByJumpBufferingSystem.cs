@@ -1,7 +1,7 @@
 ﻿using _Project.Scripts.Runtime.Core.Infrastructure.Requests;
 using _Project.Scripts.Runtime.Core.Infrastructure.Requests.World;
 using _Project.Scripts.Runtime.Shared.Utils;
-using _Project.Scripts.Runtime.Shared.Utils.Moving;
+using _Project.Scripts.Runtime.Shared.Utils.Features.Physics.Moving;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 

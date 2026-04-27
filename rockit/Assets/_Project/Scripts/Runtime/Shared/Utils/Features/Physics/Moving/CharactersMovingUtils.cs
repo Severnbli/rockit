@@ -10,7 +10,7 @@ using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 using UnityEngine;
 
-namespace _Project.Scripts.Runtime.Shared.Utils.Moving
+namespace _Project.Scripts.Runtime.Shared.Utils.Features.Physics.Moving
 {
     public static class CharactersMovingUtils
     {

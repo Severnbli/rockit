@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace _Project.Scripts.Runtime.Shared.Utils
+namespace _Project.Scripts.Runtime.Shared.Utils.Shared
 {
     public static class DebugUtils
     {
