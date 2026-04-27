@@ -20,7 +20,6 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Shared
         public readonly ProtoPool<UnityUguiInputChangeEvent> InputChangeEvent;
         public readonly ProtoPool<UnityUguiInputEndEvent> InputEndEvent;
         public readonly ProtoPool<UnityUguiUpEvent> UpEvent;
-
         public readonly ProtoIt ClickEvents = new(It.Inc<UnityUguiClickEvent>());
         public readonly ProtoIt DownEvents = new(It.Inc<UnityUguiDownEvent>());
         public readonly ProtoIt DragEndEvents = new(It.Inc<UnityUguiDragEndEvent>());
