@@ -13,11 +13,13 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Shared
         public readonly ProtoPool<CharacterTag> CharacterTagPool;
         public readonly ProtoPool<GameObjectComponent> GameObjectComponentPool;
         public readonly ProtoPool<IndexableTag> IndexableTagPool;
+        public readonly ProtoPool<CloseAppTag> CloseAppTagPool;
         public readonly ProtoIt Players = new (It.Inc<PlayerTag>());
         public readonly ProtoIt Initializables = new (It.Inc<InitializableTag>());
         public readonly ProtoIt Characters = new (It.Inc<CharacterTag>());
         public readonly ProtoIt GameObjects = new (It.Inc<GameObjectComponent>());
         public readonly ProtoIt Indexables = new (It.Inc<IndexableTag>());
         public readonly ProtoIt IndexableGameObjects = new (It.Inc<IndexableTag, GameObjectComponent>());
+        public readonly ProtoIt CloseAppTags = new (It.Inc<CloseAppTag>());
     }
 }
