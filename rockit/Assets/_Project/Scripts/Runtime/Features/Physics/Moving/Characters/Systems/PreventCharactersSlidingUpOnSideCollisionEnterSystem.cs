@@ -1,7 +1,6 @@
 ﻿using _Project.Scripts.Runtime.Core.Infrastructure.Shared.Services;
 using _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Configs;
 using _Project.Scripts.Runtime.Features.Physics.Shared;
-using _Project.Scripts.Runtime.Shared.Extensions;
 using _Project.Scripts.Runtime.Shared.Extensions.Infrastructure;
 using _Project.Scripts.Runtime.Shared.Extensions.Shared;
 using Leopotam.EcsProto;

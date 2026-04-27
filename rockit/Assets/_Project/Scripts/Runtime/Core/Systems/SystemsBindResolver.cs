@@ -2,7 +2,6 @@
 using _Project.Scripts.Runtime.Core.Bootstrap.Domain;
 using _Project.Scripts.Runtime.Core.Infrastructure.Requests;
 using _Project.Scripts.Runtime.Core.Infrastructure.Requests.World;
-using _Project.Scripts.Runtime.Shared.Callback;
 using _Project.Scripts.Runtime.Shared.Events;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;

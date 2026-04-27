@@ -2,7 +2,6 @@
 using _Project.Scripts.Runtime.Features.Graphics.Animations.Characters.Configs;
 using _Project.Scripts.Runtime.Features.Graphics.Animations.Shared;
 using _Project.Scripts.Runtime.Features.Physics.Shared;
-using _Project.Scripts.Runtime.Shared.Extensions;
 using _Project.Scripts.Runtime.Shared.Extensions.Shared;
 using Leopotam.EcsProto.QoL;
 

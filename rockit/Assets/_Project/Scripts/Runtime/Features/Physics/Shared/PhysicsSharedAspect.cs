@@ -1,9 +1,7 @@
 ﻿using _Project.Scripts.Runtime.Core.Infrastructure.Shared.Tags;
 using _Project.Scripts.Runtime.Features.Physics.Shared.Components;
-using _Project.Scripts.Runtime.Shared.Callback.Events;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
-using Leopotam.EcsProto.Unity.Physics2D;
 
 namespace _Project.Scripts.Runtime.Features.Physics.Shared
 {
