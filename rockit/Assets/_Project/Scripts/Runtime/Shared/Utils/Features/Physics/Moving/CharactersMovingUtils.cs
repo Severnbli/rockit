@@ -6,6 +6,7 @@ using _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Configs;
 using _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Requests;
 using _Project.Scripts.Runtime.Features.Physics.Moving.Shared.Enums;
 using _Project.Scripts.Runtime.Shared.Extensions;
+using _Project.Scripts.Runtime.Shared.Extensions.Infrastructure;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 using UnityEngine;

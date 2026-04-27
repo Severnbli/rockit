@@ -1,11 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using _Project.Scripts.Runtime.Shared.Utils;
 using _Project.Scripts.Runtime.Shared.Utils.Shared;
 using Leopotam.EcsProto.Unity;
 using UnityEngine;
 
-namespace _Project.Scripts.Runtime.Shared.Extensions
+namespace _Project.Scripts.Runtime.Shared.Extensions.Shared
 {
     public static class GameObjectExtensions
     {
