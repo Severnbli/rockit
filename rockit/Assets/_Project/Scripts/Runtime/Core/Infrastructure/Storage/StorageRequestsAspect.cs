@@ -9,6 +9,8 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Storage
     public sealed class StorageRequestsAspect : ProtoAspectInject
     {
         public readonly ProtoPool<SaveTrackedDataRequest> SaveTrackedDataRequestPool;
+        public readonly ProtoPool<LoadTrackedDataRequest> LoadTrackedDataRequestPool;
         public readonly ProtoIt SaveTrackedDataRequests = new (It.Inc<RequestComponent, ActiveRequestTag, RunRequestTag, SaveTrackedDataRequest>());
+        public readonly ProtoIt LoadTrackedDataRequests = new (It.Inc<RequestComponent, ActiveRequestTag, RunRequestTag, LoadTrackedDataRequest>());
     }
 }
