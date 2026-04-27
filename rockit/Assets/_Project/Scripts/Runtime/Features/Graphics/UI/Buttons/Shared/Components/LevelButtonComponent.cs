@@ -1,12 +1,12 @@
 ﻿using System;
+using _Project.Scripts.Runtime.Features.Graphics.UI.Buttons.Shared.Monos;
 using Leopotam.EcsProto.Unity;
-using TMPro;
 
 namespace _Project.Scripts.Runtime.Features.Graphics.UI.Buttons.Shared.Components
 {
     [Serializable, ProtoUnityAuthoring]
     public struct LevelButtonComponent
     {
-        public TextMeshProUGUI IdText;
+        public LevelButton LevelButton;
     }
 }
