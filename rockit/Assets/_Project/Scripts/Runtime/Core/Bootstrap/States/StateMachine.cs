@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using _Project.Scripts.Runtime.Core.Bootstrap.States.Project;
 using _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes;
-using _Project.Scripts.Runtime.Shared.Extensions;
-using _Project.Scripts.Runtime.Shared.Utils;
+using _Project.Scripts.Runtime.Shared.Extensions.Shared;
+using _Project.Scripts.Runtime.Shared.Utils.Shared;
 using Cysharp.Threading.Tasks;
 
 namespace _Project.Scripts.Runtime.Core.Bootstrap.States

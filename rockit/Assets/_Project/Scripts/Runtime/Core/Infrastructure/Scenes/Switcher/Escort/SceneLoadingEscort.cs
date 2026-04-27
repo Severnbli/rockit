@@ -1,7 +1,8 @@
-﻿using UnityEngine;
-using System.Threading;
-using _Project.Scripts.Runtime.Shared.Extensions;
+﻿using System.Threading;
+using _Project.Scripts.Runtime.Shared.Extensions.Infrastructure;
+using _Project.Scripts.Runtime.Shared.Extensions.Shared;
 using Cysharp.Threading.Tasks;
+using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Core.Infrastructure.Scenes.Switcher.Escort
 {

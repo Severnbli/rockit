@@ -3,7 +3,7 @@ using _Project.Scripts.Runtime.Core.Infrastructure.Requests.World;
 using _Project.Scripts.Runtime.Features.Graphics.Animations.Characters.Configs;
 using _Project.Scripts.Runtime.Features.Graphics.Animations.Shared;
 using _Project.Scripts.Runtime.Features.Physics.Moving.Characters;
-using _Project.Scripts.Runtime.Shared.Extensions;
+using _Project.Scripts.Runtime.Shared.Extensions.Infrastructure;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 

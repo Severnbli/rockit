@@ -1,7 +1,7 @@
 ﻿using _Project.Scripts.Runtime.Core.Infrastructure.Objects.Domain;
 using _Project.Scripts.Runtime.Core.Infrastructure.Objects.Lifecycle.Pools.Collections;
 using _Project.Scripts.Runtime.Core.Infrastructure.Shared.Services;
-using _Project.Scripts.Runtime.Shared.Extensions;
+using _Project.Scripts.Runtime.Shared.Extensions.Shared;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 using UnityEngine;

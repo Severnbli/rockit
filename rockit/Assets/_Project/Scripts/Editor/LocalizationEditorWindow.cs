@@ -2,7 +2,7 @@
 using System.IO;
 using System.Linq;
 using _Project.Scripts.Runtime.Core.Infrastructure.Localization.Types;
-using _Project.Scripts.Runtime.Shared.Utils;
+using _Project.Scripts.Runtime.Shared.Utils.Infrastructure;
 using Sirenix.OdinInspector;
 using Sirenix.OdinInspector.Editor;
 using UnityEditor;

@@ -1,7 +1,6 @@
 ﻿using _Project.Scripts.Runtime.Features.Physics.Shared;
-using _Project.Scripts.Runtime.Shared.Extensions;
-using _Project.Scripts.Runtime.Shared.Utils;
-using _Project.Scripts.Runtime.Shared.Utils.Moving;
+using _Project.Scripts.Runtime.Shared.Extensions.Shared;
+using _Project.Scripts.Runtime.Shared.Utils.Features.Physics.Moving;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 

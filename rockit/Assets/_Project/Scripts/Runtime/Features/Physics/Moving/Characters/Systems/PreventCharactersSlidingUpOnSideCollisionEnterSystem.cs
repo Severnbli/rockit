@@ -1,7 +1,8 @@
 ﻿using _Project.Scripts.Runtime.Core.Infrastructure.Shared.Services;
 using _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Configs;
 using _Project.Scripts.Runtime.Features.Physics.Shared;
-using _Project.Scripts.Runtime.Shared.Extensions;
+using _Project.Scripts.Runtime.Shared.Extensions.Infrastructure;
+using _Project.Scripts.Runtime.Shared.Extensions.Shared;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 
@@ -10,6 +11,7 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Systems
     public sealed class PreventCharactersSlidingUpOnSideCollisionEnterSystem : IProtoInitSystem, IProtoRunSystem
     {
         [DI] private readonly PhysicsSharedAspect _psAspect;
+        [DI] private readonly PhysicsEventsAspect _peAspect;
         private readonly SharedCharacterMovingConfig _smConfig;
         private readonly SharedIndexService _siService;
         private ProtoWorld _world;
@@ -29,9 +31,9 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Systems
         {
             var goIndex = _siService.GameObjectIndex;
             
-            foreach (var e in _psAspect.CollisionEnterEvents)
+            foreach (var e in _peAspect.CollisionEnterEvents)
             {
-                ref var data = ref _psAspect.CollisionEnterEventPool.Get(e);
+                ref var data = ref _peAspect.CollisionEnterEventPool.Get(e);
                 
                 if (!goIndex.TryGetEntityFromIndex(data.Sender, _world, out var tarE)) continue;
 
