@@ -1,6 +1,5 @@
 ﻿using _Project.Scripts.Runtime.Features.Input.Configs;
 using _Project.Scripts.Runtime.Features.Input.Services;
-using _Project.Scripts.Runtime.Shared.Extensions;
 using _Project.Scripts.Runtime.Shared.Extensions.Features.Input;
 using Leopotam.EcsProto;
 using UnityEngine;

@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using _Project.Scripts.Runtime.Core.Infrastructure.Localization;
 using _Project.Scripts.Runtime.Core.Infrastructure.Localization.Requests;
 using _Project.Scripts.Runtime.Core.Infrastructure.Localization.Types;
 using _Project.Scripts.Runtime.Core.Infrastructure.Requests;
-using _Project.Scripts.Runtime.Shared.Extensions;
 using _Project.Scripts.Runtime.Shared.Extensions.Infrastructure;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
@@ -17,15 +17,15 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Infrastructure
     {
         public static string GetLanguageDataPath()
         {
-            return System.IO.Path.Combine(Application.streamingAssetsPath, 
+            return Path.Combine(Application.streamingAssetsPath, 
                 $"{LocalizationContracts.LanguageDataFileName}.json");
         }
 
         public static void WriteLanguageData(string json)
         {
             var path = GetLanguageDataPath();
-            System.IO.Directory.CreateDirectory(System.IO.Path.GetDirectoryName(path) ?? "");
-            System.IO.File.WriteAllText(path, json);
+            Directory.CreateDirectory(Path.GetDirectoryName(path) ?? "");
+            File.WriteAllText(path, json);
         }
 
         public static void WriteLanguageData(List<LanguageData> languageData)
@@ -37,7 +37,7 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Infrastructure
         public static string GetLanguageDataJson()
         {
             var path = GetLanguageDataPath();
-            return !System.IO.File.Exists(path) ? "" : System.IO.File.ReadAllText(path);
+            return !File.Exists(path) ? "" : File.ReadAllText(path);
         }
 
         public static List<LanguageData> GetLanguageDataList()
