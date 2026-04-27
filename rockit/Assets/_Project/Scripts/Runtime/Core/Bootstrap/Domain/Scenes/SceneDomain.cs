@@ -1,10 +1,12 @@
 ﻿using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.Animations;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.Sprites;
+using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.UI.Buttons;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.UI.Text;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Physics;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Physics.Moving;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure;
 using _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes;
+using _Project.Scripts.Runtime.Features.Graphics.UI.Buttons.Shared;
 
 namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Scenes
 {
@@ -28,6 +30,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Scenes
             TryRegisterModule<CharactersAnimationsModule>();
             TryRegisterModule<SpritesSharedModule>();
             TryRegisterModule<TextSharedModule>();
+            TryRegisterModule<ButtonsSharedModule>();
         }
     }
 }
