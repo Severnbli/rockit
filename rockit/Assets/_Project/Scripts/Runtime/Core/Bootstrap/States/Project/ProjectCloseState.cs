@@ -1,4 +1,5 @@
 ﻿using Cysharp.Threading.Tasks;
+using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Core.Bootstrap.States.Project
 {
@@ -6,6 +7,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States.Project
     {
         public async UniTask OnEnter()
         {
+            Application.Quit();
             await UniTask.CompletedTask;
         }
 
