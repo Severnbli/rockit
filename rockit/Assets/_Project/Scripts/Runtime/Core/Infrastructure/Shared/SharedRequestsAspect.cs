@@ -9,7 +9,9 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Shared
     public sealed class SharedRequestsAspect : ProtoAspectInject
     {
         public readonly ProtoPool<InitializeRequest> InitializeRequestPool;
-        public readonly ProtoIt InitializeRunRequests = new(It.Inc<RequestComponent, ActiveRequestTag, RunRequestTag, InitializeRequest>());
-        public readonly ProtoIt InitializeFixedRunRequests = new(It.Inc<RequestComponent, ActiveRequestTag, FixedRunRequestTag, InitializeRequest>());
+        public readonly ProtoPool<CloseAppRequest> CloseAppRequestPool;
+        public readonly ProtoIt InitializeRunRequests = new (It.Inc<RequestComponent, ActiveRequestTag, RunRequestTag, InitializeRequest>());
+        public readonly ProtoIt InitializeFixedRunRequests = new (It.Inc<RequestComponent, ActiveRequestTag, FixedRunRequestTag, InitializeRequest>());
+        public readonly ProtoIt CloseAppRequests = new (It.Inc<RequestComponent, ActiveRequestTag, RunRequestTag, CloseAppRequest>());
     }
 }
