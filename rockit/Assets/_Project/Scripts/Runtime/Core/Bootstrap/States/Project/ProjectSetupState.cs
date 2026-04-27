@@ -14,12 +14,12 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States.Project
 
         public async UniTask OnEnter()
         {
+            _sMachine.ChangeState<ISceneSetupState>().Forget();
             await UniTask.CompletedTask;
         }
 
         public async UniTask OnLeave()
         {
-            _sMachine.ChangeState<ISceneSetupState>().Forget();
             await UniTask.CompletedTask;
         }
     }
