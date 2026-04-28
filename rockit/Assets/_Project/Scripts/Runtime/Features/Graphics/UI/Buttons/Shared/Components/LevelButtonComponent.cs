@@ -7,6 +7,7 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Buttons.Shared.Component
     [Serializable, ProtoUnityAuthoring]
     public struct LevelButtonComponent
     {
+        public int Id;
         public LevelButtonView View;
     }
 }
