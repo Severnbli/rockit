@@ -1,6 +1,7 @@
-﻿using _Project.Scripts.Runtime.Core.Infrastructure.Storage.Entities;
+﻿using _Project.Scripts.Runtime.Core.Infrastructure.Storage.Core;
+using _Project.Scripts.Runtime.Core.Infrastructure.Storage.Entities;
 
-namespace _Project.Scripts.Runtime.Core.Infrastructure.Storage.Core
+namespace _Project.Scripts.Runtime.Core.Infrastructure.Storage
 {
     public class DataProvider : BaseDataProvider
     {
