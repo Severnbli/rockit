@@ -38,8 +38,8 @@ jobs:
             const hours = Math.floor(durationMs / 3600000);
             const minutes = Math.floor((durationMs % 3600000) / 60000);
             const days = (durationMs / 86400000).toFixed(1);
-            const effectiveDays = Math.max(durationMs / 86400000, 1);
-            const commitsPerDay = (lines.length / effectiveDays).toFixed(2);
+            const calendarDays = Math.ceil(durationMs / 86400000) || 1;
+            const commitsPerDay = (lines.length / calendarDays).toFixed(2);
 
             const toUTCPlus3 = (date) => {
               const offset = 3 * 60;
