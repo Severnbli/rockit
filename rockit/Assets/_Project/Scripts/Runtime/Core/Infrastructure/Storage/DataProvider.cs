@@ -6,6 +6,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Storage
     public class DataProvider : BaseDataProvider
     {
         public Language Language;
+        public GameSceneData GameSceneData;
         
         public DataProvider(IDataStorageKeyProvider keyProvider, IDataStorage dataStorage) : base(keyProvider, dataStorage)
         {
@@ -16,6 +17,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Storage
             base.LoadTracked();
 
             Language = Load<Language>();
+            GameSceneData = Load<GameSceneData>();
         }
 
         public override void SaveTracked()
@@ -23,6 +25,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Storage
             base.SaveTracked();
             
             Save(Language);
+            Save(GameSceneData);
         }
     }
 }
