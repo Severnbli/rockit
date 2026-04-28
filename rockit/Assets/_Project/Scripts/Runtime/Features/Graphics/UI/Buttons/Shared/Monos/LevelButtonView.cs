@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Features.Graphics.UI.Buttons.Shared.Monos
 {
-    public class LevelButton : MonoBehaviour
+    public class LevelButtonView : MonoBehaviour
     {
         [SerializeField] private TextMeshProUGUI _idText;
         
