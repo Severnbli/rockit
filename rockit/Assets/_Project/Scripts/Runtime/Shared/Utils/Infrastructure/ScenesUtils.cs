@@ -23,5 +23,10 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Infrastructure
         {
             return aspect.CreateRequest(aspect.ScenesRequestsAspect.SwitchSceneRequestPool, prepared: prepared);
         }
+
+        public static ProtoEntity CreateLoadLevelRequest(RequestsAspect aspect, LoadLevelRequest prepared)
+        {
+            return aspect.CreateRequest(aspect.ScenesRequestsAspect.LoadLevelRequestPool, prepared: prepared);
+        }
     }
 }
