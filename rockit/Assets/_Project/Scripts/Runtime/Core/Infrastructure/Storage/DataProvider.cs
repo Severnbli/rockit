@@ -1,10 +1,12 @@
-﻿using _Project.Scripts.Runtime.Core.Infrastructure.Storage.Entities;
+﻿using _Project.Scripts.Runtime.Core.Infrastructure.Storage.Core;
+using _Project.Scripts.Runtime.Core.Infrastructure.Storage.Entities;
 
-namespace _Project.Scripts.Runtime.Core.Infrastructure.Storage.Core
+namespace _Project.Scripts.Runtime.Core.Infrastructure.Storage
 {
     public class DataProvider : BaseDataProvider
     {
         public Language Language;
+        public GameSceneData GameSceneData;
         
         public DataProvider(IDataStorageKeyProvider keyProvider, IDataStorage dataStorage) : base(keyProvider, dataStorage)
         {
@@ -15,6 +17,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Storage.Core
             base.LoadTracked();
 
             Language = Load<Language>();
+            GameSceneData = Load<GameSceneData>();
         }
 
         public override void SaveTracked()
@@ -22,6 +25,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Storage.Core
             base.SaveTracked();
             
             Save(Language);
+            Save(GameSceneData);
         }
     }
 }
