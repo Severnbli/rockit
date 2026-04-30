@@ -1,18 +1,28 @@
 ﻿using System;
 using DG.Tweening;
+using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Features.Graphics.Animations.Shared.Types
 {
     [Serializable]
     public class TweenSettings
     {
-        public bool FromExact = false;
-        public bool Relative = false;
-        public float Duration = 0.5f;
-        public bool SpeedBased = false;
-        public float Delay = 0f;
-        public Ease Ease = Ease.Unset;
-        public int Loops = 1;
-        public LoopType LoopType = LoopType.Restart;
+        [SerializeField] private bool _fromExact = false;
+        [SerializeField] private bool _relative = false;
+        [SerializeField] private float _duration = 0.5f;
+        [SerializeField] private bool _speedBased = false;
+        [SerializeField] private float _delay = 0f;
+        [SerializeField] private Ease _ease = Ease.Unset;
+        [SerializeField] private int _loops = 1;
+        [SerializeField] private LoopType _loopType = LoopType.Restart;
+        
+        public bool FromExact => _fromExact;
+        public bool Relative => _relative;
+        public float Duration => _duration;
+        public bool SpeedBased => _speedBased;
+        public float Delay => _delay;
+        public Ease Ease => _ease;
+        public int Loops => _loops;
+        public LoopType LoopType => _loopType;
     }
 }
