@@ -9,8 +9,8 @@ namespace _Project.Scripts.Runtime.Shared.Extensions.Features.Graphics.Animation
 {
     public static class TweenExtensions
     {
-        public static TweenerCore<T1, T2, T3> UseSettings<T1, T2, T3>(this TweenerCore<T1, T2, T3> tween,
-            TweenSettings settings)
+        public static TweenerCore<T1, T2, T3> UseSettings<T1, T2, T3, T4>(this TweenerCore<T1, T2, T3> tween,
+            TweenSettings<T4> settings)
             where T3 : struct, IPlugOptions
         {
             if (tween is not { active: true }) return tween;
