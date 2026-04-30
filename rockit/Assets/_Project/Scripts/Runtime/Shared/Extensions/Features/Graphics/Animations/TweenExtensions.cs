@@ -18,7 +18,7 @@ namespace _Project.Scripts.Runtime.Shared.Extensions.Features.Graphics.Animation
                 .SetRelative(settings.Relative)
                 .SetSpeedBased(settings.SpeedBased)
                 .SetDelay(settings.Delay)
-                .SetEase(settings.Easing)
+                .SetEase(settings.Ease)
                 .SetLoops(settings.Loops, settings.LoopType);
         }
         
