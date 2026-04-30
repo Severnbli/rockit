@@ -26,49 +26,67 @@ namespace _Project.Scripts.Runtime.Shared.Extensions.Features.Graphics.Animation
         public static Tween MoveTween(this Transform transform,
             Vector3TweenSettings settings)
         {
-            return transform
+            var tween = transform
                 .DOMove(settings.To, settings.Duration)
                 .UseSettings(settings);
+            if (settings.FromExact) tween.From(settings.From);
+            
+            return tween;
         }
         
         public static Tween RotTween(this Transform transform,
             Vector3TweenSettings settings)
         {
-            return transform
+            var tween = transform
                 .DORotate(settings.To, settings.Duration)
                 .UseSettings(settings);
+            if (settings.FromExact) tween.From(settings.From);
+            
+            return tween;
         }
 
         public static Tween ScaleTween(this Transform transform,
             FloatTweenSettings settings)
         {
-            return transform
+            var tween = transform
                 .DOScale(settings.To, settings.Duration)
                 .UseSettings(settings);
+            if (settings.FromExact) tween.From(settings.From);
+            
+            return tween;
         }
         
         public static Tween ScaleTween(this Transform transform,
             Vector3TweenSettings settings)
         {
-            return transform
+            var tween = transform
                 .DOScale(settings.To, settings.Duration)
                 .UseSettings(settings);
+            if (settings.FromExact) tween.From(settings.From);
+            
+            return tween;
         }
         
         public static Tween FadeTween(this Image image,
             FloatTweenSettings settings)
         {
-            return image
+            var tween = image
                 .DOFade(settings.To, settings.Duration)
                 .UseSettings(settings);
+            if (settings.FromExact) tween.From(settings.From);
+            
+            return tween;
         }
         
         public static Tween FadeTween(this CanvasGroup cg,
             FloatTweenSettings settings)
         {
-            return cg
+            var tween = cg
                 .DOFade(settings.To, settings.Duration)
                 .UseSettings(settings);
+            if (settings.FromExact) tween.From(settings.From);
+            
+            return tween;
         }
     }
 }
