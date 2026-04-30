@@ -2,6 +2,7 @@
 using DG.Tweening;
 using DG.Tweening.Core;
 using DG.Tweening.Plugins.Options;
+using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Shared.Extensions.Features.Graphics.Animations
 {
@@ -19,6 +20,46 @@ namespace _Project.Scripts.Runtime.Shared.Extensions.Features.Graphics.Animation
                 .SetDelay(settings.Delay)
                 .SetEase(settings.Easing)
                 .SetLoops(settings.Loops, settings.LoopType);
+        }
+        
+        public static TweenerCore<Vector3, Vector3, VectorOptions> MoveTween(this Transform transform,
+            Vector3TweenSettings settings)
+        {
+            if (transform == null) return null;
+            
+            return transform
+                .DOMove(settings.To, settings.Duration)
+                .UseSettings(settings);
+        }
+        
+        public static TweenerCore<Quaternion, Vector3, QuaternionOptions> RotTween(this Transform transform,
+            Vector3TweenSettings settings)
+        {
+            if (transform == null) return null;
+            
+            return transform
+                .DORotate(settings.To, settings.Duration)
+                .UseSettings(settings);
+        }
+
+        public static TweenerCore<Vector3, Vector3, VectorOptions> ScaleTween(this Transform transform,
+            FloatTweenSettings settings)
+        {
+            if (transform == null) return null;
+            
+            return transform
+                .DOScale(settings.To, settings.Duration)
+                .UseSettings(settings);
+        }
+        
+        public static TweenerCore<Vector3, Vector3, VectorOptions> ScaleTween(this Transform transform,
+            Vector3TweenSettings settings)
+        {
+            if (transform == null) return null;
+            
+            return transform
+                .DOScale(settings.To, settings.Duration)
+                .UseSettings(settings);
         }
     }
 }
