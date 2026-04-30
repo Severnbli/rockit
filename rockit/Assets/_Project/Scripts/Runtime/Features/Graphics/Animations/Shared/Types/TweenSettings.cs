@@ -5,8 +5,10 @@ using UnityEngine;
 namespace _Project.Scripts.Runtime.Features.Graphics.Animations.Shared.Types
 {
     [Serializable]
-    public class TweenSettings
+    public class TweenSettings<T>
     {
+        [SerializeField] private T _to;
+        [SerializeField] private T _from;
         [SerializeField] private bool _fromExact = false;
         [SerializeField] private bool _relative = false;
         [SerializeField] private float _duration = 0.5f;
@@ -16,6 +18,8 @@ namespace _Project.Scripts.Runtime.Features.Graphics.Animations.Shared.Types
         [SerializeField] private int _loops = 1;
         [SerializeField] private LoopType _loopType = LoopType.Restart;
         
+        public T To => _to;
+        public T From => _from;
         public bool FromExact => _fromExact;
         public bool Relative => _relative;
         public float Duration => _duration;
