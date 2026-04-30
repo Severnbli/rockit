@@ -6,6 +6,8 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Monos
 {
     public class MonoWindow : MonoBehaviour
     {
+        [SerializeField] private GameObject _body;
+        
         public event Action OnOpen;
         public event Action OnClose;
 
