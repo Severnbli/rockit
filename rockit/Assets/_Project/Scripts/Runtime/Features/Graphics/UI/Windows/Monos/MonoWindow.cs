@@ -20,19 +20,19 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Monos
             Opened = true;
         }
 
-        protected virtual async UniTask PlayOpenAnimation()
-        {
-            await PlayOpenBodyAnimation();
-        }
-
-        protected virtual async UniTask PlayOpenBodyAnimation() {}
-
         public async UniTask Close()
         {
             await PlayCloseAnimation();
             OnClose?.Invoke();
             Opened = false;
         }
+
+        protected virtual async UniTask PlayOpenAnimation()
+        {
+            await PlayOpenBodyAnimation();
+        }
+
+        protected virtual async UniTask PlayOpenBodyAnimation() {}
 
         protected virtual async UniTask PlayCloseAnimation()
         {
