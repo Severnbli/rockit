@@ -12,7 +12,7 @@ namespace _Project.Scripts.Runtime.Features.Graphics.Animations.Shared.Types
         public bool SpeedBased = false;
         public float Delay = 0f;
         public Ease Easing = Ease.Unset;
-        public int Loops = 0;
+        public int Loops = 1;
         public LoopType LoopType = LoopType.Restart;
     }
 }
