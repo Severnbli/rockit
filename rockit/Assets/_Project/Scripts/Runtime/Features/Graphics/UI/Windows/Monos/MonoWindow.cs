@@ -37,7 +37,7 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Monos
 
         protected virtual async UniTask PlayOpenBodyAnimation()
         {
-            await Body.transform.ScaleTween(BodyConfig.OpenAnimation)
+            await Body.transform.ScaleTween(BodyConfig.OpenSetting)
                 .ToUniTask(cancellationToken: destroyCancellationToken);
         }
 
@@ -48,7 +48,7 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Monos
 
         protected virtual async UniTask PlayCloseBodyAnimation()
         {
-            await Body.transform.ScaleTween(BodyConfig.CloseAnimation)
+            await Body.transform.ScaleTween(BodyConfig.CloseSettings)
                 .ToUniTask(cancellationToken: destroyCancellationToken);
         }
     }
