@@ -1,5 +1,5 @@
 ﻿using System;
-using _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Configs;
+using _Project.Scripts.Runtime.Features.Graphics.Animations.Shared.Types;
 using _Project.Scripts.Runtime.Shared.Extensions.Features.Graphics.Animations;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
@@ -9,7 +9,8 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Monos
     public class MonoWindow : MonoBehaviour
     {
         [SerializeField] protected GameObject Body;
-        [SerializeField] protected WindowBodyConfig BodyConfig;
+        [SerializeField] protected FloatTweenSettings BodyOpen;
+        [SerializeField] protected FloatTweenSettings BodyClose;
         
         public event Action OnOpen;
         public event Action OnClose;
@@ -37,7 +38,7 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Monos
 
         protected virtual async UniTask PlayOpenBodyAnimation()
         {
-            await Body.transform.ScaleTween(BodyConfig.OpenSetting)
+            await Body.transform.ScaleTween(BodyOpen)
                 .ToUniTask(cancellationToken: destroyCancellationToken);
         }
 
@@ -48,7 +49,7 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Monos
 
         protected virtual async UniTask PlayCloseBodyAnimation()
         {
-            await Body.transform.ScaleTween(BodyConfig.CloseSettings)
+            await Body.transform.ScaleTween(BodyClose)
                 .ToUniTask(cancellationToken: destroyCancellationToken);
         }
     }
