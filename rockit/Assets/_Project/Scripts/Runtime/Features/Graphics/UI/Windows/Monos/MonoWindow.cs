@@ -18,7 +18,7 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Monos
             Opened = true;
         }
 
-        public virtual async UniTask PlayOpenAnimation() {}
+        protected virtual async UniTask PlayOpenAnimation() {}
 
         public async UniTask Close()
         {
@@ -27,6 +27,6 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Monos
             Opened = false;
         }
 
-        public virtual async UniTask PlayCloseAnimation() {}
+        protected virtual async UniTask PlayCloseAnimation() {}
     }
 }
