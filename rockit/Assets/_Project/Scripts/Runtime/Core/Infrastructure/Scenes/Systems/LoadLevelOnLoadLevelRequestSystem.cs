@@ -20,7 +20,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Scenes.Systems
 
         public void Run()
         {
-            var (e, ok) = ref _srAspect.LoadLevelRequests.FirstSlow();
+            var (e, ok) = _srAspect.LoadLevelRequests.FirstSlow();
             if (!ok) return;
             
             ref var llRequest = ref _srAspect.LoadLevelRequestPool.Get(e);
