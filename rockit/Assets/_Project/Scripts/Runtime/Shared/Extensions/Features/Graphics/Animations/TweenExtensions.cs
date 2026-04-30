@@ -23,7 +23,7 @@ namespace _Project.Scripts.Runtime.Shared.Extensions.Features.Graphics.Animation
                 .SetLoops(settings.Loops, settings.LoopType);
         }
         
-        public static TweenerCore<Vector3, Vector3, VectorOptions> MoveTween(this Transform transform,
+        public static Tween MoveTween(this Transform transform,
             Vector3TweenSettings settings)
         {
             return transform
@@ -31,7 +31,7 @@ namespace _Project.Scripts.Runtime.Shared.Extensions.Features.Graphics.Animation
                 .UseSettings(settings);
         }
         
-        public static TweenerCore<Quaternion, Vector3, QuaternionOptions> RotTween(this Transform transform,
+        public static Tween RotTween(this Transform transform,
             Vector3TweenSettings settings)
         {
             return transform
@@ -39,7 +39,7 @@ namespace _Project.Scripts.Runtime.Shared.Extensions.Features.Graphics.Animation
                 .UseSettings(settings);
         }
 
-        public static TweenerCore<Vector3, Vector3, VectorOptions> ScaleTween(this Transform transform,
+        public static Tween ScaleTween(this Transform transform,
             FloatTweenSettings settings)
         {
             return transform
@@ -47,7 +47,7 @@ namespace _Project.Scripts.Runtime.Shared.Extensions.Features.Graphics.Animation
                 .UseSettings(settings);
         }
         
-        public static TweenerCore<Vector3, Vector3, VectorOptions> ScaleTween(this Transform transform,
+        public static Tween ScaleTween(this Transform transform,
             Vector3TweenSettings settings)
         {
             return transform
@@ -55,7 +55,7 @@ namespace _Project.Scripts.Runtime.Shared.Extensions.Features.Graphics.Animation
                 .UseSettings(settings);
         }
         
-        public static TweenerCore<Color, Color, ColorOptions> FadeTween(this Image image,
+        public static Tween FadeTween(this Image image,
             FloatTweenSettings settings)
         {
             return image
@@ -63,7 +63,7 @@ namespace _Project.Scripts.Runtime.Shared.Extensions.Features.Graphics.Animation
                 .UseSettings(settings);
         }
         
-        public static TweenerCore<float, float, FloatOptions> FadeTween(this CanvasGroup cg,
+        public static Tween FadeTween(this CanvasGroup cg,
             FloatTweenSettings settings)
         {
             return cg
