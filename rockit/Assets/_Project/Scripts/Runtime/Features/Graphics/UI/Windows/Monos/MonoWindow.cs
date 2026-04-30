@@ -13,12 +13,20 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Monos
 
         public async UniTask Open()
         {
-            
+            await PlayOpenAnimation();
+            OnOpen?.Invoke();
+            Opened = true;
         }
+
+        public virtual async UniTask PlayOpenAnimation() {}
 
         public async UniTask Close()
         {
-            
+            await PlayCloseAnimation();
+            OnClose?.Invoke();
+            Opened = false;
         }
+
+        public virtual async UniTask PlayCloseAnimation() {}
     }
 }
