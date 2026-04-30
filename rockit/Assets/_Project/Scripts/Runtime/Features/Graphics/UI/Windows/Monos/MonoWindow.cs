@@ -20,7 +20,12 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Monos
             Opened = true;
         }
 
-        protected virtual async UniTask PlayOpenAnimation() {}
+        protected virtual async UniTask PlayOpenAnimation()
+        {
+            await PlayOpenBodyAnimation();
+        }
+
+        protected virtual async UniTask PlayOpenBodyAnimation() {}
 
         public async UniTask Close()
         {
@@ -29,6 +34,11 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Monos
             Opened = false;
         }
 
-        protected virtual async UniTask PlayCloseAnimation() {}
+        protected virtual async UniTask PlayCloseAnimation()
+        {
+            await PlayCloseBodyAnimation();
+        }
+        
+        protected virtual async UniTask PlayCloseBodyAnimation() {}
     }
 }
