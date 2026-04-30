@@ -72,5 +72,13 @@ namespace _Project.Scripts.Runtime.Shared.Extensions.Features.Graphics.Animation
                 .DOFade(settings.To, settings.Duration)
                 .UseSettings(settings);
         }
+        
+        public static TweenerCore<float, float, FloatOptions> FadeTween(this CanvasGroup cg,
+            FloatTweenSettings settings)
+        {
+            return cg
+                .DOFade(settings.To, settings.Duration)
+                .UseSettings(settings);
+        }
     }
 }
