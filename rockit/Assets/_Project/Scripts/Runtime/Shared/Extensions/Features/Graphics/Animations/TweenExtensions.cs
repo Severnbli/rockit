@@ -26,8 +26,6 @@ namespace _Project.Scripts.Runtime.Shared.Extensions.Features.Graphics.Animation
         public static TweenerCore<Vector3, Vector3, VectorOptions> MoveTween(this Transform transform,
             Vector3TweenSettings settings)
         {
-            if (transform == null) return null;
-            
             return transform
                 .DOMove(settings.To, settings.Duration)
                 .UseSettings(settings);
@@ -36,8 +34,6 @@ namespace _Project.Scripts.Runtime.Shared.Extensions.Features.Graphics.Animation
         public static TweenerCore<Quaternion, Vector3, QuaternionOptions> RotTween(this Transform transform,
             Vector3TweenSettings settings)
         {
-            if (transform == null) return null;
-            
             return transform
                 .DORotate(settings.To, settings.Duration)
                 .UseSettings(settings);
@@ -46,8 +42,6 @@ namespace _Project.Scripts.Runtime.Shared.Extensions.Features.Graphics.Animation
         public static TweenerCore<Vector3, Vector3, VectorOptions> ScaleTween(this Transform transform,
             FloatTweenSettings settings)
         {
-            if (transform == null) return null;
-            
             return transform
                 .DOScale(settings.To, settings.Duration)
                 .UseSettings(settings);
@@ -56,8 +50,6 @@ namespace _Project.Scripts.Runtime.Shared.Extensions.Features.Graphics.Animation
         public static TweenerCore<Vector3, Vector3, VectorOptions> ScaleTween(this Transform transform,
             Vector3TweenSettings settings)
         {
-            if (transform == null) return null;
-            
             return transform
                 .DOScale(settings.To, settings.Duration)
                 .UseSettings(settings);
@@ -66,8 +58,6 @@ namespace _Project.Scripts.Runtime.Shared.Extensions.Features.Graphics.Animation
         public static TweenerCore<Color, Color, ColorOptions> FadeTween(this Image image,
             FloatTweenSettings settings)
         {
-            if (image == null) return null;
-            
             return image
                 .DOFade(settings.To, settings.Duration)
                 .UseSettings(settings);
