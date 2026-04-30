@@ -1,5 +1,6 @@
 ﻿using System;
 using _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Configs;
+using _Project.Scripts.Runtime.Shared.Extensions.Features.Graphics.Animations;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
@@ -34,13 +35,21 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Monos
             await PlayOpenBodyAnimation();
         }
 
-        protected virtual async UniTask PlayOpenBodyAnimation() {}
+        protected virtual async UniTask PlayOpenBodyAnimation()
+        {
+            await Body.transform.ScaleTween(BodyConfig.OpenAnimation)
+                .ToUniTask(cancellationToken: destroyCancellationToken);
+        }
 
         protected virtual async UniTask PlayCloseAnimation()
         {
             await PlayCloseBodyAnimation();
         }
-        
-        protected virtual async UniTask PlayCloseBodyAnimation() {}
+
+        protected virtual async UniTask PlayCloseBodyAnimation()
+        {
+            await Body.transform.ScaleTween(BodyConfig.CloseAnimation)
+                .ToUniTask(cancellationToken: destroyCancellationToken);
+        }
     }
 }
