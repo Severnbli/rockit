@@ -1,4 +1,5 @@
 ﻿using System;
+using _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Configs;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
@@ -7,6 +8,7 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Monos
     public class MonoWindow : MonoBehaviour
     {
         [SerializeField] protected GameObject Body;
+        [SerializeField] protected WindowBodyConfig BodyConfig;
         
         public event Action OnOpen;
         public event Action OnClose;
