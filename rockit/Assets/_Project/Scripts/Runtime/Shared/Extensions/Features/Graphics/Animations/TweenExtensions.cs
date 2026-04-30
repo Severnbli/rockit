@@ -3,6 +3,7 @@ using DG.Tweening;
 using DG.Tweening.Core;
 using DG.Tweening.Plugins.Options;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace _Project.Scripts.Runtime.Shared.Extensions.Features.Graphics.Animations
 {
@@ -59,6 +60,16 @@ namespace _Project.Scripts.Runtime.Shared.Extensions.Features.Graphics.Animation
             
             return transform
                 .DOScale(settings.To, settings.Duration)
+                .UseSettings(settings);
+        }
+        
+        public static TweenerCore<Color, Color, ColorOptions> FadeTween(this Image image,
+            FloatTweenSettings settings)
+        {
+            if (image == null) return null;
+            
+            return image
+                .DOFade(settings.To, settings.Duration)
                 .UseSettings(settings);
         }
     }
