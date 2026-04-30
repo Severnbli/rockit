@@ -5,10 +5,10 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Configs
 {
     public class WindowBodyConfig : ScriptableObject
     {
-        [SerializeField] private FloatTweenSettings _openAnimation;
-        [SerializeField] private FloatTweenSettings _closeAnimation;
+        [SerializeField] private FloatTweenSettings _openSetting;
+        [SerializeField] private FloatTweenSettings _closeSettings;
         
-        public FloatTweenSettings OpenAnimation => _openAnimation;
-        public FloatTweenSettings CloseAnimation => _closeAnimation;
+        public FloatTweenSettings OpenSetting => _openSetting;
+        public FloatTweenSettings CloseSettings => _closeSettings;
     }
 }
