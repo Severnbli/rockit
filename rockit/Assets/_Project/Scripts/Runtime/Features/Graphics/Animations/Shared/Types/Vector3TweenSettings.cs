@@ -6,7 +6,10 @@ namespace _Project.Scripts.Runtime.Features.Graphics.Animations.Shared.Types
     [Serializable]
     public class Vector3TweenSettings : TweenSettings
     {
-        public Vector3 To;
-        public Vector3 From;
+        [SerializeField] private Vector3 _to;
+        [SerializeField] private Vector3 _from;
+
+        public Vector3 To => _to;
+        public Vector3 From => _from;
     }
 }
