@@ -13,6 +13,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States
         protected IState ActiveState;
         protected readonly Dictionary<Type, IState> ProjectStates = new();
         protected readonly Dictionary<Type, IState> SceneStates = new();
+        protected readonly HashSet<IModalState> ActiveModalStates = new();
         
         public bool Inited { get; private set; } = false;
 
