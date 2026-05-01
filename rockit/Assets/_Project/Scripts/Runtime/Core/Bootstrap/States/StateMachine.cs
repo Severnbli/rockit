@@ -67,7 +67,9 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States
 
         public async UniTask EnterModalState<T>() where T : IState
         {
-            await UniTask.CompletedTask;
+            if (!TryFindState<T>(out var state)) return;
+            
+            await EnterModalState(state);
         }
 
         public async UniTask EnterModalState(IState state)
