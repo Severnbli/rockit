@@ -47,15 +47,15 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Types
             await PlayOpenBodyAnimation();
         }
 
+        protected virtual async UniTask PlayCloseAnimation()
+        {
+            await PlayCloseBodyAnimation();
+        }
+
         protected virtual async UniTask PlayOpenBodyAnimation()
         {
             await _mbWindow.Body.transform.ScaleTween(_bwConfig.BodyOpen)
                 .ToUniTask(cancellationToken: Ct);
-        }
-
-        protected virtual async UniTask PlayCloseAnimation()
-        {
-            await PlayCloseBodyAnimation();
         }
 
         protected virtual async UniTask PlayCloseBodyAnimation()
