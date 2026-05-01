@@ -1,6 +1,7 @@
 ﻿using System.Threading;
 using _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Configs;
 using _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Monos;
+using Cysharp.Threading.Tasks;
 
 namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Types
 {
@@ -16,6 +17,32 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Types
         {
             _mfWindow = window;
             _fwConfig = fwConfig;
+        }
+
+        protected override UniTask PlayOpenAnimation()
+        {
+            return UniTask.WhenAll(
+                base.PlayOpenAnimation(),
+                PlayFadeOpenAnimation()
+            );
+        }
+
+        protected override UniTask PlayCloseAnimation()
+        {
+            return UniTask.WhenAll(
+                base.PlayCloseAnimation(),
+                PlayFadeCloseAnimation()
+            );
+        }
+
+        protected virtual async UniTask PlayFadeOpenAnimation()
+        {
+            
+        }
+
+        protected virtual async UniTask PlayFadeCloseAnimation()
+        {
+            
         }
     }
 }
