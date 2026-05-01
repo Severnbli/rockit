@@ -65,12 +65,12 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States
             return tasks;
         }
 
-        public async UniTask OpenModalState<T>() where T : IModalState
+        public async UniTask OpenModalState<T>() where T : IState
         {
             await UniTask.CompletedTask;
         }
 
-        public async UniTask CloseModalState<T>() where T : IModalState
+        public async UniTask CloseModalState<T>() where T : IState
         {
             await UniTask.CompletedTask;
         }
