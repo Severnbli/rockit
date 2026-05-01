@@ -11,10 +11,10 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Types
         where TWindow : MonoBaseWindow
         where TConfig : BaseWindowConfig<TConfig>
     {
-        private MonoBaseWindow _mbWindow;
-        private BaseWindowConfig<TConfig> _bwConfig;
+        private readonly MonoBaseWindow _mbWindow;
+        private readonly BaseWindowConfig<TConfig> _bwConfig;
 
-        protected CancellationToken Ct;
+        protected readonly CancellationToken Ct;
         
         public event Action OnOpen;
         public event Action OnClose;
