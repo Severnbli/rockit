@@ -12,7 +12,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States
     {
         protected readonly Dictionary<Type, IState> ProjectStates = new();
         protected readonly Dictionary<Type, IState> SceneStates = new();
-        protected readonly HashSet<IState> ActiveStates = new();
+        protected readonly HashSet<IState> ModalStates = new();
         
         public bool Inited { get; private set; } = false;
 
@@ -40,7 +40,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States
         private async UniTask LeaveActiveStates()
         {
             var leaveTasks = GetActiveStatesLeaveTasks();
-            ActiveStates.Clear();
+            ModalStates.Clear();
             await UniTask.WhenAll(leaveTasks);
         }
 
@@ -48,16 +48,16 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States
         {
             if (state is null) return;
             
-            ActiveStates.Add(state);
+            ModalStates.Add(state);
             await state.OnEnter();
         }
 
         private UniTask[] GetActiveStatesLeaveTasks()
         {
-            var tasks = new UniTask[ActiveStates.Count];
+            var tasks = new UniTask[ModalStates.Count];
 
             var i = 0;
-            foreach (var state in ActiveStates)
+            foreach (var state in ModalStates)
             {
                 tasks[i++] = state.OnLeave();
             }
@@ -74,7 +74,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States
 
         public async UniTask EnterModalState(IState state)
         {
-            if (!ActiveStates.Add(state)) return;
+            if (!ModalStates.Add(state)) return;
             await state.OnEnter();
         }
 
@@ -87,7 +87,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States
 
         public async UniTask LeaveModalState(IState state)
         {
-            if (!ActiveStates.Remove(state)) return;
+            if (!ModalStates.Remove(state)) return;
             await state.OnLeave();
         }
 
