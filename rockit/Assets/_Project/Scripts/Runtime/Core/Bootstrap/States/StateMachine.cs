@@ -27,12 +27,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States
         
         public async UniTask ChangeState<T>() where T : IState
         {
-            if (!SceneStates.TryGetByAssignableType(out T state) && !ProjectStates.TryGetByAssignableType(out state))
-            {
-                LogUtils.LogError($"Did not find state with type {typeof(T)}");
-                
-                return;
-            }
+            if (!TryFindState<T>(out var state)) return;
             
             await ChangeState(state);
         }
@@ -42,6 +37,17 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States
             if (ActiveState is not null) await ActiveState.OnLeave();
             ActiveState = state;
             if (ActiveState is not null) await ActiveState.OnEnter();
+        }
+
+        private bool TryFindState<T>(out IState state) where T : IState
+        {
+            if (SceneStates.TryGetByAssignableType(out state) || ProjectStates.TryGetByAssignableType(out state))
+            {
+                return true;
+            }
+            
+            LogUtils.LogError($"Did not find state with type {typeof(T)}");
+            return false;
         }
 
         public void BootstrapSceneStates(params ISceneState[] states)
