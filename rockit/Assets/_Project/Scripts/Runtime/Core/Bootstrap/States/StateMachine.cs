@@ -70,7 +70,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States
             await UniTask.CompletedTask;
         }
 
-        public async UniTask CloseModalState<T>() where T : IState
+        public async UniTask LeaveModalState<T>() where T : IState
         {
             await UniTask.CompletedTask;
         }
