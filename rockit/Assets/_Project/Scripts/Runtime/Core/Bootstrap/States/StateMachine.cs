@@ -87,7 +87,8 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States
 
         public async UniTask LeaveModalState(IState state)
         {
-            await UniTask.CompletedTask;
+            if (!ActiveStates.Remove(state)) return;
+            await state.OnLeave();
         }
 
         private bool TryFindState<T>(out IState state) where T : IState
