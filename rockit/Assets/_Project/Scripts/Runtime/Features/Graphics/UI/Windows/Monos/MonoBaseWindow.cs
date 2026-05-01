@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Monos
 {
-    public class MonoWindow : MonoBehaviour
+    public class MonoBaseWindow : MonoBehaviour
     {
         [SerializeField] protected GameObject Body;
         [SerializeField] protected FloatTweenSettings BodyOpen;
