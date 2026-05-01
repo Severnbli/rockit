@@ -39,6 +39,16 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States
             if (ActiveState is not null) await ActiveState.OnEnter();
         }
 
+        public async UniTask OpenModalState<T>() where T : IModalState
+        {
+            await UniTask.CompletedTask;
+        }
+
+        public async UniTask CloseModalState<T>() where T : IModalState
+        {
+            await UniTask.CompletedTask;
+        }
+
         private bool TryFindState<T>(out IState state) where T : IState
         {
             if (SceneStates.TryGetByAssignableType(out state) || ProjectStates.TryGetByAssignableType(out state))
