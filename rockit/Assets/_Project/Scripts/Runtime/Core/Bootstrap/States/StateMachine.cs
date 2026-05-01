@@ -58,6 +58,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States
             }
             
             ChangeState<IProjectSetupState>().Forget();
+            Inited = true;
         }
     }
 }
