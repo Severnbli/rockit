@@ -7,7 +7,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States
     {
         UniTask ChangeState<T>() where T : IState;
         UniTask ChangeState(IState state);
-        UniTask OpenModalState<T>() where T : IState;
+        UniTask EnterModalState<T>() where T : IState;
         UniTask CloseModalState<T>() where T : IState;
         void BootstrapSceneStates(params ISceneState[] states);
     }

@@ -65,7 +65,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States
             return tasks;
         }
 
-        public async UniTask OpenModalState<T>() where T : IState
+        public async UniTask EnterModalState<T>() where T : IState
         {
             await UniTask.CompletedTask;
         }
