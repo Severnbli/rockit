@@ -54,14 +54,12 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Types
 
         protected virtual async UniTask PlayOpenBodyAnimation()
         {
-            await _mbWindow.Body.transform.ScaleTween(_bwConfig.BodyOpen)
-                .ToUniTask(cancellationToken: Ct);
+            await _mbWindow.Body.transform.ScaleTween(_bwConfig.BodyOpen).ToUniTask(cancellationToken: Ct);
         }
 
         protected virtual async UniTask PlayCloseBodyAnimation()
         {
-            await _mbWindow.Body.transform.ScaleTween(_bwConfig.BodyClose)
-                .ToUniTask(cancellationToken: Ct);
+            await _mbWindow.Body.transform.ScaleTween(_bwConfig.BodyClose).ToUniTask(cancellationToken: Ct);
         }
     }
 }
