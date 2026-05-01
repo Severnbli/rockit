@@ -1,6 +1,7 @@
 ﻿using System.Threading;
 using _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Configs;
 using _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Monos;
+using _Project.Scripts.Runtime.Shared.Extensions.Features.Graphics.Animations;
 using Cysharp.Threading.Tasks;
 
 namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Types
@@ -37,12 +38,12 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Types
 
         protected virtual async UniTask PlayFadeOpenAnimation()
         {
-            
+            await _mfWindow.Fade.FadeTween(_fwConfig.FadeOpen).ToUniTask(cancellationToken: Ct);
         }
 
         protected virtual async UniTask PlayFadeCloseAnimation()
         {
-            
+            await _mfWindow.Fade.FadeTween(_fwConfig.FadeClose).ToUniTask(cancellationToken: Ct);
         }
     }
 }
