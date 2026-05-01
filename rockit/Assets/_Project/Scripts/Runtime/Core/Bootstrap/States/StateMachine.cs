@@ -10,10 +10,9 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States
 {
     public class StateMachine : IStateMachine
     {
-        protected IState ActiveState;
         protected readonly Dictionary<Type, IState> ProjectStates = new();
         protected readonly Dictionary<Type, IState> SceneStates = new();
-        protected readonly HashSet<IModalState> ActiveModalStates = new();
+        protected readonly HashSet<IState> ActiveStates = new();
         
         public bool Inited { get; private set; } = false;
 
@@ -34,9 +33,36 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States
 
         public async UniTask ChangeState(IState state)
         {
-            if (ActiveState is not null) await ActiveState.OnLeave();
-            ActiveState = state;
-            if (ActiveState is not null) await ActiveState.OnEnter();
+            await LeaveActiveStates();
+            await EnterState(state);
+        }
+
+        private async UniTask LeaveActiveStates()
+        {
+            var leaveTasks = GetActiveStatesLeaveTasks();
+            ActiveStates.Clear();
+            await UniTask.WhenAll(leaveTasks);
+        }
+
+        private async UniTask EnterState(IState state)
+        {
+            if (state is null) return;
+            
+            ActiveStates.Add(state);
+            await state.OnEnter();
+        }
+
+        private UniTask[] GetActiveStatesLeaveTasks()
+        {
+            var tasks = new UniTask[ActiveStates.Count];
+
+            var i = 0;
+            foreach (var state in ActiveStates)
+            {
+                tasks[i++] = state.OnLeave();
+            }
+            
+            return tasks;
         }
 
         public async UniTask OpenModalState<T>() where T : IModalState
