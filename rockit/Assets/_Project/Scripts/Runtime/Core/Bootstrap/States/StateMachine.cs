@@ -13,6 +13,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States
         protected readonly Dictionary<Type, IState> ProjectStates = new();
         protected readonly Dictionary<Type, IState> SceneStates = new();
         protected readonly HashSet<IState> ModalStates = new();
+        protected IState ActiveState;
         
         public bool Inited { get; private set; } = false;
 
@@ -33,36 +34,34 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States
 
         public async UniTask ChangeState(IState state)
         {
-            await LeaveActiveStates();
-            await EnterState(state);
+            await LeaveActiveState();
+            await EnterActiveState(state);
         }
 
-        private async UniTask LeaveActiveStates()
+        private async UniTask LeaveActiveState()
         {
-            var leaveTasks = GetActiveStatesLeaveTasks();
-            ModalStates.Clear();
-            await UniTask.WhenAll(leaveTasks);
-        }
-
-        private async UniTask EnterState(IState state)
-        {
-            if (state is null) return;
-            
-            ModalStates.Add(state);
-            await state.OnEnter();
-        }
-
-        private UniTask[] GetActiveStatesLeaveTasks()
-        {
-            var tasks = new UniTask[ModalStates.Count];
+            var tasks = new UniTask[ModalStates.Count + 1];
 
             var i = 0;
             foreach (var state in ModalStates)
             {
                 tasks[i++] = state.OnLeave();
             }
+
+            tasks[i] = ActiveState?.OnLeave() ?? UniTask.CompletedTask;
             
-            return tasks;
+            ModalStates.Clear();
+            ActiveState = null;
+            
+            await UniTask.WhenAll(tasks);
+        }
+
+        private async UniTask EnterActiveState(IState state)
+        {
+            if (state is null) return;
+            
+            ActiveState = state;
+            await ActiveState.OnEnter();
         }
 
         public async UniTask EnterModalState<T>() where T : IState
