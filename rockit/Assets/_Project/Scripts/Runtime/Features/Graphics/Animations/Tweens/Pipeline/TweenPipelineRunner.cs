@@ -5,7 +5,7 @@ namespace _Project.Scripts.Runtime.Features.Graphics.Animations.Tweens.Pipeline
 {
     public class TweenPipelineRunner : ITweenPipelineRunner
     {
-        public async UniTask PlayWith(GameObject go)
+        public async UniTask Run(GameObject go)
         {
             await UniTask.CompletedTask;
         }
