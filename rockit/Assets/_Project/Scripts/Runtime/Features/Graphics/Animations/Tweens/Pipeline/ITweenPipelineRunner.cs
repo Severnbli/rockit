@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Features.Graphics.Animations.Tweens.Pipeline
 {
-    public interface ITweenPipeline
+    public interface ITweenPipelineRunner
     {
         UniTask PlayWith(GameObject go);
     }
