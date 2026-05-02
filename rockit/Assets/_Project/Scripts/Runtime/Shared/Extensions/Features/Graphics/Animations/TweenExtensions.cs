@@ -1,4 +1,4 @@
-﻿using _Project.Scripts.Runtime.Features.Graphics.Animations.Shared.Types;
+﻿using _Project.Scripts.Runtime.Features.Graphics.Animations.Tweens.Types;
 using DG.Tweening;
 using DG.Tweening.Core;
 using DG.Tweening.Plugins.Options;

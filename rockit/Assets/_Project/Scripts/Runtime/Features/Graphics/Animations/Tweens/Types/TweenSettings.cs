@@ -2,7 +2,7 @@
 using DG.Tweening;
 using UnityEngine;
 
-namespace _Project.Scripts.Runtime.Features.Graphics.Animations.Shared.Types
+namespace _Project.Scripts.Runtime.Features.Graphics.Animations.Tweens.Types
 {
     [Serializable]
     public class TweenSettings<T>

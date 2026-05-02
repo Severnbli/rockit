@@ -1,5 +1,5 @@
 ﻿using _Project.Scripts.Modules.Zenject;
-using _Project.Scripts.Runtime.Features.Graphics.Animations.Shared.Types;
+using _Project.Scripts.Runtime.Features.Graphics.Animations.Tweens.Types;
 using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Configs
