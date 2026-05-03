@@ -1,4 +1,5 @@
 ﻿using System;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Features.Graphics.Animations.Tweens.Pipeline.Core
@@ -6,7 +7,8 @@ namespace _Project.Scripts.Runtime.Features.Graphics.Animations.Tweens.Pipeline.
     [Serializable]
     public class TweenPipeline
     {
-        [SerializeField] private ITweenPipelineStep[] _steps;
+        [SerializeReference, ListDrawerSettings(ShowFoldout = true)] 
+        private ITweenPipelineStep[] _steps;
         
         public ITweenPipelineStep[] Steps => _steps;
     }
