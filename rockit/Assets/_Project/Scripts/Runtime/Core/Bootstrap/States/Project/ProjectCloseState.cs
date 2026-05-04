@@ -8,12 +8,12 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States.Project
         public async UniTask OnEnter(IStateMachine stateMachine)
         {
             Application.Quit();
-            await UniTask.CompletedTask;
+            await UniTask.NextFrame();
         }
 
         public async UniTask OnLeave(IStateMachine stateMachine)
         {
-            await UniTask.CompletedTask;
+            await UniTask.NextFrame();
         }
     }
 }
