@@ -6,6 +6,7 @@ using _Project.Scripts.Runtime.Features.Graphics.Animations.Characters;
 using _Project.Scripts.Runtime.Features.Input;
 using _Project.Scripts.Runtime.Features.Physics.Moving.Characters;
 using _Project.Scripts.Runtime.Features.Physics.Moving.Platforms;
+using _Project.Scripts.Runtime.Features.Stats.Player;
 using Leopotam.EcsProto.QoL;
 
 namespace _Project.Scripts.Runtime.Core.Infrastructure.Requests
@@ -20,6 +21,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Requests
         public readonly LocalizationRequestsAspect LocalizationRequestsAspect;
         public readonly StorageRequestsAspect StorageRequestsAspect;
         public readonly ScenesRequestsAspect ScenesRequestsAspect;
+        public readonly PlayerStatsRequestsAspect PlayerStatsRequestsAspect;
         public readonly SharedRequestsAspect SharedRequestsAspect;
     }
 }
