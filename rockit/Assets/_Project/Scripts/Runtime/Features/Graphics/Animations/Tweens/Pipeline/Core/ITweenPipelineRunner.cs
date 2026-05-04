@@ -6,5 +6,6 @@ namespace _Project.Scripts.Runtime.Features.Graphics.Animations.Tweens.Pipeline.
     public interface ITweenPipelineRunner
     {
         UniTask Run(TweenPipeline tp, GameObject go, bool caching = false);
+        void CacheRun(TweenPipeline tp, GameObject go);
     }
 }
