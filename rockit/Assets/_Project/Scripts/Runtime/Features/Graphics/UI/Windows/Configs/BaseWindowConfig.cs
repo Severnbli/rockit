@@ -1,15 +1,15 @@
 ﻿using _Project.Scripts.Modules.Zenject;
-using _Project.Scripts.Runtime.Features.Graphics.Animations.Shared.Types;
+using _Project.Scripts.Runtime.Features.Graphics.Animations.Tweens.Pipeline.Core;
 using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Configs
 {
     public class BaseWindowConfig<T> : ScriptableObjectAutoInstaller<T> where T : BaseWindowConfig<T>
     {
-        [SerializeField] private FloatTweenSettings _bodyOpen;
-        [SerializeField] private FloatTweenSettings _bodyClose;
+        [SerializeField] private TweenPipeline _bodyOpen;
+        [SerializeField] private TweenPipeline _bodyClose;
         
-        public FloatTweenSettings BodyOpen => _bodyOpen;
-        public FloatTweenSettings BodyClose => _bodyClose;
+        public TweenPipeline BodyOpen => _bodyOpen;
+        public TweenPipeline BodyClose => _bodyClose;
     }
 }
