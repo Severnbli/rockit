@@ -13,7 +13,7 @@ namespace _Project.Scripts.Runtime.Features.Graphics.Animations.Tweens.Pipeline.
             return Cache.TryGetValue((tp, go), out sequence);
         }
 
-        public void AddToCache(TweenPipeline tp, GameObject go)
+        public void AddToCache(TweenPipeline tp, GameObject go, Sequence sequence)
         {
             
         }
