@@ -19,6 +19,14 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Types
             _fwConfig = fwConfig;
         }
 
+        public override void Initialize()
+        {
+            base.Initialize();
+            
+            TpRunner.CacheRun(_fwConfig.FadeOpen, _mfWindow.Fade);
+            TpRunner.CacheRun(_fwConfig.FadeClose, _mfWindow.Fade);
+        }
+
         protected override UniTask PlayOpenAnimation()
         {
             return UniTask.WhenAll(
