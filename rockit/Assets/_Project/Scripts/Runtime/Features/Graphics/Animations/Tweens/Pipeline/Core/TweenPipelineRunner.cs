@@ -46,5 +46,12 @@ namespace _Project.Scripts.Runtime.Features.Graphics.Animations.Tweens.Pipeline.
             var sequence = Creator.CreateSequence(tp, go);
             await sequence.ToUniTask(cancellationToken: Ct);
         }
+        
+        public void CacheRun(TweenPipeline tp, GameObject go)
+        {
+            var sequence = Creator.CreateSequence(tp, go);
+            Cache.AddToCache(tp, go, sequence);
+            sequence.Pause();
+        }
     }
 }
