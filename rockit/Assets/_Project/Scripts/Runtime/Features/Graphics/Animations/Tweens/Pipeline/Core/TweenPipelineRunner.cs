@@ -23,7 +23,46 @@ namespace _Project.Scripts.Runtime.Features.Graphics.Animations.Tweens.Pipeline.
 
         public async UniTask Run(TweenPipeline tp, GameObject go, bool caching = false)
         {
-            await UniTask.CompletedTask;
+            if (caching)
+            {
+                await RunCached(tp, go);
+                return;
+            }
+            
+            await RunNonCached(tp, go);
+        }
+
+        private async UniTask RunCached(TweenPipeline tp, GameObject go)
+        {
+            if (!_cache.TryGetValue((go, tp), out var sequence))
+            {
+                sequence = GetSequence(tp, go);
+                _cache[(go, tp)] = sequence;
+                sequence.SetAutoKill(false);
+            }
+            
+            sequence.Restart();
+            await sequence.AwaitForComplete(cancellationToken: Ct);
+        }
+
+        private async UniTask RunNonCached(TweenPipeline tp, GameObject go)
+        {
+            var sequence = GetSequence(tp, go);
+            await sequence.ToUniTask(cancellationToken: Ct);
+        }
+
+        private Sequence GetSequence(TweenPipeline tp, GameObject go)
+        {
+            var sequence = DOTween.Sequence();
+            var goCache = _goCachePool.Spawn();
+
+            foreach (var step in tp.Steps)
+            {
+                step.TryDoStep(sequence, go, goCache);
+            }
+            
+            _goCachePool.Despawn(goCache);
+            return sequence;
         }
     }
 }
