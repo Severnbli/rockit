@@ -5,7 +5,7 @@ namespace _Project.Scripts.Runtime.Features.Graphics.Animations.Tweens.Pipeline.
 {
     public interface ITweenPipelineCacheStorage
     {
-        Sequence GetFromCache(TweenPipeline tp, GameObject go);
+        bool TryGetFromCache(TweenPipeline tp, GameObject go, out Sequence sequence);
         void AddToCache(TweenPipeline tp, GameObject go);
     }
 }
