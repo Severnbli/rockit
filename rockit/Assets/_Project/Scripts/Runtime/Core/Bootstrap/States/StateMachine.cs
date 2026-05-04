@@ -10,6 +10,8 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States
 {
     public class StateMachine : IStateMachine
     {
+        private bool _locked = false;
+        
         protected readonly Dictionary<Type, IState> ProjectStates = new();
         protected readonly Dictionary<Type, IState> SceneStates = new();
         protected readonly HashSet<IState> ModalStates = new();
@@ -27,6 +29,8 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States
         
         public async UniTask ChangeState<T>() where T : IState
         {
+            if (_locked) return;
+            
             if (!TryFindState<T>(out var state)) return;
             
             await ChangeState(state);
@@ -34,12 +38,15 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States
 
         public async UniTask ChangeState(IState state)
         {
+            if (_locked) return;
+            
             await LeaveActiveState();
             await EnterActiveState(state);
         }
 
         private async UniTask LeaveActiveState()
         {
+            _locked = true;
             var tasks = new UniTask[ModalStates.Count + 1];
 
             var i = 0;
@@ -54,6 +61,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States
             ActiveState = null;
             
             await UniTask.WhenAll(tasks);
+            _locked = false;
         }
 
         private async UniTask EnterActiveState(IState state)
