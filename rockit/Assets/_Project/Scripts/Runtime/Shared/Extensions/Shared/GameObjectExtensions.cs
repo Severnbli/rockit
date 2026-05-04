@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using _Project.Scripts.Runtime.Shared.Utils.Shared;
 using Leopotam.EcsProto.Unity;
@@ -19,6 +20,33 @@ namespace _Project.Scripts.Runtime.Shared.Extensions.Shared
                 LogUtils.LogError($"Component {typeof(T).Name} not found on {gameObject.name}");
             }
             return false;
+        }
+
+        public static bool TryGetComponentWithCache<T>(this GameObject go, Dictionary<Type, Component> goCache,
+            out T component) 
+            where T : Component
+        {
+            component = null;
+            
+            if (!goCache.TryGetValue(typeof(T), out var cachedComponent))
+            {
+                if (!go.TryGet(out component)) return false;
+                
+                goCache[typeof(T)] = component;
+                return true;
+            }
+            
+            try
+            {
+                component = (T) cachedComponent;
+            }
+            catch (Exception)
+            {
+                LogUtils.LogError($"Failed to cast value from {go.name} cache to {typeof(T).Name} type");
+                return false;
+            }
+            
+            return true;
         }
 
         public static bool TryGetAuthored<T>(this GameObject gameObject, out T authored, bool logNull = true)
