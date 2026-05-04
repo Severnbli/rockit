@@ -122,9 +122,9 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States
                 ChangeState<ISceneSetupState>().Forget();
                 return;
             }
-            
-            ChangeState<IProjectSetupState>().Forget();
+
             Inited = true;
+            ChangeState<IProjectSetupState>().Forget();
         }
     }
 }
