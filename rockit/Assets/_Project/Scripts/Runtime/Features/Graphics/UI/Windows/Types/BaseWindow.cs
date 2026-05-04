@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Threading;
 using _Project.Scripts.Runtime.Features.Graphics.Animations.Tweens.Pipeline.Core;
 using _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Configs;
 using _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Monos;
@@ -15,19 +14,16 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Types
         private readonly BaseWindowConfig<TConfig> _bwConfig;
 
         protected readonly TweenPipelineRunner TpRunner;
-        protected readonly CancellationToken Ct;
         
         public event Action OnOpen;
         public event Action OnClose;
 
         public bool Opened { get; private set; }
 
-        public BaseWindow(TWindow window, BaseWindowConfig<TConfig> bwConfig, CancellationToken ct,
-            TweenPipelineRunner tpRunner)
+        public BaseWindow(TWindow window, BaseWindowConfig<TConfig> bwConfig, TweenPipelineRunner tpRunner)
         {
             _mbWindow = window;
             _bwConfig = bwConfig;
-            Ct = ct;
             TpRunner = tpRunner;
         }
         

@@ -1,5 +1,4 @@
-﻿using System.Threading;
-using _Project.Scripts.Runtime.Features.Graphics.Animations.Tweens.Pipeline.Core;
+﻿using _Project.Scripts.Runtime.Features.Graphics.Animations.Tweens.Pipeline.Core;
 using _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Configs;
 using _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Monos;
 using Cysharp.Threading.Tasks;
@@ -13,8 +12,8 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Types
         private readonly MonoFadeWindow _mfWindow;
         private readonly FadeWindowConfig<TConfig> _fwConfig;
         
-        public FadeWindow(TWindow window, FadeWindowConfig<TConfig> fwConfig, CancellationToken ct, 
-            TweenPipelineRunner tpRunner) : base(window, fwConfig, ct, tpRunner)
+        public FadeWindow(TWindow window, FadeWindowConfig<TConfig> fwConfig,TweenPipelineRunner tpRunner) : 
+            base(window, fwConfig, tpRunner)
         {
             _mfWindow = window;
             _fwConfig = fwConfig;
