@@ -98,7 +98,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States
             await state.OnLeave(this);
         }
 
-        private bool TryFindState<T>(out IState state) where T : IState
+        private bool TryFindState<T>(out T state) where T : IState
         {
             if (SceneStates.TryGetByAssignableType(out state) || ProjectStates.TryGetByAssignableType(out state))
             {
