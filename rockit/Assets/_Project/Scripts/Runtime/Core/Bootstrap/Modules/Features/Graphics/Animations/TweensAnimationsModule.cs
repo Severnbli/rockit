@@ -14,6 +14,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.Anim
             base.RegisterBindings();
 
             Container.BindInterfacesAndSelfTo<TweenPipelineCacheStorage>().AsSingle();
+            Container.BindInterfacesAndSelfTo<TweenPipelineSequenceCreator>().AsSingle();
             Container.BindInterfacesAndSelfTo<TweenPipelineRunner>().AsSingle();
         }
     }
