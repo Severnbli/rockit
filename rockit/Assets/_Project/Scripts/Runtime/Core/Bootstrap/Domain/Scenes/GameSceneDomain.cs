@@ -1,10 +1,18 @@
 ﻿using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Physics.Moving;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Platforms;
+using _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes.Game;
 
 namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Scenes
 {
     public class GameSceneDomain : SceneDomain
     {
+        protected override void RegisterStates()
+        {
+            base.RegisterStates();
+            
+            RegisterState<GameSceneSetupState>();
+        }
+
         protected override void RegisterModules()
         {
             base.RegisterModules();
