@@ -10,8 +10,7 @@ namespace _Project.Scripts.Runtime.Features.Graphics.Animations.Tweens.Pipeline.
         
         public bool TryGetFromCache(TweenPipeline tp, GameObject go, out Sequence sequence)
         {
-            sequence = null;
-            return false;
+            return Cache.TryGetValue((tp, go), out sequence);
         }
 
         public void AddToCache(TweenPipeline tp, GameObject go)
