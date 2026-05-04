@@ -1,13 +1,11 @@
 ﻿using Cysharp.Threading.Tasks;
-using UnityEngine;
 
-namespace _Project.Scripts.Runtime.Core.Bootstrap.States.Project
+namespace _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes.Menu
 {
-    public class ProjectCloseState : IProjectCloseState
+    public class MenuSceneSetupState : ISceneSetupState
     {
         public async UniTask OnEnter(IStateMachine stateMachine)
         {
-            Application.Quit();
             await UniTask.NextFrame();
         }
 

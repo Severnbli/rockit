@@ -5,22 +5,15 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States.Project
 {
     public class ProjectSetupState : IProjectSetupState
     {
-        private readonly IStateMachine _sMachine;
-
-        public ProjectSetupState(IStateMachine sMachine)
+        public async UniTask OnEnter(IStateMachine stateMachine)
         {
-            _sMachine = sMachine;
+            stateMachine.ChangeState<ISceneSetupState>().Forget();
+            await UniTask.NextFrame();
         }
 
-        public async UniTask OnEnter()
+        public async UniTask OnLeave(IStateMachine stateMachine)
         {
-            _sMachine.ChangeState<ISceneSetupState>().Forget();
-            await UniTask.CompletedTask;
-        }
-
-        public async UniTask OnLeave()
-        {
-            await UniTask.CompletedTask;
+            await UniTask.NextFrame();
         }
     }
 }
