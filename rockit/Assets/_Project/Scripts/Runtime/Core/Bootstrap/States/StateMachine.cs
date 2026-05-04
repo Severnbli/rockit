@@ -10,6 +10,8 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States
 {
     public class StateMachine : IStateMachine
     {
+        private bool _locked = false;
+        
         protected readonly Dictionary<Type, IState> ProjectStates = new();
         protected readonly Dictionary<Type, IState> SceneStates = new();
         protected readonly HashSet<IState> ModalStates = new();
@@ -27,6 +29,8 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States
         
         public async UniTask ChangeState<T>() where T : IState
         {
+            if (_locked) return;
+            
             if (!TryFindState<T>(out var state)) return;
             
             await ChangeState(state);
@@ -34,26 +38,30 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States
 
         public async UniTask ChangeState(IState state)
         {
+            if (_locked) return;
+            
             await LeaveActiveState();
             await EnterActiveState(state);
         }
 
         private async UniTask LeaveActiveState()
         {
+            _locked = true;
             var tasks = new UniTask[ModalStates.Count + 1];
 
             var i = 0;
             foreach (var state in ModalStates)
             {
-                tasks[i++] = state.OnLeave();
+                tasks[i++] = state.OnLeave(this);
             }
 
-            tasks[i] = ActiveState?.OnLeave() ?? UniTask.CompletedTask;
+            tasks[i] = ActiveState?.OnLeave(this) ?? UniTask.NextFrame();
             
             ModalStates.Clear();
             ActiveState = null;
             
             await UniTask.WhenAll(tasks);
+            _locked = false;
         }
 
         private async UniTask EnterActiveState(IState state)
@@ -61,7 +69,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States
             if (state is null) return;
             
             ActiveState = state;
-            await ActiveState.OnEnter();
+            await ActiveState.OnEnter(this);
         }
 
         public async UniTask EnterModalState<T>() where T : IState
@@ -74,7 +82,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States
         public async UniTask EnterModalState(IState state)
         {
             if (!ModalStates.Add(state)) return;
-            await state.OnEnter();
+            await state.OnEnter(this);
         }
 
         public async UniTask LeaveModalState<T>() where T : IState
@@ -87,10 +95,10 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States
         public async UniTask LeaveModalState(IState state)
         {
             if (!ModalStates.Remove(state)) return;
-            await state.OnLeave();
+            await state.OnLeave(this);
         }
 
-        private bool TryFindState<T>(out IState state) where T : IState
+        private bool TryFindState<T>(out T state) where T : IState
         {
             if (SceneStates.TryGetByAssignableType(out state) || ProjectStates.TryGetByAssignableType(out state))
             {
@@ -114,9 +122,9 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States
                 ChangeState<ISceneSetupState>().Forget();
                 return;
             }
-            
-            ChangeState<IProjectSetupState>().Forget();
+
             Inited = true;
+            ChangeState<IProjectSetupState>().Forget();
         }
     }
 }

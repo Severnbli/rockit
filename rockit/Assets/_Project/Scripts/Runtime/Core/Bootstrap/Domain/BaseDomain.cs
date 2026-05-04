@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.Animations;
+using _Project.Scripts.Runtime.Core.Bootstrap.States;
 using _Project.Scripts.Runtime.Core.Engine;
 using _Project.Scripts.Runtime.Core.Systems;
 using _Project.Scripts.Runtime.Shared.Utils.Shared;
@@ -78,5 +79,10 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
         }
         
         protected virtual void RegisterStates() {}
+
+        public void RegisterState<T>() where T : IState
+        {
+            Container.BindInterfacesAndSelfTo<T>().AsSingle();
+        }
     }
 }
