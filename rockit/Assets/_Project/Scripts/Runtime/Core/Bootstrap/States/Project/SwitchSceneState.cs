@@ -15,13 +15,13 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States.Project
             _sSwitcher = sSwitcher;
         }
 
-        public async UniTask OnEnter()
+        public async UniTask OnEnter(IStateMachine stateMachine)
         {
             await _sSwitcher.SwitchScene(_ssService.Target);
             await UniTask.CompletedTask;
         }
 
-        public async UniTask OnLeave()
+        public async UniTask OnLeave(IStateMachine stateMachine)
         {
             await UniTask.CompletedTask;
         }

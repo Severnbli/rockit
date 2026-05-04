@@ -45,10 +45,10 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States
             var i = 0;
             foreach (var state in ModalStates)
             {
-                tasks[i++] = state.OnLeave();
+                tasks[i++] = state.OnLeave(this);
             }
 
-            tasks[i] = ActiveState?.OnLeave() ?? UniTask.CompletedTask;
+            tasks[i] = ActiveState?.OnLeave(this) ?? UniTask.CompletedTask;
             
             ModalStates.Clear();
             ActiveState = null;
@@ -61,7 +61,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States
             if (state is null) return;
             
             ActiveState = state;
-            await ActiveState.OnEnter();
+            await ActiveState.OnEnter(this);
         }
 
         public async UniTask EnterModalState<T>() where T : IState
@@ -74,7 +74,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States
         public async UniTask EnterModalState(IState state)
         {
             if (!ModalStates.Add(state)) return;
-            await state.OnEnter();
+            await state.OnEnter(this);
         }
 
         public async UniTask LeaveModalState<T>() where T : IState
@@ -87,7 +87,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States
         public async UniTask LeaveModalState(IState state)
         {
             if (!ModalStates.Remove(state)) return;
-            await state.OnLeave();
+            await state.OnLeave(this);
         }
 
         private bool TryFindState<T>(out IState state) where T : IState
