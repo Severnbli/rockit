@@ -1,4 +1,5 @@
 ﻿using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features;
+using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.Animations;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.Effects;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure;
 using _Project.Scripts.Runtime.Core.Bootstrap.States;
@@ -39,6 +40,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Project
             TryRegisterModule<ScenesModule>();
             TryRegisterModule<InputModule>();
             TryRegisterModule<GlitchEffectsModule>();
+            TryRegisterModule<TweensAnimationsModule>();
             TryRegisterModule<RequestsModule>();
         }
     }
