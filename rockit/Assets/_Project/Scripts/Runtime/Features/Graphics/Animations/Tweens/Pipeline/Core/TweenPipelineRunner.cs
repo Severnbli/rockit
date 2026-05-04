@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading;
-using _Project.Scripts.Runtime.Core.Infrastructure.Objects.Domain;
-using _Project.Scripts.Runtime.Core.Infrastructure.Objects.Lifecycle.Pools.Collections;
+﻿using System.Threading;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using UnityEngine;
@@ -11,14 +7,15 @@ namespace _Project.Scripts.Runtime.Features.Graphics.Animations.Tweens.Pipeline.
 {
     public class TweenPipelineRunner : ITweenPipelineRunner
     {
-        protected readonly Dictionary<(GameObject, TweenPipeline), Sequence> _cache = new ();
-        protected readonly DictionaryPool<Type, Component> _goCachePool;
+        protected readonly ITweenPipelineCacheStorage Cache;
+        protected readonly ITweenPipelineSequenceCreator Creator;
         protected readonly CancellationToken Ct;
 
-        public TweenPipelineRunner(IObjectDomain objDomain, CancellationToken ct)
+        public TweenPipelineRunner(CancellationToken ct, ITweenPipelineCacheStorage cache, ITweenPipelineSequenceCreator creator)
         {
             Ct = ct;
-            objDomain.Get(out _goCachePool);
+            Cache = cache;
+            Creator = creator;
         }
 
         public async UniTask Run(TweenPipeline tp, GameObject go, bool caching = false)
@@ -34,11 +31,10 @@ namespace _Project.Scripts.Runtime.Features.Graphics.Animations.Tweens.Pipeline.
 
         private async UniTask RunCached(TweenPipeline tp, GameObject go)
         {
-            if (!_cache.TryGetValue((go, tp), out var sequence))
+            if (!Cache.TryGetFromCache(tp, go, out var sequence))
             {
-                sequence = GetSequence(tp, go);
-                _cache[(go, tp)] = sequence;
-                sequence.SetAutoKill(false);
+                sequence = Creator.CreateSequence(tp, go);
+                Cache.AddToCache(tp, go, sequence);
             }
             
             sequence.Restart();
@@ -47,22 +43,8 @@ namespace _Project.Scripts.Runtime.Features.Graphics.Animations.Tweens.Pipeline.
 
         private async UniTask RunNonCached(TweenPipeline tp, GameObject go)
         {
-            var sequence = GetSequence(tp, go);
+            var sequence = Creator.CreateSequence(tp, go);
             await sequence.ToUniTask(cancellationToken: Ct);
-        }
-
-        private Sequence GetSequence(TweenPipeline tp, GameObject go)
-        {
-            var sequence = DOTween.Sequence();
-            var goCache = _goCachePool.Spawn();
-
-            foreach (var step in tp.Steps)
-            {
-                step.TryDoStep(sequence, go, goCache);
-            }
-            
-            _goCachePool.Despawn(goCache);
-            return sequence;
         }
     }
 }
