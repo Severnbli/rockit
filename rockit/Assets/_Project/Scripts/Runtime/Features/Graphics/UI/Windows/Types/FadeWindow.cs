@@ -1,7 +1,7 @@
 ﻿using System.Threading;
+using _Project.Scripts.Runtime.Features.Graphics.Animations.Tweens.Pipeline.Core;
 using _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Configs;
 using _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Monos;
-using _Project.Scripts.Runtime.Shared.Extensions.Features.Graphics.Animations;
 using Cysharp.Threading.Tasks;
 
 namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Types
@@ -13,8 +13,8 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Types
         private readonly MonoFadeWindow _mfWindow;
         private readonly FadeWindowConfig<TConfig> _fwConfig;
         
-        public FadeWindow(TWindow window, FadeWindowConfig<TConfig> fwConfig, CancellationToken ct) : 
-            base(window, fwConfig, ct)
+        public FadeWindow(TWindow window, FadeWindowConfig<TConfig> fwConfig, CancellationToken ct, 
+            TweenPipelineRunner tpRunner) : base(window, fwConfig, ct, tpRunner)
         {
             _mfWindow = window;
             _fwConfig = fwConfig;
@@ -38,12 +38,12 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Types
 
         protected virtual async UniTask PlayFadeOpenAnimation()
         {
-            await _mfWindow.Fade.FadeTween(_fwConfig.FadeOpen).ToUniTask(cancellationToken: Ct);
+            await TpRunner.Run(_fwConfig.FadeOpen, _mfWindow.Fade, true);
         }
 
         protected virtual async UniTask PlayFadeCloseAnimation()
         {
-            await _mfWindow.Fade.FadeTween(_fwConfig.FadeClose).ToUniTask(cancellationToken: Ct);
+            await TpRunner.Run(_fwConfig.FadeClose, _mfWindow.Fade, true);
         }
     }
 }

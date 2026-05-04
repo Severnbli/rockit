@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Threading;
+using _Project.Scripts.Runtime.Features.Graphics.Animations.Tweens.Pipeline.Core;
 using _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Configs;
 using _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Monos;
-using _Project.Scripts.Runtime.Shared.Extensions.Features.Graphics.Animations;
 using Cysharp.Threading.Tasks;
 
 namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Types
@@ -14,6 +14,7 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Types
         private readonly MonoBaseWindow _mbWindow;
         private readonly BaseWindowConfig<TConfig> _bwConfig;
 
+        protected readonly TweenPipelineRunner TpRunner;
         protected readonly CancellationToken Ct;
         
         public event Action OnOpen;
@@ -21,11 +22,13 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Types
 
         public bool Opened { get; private set; }
 
-        public BaseWindow(TWindow window, BaseWindowConfig<TConfig> bwConfig, CancellationToken ct)
+        public BaseWindow(TWindow window, BaseWindowConfig<TConfig> bwConfig, CancellationToken ct,
+            TweenPipelineRunner tpRunner)
         {
             _mbWindow = window;
             _bwConfig = bwConfig;
             Ct = ct;
+            TpRunner = tpRunner;
         }
         
         public async UniTask Open()
@@ -54,12 +57,12 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Types
 
         protected virtual async UniTask PlayOpenBodyAnimation()
         {
-            await _mbWindow.Body.transform.ScaleTween(_bwConfig.BodyOpen).ToUniTask(cancellationToken: Ct);
+            await TpRunner.Run(_bwConfig.BodyOpen, _mbWindow.Body, true);
         }
 
         protected virtual async UniTask PlayCloseBodyAnimation()
         {
-            await _mbWindow.Body.transform.ScaleTween(_bwConfig.BodyClose).ToUniTask(cancellationToken: Ct);
+            await TpRunner.Run(_bwConfig.BodyClose, _mbWindow.Body, true);
         }
     }
 }
