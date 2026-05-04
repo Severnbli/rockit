@@ -15,7 +15,7 @@ namespace _Project.Scripts.Runtime.Features.Graphics.Animations.Tweens.Pipeline.
 
         public void AddToCache(TweenPipeline tp, GameObject go, Sequence sequence)
         {
-            
+            Cache[(tp, go)] = sequence;
         }
     }
 }
