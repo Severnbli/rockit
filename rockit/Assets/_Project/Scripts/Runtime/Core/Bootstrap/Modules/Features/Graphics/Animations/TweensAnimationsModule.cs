@@ -12,7 +12,8 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.Anim
         protected override void RegisterBindings()
         {
             base.RegisterBindings();
-            
+
+            Container.BindInterfacesAndSelfTo<TweenPipelineCacheStorage>().AsSingle();
             Container.BindInterfacesAndSelfTo<TweenPipelineRunner>().AsSingle();
         }
     }
