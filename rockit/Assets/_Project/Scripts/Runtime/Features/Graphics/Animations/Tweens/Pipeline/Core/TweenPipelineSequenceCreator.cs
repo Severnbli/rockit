@@ -24,6 +24,8 @@ namespace _Project.Scripts.Runtime.Features.Graphics.Animations.Tweens.Pipeline.
             {
                 step.TryDoStep(sequence, go, goCache);
             }
+
+            sequence.SetLoops(tp.Loops, tp.LoopType);
             
             GoCachePool.Despawn(goCache);
             return sequence;
