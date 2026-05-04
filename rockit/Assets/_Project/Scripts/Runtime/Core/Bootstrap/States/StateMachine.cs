@@ -55,7 +55,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States
                 tasks[i++] = state.OnLeave(this);
             }
 
-            tasks[i] = ActiveState?.OnLeave(this) ?? UniTask.CompletedTask;
+            tasks[i] = ActiveState?.OnLeave(this) ?? UniTask.NextFrame();
             
             ModalStates.Clear();
             ActiveState = null;
