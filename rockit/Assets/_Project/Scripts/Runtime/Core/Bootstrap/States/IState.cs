@@ -4,7 +4,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States
 {
     public interface IState
     {
-        UniTask OnEnter();
-        UniTask OnLeave();
+        UniTask OnEnter(IStateMachine stateMachine);
+        UniTask OnLeave(IStateMachine stateMachine);
     }
 }
