@@ -22,7 +22,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Stats
             base.BindSystems();
             
             BindSystem<ClampPlayerStatsEntityIndexesOnInitSystem>();
-            BindSystem<UpdatePlayerStatsServiceOnRunSystem>();
+            BindSystem<UpdatePlayerStatsServiceOnUpdatePlayerStatsServiceRequestSystem>();
         }
     }
 }
