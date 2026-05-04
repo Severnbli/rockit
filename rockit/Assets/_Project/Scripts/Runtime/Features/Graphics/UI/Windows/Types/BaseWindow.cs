@@ -3,10 +3,11 @@ using _Project.Scripts.Runtime.Features.Graphics.Animations.Tweens.Pipeline.Core
 using _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Configs;
 using _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Monos;
 using Cysharp.Threading.Tasks;
+using Zenject;
 
 namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Types
 {
-    public class BaseWindow<TWindow, TConfig> 
+    public class BaseWindow<TWindow, TConfig> : IInitializable
         where TWindow : MonoBaseWindow
         where TConfig : BaseWindowConfig<TConfig>
     {
@@ -25,6 +26,12 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Types
             _mbWindow = window;
             _bwConfig = bwConfig;
             TpRunner = tpRunner;
+        }
+        
+        public virtual void Initialize()
+        {
+            TpRunner.CacheRun(_bwConfig.BodyOpen, _mbWindow.Body);
+            TpRunner.CacheRun(_bwConfig.BodyClose, _mbWindow.Body);
         }
         
         public async UniTask Open()
