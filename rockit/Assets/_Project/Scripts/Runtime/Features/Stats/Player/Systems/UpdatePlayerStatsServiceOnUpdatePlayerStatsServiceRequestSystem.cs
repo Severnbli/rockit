@@ -13,21 +13,21 @@ namespace _Project.Scripts.Runtime.Features.Stats.Player.Systems
         [DIRequests] private readonly PlayerStatsRequestsAspect _psrAspect;
         private readonly PlayerStatsService _psService;
         private readonly PlayerStatsConfig _psConfig;
-        private readonly PlayerStats _pStats;
+        private readonly DataProvider _dProvider;
 
         public UpdatePlayerStatsServiceOnUpdatePlayerStatsServiceRequestSystem(PlayerStatsService psService,
             PlayerStatsConfig psConfig, DataProvider dProvider)
         {
             _psService = psService;
             _psConfig = psConfig;
-            _pStats = dProvider.PlayerStats;
+            _dProvider = dProvider;
         }
 
         public void Run()
         {
             if (_psrAspect.UpdatePlayerStatsRequests.IsEmptySlow()) return;
             
-            _psService.UpdatePlayerStatsService(_pStats, _psConfig);
+            _psService.UpdatePlayerStatsService(_dProvider.PlayerStats, _psConfig);
         }
     }
 }
