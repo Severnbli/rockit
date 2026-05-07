@@ -103,3 +103,5 @@ ServerData
 
 # Proprietary packages
 Sirenix*
+**/Audio/Music*
+**/Audio/Sfx*
