@@ -1,12 +1,9 @@
-﻿using _Project.Scripts.Modules.Zenject;
-using UnityEngine;
+﻿using _Project.Scripts.Runtime.Core.Infrastructure.Audio.Shared.Configs;
 
 namespace _Project.Scripts.Runtime.Core.Infrastructure.Audio.Sfx.Configs
 {
-    public class SfxConfig : ScriptableObjectAutoInstaller<SfxConfig>
+    public class SfxConfig : AudioConfig<SfxConfig>
     {
-        [SerializeField] private GameObject _audioSourcePrefab;
         
-        public GameObject AudioSourcePrefab => _audioSourcePrefab;
     }
 }
