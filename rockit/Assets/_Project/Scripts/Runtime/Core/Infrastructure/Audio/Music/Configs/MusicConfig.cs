@@ -11,11 +11,13 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Audio.Music.Configs
         [SerializeField] private AudioClip _menu;
         [SerializeField] private AudioClip _game;
         [SerializeField] private AudioClip _loading;
+        [SerializeField] private GameObject _audioSourcePrefab;
 
         public TweenPipeline TransitionFrom => _transitionFrom;
         public TweenPipeline TransitionTo => _transitionTo;
         public AudioClip Menu => _menu;
         public AudioClip Game => _game;
         public AudioClip Loading => _loading;
+        public GameObject AudioSourcePrefab => _audioSourcePrefab;
     }
 }
