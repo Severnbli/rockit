@@ -88,5 +88,16 @@ namespace _Project.Scripts.Runtime.Shared.Extensions.Features.Graphics.Animation
             
             return tween;
         }
+        
+        public static Tween FadeTween(this AudioSource aSource,
+            FloatTweenSettings settings)
+        {
+            var tween = aSource
+                .DOFade(settings.To, settings.Duration)
+                .UseSettings(settings);
+            if (settings.FromExact) tween.From(settings.From);
+            
+            return tween;
+        }
     }
 }
