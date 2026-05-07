@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 422f1724954d4778942c4bc358e3d628, type: 3}
-  m_Name: AudioConfig
+  m_Name: AudioSharedConfig
   m_EditorClassIdentifier: Runtime::_Project.Scripts.Runtime.Core.Infrastructure.Audio.Shared.Configs.AudioConfig
   serializationData:
     SerializedFormat: 2
