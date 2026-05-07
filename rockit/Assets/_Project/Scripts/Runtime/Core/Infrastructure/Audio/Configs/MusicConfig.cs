@@ -6,11 +6,13 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Audio.Configs
 {
     public class MusicConfig : ScriptableObjectAutoInstaller<MusicConfig>
     {
-        [SerializeField] private TweenPipeline _transition;
+        [SerializeField] private TweenPipeline _transitionFrom;
+        [SerializeField] private TweenPipeline _transitionTo;
         [SerializeField] private AudioClip _menu;
         [SerializeField] private AudioClip _game;
 
-        public TweenPipeline Transition => _transition;
+        public TweenPipeline TransitionFrom => _transitionFrom;
+        public TweenPipeline TransitionTo => _transitionTo;
         public AudioClip Menu => _menu;
         public AudioClip Game => _game;
     }
