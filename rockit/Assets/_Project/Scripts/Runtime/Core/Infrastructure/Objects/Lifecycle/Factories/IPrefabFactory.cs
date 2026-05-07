@@ -2,8 +2,8 @@
 
 namespace _Project.Scripts.Runtime.Core.Infrastructure.Objects.Lifecycle.Factories
 {
-    public interface IPrefabFactory<out T> where T : Component
+    public interface IPrefabFactory<out TItem> where TItem : Component
     {
-        T Create(Transform at = null);
+        TItem Create(Transform at = null);
     }
 }
