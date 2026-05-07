@@ -17,6 +17,8 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Objects.Lifecycle.Factori
 
         protected virtual T CreateInstance(Transform at = null)
         {
+            if (at == null) at = FallbackContainer();
+            
             var gameObject = Object.Instantiate(GetPrefab(), at);
             gameObject.TryGet(out T component);
             return component;
@@ -25,5 +27,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Objects.Lifecycle.Factori
         protected virtual void PostCreate(T instance) {}
 
         protected abstract GameObject GetPrefab();
+
+        protected virtual Transform FallbackContainer() => null;
     }
 }
