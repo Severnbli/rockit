@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53297b5458994ebc8fde65872253dc73, type: 3}
+  m_Name: MusicConfig
+  m_EditorClassIdentifier: Runtime::_Project.Scripts.Runtime.Core.Infrastructure.Audio.Music.Configs.MusicConfig
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  _transitionFrom:
+    _steps:
+    - rid: 1499440462259814477
+    _loops: 1
+    _loopType: 0
+  _transitionTo:
+    _steps:
+    - rid: 1499440462259814478
+    _loops: 1
+    _loopType: 0
+  _menu: {fileID: 8300000, guid: 3b18be68877ae9a40bb2336e5ede92f0, type: 3}
+  _game: {fileID: 8300000, guid: 8ad2516bf5fd43041846b7085dc75f1c, type: 3}
+  _loading: {fileID: 8300000, guid: 4e1c3c5872da17a4bb535410de259527, type: 3}
+  references:
+    version: 2
+    RefIds:
+    - rid: 1499440462259814477
+      type: {class: AudioSourceFadeStep, ns: _Project.Scripts.Runtime.Features.Graphics.Animations.Tweens.Pipeline.Steps, asm: Runtime}
+      data:
+        _connector: 0
+        _settings:
+          _to: 0
+          _from: 0
+          _fromExact: 0
+          _relative: 0
+          _duration: 0.5
+          _speedBased: 0
+          _delay: 0
+          _ease: 0
+          _loops: 1
+          _loopType: 0
+    - rid: 1499440462259814478
+      type: {class: AudioSourceFadeStep, ns: _Project.Scripts.Runtime.Features.Graphics.Animations.Tweens.Pipeline.Steps, asm: Runtime}
+      data:
+        _connector: 0
+        _settings:
+          _to: 1
+          _from: 0
+          _fromExact: 0
+          _relative: 0
+          _duration: 0.5
+          _speedBased: 0
+          _delay: 0
+          _ease: 0
+          _loops: 1
+          _loopType: 0
