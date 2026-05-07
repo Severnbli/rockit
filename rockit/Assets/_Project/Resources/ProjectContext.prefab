@@ -58,6 +58,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: de49a538bd4aeba4da9a0a12202090c6, type: 2}
   - {fileID: 11400000, guid: 74bca50dfbdc7ca4789c5ca54385c521, type: 2}
   - {fileID: 11400000, guid: 9f791b1c266255e4bb9ff918e347941b, type: 2}
+  - {fileID: 11400000, guid: fee06a0767124994297b9258bf4fcdb3, type: 2}
   _monoInstallers:
   - {fileID: 7800510551396832137}
   _installerPrefabs: []
@@ -86,3 +87,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcad67e917734e6f9cbca0fcd2939fcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Runtime::_Project.Scripts.Runtime.Core.Bootstrap.Domain.Project.ProjectDomain
+  _asContainer: {fileID: 0}
