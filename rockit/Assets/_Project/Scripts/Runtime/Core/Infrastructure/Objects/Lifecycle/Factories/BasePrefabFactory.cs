@@ -3,9 +3,9 @@ using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Core.Infrastructure.Objects.Lifecycle.Factories
 {
-    public abstract class BasePrefabFactory<T> : IPrefabFactory<T> where T: Component
+    public abstract class BasePrefabFactory<TItem> : IPrefabFactory<TItem> where TItem: Component
     {
-        public T Create(Transform at = null)
+        public TItem Create(Transform at = null)
         {
             PreCreate();
             var instance = CreateInstance(at);
@@ -15,16 +15,16 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Objects.Lifecycle.Factori
         
         protected virtual void PreCreate() {}
 
-        protected virtual T CreateInstance(Transform at = null)
+        protected virtual TItem CreateInstance(Transform at = null)
         {
             if (at == null) at = FallbackContainer();
             
             var gameObject = Object.Instantiate(GetPrefab(), at);
-            gameObject.TryGet(out T component);
+            gameObject.TryGet(out TItem component);
             return component;
         }
         
-        protected virtual void PostCreate(T instance) {}
+        protected virtual void PostCreate(TItem instance) {}
 
         protected abstract GameObject GetPrefab();
 

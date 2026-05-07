@@ -4,11 +4,11 @@ using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Core.Infrastructure.Objects.Lifecycle.Pools
 {
-    public abstract class BasePrefabPool<T> : BasePrefabFactory<T>, IPrefabPool<T> where T : Component
+    public abstract class BasePrefabPool<TItem> : BasePrefabFactory<TItem>, IPrefabPool<TItem> where TItem : Component
     {
         protected readonly Stack<GameObject> Instances = new ();
         
-        public T Spawn(Transform at = null)
+        public TItem Spawn(Transform at = null)
         {
             PreSpawn(at);
             var instance = SpawnInstance(at);
@@ -18,34 +18,34 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Objects.Lifecycle.Pools
         
         protected virtual void PreSpawn(Transform at) {}
 
-        protected virtual T SpawnInstance(Transform at = null)
+        protected virtual TItem SpawnInstance(Transform at = null)
         {
             if (!Instances.TryPop(out var instance)) return Create(at);
             
-            instance.TryGetComponent(out T component);
+            instance.TryGetComponent(out TItem component);
             return component;
         }
 
-        protected virtual void PostSpawn(T instance, Transform at = null)
+        protected virtual void PostSpawn(TItem instance, Transform at = null)
         {
             instance.gameObject.SetActive(true);
         }
 
-        public void Despawn(T instance)
+        public void Despawn(TItem instance)
         {
             PreDespawn(instance);
             DespawnInstance(instance);
             PostDespawn(instance);
         }
         
-        protected virtual void PreDespawn(T instance) {}
+        protected virtual void PreDespawn(TItem instance) {}
 
-        protected virtual void DespawnInstance(T instance)
+        protected virtual void DespawnInstance(TItem instance)
         {
             Instances.Push(instance.gameObject);
         }
 
-        protected virtual void PostDespawn(T instance)
+        protected virtual void PostDespawn(TItem instance)
         {
             instance.gameObject.SetActive(false);
         }

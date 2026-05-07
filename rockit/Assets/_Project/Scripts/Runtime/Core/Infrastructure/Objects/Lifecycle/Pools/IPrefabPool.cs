@@ -2,9 +2,9 @@
 
 namespace _Project.Scripts.Runtime.Core.Infrastructure.Objects.Lifecycle.Pools
 {
-    public interface IPrefabPool<T> where T : Component
+    public interface IPrefabPool<TItem> where TItem : Component
     {
-        T Spawn(Transform at = null);
-        void Despawn(T instance);
+        TItem Spawn(Transform at = null);
+        void Despawn(TItem instance);
     }
 }
