@@ -4,50 +4,58 @@ using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Core.Infrastructure.Objects.Lifecycle.Pools
 {
-    public abstract class BasePrefabPool<TItem> : BasePrefabFactory<TItem>, IPrefabPool<TItem> where TItem : Component
+    public abstract class BasePrefabPool<TItem, TSpawnSettings, TDespawnSettings> : BasePrefabFactory<TItem, TSpawnSettings>,
+        IPrefabPool<TItem, TSpawnSettings, TDespawnSettings> 
+        where TItem : Component
+        where TSpawnSettings : struct
+        where TDespawnSettings : struct
     {
-        protected readonly Stack<GameObject> Instances = new ();
-        
-        public TItem Spawn(Transform at = null)
-        {
-            PreSpawn(at);
-            var instance = SpawnInstance(at);
-            PostSpawn(instance, at);
-            return instance;
-        }
-        
-        protected virtual void PreSpawn(Transform at) {}
+    protected readonly Stack<GameObject> Instances = new();
 
-        protected virtual TItem SpawnInstance(Transform at = null)
-        {
-            if (!Instances.TryPop(out var instance)) return Create(at);
-            
-            instance.TryGetComponent(out TItem component);
-            return component;
-        }
+    public TItem Spawn(Transform at = null, TSpawnSettings settings = default)
+    {
+        PreSpawn(at, settings);
+        var instance = SpawnInstance(at, settings);
+        PostSpawn(instance, at, settings);
+        return instance;
+    }
 
-        protected virtual void PostSpawn(TItem instance, Transform at = null)
-        {
-            instance.gameObject.SetActive(true);
-        }
+    protected virtual void PreSpawn(Transform at, TSpawnSettings settings = default)
+    {
+    }
 
-        public void Despawn(TItem instance)
-        {
-            PreDespawn(instance);
-            DespawnInstance(instance);
-            PostDespawn(instance);
-        }
-        
-        protected virtual void PreDespawn(TItem instance) {}
+    protected virtual TItem SpawnInstance(Transform at = null, TSpawnSettings settings = default)
+    {
+        if (!Instances.TryPop(out var instance)) return Create(at, settings);
 
-        protected virtual void DespawnInstance(TItem instance)
-        {
-            Instances.Push(instance.gameObject);
-        }
+        instance.TryGetComponent(out TItem component);
+        return component;
+    }
 
-        protected virtual void PostDespawn(TItem instance)
-        {
-            instance.gameObject.SetActive(false);
-        }
+    protected virtual void PostSpawn(TItem instance, Transform at = null, TSpawnSettings settings = default)
+    {
+        instance.gameObject.SetActive(true);
+    }
+
+    public void Despawn(TItem instance, TDespawnSettings settings = default)
+    {
+        PreDespawn(instance, settings);
+        DespawnInstance(instance, settings);
+        PostDespawn(instance, settings);
+    }
+
+    protected virtual void PreDespawn(TItem instance, TDespawnSettings settings = default)
+    {
+    }
+
+    protected virtual void DespawnInstance(TItem instance, TDespawnSettings settings = default)
+    {
+        Instances.Push(instance.gameObject);
+    }
+
+    protected virtual void PostDespawn(TItem instance, TDespawnSettings settings = default)
+    {
+        instance.gameObject.SetActive(false);
+    }
     }
 }

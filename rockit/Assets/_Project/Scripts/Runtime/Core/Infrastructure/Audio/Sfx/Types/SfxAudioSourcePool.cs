@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Core.Infrastructure.Audio.Sfx.Types
 {
-    public class SfxAudioSourcePool : AudioSourcePool
+    public class SfxAudioSourcePool : AudioSourcePool<SfxAudioSourcePoolSpawnSettings, SfxAudioSourcePoolDespawnSettings>
     {
         private readonly SfxConfig _sfxConfig;
         
@@ -15,5 +15,15 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Audio.Sfx.Types
         }
 
         protected override GameObject GetPrefab() => _sfxConfig.AudioSourcePrefab;
+    }
+    
+    public struct SfxAudioSourcePoolSpawnSettings
+    {
+        
+    }
+    
+    public struct SfxAudioSourcePoolDespawnSettings
+    {
+        
     }
 }
