@@ -4,7 +4,7 @@ using UnityEngine.Audio;
 
 namespace _Project.Scripts.Runtime.Core.Infrastructure.Audio.Shared.Configs
 {
-    public class AudioConfig : ScriptableObjectAutoInstaller<AudioConfig>
+    public class AudioSharedConfig : ScriptableObjectAutoInstaller<AudioSharedConfig>
     {
         [SerializeField] private AudioMixer _audioMixer;
         
