@@ -3,19 +3,21 @@ using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Core.Infrastructure.Objects.Lifecycle.Factories
 {
-    public abstract class BasePrefabFactory<TItem> : IPrefabFactory<TItem> where TItem: Component
+    public abstract class BasePrefabFactory<TItem, TSettings> : IPrefabFactory<TItem, TSettings> 
+        where TItem: Component 
+        where TSettings : struct
     {
-        public TItem Create(Transform at = null)
+        public TItem Create(Transform at = null, TSettings settings = default)
         {
-            PreCreate();
-            var instance = CreateInstance(at);
-            PostCreate(instance);
+            PreCreate(settings);
+            var instance = CreateInstance(at, settings);
+            PostCreate(instance, settings);
             return instance;
         }
         
-        protected virtual void PreCreate() {}
+        protected virtual void PreCreate(TSettings settings = default) {}
 
-        protected virtual TItem CreateInstance(Transform at = null)
+        protected virtual TItem CreateInstance(Transform at = null, TSettings settings = default)
         {
             if (at == null) at = FallbackContainer();
             
@@ -24,7 +26,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Objects.Lifecycle.Factori
             return component;
         }
         
-        protected virtual void PostCreate(TItem instance) {}
+        protected virtual void PostCreate(TItem instance, TSettings settings = default) {}
 
         protected abstract GameObject GetPrefab();
 

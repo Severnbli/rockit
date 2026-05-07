@@ -4,7 +4,9 @@ using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Core.Infrastructure.Audio.Shared.Types
 {
-    public abstract class AudioSourcePool : BasePrefabPool<AudioSource>
+    public abstract class AudioSourcePool<TSpawnSettings, TDespawnSettings> : BasePrefabPool<AudioSource, TSpawnSettings, TDespawnSettings> 
+        where TSpawnSettings : struct 
+        where TDespawnSettings : struct
     {
         private readonly AudioSourceContainer _asContainer;
 
@@ -13,17 +15,17 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Audio.Shared.Types
             _asContainer = asContainer;
         }
 
-        protected override void PostCreate(AudioSource instance)
+        protected override void PostCreate(AudioSource instance, TSpawnSettings settings = default)
         {
-            base.PostCreate(instance);
+            base.PostCreate(instance, settings);
             
             instance.playOnAwake = false;
             instance.loop = false;
         }
 
-        protected override void PostDespawn(AudioSource instance)
+        protected override void PostDespawn(AudioSource instance, TDespawnSettings settings = default)
         {
-            base.PostDespawn(instance);
+            base.PostDespawn(instance, settings);
             
             instance.Stop();
             instance.clip = null;

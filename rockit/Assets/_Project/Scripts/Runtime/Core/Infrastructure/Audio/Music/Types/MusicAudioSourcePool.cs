@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Core.Infrastructure.Audio.Music.Types
 {
-    public class MusicAudioSourcePool : AudioSourcePool
+    public class MusicAudioSourcePool : AudioSourcePool<MusicAudioSourcePoolSpawnSettings, MusicAudioSourcePoolDespawnSettings>
     {
         private readonly MusicConfig _mConfig;
 
@@ -15,5 +15,15 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Audio.Music.Types
         }
 
         protected override GameObject GetPrefab() => _mConfig.AudioSourcePrefab;
+    }
+
+    public struct MusicAudioSourcePoolSpawnSettings
+    {
+        
+    }
+    
+    public struct MusicAudioSourcePoolDespawnSettings
+    {
+        
     }
 }
