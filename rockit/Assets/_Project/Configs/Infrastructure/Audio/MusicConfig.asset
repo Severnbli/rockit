@@ -34,6 +34,7 @@ MonoBehaviour:
   _menu: {fileID: 8300000, guid: 3b18be68877ae9a40bb2336e5ede92f0, type: 3}
   _game: {fileID: 8300000, guid: 8ad2516bf5fd43041846b7085dc75f1c, type: 3}
   _loading: {fileID: 8300000, guid: 4e1c3c5872da17a4bb535410de259527, type: 3}
+  _audioSourcePrefab: {fileID: 3806661814791769264, guid: fa7381595e6883749a1935eb6d4ef6b7, type: 3}
   references:
     version: 2
     RefIds:
