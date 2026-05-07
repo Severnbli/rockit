@@ -2,7 +2,7 @@
 using _Project.Scripts.Runtime.Features.Graphics.Animations.Tweens.Pipeline.Core;
 using UnityEngine;
 
-namespace _Project.Scripts.Runtime.Core.Infrastructure.Audio.Configs
+namespace _Project.Scripts.Runtime.Core.Infrastructure.Audio.Music.Configs
 {
     public class MusicConfig : ScriptableObjectAutoInstaller<MusicConfig>
     {
