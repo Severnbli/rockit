@@ -1,6 +1,7 @@
 ﻿using _Project.Scripts.Runtime.Core.Infrastructure.Audio.Sfx.Configs;
 using _Project.Scripts.Runtime.Core.Infrastructure.Audio.Shared.Monos;
 using _Project.Scripts.Runtime.Core.Infrastructure.Audio.Shared.Types;
+using Leopotam.EcsProto;
 using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Core.Infrastructure.Audio.Sfx.Types
@@ -9,7 +10,8 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Audio.Sfx.Types
     {
         private readonly SfxConfig _sfxConfig;
         
-        public SfxAudioSourcePool(SfxConfig sfxConfig, AudioSourceContainer asContainer) : base(asContainer)
+        public SfxAudioSourcePool(SfxConfig sfxConfig, AudioSourceContainer asContainer, ProtoWorld world) : 
+            base(asContainer, world)
         {
             _sfxConfig = sfxConfig;
         }
