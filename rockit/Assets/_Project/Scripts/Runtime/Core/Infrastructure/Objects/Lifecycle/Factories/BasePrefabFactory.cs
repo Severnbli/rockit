@@ -46,12 +46,12 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Objects.Lifecycle.Factori
 
             Pool<CreatedAtFactoryTag>().NewEntity(out var entity);
             authoring.ProcessAuthoringForEntity(World, entity);
-            ConfigureEntity(instance, entity, settings);
+            ConfigureEntityOnCreate(instance, entity, settings);
         }
         
         protected ProtoPool<T> Pool<T>() where T : struct => World.GetPool<T>();
         
-        protected virtual void ConfigureEntity(TItem instance, ProtoEntity entity, TSettings settings = default) {}
+        protected virtual void ConfigureEntityOnCreate(TItem instance, ProtoEntity entity, TSettings settings = default) {}
 
         protected abstract GameObject GetPrefab();
 
