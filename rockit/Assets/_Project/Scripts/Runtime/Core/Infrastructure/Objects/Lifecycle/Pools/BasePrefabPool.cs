@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using _Project.Scripts.Runtime.Core.Infrastructure.Objects.Lifecycle.Factories;
+using Leopotam.EcsProto;
 using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Core.Infrastructure.Objects.Lifecycle.Pools
@@ -11,6 +12,10 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Objects.Lifecycle.Pools
         where TDespawnSettings : struct
     {
     protected readonly Stack<GameObject> Instances = new();
+
+    protected BasePrefabPool(ProtoWorld world) : base(world)
+    {
+    }
 
     public TItem Spawn(Transform at = null, TSpawnSettings settings = default)
     {

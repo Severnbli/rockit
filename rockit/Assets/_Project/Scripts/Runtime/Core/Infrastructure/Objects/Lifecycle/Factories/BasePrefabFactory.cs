@@ -1,4 +1,7 @@
-﻿using _Project.Scripts.Runtime.Shared.Extensions.Shared;
+﻿using _Project.Scripts.Runtime.Core.Infrastructure.Objects.Lifecycle.Tags;
+using _Project.Scripts.Runtime.Shared.Extensions.Shared;
+using Leopotam.EcsProto;
+using Leopotam.EcsProto.Unity;
 using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Core.Infrastructure.Objects.Lifecycle.Factories
@@ -7,11 +10,20 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Objects.Lifecycle.Factori
         where TItem: Component 
         where TSettings : struct
     {
+        protected readonly ProtoWorld World;
+
+        protected BasePrefabFactory(ProtoWorld world)
+        {
+            World = world;
+        }
+
         public TItem Create(Transform at = null, TSettings settings = default)
         {
             PreCreate(settings);
             var instance = CreateInstance(at, settings);
             PostCreate(instance, settings);
+            InitiateAuthoring(instance, settings);
+            
             return instance;
         }
         
@@ -27,6 +39,19 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Objects.Lifecycle.Factori
         }
         
         protected virtual void PostCreate(TItem instance, TSettings settings = default) {}
+
+        private void InitiateAuthoring(TItem instance, TSettings settings = default)
+        {
+            if (!instance.gameObject.TryGet(out ProtoUnityAuthoring authoring)) return;
+
+            Pool<CreatedAtFactoryTag>().NewEntity(out var entity);
+            authoring.ProcessAuthoringForEntity(World, entity);
+            ConfigureEntity(instance, entity, settings);
+        }
+        
+        protected ProtoPool<T> Pool<T>() where T : struct => World.GetPool<T>();
+        
+        protected virtual void ConfigureEntity(TItem instance, ProtoEntity entity, TSettings settings = default) {}
 
         protected abstract GameObject GetPrefab();
 

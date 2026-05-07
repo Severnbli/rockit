@@ -1,5 +1,6 @@
 ﻿using _Project.Scripts.Runtime.Core.Infrastructure.Audio.Shared.Monos;
 using _Project.Scripts.Runtime.Core.Infrastructure.Objects.Lifecycle.Pools;
+using Leopotam.EcsProto;
 using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Core.Infrastructure.Audio.Shared.Types
@@ -10,7 +11,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Audio.Shared.Types
     {
         private readonly AudioSourceContainer _asContainer;
 
-        protected AudioSourcePool(AudioSourceContainer asContainer)
+        protected AudioSourcePool(AudioSourceContainer asContainer, ProtoWorld world) : base(world)
         {
             _asContainer = asContainer;
         }
