@@ -11,5 +11,10 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Infrastructure
         {
             return aspect.CreateRequest(aspect.AudioRequestsAspect.PlaySfxRequestPool, prepared: prepared);
         }
+
+        public static ProtoEntity CreatePlayMusicRequest(RequestsAspect aspect, PlayMusicRequest prepared)
+        {
+            return aspect.CreateRequest(aspect.AudioRequestsAspect.PlayMusicRequestPool, prepared: prepared);
+        }
     }
 }
