@@ -15,6 +15,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Physics
             base.BindServices();
             
             BindService<PhysicsService>();
+            BindService<ForcesService>();
         }
 
         protected override void BindSystems()
