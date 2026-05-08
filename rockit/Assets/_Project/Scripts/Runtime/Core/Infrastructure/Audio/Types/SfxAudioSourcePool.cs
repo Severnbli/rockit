@@ -1,10 +1,9 @@
-﻿using _Project.Scripts.Runtime.Core.Infrastructure.Audio.Sfx.Configs;
-using _Project.Scripts.Runtime.Core.Infrastructure.Audio.Shared.Monos;
-using _Project.Scripts.Runtime.Core.Infrastructure.Audio.Shared.Types;
+﻿using _Project.Scripts.Runtime.Core.Infrastructure.Audio.Configs;
+using _Project.Scripts.Runtime.Core.Infrastructure.Audio.Monos;
 using Leopotam.EcsProto;
 using UnityEngine;
 
-namespace _Project.Scripts.Runtime.Core.Infrastructure.Audio.Sfx.Types
+namespace _Project.Scripts.Runtime.Core.Infrastructure.Audio.Types
 {
     public class SfxAudioSourcePool : AudioSourcePool<SfxAudioSourcePoolSpawnSettings, SfxAudioSourcePoolDespawnSettings>
     {

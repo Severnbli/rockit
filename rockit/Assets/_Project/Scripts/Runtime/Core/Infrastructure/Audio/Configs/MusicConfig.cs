@@ -1,9 +1,7 @@
-﻿using _Project.Scripts.Runtime.Core.Infrastructure.Audio.Sfx.Configs;
-using _Project.Scripts.Runtime.Core.Infrastructure.Audio.Shared.Configs;
-using _Project.Scripts.Runtime.Features.Graphics.Animations.Tweens.Pipeline.Core;
+﻿using _Project.Scripts.Runtime.Features.Graphics.Animations.Tweens.Pipeline.Core;
 using UnityEngine;
 
-namespace _Project.Scripts.Runtime.Core.Infrastructure.Audio.Music.Configs
+namespace _Project.Scripts.Runtime.Core.Infrastructure.Audio.Configs
 {
     public class MusicConfig : AudioConfig<SfxConfig>
     {

@@ -4,7 +4,7 @@ using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Stats;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure;
 using _Project.Scripts.Runtime.Core.Bootstrap.States;
 using _Project.Scripts.Runtime.Core.Bootstrap.States.Project;
-using _Project.Scripts.Runtime.Core.Infrastructure.Audio.Shared.Monos;
+using _Project.Scripts.Runtime.Core.Infrastructure.Audio.Monos;
 using _Project.Scripts.Runtime.Core.Infrastructure.Objects.Domain;
 using _Project.Scripts.Runtime.Core.Systems;
 using UnityEngine;
