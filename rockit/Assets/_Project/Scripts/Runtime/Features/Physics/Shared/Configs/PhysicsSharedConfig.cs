@@ -5,7 +5,7 @@ namespace _Project.Scripts.Runtime.Features.Physics.Shared.Configs
 {
     public sealed class PhysicsSharedConfig : ScriptableObjectAutoInstaller<PhysicsSharedConfig>
     {
-        [SerializeField] private float _initialGravityScale;
+        [SerializeField] private float _initialGravityScale = 1f;
         
         public float InitialGravityScale => _initialGravityScale;
     }
