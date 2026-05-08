@@ -9,7 +9,9 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Audio
     {
         public readonly ProtoPool<AudioSourceComponent> AudioSourceComponentPool;
         public readonly ProtoPool<SfxAudioSourceTag> SfxAudioSourceTagPool;
+        public readonly ProtoPool<MusicAudioSourceTag> MusicAudioSourceTagPool;
         public readonly ProtoIt AudioSources = new (It.Inc<AudioSourceComponent>());
         public readonly ProtoIt SfxAudioSources = new (It.Inc<AudioSourceComponent, SfxAudioSourceTag>());
+        public readonly ProtoIt MusicAudioSources = new (It.Inc<AudioSourceComponent, MusicAudioSourceTag>());
     }
 }
