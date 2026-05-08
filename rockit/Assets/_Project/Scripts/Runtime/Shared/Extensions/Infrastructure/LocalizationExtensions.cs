@@ -2,7 +2,7 @@
 
 namespace _Project.Scripts.Runtime.Shared.Extensions.Infrastructure
 {
-    public static class LocalizationServiceExtensions
+    public static class LocalizationExtensions
     {
         public static string GetString(this LocalizationService service, string key)
         {
