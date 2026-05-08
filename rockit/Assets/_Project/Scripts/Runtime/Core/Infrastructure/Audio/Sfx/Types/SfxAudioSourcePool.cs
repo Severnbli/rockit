@@ -16,6 +16,13 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Audio.Sfx.Types
             _sfxConfig = sfxConfig;
         }
 
+        protected override void PostSpawn(AudioSource instance, Transform at = null, SfxAudioSourcePoolSpawnSettings settings = default)
+        {
+            base.PostSpawn(instance, at, settings);
+            
+            instance.PlayOneShot(settings.Clip);
+        }
+
         protected override GameObject GetPrefab() => _sfxConfig.AudioSourcePrefab;
     }
     
