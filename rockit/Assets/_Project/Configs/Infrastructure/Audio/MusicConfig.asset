@@ -21,25 +21,25 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
+  _audioSourcePrefab: {fileID: 3806661814791769264, guid: fa7381595e6883749a1935eb6d4ef6b7, type: 3}
   _transitionFrom:
     _steps:
-    - rid: 1499440462259814477
+    - rid: 1499440481209155584
     _loops: 1
     _loopType: 0
   _transitionTo:
     _steps:
-    - rid: 1499440462259814478
+    - rid: 1499440481209155585
     _loops: 1
     _loopType: 0
   _menu: {fileID: 8300000, guid: 3b18be68877ae9a40bb2336e5ede92f0, type: 3}
   _game: {fileID: 8300000, guid: 8ad2516bf5fd43041846b7085dc75f1c, type: 3}
   _loading: {fileID: 8300000, guid: 4e1c3c5872da17a4bb535410de259527, type: 3}
-  _audioSourcePrefab: {fileID: 3806661814791769264, guid: fa7381595e6883749a1935eb6d4ef6b7, type: 3}
   references:
     version: 2
     RefIds:
-    - rid: 1499440462259814477
-      type: {class: AudioSourceFadeStep, ns: _Project.Scripts.Runtime.Features.Graphics.Animations.Tweens.Pipeline.Steps, asm: Runtime}
+    - rid: 1499440481209155584
+      type: {class: AudioSourceFadeStep, ns: _Project.Scripts.Runtime.Core.Infrastructure.Animations.Tools.Pipeline.Steps, asm: Runtime}
       data:
         _connector: 0
         _settings:
@@ -53,8 +53,8 @@ MonoBehaviour:
           _ease: 0
           _loops: 1
           _loopType: 0
-    - rid: 1499440462259814478
-      type: {class: AudioSourceFadeStep, ns: _Project.Scripts.Runtime.Features.Graphics.Animations.Tweens.Pipeline.Steps, asm: Runtime}
+    - rid: 1499440481209155585
+      type: {class: AudioSourceFadeStep, ns: _Project.Scripts.Runtime.Core.Infrastructure.Animations.Tools.Pipeline.Steps, asm: Runtime}
       data:
         _connector: 0
         _settings:
