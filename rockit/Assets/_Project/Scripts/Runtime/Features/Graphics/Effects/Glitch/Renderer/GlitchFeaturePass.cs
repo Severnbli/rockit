@@ -36,19 +36,30 @@ namespace _Project.Scripts.Runtime.Features.Graphics.Effects.Glitch.Renderer
             _settings = settings;
             _tag = tag;
         }
-        
+       
         public override void RecordRenderGraph(RenderGraph renderGraph, ContextContainer frameData)
         {
             var resourceData = frameData.Get<UniversalResourceData>();
+            
+            TextureHandle source;
 
-            if (!resourceData.activeColorTexture.IsValid())
+            if (resourceData.activeColorTexture.IsValid())
             {
+                source = resourceData.activeColorTexture;
+            }
+            else if (resourceData.cameraColor.IsValid())
+            {
+                source = resourceData.cameraColor;
+            }
+            else
+            {
+                
                 return;
             }
-
+            
             UpdateMaterial();
 
-            var srcDesc = renderGraph.GetTextureDesc(resourceData.activeColorTexture);
+            var srcDesc = renderGraph.GetTextureDesc(source);
             srcDesc.name = "_FastGlitchTempCopy";
             srcDesc.clearBuffer = false;
 
@@ -56,7 +67,7 @@ namespace _Project.Scripts.Runtime.Features.Graphics.Effects.Glitch.Renderer
 
             using (var builder = renderGraph.AddRasterRenderPass<PassData>(_tag, out var passData))
             {
-                passData.Src = resourceData.activeColorTexture;
+                passData.Src = source;
                 passData.Dst = tempHandle;
                 passData.Material = _material;
 
@@ -72,7 +83,7 @@ namespace _Project.Scripts.Runtime.Features.Graphics.Effects.Glitch.Renderer
             using (var builder = renderGraph.AddRasterRenderPass<PassData>(_tag + "_copyback", out var passData))
             {
                 passData.Src = tempHandle;
-                passData.Dst = resourceData.activeColorTexture;
+                passData.Dst = source;
                 passData.Material = null;
 
                 builder.UseTexture(passData.Src, AccessFlags.Read);
