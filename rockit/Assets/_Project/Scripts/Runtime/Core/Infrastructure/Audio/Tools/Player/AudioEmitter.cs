@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Core.Infrastructure.Audio.Tools.Player
 {
-    public class AudioEmitter : IPlayable, ITweenPipelineAnimatable
+    public class AudioEmitter : IAudioEmitter
     {
         protected readonly AudioSource Source;
         protected readonly ITweenPipelineSequenceCreator _tpsCreator;
