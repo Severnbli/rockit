@@ -15,9 +15,9 @@ MonoBehaviour:
   m_Active: 1
   _material: {fileID: 2100000, guid: e78cd3190be03e24ebf5d04a8f119594, type: 2}
   _settings:
-    ChromaticGlitch: 0.1
-    FrameGlitch: 0.1
-    PixelGlitch: 0.1
+    ChromaticGlitch: 0
+    FrameGlitch: 0
+    PixelGlitch: 0
   _renderPassEvent: 550
 --- !u!114 &11400000
 MonoBehaviour:
