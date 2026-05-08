@@ -1,6 +1,4 @@
-﻿using _Project.Scripts.Runtime.Core.Infrastructure.Audio.Music;
-using _Project.Scripts.Runtime.Core.Infrastructure.Audio.Sfx;
-using _Project.Scripts.Runtime.Core.Infrastructure.Audio.Shared;
+﻿using _Project.Scripts.Runtime.Core.Infrastructure.Audio;
 using _Project.Scripts.Runtime.Core.Infrastructure.Localization;
 using _Project.Scripts.Runtime.Core.Infrastructure.Objects.Lifecycle;
 using _Project.Scripts.Runtime.Core.Infrastructure.Shared;
@@ -36,9 +34,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
         public readonly UISharedAspect UISharedAspect;
         public readonly UIEventsAspect UIEventsAspect;
         public readonly LifecycleAspect LifecycleAspect;
-        public readonly AudioSharedAspect AudioSharedAspect;
-        public readonly SfxAudioAspect SfxAudioAspect;
-        public readonly MusicAudioAspect MusicAudioAspect;
+        public readonly AudioAspect AudioAspect;
         public readonly SharedAspect SharedAspect;
     }
 }

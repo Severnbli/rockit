@@ -1,6 +1,6 @@
-﻿namespace _Project.Scripts.Runtime.Core.Infrastructure.Audio.Shared
+﻿namespace _Project.Scripts.Runtime.Core.Infrastructure.Audio
 {
-    public static class AudioSharedContracts
+    public static class AudioContracts
     {
         public const string MasterVolume = "MasterVolume";
         public const string MusicVolume = "MusicVolume";

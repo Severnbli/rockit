@@ -1,9 +1,9 @@
-﻿using _Project.Scripts.Runtime.Core.Infrastructure.Audio.Shared.Monos;
+﻿using _Project.Scripts.Runtime.Core.Infrastructure.Audio.Monos;
 using _Project.Scripts.Runtime.Core.Infrastructure.Objects.Lifecycle.Pools;
 using Leopotam.EcsProto;
 using UnityEngine;
 
-namespace _Project.Scripts.Runtime.Core.Infrastructure.Audio.Shared.Types
+namespace _Project.Scripts.Runtime.Core.Infrastructure.Audio.Types
 {
     public abstract class AudioSourcePool<TSpawnSettings, TDespawnSettings> : BasePrefabPool<AudioSource, TSpawnSettings, TDespawnSettings> 
         where TSpawnSettings : struct 

@@ -1,10 +1,9 @@
-﻿using _Project.Scripts.Runtime.Core.Infrastructure.Audio.Music.Configs;
-using _Project.Scripts.Runtime.Core.Infrastructure.Audio.Shared.Monos;
-using _Project.Scripts.Runtime.Core.Infrastructure.Audio.Shared.Types;
+﻿using _Project.Scripts.Runtime.Core.Infrastructure.Audio.Configs;
+using _Project.Scripts.Runtime.Core.Infrastructure.Audio.Monos;
 using Leopotam.EcsProto;
 using UnityEngine;
 
-namespace _Project.Scripts.Runtime.Core.Infrastructure.Audio.Music.Types
+namespace _Project.Scripts.Runtime.Core.Infrastructure.Audio.Types
 {
     public class MusicAudioSourcePool : AudioSourcePool<MusicAudioSourcePoolSpawnSettings, MusicAudioSourcePoolDespawnSettings>
     {

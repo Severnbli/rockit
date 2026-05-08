@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Audio;
 
-namespace _Project.Scripts.Runtime.Core.Infrastructure.Audio.Shared.Configs
+namespace _Project.Scripts.Runtime.Core.Infrastructure.Audio.Configs
 {
     public class AudioSharedConfig : ScriptableObjectAutoInstaller<AudioSharedConfig>
     {
