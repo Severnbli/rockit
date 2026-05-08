@@ -1,4 +1,4 @@
-﻿using _Project.Scripts.Runtime.Core.Infrastructure.Animations.Tweens.Pipeline.Core;
+﻿using _Project.Scripts.Runtime.Core.Infrastructure.Animations.Tools.Pipeline.Core;
 using DG.Tweening;
 using UnityEngine;
 
