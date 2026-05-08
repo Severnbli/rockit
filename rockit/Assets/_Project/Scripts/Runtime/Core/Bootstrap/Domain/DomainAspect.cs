@@ -1,4 +1,5 @@
-﻿using _Project.Scripts.Runtime.Core.Infrastructure.Localization;
+﻿using _Project.Scripts.Runtime.Core.Infrastructure.Audio.Shared;
+using _Project.Scripts.Runtime.Core.Infrastructure.Localization;
 using _Project.Scripts.Runtime.Core.Infrastructure.Objects.Lifecycle;
 using _Project.Scripts.Runtime.Core.Infrastructure.Shared;
 using _Project.Scripts.Runtime.Features.Graphics.Animations.Shared;
@@ -33,6 +34,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
         public readonly UISharedAspect UISharedAspect;
         public readonly UIEventsAspect UIEventsAspect;
         public readonly LifecycleAspect LifecycleAspect;
+        public readonly AudioSharedAspect AudioSharedAspect;
         public readonly SharedAspect SharedAspect;
     }
 }
