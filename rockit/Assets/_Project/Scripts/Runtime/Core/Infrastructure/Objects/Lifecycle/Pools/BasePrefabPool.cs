@@ -37,6 +37,8 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Objects.Lifecycle.Pools
             if (!Instances.TryPop(out var instance)) return Create(at, settings);
 
             instance.TryGetComponent(out TItem component);
+            instance.transform.SetParent(at == null ? FallbackContainer() : at);
+            
             return component;
         }
 
