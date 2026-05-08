@@ -19,7 +19,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Audio.Types
         {
             base.PostSpawn(instance, at, settings);
             
-            instance.PlayOneShot(settings.Clip);
+            if (settings.Clip != null) instance.PlayOneShot(settings.Clip);
         }
 
         protected override GameObject GetPrefab() => _sfxConfig.AudioSourcePrefab;
