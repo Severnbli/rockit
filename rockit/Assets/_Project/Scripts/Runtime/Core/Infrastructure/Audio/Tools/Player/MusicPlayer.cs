@@ -1,10 +1,9 @@
 ﻿using System.Threading;
-using _Project.Scripts.Runtime.Core.Infrastructure.Animations.Tweens.Pipeline.Core;
+using _Project.Scripts.Runtime.Core.Infrastructure.Animations.Tools.Pipeline.Core;
 using _Project.Scripts.Runtime.Core.Infrastructure.Audio.Configs;
 using _Project.Scripts.Runtime.Core.Infrastructure.Audio.Types;
 using _Project.Scripts.Runtime.Core.Infrastructure.Objects.Domain;
-using _Project.Scripts.Runtime.Shared.Extensions.Infrastructure.Animations;
-using Cysharp.Threading.Tasks;
+using _Project.Scripts.Runtime.Shared.Extensions.Infrastructure;
 using DG.Tweening;
 using UnityEngine;
 

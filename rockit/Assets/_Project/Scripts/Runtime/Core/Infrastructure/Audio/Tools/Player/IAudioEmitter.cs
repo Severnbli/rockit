@@ -1,4 +1,4 @@
-﻿using _Project.Scripts.Runtime.Core.Infrastructure.Animations.Tweens.Pipeline.Core;
+﻿using _Project.Scripts.Runtime.Core.Infrastructure.Animations.Tools.Pipeline.Core;
 
 namespace _Project.Scripts.Runtime.Core.Infrastructure.Audio.Tools.Player
 {
