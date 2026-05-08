@@ -1,4 +1,5 @@
-﻿using _Project.Scripts.Runtime.Core.Infrastructure.Animations.Tweens.Types;
+﻿using System.Threading;
+using _Project.Scripts.Runtime.Core.Infrastructure.Animations.Tweens.Types;
 using DG.Tweening;
 using DG.Tweening.Core;
 using DG.Tweening.Plugins.Options;
@@ -96,6 +97,22 @@ namespace _Project.Scripts.Runtime.Shared.Extensions.Infrastructure.Animations
                 .DOFade(settings.To, settings.Duration)
                 .UseSettings(settings);
             if (settings.FromExact) tween.From(settings.From);
+            
+            return tween;
+        }
+
+        public static T LinkToCancellationToken<T>(this T tween, CancellationToken ct) where T : Tween
+        {
+            if (tween is not { active: true }) return tween;
+
+            if (ct.IsCancellationRequested)
+            {
+                tween.Kill();
+                return tween;
+            }
+            
+            var registration = ct.Register(() => tween.Kill());
+            tween.OnKill(registration.Dispose);
             
             return tween;
         }
