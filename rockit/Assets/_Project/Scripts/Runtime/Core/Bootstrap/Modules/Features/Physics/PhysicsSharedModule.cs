@@ -21,6 +21,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Physics
         {
             base.BindSystems();
             
+            BindSystem<LoadForcesServiceOnInitSystem>();
             BindSystem<PhysicsServiceUpdateSystem>();
         }
     }
