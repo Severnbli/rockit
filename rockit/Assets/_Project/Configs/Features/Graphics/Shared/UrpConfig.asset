@@ -12,4 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bfacd2765904afba4fb37ec3d78afd1, type: 3}
   m_Name: UrpConfig
   m_EditorClassIdentifier: Runtime::_Project.Scripts.Runtime.Features.Graphics.Shared.Configs.UrpConfig
-  _rendererData: {fileID: 11400000, guid: b3dfc63d0a9712040a2ea1adff2c9327, type: 2}
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  _rendererData: {fileID: 11400000, guid: 424799608f7334c24bf367e4bbfa7f9a, type: 2}
