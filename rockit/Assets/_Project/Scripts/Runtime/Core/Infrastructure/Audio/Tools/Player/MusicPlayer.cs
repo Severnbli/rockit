@@ -1,7 +1,10 @@
-﻿using _Project.Scripts.Runtime.Core.Infrastructure.Animations.Tweens.Pipeline.Core;
+﻿using System.Threading;
+using _Project.Scripts.Runtime.Core.Infrastructure.Animations.Tweens.Pipeline.Core;
 using _Project.Scripts.Runtime.Core.Infrastructure.Audio.Configs;
 using _Project.Scripts.Runtime.Core.Infrastructure.Audio.Types;
 using _Project.Scripts.Runtime.Core.Infrastructure.Objects.Domain;
+using _Project.Scripts.Runtime.Shared.Extensions.Infrastructure.Animations;
+using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using UnityEngine;
 
@@ -16,12 +19,15 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Audio.Tools.Player
         protected readonly MusicAudioSourcePool MasPool;
         protected readonly MusicConfig MConfig;
         protected readonly ITweenPipelineSequenceCreator TpsCreator;
-        
-        public MusicPlayer(IObjectDomain objDomain, MusicConfig mConfig, ITweenPipelineSequenceCreator tpsCreator)
+        protected readonly CancellationToken Ct;
+
+        public MusicPlayer(IObjectDomain objDomain, MusicConfig mConfig, ITweenPipelineSequenceCreator tpsCreator,
+            CancellationToken ct)
         {
             objDomain.Get(out MasPool);
             MConfig = mConfig;
             TpsCreator = tpsCreator;
+            Ct = ct;
 
             PrimaryEmitter = new AudioEmitter(MasPool.Spawn(), TpsCreator);
             SecondaryEmitter = new AudioEmitter(MasPool.Spawn(), TpsCreator);
@@ -40,6 +46,8 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Audio.Tools.Player
                     .OnStart(() => SecondaryEmitter.Play(clip, looped)));
             
             (PrimaryEmitter, SecondaryEmitter) = (SecondaryEmitter, PrimaryEmitter);
+
+            transition.LinkToCancellationToken(Ct);
             
             LastTransition = transition;
         }
