@@ -1,25 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
-using _Project.Scripts.Runtime.Features.Graphics.Animations.Tweens.Types;
-using _Project.Scripts.Runtime.Shared.Extensions.Features.Graphics.Animations;
+using _Project.Scripts.Runtime.Core.Infrastructure.Animations.Tweens.Types;
+using _Project.Scripts.Runtime.Shared.Extensions.Infrastructure.Animations;
 using _Project.Scripts.Runtime.Shared.Extensions.Shared;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.UI;
 
-namespace _Project.Scripts.Runtime.Features.Graphics.Animations.Tweens.Pipeline.Steps
+namespace _Project.Scripts.Runtime.Core.Infrastructure.Animations.Tweens.Pipeline.Steps
 {
     [Serializable]
-    public class FloatScaleStep : TweenStep
+    public class ImageFadeStep : TweenStep
     {
         [SerializeField] private FloatTweenSettings _settings;
-            
+        
         protected override bool TryDoTween(GameObject go, Dictionary<Type, Component> goCache, out Tween tween)
         {
             tween = null;
             
-            if (!go.TryGetComponentWithCache(goCache, out Transform tf)) return false;
+            if (!go.TryGetComponentWithCache(goCache, out Image img)) return false;
             
-            tf.ScaleTween(_settings);
+            img.FadeTween(_settings);
             return true;
         }
     }

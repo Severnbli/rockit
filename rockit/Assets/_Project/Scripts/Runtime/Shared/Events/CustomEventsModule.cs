@@ -1,5 +1,5 @@
 ﻿using System;
-using _Project.Scripts.Runtime.Shared.Callback.Events;
+using _Project.Scripts.Runtime.Features.Physics.Shared.Events;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 using Leopotam.EcsProto.Unity;

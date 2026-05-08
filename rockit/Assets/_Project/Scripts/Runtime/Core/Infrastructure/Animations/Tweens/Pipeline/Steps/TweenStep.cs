@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using _Project.Scripts.Runtime.Features.Graphics.Animations.Tweens.Pipeline.Core;
+using _Project.Scripts.Runtime.Core.Infrastructure.Animations.Tweens.Pipeline.Core;
 using DG.Tweening;
 using UnityEngine;
 
-namespace _Project.Scripts.Runtime.Features.Graphics.Animations.Tweens.Pipeline.Steps
+namespace _Project.Scripts.Runtime.Core.Infrastructure.Animations.Tweens.Pipeline.Steps
 {
     [Serializable]
     public abstract class TweenStep : ITweenPipelineStep

@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using _Project.Scripts.Runtime.Features.Graphics.Animations.Tweens.Types;
-using _Project.Scripts.Runtime.Shared.Extensions.Features.Graphics.Animations;
+using _Project.Scripts.Runtime.Core.Infrastructure.Animations.Tweens.Types;
+using _Project.Scripts.Runtime.Shared.Extensions.Infrastructure.Animations;
 using _Project.Scripts.Runtime.Shared.Extensions.Shared;
 using DG.Tweening;
 using UnityEngine;
 
-namespace _Project.Scripts.Runtime.Features.Graphics.Animations.Tweens.Pipeline.Steps
+namespace _Project.Scripts.Runtime.Core.Infrastructure.Animations.Tweens.Pipeline.Steps
 {
     [Serializable]
     public class AudioSourceFadeStep : TweenStep

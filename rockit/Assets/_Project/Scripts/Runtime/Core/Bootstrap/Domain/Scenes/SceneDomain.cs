@@ -6,7 +6,6 @@ using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Physics;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Physics.Moving;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure;
 using _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes;
-using _Project.Scripts.Runtime.Features.Graphics.UI.Buttons.Shared;
 
 namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Scenes
 {
