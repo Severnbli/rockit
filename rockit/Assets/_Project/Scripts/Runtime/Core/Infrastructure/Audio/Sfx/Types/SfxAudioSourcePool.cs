@@ -21,7 +21,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Audio.Sfx.Types
     
     public struct SfxAudioSourcePoolSpawnSettings
     {
-        
+        public AudioClip Clip;
     }
     
     public struct SfxAudioSourcePoolDespawnSettings
