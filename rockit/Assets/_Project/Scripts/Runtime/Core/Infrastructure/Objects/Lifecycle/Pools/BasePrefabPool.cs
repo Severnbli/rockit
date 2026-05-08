@@ -1,53 +1,84 @@
 ﻿using System.Collections.Generic;
 using _Project.Scripts.Runtime.Core.Infrastructure.Objects.Lifecycle.Factories;
+using _Project.Scripts.Runtime.Shared.Extensions.Shared;
+using Leopotam.EcsProto;
+using Leopotam.EcsProto.Unity;
 using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Core.Infrastructure.Objects.Lifecycle.Pools
 {
-    public abstract class BasePrefabPool<T> : BasePrefabFactory<T>, IPrefabPool<T> where T : Component
+    public abstract class BasePrefabPool<TItem, TSpawnSettings, TDespawnSettings> : BasePrefabFactory<TItem, TSpawnSettings>,
+        IPrefabPool<TItem, TSpawnSettings, TDespawnSettings> 
+        where TItem : Component
+        where TSpawnSettings : struct
+        where TDespawnSettings : struct
     {
-        protected readonly Stack<GameObject> Instances = new ();
-        
-        public T Spawn(Transform at = null)
+        protected readonly Stack<GameObject> Instances = new();
+
+        protected BasePrefabPool(ProtoWorld world) : base(world)
         {
-            PreSpawn(at);
-            var instance = SpawnInstance(at);
-            PostSpawn(instance, at);
+        }
+
+        public TItem Spawn(Transform at = null, TSpawnSettings settings = default)
+        {
+            PreSpawn(at, settings);
+            var instance = SpawnInstance(at, settings);
+            PostSpawn(instance, at, settings);
+            if (TryGetEntity(instance, out var entity)) ConfigureEntityOnSpawn(instance, entity, settings);
             return instance;
         }
-        
-        protected virtual void PreSpawn(Transform at) {}
 
-        protected virtual T SpawnInstance(Transform at = null)
+        protected virtual void PreSpawn(Transform at, TSpawnSettings settings = default)
         {
-            if (!Instances.TryPop(out var instance)) return Create(at);
+        }
+
+        protected virtual TItem SpawnInstance(Transform at = null, TSpawnSettings settings = default)
+        {
+            if (!Instances.TryPop(out var instance)) return Create(at, settings);
+
+            instance.TryGetComponent(out TItem component);
+            instance.transform.SetParent(at == null ? FallbackContainer() : at);
             
-            instance.TryGetComponent(out T component);
             return component;
         }
 
-        protected virtual void PostSpawn(T instance, Transform at = null)
+        protected virtual void PostSpawn(TItem instance, Transform at = null, TSpawnSettings settings = default)
         {
             instance.gameObject.SetActive(true);
         }
 
-        public void Despawn(T instance)
+        private bool TryGetEntity(TItem instance, out ProtoEntity entity)
         {
-            PreDespawn(instance);
-            DespawnInstance(instance);
-            PostDespawn(instance);
+            entity = default;
+            
+            return instance.gameObject.TryGet(out ProtoUnityAuthoring authoring) && 
+                   authoring.Entity().TryUnpackCompletely(World, out  entity);
         }
-        
-        protected virtual void PreDespawn(T instance) {}
 
-        protected virtual void DespawnInstance(T instance)
+        protected virtual void ConfigureEntityOnSpawn(TItem instance, ProtoEntity entity, TSpawnSettings settings = default) {}
+
+        public void Despawn(TItem instance, TDespawnSettings settings = default)
+        {
+            PreDespawn(instance, settings);
+            DespawnInstance(instance, settings);
+            PostDespawn(instance, settings);
+            if (TryGetEntity(instance, out var entity)) ConfigureEntityOnDespawn(instance, entity, settings);
+        }
+
+        protected virtual void PreDespawn(TItem instance, TDespawnSettings settings = default)
+        {
+        }
+
+        protected virtual void DespawnInstance(TItem instance, TDespawnSettings settings = default)
         {
             Instances.Push(instance.gameObject);
         }
 
-        protected virtual void PostDespawn(T instance)
+        protected virtual void PostDespawn(TItem instance, TDespawnSettings settings = default)
         {
             instance.gameObject.SetActive(false);
         }
+        
+        protected virtual void ConfigureEntityOnDespawn(TItem instance, ProtoEntity entity, TDespawnSettings settings = default) {}
     }
 }

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace _Project.Scripts.Runtime.Shared.Callback.Events
+namespace _Project.Scripts.Runtime.Features.Physics.Shared.Events
 {
     public struct UnityPhysics2DCollisionStayEvent
     {

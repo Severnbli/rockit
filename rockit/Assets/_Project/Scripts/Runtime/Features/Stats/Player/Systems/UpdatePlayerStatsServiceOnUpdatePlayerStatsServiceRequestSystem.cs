@@ -1,6 +1,5 @@
 ﻿using _Project.Scripts.Runtime.Core.Infrastructure.Requests.World;
 using _Project.Scripts.Runtime.Core.Infrastructure.Storage;
-using _Project.Scripts.Runtime.Core.Infrastructure.Storage.Entities;
 using _Project.Scripts.Runtime.Features.Stats.Player.Configs;
 using _Project.Scripts.Runtime.Features.Stats.Player.Services;
 using _Project.Scripts.Runtime.Shared.Extensions.Features.Stats;

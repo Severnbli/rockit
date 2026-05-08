@@ -1,4 +1,4 @@
-﻿using _Project.Scripts.Runtime.Features.Graphics.Animations.Tweens.Pipeline.Core;
+﻿using _Project.Scripts.Runtime.Core.Infrastructure.Animations.Tools.Pipeline.Core;
 using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Configs

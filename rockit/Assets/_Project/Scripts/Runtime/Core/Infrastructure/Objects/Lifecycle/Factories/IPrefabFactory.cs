@@ -2,8 +2,10 @@
 
 namespace _Project.Scripts.Runtime.Core.Infrastructure.Objects.Lifecycle.Factories
 {
-    public interface IPrefabFactory<out T> where T : Component
+    public interface IPrefabFactory<out TItem, in TSetting> 
+        where TItem : Component 
+        where TSetting : struct
     {
-        T Create(Transform at = null);
+        TItem Create(Transform at = null, TSetting settings = default);
     }
 }

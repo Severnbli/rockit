@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c6f77fbef4642cea5b1031efe5b300c, type: 3}
+  m_Name: SfxConfig
+  m_EditorClassIdentifier: Runtime::_Project.Scripts.Runtime.Core.Infrastructure.Audio.Sfx.Configs.SfxConfig
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  _audioSourcePrefab: {fileID: 3806661814791769264, guid: bcf3bc6c21deaaf44bd126238fb5f123, type: 3}
