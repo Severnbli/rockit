@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8851028709333876200}
   - component: {fileID: 5696998857548073883}
+  - component: {fileID: 3457770106027254987}
   m_Layer: 0
   m_Name: SfxAudioSource
   m_TagString: Untagged
@@ -129,3 +130,31 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3457770106027254987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3806661814791769264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd2e3b9377ea4b6b9d83eb1bc17d15a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Leopotam.EcsProto.Unity::Leopotam.EcsProto.Unity.ProtoUnityAuthoring
+  _worldName: 
+  _authoringType: 1
+  _destroyAfterAuthoring: 0
+  Components:
+  - rid: 1499440481209155586
+  - rid: 1499440481209155665
+  references:
+    version: 2
+    RefIds:
+    - rid: 1499440481209155586
+      type: {class: AudioSourceComponent, ns: _Project.Scripts.Runtime.Core.Infrastructure.Audio.Components, asm: Runtime}
+      data:
+        AudioSource: {fileID: 5696998857548073883}
+    - rid: 1499440481209155665
+      type: {class: SfxAudioSourceTag, ns: _Project.Scripts.Runtime.Core.Infrastructure.Audio.Tags, asm: Runtime}
+      data: 
