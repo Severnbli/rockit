@@ -4,7 +4,7 @@ using Cysharp.Threading.Tasks;
 
 namespace _Project.Scripts.Runtime.Shared.Extensions.Infrastructure
 {
-    public static class TimeServiceExtensions
+    public static class TimeExtensions
     {
         public static async UniTask<float> GetUniTaskSpentTime(this TimeService timeService, Func<UniTask> func)
         {
