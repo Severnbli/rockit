@@ -2,7 +2,7 @@
 
 namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Defined.Pause
 {
-    public class PauseWindowConfig : FadeWindowConfig<PauseWindowConfig>
+    public sealed class PauseWindowConfig : FadeWindowConfig<PauseWindowConfig>
     {
         
     }

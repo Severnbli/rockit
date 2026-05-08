@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2226261244767509142}
   - component: {fileID: 8169438027609523012}
   - component: {fileID: 8524255238225512972}
+  - component: {fileID: 4841962115274025836}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -87,7 +88,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c62e400af0e82aa4a88a54e85e8a1b8a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -158,17 +159,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 1.25}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 6, y: 5.25}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 2.5}
   m_EdgeRadius: 0
 --- !u!114 &9056845428546682451
 MonoBehaviour:
@@ -197,6 +198,7 @@ MonoBehaviour:
   - rid: 1430329838170800205
   - rid: 1430329848479350784
   - rid: 1430329848479350785
+  - rid: 1499440484884938829
   references:
     version: 2
     RefIds:
@@ -231,15 +233,19 @@ MonoBehaviour:
     - rid: 1430329838170800205
       type: {class: FaceComponent, ns: _Project.Scripts.Runtime.Features.Graphics.Sprites.Shared.Components, asm: Runtime}
       data:
-        Direction: 0
+        Direction: 1
     - rid: 1430329848479350784
       type: {class: GroundCheckComponent, ns: _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Components, asm: Runtime}
       data:
-        Position: {x: 0, y: -0.5, z: 0}
-        Radius: 0.3
+        Position: {x: 0, y: 0, z: 0}
+        Radius: 0.2
     - rid: 1430329848479350785
       type: {class: MovableTag, ns: _Project.Scripts.Runtime.Features.Physics.Moving.Shared.Tags, asm: Runtime}
       data: 
+    - rid: 1499440484884938829
+      type: {class: AnimatorComponent, ns: _Project.Scripts.Runtime.Features.Graphics.Animations.Shared.Components, asm: Runtime}
+      data:
+        Animator: {fileID: 4841962115274025836}
 --- !u!114 &2226261244767509142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,3 +287,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: Runtime::_Project.Scripts.Runtime.Shared.Callback.Actions.UnityPhysics2DCollisionStayAction
   _senderName: 
   _worldName: 
+--- !u!95 &4841962115274025836
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5501382934325108523}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: df23c4bec468fa44a9259c53bad86a2e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
