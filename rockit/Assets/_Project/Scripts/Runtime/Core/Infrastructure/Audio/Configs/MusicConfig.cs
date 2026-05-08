@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Core.Infrastructure.Audio.Configs
 {
-    public class MusicConfig : AudioConfig<MusicConfig>
+    public sealed class MusicConfig : AudioConfig<MusicConfig>
     {
         [SerializeField] private TweenPipeline _transitionFrom;
         [SerializeField] private TweenPipeline _transitionTo;
