@@ -46,6 +46,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Project
             TryRegisterModule<InputModule>();
             TryRegisterModule<GlitchEffectsModule>();
             TryRegisterModule<PlayerStatsModule>();
+            TryRegisterModule<AudioModule>();
             TryRegisterModule<RequestsModule>();
         }
     }
