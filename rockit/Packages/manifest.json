@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.elringus.spriteglow": "https://github.com/elringus/sprite-glow.git#package",
     "com.github-glitchenzo.nugetforunity": "https://github.com/GlitchEnzo/NuGetForUnity.git?path=/src/NuGetForUnity",
     "com.starasgames.tmpro-dynamic-data-cleaner": "https://github.com/STARasGAMES/tmpro-dynamic-data-cleaner.git#upm",
     "com.unity.2d.animation": "13.0.5",
