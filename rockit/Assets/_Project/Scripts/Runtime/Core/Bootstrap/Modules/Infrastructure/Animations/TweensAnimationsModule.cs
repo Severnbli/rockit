@@ -1,7 +1,7 @@
 ﻿using _Project.Scripts.Runtime.Core.Bootstrap.Domain;
-using _Project.Scripts.Runtime.Features.Graphics.Animations.Tweens.Pipeline.Core;
+using _Project.Scripts.Runtime.Core.Infrastructure.Animations.Tweens.Pipeline.Core;
 
-namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.Animations
+namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure.Animations
 {
     public sealed class TweensAnimationsModule : BaseModule<TweensAnimationsModule>
     {

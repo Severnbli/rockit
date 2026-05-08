@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace _Project.Scripts.Runtime.Features.Graphics.Animations.Tweens.Pipeline.Core
+namespace _Project.Scripts.Runtime.Core.Infrastructure.Animations.Tweens.Pipeline.Core
 {
     [Serializable]
     public enum TweenStepConnector

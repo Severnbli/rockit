@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 
 namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Monos
 {

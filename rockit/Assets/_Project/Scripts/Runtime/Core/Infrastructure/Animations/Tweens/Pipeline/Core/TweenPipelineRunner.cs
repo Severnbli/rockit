@@ -3,7 +3,7 @@ using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using UnityEngine;
 
-namespace _Project.Scripts.Runtime.Features.Graphics.Animations.Tweens.Pipeline.Core
+namespace _Project.Scripts.Runtime.Core.Infrastructure.Animations.Tweens.Pipeline.Core
 {
     public class TweenPipelineRunner : ITweenPipelineRunner
     {
