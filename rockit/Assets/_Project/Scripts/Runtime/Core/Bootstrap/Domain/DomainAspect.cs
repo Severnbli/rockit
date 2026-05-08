@@ -3,6 +3,7 @@ using _Project.Scripts.Runtime.Core.Infrastructure.Localization;
 using _Project.Scripts.Runtime.Core.Infrastructure.Objects.Lifecycle;
 using _Project.Scripts.Runtime.Core.Infrastructure.Shared;
 using _Project.Scripts.Runtime.Features.Graphics.Animations.Shared;
+using _Project.Scripts.Runtime.Features.Graphics.Platforms;
 using _Project.Scripts.Runtime.Features.Graphics.Sprites.Shared;
 using _Project.Scripts.Runtime.Features.Graphics.UI.Shared;
 using _Project.Scripts.Runtime.Features.Input;
@@ -28,6 +29,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
         public readonly MovingSharedAspect MovingSharedAspect;
         public readonly AnimationsSharedAspect AnimationsSharedAspect;
         public readonly SpritesSharedAspect SpritesSharedAspect;
+        public readonly PlatformsGraphicsAspect PlatformsGraphicsAspect;
         public readonly PlatformsMovingAspect PlatformsMovingAspect;
         public readonly PlatformsSharedAspect PlatformsSharedAspect;
         public readonly LocalizationAspect LocalizationAspect;
