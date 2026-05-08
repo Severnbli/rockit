@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Shared.Extensions.Infrastructure
 {
-    public static class SceneSwitcherServiceExtensions
+    public static class ScenesExtensions
     {
         private const float Progress01Progress0100Multiplier = 100f;
         private const float DefaultProgress = 0f;
