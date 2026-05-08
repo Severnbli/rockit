@@ -6,8 +6,8 @@ namespace _Project.Scripts.Runtime.Features.Graphics.Shared.Configs
 {
     public sealed class UrpConfig : ScriptableObjectAutoInstaller<UrpConfig>
     {
-        [SerializeField] private UniversalRendererData _rendererData;
+        [SerializeField] private ScriptableRendererData _rendererData;
         
-        public UniversalRendererData RendererData => _rendererData;
+        public ScriptableRendererData RendererData => _rendererData;
     }
 }
