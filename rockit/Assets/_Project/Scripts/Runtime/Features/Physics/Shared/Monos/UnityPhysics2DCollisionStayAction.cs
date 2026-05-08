@@ -1,8 +1,8 @@
-﻿using _Project.Scripts.Runtime.Shared.Callback.Events;
+﻿using _Project.Scripts.Runtime.Features.Physics.Shared.Events;
 using Leopotam.EcsProto.Unity;
 using UnityEngine;
 
-namespace _Project.Scripts.Runtime.Shared.Callback.Actions
+namespace _Project.Scripts.Runtime.Features.Physics.Shared.Monos
 {
     public sealed class UnityPhysics2DCollisionStayAction : ProtoUnityAction<UnityPhysics2DCollisionStayEvent>
     {
