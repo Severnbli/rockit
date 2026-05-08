@@ -1,4 +1,5 @@
-﻿using _Project.Scripts.Runtime.Core.Infrastructure.Localization;
+﻿using _Project.Scripts.Runtime.Core.Infrastructure.Audio;
+using _Project.Scripts.Runtime.Core.Infrastructure.Localization;
 using _Project.Scripts.Runtime.Core.Infrastructure.Scenes;
 using _Project.Scripts.Runtime.Core.Infrastructure.Shared;
 using _Project.Scripts.Runtime.Core.Infrastructure.Storage;
@@ -22,6 +23,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Requests
         public readonly StorageRequestsAspect StorageRequestsAspect;
         public readonly ScenesRequestsAspect ScenesRequestsAspect;
         public readonly PlayerStatsRequestsAspect PlayerStatsRequestsAspect;
+        public readonly AudioRequestsAspect AudioRequestsAspect;
         public readonly SharedRequestsAspect SharedRequestsAspect;
     }
 }
