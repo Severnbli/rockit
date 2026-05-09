@@ -18,7 +18,6 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Systems
         [DIRequests] private readonly CharactersMovingRequestsAspect _cmrAspect;
         [DIRequests] private readonly RequestsAspect _rAspect;
         [DI] private readonly CharactersMovingAspect _cmAspect;
-        [DI] private readonly MovingSharedAspect _msAspect;
         [DI] private readonly PhysicsSharedAspect _psAspect;
         private ProtoWorld _world;
 
@@ -65,7 +64,7 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Systems
         private void ApplyDash(DashRequest dRequest, ProtoEntity tarE)
         {
             ref var rbComponent = ref _psAspect.Rigidbody2DComponentPool.Get(tarE);
-            ref var mComponent = ref _msAspect.MoveComponentPool.GetOrAdd(tarE);
+            ref var mComponent = ref _cmAspect.CharacterMoveComponentPool.GetOrAdd(tarE);
             rbComponent.Rigidbody2D.ApplyDash(dRequest.Factor, CharactersMovingUtils.GetMoveXDirection(mComponent.Direction));
         }
     }

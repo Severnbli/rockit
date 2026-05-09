@@ -25,7 +25,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Physics.Movin
             BindSystem<JumpBufferingExpireSystem>();
             BindSystem<DashTimeoutExpireSystem>();
             BindSystem<DashAirQuantityResetOnGroundedSystem>();
-            BindSystem<UpdateMoveDirectionOnWalkRequestSystem>();
+            BindSystem<UpdateCharacterMoveDirectionOnWalkRequestSystem>();
             BindSystem<ApplyWalkDecelerationOnFixedRunSystem>();
             BindSystem<ApplyWalkOnWalkRequestSystem>();
             BindSystem<UpdateWalkDecelerationOnWalkRequestSystem>();

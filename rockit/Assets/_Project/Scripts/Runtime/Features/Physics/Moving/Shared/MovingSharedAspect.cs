@@ -8,7 +8,6 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Shared
 {
     public sealed class MovingSharedAspect : ProtoAspectInject
     {
-        public readonly ProtoPool<MoveComponent> MoveComponentPool;
         public readonly ProtoPool<MovableTag> MovableTagPool;
         public readonly ProtoPool<MoveSnapComponent> MoveSnapComponentPool;
         public readonly ProtoIt Movables = new (It.Inc<MovableTag>());
