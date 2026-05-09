@@ -19,7 +19,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Animations.Tools.Pipeline
             
             if (!go.TryGetComponentWithCache(goCache, out CanvasGroup cg)) return false;
 
-            cg.FadeTween(_settings);
+            tween = cg.FadeTween(_settings);
             return true;
         }
     }

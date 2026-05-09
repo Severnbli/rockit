@@ -19,7 +19,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Animations.Tools.Pipeline
             
             if (!go.TryGetComponentWithCache(goCache, out AudioSource aSource)) return false;
 
-            aSource.FadeTween(_settings);
+            tween = aSource.FadeTween(_settings);
             return true;
         }
     }

@@ -20,7 +20,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Animations.Tools.Pipeline
             
             if (!go.TryGetComponentWithCache(goCache, out Image img)) return false;
             
-            img.FadeTween(_settings);
+            tween = img.FadeTween(_settings);
             return true;
         }
     }

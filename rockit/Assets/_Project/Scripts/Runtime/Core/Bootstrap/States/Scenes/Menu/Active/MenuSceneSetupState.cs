@@ -1,11 +1,23 @@
-﻿using Cysharp.Threading.Tasks;
+﻿using _Project.Scripts.Runtime.Core.Infrastructure.Audio.Configs;
+using _Project.Scripts.Runtime.Core.Infrastructure.Audio.Tools.Player;
+using Cysharp.Threading.Tasks;
 
 namespace _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes.Menu.Active
 {
     public class MenuSceneSetupState : ISceneSetupState
     {
+        private readonly IMusicPlayer _mPlayer;
+        private readonly MusicConfig _mConfig;
+
+        public MenuSceneSetupState(IMusicPlayer mPlayer, MusicConfig mConfig)
+        {
+            _mPlayer = mPlayer;
+            _mConfig = mConfig;
+        }
+
         public async UniTask OnEnter(IStateMachine stateMachine)
         {
+            _mPlayer.Play(_mConfig.Menu, true);
             await UniTask.NextFrame();
         }
 
