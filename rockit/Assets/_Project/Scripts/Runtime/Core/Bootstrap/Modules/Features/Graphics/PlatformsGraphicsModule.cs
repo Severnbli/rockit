@@ -18,6 +18,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics
             BindSystem<UpdatePositionPlatformColorWithSpriteGlowSystem>();
             BindSystem<UpdateRotationPlatformColorWithSpriteGlowSystem>();
             BindSystem<UpdateScalePlatformColorWithSpriteGlowSystem>();
+            BindSystem<ResetPlatformColorChangeOnRunSystem>();
         }
     }
 }
