@@ -4,39 +4,6 @@ namespace _Project.Scripts.Runtime.Shared.Extensions.Shared
 {
     public static class Rigidbody2DExtensions
     {
-        public static bool VelocityXZero(this Rigidbody2D rigidbody2D)
-        {
-            return Mathf.Approximately(rigidbody2D.linearVelocityX, 0f);
-        }
-
-        public static void ApplyWalkDeceleration(this Rigidbody2D rigidbody2D, float factor, float deltaTime)
-        {
-            var velocity = rigidbody2D.linearVelocity;
-
-            velocity.x = Mathf.MoveTowards(
-                velocity.x,
-                0f,
-                factor * deltaTime
-            );
-            
-            rigidbody2D.linearVelocity = velocity;
-        }
-
-        public static void ApplyJumpDeceleration(this Rigidbody2D rigidbody2D, float factor, float deltaTime)
-        {
-            if (rigidbody2D.linearVelocity.y <= 0f) return;
-            
-            var velocity = rigidbody2D.linearVelocity;
-            
-            velocity.y = Mathf.MoveTowards(
-                velocity.x,
-                0f,
-                factor * deltaTime
-            );
-            
-            rigidbody2D.linearVelocity = velocity;
-        }
-
         public static void ResetVelocityY(this Rigidbody2D rigidbody2D)
         {
             var velocity = rigidbody2D.linearVelocity;
