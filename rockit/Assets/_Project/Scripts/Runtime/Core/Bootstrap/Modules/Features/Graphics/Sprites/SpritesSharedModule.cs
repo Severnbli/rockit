@@ -13,7 +13,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.Spri
         {
             base.BindSystems();
             
-            BindSystem<UpdateTransformScaleXToFaceAccordingMoveSystem>();
+            BindSystem<UpdateTransformScaleXToFaceAccordingCharacterMoveSystem>();
         }
     }
 }
