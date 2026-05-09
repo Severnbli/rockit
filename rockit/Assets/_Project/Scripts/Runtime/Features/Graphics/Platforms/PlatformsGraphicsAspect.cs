@@ -12,9 +12,9 @@ namespace _Project.Scripts.Runtime.Features.Graphics.Platforms
         public readonly ProtoPool<PlatformColorChangeComponent> PlatformColorChangeComponentPool;
         public readonly ProtoPool<PlatformColorChangeTimeoutComponent> PlatformColorChangeTimeoutComponentPool;
         public readonly ProtoIt SpriteGlowPlatforms = new (It.Inc<PlatformComponent, SpriteGlowComponent>());
-        public readonly ProtoIt SpriteGlowActivePositionPlatforms = new (It.Inc<PlatformComponent, PositionPlatformTag, ActivePlatformTag, SpriteGlowComponent>());
-        public readonly ProtoIt SpriteGlowActiveRotationPlatforms = new (It.Inc<PlatformComponent, RotationPlatformTag, ActivePlatformTag, SpriteGlowComponent>());
-        public readonly ProtoIt SpriteGlowActiveScalePlatforms = new (It.Inc<PlatformComponent, ScalePlatformTag, ActivePlatformTag, SpriteGlowComponent>());
+        public readonly ProtoItExc SpriteGlowActivePositionPlatforms = new (It.Inc<PlatformComponent, PositionPlatformTag, ActivePlatformTag, SpriteGlowComponent>(), It.Exc<PlatformColorChangeTimeoutComponent>());
+        public readonly ProtoItExc SpriteGlowActiveRotationPlatforms = new (It.Inc<PlatformComponent, RotationPlatformTag, ActivePlatformTag, SpriteGlowComponent>(), It.Exc<PlatformColorChangeTimeoutComponent>());
+        public readonly ProtoItExc SpriteGlowActiveScalePlatforms = new (It.Inc<PlatformComponent, ScalePlatformTag, ActivePlatformTag, SpriteGlowComponent>(),It.Exc<PlatformColorChangeTimeoutComponent>());
         public readonly ProtoIt PlatformColorChangeTimeouts = new (It.Inc<PlatformColorChangeComponent>());
         public readonly ProtoItExc SpriteGlowPlatformWithoutSpriteGlowChanges = new (It.Inc<PlatformComponent, SpriteGlowComponent>(), It.Exc<SpriteGlowChangeComponent>());
     }
