@@ -21,7 +21,7 @@ namespace _Project.Scripts.Runtime.Features.Graphics.Platforms.Systems
             foreach (var e in _pgAspect.SpriteGlowActivePositionPlatforms)
             {
                 ref var pccComponent = ref _pgAspect.PlatformColorChangeComponentPool.GetOrAdd(e);
-                if (pccComponent.Blocked || pccComponent.RotationColorWas) continue;
+                if (pccComponent.Blocked || pccComponent.ScaleColorWas) continue;
 
                 pccComponent.Blocked = true;
                 pccComponent.ScaleColorWas = true;
