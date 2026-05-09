@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e71f7bd1817cd714f8a0171031b12548
+guid: bec8592a39048f84eb65ada2ba0ed6bd
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -135,7 +135,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: RotationButton_Press_0
+      name: Press_0
       rect:
         serializedVersion: 2
         x: 0
@@ -150,14 +150,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c891d32e05e86e243bbd30a66577f48c
-      internalID: 174507381
+      spriteID: 9c91e11c0114a894e96a881a9abe745f
+      internalID: -1678016166
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RotationButton_Press_1
+      name: Press_1
       rect:
         serializedVersion: 2
         x: 18
@@ -172,14 +172,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 970caf17d1774fb4691c0235a3198cbd
-      internalID: 150128204
+      spriteID: 08f315e5b17ae5a43999293d9aa225fd
+      internalID: -221858315
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RotationButton_Press_2
+      name: Press_2
       rect:
         serializedVersion: 2
         x: 36
@@ -194,14 +194,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 61ed246b0f0fe9147aa2d07d99a93c23
-      internalID: -551935004
+      spriteID: ab5fdafba701f0f419b59304d9058ead
+      internalID: 169413816
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RotationButton_Press_3
+      name: Press_3
       rect:
         serializedVersion: 2
         x: 54
@@ -216,8 +216,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1b2dee1ed6f413d4f86831ac4d9b82f8
-      internalID: 640012679
+      spriteID: 3cff560d7f96be247a6e9aa2e23a0915
+      internalID: 281726757
       vertices: []
       indices: 
       edges: []
@@ -226,7 +226,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 93abecd08ad2c7a4987601cb720466e9
+    spriteID: 3c6f15749ed42a5488f49a6ea867e56a
     internalID: 0
     vertices: []
     indices: 
@@ -238,10 +238,10 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":1.0},"gridSpriteSize":{"x":18.0,"y":18.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      RotationButton_Press_0: 174507381
-      RotationButton_Press_1: 150128204
-      RotationButton_Press_2: -551935004
-      RotationButton_Press_3: 640012679
+      Press_0: -1678016166
+      Press_1: -221858315
+      Press_2: 169413816
+      Press_3: 281726757
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: bec8592a39048f84eb65ada2ba0ed6bd
+guid: af51de9eb79ebe5419b93bc4ef4562a2
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -135,7 +135,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PositionButton_Press_0
+      name: Press_0
       rect:
         serializedVersion: 2
         x: 0
@@ -150,14 +150,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a86ee480c9f594144b11b02c2795d3b4
-      internalID: 171773048
+      spriteID: 5856d5db5271e424ba8aaa2c07905af0
+      internalID: -1685713341
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PositionButton_Press_1
+      name: Press_1
       rect:
         serializedVersion: 2
         x: 18
@@ -172,14 +172,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4d869f617cf04894c923239f1f2f8c77
-      internalID: -1871982962
+      spriteID: 211676900a06f5f4fbc21fb55bcab843
+      internalID: 139359084
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PositionButton_Press_2
+      name: Press_2
       rect:
         serializedVersion: 2
         x: 36
@@ -194,14 +194,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ff34d71d54edb5843a5461b16139cfd4
-      internalID: 628915695
+      spriteID: ab743fab9f1273a40af6cd22a8fe09c0
+      internalID: -1974584983
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PositionButton_Press_3
+      name: Press_3
       rect:
         serializedVersion: 2
         x: 54
@@ -216,8 +216,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 926f3cab946b1484cbd69a3573f2384a
-      internalID: -1037829273
+      spriteID: 6199691d8d220814bbdd96d9c5931f2d
+      internalID: 1218794733
       vertices: []
       indices: 
       edges: []
@@ -226,7 +226,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 3c6f15749ed42a5488f49a6ea867e56a
+    spriteID: 7fe1dc0d0c6119b42aca9e00d2dee22d
     internalID: 0
     vertices: []
     indices: 
@@ -238,10 +238,10 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":1.0},"gridSpriteSize":{"x":18.0,"y":18.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      PositionButton_Press_0: 171773048
-      PositionButton_Press_1: -1871982962
-      PositionButton_Press_2: 628915695
-      PositionButton_Press_3: -1037829273
+      Press_0: -1685713341
+      Press_1: 139359084
+      Press_2: -1974584983
+      Press_3: 1218794733
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
