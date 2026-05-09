@@ -19,7 +19,7 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Characters
         public readonly ProtoIt DashRequests = new (It.Inc<RequestComponent, ActiveRequestTag, DashRequest>());
         public readonly ProtoIt DashTimeoutRequests = new (It.Inc<RequestComponent, ActiveRequestTag, DashTimeoutRequest>());
         public readonly ProtoIt JumpAppliedRunRequests = new (It.Inc<RequestComponent, ActiveRequestTag, RunRequestTag, JumpAppliedRequest>());
-        public readonly ProtoIt JumpAppliedFixedRunRequests = new (It.Inc<RequestComponent, ActiveRequestTag, RunRequestTag, JumpAppliedRequest>());
+        public readonly ProtoIt JumpAppliedFixedRunRequests = new (It.Inc<RequestComponent, ActiveRequestTag, FixedRunRequestTag, JumpAppliedRequest>());
         public readonly ProtoIt DashAppliedRunRequests = new (It.Inc<RequestComponent, ActiveRequestTag, RunRequestTag, DashAppliedRequest>());
         public readonly ProtoIt DashAppliedFixedRunRequests = new (It.Inc<RequestComponent, ActiveRequestTag, FixedRunRequestTag, DashAppliedRequest>());
         
