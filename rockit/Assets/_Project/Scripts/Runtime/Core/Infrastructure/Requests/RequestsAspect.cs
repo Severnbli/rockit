@@ -25,7 +25,6 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Requests
         public readonly ScenesRequestsAspect ScenesRequestsAspect;
         public readonly PlayerStatsRequestsAspect PlayerStatsRequestsAspect;
         public readonly AudioRequestsAspect AudioRequestsAspect;
-        public readonly SpritesGlowRequestsAspect SpritesGlowRequestsAspect;
         public readonly SharedRequestsAspect SharedRequestsAspect;
     }
 }
