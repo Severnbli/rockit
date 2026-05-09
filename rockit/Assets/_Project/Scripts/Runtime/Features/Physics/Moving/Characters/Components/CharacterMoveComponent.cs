@@ -7,5 +7,6 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Components
         public MoveDirection Direction;
         public float WalkDeceleration;
         public float JumpDeceleration;
+        public float MaxFallingVelocity;
     }
 }
