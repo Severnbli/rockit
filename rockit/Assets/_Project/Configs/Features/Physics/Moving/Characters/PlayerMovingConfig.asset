@@ -23,8 +23,8 @@ MonoBehaviour:
     SerializationNodes: []
   _walkSpeed: 7
   _walkDeceleration: 80
-  _jumpPower: 5
-  _jumpDeceleration: 10
+  _jumpPower: 12
+  _jumpDeceleration: 20
   _maxFallVelocity: 20
   _dashPower: 15
   _airDashes: 2
