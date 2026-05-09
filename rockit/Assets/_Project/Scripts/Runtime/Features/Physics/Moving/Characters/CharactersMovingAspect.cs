@@ -16,6 +16,7 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Characters
         public readonly ProtoPool<DashTimeoutComponent> DashTimeoutComponentPool;
         public readonly ProtoPool<DashComponent> DashComponentPool;
         public readonly ProtoPool<CharacterVelocityComponent> CharacterVelocityComponentPool;
+        public readonly ProtoPool<CharacterMoveComponent> CharacterMoveComponentPool;
         public readonly ProtoIt GroundCheckable = new (It.Inc<TransformComponent, GroundCheckComponent>());
         public readonly ProtoIt GroundCheckResults = new (It.Inc<GroundCheckResultComponent>());
         public readonly ProtoIt Rigidbody2DGroundCheckResults = new (It.Inc<Rigidbody2DComponent, GroundCheckResultComponent>());
@@ -27,7 +28,7 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Characters
         public readonly ProtoIt DashGroundCheckResults = new (It.Inc<DashComponent, GroundCheckResultComponent>());
         public readonly ProtoItExc Dashables = new (It.Inc<Rigidbody2DComponent, GroundCheckResultComponent, MovableTag>(), It.Exc<DashTimeoutComponent>());
         public readonly ProtoIt Jumpables = new (It.Inc<Rigidbody2DComponent, GroundCheckResultComponent, MovableTag>());
-        public readonly ProtoItExc Deceleratables = new (It.Inc<Rigidbody2DComponent, MoveComponent>(), It.Exc<DashTimeoutComponent>());
+        public readonly ProtoItExc Deceleratables = new (It.Inc<Rigidbody2DComponent, CharacterMoveComponent>(), It.Exc<DashTimeoutComponent>());
         public readonly ProtoItExc MoveSnapCreatables = new (It.Inc<GroundCheckResultComponent, Rigidbody2DComponent>(), It.Exc<MoveSnapComponent>());
         public readonly ProtoIt MoveSnapRemovables = new (It.Inc<GroundCheckResultComponent, MoveSnapComponent>());
     }

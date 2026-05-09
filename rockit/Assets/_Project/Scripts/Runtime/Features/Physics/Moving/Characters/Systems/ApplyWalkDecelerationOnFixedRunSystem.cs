@@ -23,7 +23,7 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Systems
         {
             foreach (var e in _cmAspect.Deceleratables)
             {
-                ref var mComponent = ref _msAspect.MoveComponentPool.Get(e);
+                ref var mComponent = ref _cmAspect.CharacterMoveComponentPool.Get(e);
                 ref var rComponent = ref _psAspect.Rigidbody2DComponentPool.Get(e);
                 rComponent.Rigidbody2D.ApplyWalkDeceleration(mComponent.WalkDeceleration,
                     _tService.UnscaledFixedDeltaTime);

@@ -13,7 +13,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Physics.Movin
         {
             base.BindSystems();
             
-            BindSystem<ApplySnapByMoveSnapSystem>();
+            BindSystem<UpdateMoveSnapSystem>();
         }
     }
 }
