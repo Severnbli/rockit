@@ -9,7 +9,7 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Features.Graphics.Shared
             return Vector4.MoveTowards(a, b, distance);
         }
 
-        public static bool ColorEquals(Color a, Color b, float tolerance)
+        public static bool Equals(Color a, Color b, float tolerance)
         {
             return Vector4.Distance(a, b) <= tolerance;
         }
