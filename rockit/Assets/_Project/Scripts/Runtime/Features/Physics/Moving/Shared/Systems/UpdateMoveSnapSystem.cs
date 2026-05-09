@@ -5,12 +5,12 @@ using Leopotam.EcsProto.QoL;
 
 namespace _Project.Scripts.Runtime.Features.Physics.Moving.Shared.Systems
 {
-    public sealed class ApplySnapByMoveSnapSystem : IProtoFixedRunSystem
+    public sealed class UpdateMoveSnapSystem : IProtoFixedRunSystem
     {
         [DI] private readonly MovingSharedAspect _msAspect;
         private readonly TimeService _tService;
 
-        public ApplySnapByMoveSnapSystem(TimeService tService)
+        public UpdateMoveSnapSystem(TimeService tService)
         {
             _tService = tService;
         }
