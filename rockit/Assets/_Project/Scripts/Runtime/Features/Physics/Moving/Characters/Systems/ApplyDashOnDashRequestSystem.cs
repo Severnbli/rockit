@@ -3,10 +3,8 @@ using _Project.Scripts.Runtime.Core.Infrastructure.Requests.World;
 using _Project.Scripts.Runtime.Core.Systems;
 using _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Components;
 using _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Requests;
-using _Project.Scripts.Runtime.Features.Physics.Moving.Shared;
 using _Project.Scripts.Runtime.Features.Physics.Shared;
 using _Project.Scripts.Runtime.Shared.Extensions.Infrastructure;
-using _Project.Scripts.Runtime.Shared.Extensions.Shared;
 using _Project.Scripts.Runtime.Shared.Utils.Features.Physics.Moving;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
@@ -18,8 +16,6 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Systems
         [DIRequests] private readonly CharactersMovingRequestsAspect _cmrAspect;
         [DIRequests] private readonly RequestsAspect _rAspect;
         [DI] private readonly CharactersMovingAspect _cmAspect;
-        [DI] private readonly MovingSharedAspect _msAspect;
-        [DI] private readonly PhysicsSharedAspect _psAspect;
         private ProtoWorld _world;
 
         public void Init(IProtoSystems systems)
@@ -41,7 +37,13 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Systems
                 
                 IncreaseAirQuantity(ref dComponent, tarE);
                 CreateDashTimeoutRequest(dRequest, tarE);
-                ApplyDash(dRequest, tarE);
+                CreateDashAppliedRequests(tarE);
+                
+                ref var cmComponent = ref _cmAspect.CharacterMoveComponentPool.GetOrAdd(tarE);
+                ref var cvComponent = ref _cmAspect.CharacterVelocityComponentPool.GetOrAdd(tarE);
+            
+                cvComponent.Velocity.x = dRequest.Factor * CharactersMovingUtils.GetMoveXDirection(cmComponent.Direction);
+                cvComponent.Velocity.y = PhysicsSharedContracts.ForceNotApplied;
             }
         }
 
@@ -62,11 +64,10 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Systems
             CharactersMovingUtils.CreateDashTimeoutRequest(_rAspect, packed, prepared);
         }
         
-        private void ApplyDash(DashRequest dRequest, ProtoEntity tarE)
+        private void CreateDashAppliedRequests(ProtoEntity tarE)
         {
-            ref var rbComponent = ref _psAspect.Rigidbody2DComponentPool.Get(tarE);
-            ref var mComponent = ref _msAspect.MoveComponentPool.GetOrAdd(tarE);
-            rbComponent.Rigidbody2D.ApplyDash(dRequest.Factor, CharactersMovingUtils.GetMoveXDirection(mComponent.Direction));
+            CharactersMovingUtils.CreateDashAppliedRequest(_rAspect, false, _world.PackEntityWithWorld(tarE));
+            CharactersMovingUtils.CreateDashAppliedRequest(_rAspect, true, _world.PackEntityWithWorld(tarE));
         }
     }
 }

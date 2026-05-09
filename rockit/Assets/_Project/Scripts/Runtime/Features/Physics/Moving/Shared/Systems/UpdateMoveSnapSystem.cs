@@ -1,15 +1,16 @@
 ﻿using _Project.Scripts.Runtime.Core.Infrastructure.Time.Services;
 using _Project.Scripts.Runtime.Core.Systems;
+using _Project.Scripts.Runtime.Shared.Extensions.Shared;
 using Leopotam.EcsProto.QoL;
 
 namespace _Project.Scripts.Runtime.Features.Physics.Moving.Shared.Systems
 {
-    public sealed class ApplySnapByMoveSnapSystem : IProtoFixedRunSystem
+    public sealed class UpdateMoveSnapSystem : IProtoFixedRunSystem
     {
         [DI] private readonly MovingSharedAspect _msAspect;
         private readonly TimeService _tService;
 
-        public ApplySnapByMoveSnapSystem(TimeService tService)
+        public UpdateMoveSnapSystem(TimeService tService)
         {
             _tService = tService;
         }
@@ -20,9 +21,8 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Shared.Systems
             {
                 ref var msComponent = ref _msAspect.MoveSnapComponentPool.Get(e);
                 var direction = msComponent.Host.position - msComponent.LastHostPos;
+                msComponent.HostVelocity = direction / _tService.UnscaledFixedDeltaTime;
                 msComponent.LastHostPos = msComponent.Host.position;
-
-                msComponent.Tied.position += direction;
             }
         }
     }

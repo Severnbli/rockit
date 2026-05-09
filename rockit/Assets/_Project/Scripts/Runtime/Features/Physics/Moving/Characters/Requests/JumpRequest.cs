@@ -3,6 +3,7 @@
     public struct JumpRequest
     {
         public float Factor;
+        public float Deceleration;
         public bool Buffered;
     }
 }

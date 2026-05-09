@@ -2,21 +2,21 @@
 using _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Configs;
 using _Project.Scripts.Runtime.Features.Physics.Shared;
 using _Project.Scripts.Runtime.Shared.Extensions.Infrastructure;
-using _Project.Scripts.Runtime.Shared.Extensions.Shared;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
+using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Systems
 {
-    public sealed class PreventCharactersSlidingUpOnSideCollisionEnterSystem : IProtoInitSystem, IProtoRunSystem
+    public sealed class PreventCharacterSlidingUpOnSideCollisionEnterSystem : IProtoInitSystem, IProtoRunSystem
     {
-        [DI] private readonly PhysicsSharedAspect _psAspect;
+        [DI] private CharactersMovingAspect _cmAspect;
         [DI] private readonly PhysicsEventsAspect _peAspect;
         private readonly SharedCharacterMovingConfig _smConfig;
         private readonly SharedIndexService _siService;
         private ProtoWorld _world;
 
-        public PreventCharactersSlidingUpOnSideCollisionEnterSystem(SharedCharacterMovingConfig smConfig, SharedIndexService siService)
+        public PreventCharacterSlidingUpOnSideCollisionEnterSystem(SharedCharacterMovingConfig smConfig, SharedIndexService siService)
         {
             _smConfig = smConfig;
             _siService = siService;
@@ -37,11 +37,12 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Systems
                 
                 if (!goIndex.TryGetEntityFromIndex(data.Sender, _world, out var tarE)) continue;
 
-                if (!_psAspect.Rigidbody2DCharacters.Has(tarE)) continue;
+                if (!_cmAspect.CharacterVelocityComponentPool.Has(tarE)) continue;
                 
-                ref var rComponent = ref _psAspect.Rigidbody2DComponentPool.Get(tarE);
+                if (Mathf.Abs(data.Normal.x) < _smConfig.SideCollisionTolerance) return;
                 
-                rComponent.Rigidbody2D.ResetPositiveVelocityYOnSideCollision(data.Normal, _smConfig.SideCollisionTolerance);
+                ref var cvComponent = ref _cmAspect.CharacterVelocityComponentPool.Get(tarE);
+                cvComponent.Velocity.y = Mathf.Min(PhysicsSharedContracts.ForceNotApplied, cvComponent.Velocity.y);
             }
         }
     }

@@ -53,6 +53,14 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Features.Physics.Moving
                 fixedRun, prepared);
             return entity;
         }
+        
+        public static ProtoEntity CreateDashAppliedRequest(RequestsAspect aspect, bool fixedRun = false,
+            ProtoPackedEntityWithWorld targetEntity = default, DashAppliedRequest prepared = default)
+        {
+            var entity = aspect.CreateRequest(aspect.CharactersMovingRequestsAspect.DashAppliedRequestPool, targetEntity,
+                fixedRun, prepared);
+            return entity;
+        }
 
         public static Vector3 GetGroundCheckPosition(Vector3 characterPosition, Vector3 groundCheckPosition)
         {
@@ -63,7 +71,8 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Features.Physics.Moving
             LayersConfig layersConfig, out Collider2D groundCollider)
         {
             var position = GetGroundCheckPosition(characterPosition, groundCheck.Position);
-            groundCollider = Physics2D.OverlapCircle(position, groundCheck.Radius, layersConfig.GroundLayer);
+            groundCollider = Physics2D.OverlapBox(position, groundCheck.Size, ProjectContracts.DefaultFloatValue,
+                layersConfig.GroundLayer);
             return groundCollider != null;
         }
 

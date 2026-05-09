@@ -113,7 +113,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 1
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -238,7 +238,7 @@ MonoBehaviour:
       type: {class: GroundCheckComponent, ns: _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Components, asm: Runtime}
       data:
         Position: {x: 0, y: 0, z: 0}
-        Radius: 0.2
+        Size: {x: 0.8, y: 0.1}
     - rid: 1430329848479350785
       type: {class: MovableTag, ns: _Project.Scripts.Runtime.Features.Physics.Moving.Shared.Tags, asm: Runtime}
       data: 

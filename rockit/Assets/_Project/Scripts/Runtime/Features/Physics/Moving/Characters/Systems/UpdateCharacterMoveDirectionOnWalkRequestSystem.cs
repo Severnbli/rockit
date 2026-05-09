@@ -3,16 +3,17 @@ using _Project.Scripts.Runtime.Core.Infrastructure.Requests.World;
 using _Project.Scripts.Runtime.Core.Systems;
 using _Project.Scripts.Runtime.Features.Physics.Moving.Shared;
 using _Project.Scripts.Runtime.Shared.Extensions.Infrastructure;
+using _Project.Scripts.Runtime.Shared.Utils.Features.Physics.Moving;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 
 namespace _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Systems
 {
-    public class UpdateWalkDecelerationOnWalkRequestSystem : IProtoInitSystem, IProtoFixedRunSystem
+    public class UpdateCharacterMoveDirectionOnWalkRequestSystem : IProtoInitSystem, IProtoFixedRunSystem
     {
         [DIRequests] private readonly CharactersMovingRequestsAspect _cmrAspect;
         [DIRequests] private readonly CoreRequestsAspect _crAspect;
-        [DI] private readonly MovingSharedAspect _mSharedAspect;
+        [DI] private readonly CharactersMovingAspect _cmAspect;
         private ProtoWorld _world;
         
         public void Init(IProtoSystems systems)
@@ -25,11 +26,11 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Systems
             foreach (var reqE in _cmrAspect.WalkRequests)
             {
                 if (!_crAspect.TryCompareRequestWorld(reqE, _world, out var tarE)) continue;
-                if (!_mSharedAspect.Walkables.Has(tarE)) continue;
+                if (!_cmAspect.Walkables.Has(tarE)) continue;
 
-                ref var mComponent = ref _mSharedAspect.MoveComponentPool.GetOrAdd(tarE);
+                ref var mComponent = ref _cmAspect.CharacterMoveComponentPool.GetOrAdd(tarE);
                 ref var wRequest = ref _cmrAspect.WalkRequestPool.Get(reqE);
-                mComponent.WalkDeceleration = wRequest.Deceleration;
+                mComponent.Direction = CharactersMovingUtils.GetMoveDirectionXByFloat(wRequest.Factor);
             }
         }
     }
