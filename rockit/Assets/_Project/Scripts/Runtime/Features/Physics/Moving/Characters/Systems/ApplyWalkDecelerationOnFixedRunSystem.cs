@@ -29,6 +29,8 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Systems
                     0f,
                     cmComponent.WalkDeceleration * _tService.UnscaledFixedDeltaTime
                 );
+                
+                cvComponent.Velocity = velocity;
             }
         }
     }
