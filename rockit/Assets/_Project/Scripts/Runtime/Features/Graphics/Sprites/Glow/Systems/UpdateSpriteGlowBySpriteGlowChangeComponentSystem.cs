@@ -25,18 +25,9 @@ namespace _Project.Scripts.Runtime.Features.Graphics.Sprites.Glow.Systems
                 ref var sgComponent = ref _sgAspect.SpriteGlowComponentPool.Get(e);
                 ref var sgcComponent = ref _sgAspect.SpriteGlowChangeComponentPool.Get(e);
 
-                var currColor = sgComponent.SpriteGlow.GlowColor;
-                var tarColor = sgcComponent.Target;
-
-                if (ColorUtils.Equals(currColor, tarColor, _cConfig.ColorChangeTolerance))
-                {
-                    _sgAspect.SpriteGlowChangeComponentPool.Del(e);
-                    continue;
-                }
-
                 sgComponent.SpriteGlow.GlowColor = ColorUtils.MoveTowards(
-                    currColor,
-                    tarColor,
+                    sgComponent.SpriteGlow.GlowColor,
+                    sgcComponent.Target,
                     sgcComponent.Speed * _tService.UnscaledDeltaTime
                 );
             }
