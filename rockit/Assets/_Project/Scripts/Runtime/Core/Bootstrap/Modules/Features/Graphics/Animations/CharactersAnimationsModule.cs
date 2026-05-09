@@ -16,7 +16,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.Anim
             BindSystem<SendDashTriggerOnDashRequestSystem>();
             BindSystem<UpdateDashedBoolOnRunSystem>();
             BindSystem<UpdateFallBoolByGroundCheckResultComponentSystem>();
-            BindSystem<UpdateRunBoolByVelocityOnFixedRunSystem>();
+            BindSystem<UpdateRunBoolByCharacterVelocityOnFixedRunSystem>();
             BindSystem<SendJumpTriggerOnJumpAppliedRequestSystem>();
             BindSystem<KillCharacterOnKillCharacterRequestSystem>();
             BindSystem<ReviveCharacterOnReviveCharacterRequestSystem>();
