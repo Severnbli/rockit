@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Systems
 {
-    public sealed class PreventCharactersSlidingUpOnSideCollisionEnterSystem : IProtoInitSystem, IProtoRunSystem
+    public sealed class PreventCharacterSlidingUpOnSideCollisionEnterSystem : IProtoInitSystem, IProtoRunSystem
     {
         [DI] private CharactersMovingAspect _cmAspect;
         [DI] private readonly PhysicsEventsAspect _peAspect;
@@ -16,7 +16,7 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Systems
         private readonly SharedIndexService _siService;
         private ProtoWorld _world;
 
-        public PreventCharactersSlidingUpOnSideCollisionEnterSystem(SharedCharacterMovingConfig smConfig, SharedIndexService siService)
+        public PreventCharacterSlidingUpOnSideCollisionEnterSystem(SharedCharacterMovingConfig smConfig, SharedIndexService siService)
         {
             _smConfig = smConfig;
             _siService = siService;
