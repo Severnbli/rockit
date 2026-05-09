@@ -13,6 +13,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Physics.Movin
         {
             base.BindSystems();
             
+            BindSystem<LoadPlayerCharacterMoveComponentOnInitializeRequestSystem>();
             BindSystem<SetPlayerWalkDecelerationOnInitializeRequestSystem>();
             BindSystem<TranslatePlayerInputWalkToWalkRequestSystem>();
             BindSystem<TranslatePlayerInputJumpToJumpRequestSystem>();
