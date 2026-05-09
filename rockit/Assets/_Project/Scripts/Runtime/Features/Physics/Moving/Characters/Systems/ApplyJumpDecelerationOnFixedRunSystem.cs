@@ -31,6 +31,8 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Systems
                     0f,
                     cmComponent.JumpDeceleration * _tService.UnscaledFixedDeltaTime
                 );
+                
+                cvComponent.Velocity = velocity;
             }
         }
     }
