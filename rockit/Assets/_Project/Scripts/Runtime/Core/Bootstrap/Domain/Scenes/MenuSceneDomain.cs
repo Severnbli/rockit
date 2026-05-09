@@ -1,4 +1,4 @@
-﻿using _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes.Menu;
+﻿using _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes.Menu.Active;
 
 namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Scenes
 {
