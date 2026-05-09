@@ -9,6 +9,7 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Configs
         [SerializeField] private float _walkDeceleration = 3f;
         [SerializeField] private float _jumpPower = 4f;
         [SerializeField] private float _jumpDeceleration = 3f;
+        [SerializeField] private float _maxFallVelocity = 20f;
         [SerializeField] private float _dashPower = 4f;
         [SerializeField] private int _airDashes = 1;
         [SerializeField] private float _dashTimeout = 0.5f;
@@ -17,6 +18,7 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Configs
         public float WalkDeceleration => _walkDeceleration;
         public float JumpPower => _jumpPower;
         public float JumpDeceleration => _jumpDeceleration;
+        public float MaxFallVelocity => _maxFallVelocity;
         public float DashPower => _dashPower;
         public int AirDashes => _airDashes;
         public float DashTimeout => _dashTimeout;
