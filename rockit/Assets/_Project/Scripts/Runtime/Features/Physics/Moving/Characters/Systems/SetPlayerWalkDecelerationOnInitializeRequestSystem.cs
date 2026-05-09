@@ -2,7 +2,6 @@
 using _Project.Scripts.Runtime.Core.Infrastructure.Requests.World;
 using _Project.Scripts.Runtime.Core.Infrastructure.Shared;
 using _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Configs;
-using _Project.Scripts.Runtime.Features.Physics.Moving.Shared;
 using _Project.Scripts.Runtime.Shared.Extensions.Infrastructure;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
@@ -14,7 +13,7 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Systems
         [DIRequests] private readonly SharedRequestsAspect _srAspect;
         [DIRequests] private readonly CoreRequestsAspect _crAspect;
         [DI] private readonly SharedAspect _sAspect;
-        [DI] private readonly MovingSharedAspect _msAspect;
+        [DI] private readonly CharactersMovingAspect _cmAspect;
         private readonly PlayerMovingConfig _pmConfig;
         private ProtoWorld _world;
 
@@ -35,7 +34,7 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Systems
                 if (!_crAspect.TryCompareRequestWorld(reqE, _world, out var tarE)) continue;
                 if (!_sAspect.Players.Has(tarE)) continue;
 
-                ref var mComponent = ref _msAspect.MoveComponentPool.GetOrAdd(tarE);
+                ref var mComponent = ref _cmAspect.CharacterMoveComponentPool.GetOrAdd(tarE);
                 mComponent.WalkDeceleration = _pmConfig.WalkDeceleration;
             }
         }

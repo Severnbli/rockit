@@ -27,12 +27,10 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Systems
                 if (!result.Grounded ||
                     !_service.PhysicsMatcher.TryGetByFirst(result.GroundCollider, out var groundRigidbody)) continue;
                 
-                ref var rigidbody = ref _psAspect.Rigidbody2DComponentPool.Get(e);
                 ref var msComponent = ref _msAspect.MoveSnapComponentPool.Add(e);
 
                 msComponent.Host = groundRigidbody;
                 msComponent.LastHostPos = groundRigidbody.position;
-                msComponent.Tied = rigidbody.Rigidbody2D;
             }
         }
     }

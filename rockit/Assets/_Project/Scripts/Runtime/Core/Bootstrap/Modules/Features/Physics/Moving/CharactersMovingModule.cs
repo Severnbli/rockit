@@ -13,6 +13,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Physics.Movin
         {
             base.BindSystems();
             
+            BindSystem<LoadPlayerCharacterMoveComponentOnInitializeRequestSystem>();
             BindSystem<SetPlayerWalkDecelerationOnInitializeRequestSystem>();
             BindSystem<TranslatePlayerInputWalkToWalkRequestSystem>();
             BindSystem<TranslatePlayerInputJumpToJumpRequestSystem>();
@@ -20,20 +21,21 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Physics.Movin
             BindSystem<GroundCheckUpdateSystem>();
             BindSystem<CreateMoveSnapByGroundCheckResultSystem>();
             BindSystem<RemoveMoveSnapByGroundCheckResultSystem>();
+            BindSystem<ApplyJumpDecelerationOnFixedRunSystem>();
             BindSystem<ApplyJumpOnJumpRequestSystem>();
             BindSystem<SendJumpRequestByJumpBufferingSystem>();
             BindSystem<JumpBufferingExpireSystem>();
             BindSystem<DashTimeoutExpireSystem>();
             BindSystem<DashAirQuantityResetOnGroundedSystem>();
-            BindSystem<UpdateMoveDirectionOnWalkRequestSystem>();
+            BindSystem<UpdateCharacterMoveDirectionOnWalkRequestSystem>();
             BindSystem<ApplyWalkDecelerationOnFixedRunSystem>();
             BindSystem<ApplyWalkOnWalkRequestSystem>();
-            BindSystem<UpdateWalkDecelerationOnWalkRequestSystem>();
             BindSystem<ApplyDashOnDashRequestSystem>();
             BindSystem<ApplyDashTimeoutOnDashTimeoutRequestSystem>();
-            BindSystem<PreventCharactersSlidingUpOnSideCollisionEnterSystem>();
+            BindSystem<PreventCharacterSlidingUpOnSideCollisionEnterSystem>();
             BindSystem<PreventCharacterSideHookingSystem>();
-            BindSystem<DisableGravityOnDashTimeoutSystem>();
+            BindSystem<CalculateCharacterImpactedVelocitySystem>();
+            BindSystem<ApplyCharacterImpactedVelocityToRigidbodySystem>();
         }
     }
 }

@@ -2,23 +2,22 @@
 using _Project.Scripts.Runtime.Core.Infrastructure.Requests.World;
 using _Project.Scripts.Runtime.Core.Infrastructure.Shared;
 using _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Configs;
-using _Project.Scripts.Runtime.Features.Physics.Moving.Shared;
 using _Project.Scripts.Runtime.Shared.Extensions.Infrastructure;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 
 namespace _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Systems
 {
-    public class LoadPlayersWalkDecelerationOnInitializeRequestSystem : IProtoInitSystem, IProtoRunSystem
+    public class LoadPlayerCharacterMoveComponentOnInitializeRequestSystem : IProtoInitSystem, IProtoRunSystem
     {
         [DIRequests] private readonly SharedRequestsAspect _srAspect;
         [DIRequests] private readonly CoreRequestsAspect _crAspect;
         [DI] private readonly SharedAspect _sAspect;
-        [DI] private readonly MovingSharedAspect _msAspect;
+        [DI] private readonly CharactersMovingAspect _cmAspect;
         private readonly PlayerMovingConfig _pmConfig;
         private ProtoWorld _world;
 
-        public LoadPlayersWalkDecelerationOnInitializeRequestSystem(PlayerMovingConfig pmConfig)
+        public LoadPlayerCharacterMoveComponentOnInitializeRequestSystem(PlayerMovingConfig pmConfig)
         {
             _pmConfig = pmConfig;
         }
@@ -35,8 +34,10 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Systems
                 if (!_crAspect.TryCompareRequestWorld(reqE, _world, out var tarE)) continue;
                 if (!_sAspect.Players.Has(tarE)) continue;
                 
-                ref var mComponent = ref _msAspect.MoveComponentPool.GetOrAdd(tarE);
-                mComponent.WalkDeceleration = _pmConfig.WalkDeceleration;
+                ref var cmComponent = ref _cmAspect.CharacterMoveComponentPool.GetOrAdd(tarE);
+                cmComponent.WalkDeceleration = _pmConfig.WalkDeceleration;
+                cmComponent.JumpDeceleration = _pmConfig.JumpDeceleration;
+                cmComponent.MaxFallingVelocity = _pmConfig.MaxFallVelocity;
             }
         }
     }
