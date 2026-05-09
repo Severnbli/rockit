@@ -20,12 +20,12 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Systems
             foreach (var e in _cmAspect.JumpDeceleratables)
             {
                 ref var cmComponent = ref _cmAspect.CharacterMoveComponentPool.Get(e);
-                ref var cvComponent = ref _cmAspect.CharacterVelocityComponentPool.Get(e);
+                ref var cvComponent = ref _cmAspect.CharacterVelocityComponentPool.GetOrAdd(e);
                 
                 var velocity = cvComponent.Velocity;
                 
                 velocity.y = Mathf.MoveTowards(
-                    velocity.x,
+                    velocity.y,
                     -cmComponent.MaxFallingVelocity,
                     cmComponent.JumpDeceleration * _tService.UnscaledFixedDeltaTime
                 );
