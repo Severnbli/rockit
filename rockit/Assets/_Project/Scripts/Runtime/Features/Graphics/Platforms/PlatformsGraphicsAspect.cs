@@ -10,5 +10,6 @@ namespace _Project.Scripts.Runtime.Features.Graphics.Platforms
     {
         public readonly ProtoPool<PlatformColorChangeComponent> PlatformColorChangeComponentPool;
         public readonly ProtoIt SpriteGlowPlatforms = new (It.Inc<PlatformComponent, SpriteGlowComponent>());
+        public readonly ProtoItExc SpriteGlowPlatformWithoutSpriteGlowChanges = new (It.Inc<PlatformComponent, SpriteGlowComponent>(), It.Exc<SpriteGlowChangeComponent>());
     }
 }
