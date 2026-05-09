@@ -16,9 +16,9 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Monos
             
             DrawGizmoWithMainColor(() =>
             {
-                Gizmos.DrawWireSphere(
+                Gizmos.DrawWireCube(
                     CharactersMovingUtils.GetGroundCheckPosition(gameObject.transform.position, component.Position),
-                    component.Radius);
+                    component.Size);
             });
         }
     }
