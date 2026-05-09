@@ -12,5 +12,10 @@ namespace _Project.Scripts.Runtime.Shared.Extensions.Infrastructure
             await func();
             return timeService.UnscaledTime - startTime;
         }
+
+        public static bool Expired(this TimeService timeService, float creationTime, float timeout)
+        {
+            return timeService.UnscaledTime > creationTime + timeout;
+        }
     }
 }

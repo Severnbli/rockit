@@ -10,6 +10,13 @@ namespace _Project.Scripts.Runtime.Shared.Extensions.Shared
             velocity.x = factor;
             rigidbody2D.linearVelocity = velocity;
         }
+
+        public static void ApplyMove(this Rigidbody2D rigidbody2D, Vector2 move)
+        {
+            var velocity = rigidbody2D.linearVelocity;
+            velocity += move;
+            rigidbody2D.linearVelocity = velocity;
+        }
         
         public static void ApplyJump(this Rigidbody2D rigidbody2D, float factor)
         {
