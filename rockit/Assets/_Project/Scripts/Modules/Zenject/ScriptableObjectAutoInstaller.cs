@@ -44,6 +44,7 @@ namespace _Project.Scripts.Modules.Zenject
         {
         }
 
+#if UNITY_EDITOR
         [HideInTables]
         [OnInspectorGUI]
         [PropertyOrder(-2.1474836E+09f)]
@@ -51,5 +52,6 @@ namespace _Project.Scripts.Modules.Zenject
         {
             EditorOnlyModeConfigUtility.InternalOnInspectorGUI(this);
         }
+#endif
     }
 }
