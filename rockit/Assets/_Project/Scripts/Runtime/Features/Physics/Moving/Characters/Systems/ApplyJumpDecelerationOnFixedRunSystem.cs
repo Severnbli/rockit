@@ -24,11 +24,9 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Systems
                 
                 var velocity = cvComponent.Velocity;
                 
-                if (velocity.y <= 0f) return;
-
                 velocity.y = Mathf.MoveTowards(
                     velocity.x,
-                    0f,
+                    -cmComponent.MaxFallingVelocity,
                     cmComponent.JumpDeceleration * _tService.UnscaledFixedDeltaTime
                 );
                 
