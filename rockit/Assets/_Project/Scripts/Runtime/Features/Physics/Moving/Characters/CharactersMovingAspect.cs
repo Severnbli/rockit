@@ -30,7 +30,7 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Characters
         public readonly ProtoItExc Dashables = new (It.Inc<CharacterTag, GroundCheckResultComponent, MovableTag>(), It.Exc<DashTimeoutComponent>());
         public readonly ProtoIt Jumpables = new (It.Inc<CharacterTag, GroundCheckResultComponent, MovableTag>());
         public readonly ProtoItExc WalkDeceleratables = new (It.Inc<CharacterMoveComponent, CharacterVelocityComponent>(), It.Exc<DashTimeoutComponent>());
-        public readonly ProtoIt JumpDeceleratables = new (It.Inc<CharacterMoveComponent, CharacterVelocityComponent>());
+        public readonly ProtoItExc JumpDeceleratables = new (It.Inc<CharacterMoveComponent, CharacterVelocityComponent>(), It.Exc<DashTimeoutComponent>());
         public readonly ProtoItExc MoveSnapCreatables = new (It.Inc<GroundCheckResultComponent, Rigidbody2DComponent>(), It.Exc<MoveSnapComponent>());
         public readonly ProtoIt MoveSnapRemovables = new (It.Inc<GroundCheckResultComponent, MoveSnapComponent>());
         public readonly ProtoIt CharacterVelocities = new (It.Inc<CharacterVelocityComponent>());
