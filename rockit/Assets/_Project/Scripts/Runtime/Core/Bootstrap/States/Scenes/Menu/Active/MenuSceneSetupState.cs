@@ -1,6 +1,6 @@
 ﻿using Cysharp.Threading.Tasks;
 
-namespace _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes.Menu
+namespace _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes.Menu.Active
 {
     public class MenuSceneSetupState : ISceneSetupState
     {
