@@ -37,6 +37,7 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Systems
                 
                 IncreaseAirQuantity(ref dComponent, tarE);
                 CreateDashTimeoutRequest(dRequest, tarE);
+                CreateDashAppliedRequests(tarE);
                 
                 ref var cmComponent = ref _cmAspect.CharacterMoveComponentPool.GetOrAdd(tarE);
                 ref var cvComponent = ref _cmAspect.CharacterVelocityComponentPool.GetOrAdd(tarE);
@@ -61,6 +62,12 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Systems
             var packed = _world.PackEntityWithWorld(tarE);
 
             CharactersMovingUtils.CreateDashTimeoutRequest(_rAspect, packed, prepared);
+        }
+        
+        private void CreateDashAppliedRequests(ProtoEntity tarE)
+        {
+            CharactersMovingUtils.CreateDashAppliedRequest(_rAspect, false, _world.PackEntityWithWorld(tarE));
+            CharactersMovingUtils.CreateDashAppliedRequest(_rAspect, true, _world.PackEntityWithWorld(tarE));
         }
     }
 }
