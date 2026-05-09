@@ -14,6 +14,7 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Systems
         [DIRequests] private readonly CharactersMovingRequestsAspect _cmrAspect;
         [DIRequests] private readonly CoreRequestsAspect _crAspect;
         [DI] private readonly MovingSharedAspect _mSharedAspect;
+        [DI] private readonly CharactersMovingAspect _cmAspect;
         private ProtoWorld _world;
         
         public void Init(IProtoSystems systems)
@@ -26,7 +27,7 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Systems
             foreach (var reqE in _cmrAspect.WalkRequests)
             {
                 if (!_crAspect.TryCompareRequestWorld(reqE, _world, out var tarE)) continue;
-                if (!_mSharedAspect.Walkables.Has(tarE)) continue;
+                if (!_cmAspect.Walkables.Has(tarE)) continue;
 
                 ref var mComponent = ref _mSharedAspect.MoveComponentPool.GetOrAdd(tarE);
                 ref var wRequest = ref _cmrAspect.WalkRequestPool.Get(reqE);
