@@ -251,6 +251,8 @@ MonoBehaviour:
   - rid: 1430329893206884435
   - rid: 1430329893206884436
   - rid: 1430329893206884469
+  - rid: 1499440503904272472
+  - rid: 1499440503904272473
   references:
     version: 2
     RefIds:
@@ -282,6 +284,13 @@ MonoBehaviour:
       type: {class: TransformComponent, ns: _Project.Scripts.Runtime.Core.Infrastructure.Shared.Components, asm: Runtime}
       data:
         Transform: {fileID: 8404677373987993712}
+    - rid: 1499440503904272472
+      type: {class: ActivePlatformTag, ns: _Project.Scripts.Runtime.Features.Platforms.Shared.Tags, asm: Runtime}
+      data: 
+    - rid: 1499440503904272473
+      type: {class: SpriteGlowComponent, ns: _Project.Scripts.Runtime.Features.Graphics.Sprites.Glow.Components, asm: Runtime}
+      data:
+        SpriteGlow: {fileID: 8904794437248459625}
 --- !u!1 &6774882017377814434
 GameObject:
   m_ObjectHideFlags: 0
@@ -295,6 +304,7 @@ GameObject:
   - component: {fileID: 356984464911333676}
   - component: {fileID: 3817937755237948832}
   - component: {fileID: 6722746392157842085}
+  - component: {fileID: 8904794437248459625}
   m_Layer: 3
   m_Name: Object
   m_TagString: Untagged
@@ -343,7 +353,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: eefe1c7114a30434fba997211df36c1f, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -468,6 +478,24 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 180
+--- !u!114 &8904794437248459625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6774882017377814434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8f6d3c6e4250e84192f5b34ce9e71bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Elringus.SpriteGlow.Runtime::SpriteGlow.SpriteGlowEffect
+  glowColor: {r: 1, g: 1, b: 1, a: 1}
+  glowBrightness: 10
+  outlineWidth: 10
+  alphaThreshold: 0.01
+  drawOutside: 0
+  enableInstancing: 0
 --- !u!1 &8576081661139417491
 GameObject:
   m_ObjectHideFlags: 0
