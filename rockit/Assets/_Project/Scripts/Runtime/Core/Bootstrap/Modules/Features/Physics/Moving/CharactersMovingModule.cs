@@ -33,7 +33,6 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Physics.Movin
             BindSystem<ApplyDashTimeoutOnDashTimeoutRequestSystem>();
             BindSystem<PreventCharactersSlidingUpOnSideCollisionEnterSystem>();
             BindSystem<PreventCharacterSideHookingSystem>();
-            BindSystem<DisableGravityOnDashTimeoutSystem>();
             BindSystem<CalculateCharacterImpactedVelocitySystem>();
             BindSystem<ApplyCharacterImpactedVelocityToRigidbodySystem>();
         }
