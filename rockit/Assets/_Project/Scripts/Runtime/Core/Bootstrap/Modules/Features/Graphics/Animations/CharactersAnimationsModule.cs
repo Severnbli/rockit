@@ -13,7 +13,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.Anim
         {
             base.BindSystems();
             
-            BindSystem<SendDashTriggerOnDashRequestSystem>();
+            BindSystem<SendDashTriggerOnDashAppliedRequestSystem>();
             BindSystem<UpdateDashedBoolOnRunSystem>();
             BindSystem<UpdateFallBoolByGroundCheckResultComponentSystem>();
             BindSystem<UpdateRunBoolByCharacterVelocityOnFixedRunSystem>();

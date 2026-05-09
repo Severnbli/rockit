@@ -1,6 +1,5 @@
 ﻿using _Project.Scripts.Runtime.Core.Infrastructure.Requests;
 using _Project.Scripts.Runtime.Core.Infrastructure.Requests.World;
-using _Project.Scripts.Runtime.Core.Systems;
 using _Project.Scripts.Runtime.Features.Graphics.Animations.Characters.Configs;
 using _Project.Scripts.Runtime.Features.Graphics.Animations.Shared;
 using _Project.Scripts.Runtime.Features.Physics.Moving.Characters;
@@ -10,7 +9,7 @@ using Leopotam.EcsProto.QoL;
 
 namespace _Project.Scripts.Runtime.Features.Graphics.Animations.Characters.Systems
 {
-    public sealed class SendDashTriggerOnDashRequestSystem : IProtoInitSystem, IProtoFixedRunSystem
+    public sealed class SendDashTriggerOnDashAppliedRequestSystem : IProtoInitSystem, IProtoRunSystem
     {
         [DIRequests] private readonly CharactersMovingRequestsAspect _cmrAspect;
         [DIRequests] private readonly CoreRequestsAspect _crAspect;
@@ -19,7 +18,7 @@ namespace _Project.Scripts.Runtime.Features.Graphics.Animations.Characters.Syste
         private readonly CharacterAnimationConfig _caConfig;
         private ProtoWorld _world;
 
-        public SendDashTriggerOnDashRequestSystem(CharacterAnimationConfig caConfig)
+        public SendDashTriggerOnDashAppliedRequestSystem(CharacterAnimationConfig caConfig)
         {
             _caConfig = caConfig;
         }
@@ -29,12 +28,12 @@ namespace _Project.Scripts.Runtime.Features.Graphics.Animations.Characters.Syste
             _world = systems.World();
         }
 
-        public void FixedRun()
+        public void Run()
         {
-            foreach (var reqE in _cmrAspect.DashRequests)
+            foreach (var reqE in _cmrAspect.DashAppliedRunRequests)
             {
                 if (!_crAspect.TryCompareRequestWorld(reqE, _world, out var tarE)) continue;
-                if (!_cmAspect.Dashables.Has(tarE) || !_asAspect.CharacterAnimators.Has(tarE)) continue;
+                if (!_asAspect.CharacterAnimators.Has(tarE)) continue;
                 
                 ref var aComponent = ref _asAspect.AnimatorComponentPool.Get(tarE);
                 aComponent.Animator.SetTrigger(_caConfig.DashTrigger);
