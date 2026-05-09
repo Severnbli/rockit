@@ -44,6 +44,21 @@ namespace _Project.Scripts.Runtime.Shared.Extensions.Shared
             rigidbody2D.linearVelocity = velocity;
         }
 
+        public static void ApplyJumpDeceleration(this Rigidbody2D rigidbody2D, float factor, float deltaTime)
+        {
+            if (rigidbody2D.linearVelocity.y <= 0f) return;
+            
+            var velocity = rigidbody2D.linearVelocity;
+            
+            velocity.y = Mathf.MoveTowards(
+                velocity.x,
+                0f,
+                factor * deltaTime
+            );
+            
+            rigidbody2D.linearVelocity = velocity;
+        }
+
         public static void ResetVelocityY(this Rigidbody2D rigidbody2D)
         {
             var velocity = rigidbody2D.linearVelocity;
