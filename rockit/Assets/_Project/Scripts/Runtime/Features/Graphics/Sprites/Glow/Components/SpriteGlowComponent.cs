@@ -2,7 +2,7 @@
 using Leopotam.EcsProto.Unity;
 using SpriteGlow;
 
-namespace _Project.Scripts.Runtime.Features.Graphics.Sprites.Shared.Components
+namespace _Project.Scripts.Runtime.Features.Graphics.Sprites.Glow.Components
 {
     [Serializable, ProtoUnityAuthoring]
     public struct SpriteGlowComponent

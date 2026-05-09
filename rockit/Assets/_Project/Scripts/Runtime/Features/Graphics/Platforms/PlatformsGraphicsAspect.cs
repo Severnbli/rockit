@@ -1,4 +1,4 @@
-﻿using _Project.Scripts.Runtime.Features.Graphics.Sprites.Shared.Components;
+﻿using _Project.Scripts.Runtime.Features.Graphics.Sprites.Glow.Components;
 using _Project.Scripts.Runtime.Features.Platforms.Shared.Components;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
