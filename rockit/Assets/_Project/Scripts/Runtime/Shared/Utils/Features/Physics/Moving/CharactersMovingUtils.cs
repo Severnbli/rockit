@@ -63,7 +63,8 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Features.Physics.Moving
             LayersConfig layersConfig, out Collider2D groundCollider)
         {
             var position = GetGroundCheckPosition(characterPosition, groundCheck.Position);
-            groundCollider = Physics2D.OverlapBox(position, groundCheck.Size, layersConfig.GroundLayer);
+            groundCollider = Physics2D.OverlapBox(position, groundCheck.Size, ProjectContracts.DefaultFloatValue,
+                layersConfig.GroundLayer);
             return groundCollider != null;
         }
 
