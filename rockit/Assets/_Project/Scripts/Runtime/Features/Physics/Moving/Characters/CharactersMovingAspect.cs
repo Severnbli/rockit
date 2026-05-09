@@ -15,9 +15,11 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Characters
         public readonly ProtoPool<JumpBufferingComponent> JumpBufferingComponentPool;
         public readonly ProtoPool<DashTimeoutComponent> DashTimeoutComponentPool;
         public readonly ProtoPool<DashComponent> DashComponentPool;
+        public readonly ProtoPool<CharacterVelocityComponent> CharacterVelocityComponentPool;
         public readonly ProtoIt GroundCheckable = new (It.Inc<TransformComponent, GroundCheckComponent>());
         public readonly ProtoIt GroundCheckResults = new (It.Inc<GroundCheckResultComponent>());
         public readonly ProtoIt Rigidbody2DGroundCheckResults = new (It.Inc<Rigidbody2DComponent, GroundCheckResultComponent>());
+        public readonly ProtoIt Rigidbody2DCharactersVelocities = new (It.Inc<Rigidbody2DComponent, CharacterVelocityComponent>());
         public readonly ProtoIt JumpBufferingGroundCheckResults = new (It.Inc<JumpBufferingComponent, GroundCheckResultComponent>());
         public readonly ProtoIt JumpBuffers = new (It.Inc<JumpBufferingComponent>());
         public readonly ProtoIt DashTimeouts = new ProtoIt(It.Inc<DashTimeoutComponent>());
