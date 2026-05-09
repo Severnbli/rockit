@@ -53,6 +53,14 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Features.Physics.Moving
                 fixedRun, prepared);
             return entity;
         }
+        
+        public static ProtoEntity CreateDashAppliedRequest(RequestsAspect aspect, bool fixedRun = false,
+            ProtoPackedEntityWithWorld targetEntity = default, DashAppliedRequest prepared = default)
+        {
+            var entity = aspect.CreateRequest(aspect.CharactersMovingRequestsAspect.DashAppliedRequestPool, targetEntity,
+                fixedRun, prepared);
+            return entity;
+        }
 
         public static Vector3 GetGroundCheckPosition(Vector3 characterPosition, Vector3 groundCheckPosition)
         {
