@@ -28,7 +28,10 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Systems
 
                 ref var wRequest = ref _cmrAspect.WalkRequestPool.Get(reqE);
                 ref var cvComponent = ref _cmAspect.CharacterVelocityComponentPool.GetOrAdd(tarE);
+                ref var cmComponent = ref _cmAspect.CharacterMoveComponentPool.GetOrAdd(tarE);
+                
                 cvComponent.Velocity.x = wRequest.Factor;
+                cmComponent.WalkDeceleration = wRequest.Deceleration;
             }
         }
     }
