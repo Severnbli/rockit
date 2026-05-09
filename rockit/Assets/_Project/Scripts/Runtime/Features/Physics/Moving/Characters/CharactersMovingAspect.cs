@@ -34,6 +34,5 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Characters
         public readonly ProtoItExc MoveSnapCreatables = new (It.Inc<GroundCheckResultComponent, Rigidbody2DComponent>(), It.Exc<MoveSnapComponent>());
         public readonly ProtoIt MoveSnapRemovables = new (It.Inc<GroundCheckResultComponent, MoveSnapComponent>());
         public readonly ProtoIt CharacterVelocities = new (It.Inc<CharacterVelocityComponent>());
-        public readonly ProtoIt GroundCheckResultCharacterMovables = new (It.Inc<GroundCheckResultComponent, CharacterMoveComponent>());
     }
 }
