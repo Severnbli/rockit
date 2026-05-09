@@ -1,6 +1,6 @@
 ﻿using Cysharp.Threading.Tasks;
 
-namespace _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes.Game
+namespace _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes.Game.Active
 {
     public class GameSceneSetupState : ISceneSetupState
     {
