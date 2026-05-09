@@ -13,7 +13,8 @@ namespace _Project.Scripts.Runtime.Features.Graphics.Platforms.Systems
             {
                 ref var pccComponent = ref _pgAspect.PlatformColorChangeComponentPool.Get(e);
 
-                pccComponent.Blocked = false;
+                if (pccComponent.Blocked) continue;
+                
                 pccComponent.PositionColorWas = false;
                 pccComponent.RotationColorWas = false;
                 pccComponent.ScaleColorWas = false;
