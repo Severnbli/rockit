@@ -15,6 +15,11 @@ namespace _Project.Scripts.Runtime.Features.Graphics.Sprites.Glow.Systems
         private readonly ColorConfig _cConfig;
         private ProtoWorld _world;
 
+        public CompleteSpriteGlowChangeOnRunSystem(ColorConfig cConfig)
+        {
+            _cConfig = cConfig;
+        }
+
         public void Init(IProtoSystems systems)
         {
             _world = systems.World();
