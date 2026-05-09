@@ -8,7 +8,7 @@ using Leopotam.EcsProto.QoL;
 
 namespace _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Systems
 {
-    public class LoadPlayersWalkDecelerationOnInitializeRequestSystem : IProtoInitSystem, IProtoRunSystem
+    public class LoadPlayersDecelerationsOnInitializeRequestSystem : IProtoInitSystem, IProtoRunSystem
     {
         [DIRequests] private readonly SharedRequestsAspect _srAspect;
         [DIRequests] private readonly CoreRequestsAspect _crAspect;
@@ -17,7 +17,7 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Systems
         private readonly PlayerMovingConfig _pmConfig;
         private ProtoWorld _world;
 
-        public LoadPlayersWalkDecelerationOnInitializeRequestSystem(PlayerMovingConfig pmConfig)
+        public LoadPlayersDecelerationsOnInitializeRequestSystem(PlayerMovingConfig pmConfig)
         {
             _pmConfig = pmConfig;
         }
@@ -34,8 +34,9 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Systems
                 if (!_crAspect.TryCompareRequestWorld(reqE, _world, out var tarE)) continue;
                 if (!_sAspect.Players.Has(tarE)) continue;
                 
-                ref var mComponent = ref _cmAspect.CharacterMoveComponentPool.GetOrAdd(tarE);
-                mComponent.WalkDeceleration = _pmConfig.WalkDeceleration;
+                ref var cmComponent = ref _cmAspect.CharacterMoveComponentPool.GetOrAdd(tarE);
+                cmComponent.WalkDeceleration = _pmConfig.WalkDeceleration;
+                cmComponent.JumpDeceleration = _pmConfig.JumpDeceleration;
             }
         }
     }
