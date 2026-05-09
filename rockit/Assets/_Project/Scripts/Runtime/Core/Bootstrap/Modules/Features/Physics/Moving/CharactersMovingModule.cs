@@ -20,13 +20,14 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Physics.Movin
             BindSystem<GroundCheckUpdateSystem>();
             BindSystem<CreateMoveSnapByGroundCheckResultSystem>();
             BindSystem<RemoveMoveSnapByGroundCheckResultSystem>();
+            BindSystem<ApplyJumpDecelerationOnFixedRunSystem>();
             BindSystem<ApplyJumpOnJumpRequestSystem>();
             BindSystem<SendJumpRequestByJumpBufferingSystem>();
             BindSystem<JumpBufferingExpireSystem>();
             BindSystem<DashTimeoutExpireSystem>();
             BindSystem<DashAirQuantityResetOnGroundedSystem>();
             BindSystem<UpdateCharacterMoveDirectionOnWalkRequestSystem>();
-            BindSystem<ApplyDecelerationsOnFixedRunSystem>();
+            BindSystem<ApplyWalkDecelerationOnFixedRunSystem>();
             BindSystem<ApplyWalkOnWalkRequestSystem>();
             BindSystem<ApplyDashOnDashRequestSystem>();
             BindSystem<ApplyDashTimeoutOnDashTimeoutRequestSystem>();
