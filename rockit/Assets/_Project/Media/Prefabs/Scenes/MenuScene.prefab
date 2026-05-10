@@ -321,6 +321,10 @@ PrefabInstance:
       propertyPath: m_VerticalAlignment
       value: 512
       objectReference: {fileID: 0}
+    - target: {fileID: 5462832372357242896, guid: 6cb6308c59fbae84492a38b2fc232c9f, type: 3}
+      propertyPath: managedReferences[1499440526611710037].Key
+      value: play
+      objectReference: {fileID: 0}
     - target: {fileID: 5667900853322220964, guid: 6cb6308c59fbae84492a38b2fc232c9f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
