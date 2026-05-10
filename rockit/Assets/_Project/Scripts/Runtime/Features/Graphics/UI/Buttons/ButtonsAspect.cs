@@ -12,7 +12,7 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Buttons
         public readonly ProtoPool<LevelButtonComponent> LevelButtonComponentPool;
         public readonly ProtoPool<ButtonTriggeredTag> ButtonTriggeredTagPool;
         public readonly ProtoIt Buttons = new (It.Inc<ButtonComponent>());
-        public readonly ProtoIt CloseAppButtons = new (It.Inc<ButtonComponent, CloseAppTag>());
+        public readonly ProtoIt TriggeredCloseAppButtons = new (It.Inc<ButtonComponent, ButtonTriggeredTag, CloseAppTag>());
         public readonly ProtoIt LevelButtons = new (It.Inc<ButtonComponent, LevelButtonComponent>());
         public readonly ProtoIt TriggeredButtons = new (It.Inc<ButtonComponent, ButtonTriggeredTag>());
     }
