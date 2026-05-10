@@ -6,13 +6,13 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Scenes
 {
     public class MenuSceneDomain : SceneDomain
     {
-        [SerializeField] private MenuWindow _menuWindow;
+        [SerializeField] private MonoMenuWindow _menuWindow;
 
         protected override void RegisterBindings()
         {
             base.RegisterBindings();
             
-            Container.Bind<MenuWindow>().FromInstance(_menuWindow).AsSingle();
+            Container.Bind<MonoMenuWindow>().FromInstance(_menuWindow).AsSingle();
         }
 
         protected override void RegisterStates()
