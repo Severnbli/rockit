@@ -1,6 +1,5 @@
 ﻿using _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes.Menu.Active;
-using _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Defined;
-using _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Defined.Menu;
+using _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Monos.Defined.Menu;
 using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Scenes
