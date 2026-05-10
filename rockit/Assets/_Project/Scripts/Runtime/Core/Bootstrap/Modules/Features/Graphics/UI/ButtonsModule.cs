@@ -1,11 +1,11 @@
 ﻿using _Project.Scripts.Runtime.Core.Bootstrap.Domain;
 using _Project.Scripts.Runtime.Features.Graphics.UI.Buttons.Systems;
 
-namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.UI.Buttons
+namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.UI
 {
-    public sealed class ButtonsSharedModule : BaseModule<ButtonsSharedModule>
+    public sealed class ButtonsModule : BaseModule<ButtonsModule>
     {
-        public ButtonsSharedModule(IDomain domain) : base(domain)
+        public ButtonsModule(IDomain domain) : base(domain)
         {
         }
 

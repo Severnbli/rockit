@@ -1,6 +1,6 @@
 ﻿using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.Animations;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.Sprites;
-using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.UI.Buttons;
+using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.UI;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.UI.Text;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Physics;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Physics.Moving;
@@ -30,7 +30,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Scenes
             TryRegisterModule<SpritesSharedModule>();
             TryRegisterModule<SpritesGlowModule>();
             TryRegisterModule<TextSharedModule>();
-            TryRegisterModule<ButtonsSharedModule>();
+            TryRegisterModule<ButtonsModule>();
         }
     }
 }
