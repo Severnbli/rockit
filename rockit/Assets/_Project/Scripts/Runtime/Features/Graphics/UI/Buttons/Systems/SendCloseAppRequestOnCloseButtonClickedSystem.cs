@@ -6,17 +6,15 @@ using Leopotam.EcsProto.QoL;
 
 namespace _Project.Scripts.Runtime.Features.Graphics.UI.Buttons.Systems
 {
-    public sealed class SendCloseAppRequestOnCloseButtonTriggeredSystem : IProtoRunSystem
+    public sealed class SendCloseAppRequestOnCloseButtonClickedSystem : IProtoRunSystem
     {
         [DIRequests] private readonly RequestsAspect _rAspect; 
         [DI] private readonly ButtonsAspect _bsAspect;
 
         public void Run()
         {
-            foreach (var e in _bsAspect.TriggeredCloseAppButtons)
-            {
-                SharedUtils.CreateCloseAppRequest(_rAspect);
-            }
+            if (_bsAspect.ClickedCloseAppButtons.IsEmptySlow()) return;
+            SharedUtils.CreateCloseAppRequest(_rAspect);
         }
     }
 }
