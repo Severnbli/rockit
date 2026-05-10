@@ -89,6 +89,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6328527368621696360}
     m_Modifications:
+    - target: {fileID: 1296394982626585268, guid: f8c5fd8be37ca0143aa5a756fc846b12, type: 3}
+      propertyPath: _menuWindow
+      value: 
+      objectReference: {fileID: 8076369883077733637}
     - target: {fileID: 4076561340772115781, guid: f8c5fd8be37ca0143aa5a756fc846b12, type: 3}
       propertyPath: m_Name
       value: MenuSceneContext
@@ -133,6 +137,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7633217889273929095, guid: f8c5fd8be37ca0143aa5a756fc846b12, type: 3}
+      propertyPath: _scriptableObjectInstallers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7633217889273929095, guid: f8c5fd8be37ca0143aa5a756fc846b12, type: 3}
+      propertyPath: '_scriptableObjectInstallers.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 8b7a1d7190ee16b43a29917903868fcd, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -263,13 +275,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8485868846793274969, guid: aa8616b6c6053ec40ba8066400afd4fb, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4545893911634339798, guid: aa8616b6c6053ec40ba8066400afd4fb, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4560619491289148267}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3270277950957066802, guid: aa8616b6c6053ec40ba8066400afd4fb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8076369883077733637}
   m_SourcePrefab: {fileID: 100100000, guid: aa8616b6c6053ec40ba8066400afd4fb, type: 3}
 --- !u!224 &900903007854567179 stripped
 RectTransform:
@@ -279,6 +295,35 @@ RectTransform:
 --- !u!224 &7187229416683559765 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4545893911634339798, guid: aa8616b6c6053ec40ba8066400afd4fb, type: 3}
+  m_PrefabInstance: {fileID: 6676702438557891715}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7534798762198839253 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3762919064730604374, guid: aa8616b6c6053ec40ba8066400afd4fb, type: 3}
+  m_PrefabInstance: {fileID: 6676702438557891715}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8199424373592729265 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3270277950957066802, guid: aa8616b6c6053ec40ba8066400afd4fb, type: 3}
+  m_PrefabInstance: {fileID: 6676702438557891715}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8076369883077733637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8199424373592729265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcec2b7406c84a4a93cb747856e3b97a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Runtime::_Project.Scripts.Runtime.Features.Graphics.UI.Windows.Defined.Menu.MonoMenuWindow
+  _body: {fileID: 7534798762198839253}
+  _fade: {fileID: 9052718907011288374}
+--- !u!1 &9052718907011288374 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2380678655457423797, guid: aa8616b6c6053ec40ba8066400afd4fb, type: 3}
   m_PrefabInstance: {fileID: 6676702438557891715}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8206401332272475855
