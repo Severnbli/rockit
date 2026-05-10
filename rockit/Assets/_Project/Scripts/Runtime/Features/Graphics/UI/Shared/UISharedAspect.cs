@@ -1,4 +1,5 @@
-﻿using _Project.Scripts.Runtime.Features.Graphics.UI.Buttons;
+﻿using _Project.Scripts.Runtime.Core.Infrastructure.Shared.Tags;
+using _Project.Scripts.Runtime.Features.Graphics.UI.Buttons;
 using _Project.Scripts.Runtime.Features.Graphics.UI.Shared.Tags;
 using _Project.Scripts.Runtime.Features.Graphics.UI.Text.Shared;
 using _Project.Scripts.Runtime.Features.Graphics.UI.Windows;
@@ -15,5 +16,6 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Shared
         
         public readonly ProtoPool<ClickedTag> ClickedTagPool;
         public readonly ProtoIt ClickedTags = new (It.Inc<ClickedTag>());
+        public readonly ProtoIt ClickedCloseAppItems = new (It.Inc<CloseAppTag, ClickedTag>());
     }
 }
