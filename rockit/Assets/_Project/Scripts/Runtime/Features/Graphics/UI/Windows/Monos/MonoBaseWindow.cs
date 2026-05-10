@@ -33,6 +33,7 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Monos
         
         public async UniTask Open()
         {
+            gameObject.SetActive(true);
             await PlayOpenAnimation();
             OnOpen?.Invoke();
             Opened = true;
@@ -43,6 +44,7 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Monos
             await PlayCloseAnimation();
             OnClose?.Invoke();
             Opened = false;
+            gameObject.SetActive(false);
         }
 
         protected virtual async UniTask PlayOpenAnimation()
