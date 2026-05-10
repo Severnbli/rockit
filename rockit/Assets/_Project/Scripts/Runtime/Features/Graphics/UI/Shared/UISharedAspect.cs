@@ -12,5 +12,6 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Shared
         public readonly TextSharedAspect TextSharedAspect;
         
         public readonly ProtoPool<ClickedTag> ClickedTagPool;
+        public readonly ProtoIt ClickedTags = new (It.Inc<ClickedTag>());
     }
 }
