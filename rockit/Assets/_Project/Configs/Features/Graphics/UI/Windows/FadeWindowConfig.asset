@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4eaed20df0164c09b22018860f5d5001, type: 3}
-  m_Name: MenuWindowConfig
-  m_EditorClassIdentifier: Runtime::_Project.Scripts.Runtime.Features.Graphics.UI.Windows.Defined.Menu.MenuWindowConfig
+  m_Script: {fileID: 11500000, guid: fefca6f403464061ab39bd6ab37926b3, type: 3}
+  m_Name: FadeWindowConfig
+  m_EditorClassIdentifier: Runtime::_Project.Scripts.Runtime.Features.Graphics.UI.Windows.Configs.FadeWindowConfig
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
@@ -23,26 +23,28 @@ MonoBehaviour:
     SerializationNodes: []
   _bodyOpen:
     _steps:
-    - rid: 1499440526611710042
+    - rid: 1499440526611710049
     _loops: 1
     _loopType: 0
   _bodyClose:
     _steps:
-    - rid: 1499440526611710043
+    - rid: 1499440526611710050
     _loops: 1
     _loopType: 0
   _fadeOpen:
-    _steps: []
+    _steps:
+    - rid: 1499440526611710051
     _loops: 1
     _loopType: 0
   _fadeClose:
-    _steps: []
+    _steps:
+    - rid: 1499440526611710052
     _loops: 1
     _loopType: 0
   references:
     version: 2
     RefIds:
-    - rid: 1499440526611710042
+    - rid: 1499440526611710049
       type: {class: FloatScaleStep, ns: _Project.Scripts.Runtime.Core.Infrastructure.Animations.Tools.Pipeline.Steps, asm: Runtime}
       data:
         _connector: 0
@@ -57,8 +59,38 @@ MonoBehaviour:
           _ease: 0
           _loops: 1
           _loopType: 0
-    - rid: 1499440526611710043
+    - rid: 1499440526611710050
       type: {class: FloatScaleStep, ns: _Project.Scripts.Runtime.Core.Infrastructure.Animations.Tools.Pipeline.Steps, asm: Runtime}
+      data:
+        _connector: 0
+        _settings:
+          _to: 0
+          _from: 0
+          _fromExact: 0
+          _relative: 0
+          _duration: 0.5
+          _speedBased: 0
+          _delay: 0
+          _ease: 0
+          _loops: 1
+          _loopType: 0
+    - rid: 1499440526611710051
+      type: {class: ImageFadeStep, ns: _Project.Scripts.Runtime.Core.Infrastructure.Animations.Tools.Pipeline.Steps, asm: Runtime}
+      data:
+        _connector: 0
+        _settings:
+          _to: 1
+          _from: 0
+          _fromExact: 0
+          _relative: 0
+          _duration: 0.5
+          _speedBased: 0
+          _delay: 0
+          _ease: 0
+          _loops: 1
+          _loopType: 0
+    - rid: 1499440526611710052
+      type: {class: ImageFadeStep, ns: _Project.Scripts.Runtime.Core.Infrastructure.Animations.Tools.Pipeline.Steps, asm: Runtime}
       data:
         _connector: 0
         _settings:
