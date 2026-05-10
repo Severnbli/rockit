@@ -1,11 +1,11 @@
 ﻿using _Project.Scripts.Runtime.Core.Infrastructure.Shared.Tags;
-using _Project.Scripts.Runtime.Features.Graphics.UI.Buttons.Shared.Components;
+using _Project.Scripts.Runtime.Features.Graphics.UI.Buttons.Components;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 
-namespace _Project.Scripts.Runtime.Features.Graphics.UI.Buttons.Shared
+namespace _Project.Scripts.Runtime.Features.Graphics.UI.Buttons
 {
-    public sealed class ButtonsSharedAspect : ProtoAspectInject
+    public sealed class ButtonsAspect : ProtoAspectInject
     {
         public readonly ProtoPool<ButtonComponent> ButtonComponentPool;
         public readonly ProtoPool<LevelButtonComponent> LevelButtonComponentPool;
