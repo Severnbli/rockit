@@ -14,6 +14,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Shared
         public readonly ProtoPool<GameObjectComponent> GameObjectComponentPool;
         public readonly ProtoPool<IndexableTag> IndexableTagPool;
         public readonly ProtoPool<CloseAppTag> CloseAppTagPool;
+        public readonly ProtoPool<OpenerTag> OpenerTagPool;
         public readonly ProtoIt Players = new (It.Inc<PlayerTag>());
         public readonly ProtoIt Initializables = new (It.Inc<InitializableTag>());
         public readonly ProtoIt Characters = new (It.Inc<CharacterTag>());
