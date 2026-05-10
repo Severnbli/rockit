@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6156519852067059127}
   - component: {fileID: 3911815982212967304}
   - component: {fileID: 3509015478650810042}
+  - component: {fileID: 8691853331054782125}
   m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
@@ -137,6 +138,39 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &8691853331054782125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3452694716985603398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd2e3b9377ea4b6b9d83eb1bc17d15a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Leopotam.EcsProto.Unity::Leopotam.EcsProto.Unity.ProtoUnityAuthoring
+  _worldName: 
+  _authoringType: 0
+  _destroyAfterAuthoring: 0
+  Components:
+  - rid: 1499440526611710037
+  - rid: 1499440526611710039
+  - rid: 1499440526611710040
+  references:
+    version: 2
+    RefIds:
+    - rid: 1499440526611710037
+      type: {class: LocalizationItemComponent, ns: _Project.Scripts.Runtime.Core.Infrastructure.Localization.Components, asm: Runtime}
+      data:
+        Key: 
+    - rid: 1499440526611710039
+      type: {class: TextUiComponent, ns: _Project.Scripts.Runtime.Features.Graphics.UI.Text.Shared.Components, asm: Runtime}
+      data:
+        Text: {fileID: 3509015478650810042}
+    - rid: 1499440526611710040
+      type: {class: InitializableTag, ns: _Project.Scripts.Runtime.Core.Infrastructure.Shared.Tags, asm: Runtime}
+      data: 
 --- !u!1 &5504650157200857333
 GameObject:
   m_ObjectHideFlags: 0
