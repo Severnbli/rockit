@@ -20,6 +20,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Scenes
             base.RegisterStates();
             
             RegisterState<MenuSceneSetupState>();
+            RegisterState<MenuWindowState>();
         }
     }
 }
