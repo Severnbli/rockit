@@ -58,7 +58,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9077047239115588377, guid: 4f2890999f208b54c93aca928e2508ef, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 36
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9077047239115588377, guid: 4f2890999f208b54c93aca928e2508ef, type: 3}
       propertyPath: m_LocalPosition.x
@@ -111,5 +111,27 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5504650157200857333, guid: 4f2890999f208b54c93aca928e2508ef, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5293873314985963251}
   m_SourcePrefab: {fileID: 100100000, guid: 4f2890999f208b54c93aca928e2508ef, type: 3}
+--- !u!1 &9166014585793814088 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5504650157200857333, guid: 4f2890999f208b54c93aca928e2508ef, type: 3}
+  m_PrefabInstance: {fileID: 3697538397134079677}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5293873314985963251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9166014585793814088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86710e43de46f6f4bac7c8e50813a599, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.AspectRatioFitter
+  m_AspectMode: 1
+  m_AspectRatio: 1.8888888
