@@ -15,6 +15,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.UI
             
             BindSystem<AddButtonTriggeredTagOnButtonTriggeredSystem>();
             BindSystem<SendCloseAppRequestOnCloseButtonClickedSystem>();
+            BindSystem<RemoveButtonTriggeredTagOnRunSystem>();
         }
     }
 }
