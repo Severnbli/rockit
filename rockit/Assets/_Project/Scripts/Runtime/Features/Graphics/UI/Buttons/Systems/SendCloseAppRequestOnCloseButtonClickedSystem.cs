@@ -9,13 +9,13 @@ using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 using UnityEngine;
 
-namespace _Project.Scripts.Runtime.Features.Graphics.UI.Buttons.Shared.Systems
+namespace _Project.Scripts.Runtime.Features.Graphics.UI.Buttons.Systems
 {
     public sealed class SendCloseAppRequestOnCloseButtonClickedSystem : IProtoInitSystem, IProtoRunSystem
     {
         [DIRequests] private readonly RequestsAspect _rAspect;
         [DI] private readonly UIEventsAspect _ueAspect;
-        [DI] private ButtonsSharedAspect _bsAspect;
+        [DI] private ButtonsAspect _bsAspect;
         private readonly Dictionary<GameObject, ProtoPackedEntityWithWorld> _goIndex;
         private ProtoWorld _world;
 

@@ -1,5 +1,5 @@
 ﻿using _Project.Scripts.Runtime.Core.Bootstrap.Domain;
-using _Project.Scripts.Runtime.Features.Graphics.UI.Buttons.Shared.Systems;
+using _Project.Scripts.Runtime.Features.Graphics.UI.Buttons.Systems;
 
 namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.UI.Buttons
 {
