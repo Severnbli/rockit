@@ -1,11 +1,46 @@
-﻿using UnityEngine;
+﻿using _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Configs;
+using Cysharp.Threading.Tasks;
+using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Monos
 {
-    public class MonoFadeWindow : MonoBaseWindow
+    public class MonoFadeWindow<TConfig> : MonoBaseWindow<TConfig> 
+        where TConfig : FadeWindowConfig
     {
-        [SerializeField] private GameObject _fade;
+        [SerializeField] protected GameObject Fade;
         
-        public GameObject Fade => _fade;
+        public override void Initialize()
+        {
+            base.Initialize();
+            
+            TpRunner.CacheRun(Config.FadeOpen, Fade);
+            TpRunner.CacheRun(Config.FadeClose, Fade);
+        }
+        
+        protected override UniTask PlayOpenAnimation()
+        {
+            return UniTask.WhenAll(
+                base.PlayOpenAnimation(),
+                PlayFadeOpenAnimation()
+            );
+        }
+
+        protected override UniTask PlayCloseAnimation()
+        {
+            return UniTask.WhenAll(
+                base.PlayCloseAnimation(),
+                PlayFadeCloseAnimation()
+            );
+        }
+
+        protected virtual async UniTask PlayFadeOpenAnimation()
+        {
+            await TpRunner.Run(Config.FadeOpen, Fade, true);
+        }
+
+        protected virtual async UniTask PlayFadeCloseAnimation()
+        {
+            await TpRunner.Run(Config.FadeClose, Fade, true);
+        }
     }
 }

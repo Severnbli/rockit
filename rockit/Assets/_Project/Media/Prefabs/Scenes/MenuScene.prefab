@@ -139,7 +139,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7633217889273929095, guid: f8c5fd8be37ca0143aa5a756fc846b12, type: 3}
       propertyPath: _scriptableObjectInstallers.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7633217889273929095, guid: f8c5fd8be37ca0143aa5a756fc846b12, type: 3}
       propertyPath: '_scriptableObjectInstallers.Array.data[0]'
@@ -170,6 +170,10 @@ PrefabInstance:
     - target: {fileID: 3270277950957066802, guid: aa8616b6c6053ec40ba8066400afd4fb, type: 3}
       propertyPath: m_Name
       value: Menu
+      objectReference: {fileID: 0}
+    - target: {fileID: 3270277950957066802, guid: aa8616b6c6053ec40ba8066400afd4fb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4545893911634339798, guid: aa8616b6c6053ec40ba8066400afd4fb, type: 3}
       propertyPath: m_AnchorMax.x
@@ -316,11 +320,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 8199424373592729265}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcec2b7406c84a4a93cb747856e3b97a, type: 3}
+  m_Script: {fileID: 11500000, guid: 4557dfab3bce42ba926872b5c53924b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Runtime::_Project.Scripts.Runtime.Features.Graphics.UI.Windows.Defined.Menu.MonoMenuWindow
-  _body: {fileID: 7534798762198839253}
-  _fade: {fileID: 9052718907011288374}
+  Config: {fileID: 11400000, guid: 08d5aa2699892db448af47a4c924b578, type: 2}
+  Body: {fileID: 7534798762198839253}
+  Fade: {fileID: 9052718907011288374}
 --- !u!1 &9052718907011288374 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2380678655457423797, guid: aa8616b6c6053ec40ba8066400afd4fb, type: 3}
@@ -400,7 +405,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5667900853322220964, guid: 6cb6308c59fbae84492a38b2fc232c9f, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 54
       objectReference: {fileID: 0}
     - target: {fileID: 5667900853322220964, guid: 6cb6308c59fbae84492a38b2fc232c9f, type: 3}
       propertyPath: m_LocalScale.x

@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Configs
 {
-    public class FadeWindowConfig<T> : BaseWindowConfig<T> where T : FadeWindowConfig<T>
+    public class FadeWindowConfig : BaseWindowConfig
     {
         [SerializeField] private TweenPipeline _fadeOpen;
         [SerializeField] private TweenPipeline _fadeClose;
