@@ -14,12 +14,12 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes.Menu.Active
 
         public async UniTask OnEnter(IStateMachine stateMachine)
         {
-            await _window.Open();
+            await _window.OpenAwait();
         }
 
         public async UniTask OnLeave(IStateMachine stateMachine)
         {
-            await _window.Close();
+            await _window.CloseAwait();
             await UniTask.NextFrame();
         }
     }

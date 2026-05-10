@@ -1,5 +1,6 @@
 ﻿using System;
 using _Project.Scripts.Runtime.Core.Infrastructure.Animations.Tools.Pipeline.Core;
+using _Project.Scripts.Runtime.Core.Infrastructure.Shared.Monos;
 using _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Configs;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
@@ -7,7 +8,7 @@ using Zenject;
 
 namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Monos
 {
-    public class MonoBaseWindow<TConfig> : MonoBehaviour, IInitializable 
+    public class MonoBaseWindow<TConfig> : OpenableClosable, IInitializable 
         where TConfig : BaseWindowConfig
     {
         [SerializeField] protected TConfig Config;
@@ -30,8 +31,13 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Monos
             TpRunner.CacheRun(Config.BodyOpen, Body);
             TpRunner.CacheRun(Config.BodyClose, Body);
         }
+
+        public override void Open()
+        {
+            OpenAwait().Forget();
+        }
         
-        public async UniTask Open()
+        public async UniTask OpenAwait()
         {
             gameObject.SetActive(true);
             await PlayOpenAnimation();
@@ -39,7 +45,12 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Monos
             Opened = true;
         }
 
-        public async UniTask Close()
+        public override void Close()
+        {
+            CloseAwait().Forget();
+        }
+
+        public async UniTask CloseAwait()
         {
             await PlayCloseAnimation();
             OnClose?.Invoke();
