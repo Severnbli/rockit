@@ -184,6 +184,7 @@ GameObject:
   - component: {fileID: 1872302310458551183}
   - component: {fileID: 2595305349244646046}
   - component: {fileID: 2704014743195238056}
+  - component: {fileID: 1865410685434089194}
   m_Layer: 0
   m_Name: Button
   m_TagString: Untagged
@@ -315,3 +316,36 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1865410685434089194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5504650157200857333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd2e3b9377ea4b6b9d83eb1bc17d15a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Leopotam.EcsProto.Unity::Leopotam.EcsProto.Unity.ProtoUnityAuthoring
+  _worldName: 
+  _authoringType: 0
+  _destroyAfterAuthoring: 0
+  Components:
+  - rid: 1499440526611710066
+  - rid: 1499440526611710067
+  - rid: 1499440526611710068
+  references:
+    version: 2
+    RefIds:
+    - rid: 1499440526611710066
+      type: {class: ButtonComponent, ns: _Project.Scripts.Runtime.Features.Graphics.UI.Buttons.Components, asm: Runtime}
+      data:
+        Button: {fileID: 2595305349244646046}
+    - rid: 1499440526611710067
+      type: {class: GameObjectComponent, ns: _Project.Scripts.Runtime.Core.Infrastructure.Shared.Components, asm: Runtime}
+      data:
+        GameObject: {fileID: 5504650157200857333}
+    - rid: 1499440526611710068
+      type: {class: IndexableTag, ns: _Project.Scripts.Runtime.Core.Infrastructure.Shared.Tags, asm: Runtime}
+      data: 
