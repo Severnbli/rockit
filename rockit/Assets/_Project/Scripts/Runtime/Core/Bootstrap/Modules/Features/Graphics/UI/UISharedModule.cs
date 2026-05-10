@@ -15,8 +15,8 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.UI
             
             BindSystem<RemoveClickedTagOnRunSystem>();
             BindSystem<SetClickedTagOnClickEventSystem>();
-            
             BindSystem<SendCloseAppRequestOnClickedCloseAppItemSystem>();
+            BindSystem<OpenOpenableOnClickedItemSystem>();
         }
     }
 }
