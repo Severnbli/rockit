@@ -5,9 +5,8 @@ using Leopotam.EcsProto.Unity;
 namespace _Project.Scripts.Runtime.Features.Graphics.UI.Buttons.Components
 {
     [Serializable, ProtoUnityAuthoring]
-    public struct LevelButtonComponent
+    public struct LevelButtonViewComponent
     {
-        public int Id;
-        public LevelButtonView View;
+        public LevelButtonView LevelButtonView;
     }
 }
