@@ -6,7 +6,12 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes.Menu.Active
     public class LevelSelectionState : ISceneState
     {
         private readonly LevelSelectionWindow _lsWindow;
-        
+
+        public LevelSelectionState(LevelSelectionWindow lsWindow)
+        {
+            _lsWindow = lsWindow;
+        }
+
         public async UniTask OnEnter(IStateMachine stateMachine)
         {
             await _lsWindow.OpenAwait();
