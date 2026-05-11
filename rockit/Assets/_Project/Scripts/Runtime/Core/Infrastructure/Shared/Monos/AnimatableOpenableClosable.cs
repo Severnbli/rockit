@@ -17,8 +17,8 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Shared.Monos
 
         public override void Close()
         {
-            base.Close();
             _animator.SetBool(OpenedBool, false);
+            base.Close();
         }
     }
 }
