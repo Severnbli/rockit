@@ -5,21 +5,21 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes.Menu.Active
 {
     public class MenuState : ISceneState
     {
-        private readonly MenuWindow _window;
+        private readonly MenuWindow _mWindow;
 
-        public MenuState(MenuWindow window)
+        public MenuState(MenuWindow mWindow)
         {
-            _window = window;
+            _mWindow = mWindow;
         }
 
         public async UniTask OnEnter(IStateMachine stateMachine)
         {
-            await _window.OpenAwait();
+            await _mWindow.OpenAwait();
         }
 
         public async UniTask OnLeave(IStateMachine stateMachine)
         {
-            await _window.CloseAwait();
+            await _mWindow.CloseAwait();
             await UniTask.NextFrame();
         }
     }
