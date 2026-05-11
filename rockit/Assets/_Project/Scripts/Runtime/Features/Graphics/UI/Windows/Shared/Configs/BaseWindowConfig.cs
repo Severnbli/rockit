@@ -2,7 +2,7 @@
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Configs
+namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Shared.Configs
 {
     public class BaseWindowConfig : SerializedScriptableObject
     {

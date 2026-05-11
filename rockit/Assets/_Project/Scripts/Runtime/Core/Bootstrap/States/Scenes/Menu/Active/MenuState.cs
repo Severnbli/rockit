@@ -1,4 +1,4 @@
-﻿using _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Monos.Defined.Menu;
+﻿using _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Menu.Monos;
 using Cysharp.Threading.Tasks;
 
 namespace _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes.Menu.Active

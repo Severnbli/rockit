@@ -1,8 +1,8 @@
-﻿using _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Configs;
+﻿using _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Shared.Configs;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
-namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Monos
+namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Shared.Monos
 {
     public class MonoFadeWindow<TConfig> : MonoBaseWindow<TConfig> 
         where TConfig : FadeWindowConfig
