@@ -13,6 +13,7 @@ using _Project.Scripts.Runtime.Features.Physics.Moving.Platforms;
 using _Project.Scripts.Runtime.Features.Physics.Moving.Shared;
 using _Project.Scripts.Runtime.Features.Physics.Shared;
 using _Project.Scripts.Runtime.Features.Platforms.Shared;
+using _Project.Scripts.Runtime.Features.World.Shared;
 using Leopotam.EcsProto.QoL;
 using Leopotam.EcsProto.Unity.Physics2D;
 using Leopotam.EcsProto.Unity.Ugui;
@@ -39,6 +40,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
         public readonly UIEventsAspect UIEventsAspect;
         public readonly LifecycleAspect LifecycleAspect;
         public readonly AudioAspect AudioAspect;
+        public readonly WorldSharedAspect WorldSharedAspect;
         public readonly SharedAspect SharedAspect;
     }
 }
