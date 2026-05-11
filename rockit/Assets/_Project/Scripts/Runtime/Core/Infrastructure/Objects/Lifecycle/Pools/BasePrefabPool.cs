@@ -51,7 +51,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Objects.Lifecycle.Pools
         {
             entity = default;
             
-            return instance.gameObject.TryGet(out ProtoUnityAuthoring authoring) && 
+            return instance.gameObject.TryGet(out ProtoUnityAuthoring authoring, false) && 
                    authoring.Entity().TryUnpackCompletely(World, out  entity);
         }
 

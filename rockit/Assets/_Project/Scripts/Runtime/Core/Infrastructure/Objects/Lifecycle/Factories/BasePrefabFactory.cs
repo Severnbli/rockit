@@ -42,7 +42,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Objects.Lifecycle.Factori
 
         private void InitiateAuthoring(TItem instance, TSettings settings = default)
         {
-            if (!instance.gameObject.TryGet(out ProtoUnityAuthoring authoring)) return;
+            if (!instance.gameObject.TryGet(out ProtoUnityAuthoring authoring, false)) return;
 
             Pool<CreatedAtFactoryTag>().NewEntity(out var entity);
             authoring.ProcessAuthoringForEntity(World, entity);
