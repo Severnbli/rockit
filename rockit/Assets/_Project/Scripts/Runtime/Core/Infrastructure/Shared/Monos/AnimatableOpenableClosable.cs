@@ -5,22 +5,20 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Shared.Monos
     public class AnimatableOpenableClosable : OpenableClosable
     {
         [SerializeField] private Animator _animator;
-        [SerializeField] private string _openTrigger = "Open";
-        [SerializeField] private string _closeTrigger = "Close";
+        [SerializeField] private string _openedBool = "Opened";
         
-        private int OpenTrigger => Animator.StringToHash(_openTrigger);
-        private int CloseTrigger => Animator.StringToHash(_closeTrigger);
+        private int OpenedBool => Animator.StringToHash(_openedBool);
 
         public override void Open()
         {
             base.Open();
-            _animator.SetTrigger(OpenTrigger);
+            _animator.SetBool(OpenedBool, true);
         }
 
         public override void Close()
         {
             base.Close();
-            _animator.SetTrigger(CloseTrigger);
+            _animator.SetBool(OpenedBool, false);
         }
     }
 }
