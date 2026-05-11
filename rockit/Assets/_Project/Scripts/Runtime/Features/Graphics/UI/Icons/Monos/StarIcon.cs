@@ -2,7 +2,7 @@
 
 namespace _Project.Scripts.Runtime.Features.Graphics.UI.Icons.Monos
 {
-    public class StarIcon : AnimatableOpenableClosable
+    public class StarIcon : OpenableClosableAnimator
     {
         
     }

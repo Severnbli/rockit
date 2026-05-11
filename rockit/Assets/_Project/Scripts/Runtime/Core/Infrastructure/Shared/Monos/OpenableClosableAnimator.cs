@@ -2,7 +2,7 @@
 
 namespace _Project.Scripts.Runtime.Core.Infrastructure.Shared.Monos
 {
-    public class AnimatableOpenableClosable : OpenableClosable
+    public class OpenableClosableAnimator : OpenableClosable
     {
         [SerializeField] private Animator _animator;
         [SerializeField] private string _openedBool = "Opened";
