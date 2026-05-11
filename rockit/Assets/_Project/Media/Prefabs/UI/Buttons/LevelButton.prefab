@@ -283,23 +283,14 @@ MonoBehaviour:
   _authoringType: 0
   _destroyAfterAuthoring: 0
   Components:
-  - rid: 1499440526611710037
   - rid: 1499440526611710039
-  - rid: 1499440526611710040
   references:
     version: 2
     RefIds:
-    - rid: 1499440526611710037
-      type: {class: LocalizationItemComponent, ns: _Project.Scripts.Runtime.Core.Infrastructure.Localization.Components, asm: Runtime}
-      data:
-        Key: 
     - rid: 1499440526611710039
       type: {class: TextUiComponent, ns: _Project.Scripts.Runtime.Features.Graphics.UI.Text.Shared.Components, asm: Runtime}
       data:
         Text: {fileID: 6702788981113134294}
-    - rid: 1499440526611710040
-      type: {class: InitializableTag, ns: _Project.Scripts.Runtime.Core.Infrastructure.Shared.Tags, asm: Runtime}
-      data: 
 --- !u!114 &6158986104723155832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -478,6 +469,18 @@ PrefabInstance:
       propertyPath: m_fontColor32.rgba
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 5859125604877693068, guid: aa42ffe6686726a498e482b9c200c72a, type: 3}
+      propertyPath: Components.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5859125604877693068, guid: aa42ffe6686726a498e482b9c200c72a, type: 3}
+      propertyPath: 'Components.Array.data[0]'
+      value: 1499440526611710039
+      objectReference: {fileID: 0}
+    - target: {fileID: 5859125604877693068, guid: aa42ffe6686726a498e482b9c200c72a, type: 3}
+      propertyPath: 'Components.Array.data[1]'
+      value: 1499440526611710040
+      objectReference: {fileID: 0}
     - target: {fileID: 6064175390402630968, guid: aa42ffe6686726a498e482b9c200c72a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -610,7 +613,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Runtime::_Project.Scripts.Runtime.Features.Graphics.UI.Buttons.Monos.LevelButtonView
   _button: {fileID: 8302871502154915503}
-  _image: {fileID: 5676251709153462206}
   _idText: {fileID: 7462287761041097355}
   _starsContainer: {fileID: 843418661064812622}
   _unlockInfoArea: {fileID: 373174327463687347}
@@ -620,17 +622,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6064175390402630968, guid: aa42ffe6686726a498e482b9c200c72a, type: 3}
   m_PrefabInstance: {fileID: 9146169753767524880}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5676251709153462206 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3471044084216888750, guid: aa42ffe6686726a498e482b9c200c72a, type: 3}
-  m_PrefabInstance: {fileID: 9146169753767524880}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1970795383995823300}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!114 &7462287761041097355 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1829279211360467099, guid: aa42ffe6686726a498e482b9c200c72a, type: 3}
