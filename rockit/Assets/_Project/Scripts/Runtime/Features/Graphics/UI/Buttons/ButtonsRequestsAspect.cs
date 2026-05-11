@@ -9,6 +9,8 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Buttons
     public sealed class ButtonsRequestsAspect : ProtoAspectInject
     {
         public readonly ProtoPool<SpawnAllLevelButtonsRequest> SpawnAllLevelButtonsRequestPool;
+        public readonly ProtoPool<SpawnLevelButtonRequest> SpawnLevelButtonRequestPool;
         public readonly ProtoIt SpawnAllLevelButtonsRequests = new (It.Inc<RequestComponent, ActiveRequestTag, RunRequestTag, SpawnAllLevelButtonsRequest>());
+        public readonly ProtoIt SpawnLevelButtonRequests = new (It.Inc<RequestComponent, ActiveRequestTag, RunRequestTag, SpawnLevelButtonRequest>());
     }
 }
