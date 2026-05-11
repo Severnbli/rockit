@@ -18,7 +18,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes.Menu.Active
         public async UniTask OnEnter(IStateMachine stateMachine)
         {
             _mPlayer.Play(_mConfig.Menu, true);
-            stateMachine.ChangeState<MenuState>().Forget();
+            stateMachine.ChangeState<CreateLevelButtonsState>().Forget();
             await UniTask.NextFrame();
         }
 
