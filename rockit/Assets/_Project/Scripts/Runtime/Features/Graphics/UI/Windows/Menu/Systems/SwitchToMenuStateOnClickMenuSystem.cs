@@ -1,0 +1,24 @@
+﻿using _Project.Scripts.Runtime.Core.Bootstrap.States;
+using _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes.Menu.Active;
+using Leopotam.EcsProto;
+using Leopotam.EcsProto.QoL;
+
+namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Menu.Systems
+{
+    public sealed class SwitchToMenuStateOnClickMenuSystem : IProtoRunSystem
+    {
+        [DI] private readonly MenuSceneWindowsAspect _mswAspect;
+        private readonly IStateMachine _sMachine;
+
+        public SwitchToMenuStateOnClickMenuSystem(IStateMachine sMachine)
+        {
+            _sMachine = sMachine;
+        }
+
+        public void Run()
+        {
+            if (_mswAspect.ClickedMenus.IsEmptySlow()) return;
+            _sMachine.ChangeState<MenuState>();
+        }
+    }
+}
