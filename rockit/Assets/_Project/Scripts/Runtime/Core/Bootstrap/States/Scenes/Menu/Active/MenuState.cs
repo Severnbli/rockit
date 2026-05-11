@@ -3,11 +3,11 @@ using Cysharp.Threading.Tasks;
 
 namespace _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes.Menu.Active
 {
-    public class MenuWindowState : ISceneState
+    public class MenuState : ISceneState
     {
         private readonly MenuWindow _window;
 
-        public MenuWindowState(MenuWindow window)
+        public MenuState(MenuWindow window)
         {
             _window = window;
         }
