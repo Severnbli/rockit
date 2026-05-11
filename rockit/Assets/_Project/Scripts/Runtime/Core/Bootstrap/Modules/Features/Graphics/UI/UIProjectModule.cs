@@ -23,8 +23,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.UI
         {
             base.BindSystems();
 
-            BindSystem<CreateAllLevelButtonsOnCreateAllLevelButtonsRequestSystem>();
-            BindSystem<CreateLevelButtonOnCreateLevelButtonRequestSystem>();
+            BindSystem<CreateLevelButtonsOnCreateLevelButtonsRequestSystem>();
         }
     }
 }
