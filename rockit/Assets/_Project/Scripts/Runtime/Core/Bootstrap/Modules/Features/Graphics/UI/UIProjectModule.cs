@@ -22,7 +22,8 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.UI
         protected override void BindSystems()
         {
             base.BindSystems();
-            
+
+            BindSystem<SendCreateLevelButtonRequestsOnCreateAllLevelButtonsRequestSystem>();
             BindSystem<CreateLevelButtonOnCreateLevelButtonRequestSystem>();
         }
     }
