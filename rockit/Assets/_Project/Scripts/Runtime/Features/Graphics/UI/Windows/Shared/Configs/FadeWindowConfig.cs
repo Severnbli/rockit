@@ -1,7 +1,7 @@
 ﻿using _Project.Scripts.Runtime.Core.Infrastructure.Animations.Tools.Pipeline.Core;
 using UnityEngine;
 
-namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Configs
+namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Shared.Configs
 {
     public class FadeWindowConfig : BaseWindowConfig
     {
