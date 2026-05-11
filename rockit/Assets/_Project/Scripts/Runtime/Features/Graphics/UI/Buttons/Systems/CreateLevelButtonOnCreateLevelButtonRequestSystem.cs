@@ -2,6 +2,7 @@
 using _Project.Scripts.Runtime.Core.Infrastructure.Storage;
 using _Project.Scripts.Runtime.Features.Graphics.UI.Buttons.Types;
 using _Project.Scripts.Runtime.Features.World.Levels.Configs;
+using _Project.Scripts.Runtime.Shared.Utils.Features.Graphics;
 using _Project.Scripts.Runtime.Shared.Utils.Shared;
 using Leopotam.EcsProto;
 
@@ -29,19 +30,8 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Buttons.Systems
                 ref var clbRequest = ref _brAspect.CreateLevelButtonRequestPool.Get(e);
                 if (!_lConfig.Levels.TryGetValue(clbRequest.LevelId, out var lDefinition)) continue;
 
-                var createSettings = new LevelButtonCreateSettings
-                {
-                    LevelId = clbRequest.LevelId,
-                    StarsToUnlock = lDefinition.StarsToUnlock
-                };
-                
-                var totalStars = GameStatsUtils.GetTotalStars(_dProvider);
-                createSettings.Opened = lDefinition.StarsToUnlock >= totalStars;
-
-                if (_dProvider.GameSceneData.CompletedLevels.TryGetValue(clbRequest.LevelId, out var lData))
-                {
-                    createSettings.StarsQuantity = lData.Stars;
-                }
+                var createSettings =
+                    ButtonsUtils.DefineLevelButtonCreateSettings(clbRequest.LevelId, lDefinition, _dProvider);
 
                 _lbFactory.Create(clbRequest.At, createSettings);
             }
