@@ -7,8 +7,10 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Shared.Configs
     {
         [SerializeField] private GameObject _levelButton;
         [SerializeField] private GameObject _starIcon;
+        [SerializeField] private GameObject _animatableStarIcon;
         
         public GameObject LevelButton => _levelButton;
         public GameObject StarIcon => _starIcon;
+        public GameObject AnimatableStarIcon => _animatableStarIcon;
     }
 }
