@@ -1,6 +1,11 @@
-﻿using _Project.Scripts.Runtime.Core.Infrastructure.Requests;
+﻿using System.Collections.Generic;
+using _Project.Scripts.Runtime.Core.Infrastructure.Requests;
+using _Project.Scripts.Runtime.Core.Infrastructure.Storage;
 using _Project.Scripts.Runtime.Features.Graphics.UI.Buttons.Requests;
+using _Project.Scripts.Runtime.Features.Graphics.UI.Buttons.Types;
+using _Project.Scripts.Runtime.Features.World.Levels.Types;
 using _Project.Scripts.Runtime.Shared.Extensions.Infrastructure;
+using _Project.Scripts.Runtime.Shared.Utils.Shared;
 using Leopotam.EcsProto;
 
 namespace _Project.Scripts.Runtime.Shared.Utils.Features.Graphics
@@ -19,6 +24,26 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Features.Graphics
         {
             return aspect.CreateRequest(aspect.UIRequestsAspect.ButtonsRequestsAspect.CreateLevelButtonRequestPool,
                 prepared: prepared);
+        }
+
+        public static LevelButtonCreateSettings DefineLevelButtonCreateSettings(int id, LevelDefinition lDefinition, 
+            DataProvider dProvider)
+        {
+            var createSettings = new LevelButtonCreateSettings
+            {
+                LevelId = id,
+                StarsToUnlock = lDefinition.StarsToUnlock
+            };
+                
+            var totalStars = GameStatsUtils.GetTotalStars(dProvider);
+            createSettings.Opened = totalStars >= lDefinition.StarsToUnlock;
+                
+            if (dProvider.GameSceneData.CompletedLevels.TryGetValue(id, out var lData))
+            {
+                createSettings.StarsQuantity = lData.Stars;
+            }
+            
+            return createSettings;
         }
     }
 }
