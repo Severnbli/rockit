@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 804468fd052c47d8b2fe642919b74447, type: 3}
-  m_Name: PrefabsStorageConfig
-  m_EditorClassIdentifier: Runtime::_Project.Scripts.Runtime.Core.Infrastructure.Shared.Configs.PrefabsStorageConfig
+  m_Script: {fileID: 11500000, guid: b3a9264685584922a9575a7dbadeb65e, type: 3}
+  m_Name: UIPrefabsStorageConfig
+  m_EditorClassIdentifier: Runtime::_Project.Scripts.Runtime.Features.Graphics.UI.Shared.Configs.UIPrefabsStorageConfig
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
