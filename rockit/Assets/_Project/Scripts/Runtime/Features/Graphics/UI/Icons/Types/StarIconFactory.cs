@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Features.Graphics.UI.Icons.Types
 {
-    public class StarIconFactory : BasePrefabFactory<AnimatableStarIcon, StarIconCreateSettings>
+    public class StarIconFactory : BasePrefabFactory<StarIcon, StarIconCreateSettings>
     {
         private readonly UIPrefabsStorageConfig _upsConfig;
         
@@ -17,7 +17,7 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Icons.Types
 
         protected override GameObject GetPrefab() => _upsConfig.StarIcon;
 
-        protected override void PostCreate(AnimatableStarIcon instance, StarIconCreateSettings settings = default)
+        protected override void PostCreate(StarIcon instance, StarIconCreateSettings settings = default)
         {
             base.PostCreate(instance, settings);
             
