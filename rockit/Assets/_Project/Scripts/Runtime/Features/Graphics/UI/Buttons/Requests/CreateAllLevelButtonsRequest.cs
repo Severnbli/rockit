@@ -2,7 +2,7 @@
 
 namespace _Project.Scripts.Runtime.Features.Graphics.UI.Buttons.Requests
 {
-    public struct SpawnAllLevelButtonsRequest
+    public struct CreateAllLevelButtonsRequest
     {
         public Transform At;
     }
