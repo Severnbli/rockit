@@ -40,6 +40,8 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States
         {
             if (_locked) return;
             
+            LogUtils.Log($"Switching from {ActiveState?.GetType().Name} to {state.GetType().Name}");
+            
             await LeaveActiveState();
             await EnterActiveState(state);
         }
