@@ -19,7 +19,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Project
         {
             base.RegisterBindings();
 
-            Container.Bind<AudioSourceContainer>().FromInstance(_asContainer).AsSingle();
+            Container.BindInstance(_asContainer).AsSingle();
             Container.Bind<IStateMachine>().To<StateMachine>().AsSingle();
             Container.Bind<PausableSystemsSolver>().ToSelf().AsSingle();
             Container.BindInterfacesTo<DiContainerDomainObjectInstantiator>().AsSingle();
