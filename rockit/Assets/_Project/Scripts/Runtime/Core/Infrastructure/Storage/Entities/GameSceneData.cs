@@ -8,6 +8,6 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Storage.Entities
     public sealed class GameSceneData
     {
         public int LevelIdToLoad;
-        public Dictionary<int, LevelData> CompletedLevels;
+        public Dictionary<int, LevelData> CompletedLevels = new ();
     }
 }
