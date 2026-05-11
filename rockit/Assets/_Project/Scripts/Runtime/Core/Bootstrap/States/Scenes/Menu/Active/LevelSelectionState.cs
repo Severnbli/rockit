@@ -19,7 +19,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes.Menu.Active
 
         public async UniTask OnLeave(IStateMachine stateMachine)
         {
-            await UniTask.NextFrame();
+            await _lsWindow.CloseAwait();
         }
     }
 }
