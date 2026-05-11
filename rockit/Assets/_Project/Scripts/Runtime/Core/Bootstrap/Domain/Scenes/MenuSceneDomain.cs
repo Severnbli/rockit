@@ -7,12 +7,14 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Scenes
     public class MenuSceneDomain : SceneDomain
     {
         [SerializeField] private MenuWindow _menuWindow;
+        [SerializeField] private LevelSelectionWindow _levelSelectionWindow;
 
         protected override void RegisterBindings()
         {
             base.RegisterBindings();
             
             Container.BindInstance(_menuWindow).AsSingle();
+            Container.BindInstance(_levelSelectionWindow).AsSingle();
         }
 
         protected override void RegisterStates()
