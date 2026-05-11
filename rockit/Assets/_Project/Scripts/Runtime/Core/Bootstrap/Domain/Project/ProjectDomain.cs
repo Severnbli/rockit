@@ -1,5 +1,6 @@
 ﻿using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.Effects;
+using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.UI;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Stats;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.World;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure;
@@ -49,6 +50,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Project
             TryRegisterModule<PlayerStatsModule>();
             TryRegisterModule<AudioModule>();
             TryRegisterModule<LevelsModule>();
+            TryRegisterModule<UIProjectModule>();
             TryRegisterModule<RequestsModule>();
         }
     }
