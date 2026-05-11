@@ -13,21 +13,18 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Buttons.Types
     public class LevelButtonViewFactory : BasePrefabFactory<LevelButtonView, LevelButtonViewCreateSettings>
     {
         private readonly UIPrefabsStorageConfig _upsConfig;
-        private readonly LevelButtonContainer _lbContainer;
         private readonly LevelsConfig _lConfig;
         private readonly StarIconFactory _siFactory;
 
         public LevelButtonViewFactory(ProtoWorld world, UIPrefabsStorageConfig upsConfig,
-            LevelButtonContainer lbContainer, LevelsConfig lConfig, StarIconFactory siFactory) : base(world)
+            LevelsConfig lConfig, StarIconFactory siFactory) : base(world)
         {
             _upsConfig = upsConfig;
-            _lbContainer = lbContainer;
             _lConfig = lConfig;
             _siFactory = siFactory;
         }
 
         protected override GameObject GetPrefab() => _upsConfig.LevelButton;
-        protected override Transform FallbackContainer() => _lbContainer.transform;
         
         protected override void ConfigureEntityOnCreate(LevelButtonView instance, ProtoEntity entity,
             LevelButtonViewCreateSettings settings = default)
