@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 namespace _Project.Scripts.Runtime.Features.Graphics.UI.Buttons.Monos
 {
-    public class LevelButtonView : MonoBehaviour
+    public class LevelButtonView : ButtonView
     {
         [SerializeField] private Image _image;
         [SerializeField] private TextMeshProUGUI _idText;
