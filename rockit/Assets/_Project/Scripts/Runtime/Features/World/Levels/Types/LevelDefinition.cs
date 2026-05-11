@@ -9,5 +9,6 @@ namespace _Project.Scripts.Runtime.Features.World.Levels.Types
         public GameObject Prefab;
         public string NameKey;
         public int StarsToUnlock;
+        public int[] StarsStages = new[] { 1 };
     }
 }
