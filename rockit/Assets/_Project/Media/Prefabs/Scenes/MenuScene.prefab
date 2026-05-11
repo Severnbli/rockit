@@ -83,6 +83,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 382188065094876366}
     m_Modifications:
+    - target: {fileID: 1275105497267854736, guid: dfce283bb41b40c46bd6f1d6f04ed518, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 2272584172402208839, guid: dfce283bb41b40c46bd6f1d6f04ed518, type: 3}
       propertyPath: m_Name
       value: ScrollView
@@ -170,8 +174,28 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1510904071596621906, guid: dfce283bb41b40c46bd6f1d6f04ed518, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1377179585447806291}
   m_SourcePrefab: {fileID: 100100000, guid: dfce283bb41b40c46bd6f1d6f04ed518, type: 3}
+--- !u!1 &2496210936218359423 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1510904071596621906, guid: dfce283bb41b40c46bd6f1d6f04ed518, type: 3}
+  m_PrefabInstance: {fileID: 3914645818153948717}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1377179585447806291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2496210936218359423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 535a7696232f4527a84c55ed965210aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Runtime::_Project.Scripts.Runtime.Features.Graphics.UI.Buttons.Monos.LevelButtonContainer
 --- !u!224 &8032107152618035844 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6423359332144172201, guid: dfce283bb41b40c46bd6f1d6f04ed518, type: 3}
@@ -570,9 +594,21 @@ PrefabInstance:
     m_TransformParent: {fileID: 6328527368621696360}
     m_Modifications:
     - target: {fileID: 1296394982626585268, guid: f8c5fd8be37ca0143aa5a756fc846b12, type: 3}
+      propertyPath: _mWindow
+      value: 
+      objectReference: {fileID: 8076369883077733637}
+    - target: {fileID: 1296394982626585268, guid: f8c5fd8be37ca0143aa5a756fc846b12, type: 3}
+      propertyPath: _lsWindow
+      value: 
+      objectReference: {fileID: 3303021388807696936}
+    - target: {fileID: 1296394982626585268, guid: f8c5fd8be37ca0143aa5a756fc846b12, type: 3}
       propertyPath: _menuWindow
       value: 
       objectReference: {fileID: 8076369883077733637}
+    - target: {fileID: 1296394982626585268, guid: f8c5fd8be37ca0143aa5a756fc846b12, type: 3}
+      propertyPath: _lbContainer
+      value: 
+      objectReference: {fileID: 1377179585447806291}
     - target: {fileID: 1296394982626585268, guid: f8c5fd8be37ca0143aa5a756fc846b12, type: 3}
       propertyPath: _levelSelectionWindow
       value: 
