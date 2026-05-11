@@ -8,7 +8,7 @@ using Leopotam.EcsProto;
 
 namespace _Project.Scripts.Runtime.Features.Graphics.UI.Buttons.Systems
 {
-    public sealed class CreateAllLevelButtonsOnCreateAllLevelButtonsRequestSystem : IProtoRunSystem
+    public sealed class CreateLevelButtonsOnCreateLevelButtonsRequestSystem : IProtoRunSystem
     {
         [DIRequests] private readonly ButtonsRequestsAspect _brAspect;
         [DIRequests] private readonly RequestsAspect _rAspect;
@@ -16,7 +16,7 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Buttons.Systems
         private readonly LevelButtonFactory _lbFactory;
         private readonly DataProvider _dProvider;
 
-        public CreateAllLevelButtonsOnCreateAllLevelButtonsRequestSystem(LevelsConfig lConfig,
+        public CreateLevelButtonsOnCreateLevelButtonsRequestSystem(LevelsConfig lConfig,
             LevelButtonFactory lbFactory, DataProvider dProvider)
         {
             _lConfig = lConfig;
@@ -28,7 +28,7 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Buttons.Systems
         {
             foreach (var e in _brAspect.CreateAllLevelButtonsRequests)
             {
-                ref var calbRequest = ref _brAspect.CreateAllLevelButtonsRequestPool.Get(e);
+                ref var calbRequest = ref _brAspect.CreateLevelButtonsRequestPool.Get(e);
 
                 foreach (var kvp in _lConfig.Levels)
                 {

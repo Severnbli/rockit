@@ -19,7 +19,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes.Menu.Active
 
         public async UniTask OnEnter(IStateMachine stateMachine)
         {
-            var prepared = new CreateAllLevelButtonsRequest
+            var prepared = new CreateLevelButtonsRequest
             {
                 At = _lbContainer.transform
             };

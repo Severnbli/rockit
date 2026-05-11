@@ -13,16 +13,9 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Features.Graphics
     public static class ButtonsUtils
     {
         public static ProtoEntity CreateCreateAllLevelButtonsRequest(RequestsAspect aspect,
-            CreateAllLevelButtonsRequest prepared)
+            CreateLevelButtonsRequest prepared)
         {
-            return aspect.CreateRequest(aspect.UIRequestsAspect.ButtonsRequestsAspect.CreateAllLevelButtonsRequestPool,
-                prepared: prepared);
-        }
-
-        public static ProtoEntity CreateCreateLevelButtonRequest(RequestsAspect aspect,
-            CreateLevelButtonRequest prepared)
-        {
-            return aspect.CreateRequest(aspect.UIRequestsAspect.ButtonsRequestsAspect.CreateLevelButtonRequestPool,
+            return aspect.CreateRequest(aspect.UIRequestsAspect.ButtonsRequestsAspect.CreateLevelButtonsRequestPool,
                 prepared: prepared);
         }
 
