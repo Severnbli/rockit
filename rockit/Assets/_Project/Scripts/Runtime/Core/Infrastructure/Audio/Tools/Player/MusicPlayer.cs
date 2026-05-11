@@ -36,15 +36,18 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Audio.Tools.Player
         {
             LastTransition?.Kill();
             
-            var transition = PrimaryEmitter
+            var fromEmitter = PrimaryEmitter;
+            var toEmitter = SecondaryEmitter;
+            
+            var transition = fromEmitter
                 .Animate(MConfig.TransitionFrom)
-                .OnComplete(() => PrimaryEmitter.Stop());
+                .OnComplete(fromEmitter.Stop);
             
-            transition.Join(SecondaryEmitter
+            transition.Join(toEmitter
                     .Animate(MConfig.TransitionTo)
-                    .OnStart(() => SecondaryEmitter.Play(clip, looped)));
+                    .OnStart(() => toEmitter.Play(clip, looped)));
             
-            (PrimaryEmitter, SecondaryEmitter) = (SecondaryEmitter, PrimaryEmitter);
+            (PrimaryEmitter, SecondaryEmitter) = (toEmitter, fromEmitter);
 
             transition.LinkToCancellationToken(Ct);
             

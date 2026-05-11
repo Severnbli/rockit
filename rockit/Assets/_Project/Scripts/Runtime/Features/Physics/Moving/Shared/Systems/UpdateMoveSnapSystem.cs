@@ -1,6 +1,5 @@
 ﻿using _Project.Scripts.Runtime.Core.Infrastructure.Time.Services;
 using _Project.Scripts.Runtime.Core.Systems;
-using _Project.Scripts.Runtime.Shared.Extensions.Shared;
 using Leopotam.EcsProto.QoL;
 
 namespace _Project.Scripts.Runtime.Features.Physics.Moving.Shared.Systems

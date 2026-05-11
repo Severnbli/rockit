@@ -19,7 +19,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Animations.Tools.Pipeline
             
             if (!go.TryGetComponentWithCache(goCache, out Transform tf)) return false;
             
-            tf.ScaleTween(_settings);
+            tween = tf.ScaleTween(_settings);
             return true;
         }
     }

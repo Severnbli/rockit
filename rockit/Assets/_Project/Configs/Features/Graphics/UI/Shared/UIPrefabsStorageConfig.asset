@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3a9264685584922a9575a7dbadeb65e, type: 3}
+  m_Name: UIPrefabsStorageConfig
+  m_EditorClassIdentifier: Runtime::_Project.Scripts.Runtime.Features.Graphics.UI.Shared.Configs.UIPrefabsStorageConfig
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  _levelButton: {fileID: 1970795383995823300, guid: 8284780deedcd2644af4e619073d9361, type: 3}
+  _starIcon: {fileID: 4680095771179151339, guid: c2d73973a850a4343a1434698fbfcb41, type: 3}
+  _animatableStarIcon: {fileID: 4680095771179151339, guid: e6425655958fc8d40b077b3c8a9cba34, type: 3}

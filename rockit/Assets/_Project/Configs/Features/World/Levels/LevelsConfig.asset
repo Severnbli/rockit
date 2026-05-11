@@ -1,0 +1,160 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b6749df1a0d4a2b9f520fa7473e60b3, type: 3}
+  m_Name: LevelsConfig
+  m_EditorClassIdentifier: Runtime::_Project.Scripts.Runtime.Features.World.Levels.Configs.LevelsConfig
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: _levels
+      Entry: 7
+      Data: 0|System.Collections.Generic.SortedDictionary`2[[System.Int32, mscorlib],[_Project.Scripts.Runtime.Features.World.Levels.Types.LevelDefinition,
+        Runtime]], System
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: System.Collections.Generic.KeyValuePair`2[[System.Int32, mscorlib],[_Project.Scripts.Runtime.Features.World.Levels.Types.LevelDefinition,
+        Runtime]], mscorlib
+    - Name: 
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 1|_Project.Scripts.Runtime.Features.World.Levels.Types.LevelDefinition,
+        Runtime
+    - Name: Prefab
+      Entry: 6
+      Data: 
+    - Name: NameKey
+      Entry: 6
+      Data: 
+    - Name: StarsToUnlock
+      Entry: 3
+      Data: 0
+    - Name: StarsStages
+      Entry: 7
+      Data: 2|System.Int32[], mscorlib
+    - Name: 
+      Entry: 14
+      Data: 1
+    - Name: 
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: System.Collections.Generic.KeyValuePair`2[[System.Int32, mscorlib],[_Project.Scripts.Runtime.Features.World.Levels.Types.LevelDefinition,
+        Runtime]], mscorlib
+    - Name: 
+      Entry: 3
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 3|_Project.Scripts.Runtime.Features.World.Levels.Types.LevelDefinition,
+        Runtime
+    - Name: Prefab
+      Entry: 6
+      Data: 
+    - Name: NameKey
+      Entry: 6
+      Data: 
+    - Name: StarsToUnlock
+      Entry: 3
+      Data: 0
+    - Name: StarsStages
+      Entry: 7
+      Data: 4|System.Int32[], mscorlib
+    - Name: 
+      Entry: 14
+      Data: 1
+    - Name: 
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: System.Collections.Generic.KeyValuePair`2[[System.Int32, mscorlib],[_Project.Scripts.Runtime.Features.World.Levels.Types.LevelDefinition,
+        Runtime]], mscorlib
+    - Name: 
+      Entry: 3
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 5|_Project.Scripts.Runtime.Features.World.Levels.Types.LevelDefinition,
+        Runtime
+    - Name: Prefab
+      Entry: 6
+      Data: 
+    - Name: NameKey
+      Entry: 6
+      Data: 
+    - Name: StarsToUnlock
+      Entry: 3
+      Data: 4
+    - Name: StarsStages
+      Entry: 7
+      Data: 6|System.Int32[], mscorlib
+    - Name: 
+      Entry: 14
+      Data: 1
+    - Name: 
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  _maxStarsPerLevel: 3
