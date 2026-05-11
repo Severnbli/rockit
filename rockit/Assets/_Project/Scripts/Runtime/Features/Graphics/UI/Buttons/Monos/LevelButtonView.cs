@@ -1,10 +1,13 @@
-﻿using TMPro;
+﻿using _Project.Scripts.Runtime.Core.Infrastructure.Shared.Monos;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace _Project.Scripts.Runtime.Features.Graphics.UI.Buttons.Monos
 {
-    public class LevelButtonView : ButtonView
+    public class LevelButtonView : OpenableClosable
     {
+        [SerializeField] private Button _button;
         [SerializeField] private TextMeshProUGUI _idText;
         [SerializeField] private GameObject _starsContainer;
         [SerializeField] private GameObject _unlockInfoArea;
@@ -12,7 +15,24 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Buttons.Monos
         
         public TextMeshProUGUI IdText => _idText;
         public GameObject StarsContainer => _starsContainer;
-        public GameObject UnlockInfoArea => _unlockInfoArea;
         public TextMeshProUGUI StarsToUnlockText => _starsToUnlockText;
+
+        public override void Open()
+        {
+            base.Open();
+            _button.interactable = true;
+            _idText.gameObject.SetActive(true);
+            _starsContainer.gameObject.SetActive(true);
+            _unlockInfoArea.gameObject.SetActive(false);
+        }
+
+        public override void Close()
+        {
+            base.Close();
+            _button.interactable = false;
+            _idText.gameObject.SetActive(false);
+            _starsContainer.gameObject.SetActive(false);
+            _unlockInfoArea.gameObject.SetActive(true);
+        }
     }
 }
