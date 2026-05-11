@@ -23,27 +23,21 @@ MonoBehaviour:
     SerializationNodes:
     - Name: _levels
       Entry: 7
-      Data: 0|System.Collections.Generic.Dictionary`2[[System.Int32, mscorlib],[_Project.Scripts.Runtime.Features.World.Levels.Types.LevelDefinition,
-        Runtime]], mscorlib
-    - Name: comparer
-      Entry: 7
-      Data: 1|System.Collections.Generic.GenericEqualityComparer`1[[System.Int32,
-        mscorlib]], mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
+      Data: 0|System.Collections.Generic.SortedDictionary`2[[System.Int32, mscorlib],[_Project.Scripts.Runtime.Features.World.Levels.Types.LevelDefinition,
+        Runtime]], System
     - Name: 
       Entry: 12
       Data: 3
     - Name: 
       Entry: 7
-      Data: 
-    - Name: $k
+      Data: System.Collections.Generic.KeyValuePair`2[[System.Int32, mscorlib],[_Project.Scripts.Runtime.Features.World.Levels.Types.LevelDefinition,
+        Runtime]], mscorlib
+    - Name: 
       Entry: 3
       Data: 1
-    - Name: $v
+    - Name: 
       Entry: 7
-      Data: 2|_Project.Scripts.Runtime.Features.World.Levels.Types.LevelDefinition,
+      Data: 1|_Project.Scripts.Runtime.Features.World.Levels.Types.LevelDefinition,
         Runtime
     - Name: Prefab
       Entry: 6
@@ -54,6 +48,21 @@ MonoBehaviour:
     - Name: StarsToUnlock
       Entry: 3
       Data: 0
+    - Name: StarsStages
+      Entry: 7
+      Data: 2|System.Int32[], mscorlib
+    - Name: 
+      Entry: 14
+      Data: 1
+    - Name: 
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -62,11 +71,12 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 
-    - Name: $k
+      Data: System.Collections.Generic.KeyValuePair`2[[System.Int32, mscorlib],[_Project.Scripts.Runtime.Features.World.Levels.Types.LevelDefinition,
+        Runtime]], mscorlib
+    - Name: 
       Entry: 3
       Data: 2
-    - Name: $v
+    - Name: 
       Entry: 7
       Data: 3|_Project.Scripts.Runtime.Features.World.Levels.Types.LevelDefinition,
         Runtime
@@ -79,6 +89,21 @@ MonoBehaviour:
     - Name: StarsToUnlock
       Entry: 3
       Data: 0
+    - Name: StarsStages
+      Entry: 7
+      Data: 4|System.Int32[], mscorlib
+    - Name: 
+      Entry: 14
+      Data: 1
+    - Name: 
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -87,13 +112,14 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 
-    - Name: $k
+      Data: System.Collections.Generic.KeyValuePair`2[[System.Int32, mscorlib],[_Project.Scripts.Runtime.Features.World.Levels.Types.LevelDefinition,
+        Runtime]], mscorlib
+    - Name: 
       Entry: 3
       Data: 3
-    - Name: $v
+    - Name: 
       Entry: 7
-      Data: 4|_Project.Scripts.Runtime.Features.World.Levels.Types.LevelDefinition,
+      Data: 5|_Project.Scripts.Runtime.Features.World.Levels.Types.LevelDefinition,
         Runtime
     - Name: Prefab
       Entry: 6
@@ -103,7 +129,22 @@ MonoBehaviour:
       Data: 
     - Name: StarsToUnlock
       Entry: 3
-      Data: 0
+      Data: 4
+    - Name: StarsStages
+      Entry: 7
+      Data: 6|System.Int32[], mscorlib
+    - Name: 
+      Entry: 14
+      Data: 1
+    - Name: 
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -116,3 +157,4 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+  _maxStarsPerLevel: 3
