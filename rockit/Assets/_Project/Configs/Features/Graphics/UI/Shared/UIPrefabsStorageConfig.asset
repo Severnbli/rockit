@@ -22,3 +22,4 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   _levelButton: {fileID: 1970795383995823300, guid: 8284780deedcd2644af4e619073d9361, type: 3}
+  _starIcon: {fileID: 4680095771179151339, guid: c2d73973a850a4343a1434698fbfcb41, type: 3}
