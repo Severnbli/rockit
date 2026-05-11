@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using _Project.Scripts.Runtime.Features.World.Levels.Types;
 
 namespace _Project.Scripts.Runtime.Core.Infrastructure.Storage.Entities
 {
@@ -6,5 +8,6 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Storage.Entities
     public sealed class GameSceneData
     {
         public int LevelIdToLoad;
+        public SortedDictionary<int, LevelData> CompletedLevels = new ();
     }
 }

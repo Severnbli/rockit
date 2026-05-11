@@ -4,6 +4,9 @@
     "Entries": {
       "language_name": {
         "String": "English"
+      },
+      "play": {
+        "String": "Play"
       }
     }
   },
@@ -12,6 +15,9 @@
     "Entries": {
       "language_name": {
         "String": "Русский"
+      },
+      "play": {
+        "String": "Играть"
       }
     }
   }

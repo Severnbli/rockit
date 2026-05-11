@@ -47,7 +47,7 @@ MonoBehaviour:
           _from: 0
           _fromExact: 0
           _relative: 0
-          _duration: 0.5
+          _duration: 5
           _speedBased: 0
           _delay: 0
           _ease: 0
@@ -60,9 +60,9 @@ MonoBehaviour:
         _settings:
           _to: 1
           _from: 0
-          _fromExact: 0
+          _fromExact: 1
           _relative: 0
-          _duration: 0.5
+          _duration: 10
           _speedBased: 0
           _delay: 0
           _ease: 0
