@@ -1,4 +1,5 @@
-﻿using _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes.Menu.Active;
+﻿using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.UI.Windows;
+using _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes.Menu.Active;
 using _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Menu.Monos;
 using UnityEngine;
 
@@ -24,6 +25,13 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Scenes
             RegisterState<MenuSceneSetupState>();
             RegisterState<MenuState>();
             RegisterState<LevelSelectionState>();
+        }
+
+        protected override void RegisterModules()
+        {
+            base.RegisterModules();
+
+            TryRegisterModule<MenuSceneWindowsModule>();
         }
     }
 }
