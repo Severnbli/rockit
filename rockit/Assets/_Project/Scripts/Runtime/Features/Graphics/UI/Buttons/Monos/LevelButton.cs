@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace _Project.Scripts.Runtime.Features.Graphics.UI.Buttons.Monos
 {
-    public class LevelButtonView : OpenableClosable
+    public class LevelButton : OpenableClosable
     {
         [SerializeField] private Button _button;
         [SerializeField] private TextMeshProUGUI _idText;

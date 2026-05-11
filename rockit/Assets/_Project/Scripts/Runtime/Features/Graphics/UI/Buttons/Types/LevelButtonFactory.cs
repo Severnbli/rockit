@@ -10,13 +10,13 @@ using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Features.Graphics.UI.Buttons.Types
 {
-    public class LevelButtonViewFactory : BasePrefabFactory<LevelButtonView, LevelButtonViewCreateSettings>
+    public class LevelButtonFactory : BasePrefabFactory<LevelButton, LevelButtonCreateSettings>
     {
         private readonly UIPrefabsStorageConfig _upsConfig;
         private readonly LevelsConfig _lConfig;
         private readonly StarIconFactory _siFactory;
 
-        public LevelButtonViewFactory(ProtoWorld world, UIPrefabsStorageConfig upsConfig,
+        public LevelButtonFactory(ProtoWorld world, UIPrefabsStorageConfig upsConfig,
             LevelsConfig lConfig, StarIconFactory siFactory) : base(world)
         {
             _upsConfig = upsConfig;
@@ -26,8 +26,8 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Buttons.Types
 
         protected override GameObject GetPrefab() => _upsConfig.LevelButton;
         
-        protected override void ConfigureEntityOnCreate(LevelButtonView instance, ProtoEntity entity,
-            LevelButtonViewCreateSettings settings = default)
+        protected override void ConfigureEntityOnCreate(LevelButton instance, ProtoEntity entity,
+            LevelButtonCreateSettings settings = default)
         {
             base.ConfigureEntityOnCreate(instance, entity, settings);
 
@@ -35,7 +35,7 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Buttons.Types
             liComponent.LevelId = settings.LevelId;
         }
 
-        protected override void PostCreate(LevelButtonView instance, LevelButtonViewCreateSettings settings = default)
+        protected override void PostCreate(LevelButton instance, LevelButtonCreateSettings settings = default)
         {
             base.PostCreate(instance, settings);
 
@@ -58,7 +58,7 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Buttons.Types
         }
     }
 
-    public struct LevelButtonViewCreateSettings
+    public struct LevelButtonCreateSettings
     {
         public int LevelId;
         public bool Opened;
