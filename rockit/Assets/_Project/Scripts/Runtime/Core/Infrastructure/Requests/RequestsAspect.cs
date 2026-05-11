@@ -5,6 +5,7 @@ using _Project.Scripts.Runtime.Core.Infrastructure.Shared;
 using _Project.Scripts.Runtime.Core.Infrastructure.Storage;
 using _Project.Scripts.Runtime.Features.Graphics.Animations.Characters;
 using _Project.Scripts.Runtime.Features.Graphics.Sprites.Glow;
+using _Project.Scripts.Runtime.Features.Graphics.UI;
 using _Project.Scripts.Runtime.Features.Input;
 using _Project.Scripts.Runtime.Features.Physics.Moving.Characters;
 using _Project.Scripts.Runtime.Features.Physics.Moving.Platforms;
@@ -26,6 +27,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Requests
         public readonly PlayerStatsRequestsAspect PlayerStatsRequestsAspect;
         public readonly AudioRequestsAspect AudioRequestsAspect;
         public readonly SpritesGlowRequestsAspect SpritesGlowRequestsAspect;
+        public readonly UIRequestsAspect UIRequestsAspect;
         public readonly SharedRequestsAspect SharedRequestsAspect;
     }
 }
