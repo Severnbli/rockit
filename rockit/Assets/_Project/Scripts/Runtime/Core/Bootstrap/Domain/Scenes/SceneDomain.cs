@@ -32,6 +32,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Scenes
             TryRegisterModule<TextSharedModule>();
             TryRegisterModule<UISharedModule>();
             TryRegisterModule<ButtonsModule>();
+            TryRegisterModule<IconsModule>();
         }
     }
 }
