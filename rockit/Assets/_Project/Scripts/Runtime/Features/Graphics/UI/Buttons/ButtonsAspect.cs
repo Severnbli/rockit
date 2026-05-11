@@ -7,7 +7,7 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Buttons
     public sealed class ButtonsAspect : ProtoAspectInject
     {
         public readonly ProtoPool<ButtonComponent> ButtonComponentPool;
-        public readonly ProtoPool<LevelButtonViewComponent> LevelButtonComponentPool;
+        public readonly ProtoPool<LevelButtonComponent> LevelButtonComponentPool;
         public readonly ProtoIt Buttons = new (It.Inc<ButtonComponent>());
     }
 }
