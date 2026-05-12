@@ -31,6 +31,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.UI
             BindSystem<CloseClosableOnClickedItemSystem>();
             BindSystem<CreateLevelButtonsOnCreateLevelButtonsRequestSystem>();
             BindSystem<SetLevelIdToLoadOnLevelItemOpenerClickedSystem>();
+            BindSystem<SendSwitchSceneRequestOnClickedMenuSceneOpenerSystem>();
         }
     }
 }
