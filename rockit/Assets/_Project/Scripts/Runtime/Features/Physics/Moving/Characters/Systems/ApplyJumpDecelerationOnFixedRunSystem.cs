@@ -26,7 +26,7 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Systems
 
                 var velocity = cvComponent.Velocity;
                 
-                if (gcrComponent.Grounded && velocity.y < 0)
+                if (gcrComponent.Grounded && velocity.y <= 0)
                 {
                     velocity.y = PhysicsSharedContracts.ForceNotApplied;
                 }
