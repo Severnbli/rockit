@@ -39,7 +39,7 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Systems
 
                 if (!_cmAspect.CharacterVelocityComponentPool.Has(tarE)) continue;
                 
-                if (Mathf.Abs(data.Normal.x) < _smConfig.SideCollisionTolerance) return;
+                if (Mathf.Abs(data.Normal.x) < _smConfig.CollisionTolerance) return;
                 
                 ref var cvComponent = ref _cmAspect.CharacterVelocityComponentPool.Get(tarE);
                 cvComponent.Velocity.y = Mathf.Min(PhysicsSharedContracts.ForceNotApplied, cvComponent.Velocity.y);
