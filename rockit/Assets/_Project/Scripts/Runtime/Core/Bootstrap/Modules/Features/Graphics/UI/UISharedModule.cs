@@ -32,6 +32,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.UI
             BindSystem<CreateLevelButtonsOnCreateLevelButtonsRequestSystem>();
             BindSystem<SetLevelIdToLoadOnLevelItemOpenerClickedSystem>();
             BindSystem<SendSwitchSceneRequestOnClickedMenuSceneOpenerSystem>();
+            BindSystem<SendSwitchSceneRequestOnClickedGameSceneOpenerSystem>();
         }
     }
 }
