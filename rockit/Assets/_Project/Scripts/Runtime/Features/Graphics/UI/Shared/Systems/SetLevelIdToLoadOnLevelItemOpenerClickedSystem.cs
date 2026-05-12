@@ -18,7 +18,7 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Shared.Systems
 
         public void Run()
         {
-            var (e, ok) = _usAspect.ClickedLevelItemOpeners.FirstSlow();
+            var (e, ok) = _usAspect.ClickedLevelItemSceneLoaders.FirstSlow();
             if (!ok) return;
 
             ref var liComponent = ref _lAspect.LevelItemComponentPool.Get(e);
