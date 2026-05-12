@@ -1,6 +1,5 @@
 ﻿using _Project.Scripts.Runtime.Core.Bootstrap.Domain;
 using _Project.Scripts.Runtime.Features.Graphics.UI.Buttons.Systems;
-using _Project.Scripts.Runtime.Features.Graphics.UI.Buttons.Types;
 using _Project.Scripts.Runtime.Features.Graphics.UI.Icons.Types;
 using _Project.Scripts.Runtime.Features.Graphics.UI.Shared.Systems;
 
@@ -17,7 +16,6 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.UI
             base.RegisterBindings();
             
             Container.Bind<StarIconFactory>().ToSelf().AsSingle();
-            Container.Bind<LevelButtonFactory>().ToSelf().AsSingle();
         }
 
         protected override void BindSystems()
