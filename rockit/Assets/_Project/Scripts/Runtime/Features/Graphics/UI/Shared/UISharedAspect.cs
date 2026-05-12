@@ -18,6 +18,7 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Shared
         public readonly WindowsSharedAspect WindowsSharedAspect;
         
         public readonly ProtoPool<ClickedTag> ClickedTagPool;
+        public readonly ProtoPool<ActiveUIElementTag> ActiveUIElementTagPool;
         public readonly ProtoIt ClickedTags = new (It.Inc<ClickedTag>());
         public readonly ProtoIt ClickedCloseAppItems = new (It.Inc<CloseAppTag, ClickedTag>());
         public readonly ProtoIt ClickedOpenableItems = new (It.Inc<OpenerTag, OpenableClosableComponent, ClickedTag>());
@@ -25,5 +26,6 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Shared
         public readonly ProtoIt ClickedLevelItemSceneLoaders = new (It.Inc<ClickedTag, LevelItemComponent, SceneLoaderTag>());
         public readonly ProtoIt ClickedMenuSceneLoaders = new (It.Inc<ClickedTag, MenuSceneTag, SceneLoaderTag>());
         public readonly ProtoIt ClickedGameSceneLoaders = new (It.Inc<ClickedTag, GameSceneTag, SceneLoaderTag>());
+        public readonly ProtoIt ActiveUIElements = new (It.Inc<ActiveUIElementTag>());
     }
 }
