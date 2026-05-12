@@ -7,12 +7,12 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Configs
     {
         [SerializeField] private float _coyoteTime = 0.1f;
         [SerializeField] private float _jumpBufferingTime = 0.1f;
-        [SerializeField] private float _sideCollisionTolerance = 0.4f;
+        [SerializeField] private float _collisionTolerance = 0.4f;
         [SerializeField] private float _verticalCollisionTolerance = 0.4f;
         
         public float CoyoteTime => _coyoteTime;
         public float JumpBufferingTime => _jumpBufferingTime;
-        public float SideCollisionTolerance => _sideCollisionTolerance;
+        public float CollisionTolerance => _collisionTolerance;
         public float VerticalCollisionTolerance => _verticalCollisionTolerance;
     }
 }
