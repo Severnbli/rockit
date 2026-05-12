@@ -2748,7 +2748,7 @@ GameObject:
   - component: {fileID: 5669182637193601881}
   - component: {fileID: 2881695963957432411}
   m_Layer: 0
-  m_Name: World
+  m_Name: WorldLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
