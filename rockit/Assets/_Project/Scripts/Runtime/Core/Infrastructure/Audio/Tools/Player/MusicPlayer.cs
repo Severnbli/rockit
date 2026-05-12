@@ -32,7 +32,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Audio.Tools.Player
             SecondaryEmitter = new AudioEmitter(MasPool.Spawn(), TpsCreator);
         }
         
-        public void Play(AudioClip clip, bool looped)
+        public void Play(AudioClip clip, bool looped = true)
         {
             LastTransition?.Kill();
             
@@ -48,7 +48,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Audio.Tools.Player
             SecondaryEmitter.Stop();
         }
 
-        private Sequence MakeTransition(AudioClip clip, bool looped)
+        private Sequence MakeTransition(AudioClip clip, bool looped = true)
         {
             var fromEmitter = PrimaryEmitter;
             var toEmitter = SecondaryEmitter;
