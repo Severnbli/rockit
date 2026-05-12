@@ -31,7 +31,6 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States.Project
 
         public async UniTask OnLeave(IStateMachine stateMachine)
         {
-            _mPlayer.Stop();
             await UniTask.NextFrame();
         }
     }
