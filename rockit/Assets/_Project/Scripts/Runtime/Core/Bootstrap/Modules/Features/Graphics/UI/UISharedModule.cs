@@ -1,5 +1,4 @@
 ﻿using _Project.Scripts.Runtime.Core.Bootstrap.Domain;
-using _Project.Scripts.Runtime.Features.Graphics.UI.Buttons.Systems;
 using _Project.Scripts.Runtime.Features.Graphics.UI.Icons.Types;
 using _Project.Scripts.Runtime.Features.Graphics.UI.Shared.Systems;
 
@@ -28,7 +27,6 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.UI
             BindSystem<SendCloseAppRequestOnClickedCloseAppItemSystem>();
             BindSystem<OpenOpenableOnClickedItemSystem>();
             BindSystem<CloseClosableOnClickedItemSystem>();
-            BindSystem<CreateLevelButtonsOnCreateLevelButtonsRequestSystem>();
             BindSystem<SendLoadLevelRequestOnClickedLevelItemSceneLoaderSystem>();
             BindSystem<SendSwitchSceneRequestOnClickedMenuSceneLoaderSystem>();
             BindSystem<SendSwitchSceneRequestOnClickedGameSceneLoaderSystem>();

@@ -22,6 +22,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.UI
             base.BindSystems();
             
             BindSystem<SetActiveUIElementStatusByButtonInteractableStatusSystem>();
+            BindSystem<CreateLevelButtonsOnCreateLevelButtonsRequestSystem>();
         }
     }
 }
