@@ -58,6 +58,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Audio.Tools.Player
         {
             LastTransition?.Kill();
             PrimaryEmitter.Stop();
+            SecondaryEmitter.Stop();
         }
     }
 }
