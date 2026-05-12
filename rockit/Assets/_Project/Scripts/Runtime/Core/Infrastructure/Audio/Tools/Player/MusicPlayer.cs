@@ -44,8 +44,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Audio.Tools.Player
         public void Stop()
         {
             LastTransition?.Kill();
-            PrimaryEmitter.Stop();
-            SecondaryEmitter.Stop();
+            LastTransition = MakeTransition(null);
         }
 
         private Sequence MakeTransition(AudioClip clip, bool looped = true)
