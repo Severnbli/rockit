@@ -27,5 +27,6 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Shared
         public readonly ProtoIt ClickedMenuSceneLoaders = new (It.Inc<ClickedTag, MenuSceneTag, SceneLoaderTag>());
         public readonly ProtoIt ClickedGameSceneLoaders = new (It.Inc<ClickedTag, GameSceneTag, SceneLoaderTag>());
         public readonly ProtoIt ActiveUIElements = new (It.Inc<ActiveUIElementTag>());
+        public readonly ProtoItExc ClickedInactiveUIElements = new (It.Inc<ClickedTag>(),It.Exc<ActiveUIElementTag>());
     }
 }
