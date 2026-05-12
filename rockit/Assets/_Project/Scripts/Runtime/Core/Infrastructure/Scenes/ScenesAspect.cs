@@ -8,5 +8,6 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Scenes
     {
         public readonly ProtoPool<MenuSceneTag> MenuSceneTagPool;
         public readonly ProtoPool<GameSceneTag> GameSceneTagPool;
+        public readonly ProtoPool<SceneLoaderTag> SceneLoaderTagPool;
     }
 }
