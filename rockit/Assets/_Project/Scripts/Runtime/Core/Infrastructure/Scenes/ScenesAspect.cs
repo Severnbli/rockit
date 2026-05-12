@@ -1,6 +1,8 @@
-﻿namespace _Project.Scripts.Runtime.Core.Infrastructure.Scenes
+﻿using Leopotam.EcsProto.QoL;
+
+namespace _Project.Scripts.Runtime.Core.Infrastructure.Scenes
 {
-    public class ScenesAspect
+    public sealed class ScenesAspect : ProtoAspectInject
     {
         
     }
