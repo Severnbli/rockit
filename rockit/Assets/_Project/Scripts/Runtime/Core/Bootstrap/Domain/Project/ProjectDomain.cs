@@ -51,7 +51,6 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Project
             TryRegisterModule<PlayerStatsModule>();
             TryRegisterModule<AudioModule>();
             TryRegisterModule<LevelsProjectModule>();
-            TryRegisterModule<UIProjectModule>();
             TryRegisterModule<RequestsModule>();
         }
     }
