@@ -8,14 +8,14 @@ using Leopotam.EcsProto.QoL;
 
 namespace _Project.Scripts.Runtime.Features.Graphics.UI.Shared.Systems
 {
-    public sealed class SendSwitchSceneRequestOnClickedGameSceneOpenerSystem : IProtoRunSystem
+    public sealed class SendSwitchSceneRequestOnClickedGameSceneLoaderSystem : IProtoRunSystem
     {
         [DIRequests] private readonly RequestsAspect _rAspect;
         [DI] private readonly UISharedAspect _usAspect;
         
         public void Run()
         {
-            if (_usAspect.ClickedLevelItemOpeners.IsEmptySlow()) return;
+            if (_usAspect.ClickedGameSceneLoaders.IsEmptySlow()) return;
 
             var prepared = new SwitchSceneRequest
             {
