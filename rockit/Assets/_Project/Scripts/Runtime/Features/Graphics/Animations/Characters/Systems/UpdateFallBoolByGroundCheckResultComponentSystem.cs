@@ -1,4 +1,5 @@
-﻿using _Project.Scripts.Runtime.Features.Graphics.Animations.Characters.Configs;
+﻿using _Project.Scripts.Runtime.Core.Infrastructure.Time.Services;
+using _Project.Scripts.Runtime.Features.Graphics.Animations.Characters.Configs;
 using _Project.Scripts.Runtime.Features.Graphics.Animations.Shared;
 using _Project.Scripts.Runtime.Features.Physics.Moving.Characters;
 using Leopotam.EcsProto;
@@ -11,10 +12,12 @@ namespace _Project.Scripts.Runtime.Features.Graphics.Animations.Characters.Syste
         [DI] private readonly AnimationsSharedAspect _asAspect;
         [DI] private readonly CharactersMovingAspect _cmAspect;
         private readonly CharacterAnimationConfig _caConfig;
+        private readonly TimeService _tService;
 
-        public UpdateFallBoolByGroundCheckResultComponentSystem(CharacterAnimationConfig caConfig)
+        public UpdateFallBoolByGroundCheckResultComponentSystem(CharacterAnimationConfig caConfig, TimeService tService)
         {
             _caConfig = caConfig;
+            _tService = tService;
         }
 
         public void Run()
@@ -25,8 +28,15 @@ namespace _Project.Scripts.Runtime.Features.Graphics.Animations.Characters.Syste
                 
                 ref var aComponent = ref _asAspect.AnimatorComponentPool.Get(e);
                 ref var gcrComponent = ref _cmAspect.GroundCheckResultComponentPool.Get(e);
+
+                var fall = !gcrComponent.Grounded;
+
+                if (fall && _tService.UnscaledTime < gcrComponent.LastGroundedTiming + _caConfig.FallTolerance)
+                {
+                    fall = false;
+                }
                 
-                aComponent.Animator.SetBool(_caConfig.FallBool, !gcrComponent.Grounded);
+                aComponent.Animator.SetBool(_caConfig.FallBool, fall);
             }
         }
     }
