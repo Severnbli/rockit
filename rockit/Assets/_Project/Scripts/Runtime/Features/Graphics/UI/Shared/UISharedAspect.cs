@@ -1,4 +1,5 @@
-﻿using _Project.Scripts.Runtime.Core.Infrastructure.Shared.Components;
+﻿using _Project.Scripts.Runtime.Core.Infrastructure.Scenes.Tags;
+using _Project.Scripts.Runtime.Core.Infrastructure.Shared.Components;
 using _Project.Scripts.Runtime.Core.Infrastructure.Shared.Tags;
 using _Project.Scripts.Runtime.Features.Graphics.UI.Buttons;
 using _Project.Scripts.Runtime.Features.Graphics.UI.Shared.Tags;
@@ -22,5 +23,6 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Shared
         public readonly ProtoIt ClickedOpenableItems = new (It.Inc<OpenerTag, OpenableClosableComponent, ClickedTag>());
         public readonly ProtoIt ClickedClosableItems = new (It.Inc<CloserTag, OpenableClosableComponent, ClickedTag>());
         public readonly ProtoIt ClickedLevelItemOpeners = new (It.Inc<ClickedTag, LevelItemComponent, OpenerTag>());
+        public readonly ProtoIt ClickedMenuSceneOpeners = new (It.Inc<ClickedTag, MenuSceneTag, OpenerTag>());
     }
 }
