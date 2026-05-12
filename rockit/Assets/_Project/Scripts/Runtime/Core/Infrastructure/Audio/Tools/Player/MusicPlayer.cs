@@ -36,21 +36,8 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Audio.Tools.Player
         {
             LastTransition?.Kill();
             
-            var fromEmitter = PrimaryEmitter;
-            var toEmitter = SecondaryEmitter;
-            
-            var transition = fromEmitter
-                .Animate(MConfig.TransitionFrom)
-                .OnComplete(fromEmitter.Stop);
-            
-            transition.Join(toEmitter
-                    .Animate(MConfig.TransitionTo)
-                    .OnStart(() => toEmitter.Play(clip, looped)));
-            
-            (PrimaryEmitter, SecondaryEmitter) = (toEmitter, fromEmitter);
-
-            transition.LinkToCancellationToken(Ct);
-            
+            var transition = MakeTransition(clip, looped);
+            (PrimaryEmitter, SecondaryEmitter) = (SecondaryEmitter, PrimaryEmitter);
             LastTransition = transition;
         }
 
@@ -59,6 +46,32 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Audio.Tools.Player
             LastTransition?.Kill();
             PrimaryEmitter.Stop();
             SecondaryEmitter.Stop();
+        }
+
+        private Sequence MakeTransition(AudioClip clip, bool looped)
+        {
+            var fromEmitter = PrimaryEmitter;
+            var toEmitter = SecondaryEmitter;
+            
+            var transition = fromEmitter
+                .Animate(MConfig.TransitionFrom)
+                .OnComplete(fromEmitter.Stop);
+
+            if (clip != null)
+            {
+                transition.Join(toEmitter
+                    .Animate(MConfig.TransitionTo)
+                    .OnStart(() => toEmitter.Play(clip, looped)));
+            }
+            else
+            {
+                transition.Join(toEmitter
+                    .Animate(MConfig.TransitionFrom)
+                    .OnStart(fromEmitter.Stop));
+            }
+            
+            transition.LinkToCancellationToken(Ct);
+            return transition;
         }
     }
 }
