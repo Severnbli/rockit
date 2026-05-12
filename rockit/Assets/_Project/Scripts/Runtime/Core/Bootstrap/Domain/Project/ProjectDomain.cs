@@ -3,6 +3,7 @@ using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.Effects;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.UI;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Stats;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.World;
+using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.World.Levels;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure;
 using _Project.Scripts.Runtime.Core.Bootstrap.States;
 using _Project.Scripts.Runtime.Core.Bootstrap.States.Project;
@@ -49,7 +50,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Project
             TryRegisterModule<GlitchEffectsModule>();
             TryRegisterModule<PlayerStatsModule>();
             TryRegisterModule<AudioModule>();
-            TryRegisterModule<LevelsModule>();
+            TryRegisterModule<LevelsProjectModule>();
             TryRegisterModule<UIProjectModule>();
             TryRegisterModule<RequestsModule>();
         }

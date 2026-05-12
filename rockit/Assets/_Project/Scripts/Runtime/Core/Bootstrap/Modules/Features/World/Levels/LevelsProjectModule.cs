@@ -1,11 +1,11 @@
 ﻿using _Project.Scripts.Runtime.Core.Bootstrap.Domain;
 using _Project.Scripts.Runtime.Features.World.Levels.Systems;
 
-namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.World
+namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.World.Levels
 {
-    public sealed class LevelsModule : BaseModule<LevelsModule>
+    public sealed class LevelsProjectModule : BaseModule<LevelsProjectModule>
     {
-        public LevelsModule(IDomain domain) : base(domain)
+        public LevelsProjectModule(IDomain domain) : base(domain)
         {
         }
 
