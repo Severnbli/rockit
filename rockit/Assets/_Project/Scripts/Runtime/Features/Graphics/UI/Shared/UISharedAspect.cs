@@ -24,5 +24,6 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Shared
         public readonly ProtoIt ClickedClosableItems = new (It.Inc<CloserTag, OpenableClosableComponent, ClickedTag>());
         public readonly ProtoIt ClickedLevelItemOpeners = new (It.Inc<ClickedTag, LevelItemComponent, OpenerTag>());
         public readonly ProtoIt ClickedMenuSceneOpeners = new (It.Inc<ClickedTag, MenuSceneTag, OpenerTag>());
+        public readonly ProtoIt ClickedGameSceneOpeners = new (It.Inc<ClickedTag, GameSceneTag, OpenerTag>());
     }
 }
