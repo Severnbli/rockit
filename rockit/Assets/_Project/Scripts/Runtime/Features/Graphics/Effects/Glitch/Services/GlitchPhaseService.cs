@@ -4,7 +4,7 @@
     {
         public bool Applied;
         public float StartTime;
-        public float Duration;
+        public float Timeout;
         public float LastApplyTime;
     }
 }
