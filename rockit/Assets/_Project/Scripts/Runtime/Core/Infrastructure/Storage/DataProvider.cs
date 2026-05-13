@@ -1,5 +1,6 @@
 ﻿using _Project.Scripts.Runtime.Core.Infrastructure.Storage.Core;
 using _Project.Scripts.Runtime.Core.Infrastructure.Storage.Entities;
+using _Project.Scripts.Runtime.Core.Infrastructure.Storage.Entities.Economy;
 
 namespace _Project.Scripts.Runtime.Core.Infrastructure.Storage
 {
