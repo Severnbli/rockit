@@ -26,5 +26,10 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Shared
         {
             return (float) GetTotalStars(dProvider) / GetMaxStars(levelsConfig);
         }
+
+        public static float GetProgressOfPassage0100(DataProvider dProvider, LevelsConfig levelsConfig)
+        {
+            return GetProgressOfPassage01(dProvider, levelsConfig) * 100f;
+        }
     }
 }
