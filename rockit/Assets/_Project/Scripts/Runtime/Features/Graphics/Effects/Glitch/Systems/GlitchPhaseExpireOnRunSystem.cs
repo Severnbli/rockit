@@ -5,12 +5,12 @@ using Leopotam.EcsProto;
 
 namespace _Project.Scripts.Runtime.Features.Graphics.Effects.Glitch.Systems
 {
-    public sealed class GlitchPhaseExpireSystem : IProtoRunSystem
+    public sealed class GlitchPhaseExpireOnRunSystem : IProtoRunSystem
     {
         private readonly GlitchPhaseService _gpService;
         private readonly TimeService _tService;
 
-        public GlitchPhaseExpireSystem(GlitchPhaseService gpService, TimeService tService)
+        public GlitchPhaseExpireOnRunSystem(GlitchPhaseService gpService, TimeService tService)
         {
             _gpService = gpService;
             _tService = tService;
