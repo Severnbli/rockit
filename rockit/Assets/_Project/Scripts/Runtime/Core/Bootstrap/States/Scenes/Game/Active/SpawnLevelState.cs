@@ -1,11 +1,16 @@
-﻿using Cysharp.Threading.Tasks;
+﻿using _Project.Scripts.Runtime.Features.World.Levels.Types;
+using Cysharp.Threading.Tasks;
 
 namespace _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes.Game.Active
 {
     public class SpawnLevelState : ISceneState
     {
+        private readonly LevelFactory _lFactory;
+        
         public async UniTask OnEnter(IStateMachine stateMachine)
         {
+            _lFactory.Create();
+            stateMachine.ChangeState<GameState>().Forget();
             await UniTask.NextFrame();
         }
 
