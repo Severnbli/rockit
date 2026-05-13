@@ -1,7 +1,7 @@
 ﻿using _Project.Scripts.Runtime.Core.Infrastructure.Storage;
 using _Project.Scripts.Runtime.Features.World.Levels.Configs;
 
-namespace _Project.Scripts.Runtime.Shared.Utils.Shared
+namespace _Project.Scripts.Runtime.Shared.Utils.Features.Stats
 {
     public static class GameStatsUtils
     {
