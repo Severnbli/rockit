@@ -25,5 +25,10 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Infrastructure
         {
             return aspect.CreateRequest(aspect.SharedRequestsAspect.DisableRequestPool, tarE);
         }
+
+        public static ProtoEntity CreateEnableRequest(RequestsAspect aspect, ProtoPackedEntityWithWorld tarE)
+        {
+            return aspect.CreateRequest(aspect.SharedRequestsAspect.EnableRequestPool, tarE);
+        }
     }
 }
