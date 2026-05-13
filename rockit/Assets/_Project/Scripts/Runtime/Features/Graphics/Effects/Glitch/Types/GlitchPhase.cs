@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Features.Graphics.Effects.Glitch.Types
 {
@@ -7,7 +8,7 @@ namespace _Project.Scripts.Runtime.Features.Graphics.Effects.Glitch.Types
     {
         public float ProgressOfPassage;
         public float Duration;
-        public float Frequency;
+        [Range(0,1)] public float Frequency01;
         public GlitchSettings GlitchSettings;
     }
 }
