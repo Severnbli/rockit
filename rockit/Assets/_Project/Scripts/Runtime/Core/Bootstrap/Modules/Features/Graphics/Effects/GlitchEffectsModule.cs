@@ -24,6 +24,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.Effe
             BindSystem<LoadGlitchServiceFeatureOnInitSystem>();
             BindSystem<ClampGlitchServiceValuesFieldsOnRunSystem>();
             BindSystem<UpdateGlitchServiceFeatureOnRunSystem>();
+            BindSystem<LoadGlitchValuesToGlitchServiceOnInitSystem>();
         }
     }
 }
