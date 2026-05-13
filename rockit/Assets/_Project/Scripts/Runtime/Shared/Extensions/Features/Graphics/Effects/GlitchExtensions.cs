@@ -14,6 +14,15 @@ namespace _Project.Scripts.Runtime.Shared.Extensions.Features.Graphics.Effects
             service.Pixel01 = settings.PixelGlitch;
         }
 
+        public static void SetValuesFromSettingsToFeature(this GlitchService service, GlitchSettings settings)
+        {
+            var feature = service.Feature;
+            
+            feature.Settings.ChromaticGlitch = settings.ChromaticGlitch;
+            feature.Settings.FrameGlitch = settings.FrameGlitch;
+            feature.Settings.PixelGlitch = settings.PixelGlitch;
+        }
+
         public static bool TryGetPhaseByProgressOfPassage01(this GlitchConfig config, float pop, out GlitchPhase phase)
         {
             pop = Mathf.Clamp01(pop);
