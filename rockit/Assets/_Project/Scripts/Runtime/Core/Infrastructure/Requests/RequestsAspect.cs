@@ -3,6 +3,7 @@ using _Project.Scripts.Runtime.Core.Infrastructure.Localization;
 using _Project.Scripts.Runtime.Core.Infrastructure.Scenes;
 using _Project.Scripts.Runtime.Core.Infrastructure.Shared;
 using _Project.Scripts.Runtime.Core.Infrastructure.Storage;
+using _Project.Scripts.Runtime.Features.Economy.Coins;
 using _Project.Scripts.Runtime.Features.Graphics.Animations.Characters;
 using _Project.Scripts.Runtime.Features.Graphics.Sprites.Glow;
 using _Project.Scripts.Runtime.Features.Graphics.UI.Shared;
@@ -28,6 +29,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Requests
         public readonly AudioRequestsAspect AudioRequestsAspect;
         public readonly SpritesGlowRequestsAspect SpritesGlowRequestsAspect;
         public readonly UIRequestsAspect UIRequestsAspect;
+        public readonly CoinsRequestsAspect CoinsRequestsAspect;
         public readonly SharedRequestsAspect SharedRequestsAspect;
     }
 }
