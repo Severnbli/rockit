@@ -7,5 +7,6 @@ namespace _Project.Scripts.Runtime.Features.Stats.Player.Services
         public float WalkModifier = StatsSharedContracts.DefaultFloatModifier;
         public float JumpModifier = StatsSharedContracts.DefaultFloatModifier;
         public float DashModifier = StatsSharedContracts.DefaultFloatModifier;
+        
     }
 }
