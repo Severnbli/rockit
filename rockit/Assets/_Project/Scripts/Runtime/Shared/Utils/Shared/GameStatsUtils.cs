@@ -1,4 +1,5 @@
 ﻿using _Project.Scripts.Runtime.Core.Infrastructure.Storage;
+using _Project.Scripts.Runtime.Features.World.Levels.Configs;
 
 namespace _Project.Scripts.Runtime.Shared.Utils.Shared
 {
@@ -14,6 +15,11 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Shared
             }
             
             return total;
+        }
+
+        public static int GetMaxStars(LevelsConfig levelsConfig)
+        {
+            return levelsConfig.Levels.Count * levelsConfig.MaxStarsPerLevel;
         }
     }
 }
