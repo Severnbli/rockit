@@ -10,9 +10,10 @@ namespace _Project.Scripts.Runtime.Features.Stats.Shared.Systems
         private readonly GameStatsService _gsService;
         private readonly DataProvider _dProvider;
 
-        public UpdateGameStatsServiceTotalStarsOnRunSystem(GameStatsService gsService)
+        public UpdateGameStatsServiceTotalStarsOnRunSystem(GameStatsService gsService, DataProvider dProvider)
         {
             _gsService = gsService;
+            _dProvider = dProvider;
         }
 
         public void Run()
