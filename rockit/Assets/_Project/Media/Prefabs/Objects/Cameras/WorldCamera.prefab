@@ -14,15 +14,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2710903314149257928, guid: de14cd7777a92ac44af77135d57e2507, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.0625
       objectReference: {fileID: 0}
     - target: {fileID: 2710903314149257928, guid: de14cd7777a92ac44af77135d57e2507, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.3125
       objectReference: {fileID: 0}
     - target: {fileID: 2710903314149257928, guid: de14cd7777a92ac44af77135d57e2507, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 2710903314149257928, guid: de14cd7777a92ac44af77135d57e2507, type: 3}
       propertyPath: m_LocalRotation.w
@@ -51,6 +51,14 @@ PrefabInstance:
     - target: {fileID: 2710903314149257928, guid: de14cd7777a92ac44af77135d57e2507, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8940430043422772756, guid: de14cd7777a92ac44af77135d57e2507, type: 3}
+      propertyPath: orthographic size
+      value: 5.5208335
+      objectReference: {fileID: 0}
+    - target: {fileID: 8940430043422772756, guid: de14cd7777a92ac44af77135d57e2507, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 95
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
