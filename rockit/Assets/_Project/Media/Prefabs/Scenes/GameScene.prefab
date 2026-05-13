@@ -8,6 +8,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1503710875865660074, guid: 47bf9f1d567b95945ac8649280703e57, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 9134997456158699172}
+    - target: {fileID: 3386145027611694339, guid: 47bf9f1d567b95945ac8649280703e57, type: 3}
+      propertyPath: orthographic size
+      value: 5.5208335
+      objectReference: {fileID: 0}
     - target: {fileID: 3555950308435978321, guid: 47bf9f1d567b95945ac8649280703e57, type: 3}
       propertyPath: m_Name
       value: GameScene
@@ -32,6 +40,14 @@ PrefabInstance:
       propertyPath: '_scriptableObjectInstallers.Array.data[2]'
       value: 
       objectReference: {fileID: 11400000, guid: 4c2e7d1c3c992104498f3f7fe066a676, type: 2}
+    - target: {fileID: 6811180186579334883, guid: 47bf9f1d567b95945ac8649280703e57, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 9134997456158699172}
+    - target: {fileID: 8607461925145176543, guid: 47bf9f1d567b95945ac8649280703e57, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.3125
+      objectReference: {fileID: 0}
     - target: {fileID: 9012020303765671978, guid: 47bf9f1d567b95945ac8649280703e57, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -83,6 +99,11 @@ PrefabInstance:
 --- !u!4 &1537896274795702910 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1264910336837634924, guid: 47bf9f1d567b95945ac8649280703e57, type: 3}
+  m_PrefabInstance: {fileID: 349708179052257554}
+  m_PrefabAsset: {fileID: 0}
+--- !u!20 &9134997456158699172 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 8799029221119414198, guid: 47bf9f1d567b95945ac8649280703e57, type: 3}
   m_PrefabInstance: {fileID: 349708179052257554}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5232393720823136010
