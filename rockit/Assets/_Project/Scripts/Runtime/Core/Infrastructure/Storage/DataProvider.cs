@@ -8,6 +8,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Storage
         public Language Language;
         public GameSceneData GameSceneData;
         public PlayerStats PlayerStats;
+        public EconomyData EconomyData;
         
         public DataProvider(IDataStorageKeyProvider keyProvider, IDataStorage dataStorage) : base(keyProvider, dataStorage)
         {
@@ -20,6 +21,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Storage
             Language = Load<Language>();
             GameSceneData = Load<GameSceneData>();
             PlayerStats = Load<PlayerStats>();
+            EconomyData = Load<EconomyData>();
         }
 
         public override void SaveTracked()
@@ -29,6 +31,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Storage
             Save(Language);
             Save(GameSceneData);
             Save(PlayerStats);
+            Save(EconomyData);
         }
     }
 }
