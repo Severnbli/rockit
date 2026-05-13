@@ -3,7 +3,7 @@
 namespace _Project.Scripts.Runtime.Core.Infrastructure.Storage.Entities
 {
     [Serializable]
-    public class CoinData
+    public sealed class CoinData
     {
         
     }
