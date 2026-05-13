@@ -2,6 +2,7 @@
 using _Project.Scripts.Runtime.Core.Infrastructure.Storage.Entities;
 using _Project.Scripts.Runtime.Core.Infrastructure.Storage.Entities.Economy;
 using _Project.Scripts.Runtime.Core.Infrastructure.Storage.Entities.Scenes.Game;
+using _Project.Scripts.Runtime.Core.Infrastructure.Storage.Entities.Stats;
 
 namespace _Project.Scripts.Runtime.Core.Infrastructure.Storage
 {
