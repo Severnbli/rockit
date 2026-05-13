@@ -10,8 +10,10 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Shared
     {
         public readonly ProtoPool<InitializeRequest> InitializeRequestPool;
         public readonly ProtoPool<CloseAppRequest> CloseAppRequestPool;
+        public readonly ProtoPool<DisableRequest> DisableRequestPool;
         public readonly ProtoIt InitializeRunRequests = new (It.Inc<RequestComponent, ActiveRequestTag, RunRequestTag, InitializeRequest>());
         public readonly ProtoIt InitializeFixedRunRequests = new (It.Inc<RequestComponent, ActiveRequestTag, FixedRunRequestTag, InitializeRequest>());
         public readonly ProtoIt CloseAppRequests = new (It.Inc<RequestComponent, ActiveRequestTag, RunRequestTag, CloseAppRequest>());
+        public readonly ProtoIt DisableRequests = new (It.Inc<RequestComponent, ActiveRequestTag, RunRequestTag, DisableRequest>());
     }
 }
