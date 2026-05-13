@@ -4,5 +4,6 @@
     {
         public float ProgressOfPassage01;
         public float ProgressOfPassage0100;
+        public float TotalStars;
     }
 }
