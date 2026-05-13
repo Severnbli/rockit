@@ -29,6 +29,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.Effe
             BindSystem<SetGlitchPhaseOnRunSystem>();
             BindSystem<GlitchPhaseExpireOnRunSystem>();
             BindSystem<ResetGlitchServiceValuesOnGlitchPhaseNotAppliedSystem>();
+            BindSystem<ResetGlitchServiceFeatureOnDestroySystem>();
         }
     }
 }
