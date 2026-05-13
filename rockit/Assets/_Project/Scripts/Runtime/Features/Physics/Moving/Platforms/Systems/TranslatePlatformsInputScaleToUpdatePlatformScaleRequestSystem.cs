@@ -29,7 +29,7 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Platforms.Systems
         {
             if (!_piService.ScaleTriggered) return;
 
-            foreach (var e in _psAspect.Platforms)
+            foreach (var e in _psAspect.ScalePlatforms)
             {
                 var packed = _world.PackEntityWithWorld(e);
                 PlatformsMovingUtils.CreateUpdatePlatformScaleRequest(_rAspect, packed);
