@@ -27,8 +27,8 @@ MonoBehaviour:
     PixelGlitch: 0
   _phases:
   - ProgressOfPassage01: 0
-    Timeout: 5
-    Delay: 1
+    Timeout: 2
+    Delay: 5
     GlitchSettings:
       ChromaticGlitch: 0.361
       FrameGlitch: 0.347
