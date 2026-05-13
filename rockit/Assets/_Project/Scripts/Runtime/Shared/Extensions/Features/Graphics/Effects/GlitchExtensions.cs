@@ -21,7 +21,7 @@ namespace _Project.Scripts.Runtime.Shared.Extensions.Features.Graphics.Effects
             
             foreach (var currPhase in config.Phases)
             {
-                if (currPhase.ProgressOfPassage > pop) continue;
+                if (currPhase.ProgressOfPassage01 > pop) continue;
                 
                 phase = currPhase;
             }
