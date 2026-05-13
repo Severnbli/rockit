@@ -7,5 +7,6 @@ namespace _Project.Scripts.Runtime.Features.Economy.Coins
     public sealed class CoinsAspect : ProtoAspectInject
     {
         public readonly ProtoPool<CoinComponent> CoinComponentPool;
+        public readonly ProtoPool<CoinsAmountComponent> CoinsAmountComponentPool;
     }
 }
