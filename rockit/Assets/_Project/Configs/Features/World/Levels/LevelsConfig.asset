@@ -15,7 +15,9 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 718779216291692621, guid: 1e988a30e5baf5945a1a92128238652f, type: 3}
+    - {fileID: 2153855712955002713, guid: 6b8852088afef3b4497b16b2f833db82, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -40,8 +42,8 @@ MonoBehaviour:
       Data: 1|_Project.Scripts.Runtime.Features.World.Levels.Types.LevelDefinition,
         Runtime
     - Name: Prefab
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 0
     - Name: NameKey
       Entry: 6
       Data: 
@@ -81,8 +83,8 @@ MonoBehaviour:
       Data: 3|_Project.Scripts.Runtime.Features.World.Levels.Types.LevelDefinition,
         Runtime
     - Name: Prefab
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 1
     - Name: NameKey
       Entry: 6
       Data: 

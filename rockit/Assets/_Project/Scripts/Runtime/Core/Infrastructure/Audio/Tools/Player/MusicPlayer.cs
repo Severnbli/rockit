@@ -32,32 +32,45 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Audio.Tools.Player
             SecondaryEmitter = new AudioEmitter(MasPool.Spawn(), TpsCreator);
         }
         
-        public void Play(AudioClip clip, bool looped)
+        public void Play(AudioClip clip, bool looped = true)
         {
             LastTransition?.Kill();
             
-            var fromEmitter = PrimaryEmitter;
-            var toEmitter = SecondaryEmitter;
-            
-            var transition = fromEmitter
-                .Animate(MConfig.TransitionFrom)
-                .OnComplete(fromEmitter.Stop);
-            
-            transition.Join(toEmitter
-                    .Animate(MConfig.TransitionTo)
-                    .OnStart(() => toEmitter.Play(clip, looped)));
-            
-            (PrimaryEmitter, SecondaryEmitter) = (toEmitter, fromEmitter);
-
-            transition.LinkToCancellationToken(Ct);
-            
+            var transition = MakeTransition(clip, looped);
+            (PrimaryEmitter, SecondaryEmitter) = (SecondaryEmitter, PrimaryEmitter);
             LastTransition = transition;
         }
 
         public void Stop()
         {
             LastTransition?.Kill();
-            PrimaryEmitter.Stop();
+            LastTransition = MakeTransition(null);
+        }
+
+        private Sequence MakeTransition(AudioClip clip, bool looped = true)
+        {
+            var fromEmitter = PrimaryEmitter;
+            var toEmitter = SecondaryEmitter;
+            
+            var transition = fromEmitter
+                .Animate(MConfig.TransitionFrom)
+                .OnComplete(fromEmitter.Stop);
+
+            if (clip != null)
+            {
+                transition.Join(toEmitter
+                    .Animate(MConfig.TransitionTo)
+                    .OnStart(() => toEmitter.Play(clip, looped)));
+            }
+            else
+            {
+                transition.Join(toEmitter
+                    .Animate(MConfig.TransitionFrom)
+                    .OnStart(fromEmitter.Stop));
+            }
+            
+            transition.LinkToCancellationToken(Ct);
+            return transition;
         }
     }
 }

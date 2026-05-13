@@ -469,6 +469,26 @@ PrefabInstance:
       propertyPath: m_fontColor32.rgba
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 3473159452557170891, guid: aa42ffe6686726a498e482b9c200c72a, type: 3}
+      propertyPath: _authoringType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3473159452557170891, guid: aa42ffe6686726a498e482b9c200c72a, type: 3}
+      propertyPath: Components.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3473159452557170891, guid: aa42ffe6686726a498e482b9c200c72a, type: 3}
+      propertyPath: 'Components.Array.data[3]'
+      value: 1499440577548124364
+      objectReference: {fileID: 0}
+    - target: {fileID: 3473159452557170891, guid: aa42ffe6686726a498e482b9c200c72a, type: 3}
+      propertyPath: 'managedReferences[1499440577548124362]'
+      value: Runtime _Project.Scripts.Runtime.Core.Infrastructure.Shared.Tags.OpenerTag
+      objectReference: {fileID: 0}
+    - target: {fileID: 3473159452557170891, guid: aa42ffe6686726a498e482b9c200c72a, type: 3}
+      propertyPath: 'managedReferences[1499440577548124364]'
+      value: Runtime _Project.Scripts.Runtime.Core.Infrastructure.Scenes.Tags.SceneLoaderTag
+      objectReference: {fileID: 0}
     - target: {fileID: 5859125604877693068, guid: aa42ffe6686726a498e482b9c200c72a, type: 3}
       propertyPath: Components.Array.size
       value: 1

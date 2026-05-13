@@ -15,9 +15,13 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.UI
             
             BindSystem<RemoveClickedTagOnRunSystem>();
             BindSystem<SetClickedTagOnClickEventSystem>();
+            BindSystem<RemoveClickedTagFromInactiveUIElements>();
             BindSystem<SendCloseAppRequestOnClickedCloseAppItemSystem>();
             BindSystem<OpenOpenableOnClickedItemSystem>();
             BindSystem<CloseClosableOnClickedItemSystem>();
+            BindSystem<SendLoadLevelRequestOnClickedLevelItemSceneLoaderSystem>();
+            BindSystem<SendSwitchSceneRequestOnClickedMenuSceneLoaderSystem>();
+            BindSystem<SendSwitchSceneRequestOnClickedGameSceneLoaderSystem>();
         }
     }
 }
