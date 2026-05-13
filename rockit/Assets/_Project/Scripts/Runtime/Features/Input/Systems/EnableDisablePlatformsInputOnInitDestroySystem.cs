@@ -5,17 +5,22 @@ using Leopotam.EcsProto;
 
 namespace _Project.Scripts.Runtime.Features.Input.Systems
 {
-    public class DisablePlatformsInputOnDestroySystem : IProtoDestroySystem
+    public sealed class EnableDisablePlatformsInputOnInitDestroySystem : IProtoInitSystem, IProtoDestroySystem
     {
         private readonly PlatformsInputService _service;
         private readonly PlatformsInputConfig _config;
 
-        public DisablePlatformsInputOnDestroySystem(PlatformsInputService service, PlatformsInputConfig config)
+        public EnableDisablePlatformsInputOnInitDestroySystem(PlatformsInputService service, PlatformsInputConfig config)
         {
             _service = service;
             _config = config;
         }
         
+        public void Init(IProtoSystems systems)
+        {
+            PlatformsInputUtils.EnableInput(_service, _config);
+        }
+
         public void Destroy()
         {
             PlatformsInputUtils.DisableInput(_service, _config);
