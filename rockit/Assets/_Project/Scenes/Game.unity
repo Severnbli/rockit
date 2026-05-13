@@ -3378,6 +3378,10 @@ PrefabInstance:
       propertyPath: Target.TrackingTarget
       value: 
       objectReference: {fileID: 326885608}
+    - target: {fileID: 6661327418628774462, guid: 73f6229d2ba37f9458aaa95273e80f01, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.3125
+      objectReference: {fileID: 0}
     - target: {fileID: 8776188613038371128, guid: 73f6229d2ba37f9458aaa95273e80f01, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -3424,7 +3428,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9138656221599509202, guid: 73f6229d2ba37f9458aaa95273e80f01, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.3125
+      value: -0.3125
       objectReference: {fileID: 0}
     - target: {fileID: 9138656221599509202, guid: 73f6229d2ba37f9458aaa95273e80f01, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3440,6 +3444,9 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 965937329}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1599103370706696177, guid: 73f6229d2ba37f9458aaa95273e80f01, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2325400853609029943}
     - targetCorrespondingSourceObject: {fileID: 5570039653489234218, guid: 73f6229d2ba37f9458aaa95273e80f01, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1226926221}
@@ -3449,6 +3456,30 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8776188613038371128, guid: 73f6229d2ba37f9458aaa95273e80f01, type: 3}
   m_PrefabInstance: {fileID: 2325400853609029940}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2325400853609029942 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1599103370706696177, guid: 73f6229d2ba37f9458aaa95273e80f01, type: 3}
+  m_PrefabInstance: {fileID: 2325400853609029940}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2325400853609029943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2325400853609029942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b617507da6d07e749b7efdb34e1173e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineFollow
+  TrackerSettings:
+    BindingMode: 4
+    PositionDamping: {x: 1, y: 1, z: 1}
+    AngularDampingMode: 0
+    RotationDamping: {x: 1, y: 1, z: 1}
+    QuaternionDamping: 1
+  FollowOffset: {x: 0, y: 2, z: -10}
 --- !u!1001 &4364858088649442955
 PrefabInstance:
   m_ObjectHideFlags: 0
