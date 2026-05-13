@@ -17,7 +17,8 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Platforms.Systems
                 if (pcbComponent.PositionUpdates <= 0) continue;
                 
                 ref var psComponent = ref _psAspect.PlatformStatesComponentPool.Get(e);
-                var target = psComponent.CurrPosState == null 
+                var currNull = psComponent.CurrPosState == null;
+                var target = currNull
                         ? psComponent.StartPosState
                         : psComponent.CurrPosState.Next;
                 
@@ -32,6 +33,7 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Platforms.Systems
 
                 ref var ppcComponent = ref _pmAspect.PlatformPositionChangeComponentPool.Add(e);
                 ppcComponent.Target = target.Value;
+                ppcComponent.Instantly = currNull;
             }
         }
     }
