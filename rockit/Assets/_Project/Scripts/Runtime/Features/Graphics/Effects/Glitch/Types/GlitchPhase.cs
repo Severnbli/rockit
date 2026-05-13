@@ -7,7 +7,7 @@ namespace _Project.Scripts.Runtime.Features.Graphics.Effects.Glitch.Types
     public sealed class GlitchPhase
     {
         [Range(0,1)] public float ProgressOfPassage;
-        public float Duration;
+        public float Timeout;
         public float Delay;
         public GlitchSettings GlitchSettings;
     }
