@@ -15,6 +15,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.Effe
             base.BindServices();
             
             BindService<GlitchService>();
+            BindService<GlitchPhaseService>();
         }
 
         protected override void BindSystems()
