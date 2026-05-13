@@ -2,6 +2,6 @@
 {
     public static class StatsSharedContracts
     {
-        public const float DefaultFloatModifier = 1f;
+        public const float DefaultFloatFactorModifier = 1f;
     }
 }
