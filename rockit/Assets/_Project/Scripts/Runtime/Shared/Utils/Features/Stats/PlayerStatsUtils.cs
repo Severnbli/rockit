@@ -6,9 +6,6 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Features.Stats
 {
     public static class PlayerStatsUtils
     {
-        public static ProtoEntity CreateUpdatePlayerStatsServiceRequest(RequestsAspect aspect)
-        {
-            return aspect.CreateRequest(aspect.PlayerStatsRequestsAspect.UpdatePlayerStatsServiceRequestPool);
-        }
+        
     }
 }
