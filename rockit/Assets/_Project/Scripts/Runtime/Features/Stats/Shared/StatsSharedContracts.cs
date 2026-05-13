@@ -3,5 +3,6 @@
     public static class StatsSharedContracts
     {
         public const float DefaultFloatFactorModifier = 1f;
+        public const int DefaultIntQuantityModifier = 0;
     }
 }
