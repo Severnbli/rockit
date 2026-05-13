@@ -1,6 +1,7 @@
 ﻿using _Project.Scripts.Runtime.Core.Infrastructure.Audio;
 using _Project.Scripts.Runtime.Core.Infrastructure.Localization;
 using _Project.Scripts.Runtime.Core.Infrastructure.Objects.Lifecycle;
+using _Project.Scripts.Runtime.Core.Infrastructure.Scenes;
 using _Project.Scripts.Runtime.Core.Infrastructure.Shared;
 using _Project.Scripts.Runtime.Features.Graphics.Animations.Shared;
 using _Project.Scripts.Runtime.Features.Graphics.Platforms;
@@ -41,6 +42,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
         public readonly LifecycleAspect LifecycleAspect;
         public readonly AudioAspect AudioAspect;
         public readonly WorldSharedAspect WorldSharedAspect;
+        public readonly ScenesAspect ScenesAspect;
         public readonly SharedAspect SharedAspect;
     }
 }

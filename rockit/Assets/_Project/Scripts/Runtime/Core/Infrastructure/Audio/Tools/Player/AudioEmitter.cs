@@ -15,7 +15,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Audio.Tools.Player
             _tpsCreator = tpsCreator;
         }
 
-        public void Play(AudioClip clip, bool looped)
+        public void Play(AudioClip clip, bool looped = true)
         {
             Source.clip = clip;
             Source.loop = looped;

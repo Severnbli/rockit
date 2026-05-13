@@ -12,10 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c23fbaf4fea04666ae61c60a3ddc9891, type: 3}
   m_Name: CharacterAnimationConfig
   m_EditorClassIdentifier: Runtime::_Project.Scripts.Runtime.Features.Graphics.Animations.Characters.Configs.CharacterAnimationConfig
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   _deathTrigger: Death
   _deadBool: Dead
   _jumpTrigger: Jump
   _dashTrigger: Dash
   _dashedBool: Dashed
   _fallBool: Fall
+  _fallTolerance: 0.3
   _runBool: Run

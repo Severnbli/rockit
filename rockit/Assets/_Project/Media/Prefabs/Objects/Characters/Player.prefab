@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 3590850739941609366}
   - component: {fileID: 93517433905109977}
   - component: {fileID: 5758716804066145208}
-  - component: {fileID: 8984414577435309995}
   - component: {fileID: 9056845428546682451}
   - component: {fileID: 2226261244767509142}
   - component: {fileID: 8169438027609523012}
   - component: {fileID: 8524255238225512972}
   - component: {fileID: 4841962115274025836}
+  - component: {fileID: 74108081795203024}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -125,52 +125,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &8984414577435309995
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5501382934325108523}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 1.25}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0}
-    oldSize: {x: 6, y: 5.25}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 1, y: 2.5}
-  m_EdgeRadius: 0
 --- !u!114 &9056845428546682451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -209,7 +163,7 @@ MonoBehaviour:
     - rid: 1430329792471498830
       type: {class: Collider2DComponent, ns: _Project.Scripts.Runtime.Features.Physics.Shared.Components, asm: Runtime}
       data:
-        Collider: {fileID: 8984414577435309995}
+        Collider: {fileID: 74108081795203024}
     - rid: 1430329806561738830
       type: {class: TransformComponent, ns: _Project.Scripts.Runtime.Core.Infrastructure.Shared.Components, asm: Runtime}
       data:
@@ -238,7 +192,7 @@ MonoBehaviour:
       type: {class: GroundCheckComponent, ns: _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Components, asm: Runtime}
       data:
         Position: {x: 0, y: 0, z: 0}
-        Size: {x: 0.8, y: 0.1}
+        Size: {x: 0.8, y: 0.2}
     - rid: 1430329848479350785
       type: {class: MovableTag, ns: _Project.Scripts.Runtime.Features.Physics.Moving.Shared.Tags, asm: Runtime}
       data: 
@@ -309,3 +263,40 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!70 &74108081795203024
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5501382934325108523}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 1.25}
+  m_Size: {x: 1, y: 2.5}
+  m_Direction: 0

@@ -11,6 +11,7 @@ namespace _Project.Scripts.Runtime.Features.Graphics.Animations.Characters.Confi
         [SerializeField] private string _dashTrigger = "Dash";
         [SerializeField] private string _dashedBool = "Dashed";
         [SerializeField] private string _fallBool = "Fall";
+        [SerializeField] private float _fallTolerance = 0.1f;
         [SerializeField] private string _runBool = "Run";
 
         public int DeathTrigger => Animator.StringToHash(_deathTrigger);
@@ -19,6 +20,7 @@ namespace _Project.Scripts.Runtime.Features.Graphics.Animations.Characters.Confi
         public int DashTrigger => Animator.StringToHash(_dashTrigger);
         public int DashedBool => Animator.StringToHash(_dashedBool);
         public int FallBool => Animator.StringToHash(_fallBool);
+        public float FallTolerance => _fallTolerance;
         public int RunBool => Animator.StringToHash(_runBool);
     }
 }
