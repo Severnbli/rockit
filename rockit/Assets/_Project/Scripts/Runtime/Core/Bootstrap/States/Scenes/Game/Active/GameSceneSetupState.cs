@@ -18,6 +18,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes.Game.Active
         public async UniTask OnEnter(IStateMachine stateMachine)
         {
             _mPlayer.Play(_mConfig.Game, true);
+            stateMachine.ChangeState<SpawnLevelState>().Forget();
             await UniTask.NextFrame();
         }
 
