@@ -22,6 +22,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Stats
             base.BindSystems();
             
             BindSystem<UpdateGameStatsServiceProgressOfPassageOnRunSystem>();
+            BindSystem<UpdateGameStatsServiceTotalStarsOnRunSystem>();
         }
     }
 }
