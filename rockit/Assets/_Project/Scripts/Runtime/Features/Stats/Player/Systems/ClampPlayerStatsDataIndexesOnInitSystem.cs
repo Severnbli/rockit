@@ -1,5 +1,6 @@
 ﻿using _Project.Scripts.Runtime.Core.Infrastructure.Storage;
 using _Project.Scripts.Runtime.Features.Stats.Player.Configs;
+using _Project.Scripts.Runtime.Shared.Utils.Features.Stats;
 using Leopotam.EcsProto;
 
 namespace _Project.Scripts.Runtime.Features.Stats.Player.Systems
@@ -17,7 +18,7 @@ namespace _Project.Scripts.Runtime.Features.Stats.Player.Systems
 
         public void Init(IProtoSystems systems)
         {
-            
+            PlayerStatsUtils.ClampPlayerStatsDataIndexesToConfig(_dProvider.StatsData.PlayerStatsData, _psConfig);
         }
     }
 }
