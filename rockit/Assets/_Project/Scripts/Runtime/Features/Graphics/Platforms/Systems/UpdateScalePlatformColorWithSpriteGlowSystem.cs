@@ -18,7 +18,7 @@ namespace _Project.Scripts.Runtime.Features.Graphics.Platforms.Systems
 
         public void Run()
         {
-            foreach (var e in _pgAspect.SpriteGlowActivePositionPlatforms)
+            foreach (var e in _pgAspect.SpriteGlowActiveScalePlatforms)
             {
                 ref var pccComponent = ref _pgAspect.PlatformColorChangeComponentPool.GetOrAdd(e);
                 if (pccComponent.Blocked || pccComponent.ScaleColorWas) continue;
