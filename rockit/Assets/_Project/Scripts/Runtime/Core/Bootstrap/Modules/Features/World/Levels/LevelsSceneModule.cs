@@ -1,4 +1,5 @@
 ﻿using _Project.Scripts.Runtime.Core.Bootstrap.Domain;
+using _Project.Scripts.Runtime.Features.World.Levels.Types;
 
 namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.World.Levels
 {
@@ -6,6 +7,13 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.World.Levels
     {
         public LevelsSceneModule(IDomain domain) : base(domain)
         {
+        }
+
+        protected override void RegisterBindings()
+        {
+            base.RegisterBindings();
+
+            Container.Bind<LevelFactory>().AsSingle();
         }
     }
 }
