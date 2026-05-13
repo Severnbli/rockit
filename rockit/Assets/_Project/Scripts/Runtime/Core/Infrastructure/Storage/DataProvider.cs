@@ -10,7 +10,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Storage
     {
         public LanguageData LanguageData;
         public GameSceneData GameSceneData;
-        public PlayerStats PlayerStats;
+        public PlayerStatsData PlayerStatsData;
         public EconomyData EconomyData;
         
         public DataProvider(IDataStorageKeyProvider keyProvider, IDataStorage dataStorage) : base(keyProvider, dataStorage)
@@ -23,7 +23,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Storage
 
             LanguageData = Load<LanguageData>();
             GameSceneData = Load<GameSceneData>();
-            PlayerStats = Load<PlayerStats>();
+            PlayerStatsData = Load<PlayerStatsData>();
             EconomyData = Load<EconomyData>();
         }
 
@@ -33,7 +33,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Storage
             
             Save(LanguageData);
             Save(GameSceneData);
-            Save(PlayerStats);
+            Save(PlayerStatsData);
             Save(EconomyData);
         }
     }
