@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using _Project.Scripts.Runtime.Features.World.Levels.Types;
 
 namespace _Project.Scripts.Runtime.Core.Infrastructure.Storage.Entities
 {
