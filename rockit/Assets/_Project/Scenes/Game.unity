@@ -2768,43 +2768,6 @@ Transform:
   - {fileID: 1638947283}
   m_Father: {fileID: 1555070963}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1226926215 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5570039653489234218, guid: 73f6229d2ba37f9458aaa95273e80f01, type: 3}
-  m_PrefabInstance: {fileID: 2325400853609029940}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1226926221
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1226926215}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineBrain
-  ShowDebugText: 0
-  ShowCameraFrustum: 1
-  IgnoreTimeScale: 0
-  WorldUpOverride: {fileID: 0}
-  ChannelMask: -1
-  UpdateMethod: 2
-  BlendUpdateMethod: 1
-  LensModeOverride:
-    Enabled: 0
-    DefaultMode: 2
-  DefaultBlend:
-    Style: 1
-    Time: 2
-    CustomCurve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-  CustomBlends: {fileID: 0}
 --- !u!1 &1348550595
 GameObject:
   m_ObjectHideFlags: 0
@@ -3447,9 +3410,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1599103370706696177, guid: 73f6229d2ba37f9458aaa95273e80f01, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2325400853609029943}
-    - targetCorrespondingSourceObject: {fileID: 5570039653489234218, guid: 73f6229d2ba37f9458aaa95273e80f01, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1226926221}
   m_SourcePrefab: {fileID: 100100000, guid: 73f6229d2ba37f9458aaa95273e80f01, type: 3}
 --- !u!4 &2325400853609029941 stripped
 Transform:
@@ -3475,7 +3435,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineFollow
   TrackerSettings:
     BindingMode: 4
-    PositionDamping: {x: 1, y: 1, z: 1}
+    PositionDamping: {x: 0, y: 0, z: 1}
     AngularDampingMode: 0
     RotationDamping: {x: 1, y: 1, z: 1}
     QuaternionDamping: 1
