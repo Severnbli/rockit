@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace _Project.Scripts.Runtime.Core.Infrastructure.Storage.Entities
+namespace _Project.Scripts.Runtime.Core.Infrastructure.Storage.Entities.Scenes.Game
 {
     [Serializable]
     public sealed class GameSceneData
