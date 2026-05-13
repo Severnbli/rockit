@@ -32,7 +32,7 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Platforms.Systems
                 ref var rComponent = ref _psAspect.Rigidbody2DComponentPool.Get(e);
 
                 if (!Vector2Utils.DistanceLessThanValue(ppcComponent.Target, rComponent.Rigidbody2D.position,
-                        _spmConfig.PosTolerance))
+                        _spmConfig.PosTolerance) && !ppcComponent.Instantly)
                 {
                     rComponent.Rigidbody2D.MoveTo(ppcComponent.Target, _rpmConfig.PosChangeSpeed,
                         _tService.UnscaledFixedDeltaTime);

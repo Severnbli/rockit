@@ -29,7 +29,7 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Platforms.Systems
         {
             if (!_piService.RotationTriggered) return;
 
-            foreach (var e in _psAspect.Platforms)
+            foreach (var e in _psAspect.RotationPlatforms)
             {
                 var packed = _world.PackEntityWithWorld(e);
                 PlatformsMovingUtils.CreateUpdatePlatformRotationRequest(_rAspect, packed);

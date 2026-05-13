@@ -34,7 +34,7 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Platforms.Systems
                 ref var tComponent = ref _sAspect.TransformComponentPool.Get(e);
 
                 if (!Vector2Utils.DistanceLessThanValue(pscComponent.Target, tComponent.Transform.localScale,
-                        _spmConfig.ScaleTolerance))
+                        _spmConfig.ScaleTolerance) && !pscComponent.Instantly)
                 {
                     tComponent.Transform.ScaleTo(pscComponent.Target, _rpmConfig.ScaleChangeSpeed,
                         _tService.UnscaledFixedDeltaTime);
