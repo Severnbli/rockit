@@ -7,9 +7,9 @@ namespace _Project.Scripts.Runtime.Features.Graphics.Effects.Glitch.Configs
     public sealed class GlitchConfig : ScriptableObjectAutoInstaller<GlitchConfig>
     {
         [SerializeField] private GlitchSettings _defaultSettings;
-        [SerializeField] private GlitchStep[] _steps;
+        [SerializeField] private GlitchPhase[] _phases;
         
         public GlitchSettings DefaultSettings => _defaultSettings;
-        public GlitchStep[] Steps => _steps;
+        public GlitchPhase[] Phases => _phases;
     }
 }
