@@ -1,6 +1,7 @@
 ﻿using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Physics.Moving;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Platforms;
+using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.World.Levels;
 using _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes.Game.Active;
 
 namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Scenes
@@ -21,6 +22,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Scenes
             TryRegisterModule<PlatformsMovingModule>();
             TryRegisterModule<PlatformsSharedModule>();
             TryRegisterModule<PlatformsGraphicsModule>();
+            TryRegisterModule<LevelsSceneModule>();
         }
     }
 }
