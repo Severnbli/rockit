@@ -41,7 +41,7 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Systems
             {
                 Factor = _pmConfig.DashPower * _psService.DashFactorModifier,
                 TimeOut = _pmConfig.DashTimeout,
-                AirQuantity = _pmConfig.AirDashes
+                AirQuantity = _pmConfig.AirDashes + _psService.DashQuantityModifier
             };
             
             foreach (var e in _sAspect.Players)
