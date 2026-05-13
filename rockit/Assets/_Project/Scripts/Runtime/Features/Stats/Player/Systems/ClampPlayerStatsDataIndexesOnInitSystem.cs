@@ -4,12 +4,12 @@ using Leopotam.EcsProto;
 
 namespace _Project.Scripts.Runtime.Features.Stats.Player.Systems
 {
-    public sealed class ClampPlayerStatsEntityIndexesOnInitSystem : IProtoInitSystem
+    public sealed class ClampPlayerStatsDataIndexesOnInitSystem : IProtoInitSystem
     {
         private readonly PlayerStatsConfig _psConfig;
         private readonly DataProvider _dProvider;
 
-        public ClampPlayerStatsEntityIndexesOnInitSystem(DataProvider dProvider, PlayerStatsConfig psConfig)
+        public ClampPlayerStatsDataIndexesOnInitSystem(DataProvider dProvider, PlayerStatsConfig psConfig)
         {
             _dProvider = dProvider;
             _psConfig = psConfig;
