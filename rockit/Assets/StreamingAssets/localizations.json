@@ -14,6 +14,9 @@
       "loading_s": {
         "String": "Загрузка..."
       },
+      "collection": {
+        "String": "Коллекция"
+      },
       "const_s": {
         "String": "Константа"
       },
@@ -82,9 +85,6 @@
       },
       "const_multi_info": {
         "String": "Влияет на количество рывков в воздухе."
-      },
-      "collection": {
-        "String": "Коллекция"
       }
     }
   },
@@ -102,6 +102,9 @@
       },
       "loading_s": {
         "String": "Loading..."
+      },
+      "collection": {
+        "String": "Collection"
       },
       "const_s": {
         "String": "Constant"
@@ -171,9 +174,6 @@
       },
       "const_multi_info": {
         "String": "Affects the quantity of the air dashes."
-      },
-      "collection": {
-        "String": "Collection"
       }
     }
   }
