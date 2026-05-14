@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Features.Stats.Constants.Monos
 {
-    public class ConstantWindow : MonoBaseWindow<BaseWindowConfig>
+    public class ConstantDisplayWindow : MonoBaseWindow<BaseWindowConfig>
     {
         [SerializeField] private TextMeshProUGUI _nameText;
         [SerializeField] private TextMeshProUGUI _infoText;
