@@ -15,6 +15,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.Anim
             
             BindSystem<UpdateConstantDisplayAnimatorActiveBoolByConstantDisplayActiveTagExistenceSystem>();
             BindSystem<UpdateConstantDisplayAnimatorInvestigatedBoolByConstantInvestigatedTagExistenceSystem>();
+            BindSystem<UpdateConstantDisplayAnimatorActiveBoolByConstantDisplayActiveStatusSystem>();
         }
     }
 }
