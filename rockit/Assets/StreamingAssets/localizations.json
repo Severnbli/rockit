@@ -33,7 +33,7 @@
         "String": "Константа {1}"
       },
       "const_with_name_v": {
-        "String": "константа {1]"
+        "String": "константа {1}"
       },
       "const_discoverer_info": {
         "String": "Константу {1} открыл архонт {2}."
@@ -119,7 +119,7 @@
         "String": "The {1} constant is investigated."
       },
       "const_with_name_s": {
-        "String": "The {1] constant"
+        "String": "The {1} constant"
       },
       "const_with_name_v": {
         "String": "the {1} constant"
