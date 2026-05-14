@@ -6,7 +6,7 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Shared
 {
     public static class SequenceElementUtils
     {
-        public static bool TryCreateLoopedSequence<T>(List<T> data, out SequenceElement<T> first)
+        public static bool TryCreateSequence<T>(IReadOnlyList<T> data, out SequenceElement<T> first, bool looped = false)
         {
             first = null;
             if (!data.Any()) return false;
@@ -21,8 +21,8 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Shared
                 curr.Prev = prev;
                 prev = curr;
             }
-            
-            if (prev == first) return true;
+
+            if (!looped) return true;
             
             prev.Next = first;
             first.Prev = prev;
