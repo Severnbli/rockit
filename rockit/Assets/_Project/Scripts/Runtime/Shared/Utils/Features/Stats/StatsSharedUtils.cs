@@ -25,7 +25,8 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Features.Stats
                         Factor = StatsSharedContracts.DefaultFloatFactorModifier
                     }
                 },
-                out first
+                out first,
+                true
             );
         }
         
@@ -46,7 +47,8 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Features.Stats
                         Quantity = StatsSharedContracts.DefaultIntQuantityModifier
                     }
                 },
-                out first
+                out first,
+                true
             );
         }
     }
