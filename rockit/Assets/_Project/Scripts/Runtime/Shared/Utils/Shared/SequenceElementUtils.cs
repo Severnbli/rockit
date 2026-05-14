@@ -65,5 +65,40 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Shared
 
             return true;
         }
+
+        public static bool TryFind<TElement>(
+            SequenceElement<TElement> element,
+            Func<TElement, bool> predicate,
+            out SequenceElement<TElement> result)
+        {
+            var searched = new HashSet<SequenceElement<TElement>>();
+            
+            return TryTraverse(element, x => x.Next, out result) ||
+                   TryTraverse(element.Prev, x => x.Prev, out result);
+
+            bool TryTraverse(
+                SequenceElement<TElement> start,
+                Func<SequenceElement<TElement>, SequenceElement<TElement>> nextSelector, 
+                out SequenceElement<TElement> result)
+            {
+                result = null;
+                var current = start;
+
+                while (current != null)
+                {
+                    if (!searched.Add(current)) return false;
+
+                    if (predicate(current.Value))
+                    {
+                        result = current;
+                        return true;
+                    }
+
+                    current = nextSelector(current);
+                }
+
+                return false;
+            }
+        }
     }
 }
