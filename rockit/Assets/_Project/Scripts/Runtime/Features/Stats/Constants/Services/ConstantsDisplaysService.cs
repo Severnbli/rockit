@@ -4,8 +4,7 @@ namespace _Project.Scripts.Runtime.Features.Stats.Constants.Services
 {
     public sealed class ConstantsDisplaysService
     {
-        public bool ShowDisplayWindow;
-        public bool DisplayWindowActive;
         public int NearestConstantId = ProjectContracts.NullIntId;
+        public int LastNearestConstantId = ProjectContracts.NullIntId;
     }
 }
