@@ -16,5 +16,6 @@ namespace _Project.Scripts.Runtime.Features.Stats.Constants
         public readonly ProtoIt ConstantActiveDisplays = new (It.Inc<ConstantActiveDisplayTag>());
         public readonly ProtoIt InvestigatedConstants = new (It.Inc<InvestigatedConstantTag>());
         public readonly ProtoIt PlayerLocatorConstantDisplays = new (It.Inc<PlayerLocatorComponent, ConstantDisplayTag>());
+        public readonly ProtoIt ConstantActiveDisplayConstantPlayerLocators = new (It.Inc<ConstantActiveDisplayTag, ConstantComponent, PlayerLocatorComponent>());
     }
 }
