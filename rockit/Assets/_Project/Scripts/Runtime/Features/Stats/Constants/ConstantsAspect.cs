@@ -1,4 +1,5 @@
-﻿using _Project.Scripts.Runtime.Features.Stats.Constants.Components;
+﻿using _Project.Scripts.Runtime.Core.Infrastructure.Shared.Components;
+using _Project.Scripts.Runtime.Features.Stats.Constants.Components;
 using _Project.Scripts.Runtime.Features.Stats.Constants.Tags;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
@@ -14,5 +15,6 @@ namespace _Project.Scripts.Runtime.Features.Stats.Constants
         public readonly ProtoIt Constants = new (It.Inc<ConstantComponent>());
         public readonly ProtoIt ConstantActiveDisplays = new (It.Inc<ConstantActiveDisplayTag>());
         public readonly ProtoIt InvestigatedConstants = new (It.Inc<InvestigatedConstantTag>());
+        public readonly ProtoIt PlayerLocatorConstantDisplays = new (It.Inc<PlayerLocatorComponent, ConstantDisplayTag>());
     }
 }
