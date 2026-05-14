@@ -2,22 +2,178 @@
   {
     "LanguageCode": "en",
     "Entries": {
-      "language_name": {
-        "String": "English"
-      },
       "play": {
         "String": "Play"
+      },
+      "language_name_s": {
+        "String": "English"
+      },
+      "language_name_v": {
+        "String": "english"
+      },
+      "loading_s": {
+        "String": "Загрузка..."
+      },
+      "const_s": {
+        "String": "Константа"
+      },
+      "const_v": {
+        "String": "константа"
+      },
+      "const_undefined_info": {
+        "String": "Повреждённые данные."
+      },
+      "const_investigated_info": {
+        "String": "Исследована константа {1}."
+      },
+      "const_with_name_s": {
+        "String": "Константа {1}"
+      },
+      "const_with_name_v": {
+        "String": "константа {1]"
+      },
+      "const_discoverer_info": {
+        "String": "Константу {1} открыл архонт {2}."
+      },
+      "const_curr_value": {
+        "String": "Текущее значение: {1}."
+      },
+      "const_curr_value_is_max": {
+        "String": "Константа достигла эталонного значения."
+      },
+      "const_improve_info": {
+        "String": "Значение после улучшения: {1}."
+      },
+      "const_improve": {
+        "String": "Улучшить"
+      },
+      "const_speed_name": {
+        "String": "скорости"
+      },
+      "const_speed_discoverer": {
+        "String": "Кукинос"
+      },
+      "const_speed_info": {
+        "String": "Влияет на скорость бега."
+      },
+      "const_flights_name": {
+        "String": "прыжков"
+      },
+      "const_flights_discoverer": {
+        "String": "Шатилович"
+      },
+      "const_flights_info": {
+        "String": "Влияет на силу прыжка."
+      },
+      "const_dashes_name": {
+        "String": "рывков"
+      },
+      "const_dashes_discoverer": {
+        "String": "Гуревичук"
+      },
+      "const_dashes_info": {
+        "String": "Влияет на силу рывка."
+      },
+      "const_multi_name": {
+        "String": "умножения"
+      },
+      "const_multi_discoverer": {
+        "String": "Коршиков"
+      },
+      "const_multi_info": {
+        "String": "Влияет на количество рывков в воздухе."
+      },
+      "collection": {
+        "String": "Коллекция"
       }
     }
   },
   {
     "LanguageCode": "ru",
     "Entries": {
-      "language_name": {
-        "String": "Русский"
-      },
       "play": {
         "String": "Играть"
+      },
+      "language_name_s": {
+        "String": "Русский"
+      },
+      "language_name_v": {
+        "String": "русский"
+      },
+      "loading_s": {
+        "String": "Loading..."
+      },
+      "const_s": {
+        "String": "Constant"
+      },
+      "const_v": {
+        "String": "constant"
+      },
+      "const_undefined_info": {
+        "String": "Corrupted data."
+      },
+      "const_investigated_info": {
+        "String": "The {1} constant is investigated."
+      },
+      "const_with_name_s": {
+        "String": "The {1] constant"
+      },
+      "const_with_name_v": {
+        "String": "the {1} constant"
+      },
+      "const_discoverer_info": {
+        "String": "The {1} constant was discovered by archon {2}."
+      },
+      "const_curr_value": {
+        "String": "Current value: {1}."
+      },
+      "const_curr_value_is_max": {
+        "String": "The constant has reached the standard value."
+      },
+      "const_improve_info": {
+        "String": "Value after improvement: {1}."
+      },
+      "const_improve": {
+        "String": "Improve"
+      },
+      "const_speed_name": {
+        "String": "speed"
+      },
+      "const_speed_discoverer": {
+        "String": "Kukinos"
+      },
+      "const_speed_info": {
+        "String": "Affects running speed."
+      },
+      "const_flights_name": {
+        "String": "jumping"
+      },
+      "const_flights_discoverer": {
+        "String": "Shatilovich"
+      },
+      "const_flights_info": {
+        "String": "Affects the strength of the jump."
+      },
+      "const_dashes_name": {
+        "String": "dashes"
+      },
+      "const_dashes_discoverer": {
+        "String": "Gurevichuk"
+      },
+      "const_dashes_info": {
+        "String": "Affects the strength of the dash."
+      },
+      "const_multi_name": {
+        "String": "multiplications"
+      },
+      "const_multi_discoverer": {
+        "String": "Korshikov"
+      },
+      "const_multi_info": {
+        "String": "Affects the quantity of the air dashes."
+      },
+      "collection": {
+        "String": "Collection"
       }
     }
   }
