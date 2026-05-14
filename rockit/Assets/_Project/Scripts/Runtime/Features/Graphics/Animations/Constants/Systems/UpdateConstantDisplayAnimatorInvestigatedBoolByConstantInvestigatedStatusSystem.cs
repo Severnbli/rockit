@@ -6,14 +6,14 @@ using Leopotam.EcsProto.QoL;
 
 namespace _Project.Scripts.Runtime.Features.Graphics.Animations.Constants.Systems
 {
-    public sealed class UpdateConstantDisplayAnimatorInvestigatedBoolByConstantInvestigatedTagExistenceSystem : IProtoRunSystem
+    public sealed class UpdateConstantDisplayAnimatorInvestigatedBoolByConstantInvestigatedStatusSystem : IProtoRunSystem
     {
         [DI] private readonly ConstantsAnimationsAspect _caAspect;
         [DI] private readonly AnimationsSharedAspect _asAspect;
         [DI] private readonly ConstantsAspect _cAspect;
         private readonly ConstantsDisplaysAnimationsConfig _cdaConfig;
 
-        public UpdateConstantDisplayAnimatorInvestigatedBoolByConstantInvestigatedTagExistenceSystem(ConstantsDisplaysAnimationsConfig cdaConfig)
+        public UpdateConstantDisplayAnimatorInvestigatedBoolByConstantInvestigatedStatusSystem(ConstantsDisplaysAnimationsConfig cdaConfig)
         {
             _cdaConfig = cdaConfig;
         }
