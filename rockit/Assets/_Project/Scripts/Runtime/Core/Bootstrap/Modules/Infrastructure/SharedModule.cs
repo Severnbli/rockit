@@ -27,6 +27,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure
             BindSystem<SwitchToProjectCloseStateOnCloseAppRequestSystem>();
             BindSystem<EnableGameObjectOnEnableRequestSystem>();
             BindSystem<DisableGameObjectOnDisableRequestSystem>();
+            BindSystem<UpdatePlayerLocatorsOnRunSystem>();
         }
     }
 }
