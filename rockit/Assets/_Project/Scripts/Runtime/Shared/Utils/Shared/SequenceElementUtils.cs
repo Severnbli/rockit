@@ -36,7 +36,7 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Shared
             Func<TSource, TElement> mapper,
             out SequenceElement<TElement> first)
         {
-            List<TElement> elementsData = new (); 
+            var elementsData = new List<TElement>(); 
             
             for (var i = 0; i < data.Count; i++)
             {
@@ -50,9 +50,10 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Shared
             IReadOnlyList<TSource> data,
             Func<TSource, TElement> elementFactory,
             Func<TElement> nullElementFactory,
-            out SequenceElement<TElement> first)
+            out SequenceElement<TElement> first, 
+            bool nullOnEmpty = false)
         {
-            if (!TryCreateMappedSequence(data, elementFactory, out first)) return false;
+            if (!TryCreateMappedSequence(data, elementFactory, out first) && !nullOnEmpty) return false;
 
             var nullElement = new SequenceElement<TElement>
             {
