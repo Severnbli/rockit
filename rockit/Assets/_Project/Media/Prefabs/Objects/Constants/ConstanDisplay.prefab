@@ -134,6 +134,8 @@ MonoBehaviour:
   - rid: 1499440624952672346
   - rid: 1499440624952672347
   - rid: 1499440624952672348
+  - rid: 1499440624952672349
+  - rid: 1499440624952672350
   references:
     version: 2
     RefIds:
@@ -148,3 +150,10 @@ MonoBehaviour:
       type: {class: AnimatorComponent, ns: _Project.Scripts.Runtime.Features.Graphics.Animations.Shared.Components, asm: Runtime}
       data:
         Animator: {fileID: 1735002318158779388}
+    - rid: 1499440624952672349
+      type: {class: TransformComponent, ns: _Project.Scripts.Runtime.Core.Infrastructure.Shared.Components, asm: Runtime}
+      data:
+        Transform: {fileID: 371631784191605527}
+    - rid: 1499440624952672350
+      type: {class: PlayerLocatorTag, ns: _Project.Scripts.Runtime.Core.Infrastructure.Shared.Tags, asm: Runtime}
+      data: 
