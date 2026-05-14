@@ -14,6 +14,6 @@ namespace _Project.Scripts.Runtime.Features.Stats.Player.Services
         public SequenceElementObserver<IndexableFloatPaidWithCoins> WalkFactorModifierObserver;
         public SequenceElementObserver<IndexableFloatPaidWithCoins> JumpFactorModifierObserver;
         public SequenceElementObserver<IndexableFloatPaidWithCoins> DashFactorModifierObserver;
-        public SequenceElementObserver<IndexableQuantityPaidWithCoins> DashQuantityModifierObserver;
+        public SequenceElementObserver<IndexableIntPaidWithCoins> DashQuantityModifierObserver;
     }
 }

@@ -2,7 +2,7 @@
 
 namespace _Project.Scripts.Runtime.Features.Economy.Coins.Types
 {
-    public class IndexableQuantityPaidWithCoins : QuantityPaidWithCoins, IIndexable
+    public class IndexableIntPaidWithCoins : IntPaidWithCoins, IIndexable
     {
         public int Index { get; set; }
     }

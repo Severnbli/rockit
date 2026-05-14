@@ -3,7 +3,7 @@
 namespace _Project.Scripts.Runtime.Features.Economy.Coins.Types
 {
     [Serializable]
-    public class QuantityPaidWithCoins : PaidWithCoins
+    public class IntPaidWithCoins : PaidWithCoins
     {
         public int Quantity;
     }
