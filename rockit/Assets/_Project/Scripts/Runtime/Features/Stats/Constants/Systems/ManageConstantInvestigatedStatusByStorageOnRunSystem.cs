@@ -5,12 +5,12 @@ using Leopotam.EcsProto.QoL;
 
 namespace _Project.Scripts.Runtime.Features.Stats.Constants.Systems
 {
-    public sealed class ManageInvestigatedConstantTagExistenceByStorageOnRunSystem : IProtoRunSystem
+    public sealed class ManageConstantInvestigatedStatusByStorageOnRunSystem : IProtoRunSystem
     {
         [DI] private readonly ConstantsAspect _cAspect;
         private readonly DataProvider _dProvider;
 
-        public ManageInvestigatedConstantTagExistenceByStorageOnRunSystem(DataProvider dProvider)
+        public ManageConstantInvestigatedStatusByStorageOnRunSystem(DataProvider dProvider)
         {
             _dProvider = dProvider;
         }
