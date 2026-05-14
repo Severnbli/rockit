@@ -48,8 +48,6 @@ namespace _Project.Scripts.Runtime.Features.Stats.Player.Systems
             {
                 Element = dqmElement
             };
-
-            PaidWithCoins a = _psService.DashQuantityModifierObserver.Element.Value;
         }
     }
 }
