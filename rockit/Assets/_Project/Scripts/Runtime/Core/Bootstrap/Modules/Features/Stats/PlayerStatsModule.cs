@@ -23,6 +23,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Stats
             
             BindSystem<ClampPlayerStatsDataIndexesOnInitSystem>();
             BindSystem<CreatePlayerStatsServiceModifiersSequencesOnInitSystem>();
+            BindSystem<SyncPlayerStatServiceModifierToModifierElementOnRunSystem>();
         }
     }
 }
