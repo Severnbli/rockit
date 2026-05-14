@@ -13,7 +13,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Stats.Constan
         {
             base.BindSystems();
             
-            BindSystem<ManageInvestigatedConstantTagExistenceByStorageOnRunSystem>();
+            BindSystem<ManageConstantInvestigatedStatusByStorageOnRunSystem>();
         }
     }
 }
