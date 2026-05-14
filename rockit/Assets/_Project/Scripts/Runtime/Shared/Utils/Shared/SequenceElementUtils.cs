@@ -33,14 +33,14 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Shared
         
         public static bool TryCreateMappedSequence<TSource, TElement>(
             IReadOnlyList<TSource> data,
-            Func<TSource, TElement> mapper,
+            Func<TSource, int, TElement> mapper,
             out SequenceElement<TElement> first)
         {
             var elementsData = new List<TElement>(); 
             
             for (var i = 0; i < data.Count; i++)
             {
-                elementsData.Add(mapper(data[i]));
+                elementsData.Add(mapper(data[i], i));
             }
 
             return TryCreateSequence(elementsData, out first);
@@ -48,7 +48,7 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Shared
         
         public static bool TryCreateMappedSequenceWithNull<TSource, TElement>(
             IReadOnlyList<TSource> data,
-            Func<TSource, TElement> elementFactory,
+            Func<TSource, int, TElement> elementFactory,
             Func<TElement> nullElementFactory,
             out SequenceElement<TElement> first, 
             bool nullOnEmpty = false)
