@@ -1,4 +1,5 @@
-﻿using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.Animations;
+﻿using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Economy.Coins;
+using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.Animations;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.Sprites;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.UI;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.UI.Text;
@@ -33,6 +34,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Scenes
             TryRegisterModule<UISharedModule>();
             TryRegisterModule<ButtonsModule>();
             TryRegisterModule<IconsModule>();
+            TryRegisterModule<CoinsSceneModule>();
         }
     }
 }
