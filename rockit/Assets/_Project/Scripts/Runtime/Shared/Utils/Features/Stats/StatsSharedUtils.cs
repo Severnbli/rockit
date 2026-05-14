@@ -8,10 +8,10 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Features.Stats
 {
     public static class StatsSharedUtils
     {
-        public static bool TryCreateModifierSequence(IReadOnlyList<FactorPaidWithCoins> data,
+        public static void CreateModifierSequence(IReadOnlyList<FactorPaidWithCoins> data,
             out SequenceElement<FactorPaidWithCoinsElement> first)
         {
-            return SequenceElementUtils.TryCreateMappedSequenceWithNull(
+            SequenceElementUtils.TryCreateMappedSequenceWithNull(
                 data,
                 x => new FactorPaidWithCoinsElement
                 {
@@ -30,10 +30,10 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Features.Stats
             );
         }
         
-        public static bool TryCreateModifierSequence(IReadOnlyList<QuantityPaidWithCoins> data,
+        public static void CreateModifierSequence(IReadOnlyList<QuantityPaidWithCoins> data,
             out SequenceElement<QuantityPaidWithCoinsElement> first)
         {
-            return SequenceElementUtils.TryCreateMappedSequenceWithNull(
+            SequenceElementUtils.TryCreateMappedSequenceWithNull(
                 data,
                 x => new QuantityPaidWithCoinsElement
                 {
