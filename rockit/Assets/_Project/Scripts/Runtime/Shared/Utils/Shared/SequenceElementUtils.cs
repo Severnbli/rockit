@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using _Project.Scripts.Runtime.Shared.Tools;
 
@@ -28,6 +29,21 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Shared
             first.Prev = prev;
 
             return true;
+        }
+        
+        public static bool TryCreateMappedSequence<TSource, TElement>(
+            IReadOnlyList<TSource> data,
+            Func<TSource, TElement> mapper,
+            out SequenceElement<TElement> first)
+        {
+            List<TElement> elementsData = new (); 
+            
+            for (var i = 0; i < data.Count; i++)
+            {
+                elementsData.Add(mapper(data[i]));
+            }
+
+            return TryCreateSequence(elementsData, out first);
         }
     }
 }
