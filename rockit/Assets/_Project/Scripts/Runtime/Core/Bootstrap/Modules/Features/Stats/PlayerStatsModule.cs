@@ -25,6 +25,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Stats
             BindSystem<CreatePlayerStatsServiceModifiersSequencesOnInitSystem>();
             BindSystem<LoadPlayerStatsDataIndexesToPlayerStatsServiceOnInitSystem>();
             BindSystem<SyncPlayerStatServiceModifierToModifierElementOnRunSystem>();
+            BindSystem<SyncPlayerStatsServiceToStorageOnSyncPlayerStatsServiceToStorageRequestSystem>();
         }
     }
 }
