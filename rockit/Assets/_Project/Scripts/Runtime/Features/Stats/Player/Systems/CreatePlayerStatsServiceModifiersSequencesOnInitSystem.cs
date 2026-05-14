@@ -23,21 +23,21 @@ namespace _Project.Scripts.Runtime.Features.Stats.Player.Systems
         {
             StatsSharedUtils.CreateModifierSequence(_psConfig.WalkFactorUpdates,
                 out var wfmElement);
-            _psService.WalkFactorModifierObserver = new SequenceElementObserver<IndexableFactorPaidWithCoins>
+            _psService.WalkFactorModifierObserver = new SequenceElementObserver<IndexableFloatPaidWithCoins>
             {
                 Element = wfmElement
             };
             
             StatsSharedUtils.CreateModifierSequence(_psConfig.JumpFactorUpdates,
                 out var jfmElement);
-            _psService.JumpFactorModifierObserver = new SequenceElementObserver<IndexableFactorPaidWithCoins>
+            _psService.JumpFactorModifierObserver = new SequenceElementObserver<IndexableFloatPaidWithCoins>
             {
                 Element = jfmElement
             };
             
             StatsSharedUtils.CreateModifierSequence(_psConfig.DashFactorUpdates,
                 out var dfmElement);
-            _psService.DashFactorModifierObserver = new SequenceElementObserver<IndexableFactorPaidWithCoins>
+            _psService.DashFactorModifierObserver = new SequenceElementObserver<IndexableFloatPaidWithCoins>
             {
                 Element = dfmElement
             };
