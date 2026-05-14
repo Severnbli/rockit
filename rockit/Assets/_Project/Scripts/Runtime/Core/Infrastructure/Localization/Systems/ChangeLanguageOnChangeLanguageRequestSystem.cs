@@ -41,7 +41,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Localization.Systems
             {
                 _lService.CurrLang = new LanguageData();
             }
-            _dProvider.Language.Code = _lService.CurrLang.LanguageCode;
+            _dProvider.LanguageData.Code = _lService.CurrLang.LanguageCode;
 
             foreach (var liEntity in _lAspect.LocalizationItems)
             {

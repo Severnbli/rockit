@@ -8,7 +8,7 @@ namespace _Project.Scripts.Runtime.Features.Stats.Player
 {
     public sealed class PlayerStatsRequestsAspect : ProtoAspectInject
     {
-        public readonly ProtoPool<UpdatePlayerStatsServiceRequest> UpdatePlayerStatsServiceRequestPool;
-        public readonly ProtoIt UpdatePlayerStatsRequests = new (It.Inc<RequestComponent, ActiveRequestTag, RunRequestTag, UpdatePlayerStatsServiceRequest>());
+        public readonly ProtoPool<SyncPlayerStatsServiceToStorageRequest> SyncPlayerStatsServiceToStorageRequestPool;
+        public readonly ProtoIt SyncPlayerStatsServiceToStorageRequests = new (It.Inc<RequestComponent, ActiveRequestTag, RunRequestTag, SyncPlayerStatsServiceToStorageRequest>());
     }
 }

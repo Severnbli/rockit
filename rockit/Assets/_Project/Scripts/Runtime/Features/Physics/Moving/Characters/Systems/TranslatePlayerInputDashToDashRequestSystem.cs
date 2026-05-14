@@ -39,9 +39,9 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Systems
 
             var prepared = new DashRequest
             {
-                Factor = _pmConfig.DashPower * _psService.DashModifier,
+                Factor = _pmConfig.DashPower * _psService.DashFactorModifier,
                 TimeOut = _pmConfig.DashTimeout,
-                AirQuantity = _pmConfig.AirDashes
+                AirQuantity = _pmConfig.AirDashes + _psService.DashQuantityModifier
             };
             
             foreach (var e in _sAspect.Players)

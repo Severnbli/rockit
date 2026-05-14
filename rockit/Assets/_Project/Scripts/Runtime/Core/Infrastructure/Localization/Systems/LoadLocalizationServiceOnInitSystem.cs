@@ -27,7 +27,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Localization.Systems
 
             var prepared = new ChangeLanguageRequest
             {
-                LanguageCode = _dProvider.Language.Code
+                LanguageCode = _dProvider.LanguageData.Code
             };
             
             LocalizationUtils.CreateChangeLanguageRequest(_rAspect, prepared);

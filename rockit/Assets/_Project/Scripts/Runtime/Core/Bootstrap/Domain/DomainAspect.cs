@@ -3,6 +3,7 @@ using _Project.Scripts.Runtime.Core.Infrastructure.Localization;
 using _Project.Scripts.Runtime.Core.Infrastructure.Objects.Lifecycle;
 using _Project.Scripts.Runtime.Core.Infrastructure.Scenes;
 using _Project.Scripts.Runtime.Core.Infrastructure.Shared;
+using _Project.Scripts.Runtime.Features.Economy.Shared;
 using _Project.Scripts.Runtime.Features.Graphics.Animations.Shared;
 using _Project.Scripts.Runtime.Features.Graphics.Platforms;
 using _Project.Scripts.Runtime.Features.Graphics.Sprites.Glow;
@@ -43,6 +44,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
         public readonly AudioAspect AudioAspect;
         public readonly WorldSharedAspect WorldSharedAspect;
         public readonly ScenesAspect ScenesAspect;
+        public readonly EconomySharedAspect EconomySharedAspect;
         public readonly SharedAspect SharedAspect;
     }
 }

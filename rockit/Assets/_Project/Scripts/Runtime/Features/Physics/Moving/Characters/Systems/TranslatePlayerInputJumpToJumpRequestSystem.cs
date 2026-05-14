@@ -39,7 +39,7 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Systems
 
             var prepared = new JumpRequest
             {
-                Factor = _pmConfig.JumpPower * _psService.JumpModifier,
+                Factor = _pmConfig.JumpPower * _psService.JumpFactorModifier,
                 Deceleration = _pmConfig.JumpDeceleration
             };
 
