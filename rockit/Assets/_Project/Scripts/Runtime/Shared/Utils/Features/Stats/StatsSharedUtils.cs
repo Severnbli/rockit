@@ -8,46 +8,41 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Features.Stats
 {
     public static class StatsSharedUtils
     {
-        public static void CreateModifierSequence(IReadOnlyList<FactorPaidWithCoins> data,
-            out SequenceElement<FactorPaidWithCoinsElement> first)
+        public static void CreateModifierSequence(IReadOnlyList<FloatPaidWithCoins> data,
+            out SequenceElement<IndexableFloatPaidWithCoins> first)
         {
+            
             SequenceElementUtils.TryCreateMappedSequenceWithNull(
                 data,
-                (x, i) => new FactorPaidWithCoinsElement
+                (x, i) => new IndexableFloatPaidWithCoins
                 {
-                    Value = x,
+                    Value = x.Value,
                     Index = i
                 },
-                () => new FactorPaidWithCoinsElement
+                () => new IndexableFloatPaidWithCoins
                 {
                     Index = StatsSharedContracts.NullStatUpdateIndex,
-                    Value = new FactorPaidWithCoins
-                    {
-                        Factor = StatsSharedContracts.DefaultFloatFactorModifier
-                    }
+                    Value = StatsSharedContracts.DefaultFloatFactorModifier
                 },
                 out first,
                 true
             );
         }
         
-        public static void CreateModifierSequence(IReadOnlyList<QuantityPaidWithCoins> data,
-            out SequenceElement<QuantityPaidWithCoinsElement> first)
+        public static void CreateModifierSequence(IReadOnlyList<IntPaidWithCoins> data,
+            out SequenceElement<IndexableIntPaidWithCoins> first)
         {
             SequenceElementUtils.TryCreateMappedSequenceWithNull(
                 data,
-                (x, i) => new QuantityPaidWithCoinsElement
+                (x, i) => new IndexableIntPaidWithCoins
                 {
-                    Value = x,
+                    Value = x.Value,
                     Index = i
                 },
-                () => new QuantityPaidWithCoinsElement
+                () => new IndexableIntPaidWithCoins
                 {
                     Index = StatsSharedContracts.NullStatUpdateIndex,
-                    Value = new QuantityPaidWithCoins
-                    {
-                        Quantity = StatsSharedContracts.DefaultIntQuantityModifier
-                    }
+                    Value = StatsSharedContracts.DefaultIntQuantityModifier
                 },
                 out first,
                 true
