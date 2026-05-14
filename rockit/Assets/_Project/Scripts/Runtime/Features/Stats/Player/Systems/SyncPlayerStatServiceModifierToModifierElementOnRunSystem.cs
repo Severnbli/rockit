@@ -1,4 +1,5 @@
-﻿using _Project.Scripts.Runtime.Features.Stats.Player.Services;
+﻿using System;
+using _Project.Scripts.Runtime.Features.Stats.Player.Services;
 using Leopotam.EcsProto;
 
 namespace _Project.Scripts.Runtime.Features.Stats.Player.Systems
@@ -17,7 +18,7 @@ namespace _Project.Scripts.Runtime.Features.Stats.Player.Systems
             _psService.WalkFactorModifier = _psService.WalkFactorModifierObserver.Element.Value.Value;
             _psService.JumpFactorModifier = _psService.JumpFactorModifierObserver.Element.Value.Value;
             _psService.DashFactorModifier = _psService.DashFactorModifierObserver.Element.Value.Value;
-            _psService.DashQuantityModifier = _psService.DashQuantityModifierObserver.Element.Value.Value;
+            _psService.DashQuantityModifier = (int) _psService.DashQuantityModifierObserver.Element.Value.Value;
         }
     }
 }
