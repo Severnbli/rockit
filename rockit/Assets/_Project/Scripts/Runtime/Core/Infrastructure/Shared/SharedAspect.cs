@@ -27,5 +27,6 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Shared
         public readonly ProtoIt IndexableGameObjects = new (It.Inc<IndexableTag, GameObjectComponent>());
         public readonly ProtoIt CloseAppTags = new (It.Inc<CloseAppTag>());
         public readonly ProtoIt TransformPlayerLocators = new (It.Inc<TransformComponent, PlayerLocatorTag>());
+        public readonly ProtoIt TransformPlayers = new (It.Inc<TransformComponent, PlayerTag>());
     }
 }
