@@ -34,9 +34,9 @@ namespace _Project.Scripts.Runtime.Features.Platforms.Shared.Systems
                 var rStates = pComponent.Platform.RotationStates.Select(x => x.rotation).ToList();
                 var sStates = pComponent.Platform.ScaleStates.Select(x => x.localScale).ToList();
 
-                SequenceElementUtils.TryCreateLoopedSequence(pStates, out psComponent.StartPosState);
-                SequenceElementUtils.TryCreateLoopedSequence(rStates, out psComponent.StartRotState);
-                SequenceElementUtils.TryCreateLoopedSequence(sStates, out psComponent.StartScaleState);
+                SequenceElementUtils.TryCreateSequence(pStates, out psComponent.StartPosState, true);
+                SequenceElementUtils.TryCreateSequence(rStates, out psComponent.StartRotState, true);
+                SequenceElementUtils.TryCreateSequence(sStates, out psComponent.StartScaleState, true);
             }
         }
     }
