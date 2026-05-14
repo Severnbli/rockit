@@ -8,6 +8,7 @@ namespace _Project.Scripts.Runtime.Features.Graphics.Animations.Constants.System
 {
     public sealed class UpdateConstantDisplayAnimatorActiveBoolByConstantDisplayActiveTagExistenceSystem : IProtoRunSystem
     {
+        [DI] private readonly ConstantsAnimationsAspect _caAspect;
         [DI] private readonly AnimationsSharedAspect _asAspect;
         [DI] private readonly ConstantsAspect _cAspect;
         private readonly ConstantsDisplaysAnimationsConfig _cdaConfig;
@@ -19,7 +20,7 @@ namespace _Project.Scripts.Runtime.Features.Graphics.Animations.Constants.System
 
         public void Run()
         {
-            foreach (var e in _asAspect.ConstantDisplayAnimators)
+            foreach (var e in _caAspect.ConstantDisplayAnimators)
             {
                 ref var aComponent = ref _asAspect.AnimatorComponentPool.Get(e);
                 var existence = _cAspect.ConstantActiveDisplays.Has(e);
