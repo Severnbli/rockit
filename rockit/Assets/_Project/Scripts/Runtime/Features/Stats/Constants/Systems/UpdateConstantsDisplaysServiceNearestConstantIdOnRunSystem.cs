@@ -7,13 +7,13 @@ using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Features.Stats.Constants.Systems
 {
-    public sealed class UpdateConstantDisplaysServiceNearestConstantIdOnRunSystem : IProtoRunSystem
+    public sealed class UpdateConstantsDisplaysServiceNearestConstantIdOnRunSystem : IProtoRunSystem
     {
         [DI] private readonly ConstantsAspect _cAspect;
         [DI] private readonly SharedAspect _sAspect;
         private readonly ConstantsDisplaysService _cdService;
 
-        public UpdateConstantDisplaysServiceNearestConstantIdOnRunSystem(ConstantsDisplaysService cdService)
+        public UpdateConstantsDisplaysServiceNearestConstantIdOnRunSystem(ConstantsDisplaysService cdService)
         {
             _cdService = cdService;
         }
