@@ -9,5 +9,8 @@ namespace _Project.Scripts.Runtime.Features.Stats.Constants.Monos
     {
         [SerializeField] private TextMeshProUGUI _nameText;
         [SerializeField] private TextMeshProUGUI _infoText;
+        
+        public TextMeshProUGUI NameText => _nameText;
+        public TextMeshProUGUI InfoText => _infoText;
     }
 }
