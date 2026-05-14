@@ -45,5 +45,24 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Shared
 
             return TryCreateSequence(elementsData, out first);
         }
+        
+        public static bool TryCreateMappedSequenceWithNull<TSource, TElement>(
+            IReadOnlyList<TSource> data,
+            Func<TSource, TElement> elementFactory,
+            Func<TElement> nullElementFactory,
+            out SequenceElement<TElement> first)
+        {
+            if (!TryCreateMappedSequence(data, elementFactory, out first)) return false;
+
+            var nullElement = new SequenceElement<TElement>
+            {
+                Value = nullElementFactory(),
+                Next = first
+            };
+
+            first = nullElement;
+
+            return true;
+        }
     }
 }
