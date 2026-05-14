@@ -11,9 +11,9 @@ namespace _Project.Scripts.Runtime.Features.Stats.Player.Services
         public float DashFactorModifier = StatsSharedContracts.DefaultFloatFactorModifier;
         public int DashQuantityModifier = StatsSharedContracts.DefaultIntQuantityModifier;
         
-        public SequenceElementObserver<FactorPaidWithCoinsElement> WalkFactorModifierObserver;
-        public SequenceElementObserver<FactorPaidWithCoinsElement> JumpFactorModifierObserver;
-        public SequenceElementObserver<FactorPaidWithCoinsElement> DashFactorModifierObserver;
-        public SequenceElementObserver<QuantityPaidWithCoinsElement> DashQuantityModifierObserver;
+        public SequenceElementObserver<IndexableFactorPaidWithCoins> WalkFactorModifierObserver;
+        public SequenceElementObserver<IndexableFactorPaidWithCoins> JumpFactorModifierObserver;
+        public SequenceElementObserver<IndexableFactorPaidWithCoins> DashFactorModifierObserver;
+        public SequenceElementObserver<IndexableQuantityPaidWithCoins> DashQuantityModifierObserver;
     }
 }
