@@ -23,31 +23,33 @@ namespace _Project.Scripts.Runtime.Features.Stats.Player.Systems
         {
             StatsSharedUtils.CreateModifierSequence(_psConfig.WalkFactorUpdates,
                 out var wfmElement);
-            _psService.WalkFactorModifierObserver = new SequenceElementObserver<FactorPaidWithCoinsElement>
+            _psService.WalkFactorModifierObserver = new SequenceElementObserver<IndexableFactorPaidWithCoins>
             {
                 Element = wfmElement
             };
             
             StatsSharedUtils.CreateModifierSequence(_psConfig.JumpFactorUpdates,
                 out var jfmElement);
-            _psService.JumpFactorModifierObserver = new SequenceElementObserver<FactorPaidWithCoinsElement>
+            _psService.JumpFactorModifierObserver = new SequenceElementObserver<IndexableFactorPaidWithCoins>
             {
                 Element = jfmElement
             };
             
             StatsSharedUtils.CreateModifierSequence(_psConfig.DashFactorUpdates,
                 out var dfmElement);
-            _psService.DashFactorModifierObserver = new SequenceElementObserver<FactorPaidWithCoinsElement>
+            _psService.DashFactorModifierObserver = new SequenceElementObserver<IndexableFactorPaidWithCoins>
             {
                 Element = dfmElement
             };
             
             StatsSharedUtils.CreateModifierSequence(_psConfig.DashQuantityUpdates,
                 out var dqmElement);
-            _psService.DashQuantityModifierObserver = new SequenceElementObserver<QuantityPaidWithCoinsElement>
+            _psService.DashQuantityModifierObserver = new SequenceElementObserver<IndexableQuantityPaidWithCoins>
             {
                 Element = dqmElement
             };
+
+            PaidWithCoins a = _psService.DashQuantityModifierObserver.Element.Value;
         }
     }
 }

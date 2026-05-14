@@ -2,8 +2,8 @@
 
 namespace _Project.Scripts.Runtime.Features.Economy.Coins.Types
 {
-    public class FactorPaidWithCoinsElement : ValueIndexable<FactorPaidWithCoins>
+    public class IndexableFactorPaidWithCoins : FactorPaidWithCoins, IIndexable
     {
-        
+        public int Index { get; set; }
     }
 }
