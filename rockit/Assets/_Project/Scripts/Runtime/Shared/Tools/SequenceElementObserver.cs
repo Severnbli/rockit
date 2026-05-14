@@ -1,4 +1,7 @@
-﻿namespace _Project.Scripts.Runtime.Shared.Tools
+﻿using System;
+using _Project.Scripts.Runtime.Shared.Utils.Shared;
+
+namespace _Project.Scripts.Runtime.Shared.Tools
 {
     public class SequenceElementObserver<TElement>
     {
@@ -14,6 +17,12 @@
         {
             if (Element?.Prev == null) return;
             Element = Element.Prev;
+        }
+
+        public void GoTo(Func<TElement, bool> predicate)
+        {
+            if (!SequenceElementUtils.TryFind(Element, predicate, out var element)) return;
+            Element = element;
         }
     }
 }
