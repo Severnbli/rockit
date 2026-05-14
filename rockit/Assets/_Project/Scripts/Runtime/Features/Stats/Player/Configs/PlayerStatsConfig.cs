@@ -9,11 +9,11 @@ namespace _Project.Scripts.Runtime.Features.Stats.Player.Configs
         [SerializeField] private FloatPaidWithCoins[] _walkFactorUpdates;
         [SerializeField] private FloatPaidWithCoins[] _jumpFactorUpdates;
         [SerializeField] private FloatPaidWithCoins[] _dashFactorUpdates;
-        [SerializeField] private QuantityPaidWithCoins[] _dashQuantityUpdates;
+        [SerializeField] private IntPaidWithCoins[] _dashQuantityUpdates;
         
         public FloatPaidWithCoins[] WalkFactorUpdates => _walkFactorUpdates;
         public FloatPaidWithCoins[] JumpFactorUpdates => _jumpFactorUpdates;
         public FloatPaidWithCoins[] DashFactorUpdates => _dashFactorUpdates;
-        public QuantityPaidWithCoins[] DashQuantityUpdates => _dashQuantityUpdates;
+        public IntPaidWithCoins[] DashQuantityUpdates => _dashQuantityUpdates;
     }
 }

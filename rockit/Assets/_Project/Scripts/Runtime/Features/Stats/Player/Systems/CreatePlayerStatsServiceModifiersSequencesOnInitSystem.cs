@@ -44,7 +44,7 @@ namespace _Project.Scripts.Runtime.Features.Stats.Player.Systems
             
             StatsSharedUtils.CreateModifierSequence(_psConfig.DashQuantityUpdates,
                 out var dqmElement);
-            _psService.DashQuantityModifierObserver = new SequenceElementObserver<IndexableQuantityPaidWithCoins>
+            _psService.DashQuantityModifierObserver = new SequenceElementObserver<IndexableIntPaidWithCoins>
             {
                 Element = dqmElement
             };
