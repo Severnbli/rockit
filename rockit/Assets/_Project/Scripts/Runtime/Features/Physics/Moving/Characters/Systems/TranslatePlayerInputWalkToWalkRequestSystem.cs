@@ -39,7 +39,7 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Characters.Systems
 
             var prepared = new WalkRequest
             {
-                Factor = _piService.Walk * _pmConfig.WalkSpeed * _psService.WalkModifier,
+                Factor = _piService.Walk * _pmConfig.WalkSpeed * _psService.WalkFactorModifier,
                 Deceleration = _pmConfig.WalkDeceleration
             };
             

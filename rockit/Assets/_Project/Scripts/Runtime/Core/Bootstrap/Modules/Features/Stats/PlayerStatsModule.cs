@@ -21,8 +21,11 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Stats
         {
             base.BindSystems();
             
-            BindSystem<ClampPlayerStatsEntityIndexesOnInitSystem>();
-            BindSystem<UpdatePlayerStatsServiceOnUpdatePlayerStatsServiceRequestSystem>();
+            BindSystem<ClampPlayerStatsDataIndexesOnInitSystem>();
+            BindSystem<CreatePlayerStatsServiceModifiersSequencesOnInitSystem>();
+            BindSystem<LoadPlayerStatsDataIndexesToPlayerStatsServiceOnInitSystem>();
+            BindSystem<SyncPlayerStatServiceModifierToModifierElementOnRunSystem>();
+            BindSystem<SyncPlayerStatsServiceToStorageOnSyncPlayerStatsServiceToStorageRequestSystem>();
         }
     }
 }

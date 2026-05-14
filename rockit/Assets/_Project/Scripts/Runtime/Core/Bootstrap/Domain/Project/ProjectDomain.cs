@@ -1,4 +1,5 @@
 ﻿using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features;
+using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Economy.Coins;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.Effects;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.UI;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Stats;
@@ -52,6 +53,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Project
             TryRegisterModule<StatsSharedModule>();
             TryRegisterModule<AudioModule>();
             TryRegisterModule<LevelsProjectModule>();
+            TryRegisterModule<CoinsProjectModule>();
             TryRegisterModule<RequestsModule>();
         }
     }
