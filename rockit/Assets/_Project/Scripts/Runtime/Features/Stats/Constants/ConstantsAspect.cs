@@ -10,5 +10,6 @@ namespace _Project.Scripts.Runtime.Features.Stats.Constants
         public readonly ProtoPool<ConstantComponent> ConstantComponentPool;
         public readonly ProtoPool<ConstantDisplayTag> ConstantDisplayTagPool;
         public readonly ProtoPool<ConstantActiveDisplayTag> ConstantActiveDisplayTagPool;
+        public readonly ProtoIt ConstantActiveDisplays = new (It.Inc<ConstantActiveDisplayTag>());
     }
 }
