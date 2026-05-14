@@ -1,5 +1,8 @@
-﻿namespace _Project.Scripts.Runtime.Features.Stats.Constants.Types
+﻿using System;
+
+namespace _Project.Scripts.Runtime.Features.Stats.Constants.Types
 {
+    [Serializable]
     public abstract class ConstantDefinition
     {
         public abstract string Name();
