@@ -3,7 +3,7 @@ using _Project.Scripts.Runtime.Shared.Utils.Shared;
 
 namespace _Project.Scripts.Runtime.Shared.Tools
 {
-    public class SequenceElementObserver<TElement>
+    public class SequenceElementObserver<TElement> : ISequenceElementObserver
     {
         public SequenceElement<TElement> Element;
 
