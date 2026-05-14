@@ -1,7 +1,9 @@
-﻿using _Project.Scripts.Runtime.Core.Infrastructure.Localization;
+﻿using System;
+using _Project.Scripts.Runtime.Core.Infrastructure.Localization;
 
 namespace _Project.Scripts.Runtime.Features.Stats.Constants.Types
 {
+    [Serializable]
     public sealed class DashesConstantDefinition : ConstantDefinition
     {
         public override string Name() => LocalizationEntriesContracts.Const.Dashes.Name;
