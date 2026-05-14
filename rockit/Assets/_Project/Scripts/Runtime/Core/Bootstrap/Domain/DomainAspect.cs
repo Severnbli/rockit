@@ -15,6 +15,7 @@ using _Project.Scripts.Runtime.Features.Physics.Moving.Platforms;
 using _Project.Scripts.Runtime.Features.Physics.Moving.Shared;
 using _Project.Scripts.Runtime.Features.Physics.Shared;
 using _Project.Scripts.Runtime.Features.Platforms.Shared;
+using _Project.Scripts.Runtime.Features.Stats.Shared;
 using _Project.Scripts.Runtime.Features.World.Shared;
 using Leopotam.EcsProto.QoL;
 using Leopotam.EcsProto.Unity.Physics2D;
@@ -45,6 +46,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
         public readonly WorldSharedAspect WorldSharedAspect;
         public readonly ScenesAspect ScenesAspect;
         public readonly EconomySharedAspect EconomySharedAspect;
+        public readonly StatsSharedAspect StatsSharedAspect;
         public readonly SharedAspect SharedAspect;
     }
 }
