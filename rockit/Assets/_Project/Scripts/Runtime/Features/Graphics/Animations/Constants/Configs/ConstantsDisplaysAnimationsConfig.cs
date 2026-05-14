@@ -5,10 +5,10 @@ namespace _Project.Scripts.Runtime.Features.Graphics.Animations.Constants.Config
 {
     public sealed class ConstantsDisplaysAnimationsConfig : ScriptableObjectAutoInstaller<ConstantsDisplaysAnimationsConfig>
     {
-        [SerializeField] private string _enableBool = "Enable";
+        [SerializeField] private string _activeBool = "Active";
         [SerializeField] private string _investigatedBool = "Investigated";
         
-        public int EnableBool => Animator.StringToHash(_enableBool);
+        public int ActiveBool => Animator.StringToHash(_activeBool);
         public int InvestigatedBool => Animator.StringToHash(_investigatedBool);
     }
 }
