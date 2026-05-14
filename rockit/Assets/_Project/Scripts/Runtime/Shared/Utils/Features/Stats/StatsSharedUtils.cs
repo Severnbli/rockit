@@ -13,9 +13,10 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Features.Stats
         {
             SequenceElementUtils.TryCreateMappedSequenceWithNull(
                 data,
-                x => new FactorPaidWithCoinsElement
+                (x, i) => new FactorPaidWithCoinsElement
                 {
-                    Value = x
+                    Value = x,
+                    Index = i
                 },
                 () => new FactorPaidWithCoinsElement
                 {
@@ -35,9 +36,10 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Features.Stats
         {
             SequenceElementUtils.TryCreateMappedSequenceWithNull(
                 data,
-                x => new QuantityPaidWithCoinsElement
+                (x, i) => new QuantityPaidWithCoinsElement
                 {
-                    Value = x
+                    Value = x,
+                    Index = i
                 },
                 () => new QuantityPaidWithCoinsElement
                 {
