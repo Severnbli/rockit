@@ -1,4 +1,5 @@
-﻿using System.Threading;
+﻿using System.Collections.Generic;
+using System.Threading;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using UnityEngine;
@@ -10,6 +11,10 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Animations.Tools.Pipeline
         protected readonly ITweenPipelineCacheStorage Cache;
         protected readonly ITweenPipelineSequenceCreator Creator;
         protected readonly CancellationToken Ct;
+        
+        protected readonly Dictionary<GameObject, ITweenPipelineRunObserver> Observers = new ();
+        protected readonly TweenPipelineRunObserverPool<TweenPipelineCachedRunObserver> CachedObserversPool = new ();
+        protected readonly TweenPipelineRunObserverPool<TweenPipelineNonCachedRunObserver> NonCachedObserversPool = new ();
 
         public TweenPipelineRunner(CancellationToken ct, ITweenPipelineCacheStorage cache, ITweenPipelineSequenceCreator creator)
         {
@@ -20,6 +25,12 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Animations.Tools.Pipeline
 
         public async UniTask Run(TweenPipeline tp, GameObject go, bool caching = false)
         {
+            if (Observers.TryGetValue(go, out var observer))
+            {
+                observer.CancelRun();
+                Observers.Remove(go);
+            }
+            
             if (caching)
             {
                 await RunCached(tp, go);
@@ -36,15 +47,32 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Animations.Tools.Pipeline
                 sequence = Creator.CreateSequence(tp, go);
                 Cache.AddToCache(tp, go, sequence);
             }
-            
             sequence.Restart();
-            await sequence.AwaitForComplete(cancellationToken: Ct);
+
+            var observer = CachedObserversPool.Spawn();
+            await AwaitWithObserver(sequence.AwaitForComplete(cancellationToken: Ct), sequence, go, observer);
+            CachedObserversPool.Despawn(observer);
         }
 
         private async UniTask RunNonCached(TweenPipeline tp, GameObject go)
         {
             var sequence = Creator.CreateSequence(tp, go);
-            await sequence.ToUniTask(cancellationToken: Ct);
+            
+            var observer = NonCachedObserversPool.Spawn();
+            await AwaitWithObserver(sequence.ToUniTask(cancellationToken: Ct), sequence, go, observer);
+            NonCachedObserversPool.Despawn(observer);
+        }
+
+        private async UniTask AwaitWithObserver(UniTask task, Sequence sequence, GameObject go, 
+            ITweenPipelineRunObserver observer)
+        {
+            observer.Initialize(sequence);
+            Observers[go] = observer;
+            
+            await task;
+            
+            if (observer.Canceled) return;
+            Observers.Remove(go);
         }
         
         public void CacheRun(TweenPipeline tp, GameObject go)
