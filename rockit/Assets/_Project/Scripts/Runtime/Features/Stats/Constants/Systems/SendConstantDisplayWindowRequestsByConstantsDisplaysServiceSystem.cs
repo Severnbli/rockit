@@ -12,6 +12,7 @@ namespace _Project.Scripts.Runtime.Features.Stats.Constants.Systems
     {
         [DIRequests] private readonly RequestsAspect _rAspect;
         private readonly ConstantsDisplaysService _cdService;
+        private readonly ConstantDisplayWindowService _cdwService;
 
         public SendConstantDisplayWindowRequestsByConstantsDisplaysServiceSystem(ConstantsDisplaysService cdService)
         {
@@ -23,13 +24,13 @@ namespace _Project.Scripts.Runtime.Features.Stats.Constants.Systems
             if (_cdService.NearestConstantId == _cdService.LastNearestConstantId) return;
             if (_cdService.NearestConstantId == ProjectContracts.NullIntId)
             {
-                ConstantsUtils.CreateHideConstantDisplayWindowRequest(_rAspect);
+                _cdwService.Show = false;
                 return;
             }
 
             if (_cdService.LastNearestConstantId == ProjectContracts.NullIntId)
             {
-                ConstantsUtils.CreateShowConstantDisplayWindowRequest(_rAspect);
+                _cdwService.Show = true;
             }
 
             var prepared = new RebuildConstantDisplayWindowRequest

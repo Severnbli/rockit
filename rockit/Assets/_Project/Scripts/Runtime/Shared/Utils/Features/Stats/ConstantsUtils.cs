@@ -16,18 +16,6 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Features.Stats
                 prepared: prepared);
         }
 
-        public static ProtoEntity CreateShowConstantDisplayWindowRequest(RequestsAspect aspect)
-        {
-            return aspect.CreateRequest(aspect.StatsSharedRequestsAspect.ConstantsRequestsAspect
-                .ShowConstantDisplayWindowRequestPool);
-        }
-
-        public static ProtoEntity CreateHideConstantDisplayWindowRequest(RequestsAspect aspect)
-        {
-            return aspect.CreateRequest(aspect.StatsSharedRequestsAspect.ConstantsRequestsAspect
-                .HideConstantDisplayWindowRequestPool);
-        }
-
         public static bool GetInvestigatedStatus(DataProvider dProvider, int constantId)
         {
             return dProvider.StatsData.InvestigatedConstants.ContainsKey(constantId);
