@@ -21,7 +21,21 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  _walkFactorUpdates: []
-  _jumpFactorUpdates: []
-  _dashFactorUpdates: []
-  _dashQuantityUpdates: []
+  _walkFactorUpdates:
+  - CoinsAmount: 2
+    Value: 1.15
+  - CoinsAmount: 3
+    Value: 1.2
+  _jumpFactorUpdates:
+  - CoinsAmount: 1
+    Value: 1.1
+  - CoinsAmount: 4
+    Value: 1.3
+  _dashFactorUpdates:
+  - CoinsAmount: 4
+    Value: 2
+  - CoinsAmount: 5
+    Value: 3
+  _dashQuantityUpdates:
+  - CoinsAmount: 6
+    Value: 2
