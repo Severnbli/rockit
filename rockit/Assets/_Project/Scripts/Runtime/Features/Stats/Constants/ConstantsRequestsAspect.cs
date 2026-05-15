@@ -12,7 +12,7 @@ namespace _Project.Scripts.Runtime.Features.Stats.Constants
         public readonly ProtoPool<ShowConstantDisplayWindowRequest> ShowConstantDisplayWindowRequestPool;
         public readonly ProtoPool<HideConstantDisplayWindowRequest> HideConstantDisplayWindowRequestPool;
         public readonly ProtoIt RebuildConstantDisplayWindowRequests = new (It.Inc<RequestComponent, ActiveRequestTag, RunRequestTag, RebuildConstantDisplayWindowRequest>());
-        public readonly ProtoIt ShowConstantDisplayWindowRequests = new (It.Inc<RequestComponent, ActiveRequestTag, RunRequestTag, RebuildConstantDisplayWindowRequest>());
-        public readonly ProtoIt HideConstantDisplayWindowRequests = new (It.Inc<RequestComponent, ActiveRequestTag, RunRequestTag, RebuildConstantDisplayWindowRequest>());
+        public readonly ProtoIt ShowConstantDisplayWindowRequests = new (It.Inc<RequestComponent, ActiveRequestTag, RunRequestTag, ShowConstantDisplayWindowRequest>());
+        public readonly ProtoIt HideConstantDisplayWindowRequests = new (It.Inc<RequestComponent, ActiveRequestTag, RunRequestTag, HideConstantDisplayWindowRequest>());
     }
 }
