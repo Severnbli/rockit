@@ -34,6 +34,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Scenes
             RegisterState<CreateLevelButtonsState>();
             RegisterState<MenuState>();
             RegisterState<LevelSelectionState>();
+            RegisterState<CollectionState>();
             RegisterState<MenuConstantDisplayWindowState>();
         }
 
