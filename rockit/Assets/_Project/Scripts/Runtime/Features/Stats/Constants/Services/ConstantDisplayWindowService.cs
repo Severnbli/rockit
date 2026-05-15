@@ -8,6 +8,7 @@ namespace _Project.Scripts.Runtime.Features.Stats.Constants.Services
     {
         public bool Show;
         public bool Active;
+        public bool Prepared;
         public ConstantDefinition Definition;
         public FloatPaidWithCoins[] Array;
         public SequenceElementObserver<IndexableFloatPaidWithCoins> Observer;
