@@ -30,6 +30,7 @@ namespace _Project.Scripts.Runtime.Features.Stats.Constants.Systems
             };
 
             ConstantsUtils.CreateRebuildConstantDisplayWindowRequest(_rAspect, prepared);
+            PlayerStatsUtils.CreateSyncPlayerStatsServiceToStorageRequest(_rAspect);
         }
     }
 }
