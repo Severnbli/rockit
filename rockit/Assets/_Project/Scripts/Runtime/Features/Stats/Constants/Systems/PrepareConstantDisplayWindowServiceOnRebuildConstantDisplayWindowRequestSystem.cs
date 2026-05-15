@@ -39,7 +39,8 @@ namespace _Project.Scripts.Runtime.Features.Stats.Constants.Systems
             if (!_cConfig.Constants.TryGetValue(rbdwRequest.ConstantId, out var def)) return;
             if (!PlayerStatsUtils.TryGetArrayByConstantDefinition(def, _psConfig, out var array)) return;
             if (!PlayerStatsUtils.TryGetObserverByConstantDefinition(def, _psService, out var observer)) return;
-
+            
+            _cdwService.LastPreparedConstantId = rbdwRequest.ConstantId;
             _cdwService.Definition = def;
             _cdwService.Array = array;
             _cdwService.Observer = observer;
