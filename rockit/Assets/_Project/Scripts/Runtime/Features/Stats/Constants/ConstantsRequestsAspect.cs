@@ -9,6 +9,8 @@ namespace _Project.Scripts.Runtime.Features.Stats.Constants
     public sealed class ConstantsRequestsAspect : ProtoAspectInject
     {
         public readonly ProtoPool<RebuildConstantDisplayWindowRequest> RebuildConstantDisplayWindowRequestPool;
+        public readonly ProtoPool<ShowConstantDisplayWindowRequest> ShowConstantDisplayWindowRequestPool;
         public readonly ProtoIt RebuildConstantDisplayWindowRequests = new (It.Inc<RequestComponent, ActiveRequestTag, RunRequestTag, RebuildConstantDisplayWindowRequest>());
+        public readonly ProtoIt ShowConstantDisplayWindowRequests = new (It.Inc<RequestComponent, ActiveRequestTag, RunRequestTag, RebuildConstantDisplayWindowRequest>());
     }
 }
