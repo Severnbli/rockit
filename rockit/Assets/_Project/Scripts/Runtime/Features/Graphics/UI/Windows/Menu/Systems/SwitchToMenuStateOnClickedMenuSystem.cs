@@ -6,12 +6,12 @@ using Leopotam.EcsProto.QoL;
 
 namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Menu.Systems
 {
-    public sealed class SwitchToMenuStateOnClickMenuSystem : IProtoRunSystem
+    public sealed class SwitchToMenuStateOnClickedMenuSystem : IProtoRunSystem
     {
         [DI] private readonly MenuSceneWindowsAspect _mswAspect;
         private readonly IStateMachine _sMachine;
 
-        public SwitchToMenuStateOnClickMenuSystem(IStateMachine sMachine)
+        public SwitchToMenuStateOnClickedMenuSystem(IStateMachine sMachine)
         {
             _sMachine = sMachine;
         }
