@@ -193,7 +193,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 2.735, y: -5.5}
+  m_AnchoredPosition: {x: 2.7349997, y: -5.5}
   m_SizeDelta: {x: 5.47, y: 10.01}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2252163441222641677
@@ -1130,7 +1130,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3386145027611694339, guid: 47bf9f1d567b95945ac8649280703e57, type: 3}
       propertyPath: orthographic size
-      value: 4.821429
+      value: 5.625
       objectReference: {fileID: 0}
     - target: {fileID: 3555950308435978321, guid: 47bf9f1d567b95945ac8649280703e57, type: 3}
       propertyPath: m_Name
@@ -1250,6 +1250,34 @@ PrefabInstance:
     - target: {fileID: 2070006671664493563, guid: 6cb6308c59fbae84492a38b2fc232c9f, type: 3}
       propertyPath: m_Name
       value: ImproveText
+      objectReference: {fileID: 0}
+    - target: {fileID: 3076819146899392599, guid: 6cb6308c59fbae84492a38b2fc232c9f, type: 3}
+      propertyPath: Components.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3076819146899392599, guid: 6cb6308c59fbae84492a38b2fc232c9f, type: 3}
+      propertyPath: 'Components.Array.data[3]'
+      value: 1499440641782055002
+      objectReference: {fileID: 0}
+    - target: {fileID: 3076819146899392599, guid: 6cb6308c59fbae84492a38b2fc232c9f, type: 3}
+      propertyPath: 'Components.Array.data[4]'
+      value: 1499440641782055004
+      objectReference: {fileID: 0}
+    - target: {fileID: 3076819146899392599, guid: 6cb6308c59fbae84492a38b2fc232c9f, type: 3}
+      propertyPath: 'managedReferences[1499440641782055002]'
+      value: Runtime _Project.Scripts.Runtime.Features.Economy.Coins.Components.CoinsAmountComponent
+      objectReference: {fileID: 0}
+    - target: {fileID: 3076819146899392599, guid: 6cb6308c59fbae84492a38b2fc232c9f, type: 3}
+      propertyPath: 'managedReferences[1499440641782055004]'
+      value: Runtime _Project.Scripts.Runtime.Features.Graphics.UI.Text.Shared.Components.TextUiComponent
+      objectReference: {fileID: 0}
+    - target: {fileID: 3076819146899392599, guid: 6cb6308c59fbae84492a38b2fc232c9f, type: 3}
+      propertyPath: managedReferences[1499440641782055004].Text
+      value: 
+      objectReference: {fileID: 944956617962154392}
+    - target: {fileID: 3076819146899392599, guid: 6cb6308c59fbae84492a38b2fc232c9f, type: 3}
+      propertyPath: managedReferences[1499440641782055002].Amount
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5462832372357242896, guid: 6cb6308c59fbae84492a38b2fc232c9f, type: 3}
       propertyPath: managedReferences[1499440526611710037].Key
