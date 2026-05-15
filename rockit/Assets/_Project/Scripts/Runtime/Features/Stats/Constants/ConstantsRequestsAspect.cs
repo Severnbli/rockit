@@ -8,9 +8,7 @@ namespace _Project.Scripts.Runtime.Features.Stats.Constants
 {
     public sealed class ConstantsRequestsAspect : ProtoAspectInject
     {
-        public readonly ProtoPool<BuildConstantDisplayWindowRequest> BuildConstantDisplayWindowRequestPool;
         public readonly ProtoPool<RebuildConstantDisplayWindowRequest> RebuildConstantDisplayWindowRequestPool;
-        public readonly ProtoIt BuildConstantDisplayWindowRequests = new (It.Inc<RequestComponent, ActiveRequestTag, RunRequestTag, BuildConstantDisplayWindowRequest>());
         public readonly ProtoIt RebuildConstantDisplayWindowRequests = new (It.Inc<RequestComponent, ActiveRequestTag, RunRequestTag, RebuildConstantDisplayWindowRequest>());
     }
 }
