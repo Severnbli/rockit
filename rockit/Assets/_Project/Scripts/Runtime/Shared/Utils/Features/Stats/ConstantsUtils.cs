@@ -14,5 +14,11 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Features.Stats
                 aspect.StatsSharedRequestsAspect.ConstantsRequestsAspect.RebuildConstantDisplayWindowRequestPool,
                 prepared: prepared);
         }
+
+        public static ProtoEntity CreateShowConstantDisplayWindowRequest(RequestsAspect aspect)
+        {
+            return aspect.CreateRequest(aspect.StatsSharedRequestsAspect.ConstantsRequestsAspect
+                .ShowConstantDisplayWindowRequestPool);
+        }
     }
 }
