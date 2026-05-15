@@ -3,11 +3,11 @@ using Cysharp.Threading.Tasks;
 
 namespace _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes.Menu.Modal
 {
-    public class ConstantDisplayWindowState : ISceneState
+    public class MenuConstantDisplayWindowState : ISceneState
     {
         private readonly ConstantDisplayWindow _cdwWindow;
 
-        public ConstantDisplayWindowState(ConstantDisplayWindow cdwWindow)
+        public MenuConstantDisplayWindowState(ConstantDisplayWindow cdwWindow)
         {
             _cdwWindow = cdwWindow;
         }
