@@ -28,10 +28,10 @@ namespace _Project.Scripts.Runtime.Features.Stats.Constants.Systems
 
         public void Run()
         {
+            _cdwService.Prepared = false;
             var (e, ok) = _crAspect.RebuildConstantDisplayWindowRequests.FirstSlow();
             if (!ok) return;
-
-            _cdwService.Prepared = false;
+            
             ref var rbdwRequest = ref _crAspect.RebuildConstantDisplayWindowRequestPool.Get(e);
 
             if (!_cConfig.Constants.TryGetValue(rbdwRequest.ConstantId, out var def)) return;
