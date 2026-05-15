@@ -17,6 +17,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Stats.Constan
             BindSystem<PrepareConstantDisplayWindowServiceOnRebuildConstantDisplayWindowRequestSystem>();
             BindSystem<UpdateConstantDisplayWindowOnRebuildConstantDisplayWindowRequestSystem>();
             BindSystem<ShowConstantDisplayWindowOnShowConstantDisplayWindowRequestSystem>();
+            BindSystem<HideConstantDisplayWindowOnHideConstantDisplayWindowRequest>();
         }
     }
 }
