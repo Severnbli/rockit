@@ -49,7 +49,7 @@ MonoBehaviour:
       data:
         _connector: 0
         _settings:
-          _to: 1
+          _to: 0.2
           _from: 0
           _fromExact: 0
           _relative: 0
