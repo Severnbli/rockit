@@ -14,6 +14,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Stats.Constan
             base.BindServices();
             
             BindService<ConstantsDisplaysService>();
+            BindService<ConstantDisplayWindowService>();
         }
     }
 }
