@@ -19,6 +19,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Stats.Constan
             BindSystem<SendConstantDisplayWindowRequestsByConstantsDisplaysServiceSystem>();
             BindSystem<PrepareConstantDisplayWindowServiceOnRebuildConstantDisplayWindowRequestSystem>();
             BindSystem<UpdateConstantDisplayWindowOnRebuildConstantDisplayWindowRequestSystem>();
+            BindSystem<UpdateConstantImproversCoinsAmountOnRunSystem>();
         }
     }
 }
