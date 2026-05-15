@@ -1265,7 +1265,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3076819146899392599, guid: 6cb6308c59fbae84492a38b2fc232c9f, type: 3}
       propertyPath: 'Components.Array.data[5]'
-      value: 1499440641782055005
+      value: 1499440641782055007
       objectReference: {fileID: 0}
     - target: {fileID: 3076819146899392599, guid: 6cb6308c59fbae84492a38b2fc232c9f, type: 3}
       propertyPath: 'managedReferences[1499440641782055002]'
@@ -1278,6 +1278,10 @@ PrefabInstance:
     - target: {fileID: 3076819146899392599, guid: 6cb6308c59fbae84492a38b2fc232c9f, type: 3}
       propertyPath: 'managedReferences[1499440641782055005]'
       value: Runtime _Project.Scripts.Runtime.Features.Stats.Constants.Tags.ImproveConstantTag
+      objectReference: {fileID: 0}
+    - target: {fileID: 3076819146899392599, guid: 6cb6308c59fbae84492a38b2fc232c9f, type: 3}
+      propertyPath: 'managedReferences[1499440641782055007]'
+      value: Runtime _Project.Scripts.Runtime.Features.Stats.Constants.Tags.ConstantImproverTag
       objectReference: {fileID: 0}
     - target: {fileID: 3076819146899392599, guid: 6cb6308c59fbae84492a38b2fc232c9f, type: 3}
       propertyPath: managedReferences[1499440641782055004].Text
