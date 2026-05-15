@@ -231,7 +231,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9136999343417413772, guid: 6d5aa93f746134b46b3429b69b8b4ac7, type: 3}
       propertyPath: m_Name
-      value: ConstanDisplay0
+      value: ConstantDisplay0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -308,7 +308,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9136999343417413772, guid: 6d5aa93f746134b46b3429b69b8b4ac7, type: 3}
       propertyPath: m_Name
-      value: ConstanDisplay2
+      value: ConstantDisplay2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -374,7 +374,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9136999343417413772, guid: 6d5aa93f746134b46b3429b69b8b4ac7, type: 3}
       propertyPath: m_Name
-      value: ConstanDisplay3
+      value: ConstantDisplay3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3555,7 +3555,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9136999343417413772, guid: 6d5aa93f746134b46b3429b69b8b4ac7, type: 3}
       propertyPath: m_Name
-      value: ConstanDisplay1
+      value: ConstantDisplay1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
