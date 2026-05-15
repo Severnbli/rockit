@@ -1,6 +1,7 @@
 ﻿using _Project.Scripts.Runtime.Core.Bootstrap.States;
 using _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes;
 using _Project.Scripts.Runtime.Core.Infrastructure.Requests.World;
+using Cysharp.Threading.Tasks;
 using Leopotam.EcsProto;
 
 namespace _Project.Scripts.Runtime.Features.Stats.Constants.Systems
@@ -19,7 +20,7 @@ namespace _Project.Scripts.Runtime.Features.Stats.Constants.Systems
         {
             if (_crAspect.HideConstantDisplayWindowRequests.IsEmptySlow()) return;
 
-            _sMachine.LeaveModalState<IConstantDisplayState>();
+            _sMachine.LeaveModalState<IConstantDisplayState>().Forget();
         }
     }
 }
