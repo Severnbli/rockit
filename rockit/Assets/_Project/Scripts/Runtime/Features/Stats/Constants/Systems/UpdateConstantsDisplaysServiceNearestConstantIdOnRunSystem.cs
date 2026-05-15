@@ -33,6 +33,7 @@ namespace _Project.Scripts.Runtime.Features.Stats.Constants.Systems
                 constantId = cComponent.Id;
             }
             
+            _cdService.LastNearestConstantId = _cdService.NearestConstantId;
             _cdService.NearestConstantId = constantId;
         }
     }
