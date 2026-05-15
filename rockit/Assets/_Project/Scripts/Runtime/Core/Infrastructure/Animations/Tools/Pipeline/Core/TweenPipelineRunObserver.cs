@@ -13,7 +13,14 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Animations.Tools.Pipeline
             Sequence = sequence;
         }
 
-        public abstract void CancelRun();
+        public void CancelRun()
+        {
+            if (Canceled) return;
+            DoCancel();
+            Canceled = true;
+        }
+
+        protected abstract void DoCancel();
 
         public void Reset()
         {
