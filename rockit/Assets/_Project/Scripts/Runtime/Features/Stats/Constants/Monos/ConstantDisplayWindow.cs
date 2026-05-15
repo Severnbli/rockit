@@ -2,6 +2,7 @@
 using _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Shared.Monos;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace _Project.Scripts.Runtime.Features.Stats.Constants.Monos
 {
@@ -10,9 +11,11 @@ namespace _Project.Scripts.Runtime.Features.Stats.Constants.Monos
         [SerializeField] private TextMeshProUGUI _nameText;
         [SerializeField] private TextMeshProUGUI _infoText;
         [SerializeField] private TextMeshProUGUI _costText;
+        [SerializeField] private Button _improveButton;
         
         public TextMeshProUGUI NameText => _nameText;
         public TextMeshProUGUI InfoText => _infoText;
         public TextMeshProUGUI CostText => _costText;
+        public Button ImproveButton => _improveButton;
     }
 }
