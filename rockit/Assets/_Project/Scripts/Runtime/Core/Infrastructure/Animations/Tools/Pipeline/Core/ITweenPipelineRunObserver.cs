@@ -4,5 +4,6 @@
     {
         bool Canceled { get; }
         void CancelRun();
+        void Reset();
     }
 }
