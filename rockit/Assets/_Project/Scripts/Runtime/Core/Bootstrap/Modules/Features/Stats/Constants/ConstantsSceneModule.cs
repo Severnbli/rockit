@@ -18,6 +18,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Stats.Constan
             BindSystem<UpdateConstantsDisplaysServiceNearestConstantIdOnRunSystem>();
             BindSystem<SendConstantDisplayWindowRequestsByConstantsDisplaysServiceSystem>();
             BindSystem<PrepareConstantDisplayWindowServiceOnRebuildConstantDisplayWindowRequestSystem>();
+            BindSystem<UpdateConstantDisplayWindowOnRebuildConstantDisplayWindowRequestSystem>();
         }
     }
 }
