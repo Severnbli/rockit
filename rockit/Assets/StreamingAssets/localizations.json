@@ -36,7 +36,7 @@
         "String": "константа {0}"
       },
       "const_discoverer_info": {
-        "String": "Константу {0} открыл архонт {2}."
+        "String": "Константу {0} открыл архонт {1}."
       },
       "const_curr_value": {
         "String": "Текущее значение: {0}."
@@ -125,7 +125,7 @@
         "String": "the {0} constant"
       },
       "const_discoverer_info": {
-        "String": "The {0} constant was discovered by archon {2}."
+        "String": "The {0} constant was discovered by archon {1}."
       },
       "const_curr_value": {
         "String": "Current value: {0}."
