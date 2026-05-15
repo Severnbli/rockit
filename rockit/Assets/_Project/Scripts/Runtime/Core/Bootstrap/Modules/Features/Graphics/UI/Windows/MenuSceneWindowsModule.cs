@@ -15,6 +15,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.UI.W
             
             BindSystem<SwitchToLevelSelectionStateOnClickedLevelSelectionSystem>();
             BindSystem<SwitchToMenuStateOnClickedMenuSystem>();
+            BindSystem<SwitchToCollectionStateOnClickedCollectionSystem>();
         }
     }
 }
