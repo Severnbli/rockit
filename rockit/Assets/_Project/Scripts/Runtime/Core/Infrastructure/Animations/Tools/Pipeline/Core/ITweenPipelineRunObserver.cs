@@ -2,7 +2,7 @@
 {
     public interface ITweenPipelineRunObserver
     {
-        bool Canceled();
+        bool Canceled { get; }
         void CancelRun();
     }
 }
