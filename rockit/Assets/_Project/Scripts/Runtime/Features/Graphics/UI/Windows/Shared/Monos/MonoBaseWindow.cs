@@ -39,10 +39,10 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Shared.Monos
         
         public async UniTask OpenAwait()
         {
-            gameObject.SetActive(true);
-            await PlayOpenAnimation();
             OnOpen?.Invoke();
             Opened = true;
+            gameObject.SetActive(true);
+            await PlayOpenAnimation();
         }
 
         public override void Close()
@@ -52,10 +52,10 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Shared.Monos
 
         public async UniTask CloseAwait()
         {
-            await PlayCloseAnimation();
             OnClose?.Invoke();
             Opened = false;
-            gameObject.SetActive(false);
+            await PlayCloseAnimation();
+            if (!Opened) gameObject.SetActive(false);
         }
 
         protected virtual async UniTask PlayOpenAnimation()
