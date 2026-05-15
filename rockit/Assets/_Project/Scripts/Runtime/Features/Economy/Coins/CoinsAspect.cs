@@ -8,6 +8,7 @@ namespace _Project.Scripts.Runtime.Features.Economy.Coins
     {
         public readonly ProtoPool<CoinComponent> CoinComponentPool;
         public readonly ProtoPool<CoinsAmountComponent> CoinsAmountComponentPool;
+        public readonly ProtoPool<CoinsAmountTextUIOutputComponent> CoinsAmountTextUIOutputComponentPool;
         public readonly ProtoIt Coins = new (It.Inc<CoinComponent>());
     }
 }
