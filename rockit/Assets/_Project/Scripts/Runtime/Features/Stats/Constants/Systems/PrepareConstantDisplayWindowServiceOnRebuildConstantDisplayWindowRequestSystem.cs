@@ -28,11 +28,13 @@ namespace _Project.Scripts.Runtime.Features.Stats.Constants.Systems
 
         public void Run()
         {
-            _cdwService.Prepared = false;
             var (e, ok) = _crAspect.RebuildConstantDisplayWindowRequests.FirstSlow();
             if (!ok) return;
             
             ref var rbdwRequest = ref _crAspect.RebuildConstantDisplayWindowRequestPool.Get(e);
+            if (rbdwRequest.ConstantId == _cdwService.LastPreparedConstantId) return;
+            
+            _cdwService.Prepared = false;
 
             if (!_cConfig.Constants.TryGetValue(rbdwRequest.ConstantId, out var def)) return;
             if (!PlayerStatsUtils.TryGetArrayByConstantDefinition(def, _psConfig, out var array)) return;
