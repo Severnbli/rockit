@@ -1,5 +1,6 @@
 ﻿using _Project.Scripts.Runtime.Core.Infrastructure.Storage;
 using _Project.Scripts.Runtime.Shared.Extensions.Shared;
+using _Project.Scripts.Runtime.Shared.Utils.Features.Stats;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 
@@ -17,12 +18,10 @@ namespace _Project.Scripts.Runtime.Features.Stats.Constants.Systems
 
         public void Run()
         {
-            var sData = _dProvider.StatsData;
-            
             foreach (var e in _cAspect.Constants)
             {
                 ref var cComponent = ref _cAspect.ConstantComponentPool.Get(e);
-                var existence = sData.InvestigatedConstants.ContainsKey(cComponent.Id);
+                var existence = ConstantsUtils.GetInvestigatedStatus(_dProvider, cComponent.Id);
                 _cAspect.InvestigatedConstantTagPool.AddOrDelOnCondition(e, existence);
             }
         }
