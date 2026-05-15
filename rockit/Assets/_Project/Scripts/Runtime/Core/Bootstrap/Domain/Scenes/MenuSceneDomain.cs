@@ -1,4 +1,5 @@
 ﻿using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.UI.Windows;
+using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Stats.Constants;
 using _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes.Menu.Active;
 using _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes.Menu.Modal;
 using _Project.Scripts.Runtime.Features.Graphics.UI.Buttons.Monos;
@@ -41,6 +42,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Scenes
             base.RegisterModules();
 
             TryRegisterModule<MenuSceneWindowsModule>();
+            TryRegisterModule<ConstantDisplayWindowModule>();
         }
     }
 }

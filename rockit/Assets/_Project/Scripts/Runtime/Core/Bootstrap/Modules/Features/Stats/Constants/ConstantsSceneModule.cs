@@ -16,9 +16,6 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Stats.Constan
             BindSystem<ManageConstantInvestigatedStatusByStorageOnRunSystem>();
             BindSystem<ManageConstantDisplayActiveStatusByPlayerLocatorOnRunSystem>();
             BindSystem<UpdateConstantsDisplaysServiceNearestConstantIdOnRunSystem>();
-            BindSystem<SendConstantDisplayWindowRequestsByConstantsDisplaysServiceSystem>();
-            BindSystem<PrepareConstantDisplayWindowServiceOnRebuildConstantDisplayWindowRequestSystem>();
-            BindSystem<UpdateConstantDisplayWindowOnRebuildConstantDisplayWindowRequestSystem>();
             BindSystem<UpdateConstantImproversCoinsAmountOnRunSystem>();
             BindSystem<ImproveConstantOnConstantImproverClickedSystem>();
         }
