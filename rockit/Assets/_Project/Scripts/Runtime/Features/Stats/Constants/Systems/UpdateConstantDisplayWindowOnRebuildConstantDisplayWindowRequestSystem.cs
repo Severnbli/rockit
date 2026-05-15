@@ -69,7 +69,7 @@ namespace _Project.Scripts.Runtime.Features.Stats.Constants.Systems
             var element = _cdwService.Observer.Element;
             
             sb.Append(string.Format(_lService.GetString(LocalizationEntriesContracts.Const.DiscovererInfo),
-                _lService.GetString(def.Discoverer())));
+                _lService.GetString(def.Name()), _lService.GetString(def.Discoverer())));
             sb.AppendLine();
             
             sb.AppendLine(string.Format(_lService.GetString(LocalizationEntriesContracts.Const.CurrValue),
