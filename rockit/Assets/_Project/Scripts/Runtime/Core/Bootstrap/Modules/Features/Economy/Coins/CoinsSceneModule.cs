@@ -15,6 +15,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Economy.Coins
             
             BindSystem<DisableCollectedCoinOnInitializeRequestSystem>();
             BindSystem<UpdateCoinsTextUIOutputWithCoinsAmountSystem>();
+            BindSystem<ManageButtonsInteractableStatusByCoinsAmountSystem>();
         }
     }
 }
