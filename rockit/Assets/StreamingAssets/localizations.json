@@ -27,25 +27,25 @@
         "String": "Повреждённые данные."
       },
       "const_investigated_info": {
-        "String": "Исследована константа {1}."
+        "String": "Исследована константа {0}."
       },
       "const_with_name_s": {
-        "String": "Константа {1}"
+        "String": "Константа {0}"
       },
       "const_with_name_v": {
-        "String": "константа {1}"
+        "String": "константа {0}"
       },
       "const_discoverer_info": {
-        "String": "Константу {1} открыл архонт {2}."
+        "String": "Константу {0} открыл архонт {2}."
       },
       "const_curr_value": {
-        "String": "Текущее значение: {1}."
+        "String": "Текущее значение: {0}."
       },
       "const_curr_value_is_max": {
         "String": "Константа достигла эталонного значения."
       },
       "const_improve_info": {
-        "String": "Значение после улучшения: {1}."
+        "String": "Значение после улучшения: {0}."
       },
       "const_improve": {
         "String": "Улучшить"
@@ -116,25 +116,25 @@
         "String": "Corrupted data."
       },
       "const_investigated_info": {
-        "String": "The {1} constant is investigated."
+        "String": "The {0} constant is investigated."
       },
       "const_with_name_s": {
-        "String": "The {1} constant"
+        "String": "The {0} constant"
       },
       "const_with_name_v": {
-        "String": "the {1} constant"
+        "String": "the {0} constant"
       },
       "const_discoverer_info": {
-        "String": "The {1} constant was discovered by archon {2}."
+        "String": "The {0} constant was discovered by archon {2}."
       },
       "const_curr_value": {
-        "String": "Current value: {1}."
+        "String": "Current value: {0}."
       },
       "const_curr_value_is_max": {
         "String": "The constant has reached the standard value."
       },
       "const_improve_info": {
-        "String": "Value after improvement: {1}."
+        "String": "Value after improvement: {0}."
       },
       "const_improve": {
         "String": "Improve"
