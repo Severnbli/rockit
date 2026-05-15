@@ -95,7 +95,9 @@ namespace _Project.Scripts.Runtime.Features.Stats.Constants.Systems
 
         private void ConstructButton(bool investigated)
         {
-            _cdWindow.ImproveButton.gameObject.SetActive(investigated);
+            var maxImprovements = _cdwService.Observer.Element.Next == null;
+            var active = investigated && !maxImprovements;
+            _cdWindow.ImproveButton.gameObject.SetActive(active);
         }
     }
 }
