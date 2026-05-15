@@ -17,7 +17,8 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Features.Stats
                 (x, i) => new IndexableFloatPaidWithCoins
                 {
                     Value = x.Value,
-                    Index = i
+                    Index = i,
+                    CoinsAmount = x.CoinsAmount
                 },
                 () => new IndexableFloatPaidWithCoins
                 {
@@ -37,7 +38,8 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Features.Stats
                 (x, i) => new IndexableIntPaidWithCoins
                 {
                     Value = x.Value,
-                    Index = i
+                    Index = i,
+                    CoinsAmount = x.CoinsAmount
                 },
                 () => new IndexableIntPaidWithCoins
                 {
