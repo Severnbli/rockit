@@ -81,5 +81,41 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Features.Stats
 
             return true;
         }
+
+        public static bool TryGetArrayByConstantDefinition(ConstantDefinition def, PlayerStatsConfig psConfig, 
+            out FloatPaidWithCoins[] array)
+        {
+            array = null;
+            
+            switch (def)
+            {
+                case SpeedConstantDefinition:
+                {
+                    array = psConfig.WalkFactorUpdates;
+                    break;
+                }
+                case FlightsConstantDefinition:
+                {
+                    array = psConfig.JumpFactorUpdates;
+                    break;
+                }
+                case DashesConstantDefinition:
+                {
+                    array = psConfig.DashFactorUpdates;
+                    break;
+                }
+                case MultiConstantDefinition:
+                {
+                    array = psConfig.DashQuantityUpdates;
+                    break;
+                }
+                default:
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
     }
 }
