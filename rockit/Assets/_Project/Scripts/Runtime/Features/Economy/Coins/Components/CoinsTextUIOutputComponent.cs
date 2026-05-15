@@ -5,7 +5,7 @@ using TMPro;
 namespace _Project.Scripts.Runtime.Features.Economy.Coins.Components
 {
     [Serializable, ProtoUnityAuthoring]
-    public struct CoinsAmountTextUIOutputComponent
+    public struct CoinsTextUIOutputComponent
     {
         public TextMeshProUGUI _text;
     }
