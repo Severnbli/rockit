@@ -2,9 +2,7 @@
 {
     public abstract class TweenPipelineRunObserver : ITweenPipelineRunObserver
     {
-        protected bool _canceled;
-        
-        public bool Canceled() => _canceled;
+        public bool Canceled { get; protected set; }
         
         public abstract void CancelRun();
     }
