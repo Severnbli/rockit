@@ -46,6 +46,7 @@ namespace _Project.Scripts.Runtime.Features.Stats.Constants.Systems
         {
             ConstructName(investigated);
             ConstructInfo(investigated);
+            ConstructButton(investigated);
         }
 
         private void ConstructName(bool investigated)
@@ -90,6 +91,11 @@ namespace _Project.Scripts.Runtime.Features.Stats.Constants.Systems
         private string GetNotInvestigatedInfo()
         {
             return _lService.GetString(LocalizationEntriesContracts.Const.UndefinedInfo);
+        }
+
+        private void ConstructButton(bool investigated)
+        {
+            _cdWindow.ImproveButton.gameObject.SetActive(investigated);
         }
     }
 }
