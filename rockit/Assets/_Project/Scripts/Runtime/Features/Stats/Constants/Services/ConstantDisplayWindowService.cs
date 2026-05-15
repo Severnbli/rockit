@@ -1,4 +1,5 @@
-﻿using _Project.Scripts.Runtime.Shared.Tools;
+﻿using _Project.Scripts.Runtime.Features.Economy.Coins.Types;
+using _Project.Scripts.Runtime.Shared.Tools;
 
 namespace _Project.Scripts.Runtime.Features.Stats.Constants.Services
 {
@@ -6,6 +7,6 @@ namespace _Project.Scripts.Runtime.Features.Stats.Constants.Services
     {
         public bool Show;
         public bool Active;
-        public ISequenceElementObserver Observer;
+        public SequenceElementObserver<IndexableFloatPaidWithCoins> Observer;
     }
 }
