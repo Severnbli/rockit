@@ -16,8 +16,8 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Animations.Tools.Pipeline
         public void CancelRun()
         {
             if (Canceled) return;
-            DoCancel();
             Canceled = true;
+            DoCancel();
         }
 
         protected abstract void DoCancel();
