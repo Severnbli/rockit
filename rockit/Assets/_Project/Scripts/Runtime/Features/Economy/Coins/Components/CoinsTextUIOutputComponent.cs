@@ -7,6 +7,6 @@ namespace _Project.Scripts.Runtime.Features.Economy.Coins.Components
     [Serializable, ProtoUnityAuthoring]
     public struct CoinsTextUIOutputComponent
     {
-        public TextMeshProUGUI _text;
+        public TextMeshProUGUI Text;
     }
 }
