@@ -10,10 +10,8 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Menu
         public readonly ProtoPool<LevelSelectionTag> LevelSelectionTagPool;
         public readonly ProtoPool<MenuTag> MenuTagPool;
         public readonly ProtoPool<CollectionTag> CollectionTagPool;
-        public readonly ProtoPool<SettingsTag> SettingsTagPool;
         public readonly ProtoIt ClickedLevelSelections = new (It.Inc<ClickedTag, LevelSelectionTag>());
         public readonly ProtoIt ClickedMenus = new (It.Inc<ClickedTag, MenuTag>());
         public readonly ProtoIt ClickedCollections = new (It.Inc<ClickedTag, CollectionTag>());
-        public readonly ProtoIt ClickedSettings = new (It.Inc<ClickedTag, SettingsTag>());
     }
 }
