@@ -43,5 +43,18 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Infrastructure
                 }
             }
         }
+
+        public static bool GetAudioDataVolumeEnabledByAudioGroup(DataProvider dProvider, AudioGroup aGroup)
+        {
+            var aData = dProvider.AudioData;
+
+            return aGroup switch
+            {
+                AudioGroup.Master => aData.MasterVolumeEnabled,
+                AudioGroup.Music => aData.MusicVolumeEnabled,
+                AudioGroup.Sfx => aData.SfxVolumeEnabled,
+                _ => false
+            };
+        }
     }
 }
