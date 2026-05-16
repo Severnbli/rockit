@@ -1,5 +1,6 @@
 ﻿using _Project.Scripts.Runtime.Core.Infrastructure.Audio.Components;
 using _Project.Scripts.Runtime.Core.Infrastructure.Audio.Tags;
+using _Project.Scripts.Runtime.Core.Infrastructure.Shared.Components;
 using _Project.Scripts.Runtime.Features.Graphics.UI.Shared.Tags;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
@@ -21,5 +22,6 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Audio
         public readonly ProtoIt ActiveMusicAudioSources = new (It.Inc<AudioSourceComponent, ActiveAudioSourceTag, MusicAudioSourceTag>());
         public readonly ProtoIt ActiveSfxAudioSources = new (It.Inc<AudioSourceComponent, ActiveAudioSourceTag, SfxAudioSourceTag>());
         public readonly ProtoIt ClickedAudioGroupVolumes = new (It.Inc<ClickedTag, AudioGroupComponent, AudioVolumeTag>());
+        public readonly ProtoIt OpenableClosableAudioGroupVolumes = new (It.Inc<OpenableClosableComponent, AudioGroupComponent, AudioVolumeTag>());
     }
 }
