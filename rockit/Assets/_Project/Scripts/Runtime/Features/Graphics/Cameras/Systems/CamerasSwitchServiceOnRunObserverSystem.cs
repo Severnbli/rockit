@@ -38,6 +38,7 @@ namespace _Project.Scripts.Runtime.Features.Graphics.Cameras.Systems
                 _csService.EscortCamera = _cService.LastCamera;
                 _csService.SwitchStartTime = _tService.UnscaledTime;
                 _csService.SwitchDuration = brain.ActiveBlend.Duration + CamerasContracts.BrainBlendDurationLag;
+                _csService.SwitchStarted = true;
                 return;
             }
 
