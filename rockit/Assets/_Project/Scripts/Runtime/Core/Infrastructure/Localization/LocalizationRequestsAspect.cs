@@ -10,7 +10,9 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Localization
     {
         public readonly ProtoPool<ChangeLanguageRequest> ChangeLanguageRequestPool;
         public readonly ProtoPool<UpdateLocalizationItemRequest> UpdateLocalizationItemRequestPool;
+        public readonly ProtoPool<LocalizationUpdatedRequest> LocalizationUpdatedRequestPool;
         public readonly ProtoIt ChangeLanguageRequests = new (It.Inc<RequestComponent, ActiveRequestTag, RunRequestTag, ChangeLanguageRequest>());
         public readonly ProtoIt UpdateLocalizationItemRequests = new (It.Inc<RequestComponent, ActiveRequestTag, RunRequestTag, UpdateLocalizationItemRequest>());
+        public readonly ProtoIt LocalizationUpdatedRequests = new (It.Inc<RequestComponent, ActiveRequestTag, RunRequestTag, LocalizationUpdatedRequest>());
     }
 }
