@@ -10,13 +10,13 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes.Menu.Active
     public class MenuState : ISceneState
     {
         private readonly MenuWindow _mWindow;
-        private readonly MenusCamera _mCamera;
+        private readonly MenusCinemachineCamera _mcCamera;
         private readonly RequestsAspect _rAspect;
 
-        public MenuState(MenuWindow mWindow, MenusCamera mCamera, RequestsAspect rAspect)
+        public MenuState(MenuWindow mWindow, MenusCinemachineCamera mcCamera, RequestsAspect rAspect)
         {
             _mWindow = mWindow;
-            _mCamera = mCamera;
+            _mcCamera = mcCamera;
             _rAspect = rAspect;
         }
 
@@ -30,7 +30,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes.Menu.Active
         {
             var prepared = new SwitchCameraRequest
             {
-                Target = _mCamera.Camera
+                Target = _mcCamera.Camera
             };
             CamerasUtils.CreateSwitchCameraRequest(_rAspect, prepared);
         }
