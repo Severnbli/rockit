@@ -1,6 +1,7 @@
 ﻿using _Project.Scripts.Runtime.Core.Infrastructure.Requests;
 using _Project.Scripts.Runtime.Features.Graphics.Cameras.Monos;
 using _Project.Scripts.Runtime.Features.Graphics.Cameras.Requests;
+using _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Menu.Monos;
 using _Project.Scripts.Runtime.Features.Stats.Constants.Services;
 using _Project.Scripts.Runtime.Shared.Utils.Features.Graphics;
 using _Project.Scripts.Runtime.Shared.Utils.Features.Stats;
@@ -13,19 +14,22 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes.Menu.Active
         private readonly ConstantDisplayWindowService _cdwService;
         private readonly RequestsAspect _rAspect;
         private readonly PlayerCamera _pCamera;
+        private readonly CollectionWindow _cWindow;
 
-        public CollectionState(ConstantDisplayWindowService cdwService, RequestsAspect rAspect, PlayerCamera pCamera)
+        public CollectionState(ConstantDisplayWindowService cdwService, RequestsAspect rAspect, PlayerCamera pCamera, 
+            CollectionWindow cWindow)
         {
             _cdwService = cdwService;
             _rAspect = rAspect;
             _pCamera = pCamera;
+            _cWindow = cWindow;
         }
 
         public async UniTask OnEnter(IStateMachine stateMachine)
         {
             ActivateConstantDisplayWindow();
             SwitchToPlayerCamera();
-            await UniTask.NextFrame();
+            await _cWindow.OpenAwait();
         }
 
         private void ActivateConstantDisplayWindow()
@@ -46,7 +50,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes.Menu.Active
         public async UniTask OnLeave(IStateMachine stateMachine)
         {
             _cdwService.Active = false;
-            await UniTask.NextFrame();
+            await _cWindow.CloseAwait();
         }
     }
 }
