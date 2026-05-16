@@ -14,6 +14,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure.Audio
             base.BindSystems();
             
             BindSystem<UpdateAudioDataVolumeEnabledByClickedAudioGroupVolumeSystem>();
+            BindSystem<UpdateOpenableClosableAudioGroupVolumeOpenStatusByAudioDataVolumeEnabledSystem>();
         }
     }
 }
