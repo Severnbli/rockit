@@ -3,5 +3,6 @@
     public static class CamerasContracts
     {
         public const float BrainBlendDurationLag = 1f;
+        public const float MaxBrainBlendDuration = 5f;
     }
 }
