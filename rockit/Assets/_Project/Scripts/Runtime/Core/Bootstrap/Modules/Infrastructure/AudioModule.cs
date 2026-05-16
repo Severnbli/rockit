@@ -24,6 +24,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure
             BindSystem<PlaySfxOnPlaySfxRequestSystem>();
             BindSystem<DespawnSfxAudioSourceByPlayingStatusSystem>();
             BindSystem<PlayMusicOnPlayMusicRequestSystem>();
+            BindSystem<UpdateAudioMixerWithAudioDataOnRunSystem>();
         }
     }
 }
