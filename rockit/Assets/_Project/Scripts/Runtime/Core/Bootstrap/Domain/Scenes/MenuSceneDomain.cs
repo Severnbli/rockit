@@ -1,7 +1,7 @@
 ﻿using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.UI.Windows;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Stats.Constants;
 using _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes.Menu.Active;
-using _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes.Menu.Modal;
+using _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes.Shared.Modal;
 using _Project.Scripts.Runtime.Features.Graphics.UI.Buttons.Monos;
 using _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Menu.Monos;
 using _Project.Scripts.Runtime.Features.Stats.Constants.Monos;
@@ -35,7 +35,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Scenes
             RegisterState<MenuState>();
             RegisterState<LevelSelectionState>();
             RegisterState<CollectionState>();
-            RegisterState<MenuConstantDisplayWindowState>();
+            RegisterState<ConstantDisplayWindowState>();
         }
 
         protected override void RegisterModules()
