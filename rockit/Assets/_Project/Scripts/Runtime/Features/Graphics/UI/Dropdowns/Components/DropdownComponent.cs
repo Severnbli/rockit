@@ -1,12 +1,12 @@
 ﻿using System;
 using Leopotam.EcsProto.Unity;
-using UnityEngine.UI;
+using TMPro;
 
 namespace _Project.Scripts.Runtime.Features.Graphics.UI.Dropdowns.Components
 {
     [Serializable, ProtoUnityAuthoring]
     public struct DropdownComponent
     {
-        public Dropdown Dropdown;
+        public TMP_Dropdown Dropdown;
     }
 }
