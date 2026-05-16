@@ -751,7 +751,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8950181071965960582, guid: 218145799272a7c49aec5c1d6b54a67c, type: 3}
       propertyPath: 'Components.Array.data[3]'
-      value: 1499440548645175399
+      value: 1499440670991450211
       objectReference: {fileID: 0}
     - target: {fileID: 8950181071965960582, guid: 218145799272a7c49aec5c1d6b54a67c, type: 3}
       propertyPath: 'Components.Array.data[4]'
@@ -760,6 +760,10 @@ PrefabInstance:
     - target: {fileID: 8950181071965960582, guid: 218145799272a7c49aec5c1d6b54a67c, type: 3}
       propertyPath: 'managedReferences[1499440548645175399]'
       value: Runtime _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Menu.Tags.MenuTag
+      objectReference: {fileID: 0}
+    - target: {fileID: 8950181071965960582, guid: 218145799272a7c49aec5c1d6b54a67c, type: 3}
+      propertyPath: 'managedReferences[1499440670991450211]'
+      value: Runtime _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Scenes.Menu.Tags.MenuTag
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
