@@ -20,6 +20,15 @@
       "menu": {
         "String": "Menu"
       },
+      "master": {
+        "String": "Master"
+      },
+      "music": {
+        "String": "Music"
+      },
+      "sounds": {
+        "String": "Sounds"
+      },
       "collection": {
         "String": "Collection"
       },
@@ -114,6 +123,15 @@
       },
       "menu": {
         "String": "Меню"
+      },
+      "master": {
+        "String": "Общее"
+      },
+      "music": {
+        "String": "Музыка"
+      },
+      "sounds": {
+        "String": "Звуки"
       },
       "collection": {
         "String": "Коллекция"
