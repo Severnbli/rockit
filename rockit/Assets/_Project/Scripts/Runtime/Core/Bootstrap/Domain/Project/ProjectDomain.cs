@@ -8,6 +8,7 @@ using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Stats.Shared;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.World;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.World.Levels;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure;
+using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure.Audio;
 using _Project.Scripts.Runtime.Core.Bootstrap.States;
 using _Project.Scripts.Runtime.Core.Bootstrap.States.Project;
 using _Project.Scripts.Runtime.Core.Infrastructure.Audio.Monos;
@@ -53,7 +54,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Project
             TryRegisterModule<GlitchEffectsModule>();
             TryRegisterModule<PlayerStatsModule>();
             TryRegisterModule<StatsSharedProjectModule>();
-            TryRegisterModule<AudioModule>();
+            TryRegisterModule<AudioProjectModule>();
             TryRegisterModule<LevelsProjectModule>();
             TryRegisterModule<CoinsProjectModule>();
             TryRegisterModule<ConstantsProjectModule>();
