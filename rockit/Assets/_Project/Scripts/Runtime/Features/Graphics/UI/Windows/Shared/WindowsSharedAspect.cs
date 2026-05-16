@@ -1,5 +1,5 @@
 ﻿using _Project.Scripts.Runtime.Features.Graphics.UI.Shared.Tags;
-using _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Menu;
+using _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Scenes.Menu;
 using _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Shared.Tags;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
