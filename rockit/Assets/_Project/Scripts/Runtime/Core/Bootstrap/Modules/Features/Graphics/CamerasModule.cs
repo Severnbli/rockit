@@ -15,6 +15,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics
             base.BindServices();
             
             BindService<CamerasService>();
+            BindService<CamerasSwitchService>();
         }
 
         protected override void BindSystems()
