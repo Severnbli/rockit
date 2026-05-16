@@ -8,13 +8,13 @@ using Leopotam.EcsProto;
 
 namespace _Project.Scripts.Runtime.Core.Infrastructure.Localization.Systems
 {
-    public sealed class LoadLocalizationServiceOnInitSystem : IProtoInitSystem
+    public sealed class LoadLocalizationServiceLangDataOnInitSystem : IProtoInitSystem
     {
         [DIRequests] private readonly RequestsAspect _rAspect;
         private readonly LocalizationService _lService;
         private readonly DataProvider _dProvider;
 
-        public LoadLocalizationServiceOnInitSystem(LocalizationService lService, DataProvider dProvider)
+        public LoadLocalizationServiceLangDataOnInitSystem(LocalizationService lService, DataProvider dProvider)
         {
             _lService = lService;
             _dProvider = dProvider;
