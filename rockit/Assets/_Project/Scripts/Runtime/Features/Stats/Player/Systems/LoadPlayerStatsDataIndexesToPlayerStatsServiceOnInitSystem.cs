@@ -1,6 +1,5 @@
 ﻿using _Project.Scripts.Runtime.Core.Infrastructure.Storage;
 using _Project.Scripts.Runtime.Features.Stats.Player.Services;
-using _Project.Scripts.Runtime.Shared.Utils.Shared;
 using Leopotam.EcsProto;
 
 namespace _Project.Scripts.Runtime.Features.Stats.Player.Systems
