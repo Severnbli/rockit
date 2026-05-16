@@ -1376,6 +1376,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1911866384009131321, guid: 47bf9f1d567b95945ac8649280703e57, type: 3}
   m_PrefabInstance: {fileID: 5070682797436694020}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8108677818430927200 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3952296391934467940, guid: 47bf9f1d567b95945ac8649280703e57, type: 3}
+  m_PrefabInstance: {fileID: 5070682797436694020}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11a4508a6dfc4ecf85372111b979ae88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Runtime::_Project.Scripts.Runtime.Features.Graphics.Cameras.Monos.CameraBrain
 --- !u!114 &9168834182805715924 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4134464158423979472, guid: 47bf9f1d567b95945ac8649280703e57, type: 3}
@@ -1973,6 +1984,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6328527368621696360}
     m_Modifications:
+    - target: {fileID: 1296394982626585268, guid: f8c5fd8be37ca0143aa5a756fc846b12, type: 3}
+      propertyPath: _cBrain
+      value: 
+      objectReference: {fileID: 8108677818430927200}
     - target: {fileID: 1296394982626585268, guid: f8c5fd8be37ca0143aa5a756fc846b12, type: 3}
       propertyPath: _cWindow
       value: 
