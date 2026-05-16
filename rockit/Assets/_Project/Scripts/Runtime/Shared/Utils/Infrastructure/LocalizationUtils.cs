@@ -62,5 +62,10 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Infrastructure
         {
             return aspect.CreateRequest(aspect.LocalizationRequestsAspect.UpdateLocalizationItemRequestPool, packed);
         }
+
+        public static ProtoEntity CreateLocalizationUpdatedRequest(RequestsAspect aspect)
+        {
+            return aspect.CreateRequest(aspect.LocalizationRequestsAspect.LocalizationUpdatedRequestPool);
+        }
     }
 }
