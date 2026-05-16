@@ -52,6 +52,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Scenes
             TryRegisterModule<CoinsSceneModule>();
             TryRegisterModule<ConstantsSceneModule>();
             TryRegisterModule<WindowsSharedModule>();
+            TryRegisterModule<SharedSceneWindowsModule>();
             TryRegisterModule<CamerasModule>();
             TryRegisterModule<StatsSharedSceneModule>();
             TryRegisterModule<AudioSceneModule>();
