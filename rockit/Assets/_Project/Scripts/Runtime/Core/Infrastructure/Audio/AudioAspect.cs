@@ -22,7 +22,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Audio
         public readonly ProtoIt ActiveMusicAudioSources = new (It.Inc<AudioSourceComponent, ActiveAudioSourceTag, MusicAudioSourceTag>());
         public readonly ProtoIt ActiveSfxAudioSources = new (It.Inc<AudioSourceComponent, ActiveAudioSourceTag, SfxAudioSourceTag>());
         public readonly ProtoIt ClickedMasterVolumes = new (It.Inc<ClickedTag, MasterVolumeTag>());
-        public readonly ProtoIt MasterVolumeOpenableClosable = new (It.Inc<MasterVolumeTag, OpenableClosableComponent>());
+        public readonly ProtoIt OpenableClosableMasterVolumes = new (It.Inc<MasterVolumeTag, OpenableClosableComponent>());
         public readonly ProtoIt ClickedMusicVolumes = new (It.Inc<ClickedTag, MusicVolumeTag>());
         public readonly ProtoIt OpenableClosableMusicVolumes = new (It.Inc<MusicVolumeTag, OpenableClosableComponent>());
     }
