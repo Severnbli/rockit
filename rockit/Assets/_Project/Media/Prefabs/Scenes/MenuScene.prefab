@@ -691,10 +691,10 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 5513379986119767214}
-  - {fileID: 8195904815650734249}
-  - {fileID: 2478436708000405322}
   - {fileID: 8122776848219146225}
+  - {fileID: 2478436708000405322}
+  - {fileID: 8195904815650734249}
+  - {fileID: 5513379986119767214}
   m_Father: {fileID: 2705592621512341912}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -727,7 +727,7 @@ MonoBehaviour:
   m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
-  m_ReverseArrangement: 0
+  m_ReverseArrangement: 1
 --- !u!1 &6494741226520591540
 GameObject:
   m_ObjectHideFlags: 0
