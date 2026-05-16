@@ -7,18 +7,18 @@ namespace _Project.Scripts.Runtime.Features.Graphics.Cameras.Systems
 {
     public sealed class CamerasServiceSwitchCtsOnRunObserverSystem : IProtoRunSystem
     {
-        private readonly CamerasService _cService;
+        private readonly CamerasSwitchService _csService;
         private readonly CameraBrain _cBrain;
 
-        public CamerasServiceSwitchCtsOnRunObserverSystem(CamerasService cService, CameraBrain cBrain)
+        public CamerasServiceSwitchCtsOnRunObserverSystem(CamerasSwitchService csService, CameraBrain cBrain)
         {
-            _cService = cService;
+            _csService = csService;
             _cBrain = cBrain;
         }
 
         public void Run()
         {
-            switch (_cBrain.Brain.IsBlending, _cService.SwitchStarted)
+            switch (_cBrain.Brain.IsBlending, _csService.SwitchStarted)
             {
                 case (false, false):
                 case (true, true):
@@ -27,14 +27,14 @@ namespace _Project.Scripts.Runtime.Features.Graphics.Cameras.Systems
                 }
                 case (true, false):
                 {
-                    _cService.SwitchStarted = true;
+                    _csService.SwitchStarted = true;
                     return;
                 }
             }
 
-            _cService.SwitchCts?.Cancel();
-            _cService.SwitchCts?.Dispose();
-            _cService.SwitchCts = new CancellationTokenSource();
+            _csService.SwitchCts?.Cancel();
+            _csService.SwitchCts?.Dispose();
+            _csService.SwitchCts = new CancellationTokenSource();
         }
     }
 }
