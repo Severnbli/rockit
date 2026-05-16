@@ -1,5 +1,4 @@
-﻿using System;
-using _Project.Scripts.Runtime.Features.Stats.Player.Services;
+﻿using _Project.Scripts.Runtime.Features.Stats.Player.Services;
 using Leopotam.EcsProto;
 
 namespace _Project.Scripts.Runtime.Features.Stats.Player.Systems
