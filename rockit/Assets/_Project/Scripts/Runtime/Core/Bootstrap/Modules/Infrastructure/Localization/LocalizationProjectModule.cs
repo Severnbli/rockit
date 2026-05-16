@@ -2,11 +2,11 @@
 using _Project.Scripts.Runtime.Core.Infrastructure.Localization.Services;
 using _Project.Scripts.Runtime.Core.Infrastructure.Localization.Systems;
 
-namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure
+namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure.Localization
 {
-    public sealed class LocalizationModule : BaseModule<LocalizationModule>
+    public sealed class LocalizationProjectModule : BaseModule<LocalizationProjectModule>
     {
-        public LocalizationModule(IDomain domain) : base(domain)
+        public LocalizationProjectModule(IDomain domain) : base(domain)
         {
         }
 
