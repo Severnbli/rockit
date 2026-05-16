@@ -15,6 +15,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Scenes
         [SerializeField] private MenuWindow _mWindow;
         [SerializeField] private LevelSelectionWindow _lsWindow;
         [SerializeField] private LevelButtonContainer _lbContainer;
+        [SerializeField] private CollectionWindow _cWindow;
         [SerializeField] private ConstantDisplayWindow _cdWindow;
         [SerializeField] private MenusCamera _mCamera;
         [SerializeField] private PlayerCamera _pCamera;
@@ -26,6 +27,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Scenes
             Container.BindInstance(_mWindow).AsSingle();
             Container.BindInstance(_lsWindow).AsSingle();
             Container.BindInstance(_lbContainer).AsSingle();
+            Container.BindInstance(_cWindow).AsSingle();
             Container.BindInstance(_cdWindow).AsSingle();
             Container.BindInstance(_mCamera).AsSingle();
             Container.BindInstance(_pCamera).AsSingle();
