@@ -4,6 +4,7 @@ using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.Effects;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.UI;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Stats;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Stats.Constants;
+using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Stats.Shared;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.World;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.World.Levels;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure;
@@ -51,7 +52,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Project
             TryRegisterModule<InputModule>();
             TryRegisterModule<GlitchEffectsModule>();
             TryRegisterModule<PlayerStatsModule>();
-            TryRegisterModule<StatsSharedModule>();
+            TryRegisterModule<StatsSharedProjectModule>();
             TryRegisterModule<AudioModule>();
             TryRegisterModule<LevelsProjectModule>();
             TryRegisterModule<CoinsProjectModule>();
