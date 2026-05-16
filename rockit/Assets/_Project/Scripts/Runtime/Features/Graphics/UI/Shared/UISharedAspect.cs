@@ -2,6 +2,7 @@
 using _Project.Scripts.Runtime.Core.Infrastructure.Shared.Components;
 using _Project.Scripts.Runtime.Core.Infrastructure.Shared.Tags;
 using _Project.Scripts.Runtime.Features.Graphics.UI.Buttons;
+using _Project.Scripts.Runtime.Features.Graphics.UI.Dropdowns;
 using _Project.Scripts.Runtime.Features.Graphics.UI.Shared.Tags;
 using _Project.Scripts.Runtime.Features.Graphics.UI.Text.Shared;
 using _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Shared;
@@ -16,6 +17,7 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Shared
         public readonly ButtonsAspect ButtonsAspect;
         public readonly TextSharedAspect TextSharedAspect;
         public readonly WindowsSharedAspect WindowsSharedAspect;
+        public readonly DropdownsAspect DropdownsAspect;
         
         public readonly ProtoPool<ClickedTag> ClickedTagPool;
         public readonly ProtoPool<ActiveUIElementTag> ActiveUIElementTagPool;
