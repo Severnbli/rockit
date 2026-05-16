@@ -2,6 +2,6 @@
 {
     public static class CamerasContracts
     {
-        public const float BlendDurationLag = 1f;
+        public const float BrainBlendDurationLag = 1f;
     }
 }
