@@ -1,6 +1,6 @@
 ﻿namespace _Project.Scripts.Runtime.Features.Graphics.Cameras.Monos
 {
-    public class PlayerCinemachineCamera : MonoCamera
+    public class PlayerCamera : MonoCamera
     {
         
     }
