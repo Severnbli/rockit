@@ -2,11 +2,11 @@
 using _Project.Scripts.Runtime.Core.Infrastructure.Audio.Systems;
 using _Project.Scripts.Runtime.Core.Infrastructure.Audio.Tools.Player;
 
-namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure
+namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure.Audio
 {
-    public sealed class AudioModule : BaseModule<AudioModule>
+    public sealed class AudioProjectModule : BaseModule<AudioProjectModule>
     {
-        public AudioModule(IDomain domain) : base(domain)
+        public AudioProjectModule(IDomain domain) : base(domain)
         {
         }
 
