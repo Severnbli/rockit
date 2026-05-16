@@ -4,11 +4,11 @@ using Cysharp.Threading.Tasks;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 
-namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Shared.Systems
+namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Scenes.Shared.Systems
 {
     public sealed class SwitchToSettingsStateOnClickedSettingsSystem : IProtoRunSystem
     {
-        [DI] private readonly WindowsSharedAspect _wsAspect;
+        [DI] private readonly SharedSceneWindowsAspect _sswAspect;
         private readonly IStateMachine _sMachine;
 
         public SwitchToSettingsStateOnClickedSettingsSystem(IStateMachine sMachine)
@@ -18,7 +18,7 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Shared.Systems
 
         public void Run()
         {
-            if (_wsAspect.ClickedSettings.IsEmptySlow()) return;
+            if (_sswAspect.ClickedSettings.IsEmptySlow()) return;
             _sMachine.ChangeState<ISettingsState>().Forget();
         }
     }
