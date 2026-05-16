@@ -5,12 +5,12 @@ using Leopotam.EcsProto;
 
 namespace _Project.Scripts.Runtime.Features.Graphics.Cameras.Systems
 {
-    public sealed class CamerasServiceSwitchCtsOnRunObserverSystem : IProtoRunSystem
+    public sealed class CamerasSwitchServiceOnRunObserverSystem : IProtoRunSystem
     {
         private readonly CamerasSwitchService _csService;
         private readonly CameraBrain _cBrain;
 
-        public CamerasServiceSwitchCtsOnRunObserverSystem(CamerasSwitchService csService, CameraBrain cBrain)
+        public CamerasSwitchServiceOnRunObserverSystem(CamerasSwitchService csService, CameraBrain cBrain)
         {
             _csService = csService;
             _cBrain = cBrain;
