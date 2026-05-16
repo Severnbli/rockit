@@ -14,6 +14,9 @@
       "loading_s": {
         "String": "Loading..."
       },
+      "settings": {
+        "String": "Settings"
+      },
       "collection": {
         "String": "Collection"
       },
@@ -102,6 +105,9 @@
       },
       "loading_s": {
         "String": "Загрузка..."
+      },
+      "settings": {
+        "String": "Настройки"
       },
       "collection": {
         "String": "Коллекция"
