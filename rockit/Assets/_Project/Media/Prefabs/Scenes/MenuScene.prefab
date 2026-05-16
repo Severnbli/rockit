@@ -2003,7 +2003,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b53f21cf7e1144acbf5b5ddaacea176f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Runtime::_Project.Scripts.Runtime.Features.Stats.Constants.Monos.ConstantDisplayWindow
-  Config: {fileID: 11400000, guid: 08d5aa2699892db448af47a4c924b578, type: 2}
+  Config: {fileID: 11400000, guid: 789a85bc3ea6de940b9ae8921506b48a, type: 2}
   Body: {fileID: 7026406907421522041}
   _nameText: {fileID: 9035763759485604201}
   _infoText: {fileID: 8794023148368507406}
