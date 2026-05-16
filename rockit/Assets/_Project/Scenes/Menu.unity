@@ -360,7 +360,7 @@ Transform:
   m_GameObject: {fileID: 1006328928}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.25, y: -10.5, z: -10}
+  m_LocalPosition: {x: 3, y: -11, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3950,50 +3950,6 @@ Transform:
   - {fileID: 1539065609}
   m_Father: {fileID: 1659301826}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1961640109 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1353273377220726369, guid: fa979aa7fbb04094a93f7b2ddd5a9cbb, type: 3}
-  m_PrefabInstance: {fileID: 2642613960005369407}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1961640113
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1961640109}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b617507da6d07e749b7efdb34e1173e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineFollow
-  TrackerSettings:
-    BindingMode: 4
-    PositionDamping: {x: 1, y: 1, z: 1}
-    AngularDampingMode: 0
-    RotationDamping: {x: 1, y: 1, z: 1}
-    QuaternionDamping: 1
-  FollowOffset: {x: 0, y: 2, z: -10}
---- !u!114 &1961640117
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1961640109}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f453f694addf4275988fac205bc91968, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineConfiner2D
-  BoundingShape2D: {fileID: 1040047786}
-  Damping: 0.5
-  SlowingDistance: 5
-  OversizeWindow:
-    Enabled: 0
-    MaxWindowSize: 0
-    Padding: 0
-  m_LegacyMaxWindowSize: -2
 --- !u!1001 &2642613960005369407
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4480,11 +4436,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3543618392694949851, guid: fa979aa7fbb04094a93f7b2ddd5a9cbb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.25
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3543618392694949851, guid: fa979aa7fbb04094a93f7b2ddd5a9cbb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -10.5
+      value: -11
       objectReference: {fileID: 0}
     - target: {fileID: 3835930579016859183, guid: fa979aa7fbb04094a93f7b2ddd5a9cbb, type: 3}
       propertyPath: m_AnchorMax.y
@@ -4533,10 +4489,6 @@ PrefabInstance:
     - target: {fileID: 3885020177059104847, guid: fa979aa7fbb04094a93f7b2ddd5a9cbb, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3942848183051321887, guid: fa979aa7fbb04094a93f7b2ddd5a9cbb, type: 3}
-      propertyPath: Priority.Enabled
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3942848183051321887, guid: fa979aa7fbb04094a93f7b2ddd5a9cbb, type: 3}
       propertyPath: Target.TrackingTarget
@@ -5002,6 +4954,10 @@ PrefabInstance:
       propertyPath: orthographic size
       value: 4.821429
       objectReference: {fileID: 0}
+    - target: {fileID: 7903496186732190949, guid: fa979aa7fbb04094a93f7b2ddd5a9cbb, type: 3}
+      propertyPath: BoundingShape2D
+      value: 
+      objectReference: {fileID: 1040047786}
     - target: {fileID: 8054055530519987378, guid: fa979aa7fbb04094a93f7b2ddd5a9cbb, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -5184,13 +5140,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5143288678815087723, guid: fa979aa7fbb04094a93f7b2ddd5a9cbb, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1659301826}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1353273377220726369, guid: fa979aa7fbb04094a93f7b2ddd5a9cbb, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1961640113}
-    - targetCorrespondingSourceObject: {fileID: 1353273377220726369, guid: fa979aa7fbb04094a93f7b2ddd5a9cbb, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1961640117}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa979aa7fbb04094a93f7b2ddd5a9cbb, type: 3}
 --- !u!4 &2642613960005369408 stripped
 Transform:
