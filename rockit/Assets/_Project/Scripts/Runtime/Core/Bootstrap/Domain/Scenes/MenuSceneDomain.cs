@@ -17,7 +17,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Scenes
         [SerializeField] private LevelButtonContainer _lbContainer;
         [SerializeField] private CollectionWindow _cWindow;
         [SerializeField] private ConstantDisplayWindow _cdWindow;
-        [SerializeField] private MenusCinemachineCamera mcCamera;
+        [SerializeField] private MenusCamera _mCamera;
         [SerializeField] private PlayerCamera _pCamera;
 
         protected override void RegisterBindings()
@@ -29,7 +29,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Scenes
             Container.BindInstance(_lbContainer).AsSingle();
             Container.BindInstance(_cWindow).AsSingle();
             Container.BindInstance(_cdWindow).AsSingle();
-            Container.BindInstance(mcCamera).AsSingle();
+            Container.BindInstance(_mCamera).AsSingle();
             Container.BindInstance(_pCamera).AsSingle();
         }
 
