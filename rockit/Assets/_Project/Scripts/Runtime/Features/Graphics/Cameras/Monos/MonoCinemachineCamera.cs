@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Features.Graphics.Cameras.Monos
 {
-    public class MonoCamera : MonoBehaviour
+    public class MonoCinemachineCamera : MonoBehaviour
     {
         [SerializeField] private CinemachineCamera _camera;
         
