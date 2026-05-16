@@ -5,13 +5,13 @@ using Leopotam.EcsProto.QoL;
 
 namespace _Project.Scripts.Runtime.Features.Economy.Coins.Systems
 {
-    public sealed class UpdateCoinsTotalizersUiTextsOnRunSystem : IProtoRunSystem
+    public sealed class UpdateCoinsTotalizersTextUisOnRunSystem : IProtoRunSystem
     {
         [DI] private readonly CoinsAspect _cAspect;
         [DI] private readonly TextSharedAspect _tsAspect;
         private readonly DataProvider _dProvider;
 
-        public UpdateCoinsTotalizersUiTextsOnRunSystem(DataProvider dProvider)
+        public UpdateCoinsTotalizersTextUisOnRunSystem(DataProvider dProvider)
         {
             _dProvider = dProvider;
         }
