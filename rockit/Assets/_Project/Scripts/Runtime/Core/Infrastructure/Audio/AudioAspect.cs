@@ -14,7 +14,6 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Audio
         public readonly ProtoPool<MusicAudioSourceTag> MusicAudioSourceTagPool;
         public readonly ProtoPool<ActiveAudioSourceTag> ActiveAudioSourceTagPool;
         public readonly ProtoPool<MasterVolumeTag> MasterVolumeTagPool;
-        public readonly ProtoPool<MusicVolumeTag> MusicVolumeTagPool;
         public readonly ProtoIt AudioSources = new (It.Inc<AudioSourceComponent>());
         public readonly ProtoIt SfxAudioSources = new (It.Inc<AudioSourceComponent, SfxAudioSourceTag>());
         public readonly ProtoIt MusicAudioSources = new (It.Inc<AudioSourceComponent, MusicAudioSourceTag>());
@@ -23,7 +22,5 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Audio
         public readonly ProtoIt ActiveSfxAudioSources = new (It.Inc<AudioSourceComponent, ActiveAudioSourceTag, SfxAudioSourceTag>());
         public readonly ProtoIt ClickedMasterVolumes = new (It.Inc<ClickedTag, MasterVolumeTag>());
         public readonly ProtoIt MasterVolumeOpenableClosable = new (It.Inc<MasterVolumeTag, OpenableClosableComponent>());
-        public readonly ProtoIt ClickedMusicVolumes = new (It.Inc<ClickedTag, MusicVolumeTag>());
-        public readonly ProtoIt OpenableClosableMusicVolumes = new (It.Inc<MusicVolumeTag, OpenableClosableComponent>());
     }
 }
