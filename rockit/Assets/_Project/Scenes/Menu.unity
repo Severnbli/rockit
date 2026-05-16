@@ -4660,10 +4660,6 @@ PrefabInstance:
       propertyPath: Target.TrackingTarget
       value: 
       objectReference: {fileID: 366278876}
-    - target: {fileID: 4033022063230633084, guid: fa979aa7fbb04094a93f7b2ddd5a9cbb, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4273792439621942830, guid: fa979aa7fbb04094a93f7b2ddd5a9cbb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
