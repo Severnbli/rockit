@@ -20,10 +20,22 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Features.Graphics
 
         public static async UniTask AwaitCamerasSwitching(CamerasSwitchService csService, CancellationToken ct = default)
         {
-            using var linkedCts = CancellationTokenSource.CreateLinkedTokenSource(ct, csService.SwitchCts.Token);
-            
-            await UniTask.Delay(TimeSpan.FromSeconds(CamerasContracts.MaxBrainBlendDuration), 
-                cancellationToken: linkedCts.Token);
+            using var cts = CancellationTokenSource.CreateLinkedTokenSource(ct);
+
+            var gen = csService.SwitchGen;
+
+            var genTask = UniTask.WaitUntil(
+                (gen, service: csService),
+                state => state.gen != state.service.SwitchGen,
+                cancellationToken: cts.Token);
+
+            var fallbackTask = UniTask.Delay(
+                TimeSpan.FromSeconds(CamerasContracts.MaxBrainBlendDuration),
+                cancellationToken: cts.Token);
+
+            await UniTask.WhenAny(genTask, fallbackTask);
+
+            cts.Cancel();
         }
     }
 }
