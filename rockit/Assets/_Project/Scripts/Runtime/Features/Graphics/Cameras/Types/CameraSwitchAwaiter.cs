@@ -32,7 +32,7 @@ namespace _Project.Scripts.Runtime.Features.Graphics.Cameras.Types
 
         private async UniTask AwaitStartBlending(CancellationToken ct = default)
         {
-            var brainTask = UniTask.WaitUntil(CBrain.Brain, brain => !brain.IsBlending, cancellationToken: ct);
+            var brainTask = UniTask.WaitUntil(CBrain.Brain, brain => brain.IsBlending, cancellationToken: ct);
             await UniTaskUtils.WaitWithTimeout(brainTask, TimeSpan.FromSeconds(CamerasContracts.BrainBlendStartLag), ct);
         }
     }
