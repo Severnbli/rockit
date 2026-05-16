@@ -2,11 +2,11 @@
 using _Project.Scripts.Runtime.Features.Stats.Shared.Services;
 using _Project.Scripts.Runtime.Features.Stats.Shared.Systems;
 
-namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Stats
+namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Stats.Shared
 {
-    public sealed class StatsSharedModule : BaseModule<StatsSharedModule>
+    public sealed class StatsSharedProjectModule : BaseModule<StatsSharedProjectModule>
     {
-        public StatsSharedModule(IDomain domain) : base(domain)
+        public StatsSharedProjectModule(IDomain domain) : base(domain)
         {
         }
 
