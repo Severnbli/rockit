@@ -5,6 +5,7 @@ using _Project.Scripts.Runtime.Core.Infrastructure.Shared;
 using _Project.Scripts.Runtime.Core.Infrastructure.Storage;
 using _Project.Scripts.Runtime.Features.Economy.Coins;
 using _Project.Scripts.Runtime.Features.Graphics.Animations.Characters;
+using _Project.Scripts.Runtime.Features.Graphics.Shared;
 using _Project.Scripts.Runtime.Features.Graphics.Sprites.Glow;
 using _Project.Scripts.Runtime.Features.Graphics.UI.Shared;
 using _Project.Scripts.Runtime.Features.Input;
@@ -32,6 +33,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Requests
         public readonly UIRequestsAspect UIRequestsAspect;
         public readonly CoinsRequestsAspect CoinsRequestsAspect;
         public readonly StatsSharedRequestsAspect StatsSharedRequestsAspect;
+        public readonly GraphicsSharedRequestsAspect GraphicsSharedRequestsAspect;
         public readonly SharedRequestsAspect SharedRequestsAspect;
     }
 }
