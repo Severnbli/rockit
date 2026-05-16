@@ -7,5 +7,6 @@ namespace _Project.Scripts.Runtime.Features.Graphics.Cameras.Services
     {
         public CinemachineCamera LastCamera = null;
         public CancellationTokenSource SwitchCts = new ();
+        public bool SwitchStarted = false; 
     }
 }
