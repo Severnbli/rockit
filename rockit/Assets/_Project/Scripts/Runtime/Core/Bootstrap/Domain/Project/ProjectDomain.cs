@@ -7,6 +7,7 @@ using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Stats.Shared;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.World.Levels;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure.Audio;
+using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure.Localization;
 using _Project.Scripts.Runtime.Core.Bootstrap.States;
 using _Project.Scripts.Runtime.Core.Bootstrap.States.Project;
 using _Project.Scripts.Runtime.Core.Infrastructure.Audio.Monos;
@@ -46,7 +47,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Project
 
             TryRegisterModule<TimeModule>();
             TryRegisterModule<StorageModule>();
-            TryRegisterModule<LocalizationModule>();
+            TryRegisterModule<LocalizationProjectModule>();
             TryRegisterModule<ScenesModule>();
             TryRegisterModule<InputModule>();
             TryRegisterModule<GlitchEffectsModule>();
