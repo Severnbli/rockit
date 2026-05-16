@@ -5,12 +5,12 @@ using Leopotam.EcsProto;
 
 namespace _Project.Scripts.Runtime.Features.Input.Systems
 {
-    public sealed class EnableDisablePlayerInputOnInitDestroySystem : IProtoInitSystem, IProtoDestroySystem
+    public sealed class DisablePlayerInputOnInitDestroySystem : IProtoInitSystem, IProtoDestroySystem
     {
         private readonly PlayerInputService _service;
         private readonly PlayerInputConfig _config;
 
-        public EnableDisablePlayerInputOnInitDestroySystem(PlayerInputService service, PlayerInputConfig config)
+        public DisablePlayerInputOnInitDestroySystem(PlayerInputService service, PlayerInputConfig config)
         {
             _service = service;
             _config = config;
@@ -18,7 +18,7 @@ namespace _Project.Scripts.Runtime.Features.Input.Systems
         
         public void Init(IProtoSystems systems)
         {
-            PlayerInputUtils.EnableInput(_service, _config);
+            PlayerInputUtils.DisableInput(_service, _config);
         }
 
         public void Destroy()
