@@ -289,6 +289,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameScene
       objectReference: {fileID: 0}
+    - target: {fileID: 5056108910366569102, guid: 73f6229d2ba37f9458aaa95273e80f01, type: 3}
+      propertyPath: Priority.m_Value
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5796429926727256792, guid: 73f6229d2ba37f9458aaa95273e80f01, type: 3}
       propertyPath: Target.TrackingTarget
       value: 
@@ -316,6 +320,10 @@ PrefabInstance:
     - target: {fileID: 8334386890460301517, guid: 73f6229d2ba37f9458aaa95273e80f01, type: 3}
       propertyPath: m_LocalPosition.z
       value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8373046128152743177, guid: 73f6229d2ba37f9458aaa95273e80f01, type: 3}
+      propertyPath: Priority.m_Value
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8373046128152743177, guid: 73f6229d2ba37f9458aaa95273e80f01, type: 3}
       propertyPath: Target.TrackingTarget
