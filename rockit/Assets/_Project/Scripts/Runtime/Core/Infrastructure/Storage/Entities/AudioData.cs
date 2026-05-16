@@ -6,7 +6,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Storage.Entities
     public sealed class AudioData
     {
         public bool MasterVolumeEnabled = true;
-        public bool MusicEnabled = true;
-        public bool SfxEnabled = true;
+        public bool MusicVolumeEnabled = true;
+        public bool SfxVolumeEnabled = true;
     }
 }
