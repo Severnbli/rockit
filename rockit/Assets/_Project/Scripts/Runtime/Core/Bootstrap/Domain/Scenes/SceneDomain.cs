@@ -10,15 +10,22 @@ using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Physics.Moving;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Stats.Constants;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure;
 using _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes;
+using _Project.Scripts.Runtime.Features.Graphics.Cameras.Monos;
+using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Scenes
 {
     public abstract class SceneDomain : BaseDomain
     {
+        [SerializeField] private MenusCamera _mCamera;
+        [SerializeField] private PlayerCamera _pCamera;
+        
         protected override void RegisterBindings()
         {
             base.RegisterBindings();
             
+            Container.BindInstance(_mCamera).AsSingle();
+            Container.BindInstance(_pCamera).AsSingle();
             Container.Bind<SceneStatesBootstrapper>().ToSelf().AsSingle().NonLazy();
         }
 
