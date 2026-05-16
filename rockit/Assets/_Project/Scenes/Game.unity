@@ -390,40 +390,13 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2184872423590630443, guid: 73f6229d2ba37f9458aaa95273e80f01, type: 3}
       insertIndex: -1
       addedObject: {fileID: 965937329}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5783479988962230647, guid: 73f6229d2ba37f9458aaa95273e80f01, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2325400853609029943}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73f6229d2ba37f9458aaa95273e80f01, type: 3}
 --- !u!4 &2325400853609029941 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8776188613038371128, guid: 73f6229d2ba37f9458aaa95273e80f01, type: 3}
   m_PrefabInstance: {fileID: 2325400853609029940}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2325400853609029942 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5783479988962230647, guid: 73f6229d2ba37f9458aaa95273e80f01, type: 3}
-  m_PrefabInstance: {fileID: 2325400853609029940}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2325400853609029943
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2325400853609029942}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b617507da6d07e749b7efdb34e1173e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineFollow
-  TrackerSettings:
-    BindingMode: 4
-    PositionDamping: {x: 1, y: 1, z: 1}
-    AngularDampingMode: 0
-    RotationDamping: {x: 1, y: 1, z: 1}
-    QuaternionDamping: 1
-  FollowOffset: {x: 0, y: 2, z: -10}
 --- !u!1001 &4364858088649442955
 PrefabInstance:
   m_ObjectHideFlags: 0
