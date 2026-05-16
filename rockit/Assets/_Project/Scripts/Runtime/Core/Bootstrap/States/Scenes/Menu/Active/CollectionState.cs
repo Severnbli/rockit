@@ -3,7 +3,7 @@ using _Project.Scripts.Runtime.Core.Infrastructure.Requests;
 using _Project.Scripts.Runtime.Features.Graphics.Cameras.Monos;
 using _Project.Scripts.Runtime.Features.Graphics.Cameras.Requests;
 using _Project.Scripts.Runtime.Features.Graphics.Cameras.Types;
-using _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Menu.Monos;
+using _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Scenes.Menu.Monos;
 using _Project.Scripts.Runtime.Shared.Utils.Features.Graphics;
 using _Project.Scripts.Runtime.Shared.Utils.Features.Input;
 using _Project.Scripts.Runtime.Shared.Utils.Features.Stats;

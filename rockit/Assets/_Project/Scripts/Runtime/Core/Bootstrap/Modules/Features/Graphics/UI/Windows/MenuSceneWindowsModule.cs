@@ -1,5 +1,5 @@
 ﻿using _Project.Scripts.Runtime.Core.Bootstrap.Domain;
-using _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Menu.Systems;
+using _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Scenes.Menu.Systems;
 
 namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.UI.Windows
 {

@@ -4,7 +4,7 @@ using _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes.Menu.Active;
 using _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes.Shared.Modal;
 using _Project.Scripts.Runtime.Features.Graphics.Cameras.Monos;
 using _Project.Scripts.Runtime.Features.Graphics.UI.Buttons.Monos;
-using _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Menu.Monos;
+using _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Scenes.Menu.Monos;
 using _Project.Scripts.Runtime.Features.Stats.Constants.Monos;
 using UnityEngine;
 

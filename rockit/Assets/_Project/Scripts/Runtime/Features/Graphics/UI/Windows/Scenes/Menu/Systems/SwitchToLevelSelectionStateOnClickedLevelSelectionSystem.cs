@@ -4,7 +4,7 @@ using Cysharp.Threading.Tasks;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 
-namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Menu.Systems
+namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Scenes.Menu.Systems
 {
     public sealed class SwitchToLevelSelectionStateOnClickedLevelSelectionSystem : IProtoRunSystem
     {
