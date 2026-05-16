@@ -4927,10 +4927,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8199424373592729265, guid: fa979aa7fbb04094a93f7b2ddd5a9cbb, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8251685846748700548, guid: fa979aa7fbb04094a93f7b2ddd5a9cbb, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
