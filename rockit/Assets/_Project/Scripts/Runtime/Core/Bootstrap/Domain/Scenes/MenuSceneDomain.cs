@@ -18,7 +18,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Scenes
         [SerializeField] private CollectionWindow _cWindow;
         [SerializeField] private ConstantDisplayWindow _cdWindow;
         [SerializeField] private MenusCinemachineCamera mcCamera;
-        [SerializeField] private PlayerCamera _pCamera;
+        [SerializeField] private PlayerCinemachineCamera pcCamera;
 
         protected override void RegisterBindings()
         {
@@ -30,7 +30,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Scenes
             Container.BindInstance(_cWindow).AsSingle();
             Container.BindInstance(_cdWindow).AsSingle();
             Container.BindInstance(mcCamera).AsSingle();
-            Container.BindInstance(_pCamera).AsSingle();
+            Container.BindInstance(pcCamera).AsSingle();
         }
 
         protected override void RegisterStates()
