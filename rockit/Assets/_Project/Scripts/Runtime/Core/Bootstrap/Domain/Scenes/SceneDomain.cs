@@ -10,6 +10,7 @@ using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Physics.Moving;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Stats.Constants;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Stats.Shared;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure;
+using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure.Audio;
 using _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes;
 using _Project.Scripts.Runtime.Features.Graphics.Cameras.Monos;
 using UnityEngine;
@@ -53,6 +54,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Scenes
             TryRegisterModule<WindowsSharedModule>();
             TryRegisterModule<CamerasModule>();
             TryRegisterModule<StatsSharedSceneModule>();
+            TryRegisterModule<AudioSceneModule>();
         }
     }
 }
