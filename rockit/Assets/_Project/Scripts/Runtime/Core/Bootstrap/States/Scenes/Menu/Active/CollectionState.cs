@@ -2,7 +2,6 @@
 using _Project.Scripts.Runtime.Features.Graphics.Cameras.Monos;
 using _Project.Scripts.Runtime.Features.Graphics.Cameras.Requests;
 using _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Menu.Monos;
-using _Project.Scripts.Runtime.Features.Stats.Constants.Services;
 using _Project.Scripts.Runtime.Shared.Utils.Features.Graphics;
 using _Project.Scripts.Runtime.Shared.Utils.Features.Stats;
 using Cysharp.Threading.Tasks;
@@ -11,15 +10,12 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes.Menu.Active
 {
     public class CollectionState : ISceneState
     {
-        private readonly ConstantDisplayWindowService _cdwService;
         private readonly RequestsAspect _rAspect;
         private readonly PlayerCamera _pCamera;
         private readonly CollectionWindow _cWindow;
 
-        public CollectionState(ConstantDisplayWindowService cdwService, RequestsAspect rAspect, PlayerCamera pCamera, 
-            CollectionWindow cWindow)
+        public CollectionState(RequestsAspect rAspect, PlayerCamera pCamera, CollectionWindow cWindow)
         {
-            _cdwService = cdwService;
             _rAspect = rAspect;
             _pCamera = pCamera;
             _cWindow = cWindow;
@@ -34,7 +30,6 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes.Menu.Active
 
         private void ActivateConstantDisplayWindow()
         {
-            _cdwService.Active = true;
             ConstantsUtils.CreateShowConstantDisplayWindowRequest(_rAspect);
         }
 
@@ -49,7 +44,6 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes.Menu.Active
 
         public async UniTask OnLeave(IStateMachine stateMachine)
         {
-            _cdwService.Active = false;
             await _cWindow.CloseAwait();
         }
     }

@@ -23,7 +23,7 @@ namespace _Project.Scripts.Runtime.Features.Stats.Constants.Systems
         public void Run()
         {
             if (_crAspect.ShowConstantDisplayWindowRequests.IsEmptySlow()) return;
-            if (!_cdwService.Active || !_cdwService.Show) return;
+            if (!_cdwService.Show) return;
 
             _sMachine.EnterModalState<IConstantDisplayState>().Forget();
         }
