@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fefca6f403464061ab39bd6ab37926b3, type: 3}
+  m_Script: {fileID: 11500000, guid: 2dec8a5368e646a19afa4e34c15e7e87, type: 3}
   m_Name: ModalWindowConfig
-  m_EditorClassIdentifier: Runtime::_Project.Scripts.Runtime.Features.Graphics.UI.Windows.Configs.FadeWindowConfig
+  m_EditorClassIdentifier: Runtime::_Project.Scripts.Runtime.Features.Graphics.UI.Windows.Shared.Configs.BaseWindowConfig
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
@@ -23,44 +23,20 @@ MonoBehaviour:
     SerializationNodes: []
   _bodyOpen:
     _steps:
-    - rid: 1499440641782054912
+    - rid: 1499440664801181814
+    - rid: 1499440664801181811
     _loops: 1
     _loopType: 0
   _bodyClose:
     _steps:
-    - rid: 1499440641782054913
-    _loops: 1
-    _loopType: 0
-  _fadeOpen:
-    _steps:
-    - rid: 1499440526611710051
-    _loops: 1
-    _loopType: 0
-  _fadeClose:
-    _steps:
-    - rid: 1499440526611710052
+    - rid: 1499440664801181794
     _loops: 1
     _loopType: 0
   references:
     version: 2
     RefIds:
-    - rid: 1499440526611710051
-      type: {class: ImageFadeStep, ns: _Project.Scripts.Runtime.Core.Infrastructure.Animations.Tools.Pipeline.Steps, asm: Runtime}
-      data:
-        _connector: 0
-        _settings:
-          _to: 1
-          _from: 0
-          _fromExact: 0
-          _relative: 0
-          _duration: 0.5
-          _speedBased: 0
-          _delay: 0
-          _ease: 0
-          _loops: 1
-          _loopType: 0
-    - rid: 1499440526611710052
-      type: {class: ImageFadeStep, ns: _Project.Scripts.Runtime.Core.Infrastructure.Animations.Tools.Pipeline.Steps, asm: Runtime}
+    - rid: 1499440664801181794
+      type: {class: CanvasGroupFadeStep, ns: _Project.Scripts.Runtime.Core.Infrastructure.Animations.Tools.Pipeline.Steps, asm: Runtime}
       data:
         _connector: 0
         _settings:
@@ -71,11 +47,26 @@ MonoBehaviour:
           _duration: 0.5
           _speedBased: 0
           _delay: 0
-          _ease: 0
+          _ease: 15
           _loops: 1
           _loopType: 0
-    - rid: 1499440641782054912
+    - rid: 1499440664801181811
       type: {class: FloatScaleStep, ns: _Project.Scripts.Runtime.Core.Infrastructure.Animations.Tools.Pipeline.Steps, asm: Runtime}
+      data:
+        _connector: 0
+        _settings:
+          _to: 1
+          _from: 0
+          _fromExact: 1
+          _relative: 0
+          _duration: 0.3
+          _speedBased: 0
+          _delay: 0
+          _ease: 14
+          _loops: 1
+          _loopType: 0
+    - rid: 1499440664801181814
+      type: {class: CanvasGroupFadeStep, ns: _Project.Scripts.Runtime.Core.Infrastructure.Animations.Tools.Pipeline.Steps, asm: Runtime}
       data:
         _connector: 0
         _settings:
@@ -83,22 +74,7 @@ MonoBehaviour:
           _from: 0
           _fromExact: 0
           _relative: 0
-          _duration: 0.5
-          _speedBased: 0
-          _delay: 0
-          _ease: 0
-          _loops: 1
-          _loopType: 0
-    - rid: 1499440641782054913
-      type: {class: FloatScaleStep, ns: _Project.Scripts.Runtime.Core.Infrastructure.Animations.Tools.Pipeline.Steps, asm: Runtime}
-      data:
-        _connector: 0
-        _settings:
-          _to: 0
-          _from: 0
-          _fromExact: 0
-          _relative: 0
-          _duration: 0.5
+          _duration: 0
           _speedBased: 0
           _delay: 0
           _ease: 0
