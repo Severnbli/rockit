@@ -11,13 +11,13 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes.Menu.Active
     public class CollectionState : ISceneState
     {
         private readonly RequestsAspect _rAspect;
-        private readonly PlayerCamera _pCamera;
+        private readonly PlayerCinemachineCamera _pcCamera;
         private readonly CollectionWindow _cWindow;
 
-        public CollectionState(RequestsAspect rAspect, PlayerCamera pCamera, CollectionWindow cWindow)
+        public CollectionState(RequestsAspect rAspect, PlayerCinemachineCamera pcCamera, CollectionWindow cWindow)
         {
             _rAspect = rAspect;
-            _pCamera = pCamera;
+            _pcCamera = pcCamera;
             _cWindow = cWindow;
         }
 
@@ -37,7 +37,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes.Menu.Active
         {
             var prepared = new SwitchCameraRequest
             {
-                Target = _pCamera.Camera
+                Target = _pcCamera.Camera
             };
             CamerasUtils.CreateSwitchCameraRequest(_rAspect, prepared);
         }
