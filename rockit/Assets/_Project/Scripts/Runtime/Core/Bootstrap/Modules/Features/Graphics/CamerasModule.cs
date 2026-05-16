@@ -24,7 +24,6 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics
             
             BindSystem<SwitchCameraOnSwitchCameraRequestSystem>();
             BindSystem<CamerasSwitchServiceOnRunObserverSystem>();
-            BindSystem<ResetCamerasSwitchServiceOnDestroySystem>();
         }
     }
 }
