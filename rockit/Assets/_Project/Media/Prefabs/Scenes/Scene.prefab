@@ -202,8 +202,9 @@ GameObject:
   - component: {fileID: 8709683217004830530}
   - component: {fileID: 8136140490315951131}
   - component: {fileID: 7725263836708969294}
+  - component: {fileID: 4134464158423979472}
   m_Layer: 0
-  m_Name: CinemachineCamera
+  m_Name: PlayerCinemachineCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -279,6 +280,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a8a05de0ac134f4f9d01bef6b9da077, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachinePixelPerfect
+--- !u!114 &4134464158423979472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6096015531978645605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a541e20acfd24fdfad4cb7f5ba67fd73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Runtime::_Project.Scripts.Runtime.Features.Graphics.Cameras.Monos.PlayerCamera
+  _camera: {fileID: 8136140490315951131}
 --- !u!1 &8781875655464147239
 GameObject:
   m_ObjectHideFlags: 0
@@ -324,7 +338,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4251235870073204578, guid: 7730bf782f2d9384bb69d793e16fd755, type: 3}
       propertyPath: orthographic size
-      value: 5.625
+      value: 5.40625
       objectReference: {fileID: 0}
     - target: {fileID: 5831443993680685126, guid: 7730bf782f2d9384bb69d793e16fd755, type: 3}
       propertyPath: m_Name
@@ -340,11 +354,11 @@ PrefabInstance:
       objectReference: {fileID: 8799029221119414198}
     - target: {fileID: 7165989578542076862, guid: 7730bf782f2d9384bb69d793e16fd755, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.0625
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7165989578542076862, guid: 7730bf782f2d9384bb69d793e16fd755, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.3125
+      value: -11
       objectReference: {fileID: 0}
     - target: {fileID: 7165989578542076862, guid: 7730bf782f2d9384bb69d793e16fd755, type: 3}
       propertyPath: m_LocalPosition.z
