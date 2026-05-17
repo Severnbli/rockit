@@ -8,7 +8,7 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Shared
     {
         public static bool TryGetByType<T>(out T component, bool logNull = true) where T : Component
         {
-            component = Object.FindFirstObjectByType<T>();
+            component = Object.FindFirstObjectByType<T>(FindObjectsInactive.Include);
 
             if (component != null) return true;
 
@@ -21,7 +21,7 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Shared
 
         public static bool TryGetByType<T>(out List<T> components, bool logEmpty = true) where T : Component
         {
-            components = Object.FindObjectsByType<T>(FindObjectsSortMode.None).ToList();
+            components = Object.FindObjectsByType<T>(FindObjectsInactive.Include, FindObjectsSortMode.None).ToList();
             
             if (components.Any()) return true;
 

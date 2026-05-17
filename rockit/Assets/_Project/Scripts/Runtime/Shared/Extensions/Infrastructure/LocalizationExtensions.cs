@@ -2,6 +2,8 @@
 using _Project.Scripts.Runtime.Core.Infrastructure.Localization.Services;
 using _Project.Scripts.Runtime.Core.Infrastructure.Localization.Types;
 using _Project.Scripts.Runtime.Shared.Extensions.Shared;
+using _Project.Scripts.Runtime.Shared.Utils.Infrastructure;
+using Cysharp.Threading.Tasks;
 using TMPro;
 
 namespace _Project.Scripts.Runtime.Shared.Extensions.Infrastructure
@@ -55,5 +57,18 @@ namespace _Project.Scripts.Runtime.Shared.Extensions.Infrastructure
             if (lService.LangData.TryGetByKeyOrFirst(langCode, out lService.CurrLang)) return;
             lService.CurrLang = new LanguageData();
         }
+
+#if UNITY_WEBGL && !UNITY_EDITOR
+        public static async UniTask LoadLangData(this LocalizationService lService)
+        {
+            lService.LangData = await LocalizationUtils.GetLanguageDataDictionaryAsync();
+        }
+#else
+        public static UniTask LoadLangData(this LocalizationService lService)
+        {
+            lService.LangData = LocalizationUtils.GetLanguageDataDictionary();
+            return UniTask.CompletedTask;
+        }
+#endif
     }
 }

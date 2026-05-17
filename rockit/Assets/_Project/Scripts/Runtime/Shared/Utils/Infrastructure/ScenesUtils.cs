@@ -1,5 +1,8 @@
-﻿using _Project.Scripts.Runtime.Core.Infrastructure.Requests;
+﻿using System.Collections.Generic;
+using _Project.Scripts.Runtime.Core.Infrastructure.Requests;
+using _Project.Scripts.Runtime.Core.Infrastructure.Scenes.Monos;
 using _Project.Scripts.Runtime.Core.Infrastructure.Scenes.Requests;
+using _Project.Scripts.Runtime.Core.Infrastructure.Scenes.Types;
 using _Project.Scripts.Runtime.Shared.Extensions.Infrastructure;
 using _Project.Scripts.Runtime.Shared.Utils.Shared;
 using Leopotam.EcsProto;
@@ -27,6 +30,16 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Infrastructure
         public static ProtoEntity CreateLoadLevelRequest(RequestsAspect aspect, LoadLevelRequest prepared)
         {
             return aspect.CreateRequest(aspect.ScenesRequestsAspect.LoadLevelRequestPool, prepared: prepared);
+        }
+
+        public static void InitializeScene()
+        {
+            GameObjectUtils.TryGetByType(out List<MonoInitializableOnSceneInitialize> initializables, false);
+
+            foreach (var initializable in initializables)
+            {
+                initializable.Initialize();
+            }
         }
     }
 }
