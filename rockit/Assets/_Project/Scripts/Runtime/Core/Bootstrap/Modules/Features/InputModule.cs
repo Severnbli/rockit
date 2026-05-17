@@ -22,8 +22,8 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features
         {
             base.BindSystems();
             
-            BindSystem<EnableDisablePlayerInputOnInitDestroySystem>();
-            BindSystem<EnableDisablePlatformsInputOnInitDestroySystem>();
+            BindSystem<DisablePlayerInputOnInitDestroySystem>();
+            BindSystem<DisablePlatformsInputOnInitDestroySystem>();
             BindSystem<EnablePlayerInputOnRequestSystem>();
             BindSystem<DisablePlayerInputOnRequestSystem>();
             BindSystem<EnablePlatformsInputOnRequestSystem>();

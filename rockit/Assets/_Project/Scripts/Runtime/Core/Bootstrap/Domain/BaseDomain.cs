@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure;
+using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure.Localization;
 using _Project.Scripts.Runtime.Core.Bootstrap.States;
 using _Project.Scripts.Runtime.Core.Engine;
 using _Project.Scripts.Runtime.Core.Systems;
@@ -76,6 +77,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
         protected virtual void RegisterModules()
         {
             TryRegisterModule<AnimationsModule>();
+            TryRegisterModule<LocalizationSceneModule>();
         }
         
         protected virtual void RegisterStates() {}

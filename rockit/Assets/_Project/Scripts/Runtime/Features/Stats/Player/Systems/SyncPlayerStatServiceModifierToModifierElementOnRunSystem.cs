@@ -14,10 +14,10 @@ namespace _Project.Scripts.Runtime.Features.Stats.Player.Systems
 
         public void Run()
         {
-            _psService.WalkFactorModifier = _psService.WalkFactorModifierElement.Value.Value.Factor;
-            _psService.JumpFactorModifier = _psService.JumpFactorModifierElement.Value.Value.Factor;
-            _psService.DashFactorModifier = _psService.DashFactorModifierElement.Value.Value.Factor;
-            _psService.DashQuantityModifier = _psService.DashQuantityModifierElement.Value.Value.Quantity;
+            _psService.WalkFactorModifier = _psService.WalkFactorModifierObserver.Element.Value.Value;
+            _psService.JumpFactorModifier = _psService.JumpFactorModifierObserver.Element.Value.Value;
+            _psService.DashFactorModifier = _psService.DashFactorModifierObserver.Element.Value.Value;
+            _psService.DashQuantityModifier = (int) _psService.DashQuantityModifierObserver.Element.Value.Value;
         }
     }
 }

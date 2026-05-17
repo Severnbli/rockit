@@ -12,6 +12,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Storage
         public GameSceneData GameSceneData;
         public StatsData StatsData;
         public EconomyData EconomyData;
+        public AudioData AudioData;
         
         public DataProvider(IDataStorageKeyProvider keyProvider, IDataStorage dataStorage) : base(keyProvider, dataStorage)
         {
@@ -25,6 +26,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Storage
             GameSceneData = Load<GameSceneData>();
             StatsData = Load<StatsData>();
             EconomyData = Load<EconomyData>();
+            AudioData = Load<AudioData>();
         }
 
         public override void SaveTracked()
@@ -35,6 +37,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Storage
             Save(GameSceneData);
             Save(StatsData);
             Save(EconomyData);
+            Save(AudioData);
         }
     }
 }

@@ -23,10 +23,10 @@ namespace _Project.Scripts.Runtime.Features.Stats.Player.Systems
             if (_psrAspect.SyncPlayerStatsServiceToStorageRequests.IsEmptySlow()) return;
 
             var psData = _dProvider.StatsData.PlayerStatsData;
-            psData.WalkFactorUpdateIndex = _psService.WalkFactorModifierElement.Value.Index;
-            psData.JumpFactorUpdateIndex = _psService.JumpFactorModifierElement.Value.Index;
-            psData.DashFactorUpdateIndex = _psService.DashFactorModifierElement.Value.Index;
-            psData.DashQuantityUpdateIndex = _psService.DashQuantityModifierElement.Value.Index;
+            psData.WalkFactorUpdateIndex = _psService.WalkFactorModifierObserver.Element.Value.Index;
+            psData.JumpFactorUpdateIndex = _psService.JumpFactorModifierObserver.Element.Value.Index;
+            psData.DashFactorUpdateIndex = _psService.DashFactorModifierObserver.Element.Value.Index;
+            psData.DashQuantityUpdateIndex = _psService.DashQuantityModifierObserver.Element.Value.Index;
             
             _dProvider.SaveTracked();
         }

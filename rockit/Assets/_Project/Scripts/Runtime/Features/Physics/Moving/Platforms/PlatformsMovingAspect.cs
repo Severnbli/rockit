@@ -2,7 +2,6 @@
 using _Project.Scripts.Runtime.Features.Physics.Moving.Platforms.Components;
 using _Project.Scripts.Runtime.Features.Physics.Shared.Components;
 using _Project.Scripts.Runtime.Features.Platforms.Shared.Components;
-using _Project.Scripts.Runtime.Features.Platforms.Shared.Tags;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 

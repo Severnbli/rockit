@@ -3,6 +3,7 @@ using _Project.Scripts.Runtime.Core.Infrastructure.Localization.Services;
 using _Project.Scripts.Runtime.Core.Infrastructure.Requests;
 using _Project.Scripts.Runtime.Core.Infrastructure.Requests.World;
 using _Project.Scripts.Runtime.Core.Infrastructure.Storage;
+using _Project.Scripts.Runtime.Shared.Extensions.Infrastructure;
 using _Project.Scripts.Runtime.Shared.Utils.Infrastructure;
 using Leopotam.EcsProto;
 
@@ -24,13 +25,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Localization.Systems
         {
             var lData = LocalizationUtils.GetLanguageDataDictionary();
             _lService.LangData = lData;
-
-            var prepared = new ChangeLanguageRequest
-            {
-                LanguageCode = _dProvider.LanguageData.Code
-            };
-            
-            LocalizationUtils.CreateChangeLanguageRequest(_rAspect, prepared);
+            _lService.UpdateByLanguageCode(_dProvider.LanguageData.Code);
         }
     }
 }
