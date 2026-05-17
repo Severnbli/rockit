@@ -620,6 +620,7 @@ GameObject:
   - component: {fileID: 701608641036283901}
   - component: {fileID: 6878560574595041154}
   - component: {fileID: 8966700826085941150}
+  - component: {fileID: 825765221881422597}
   m_Layer: 5
   m_Name: Dropdown
   m_TagString: Untagged
@@ -767,6 +768,9 @@ MonoBehaviour:
   _destroyAfterAuthoring: 0
   Components:
   - rid: 1499440676958109696
+  - rid: 1499440685307396097
+  - rid: 1499440685307396098
+  - rid: 1499440685307396099
   references:
     version: 2
     RefIds:
@@ -774,6 +778,31 @@ MonoBehaviour:
       type: {class: DropdownComponent, ns: _Project.Scripts.Runtime.Features.Graphics.UI.Dropdowns.Components, asm: Runtime}
       data:
         Dropdown: {fileID: 6878560574595041154}
+    - rid: 1499440685307396097
+      type: {class: GameObjectComponent, ns: _Project.Scripts.Runtime.Core.Infrastructure.Shared.Components, asm: Runtime}
+      data:
+        GameObject: {fileID: 7536835395420168594}
+    - rid: 1499440685307396098
+      type: {class: IndexableTag, ns: _Project.Scripts.Runtime.Core.Infrastructure.Shared.Tags, asm: Runtime}
+      data: 
+    - rid: 1499440685307396099
+      type: {class: InitializableTag, ns: _Project.Scripts.Runtime.Core.Infrastructure.Shared.Tags, asm: Runtime}
+      data: 
+--- !u!114 &825765221881422597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7536835395420168594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c98d475bd9fd847de92b965c53bdda38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Leopotam.EcsProto.Unity.Ugui::Leopotam.EcsProto.Unity.Ugui.UnityUguiDropdownAction
+  _senderName: 
+  _worldName: 
+  _selectable: {fileID: 6878560574595041154}
 --- !u!1 &7565988330641531257
 GameObject:
   m_ObjectHideFlags: 0
