@@ -40,5 +40,12 @@ namespace _Project.Scripts.Runtime.Shared.Extensions.Infrastructure
             
             ldService.CurrentId = selectedId;
         }
+
+        public static void UpdateDropdown(this LocalizationDropdownService ldService, TMP_Dropdown dropdown)
+        {
+            dropdown.options = ldService.OptionDataList;
+            dropdown.SetValueWithoutNotify(ldService.CurrentId);
+            dropdown.RefreshShownValue();
+        }
     }
 }
