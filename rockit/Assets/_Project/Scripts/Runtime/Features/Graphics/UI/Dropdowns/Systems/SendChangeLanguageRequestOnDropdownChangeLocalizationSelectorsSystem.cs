@@ -15,11 +15,11 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Dropdowns.Systems
         [DI] private readonly DropdownsAspect _dAspect;
         [DI] private readonly UISharedAspect _usAspect;
 
-        private readonly LocalizationService _lService;
+        private readonly LocalizationDropdownService _ldService;
 
-        public SendChangeLanguageRequestOnDropdownChangeLocalizationSelectorsSystem(LocalizationService lService)
+        public SendChangeLanguageRequestOnDropdownChangeLocalizationSelectorsSystem(LocalizationDropdownService ldService)
         {
-            _lService = lService;
+            _ldService = ldService;
         }
 
         public void Run()
@@ -29,7 +29,7 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Dropdowns.Systems
             
             ref var dcComponent = ref _usAspect.DropdownChangeComponentPool.Get(e);
 
-            if (!_lService.IdLanguageCodeMapper.TryGetValue(dcComponent.Value, out var langCode)) return;
+            if (!_ldService.IdLangCodeMapper.TryGetValue(dcComponent.Value, out var langCode)) return;
 
             var prepared = new ChangeLanguageRequest
             {
