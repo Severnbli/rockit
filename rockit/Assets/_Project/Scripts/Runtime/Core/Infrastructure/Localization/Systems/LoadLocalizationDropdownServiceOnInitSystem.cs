@@ -9,9 +9,11 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Localization.Systems
         private readonly LocalizationService _lService;
         private readonly LocalizationDropdownService _ldService;
 
-        public LoadLocalizationDropdownServiceOnInitSystem(LocalizationService lService)
+        public LoadLocalizationDropdownServiceOnInitSystem(LocalizationService lService, 
+            LocalizationDropdownService ldService)
         {
             _lService = lService;
+            _ldService = ldService;
         }
 
         public void Init(IProtoSystems systems)
