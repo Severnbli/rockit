@@ -1,14 +1,13 @@
-﻿using _Project.Scripts.Runtime.Core.Infrastructure.Scenes.Types;
-using Leopotam.EcsProto.Unity;
+﻿using Leopotam.EcsProto.Unity;
 using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Core.Infrastructure.Scenes.Monos
 {
-    public class AuthoringOnSceneInitialize : MonoBehaviour, IInitializableOnSceneInitialize
+    public class AuthoringOnSceneInitialize : MonoInitializableOnSceneInitialize
     {
         [SerializeField] private ProtoUnityAuthoring _authoring;
         
-        public void Initialize()
+        public override void Initialize()
         {
             _authoring.ProcessAuthoring();
         }
