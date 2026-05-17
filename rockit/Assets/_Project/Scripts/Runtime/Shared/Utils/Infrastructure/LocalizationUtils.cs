@@ -6,6 +6,7 @@ using _Project.Scripts.Runtime.Core.Infrastructure.Localization.Requests;
 using _Project.Scripts.Runtime.Core.Infrastructure.Localization.Types;
 using _Project.Scripts.Runtime.Core.Infrastructure.Requests;
 using _Project.Scripts.Runtime.Shared.Extensions.Infrastructure;
+using _Project.Scripts.Runtime.Shared.Utils.Shared;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 using Newtonsoft.Json;
@@ -17,15 +18,12 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Infrastructure
     {
         public static string GetLanguageDataPath()
         {
-            return Path.Combine(Application.streamingAssetsPath, 
-                $"{LocalizationContracts.LanguageDataFileName}.json");
+            return StreamingAssetsUtils.GetPath($"{LocalizationContracts.LanguageDataFileName}.json");
         }
 
         public static void WriteLanguageData(string json)
         {
-            var path = GetLanguageDataPath();
-            Directory.CreateDirectory(Path.GetDirectoryName(path) ?? "");
-            File.WriteAllText(path, json);
+            StreamingAssetsUtils.Write(GetLanguageDataPath(), json);
         }
 
         public static void WriteLanguageData(List<LanguageData> languageData)
@@ -36,8 +34,7 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Infrastructure
 
         public static string GetLanguageDataJson()
         {
-            var path = GetLanguageDataPath();
-            return !File.Exists(path) ? "" : File.ReadAllText(path);
+            return StreamingAssetsUtils.Read(GetLanguageDataPath());
         }
 
         public static List<LanguageData> GetLanguageDataList()
