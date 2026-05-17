@@ -9,5 +9,11 @@ namespace _Project.Scripts.Runtime.Shared.Extensions.Infrastructure
             if (service.CurrLang == null || !service.CurrLang.Entries.TryGetValue(key, out var entry)) return "";
             return entry.String;
         }
+
+        public static string GetString(this LocalizationService service, string langCode, string key)
+        {
+            if (!service.LangData.TryGetValue(langCode, out var lData) || !lData.Entries.TryGetValue(key, out var entry)) return "";
+            return entry.String;
+        }
     }
 }
