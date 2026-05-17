@@ -27,5 +27,5 @@ MonoBehaviour:
   _jumpDeceleration: 20
   _maxFallVelocity: 20
   _dashPower: 15
-  _airDashes: 2
+  _airDashes: 0
   _dashTimeout: 0.3

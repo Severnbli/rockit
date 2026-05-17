@@ -6,14 +6,14 @@ namespace _Project.Scripts.Runtime.Features.Stats.Player.Configs
 {
     public sealed class PlayerStatsConfig : ScriptableObjectAutoInstaller<PlayerStatsConfig>
     {
-        [SerializeField] private FactorPaidWithCoins[] _walkFactorUpdates;
-        [SerializeField] private FactorPaidWithCoins[] _jumpFactorUpdates;
-        [SerializeField] private FactorPaidWithCoins[] _dashFactorUpdates;
-        [SerializeField] private QuantityPaidWithCoins[] _dashQuantityUpdates;
+        [SerializeField] private FloatPaidWithCoins[] _walkFactorUpdates;
+        [SerializeField] private FloatPaidWithCoins[] _jumpFactorUpdates;
+        [SerializeField] private FloatPaidWithCoins[] _dashFactorUpdates;
+        [SerializeField] private FloatPaidWithCoins[] _dashQuantityUpdates;
         
-        public FactorPaidWithCoins[] WalkFactorUpdates => _walkFactorUpdates;
-        public FactorPaidWithCoins[] JumpFactorUpdates => _jumpFactorUpdates;
-        public FactorPaidWithCoins[] DashFactorUpdates => _dashFactorUpdates;
-        public QuantityPaidWithCoins[] DashQuantityUpdates => _dashQuantityUpdates;
+        public FloatPaidWithCoins[] WalkFactorUpdates => _walkFactorUpdates;
+        public FloatPaidWithCoins[] JumpFactorUpdates => _jumpFactorUpdates;
+        public FloatPaidWithCoins[] DashFactorUpdates => _dashFactorUpdates;
+        public FloatPaidWithCoins[] DashQuantityUpdates => _dashQuantityUpdates;
     }
 }

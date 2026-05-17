@@ -17,6 +17,8 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Shared
         public readonly ProtoPool<OpenerTag> OpenerTagPool;
         public readonly ProtoPool<CloserTag> CloserTagPool;
         public readonly ProtoPool<OpenableClosableComponent> OpenableClosableComponentPool;
+        public readonly ProtoPool<PlayerLocatorComponent> PlayerLocatorComponentPool;
+        public readonly ProtoPool<PlayerLocatorTag> PlayerLocatorTagPool;
         public readonly ProtoIt Players = new (It.Inc<PlayerTag>());
         public readonly ProtoIt Initializables = new (It.Inc<InitializableTag>());
         public readonly ProtoIt Characters = new (It.Inc<CharacterTag>());
@@ -24,5 +26,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Shared
         public readonly ProtoIt Indexables = new (It.Inc<IndexableTag>());
         public readonly ProtoIt IndexableGameObjects = new (It.Inc<IndexableTag, GameObjectComponent>());
         public readonly ProtoIt CloseAppTags = new (It.Inc<CloseAppTag>());
+        public readonly ProtoIt TransformPlayerLocators = new (It.Inc<TransformComponent, PlayerLocatorTag>());
+        public readonly ProtoIt TransformPlayers = new (It.Inc<TransformComponent, PlayerTag>());
     }
 }

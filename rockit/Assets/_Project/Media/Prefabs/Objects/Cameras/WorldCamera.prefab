@@ -54,7 +54,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8940430043422772756, guid: de14cd7777a92ac44af77135d57e2507, type: 3}
       propertyPath: orthographic size
-      value: 5.5208335
+      value: 4.821429
       objectReference: {fileID: 0}
     - target: {fileID: 8940430043422772756, guid: de14cd7777a92ac44af77135d57e2507, type: 3}
       propertyPath: m_CullingMask.m_Bits
@@ -67,6 +67,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1585503274914629936, guid: de14cd7777a92ac44af77135d57e2507, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1680697493788257487}
+    - targetCorrespondingSourceObject: {fileID: 1585503274914629936, guid: de14cd7777a92ac44af77135d57e2507, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2510770164179625221}
   m_SourcePrefab: {fileID: 100100000, guid: de14cd7777a92ac44af77135d57e2507, type: 3}
 --- !u!1 &5831443993680685126 stripped
 GameObject:
@@ -105,3 +108,16 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   CustomBlends: {fileID: 0}
+--- !u!114 &2510770164179625221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5831443993680685126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11a4508a6dfc4ecf85372111b979ae88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Runtime::_Project.Scripts.Runtime.Features.Graphics.Cameras.Monos.CameraBrain
+  _brain: {fileID: 1680697493788257487}

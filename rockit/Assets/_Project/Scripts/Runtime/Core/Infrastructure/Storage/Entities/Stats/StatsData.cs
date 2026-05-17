@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace _Project.Scripts.Runtime.Core.Infrastructure.Storage.Entities.Stats
 {
@@ -6,5 +7,6 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Storage.Entities.Stats
     public sealed class StatsData
     {
         public PlayerStatsData PlayerStatsData = new ();
+        public Dictionary<int, ConstantData> InvestigatedConstants = new ();
     }
 }

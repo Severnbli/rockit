@@ -5,12 +5,14 @@ using _Project.Scripts.Runtime.Core.Infrastructure.Shared;
 using _Project.Scripts.Runtime.Core.Infrastructure.Storage;
 using _Project.Scripts.Runtime.Features.Economy.Coins;
 using _Project.Scripts.Runtime.Features.Graphics.Animations.Characters;
+using _Project.Scripts.Runtime.Features.Graphics.Shared;
 using _Project.Scripts.Runtime.Features.Graphics.Sprites.Glow;
 using _Project.Scripts.Runtime.Features.Graphics.UI.Shared;
 using _Project.Scripts.Runtime.Features.Input;
 using _Project.Scripts.Runtime.Features.Physics.Moving.Characters;
 using _Project.Scripts.Runtime.Features.Physics.Moving.Platforms;
 using _Project.Scripts.Runtime.Features.Stats.Player;
+using _Project.Scripts.Runtime.Features.Stats.Shared;
 using Leopotam.EcsProto.QoL;
 
 namespace _Project.Scripts.Runtime.Core.Infrastructure.Requests
@@ -30,6 +32,8 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Requests
         public readonly SpritesGlowRequestsAspect SpritesGlowRequestsAspect;
         public readonly UIRequestsAspect UIRequestsAspect;
         public readonly CoinsRequestsAspect CoinsRequestsAspect;
+        public readonly StatsSharedRequestsAspect StatsSharedRequestsAspect;
+        public readonly GraphicsSharedRequestsAspect GraphicsSharedRequestsAspect;
         public readonly SharedRequestsAspect SharedRequestsAspect;
     }
 }
