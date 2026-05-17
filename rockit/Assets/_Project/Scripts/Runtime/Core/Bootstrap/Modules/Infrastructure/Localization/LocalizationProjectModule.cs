@@ -22,6 +22,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure.Localiz
             base.BindSystems();
             
             BindSystem<LoadLocalizationServiceLangDataOnInitSystem>();
+            BindSystem<LoadLocalizationServiceIdLanguageCodeMapperOnInitSystem>();
             BindSystem<ChangeLanguageOnChangeLanguageRequestSystem>();
         }
     }
