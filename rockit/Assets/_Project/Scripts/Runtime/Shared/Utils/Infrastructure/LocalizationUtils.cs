@@ -16,14 +16,14 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Infrastructure
 {
     public static class LocalizationUtils
     {
-        public static string GetLanguageDataPath()
+        public static string GetFileName()
         {
-            return StreamingAssetsUtils.GetPath($"{LocalizationContracts.LanguageDataFileName}.json");
+            return $"{LocalizationContracts.LanguageDataFileName}.json";
         }
 
         public static void WriteLanguageData(string json)
         {
-            StreamingAssetsUtils.Write(GetLanguageDataPath(), json);
+            StreamingAssetsUtils.Write(GetFileName(), json);
         }
 
         public static void WriteLanguageData(List<LanguageData> languageData)
@@ -34,7 +34,7 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Infrastructure
 
         public static string GetLanguageDataJson()
         {
-            return StreamingAssetsUtils.Read(GetLanguageDataPath());
+            return StreamingAssetsUtils.Read(GetFileName());
         }
 
         public static List<LanguageData> GetLanguageDataList()

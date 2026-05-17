@@ -10,14 +10,16 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Shared
             return Path.Combine(Application.streamingAssetsPath, file);
         }
 
-        public static void Write(string path, string data)
+        public static void Write(string file, string data)
         {
+            var path = GetPath(file);
             Directory.CreateDirectory(Path.GetDirectoryName(path) ?? "");
             File.WriteAllText(path, data);
         }
 
-        public static string Read(string path)
+        public static string Read(string file)
         {
+            var path = GetPath(file);
             return !File.Exists(path) ? "" : File.ReadAllText(path);
         }
     }
