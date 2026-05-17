@@ -1,4 +1,5 @@
 ﻿using _Project.Scripts.Runtime.Core.Infrastructure.Localization.Services;
+using _Project.Scripts.Runtime.Shared.Extensions.Infrastructure;
 using Leopotam.EcsProto;
 
 namespace _Project.Scripts.Runtime.Core.Infrastructure.Localization.Systems
@@ -6,6 +7,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Localization.Systems
     public sealed class LoadLocalizationDropdownServiceOnInitSystem : IProtoInitSystem
     {
         private readonly LocalizationService _lService;
+        private readonly LocalizationDropdownService _ldService;
 
         public LoadLocalizationDropdownServiceOnInitSystem(LocalizationService lService)
         {
@@ -14,11 +16,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Localization.Systems
 
         public void Init(IProtoSystems systems)
         {
-            var i = 0;
-            foreach (var langCode in _lService.LangData.Keys)
-            {
-                _lService.IdLanguageCodeMapper[i++] = langCode;
-            }
+            _ldService.Reload(_lService);
         }
     }
 }
