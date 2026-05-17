@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Shared.Utils.Shared
@@ -20,6 +21,12 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Shared
         {
             var path = GetPath(file);
             return FilesUtils.Read(path);
+        }
+        
+        public static async UniTask<string> ReadAsync(string file)
+        {
+            var path = GetPath(file);
+            return await WebUtils.GetText(path);
         }
     }
 }
