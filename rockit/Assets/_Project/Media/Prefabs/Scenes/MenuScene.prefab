@@ -5250,6 +5250,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dropdown
       objectReference: {fileID: 0}
+    - target: {fileID: 7536835395420168594, guid: 424ed3323f22bb140898def8d3670e3a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9134354119881766248, guid: 424ed3323f22bb140898def8d3670e3a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5337,6 +5341,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7536835395420168594, guid: 424ed3323f22bb140898def8d3670e3a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4593080266605063875}
+    - targetCorrespondingSourceObject: {fileID: 7536835395420168594, guid: 424ed3323f22bb140898def8d3670e3a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7746435134481178240}
   m_SourcePrefab: {fileID: 100100000, guid: 424ed3323f22bb140898def8d3670e3a, type: 3}
 --- !u!1 &607246469184494615 stripped
 GameObject:
@@ -5363,6 +5370,21 @@ MonoBehaviour:
   m_FlexibleWidth: 0
   m_FlexibleHeight: 0
   m_LayoutPriority: 1
+--- !u!114 &7746435134481178240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 607246469184494615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c98d475bd9fd847de92b965c53bdda38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Leopotam.EcsProto.Unity.Ugui::Leopotam.EcsProto.Unity.Ugui.UnityUguiDropdownAction
+  _senderName: 
+  _worldName: 
+  _selectable: {fileID: 0}
 --- !u!224 &2177162779938228461 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 9134354119881766248, guid: 424ed3323f22bb140898def8d3670e3a, type: 3}
