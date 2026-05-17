@@ -43,11 +43,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Localization.Systems
             }
             _dProvider.LanguageData.Code = _lService.CurrLang.LanguageCode;
 
-            foreach (var liEntity in _lAspect.LocalizationItems)
-            {
-                var packed = _world.PackEntityWithWorld(liEntity);
-                LocalizationUtils.CreateUpdateLocalizationItemRequest(_rAspect, packed);
-            }
+            LocalizationUtils.CreateLocalizationUpdatedRequest(_rAspect);
         }
     }
 }
