@@ -5,7 +5,6 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Localization.Services
 {
     public sealed class LocalizationService
     {
-        public SortedDictionary<int, string> IdLanguageCodeMapper = new ();
         public Dictionary<string, LanguageData> LangData;
         public LanguageData CurrLang;
     }
