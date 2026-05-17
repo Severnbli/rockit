@@ -119,6 +119,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &302292992 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9136999343417413772, guid: 6d5aa93f746134b46b3429b69b8b4ac7, type: 3}
+  m_PrefabInstance: {fileID: 580585516}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &366278875
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -171,16 +176,81 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 9056845428546682451, guid: 75b88ccbec555eb43be3b8dfd4bb6df2, type: 3}
+      propertyPath: _authoringType
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5501382934325108523, guid: 75b88ccbec555eb43be3b8dfd4bb6df2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 460534975}
   m_SourcePrefab: {fileID: 100100000, guid: 75b88ccbec555eb43be3b8dfd4bb6df2, type: 3}
 --- !u!4 &366278876 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3590850739941609366, guid: 75b88ccbec555eb43be3b8dfd4bb6df2, type: 3}
   m_PrefabInstance: {fileID: 366278875}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &428419290 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 305844781016700809, guid: fa979aa7fbb04094a93f7b2ddd5a9cbb, type: 3}
+  m_PrefabInstance: {fileID: 2642613960005369407}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &428419295 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5888917416895660438, guid: fa979aa7fbb04094a93f7b2ddd5a9cbb, type: 3}
+  m_PrefabInstance: {fileID: 2642613960005369407}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 428419290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd2e3b9377ea4b6b9d83eb1bc17d15a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Leopotam.EcsProto.Unity::Leopotam.EcsProto.Unity.ProtoUnityAuthoring
+--- !u!114 &428419299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 428419290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2c582b842c340a7a4c5397b73ba4a56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Runtime::_Project.Scripts.Runtime.Core.Infrastructure.Scenes.Monos.AuthoringOnSceneInitialize
+  _authoring: {fileID: 428419295}
+--- !u!1 &460534966 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5501382934325108523, guid: 75b88ccbec555eb43be3b8dfd4bb6df2, type: 3}
+  m_PrefabInstance: {fileID: 366278875}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &460534972 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9056845428546682451, guid: 75b88ccbec555eb43be3b8dfd4bb6df2, type: 3}
+  m_PrefabInstance: {fileID: 366278875}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 460534966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd2e3b9377ea4b6b9d83eb1bc17d15a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Leopotam.EcsProto.Unity::Leopotam.EcsProto.Unity.ProtoUnityAuthoring
+--- !u!114 &460534975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 460534966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2c582b842c340a7a4c5397b73ba4a56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Runtime::_Project.Scripts.Runtime.Core.Infrastructure.Scenes.Monos.AuthoringOnSceneInitialize
+  _authoring: {fileID: 460534972}
 --- !u!114 &463506048 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4106094486035751536, guid: fa979aa7fbb04094a93f7b2ddd5a9cbb, type: 3}
@@ -240,6 +310,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5071851929290703967, guid: 6d5aa93f746134b46b3429b69b8b4ac7, type: 3}
+      propertyPath: _authoringType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9136999343417413772, guid: 6d5aa93f746134b46b3429b69b8b4ac7, type: 3}
       propertyPath: m_Name
       value: ConstantDisplay0
@@ -247,13 +321,40 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9136999343417413772, guid: 6d5aa93f746134b46b3429b69b8b4ac7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 580585521}
   m_SourcePrefab: {fileID: 100100000, guid: 6d5aa93f746134b46b3429b69b8b4ac7, type: 3}
 --- !u!4 &580585517 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 371631784191605527, guid: 6d5aa93f746134b46b3429b69b8b4ac7, type: 3}
   m_PrefabInstance: {fileID: 580585516}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &580585518 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5071851929290703967, guid: 6d5aa93f746134b46b3429b69b8b4ac7, type: 3}
+  m_PrefabInstance: {fileID: 580585516}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 302292992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd2e3b9377ea4b6b9d83eb1bc17d15a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Leopotam.EcsProto.Unity::Leopotam.EcsProto.Unity.ProtoUnityAuthoring
+--- !u!114 &580585521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 302292992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2c582b842c340a7a4c5397b73ba4a56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Runtime::_Project.Scripts.Runtime.Core.Infrastructure.Scenes.Monos.AuthoringOnSceneInitialize
+  _authoring: {fileID: 580585518}
 --- !u!1 &1004733291
 GameObject:
   m_ObjectHideFlags: 0
@@ -410,6 +511,35 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 30, y: 20}
   m_EdgeRadius: 0
+--- !u!1 &1152301681 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 607246469184494615, guid: fa979aa7fbb04094a93f7b2ddd5a9cbb, type: 3}
+  m_PrefabInstance: {fileID: 2642613960005369407}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1152301685 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2055178868222583323, guid: fa979aa7fbb04094a93f7b2ddd5a9cbb, type: 3}
+  m_PrefabInstance: {fileID: 2642613960005369407}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152301681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd2e3b9377ea4b6b9d83eb1bc17d15a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Leopotam.EcsProto.Unity::Leopotam.EcsProto.Unity.ProtoUnityAuthoring
+--- !u!114 &1152301689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152301681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2c582b842c340a7a4c5397b73ba4a56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Runtime::_Project.Scripts.Runtime.Core.Infrastructure.Scenes.Monos.AuthoringOnSceneInitialize
+  _authoring: {fileID: 1152301685}
 --- !u!1001 &1348826467
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -459,6 +589,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5071851929290703967, guid: 6d5aa93f746134b46b3429b69b8b4ac7, type: 3}
+      propertyPath: _authoringType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5071851929290703967, guid: 6d5aa93f746134b46b3429b69b8b4ac7, type: 3}
       propertyPath: managedReferences[1499440624952672346].Id
       value: 2
       objectReference: {fileID: 0}
@@ -469,7 +603,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9136999343417413772, guid: 6d5aa93f746134b46b3429b69b8b4ac7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1542882466}
   m_SourcePrefab: {fileID: 100100000, guid: 6d5aa93f746134b46b3429b69b8b4ac7, type: 3}
 --- !u!4 &1348826468 stripped
 Transform:
@@ -525,6 +662,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5071851929290703967, guid: 6d5aa93f746134b46b3429b69b8b4ac7, type: 3}
+      propertyPath: _authoringType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5071851929290703967, guid: 6d5aa93f746134b46b3429b69b8b4ac7, type: 3}
       propertyPath: managedReferences[1499440624952672346].Id
       value: 3
       objectReference: {fileID: 0}
@@ -535,13 +676,79 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9136999343417413772, guid: 6d5aa93f746134b46b3429b69b8b4ac7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1481819913}
   m_SourcePrefab: {fileID: 100100000, guid: 6d5aa93f746134b46b3429b69b8b4ac7, type: 3}
 --- !u!4 &1401152680 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 371631784191605527, guid: 6d5aa93f746134b46b3429b69b8b4ac7, type: 3}
   m_PrefabInstance: {fileID: 1401152679}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1427721058 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9136999343417413772, guid: 6d5aa93f746134b46b3429b69b8b4ac7, type: 3}
+  m_PrefabInstance: {fileID: 1670034635}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1481819909 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9136999343417413772, guid: 6d5aa93f746134b46b3429b69b8b4ac7, type: 3}
+  m_PrefabInstance: {fileID: 1401152679}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1481819910 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5071851929290703967, guid: 6d5aa93f746134b46b3429b69b8b4ac7, type: 3}
+  m_PrefabInstance: {fileID: 1401152679}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1481819909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd2e3b9377ea4b6b9d83eb1bc17d15a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Leopotam.EcsProto.Unity::Leopotam.EcsProto.Unity.ProtoUnityAuthoring
+--- !u!114 &1481819913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1481819909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2c582b842c340a7a4c5397b73ba4a56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Runtime::_Project.Scripts.Runtime.Core.Infrastructure.Scenes.Monos.AuthoringOnSceneInitialize
+  _authoring: {fileID: 1481819910}
+--- !u!1 &1500130305 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1107611690529355933, guid: fa979aa7fbb04094a93f7b2ddd5a9cbb, type: 3}
+  m_PrefabInstance: {fileID: 2642613960005369407}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1500130308 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1154557003714806025, guid: fa979aa7fbb04094a93f7b2ddd5a9cbb, type: 3}
+  m_PrefabInstance: {fileID: 2642613960005369407}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1500130305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd2e3b9377ea4b6b9d83eb1bc17d15a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Leopotam.EcsProto.Unity::Leopotam.EcsProto.Unity.ProtoUnityAuthoring
+--- !u!114 &1500130311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1500130305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2c582b842c340a7a4c5397b73ba4a56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Runtime::_Project.Scripts.Runtime.Core.Infrastructure.Scenes.Monos.AuthoringOnSceneInitialize
+  _authoring: {fileID: 1500130308}
 --- !u!1 &1539065608
 GameObject:
   m_ObjectHideFlags: 0
@@ -620,6 +827,35 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 20}
   m_EdgeRadius: 0
+--- !u!1 &1542882462 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9136999343417413772, guid: 6d5aa93f746134b46b3429b69b8b4ac7, type: 3}
+  m_PrefabInstance: {fileID: 1348826467}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1542882463 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5071851929290703967, guid: 6d5aa93f746134b46b3429b69b8b4ac7, type: 3}
+  m_PrefabInstance: {fileID: 1348826467}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542882462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd2e3b9377ea4b6b9d83eb1bc17d15a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Leopotam.EcsProto.Unity::Leopotam.EcsProto.Unity.ProtoUnityAuthoring
+--- !u!114 &1542882466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542882462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2c582b842c340a7a4c5397b73ba4a56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Runtime::_Project.Scripts.Runtime.Core.Infrastructure.Scenes.Monos.AuthoringOnSceneInitialize
+  _authoring: {fileID: 1542882463}
 --- !u!1001 &1659301825
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3798,6 +4034,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5071851929290703967, guid: 6d5aa93f746134b46b3429b69b8b4ac7, type: 3}
+      propertyPath: _authoringType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5071851929290703967, guid: 6d5aa93f746134b46b3429b69b8b4ac7, type: 3}
       propertyPath: managedReferences[1499440624952672346].Id
       value: 1
       objectReference: {fileID: 0}
@@ -3808,13 +4048,69 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9136999343417413772, guid: 6d5aa93f746134b46b3429b69b8b4ac7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1670034640}
   m_SourcePrefab: {fileID: 100100000, guid: 6d5aa93f746134b46b3429b69b8b4ac7, type: 3}
 --- !u!4 &1670034636 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 371631784191605527, guid: 6d5aa93f746134b46b3429b69b8b4ac7, type: 3}
   m_PrefabInstance: {fileID: 1670034635}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1670034637 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5071851929290703967, guid: 6d5aa93f746134b46b3429b69b8b4ac7, type: 3}
+  m_PrefabInstance: {fileID: 1670034635}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1427721058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd2e3b9377ea4b6b9d83eb1bc17d15a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Leopotam.EcsProto.Unity::Leopotam.EcsProto.Unity.ProtoUnityAuthoring
+--- !u!114 &1670034640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1427721058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2c582b842c340a7a4c5397b73ba4a56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Runtime::_Project.Scripts.Runtime.Core.Infrastructure.Scenes.Monos.AuthoringOnSceneInitialize
+  _authoring: {fileID: 1670034637}
+--- !u!1 &1722636709 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5666945758191051827, guid: fa979aa7fbb04094a93f7b2ddd5a9cbb, type: 3}
+  m_PrefabInstance: {fileID: 2642613960005369407}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1722636714 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1955193503162528300, guid: fa979aa7fbb04094a93f7b2ddd5a9cbb, type: 3}
+  m_PrefabInstance: {fileID: 2642613960005369407}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1722636709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd2e3b9377ea4b6b9d83eb1bc17d15a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Leopotam.EcsProto.Unity::Leopotam.EcsProto.Unity.ProtoUnityAuthoring
+--- !u!114 &1722636718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1722636709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2c582b842c340a7a4c5397b73ba4a56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Runtime::_Project.Scripts.Runtime.Core.Infrastructure.Scenes.Monos.AuthoringOnSceneInitialize
+  _authoring: {fileID: 1722636714}
 --- !u!1 &1826767345
 GameObject:
   m_ObjectHideFlags: 0
@@ -3848,6 +4144,64 @@ Transform:
   - {fileID: 1539065609}
   m_Father: {fileID: 1659301826}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1867663851 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5109440052656164593, guid: fa979aa7fbb04094a93f7b2ddd5a9cbb, type: 3}
+  m_PrefabInstance: {fileID: 2642613960005369407}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1867663856 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1400434412008265966, guid: fa979aa7fbb04094a93f7b2ddd5a9cbb, type: 3}
+  m_PrefabInstance: {fileID: 2642613960005369407}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867663851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd2e3b9377ea4b6b9d83eb1bc17d15a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Leopotam.EcsProto.Unity::Leopotam.EcsProto.Unity.ProtoUnityAuthoring
+--- !u!114 &1867663860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867663851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2c582b842c340a7a4c5397b73ba4a56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Runtime::_Project.Scripts.Runtime.Core.Infrastructure.Scenes.Monos.AuthoringOnSceneInitialize
+  _authoring: {fileID: 1867663856}
+--- !u!1 &1945503822 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5352862684576476807, guid: fa979aa7fbb04094a93f7b2ddd5a9cbb, type: 3}
+  m_PrefabInstance: {fileID: 2642613960005369407}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1945503825 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6130518175064905491, guid: fa979aa7fbb04094a93f7b2ddd5a9cbb, type: 3}
+  m_PrefabInstance: {fileID: 2642613960005369407}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1945503822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd2e3b9377ea4b6b9d83eb1bc17d15a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Leopotam.EcsProto.Unity::Leopotam.EcsProto.Unity.ProtoUnityAuthoring
+--- !u!114 &1945503828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1945503822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2c582b842c340a7a4c5397b73ba4a56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Runtime::_Project.Scripts.Runtime.Core.Infrastructure.Scenes.Monos.AuthoringOnSceneInitialize
+  _authoring: {fileID: 1945503825}
 --- !u!1001 &2642613960005369407
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4148,6 +4502,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1154557003714806025, guid: fa979aa7fbb04094a93f7b2ddd5a9cbb, type: 3}
+      propertyPath: _authoringType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1255505867009575967, guid: fa979aa7fbb04094a93f7b2ddd5a9cbb, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -4171,6 +4529,10 @@ PrefabInstance:
     - target: {fileID: 1255505867009575967, guid: fa979aa7fbb04094a93f7b2ddd5a9cbb, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1400434412008265966, guid: fa979aa7fbb04094a93f7b2ddd5a9cbb, type: 3}
+      propertyPath: _authoringType
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1447771791326222769, guid: fa979aa7fbb04094a93f7b2ddd5a9cbb, type: 3}
       propertyPath: m_AnchorMax.y
@@ -4303,6 +4665,14 @@ PrefabInstance:
     - target: {fileID: 1755878608485002446, guid: fa979aa7fbb04094a93f7b2ddd5a9cbb, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955193503162528300, guid: fa979aa7fbb04094a93f7b2ddd5a9cbb, type: 3}
+      propertyPath: _authoringType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2055178868222583323, guid: fa979aa7fbb04094a93f7b2ddd5a9cbb, type: 3}
+      propertyPath: _authoringType
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2118334785590640433, guid: fa979aa7fbb04094a93f7b2ddd5a9cbb, type: 3}
       propertyPath: m_AnchorMax.x
@@ -5040,6 +5410,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5888917416895660438, guid: fa979aa7fbb04094a93f7b2ddd5a9cbb, type: 3}
+      propertyPath: _authoringType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5973303151978167047, guid: fa979aa7fbb04094a93f7b2ddd5a9cbb, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -5111,6 +5485,10 @@ PrefabInstance:
     - target: {fileID: 6128484682006220761, guid: fa979aa7fbb04094a93f7b2ddd5a9cbb, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6130518175064905491, guid: fa979aa7fbb04094a93f7b2ddd5a9cbb, type: 3}
+      propertyPath: _authoringType
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6140751890891480959, guid: fa979aa7fbb04094a93f7b2ddd5a9cbb, type: 3}
       propertyPath: m_AnchorMax.y
@@ -5623,7 +6001,25 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5143288678815087723, guid: fa979aa7fbb04094a93f7b2ddd5a9cbb, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1659301826}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 305844781016700809, guid: fa979aa7fbb04094a93f7b2ddd5a9cbb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 428419299}
+    - targetCorrespondingSourceObject: {fileID: 5666945758191051827, guid: fa979aa7fbb04094a93f7b2ddd5a9cbb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1722636718}
+    - targetCorrespondingSourceObject: {fileID: 5109440052656164593, guid: fa979aa7fbb04094a93f7b2ddd5a9cbb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1867663860}
+    - targetCorrespondingSourceObject: {fileID: 607246469184494615, guid: fa979aa7fbb04094a93f7b2ddd5a9cbb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1152301689}
+    - targetCorrespondingSourceObject: {fileID: 5352862684576476807, guid: fa979aa7fbb04094a93f7b2ddd5a9cbb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1945503828}
+    - targetCorrespondingSourceObject: {fileID: 1107611690529355933, guid: fa979aa7fbb04094a93f7b2ddd5a9cbb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1500130311}
   m_SourcePrefab: {fileID: 100100000, guid: fa979aa7fbb04094a93f7b2ddd5a9cbb, type: 3}
 --- !u!4 &2642613960005369408 stripped
 Transform:
