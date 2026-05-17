@@ -3,11 +3,11 @@ using Leopotam.EcsProto;
 
 namespace _Project.Scripts.Runtime.Core.Infrastructure.Localization.Systems
 {
-    public sealed class LoadLocalizationServiceIdLanguageCodeMapperOnInitSystem : IProtoInitSystem
+    public sealed class LoadLocalizationDropdownServiceOnInitSystem : IProtoInitSystem
     {
         private readonly LocalizationService _lService;
 
-        public LoadLocalizationServiceIdLanguageCodeMapperOnInitSystem(LocalizationService lService)
+        public LoadLocalizationDropdownServiceOnInitSystem(LocalizationService lService)
         {
             _lService = lService;
         }
