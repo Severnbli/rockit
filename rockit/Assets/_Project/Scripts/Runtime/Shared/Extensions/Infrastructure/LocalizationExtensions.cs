@@ -1,5 +1,7 @@
 ﻿using _Project.Scripts.Runtime.Core.Infrastructure.Localization;
 using _Project.Scripts.Runtime.Core.Infrastructure.Localization.Services;
+using _Project.Scripts.Runtime.Core.Infrastructure.Localization.Types;
+using _Project.Scripts.Runtime.Shared.Extensions.Shared;
 using TMPro;
 
 namespace _Project.Scripts.Runtime.Shared.Extensions.Infrastructure
@@ -46,6 +48,12 @@ namespace _Project.Scripts.Runtime.Shared.Extensions.Infrastructure
             dropdown.options = ldService.OptionDataList;
             dropdown.SetValueWithoutNotify(ldService.CurrentId);
             dropdown.RefreshShownValue();
+        }
+
+        public static void UpdateByLanguageCode(this LocalizationService lService, string langCode)
+        {
+            if (lService.LangData.TryGetByKeyOrFirst(langCode, out lService.CurrLang)) return;
+            lService.CurrLang = new LanguageData();
         }
     }
 }
