@@ -15,6 +15,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure.Localiz
             base.BindServices();
             
             BindService<LocalizationService>();
+            BindService<LocalizationDropdownService>();
         }
 
         protected override void BindSystems()
