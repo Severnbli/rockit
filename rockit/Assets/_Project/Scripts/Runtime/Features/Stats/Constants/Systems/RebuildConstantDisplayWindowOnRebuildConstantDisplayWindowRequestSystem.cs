@@ -12,7 +12,7 @@ using Leopotam.EcsProto;
 
 namespace _Project.Scripts.Runtime.Features.Stats.Constants.Systems
 {
-    public sealed class UpdateConstantDisplayWindowOnRebuildConstantDisplayWindowRequestSystem : IProtoRunSystem
+    public sealed class RebuildConstantDisplayWindowOnRebuildConstantDisplayWindowRequestSystem : IProtoRunSystem
     {
         [DIRequests] private readonly ConstantsRequestsAspect _crAspect;
         private readonly ConstantDisplayWindowService _cdwService;
@@ -20,7 +20,7 @@ namespace _Project.Scripts.Runtime.Features.Stats.Constants.Systems
         private readonly LocalizationService _lService;
         private readonly DataProvider _dProvider;
 
-        public UpdateConstantDisplayWindowOnRebuildConstantDisplayWindowRequestSystem(ConstantDisplayWindowService cdwService, 
+        public RebuildConstantDisplayWindowOnRebuildConstantDisplayWindowRequestSystem(ConstantDisplayWindowService cdwService, 
             ConstantDisplayWindow cdWindow, LocalizationService lService, DataProvider dProvider)
         {
             _cdwService = cdwService;
