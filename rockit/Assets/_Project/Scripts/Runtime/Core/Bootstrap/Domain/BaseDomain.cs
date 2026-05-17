@@ -44,7 +44,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
             Container.BindInterfacesAndSelfTo<SystemsBindResolver>().FromInstance(_systemsBindResolver).AsSingle();
             Container.Bind<ProtoWorld>().FromInstance(World).AsSingle();
             Container.Bind<EcsSystems>().FromInstance(Systems).AsSingle();
-            Container.Bind<MonoEngine>().FromNewComponentOn(gameObject).AsSingle().NonLazy();
+            Container.Bind<IEngine>().To<MonoEngine>().FromNewComponentOn(gameObject).AsSingle().NonLazy();
             Container.Bind<CancellationToken>().FromInstance(destroyCancellationToken).AsSingle();
             
             RegisterBindings();
