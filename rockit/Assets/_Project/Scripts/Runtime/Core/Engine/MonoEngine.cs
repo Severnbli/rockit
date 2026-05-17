@@ -9,6 +9,7 @@ namespace _Project.Scripts.Runtime.Core.Engine
     {
         protected ProtoWorld _world;
         protected EcsSystems _systems;
+        protected bool Inited = false;
 
         [Inject]
         public void Construct(ProtoWorld world, EcsSystems systems)
@@ -16,15 +17,12 @@ namespace _Project.Scripts.Runtime.Core.Engine
             _world = world;
             _systems = systems;
         }
-
-        protected virtual void Start()
-        {
-            Init();
-        }
         
         public void Init()
         {
+            if (Inited) return;
             _systems?.Init();
+            Inited = true;
         }
 
         protected virtual void Update()
@@ -34,6 +32,7 @@ namespace _Project.Scripts.Runtime.Core.Engine
 
         public void Run()
         {
+            if (!Inited) return;
             _systems?.Run();
         }
 
@@ -44,11 +43,13 @@ namespace _Project.Scripts.Runtime.Core.Engine
 
         public void FixedRun()
         {
+            if (!Inited) return;
             _systems?.FixedRun();
         }
 
         protected virtual void OnDestroy()
         {
+            if (!Inited) return;
             Destroy();
         }
 
