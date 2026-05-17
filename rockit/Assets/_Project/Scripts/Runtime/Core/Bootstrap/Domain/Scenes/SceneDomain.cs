@@ -56,6 +56,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Scenes
             TryRegisterModule<CamerasModule>();
             TryRegisterModule<StatsSharedSceneModule>();
             TryRegisterModule<AudioSceneModule>();
+            TryRegisterModule<DropdownsModule>();
         }
     }
 }
