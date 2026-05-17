@@ -1,4 +1,5 @@
 ﻿using _Project.Scripts.Runtime.Core.Engine;
+using _Project.Scripts.Runtime.Shared.Utils.Infrastructure;
 using Cysharp.Threading.Tasks;
 
 namespace _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes.Shared.Active
@@ -15,6 +16,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes.Shared.Active
         public virtual UniTask OnEnter(IStateMachine stateMachine)
         {
             Engine.Init();
+            ScenesUtils.InitializeScene();
             return UniTask.CompletedTask;
         }
 
