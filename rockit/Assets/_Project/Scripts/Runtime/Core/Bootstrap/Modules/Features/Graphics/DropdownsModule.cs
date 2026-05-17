@@ -15,6 +15,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics
             
             BindSystem<UpdateLocalizationDropdownSelectorsOnLocalizationUpdatedRequestSystem>();
             BindSystem<SendChangeLanguageRequestOnDropdownChangeLocalizationSelectorsSystem>();
+            BindSystem<UpdateDropdownLocalizationSelectorOnInitializeRequestSystem>();
         }
     }
 }
