@@ -21,6 +21,11 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Infrastructure
             return $"{LocalizationContracts.LanguageDataFileName}.json";
         }
 
+        public static string GetLanguageDataPath()
+        {
+            return StreamingAssetsUtils.GetPath(GetFileName());
+        }
+
         public static void WriteLanguageData(string json)
         {
             StreamingAssetsUtils.Write(GetFileName(), json);
