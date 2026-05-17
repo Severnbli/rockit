@@ -31,7 +31,7 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Shared.Systems
                 ref var data = ref _ueAspect.DropdownChangeEventPool.Get(evE);
                 if (!_goIndex.TryGetEntityFromIndex(data.Sender.gameObject, _world, out var tarE)) continue;
 
-                ref var dcComponent = ref _usAspect.DropdownChangeComponentPool.Get(tarE);
+                ref var dcComponent = ref _usAspect.DropdownChangeComponentPool.GetOrAdd(tarE);
                 dcComponent.Value = data.Value;
             }
         }
