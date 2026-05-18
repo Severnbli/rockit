@@ -9,6 +9,8 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Shared.Monos
     public class InputSystemSelectableInvoker : OnScreenControl, IPointerUpHandler, IPointerDownHandler, 
         IPointerExitHandler, ICancelHandler
     {
+        private bool _enabled;
+        
         [SerializeField] private Selectable _selectable;
         
         [InputControl(layout = "Button")]
@@ -23,17 +25,22 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Shared.Monos
         
         private bool CanInteract => enabled && _selectable != null && _selectable.interactable;
 
+        private void Update()
+        {
+            if (!CanInteract && _enabled) Disable();
+        }
+        
         private void Enable()
         {
             if (!CanInteract) return;
             
+            _enabled = true;
             SendValueToControl(1.0f);
         }
 
         private void Disable()
         {
-            if (!CanInteract) return;
-            
+            _enabled = false;
             SendValueToControl(0.0f);
         }
         
