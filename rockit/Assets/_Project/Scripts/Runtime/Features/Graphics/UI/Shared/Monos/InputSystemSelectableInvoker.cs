@@ -6,7 +6,8 @@ using UnityEngine.UI;
 
 namespace _Project.Scripts.Runtime.Features.Graphics.UI.Shared.Monos
 {
-    public class InputSystemSelectableInvoker : OnScreenControl, IPointerUpHandler, IPointerDownHandler
+    public class InputSystemSelectableInvoker : OnScreenControl, IPointerUpHandler, IPointerDownHandler, 
+        IPointerExitHandler, ICancelHandler
     {
         [SerializeField] private Selectable _selectable;
         
@@ -20,14 +21,40 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Shared.Monos
             set => _controlPath = value;
         }
         
+        private bool CanInteract => enabled && _selectable != null && _selectable.interactable;
+
+        private void Enable()
+        {
+            if (!CanInteract) return;
+            
+            SendValueToControl(1.0f);
+        }
+
+        private void Disable()
+        {
+            if (!CanInteract) return;
+            
+            SendValueToControl(0.0f);
+        }
+        
         public void OnPointerUp(PointerEventData eventData)
         {
-            if (_selectable.interactable) SendValueToControl(0.0f);
+            Disable();
         }
         
         public void OnPointerDown(PointerEventData eventData)
         {
-            if (_selectable.interactable) SendValueToControl(1.0f);
+            Enable();
+        }
+
+        public void OnPointerExit(PointerEventData eventData)
+        {
+            Disable();
+        }
+
+        public void OnCancel(BaseEventData eventData)
+        {
+            Disable();
         }
     }
 }
