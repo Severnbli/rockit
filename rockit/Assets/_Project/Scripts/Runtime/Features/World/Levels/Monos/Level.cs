@@ -8,6 +8,7 @@ namespace _Project.Scripts.Runtime.Features.World.Levels.Monos
         [SerializeField] private GameObject _psPosition;
         [SerializeField] private PlatformsInputProfile _piProfile;
         
+        public GameObject PsPosition => _psPosition;
         public PlatformsInputProfile PiProfile => _piProfile;
     }
 }
