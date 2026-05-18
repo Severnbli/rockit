@@ -3,7 +3,7 @@
 namespace _Project.Scripts.Runtime.Features.Input.Types
 {
     [Serializable]
-    public class PlatformsInputProfile
+    public struct PlatformsInputProfile
     {
         public bool PositionDisabled;
         public bool RotationDisabled;
