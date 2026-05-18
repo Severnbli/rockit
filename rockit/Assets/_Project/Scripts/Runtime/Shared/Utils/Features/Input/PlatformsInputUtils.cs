@@ -1,6 +1,7 @@
 ﻿using _Project.Scripts.Runtime.Core.Infrastructure.Requests;
 using _Project.Scripts.Runtime.Features.Input.Configs;
 using _Project.Scripts.Runtime.Features.Input.Services;
+using _Project.Scripts.Runtime.Features.Input.Types;
 using _Project.Scripts.Runtime.Shared.Extensions.Infrastructure;
 using Leopotam.EcsProto;
 
@@ -8,12 +9,13 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Features.Input
 {
     public static class PlatformsInputUtils
     {
-        public static void EnableInput(PlatformsInputService service, PlatformsInputConfig config)
+        public static void EnableInput(PlatformsInputService service, PlatformsInputConfig config, 
+            PlatformsInputProfile profile = default)
         {
             service.Enabled = true;
-            config.Position.Enable();
-            config.Rotation.Enable();
-            config.Scale.Enable();
+            if (!profile.PositionDisabled) config.Position.Enable();
+            if (!profile.RotationDisabled) config.Rotation.Enable();
+            if (!profile.ScaleDisabled) config.Scale.Enable();
         }
 
         public static void DisableInput(PlatformsInputService service, PlatformsInputConfig config)
