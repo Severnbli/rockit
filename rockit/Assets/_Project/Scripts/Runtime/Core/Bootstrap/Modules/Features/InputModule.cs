@@ -34,6 +34,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features
 #if UNITY_ANDROID || UNITY_IOS || UNITY_EDITOR
             BindSystem<OpenClosePlayerInputWindowOnPlayerInputEnabledDisabledSystem>();
             BindSystem<OpenClosePlatformsInputWindowOnPlatformsInputEnabledDisabledSystem>();
+            BindSystem<UpdatePlatformsInputWindowButtonsInteractableStatusByPlatformsInputServiceProfileSystem>();
 #endif
         }
     }
