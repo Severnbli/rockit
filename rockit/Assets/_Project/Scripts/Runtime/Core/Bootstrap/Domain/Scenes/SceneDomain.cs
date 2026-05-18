@@ -24,7 +24,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Scenes
         [SerializeField] private PlayerCamera _pCamera;
         [SerializeField] private CameraBrain _cBrain;
         [SerializeField] private PlayerInputWindow _playerInputWindow;
-        [SerializeField] private PlatformsInputWindow _platformsiWindow;
+        [SerializeField] private PlatformsInputWindow _platformsInputWindow;
         
         protected override void RegisterBindings()
         {
@@ -34,7 +34,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Scenes
             Container.BindInstance(_pCamera).AsSingle();
             Container.BindInstance(_cBrain).AsSingle();
             Container.BindInstance(_playerInputWindow).AsSingle();
-            Container.BindInstance(_platformsiWindow).AsSingle();
+            Container.BindInstance(_platformsInputWindow).AsSingle();
             Container.Bind<SceneStatesBootstrapper>().ToSelf().AsSingle().NonLazy();
         }
 
