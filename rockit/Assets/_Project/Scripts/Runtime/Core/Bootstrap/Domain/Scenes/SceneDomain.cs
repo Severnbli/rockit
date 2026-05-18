@@ -13,6 +13,7 @@ using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure.Audio;
 using _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes;
 using _Project.Scripts.Runtime.Features.Graphics.Cameras.Monos;
+using _Project.Scripts.Runtime.Features.Input.Monos;
 using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Scenes
@@ -22,6 +23,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Scenes
         [SerializeField] private MenusCamera _mCamera;
         [SerializeField] private PlayerCamera _pCamera;
         [SerializeField] private CameraBrain _cBrain;
+        [SerializeField] private PlayerInputWindow _playeriWindow;
         
         protected override void RegisterBindings()
         {
@@ -30,6 +32,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Scenes
             Container.BindInstance(_mCamera).AsSingle();
             Container.BindInstance(_pCamera).AsSingle();
             Container.BindInstance(_cBrain).AsSingle();
+            Container.BindInstance(_playeriWindow).AsSingle();
             Container.Bind<SceneStatesBootstrapper>().ToSelf().AsSingle().NonLazy();
         }
 
