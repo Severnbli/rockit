@@ -31,8 +31,10 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features
             BindSystem<PlatformsInputServiceUpdateSystem>();
             BindSystem<PlayerInputServiceUpdateSystem>();
             
+#if UNITY_ANDROID || UNITY_IOS || UNITY_EDITOR
             BindSystem<OpenClosePlayerInputWindowOnPlayerInputEnabledDisabledSystem>();
             BindSystem<OpenClosePlatformsInputWindowOnPlatformsInputEnabledDisabledSystem>();
+#endif
         }
     }
 }
