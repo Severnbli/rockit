@@ -8,6 +8,6 @@ namespace _Project.Scripts.Runtime.Features.Input.Services
         public bool PositionTriggered;
         public bool RotationTriggered;
         public bool ScaleTriggered;
-        public PlatformsInputProfile Profile;
+        public PlatformsInputProfile Profile = default;
     }
 }
