@@ -8,7 +8,9 @@ namespace _Project.Scripts.Runtime.Features.Input.Monos
     public class PlatformsInputWindow : MonoBaseWindow<BaseWindowConfig>
     {
         [SerializeField] private Button _positionButton;
+        [SerializeField] private Button _rotationButton;
         
         public Button PositionButton => _positionButton;
+        public Button RotationButton => _rotationButton;
     }
 }
