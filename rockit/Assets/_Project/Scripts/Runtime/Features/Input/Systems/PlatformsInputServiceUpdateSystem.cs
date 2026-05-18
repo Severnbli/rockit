@@ -20,9 +20,9 @@ namespace _Project.Scripts.Runtime.Features.Input.Systems
         {
             if (_service.TryResetOnDisabled()) return;
 
-            _service.PositionTriggered = _config.Position.triggered;
-            _service.RotationTriggered = _config.Rotation.triggered;
-            _service.ScaleTriggered = _config.Scale.triggered;
+            _service.PositionTriggered = _config.Position.triggered && !_service.Profile.PositionDisabled;
+            _service.RotationTriggered = _config.Rotation.triggered && !_service.Profile.RotationDisabled;
+            _service.ScaleTriggered = _config.Scale.triggered && !_service.Profile.ScaleDisabled;
         }
     }
 }

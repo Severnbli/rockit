@@ -11,9 +11,9 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Features.Input
         public static void EnableInput(PlatformsInputService service, PlatformsInputConfig config)
         {
             service.Enabled = true;
-            if (!service.Profile.PositionDisabled) config.Position.Enable();
-            if (!service.Profile.RotationDisabled) config.Rotation.Enable();
-            if (!service.Profile.ScaleDisabled) config.Scale.Enable();
+            config.Position.Enable();
+            config.Rotation.Enable();
+            config.Scale.Enable();
         }
 
         public static void DisableInput(PlatformsInputService service, PlatformsInputConfig config)
