@@ -97,12 +97,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 3452694716985603398, guid: 4f2890999f208b54c93aca928e2508ef, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5504650157200857333, guid: 4f2890999f208b54c93aca928e2508ef, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7188397874556680187}
+    - targetCorrespondingSourceObject: {fileID: 5504650157200857333, guid: 4f2890999f208b54c93aca928e2508ef, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 981078930378139751}
   m_SourcePrefab: {fileID: 100100000, guid: 4f2890999f208b54c93aca928e2508ef, type: 3}
 --- !u!1 &1394528307686043077 stripped
 GameObject:
@@ -122,6 +126,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Runtime::_Project.Scripts.Runtime.Core.Infrastructure.Scenes.Monos.AuthoringOnSceneInitialize
   _authoring: {fileID: 5106355332752309210}
+--- !u!114 &981078930378139751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1394528307686043077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37f5f888889743efbff3a872ec59e073, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Runtime::_Project.Scripts.Runtime.Features.Graphics.UI.Shared.Monos.InputSystemSelectableInvoker
+  _selectable: {fileID: 8879495698160994222}
+  _controlPath: <Gamepad>/dpad/left
 --- !u!114 &5106355332752309210 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1865410685434089194, guid: 4f2890999f208b54c93aca928e2508ef, type: 3}
@@ -133,3 +151,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd2e3b9377ea4b6b9d83eb1bc17d15a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Leopotam.EcsProto.Unity::Leopotam.EcsProto.Unity.ProtoUnityAuthoring
+--- !u!114 &8879495698160994222 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2595305349244646046, guid: 4f2890999f208b54c93aca928e2508ef, type: 3}
+  m_PrefabInstance: {fileID: 6862973718601872688}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1394528307686043077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
