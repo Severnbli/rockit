@@ -5,6 +5,7 @@ using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.Sprites;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.UI;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.UI.Text;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.UI.Windows;
+using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Input;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Physics;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Physics.Moving;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Stats.Constants;
@@ -62,6 +63,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Scenes
             TryRegisterModule<StatsSharedSceneModule>();
             TryRegisterModule<AudioSceneModule>();
             TryRegisterModule<DropdownsModule>();
+            TryRegisterModule<InputSceneModule>();
         }
     }
 }
