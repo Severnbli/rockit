@@ -13,10 +13,12 @@ namespace _Project.Scripts.Runtime.Features.Input
         public readonly ProtoPool<EnablePlatformsInputRequest> EnablePlatformsInputRequestPool;
         public readonly ProtoPool<DisablePlatformsInputRequest> DisablePlatformsInputRequestPool;
         public readonly ProtoPool<PlayerInputEnabledRequest> PlayerInputEnabledRequestPool;
+        public readonly ProtoPool<PlayerInputDisabledRequest> PlayerInputDisabledRequestPool;
         public readonly ProtoIt EnablePlayerInputRequests = new (It.Inc<RequestComponent, ActiveRequestTag, EnablePlayerInputRequest>());
         public readonly ProtoIt DisablePlayerInputRequests = new (It.Inc<RequestComponent, ActiveRequestTag, DisablePlayerInputRequest>());
         public readonly ProtoIt EnablePlatformsInputRequests = new (It.Inc<RequestComponent, ActiveRequestTag, EnablePlatformsInputRequest>());
         public readonly ProtoIt DisablePlatformsInputRequests = new (It.Inc<RequestComponent, ActiveRequestTag, DisablePlatformsInputRequest>());
         public readonly ProtoIt PlayerInputEnabledRequests = new (It.Inc<RequestComponent, ActiveRequestTag, RunRequestTag, PlayerInputEnabledRequest>());
+        public readonly ProtoIt PlayerInputDisabledRequests = new (It.Inc<RequestComponent, ActiveRequestTag, RunRequestTag, DisablePlayerInputRequest>());
     }
 }
