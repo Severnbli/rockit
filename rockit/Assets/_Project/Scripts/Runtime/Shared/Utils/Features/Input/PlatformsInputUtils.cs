@@ -38,7 +38,7 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Features.Input
             return entity;
         }
 
-        public static ProtoEntity CreatePlatformInputEnabledRequest(RequestsAspect aspect)
+        public static ProtoEntity CreatePlatformsInputEnabledRequest(RequestsAspect aspect)
         {
             return aspect.CreateRequest(aspect.InputRequestsAspect.PlatformsInputEnabledRequestPool);
         }
