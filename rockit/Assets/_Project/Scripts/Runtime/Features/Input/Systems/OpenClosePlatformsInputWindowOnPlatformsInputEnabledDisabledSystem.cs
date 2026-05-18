@@ -7,9 +7,9 @@ namespace _Project.Scripts.Runtime.Features.Input.Systems
     public sealed class OpenClosePlatformsInputWindowOnPlatformsInputEnabledDisabledSystem : IProtoRunSystem
     {
         [DIRequests] private readonly InputRequestsAspect _irAspect;
-        private readonly PlayerInputWindow _piWindow;
+        private readonly PlatformsInputWindow _piWindow;
 
-        public OpenClosePlatformsInputWindowOnPlatformsInputEnabledDisabledSystem(PlayerInputWindow piWindow)
+        public OpenClosePlatformsInputWindowOnPlatformsInputEnabledDisabledSystem(PlatformsInputWindow piWindow)
         {
             _piWindow = piWindow;
         }
