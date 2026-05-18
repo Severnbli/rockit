@@ -5,7 +5,7 @@ namespace _Project.Scripts.Runtime.Features.World.Levels.Monos
 {
     public class Level : MonoBehaviour
     {
-        [SerializeField] private GameObject _playerSpawnPosition;
+        [SerializeField] private GameObject _psPosition;
         [SerializeField] private PlatformsInputProfile _piProfile;
         
         public PlatformsInputProfile PiProfile => _piProfile;
