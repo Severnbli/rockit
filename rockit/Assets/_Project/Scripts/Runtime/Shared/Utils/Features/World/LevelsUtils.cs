@@ -12,5 +12,11 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Features.World
             return aspect.CreateRequest(aspect.WorldSharedRequestsAspect.LevelsRequestsAspect.SpawnLevelRequestPool, 
                 prepared: prepared);
         }
+
+        public static ProtoEntity CreateSpawnLevelToLoadRequest(RequestsAspect aspect)
+        {
+            return aspect.CreateRequest(aspect.WorldSharedRequestsAspect.LevelsRequestsAspect
+                .SpawnLevelToLoadRequestPool);
+        }
     }
 }
