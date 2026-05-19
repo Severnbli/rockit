@@ -1,5 +1,6 @@
 ﻿using _Project.Scripts.Runtime.Core.Infrastructure.Objects.Lifecycle.Pools;
 using _Project.Scripts.Runtime.Features.Graphics.Particles.Monos;
+using _Project.Scripts.Runtime.Shared.Extensions.Shared;
 using Leopotam.EcsProto;
 using UnityEngine;
 
@@ -12,6 +13,13 @@ namespace _Project.Scripts.Runtime.Features.Graphics.Particles.Types
         protected ParticleSystemPool(ProtoWorld world, ParticleSystemsContainer psContainer) : base(world)
         {
             PsContainer = psContainer;
+        }
+
+        protected override void PostSpawn(ParticleSystem instance, Transform at = null, ParticleSystemPoolSpawnSettings settings = default)
+        {
+            base.PostSpawn(instance, at, settings);
+            
+            instance.transform.PlaceTo(settings.At);
         }
 
         protected override Transform FallbackContainer() => PsContainer.GetContainer();
