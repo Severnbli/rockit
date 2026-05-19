@@ -7,6 +7,7 @@
         public const string LanguageNameV = "language_name_v";
         public const string LoadingS = "loading_s";
         public const string Collection = "collection";
+        public const string ClickToContinue = "click_to_continue";
     
         public static class Const
         {
@@ -48,6 +49,50 @@
                 public const string Name = "const_multi_name";
                 public const string Discoverer = "const_multi_discoverer";
                 public const string Info = "const_multi_info";
+            }
+        }
+
+        public static class Controls
+        {
+            public static string Separator = " – ";
+            
+            public static class Run
+            {
+                public static string Control = "controls_run";
+                public static string Info = "controls_run_info";
+            }
+
+            public static class Jump
+            {
+                public static string Control = "controls_jump";
+                public static string Info = "controls_jump_info";
+            }
+
+            public static class Dash
+            {
+                public static string Control = "controls_dash";
+                public static string Info = "controls_dash_info";
+            }
+
+            public static class Platforms
+            {
+                public static class Position
+                {
+                    public static string Control = "controls_platforms_position";
+                    public static string Info = "controls_platforms_position_info";
+                }
+
+                public static class Rotation
+                {
+                    public  static string Control = "controls_platforms_rotation";
+                    public static string Info = "controls_platforms_rotation_info";
+                }
+
+                public static class Scale
+                {
+                    public static string Control = "controls_platforms_scale";
+                    public static string Info = "controls_platforms_scale_info";
+                }
             }
         }
     }

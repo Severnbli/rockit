@@ -1,4 +1,5 @@
-﻿using _Project.Scripts.Runtime.Features.World.Levels.Types;
+﻿using _Project.Scripts.Runtime.Core.Bootstrap.States.Project;
+using _Project.Scripts.Runtime.Features.World.Levels.Types;
 using Cysharp.Threading.Tasks;
 
 namespace _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes.Game.Active
@@ -15,7 +16,12 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes.Game.Active
         public async UniTask OnEnter(IStateMachine stateMachine)
         {
             _lFactory.Create();
+            
+#if (UNITY_ANDROID || UNITY_IOS) && !UNITY_EDITOR
             stateMachine.ChangeState<GameState>().Forget();
+#else
+            stateMachine.ChangeState<ControlsState>().Forget();
+#endif
             await UniTask.NextFrame();
         }
 
