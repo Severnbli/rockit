@@ -14,18 +14,21 @@ using _Project.Scripts.Runtime.Core.Bootstrap.States.Project;
 using _Project.Scripts.Runtime.Core.Infrastructure.Audio.Monos;
 using _Project.Scripts.Runtime.Core.Infrastructure.Objects.Domain;
 using _Project.Scripts.Runtime.Core.Systems;
+using _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Project.Monos;
 using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Project
 {
     public class ProjectDomain : BaseDomain
     {
+        [SerializeField] private ControlsWindow _cWindow;
         [SerializeField] private AudioSourceContainer _asContainer;
         
         protected override void RegisterBindings()
         {
             base.RegisterBindings();
 
+            Container.BindInstance(_cWindow).AsSingle();
             Container.BindInstance(_asContainer).AsSingle();
             Container.Bind<IStateMachine>().To<StateMachine>().AsSingle();
             Container.Bind<PausableSystemsSolver>().ToSelf().AsSingle();
