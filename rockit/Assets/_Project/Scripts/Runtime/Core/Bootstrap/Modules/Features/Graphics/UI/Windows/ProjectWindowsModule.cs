@@ -14,6 +14,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.UI.W
             base.BindSystems();
             
             BindSystem<UpdateControlsWindowInfoOnInitSystem>();
+            BindSystem<UpdateControlsWindowInfoOnLocalizationUpdatedRequestSystem>();
         }
     }
 }
