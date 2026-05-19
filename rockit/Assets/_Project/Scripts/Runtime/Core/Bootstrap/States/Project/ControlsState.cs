@@ -1,9 +1,9 @@
 ﻿using _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Project.Monos;
 using Cysharp.Threading.Tasks;
 
-namespace _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes.Shared.Active
+namespace _Project.Scripts.Runtime.Core.Bootstrap.States.Project
 {
-    public class ControlsState : ISceneState
+    public class ControlsState : IProjectState
     {
         private readonly ControlsWindow _cWindow;
 
