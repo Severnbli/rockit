@@ -1,6 +1,7 @@
 ﻿using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Economy.Coins;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.Effects;
+using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.UI.Windows;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Input;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Stats;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Stats.Constants;
@@ -14,18 +15,23 @@ using _Project.Scripts.Runtime.Core.Bootstrap.States.Project;
 using _Project.Scripts.Runtime.Core.Infrastructure.Audio.Monos;
 using _Project.Scripts.Runtime.Core.Infrastructure.Objects.Domain;
 using _Project.Scripts.Runtime.Core.Systems;
+using _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Project.Monos;
 using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Project
 {
     public class ProjectDomain : BaseDomain
     {
+        [SerializeField] private ControlsWindow _cWindow;
+        [SerializeField] private LoadingWindow _lWindow;
         [SerializeField] private AudioSourceContainer _asContainer;
         
         protected override void RegisterBindings()
         {
             base.RegisterBindings();
 
+            Container.BindInstance(_cWindow).AsSingle();
+            Container.BindInstance(_lWindow).AsSingle();
             Container.BindInstance(_asContainer).AsSingle();
             Container.Bind<IStateMachine>().To<StateMachine>().AsSingle();
             Container.Bind<PausableSystemsSolver>().ToSelf().AsSingle();
@@ -40,6 +46,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Project
             RegisterState<ProjectSetupState>();
             RegisterState<ProjectCloseState>();
             RegisterState<SwitchSceneState>();
+            RegisterState<ControlsState>();
         }
 
         protected override void RegisterModules()
@@ -58,6 +65,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Project
             TryRegisterModule<LevelsProjectModule>();
             TryRegisterModule<CoinsProjectModule>();
             TryRegisterModule<ConstantsProjectModule>();
+            TryRegisterModule<ProjectWindowsModule>();
             TryRegisterModule<RequestsModule>();
         }
     }
