@@ -8,8 +8,8 @@ namespace _Project.Scripts.Runtime.Features.Platforms.Shared
 {
     public sealed class PlatformsSharedRequestsAspect : ProtoAspectInject
     {
-        public readonly ProtoPool<PositionPlatformsTriggeredRequest> PositionPlatformsTriggeredRequestPool;
-        public readonly ProtoIt PositionPlatformsTriggeredRequests = new (It.Inc<RequestComponent, ActiveRequestTag, RunRequestTag, PositionPlatformsTriggeredRequest>());
+        public readonly ProtoPool<PositionPlatformTriggeredRequest> PositionPlatformTriggeredRequestPool;
+        public readonly ProtoIt PositionPlatformTriggeredRequests = new (It.Inc<RequestComponent, ActiveRequestTag, RunRequestTag, PositionPlatformTriggeredRequest>());
 
         public readonly ProtoPool<RotationPlatformsTriggeredRequest> RotationPlatformsTriggeredRequestPool;
         public readonly ProtoIt RotationPlatformsTriggeredRequests = new (It.Inc<RequestComponent, ActiveRequestTag, RunRequestTag, RotationPlatformsTriggeredRequest>());
