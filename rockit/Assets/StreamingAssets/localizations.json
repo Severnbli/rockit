@@ -139,6 +139,9 @@
       },
       "controls_platforms_scale_info": {
         "String": "Scale platforms"
+      },
+      "click_to_continue": {
+        "String": "Click to continue"
       }
     }
   },
@@ -282,6 +285,9 @@
       },
       "controls_platforms_scale_info": {
         "String": "Масштабируемые платформы"
+      },
+      "click_to_continue": {
+        "String": "Нажми, чтобы продолжить"
       }
     }
   }
