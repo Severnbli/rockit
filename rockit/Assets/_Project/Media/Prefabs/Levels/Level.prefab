@@ -33,6 +33,7 @@ Transform:
   - {fileID: 43528237814617486}
   - {fileID: 4824725016098613421}
   - {fileID: 9072162403913245044}
+  - {fileID: 2622095224120156359}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4612686704138885254
@@ -47,7 +48,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfe23a3d5fbe47e2a2e846c37ee278e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Runtime::_Project.Scripts.Runtime.Features.World.Levels.Monos.Level
-  _playerSpawnPosition: {fileID: 0}
+  _psPosition: {fileID: 5608707244387110816}
+  _piProfile:
+    PositionDisabled: 0
+    RotationDisabled: 0
+    ScaleDisabled: 0
 --- !u!1 &615640517118898773
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,6 +207,37 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &5608707244387110816
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2622095224120156359}
+  m_Layer: 0
+  m_Name: PlayerSpawnPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2622095224120156359
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5608707244387110816}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5476661328668905717}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6182261208502516994
 GameObject:
   m_ObjectHideFlags: 0
