@@ -1,6 +1,6 @@
 ﻿namespace _Project.Scripts.Runtime.Features.Platforms.Shared.Requests
 {
-    public struct RotationPlatformsTriggeredRequest
+    public struct RotationPlatformTriggeredRequest
     {
         
     }
