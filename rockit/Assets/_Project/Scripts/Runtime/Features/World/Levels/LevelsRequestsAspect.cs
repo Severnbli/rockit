@@ -13,5 +13,8 @@ namespace _Project.Scripts.Runtime.Features.World.Levels
         
         public readonly ProtoPool<SpawnLevelToLoadRequest> SpawnLevelToLoadRequestPool;
         public readonly ProtoIt SpawnLevelToLoadRequests = new (It.Inc<RequestComponent, ActiveRequestTag, RunRequestTag, SpawnLevelToLoadRequest>());
+        
+        public readonly ProtoPool<LevelSpawnedRequest> LevelSpawnedRequestPool;
+        public readonly ProtoIt LevelSpawnedRequests = new (It.Inc<RequestComponent, ActiveRequestTag, RunRequestTag, SpawnLevelRequest>());
     }
 }
