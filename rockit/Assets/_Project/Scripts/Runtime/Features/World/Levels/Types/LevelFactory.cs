@@ -24,7 +24,7 @@ namespace _Project.Scripts.Runtime.Features.World.Levels.Types
 
         protected override GameObject GetPrefab()
         {
-            return !_lConfig.Levels.TryGetValue(_lService.CurrLevelId, out var lDefinition) 
+            return !_lConfig.Levels.TryGetValue(_lService.LevelIdToSpawn, out var lDefinition) 
                 ? null 
                 : lDefinition.Prefab;
         }
