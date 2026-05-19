@@ -1,21 +1,22 @@
 ﻿using _Project.Scripts.Runtime.Core.Bootstrap.States.Project;
-using _Project.Scripts.Runtime.Features.World.Levels.Types;
+using _Project.Scripts.Runtime.Core.Infrastructure.Requests;
+using _Project.Scripts.Runtime.Shared.Utils.Features.World;
 using Cysharp.Threading.Tasks;
 
 namespace _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes.Game.Active
 {
     public class SpawnLevelState : ISceneState
     {
-        private readonly LevelFactory _lFactory;
+        private readonly RequestsAspect _rAspect;
 
-        public SpawnLevelState(LevelFactory lFactory)
+        public SpawnLevelState(RequestsAspect rAspect)
         {
-            _lFactory = lFactory;
+            _rAspect = rAspect;
         }
 
         public async UniTask OnEnter(IStateMachine stateMachine)
         {
-            _lFactory.Create();
+            LevelsUtils.CreateSpawnLevelToLoadRequest(_rAspect);
             
 #if (UNITY_ANDROID || UNITY_IOS) && !UNITY_EDITOR
             stateMachine.ChangeState<GameState>().Forget();

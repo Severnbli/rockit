@@ -14,6 +14,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.World.Levels
             base.BindSystems();
             
             BindSystem<SyncCompletedLevelsDataToLevelsConfigOnInitSystem>();
+            BindSystem<SendSpawnLevelRequestOnSpawnLevelToLoadRequestSystem>();
         }
     }
 }

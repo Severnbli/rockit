@@ -1,4 +1,5 @@
-﻿using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Economy.Coins;
+﻿using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features;
+using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Economy.Coins;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.Animations;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.Sprites;
@@ -64,6 +65,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Scenes
             TryRegisterModule<AudioSceneModule>();
             TryRegisterModule<DropdownsModule>();
             TryRegisterModule<InputSceneModule>();
+            TryRegisterModule<PlayerModule>();
         }
     }
 }
