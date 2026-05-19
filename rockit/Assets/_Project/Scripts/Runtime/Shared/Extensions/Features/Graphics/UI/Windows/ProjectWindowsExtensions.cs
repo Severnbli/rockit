@@ -38,5 +38,10 @@ namespace _Project.Scripts.Runtime.Shared.Extensions.Features.Graphics.UI.Window
             
             cWindow.InfoText.text = sb.ToString();
         }
+
+        public static void UpdateText(this LoadingWindow lWindow, LocalizationService lService)
+        {
+            lWindow.Text.text = lService.GetString(LocalizationEntriesContracts.LoadingS);
+        }
     }
 }
