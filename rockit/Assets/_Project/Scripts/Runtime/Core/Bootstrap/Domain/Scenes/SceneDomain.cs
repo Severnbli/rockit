@@ -5,6 +5,7 @@ using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.Sprites;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.UI;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.UI.Text;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.UI.Windows;
+using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Input;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Physics;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Physics.Moving;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Stats.Constants;
@@ -13,6 +14,7 @@ using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure.Audio;
 using _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes;
 using _Project.Scripts.Runtime.Features.Graphics.Cameras.Monos;
+using _Project.Scripts.Runtime.Features.Input.Monos;
 using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Scenes
@@ -22,6 +24,8 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Scenes
         [SerializeField] private MenusCamera _mCamera;
         [SerializeField] private PlayerCamera _pCamera;
         [SerializeField] private CameraBrain _cBrain;
+        [SerializeField] private PlayerInputWindow _playerInputWindow;
+        [SerializeField] private PlatformsInputWindow _platformsInputWindow;
         
         protected override void RegisterBindings()
         {
@@ -30,6 +34,8 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Scenes
             Container.BindInstance(_mCamera).AsSingle();
             Container.BindInstance(_pCamera).AsSingle();
             Container.BindInstance(_cBrain).AsSingle();
+            Container.BindInstance(_playerInputWindow).AsSingle();
+            Container.BindInstance(_platformsInputWindow).AsSingle();
             Container.Bind<SceneStatesBootstrapper>().ToSelf().AsSingle().NonLazy();
         }
 
@@ -57,6 +63,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Scenes
             TryRegisterModule<StatsSharedSceneModule>();
             TryRegisterModule<AudioSceneModule>();
             TryRegisterModule<DropdownsModule>();
+            TryRegisterModule<InputSceneModule>();
         }
     }
 }
