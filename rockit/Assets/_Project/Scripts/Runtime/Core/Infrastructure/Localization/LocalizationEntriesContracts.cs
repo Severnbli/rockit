@@ -53,6 +53,8 @@
 
         public static class Controls
         {
+            public static string Separator = " – ";
+            
             public static class Run
             {
                 public static string Control = "controls_run";
