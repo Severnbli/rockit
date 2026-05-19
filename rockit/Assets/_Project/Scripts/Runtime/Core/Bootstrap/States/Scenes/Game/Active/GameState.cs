@@ -1,4 +1,5 @@
-﻿using _Project.Scripts.Runtime.Core.Infrastructure.Requests;
+﻿using System.Threading;
+using _Project.Scripts.Runtime.Core.Infrastructure.Requests;
 using _Project.Scripts.Runtime.Features.Graphics.Cameras.Monos;
 using _Project.Scripts.Runtime.Features.Graphics.Cameras.Requests;
 using _Project.Scripts.Runtime.Features.Graphics.Cameras.Types;
@@ -12,19 +13,22 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes.Game.Active
     {
         private readonly RequestsAspect _rAspect;
         private readonly PlayerCamera _pCamera;
-        private readonly CameraSwitchAwaiter _csAwaiter;
+        private readonly ICameraSwitchAwaiter _csAwaiter;
+        private readonly CancellationToken _ct;
 
-        public GameState(RequestsAspect rAspect, PlayerCamera pCamera, CameraSwitchAwaiter csAwaiter)
+        public GameState(RequestsAspect rAspect, PlayerCamera pCamera, ICameraSwitchAwaiter csAwaiter, 
+            CancellationToken ct)
         {
             _rAspect = rAspect;
             _pCamera = pCamera;
             _csAwaiter = csAwaiter;
+            _ct = ct;
         }
 
         public async UniTask OnEnter(IStateMachine stateMachine)
         {
             SwitchToPlayerCamera();
-            await _csAwaiter.AwaitSwitch();
+            await _csAwaiter.AwaitSwitch(_ct);
             
             PlayerInputUtils.CreateEnableRequest(_rAspect);
             PlatformsInputUtils.CreateEnableRequest(_rAspect);
