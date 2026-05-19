@@ -103,6 +103,45 @@
       },
       "const_multi_info": {
         "String": "Affects the quantity of the air dashes."
+      },
+      "controls_run_left": {
+        "String": "A"
+      },
+      "controls_run_right": {
+        "String": "D"
+      },
+      "controls_jump": {
+        "String": "Space"
+      },
+      "controls_dash": {
+        "String": "Left Shift"
+      },
+      "controls_platforms_position": {
+        "String": "Left Arrow"
+      },
+      "controls_platforms_rotation": {
+        "String": "Up Arrow"
+      },
+      "controls_platforms_scale": {
+        "String": "Right Arrow"
+      },
+      "controls_run_info": {
+        "String": "Run"
+      },
+      "controls_jump_info": {
+        "String": "Jump"
+      },
+      "controls_dash_info": {
+        "String": "Dash"
+      },
+      "controls_platforms_position_info": {
+        "String": "Position platforms"
+      },
+      "controls_platforms_rotation_info": {
+        "String": "Rotation platforms"
+      },
+      "controls_platforms_scale_info": {
+        "String": "Scale platforms"
       }
     }
   },
@@ -210,6 +249,45 @@
       },
       "const_multi_info": {
         "String": "Влияет на количество рывков в воздухе."
+      },
+      "controls_run_left": {
+        "String": "Ф"
+      },
+      "controls_run_right": {
+        "String": "В"
+      },
+      "controls_jump": {
+        "String": "Пробел"
+      },
+      "controls_dash": {
+        "String": "Левый Shift"
+      },
+      "controls_platforms_position": {
+        "String": "Стрелка влево"
+      },
+      "controls_platforms_rotation": {
+        "String": "Стрелка вверх"
+      },
+      "controls_platforms_scale": {
+        "String": "Стрелка вправо"
+      },
+      "controls_run_info": {
+        "String": "Бег"
+      },
+      "controls_jump_info": {
+        "String": "Прыжок"
+      },
+      "controls_dash_info": {
+        "String": "Рывок"
+      },
+      "controls_platforms_position_info": {
+        "String": "Позиционные платформы"
+      },
+      "controls_platforms_rotation_info": {
+        "String": "Вращательные платформы"
+      },
+      "controls_platforms_scale_info": {
+        "String": "Масштабируемые платформы"
       }
     }
   }
