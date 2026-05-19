@@ -58,16 +58,16 @@ namespace _Project.Scripts.Runtime.Shared.Extensions.Infrastructure
             lService.CurrLang = new LanguageData();
         }
 
-#if UNITY_WEBGL && !UNITY_EDITOR
-        public static async UniTask LoadLangData(this LocalizationService lService)
-        {
-            lService.LangData = await LocalizationUtils.GetLanguageDataDictionaryAsync();
-        }
-#else
+#if UNITY_EDITOR
         public static UniTask LoadLangData(this LocalizationService lService)
         {
             lService.LangData = LocalizationUtils.GetLanguageDataDictionary();
             return UniTask.CompletedTask;
+        }
+#else
+        public static async UniTask LoadLangData(this LocalizationService lService)
+        {
+            lService.LangData = await LocalizationUtils.GetLanguageDataDictionaryAsync();
         }
 #endif
     }
