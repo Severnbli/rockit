@@ -16,6 +16,18 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 49cef488f5878e54e85905222ad2ed64, type: 2}
+    - target: {fileID: 2858348494016500063, guid: 2e7dea5ee09649f4a9d864f527543aa9, type: 3}
+      propertyPath: Components.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2858348494016500063, guid: 2e7dea5ee09649f4a9d864f527543aa9, type: 3}
+      propertyPath: 'Components.Array.data[1]'
+      value: 1499440732055797890
+      objectReference: {fileID: 0}
+    - target: {fileID: 2858348494016500063, guid: 2e7dea5ee09649f4a9d864f527543aa9, type: 3}
+      propertyPath: 'managedReferences[1499440732055797890]'
+      value: Runtime _Project.Scripts.Runtime.Features.Platforms.Shared.Tags.ScalePlatformTag
+      objectReference: {fileID: 0}
     - target: {fileID: 4877902697761671994, guid: 2e7dea5ee09649f4a9d864f527543aa9, type: 3}
       propertyPath: looping
       value: 0
@@ -240,9 +252,41 @@ PrefabInstance:
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.minCurve.m_Curve.Array.data[1].value
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4877902697761671994, guid: 2e7dea5ee09649f4a9d864f527543aa9, type: 3}
+      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.maxCurve.m_Curve.Array.data[0].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 4877902697761671994, guid: 2e7dea5ee09649f4a9d864f527543aa9, type: 3}
+      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.maxCurve.m_Curve.Array.data[1].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 4877902697761671994, guid: 2e7dea5ee09649f4a9d864f527543aa9, type: 3}
+      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.minCurve.m_Curve.Array.data[0].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 4877902697761671994, guid: 2e7dea5ee09649f4a9d864f527543aa9, type: 3}
+      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.minCurve.m_Curve.Array.data[1].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 4877902697761671994, guid: 2e7dea5ee09649f4a9d864f527543aa9, type: 3}
+      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.maxCurve.m_Curve.Array.data[0].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 4877902697761671994, guid: 2e7dea5ee09649f4a9d864f527543aa9, type: 3}
+      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.maxCurve.m_Curve.Array.data[1].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 4877902697761671994, guid: 2e7dea5ee09649f4a9d864f527543aa9, type: 3}
+      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.minCurve.m_Curve.Array.data[0].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 4877902697761671994, guid: 2e7dea5ee09649f4a9d864f527543aa9, type: 3}
+      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.minCurve.m_Curve.Array.data[1].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
     - target: {fileID: 7382127397300436550, guid: 2e7dea5ee09649f4a9d864f527543aa9, type: 3}
       propertyPath: m_Name
-      value: ParticleSystem Variant
+      value: ScalePlatform
       objectReference: {fileID: 0}
     - target: {fileID: 7877583815276236306, guid: 2e7dea5ee09649f4a9d864f527543aa9, type: 3}
       propertyPath: m_LocalPosition.x
