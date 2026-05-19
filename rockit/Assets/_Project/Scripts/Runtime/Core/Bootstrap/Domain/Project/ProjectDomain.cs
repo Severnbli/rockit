@@ -43,6 +43,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Project
             RegisterState<ProjectSetupState>();
             RegisterState<ProjectCloseState>();
             RegisterState<SwitchSceneState>();
+            RegisterState<ControlsState>();
         }
 
         protected override void RegisterModules()
