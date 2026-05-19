@@ -1,4 +1,5 @@
 ﻿using _Project.Scripts.Runtime.Core.Infrastructure.Objects.Lifecycle.Pools;
+using _Project.Scripts.Runtime.Features.Graphics.Particles.Monos;
 using Leopotam.EcsProto;
 using UnityEngine;
 
@@ -6,8 +7,11 @@ namespace _Project.Scripts.Runtime.Features.Graphics.Particles.Types
 {
     public abstract class ParticleSystemPool : BasePrefabPool<ParticleSystem, ParticleSystemPoolSpawnSettings, ParticleSystemPoolDespawnSettings>
     {
-        protected ParticleSystemPool(ProtoWorld world) : base(world)
+        protected readonly ParticleSystemsContainer PsContainer;
+        
+        protected ParticleSystemPool(ProtoWorld world, ParticleSystemsContainer psContainer) : base(world)
         {
+            PsContainer = psContainer;
         }
     }
 
