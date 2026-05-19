@@ -11,11 +11,14 @@ namespace _Project.Scripts.Runtime.Features.World.Levels.Types
     {
         private readonly DataProvider _dProvider;
         private readonly LevelsConfig _lConfig;
+        private readonly LevelsContainer _lContainer;
 
-        public LevelFactory(ProtoWorld world, DataProvider dProvider, LevelsConfig lConfig) : base(world)
+        public LevelFactory(ProtoWorld world, DataProvider dProvider, LevelsConfig lConfig, 
+            LevelsContainer lContainer) : base(world)
         {
             _dProvider = dProvider;
             _lConfig = lConfig;
+            _lContainer = lContainer;
         }
 
         protected override GameObject GetPrefab()
