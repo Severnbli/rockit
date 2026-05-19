@@ -13,6 +13,7 @@ using _Project.Scripts.Runtime.Features.Physics.Moving.Characters;
 using _Project.Scripts.Runtime.Features.Physics.Moving.Platforms;
 using _Project.Scripts.Runtime.Features.Stats.Player;
 using _Project.Scripts.Runtime.Features.Stats.Shared;
+using _Project.Scripts.Runtime.Features.World.Shared;
 using Leopotam.EcsProto.QoL;
 
 namespace _Project.Scripts.Runtime.Core.Infrastructure.Requests
@@ -34,6 +35,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Requests
         public readonly CoinsRequestsAspect CoinsRequestsAspect;
         public readonly StatsSharedRequestsAspect StatsSharedRequestsAspect;
         public readonly GraphicsSharedRequestsAspect GraphicsSharedRequestsAspect;
+        public readonly WorldSharedRequestsAspect WorldSharedRequestsAspect;
         public readonly SharedRequestsAspect SharedRequestsAspect;
     }
 }
