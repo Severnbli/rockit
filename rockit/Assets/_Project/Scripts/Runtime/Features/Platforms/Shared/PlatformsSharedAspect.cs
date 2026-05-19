@@ -21,6 +21,7 @@ namespace _Project.Scripts.Runtime.Features.Platforms.Shared
         public readonly ProtoIt ScalePlatforms = new (It.Inc<PlatformComponent, ScalePlatformTag>());
         public readonly ProtoIt ActivePlatforms = new (It.Inc<PlatformComponent, ActivePlatformTag>());
         public readonly ProtoIt ActivePositionPlatforms = new (It.Inc<PlatformComponent, ActivePlatformTag, PositionPlatformTag>());
+        public readonly ProtoIt ActiveRotationPlatforms = new (It.Inc<PlatformComponent, ActivePlatformTag, RotationPlatformTag>());
         public readonly ProtoItExc InactivePlatforms = new (It.Inc<PlatformComponent>(), It.Exc<ActivePlatformTag>());
     }
 }
