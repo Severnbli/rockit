@@ -20,6 +20,7 @@ namespace _Project.Scripts.Runtime.Features.Graphics.Particles.Types
             base.PostSpawn(instance, at, settings);
             
             instance.transform.PlaceTo(settings.At);
+            instance.Play();
         }
 
         protected override Transform FallbackContainer() => PsContainer.GetContainer();
