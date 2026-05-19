@@ -23,6 +23,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Project
     public class ProjectDomain : BaseDomain
     {
         [SerializeField] private ControlsWindow _cWindow;
+        [SerializeField] private LoadingWindow _lWindow;
         [SerializeField] private AudioSourceContainer _asContainer;
         
         protected override void RegisterBindings()
@@ -30,6 +31,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Project
             base.RegisterBindings();
 
             Container.BindInstance(_cWindow).AsSingle();
+            Container.BindInstance(_lWindow).AsSingle();
             Container.BindInstance(_asContainer).AsSingle();
             Container.Bind<IStateMachine>().To<StateMachine>().AsSingle();
             Container.Bind<PausableSystemsSolver>().ToSelf().AsSingle();
