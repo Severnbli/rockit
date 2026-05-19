@@ -41,6 +41,16 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Audio.Tools.Player
             LastTransition = transition;
         }
 
+        public void Pause()
+        {
+            PrimaryEmitter.Pause();
+        }
+
+        public void Resume()
+        {
+            PrimaryEmitter.Resume();
+        }
+
         public void Stop()
         {
             LastTransition?.Kill();
