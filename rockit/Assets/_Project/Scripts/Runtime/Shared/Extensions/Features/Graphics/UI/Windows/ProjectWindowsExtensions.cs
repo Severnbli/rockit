@@ -15,34 +15,26 @@ namespace _Project.Scripts.Runtime.Shared.Extensions.Features.Graphics.UI.Window
             sb.Append(lService.GetString(LocalizationEntriesContracts.Controls.Run.Control));
             sb.Append(LocalizationEntriesContracts.Controls.Separator);
             sb.Append(lService.GetString(LocalizationEntriesContracts.Controls.Run.Info));
-            sb.AppendLine();
             
             sb.AppendLine(lService.GetString(LocalizationEntriesContracts.Controls.Jump.Control));
             sb.Append(LocalizationEntriesContracts.Controls.Separator);
             sb.Append(lService.GetString(LocalizationEntriesContracts.Controls.Jump.Info));
-            sb.AppendLine();
             
             sb.AppendLine(lService.GetString(LocalizationEntriesContracts.Controls.Dash.Control));
             sb.Append(LocalizationEntriesContracts.Controls.Separator);
             sb.Append(lService.GetString(LocalizationEntriesContracts.Controls.Dash.Info));
-            sb.AppendLine();
             
             sb.AppendLine(lService.GetString(LocalizationEntriesContracts.Controls.Platforms.Position.Control));
             sb.Append(LocalizationEntriesContracts.Controls.Separator);
             sb.Append(lService.GetString(LocalizationEntriesContracts.Controls.Platforms.Position.Info));
-            sb.AppendLine();
             
             sb.AppendLine(lService.GetString(LocalizationEntriesContracts.Controls.Platforms.Rotation.Control));
             sb.Append(LocalizationEntriesContracts.Controls.Separator);
             sb.Append(lService.GetString(LocalizationEntriesContracts.Controls.Platforms.Rotation.Info));
-            sb.AppendLine();
             
             sb.AppendLine(lService.GetString(LocalizationEntriesContracts.Controls.Platforms.Scale.Control));
             sb.Append(LocalizationEntriesContracts.Controls.Separator);
             sb.Append(lService.GetString(LocalizationEntriesContracts.Controls.Platforms.Scale.Info));
-            sb.AppendLine();
-            
-            sb.AppendLine(lService.GetString(LocalizationEntriesContracts.ClickToContinue));
             
             cWindow.InfoText.text = sb.ToString();
         }
