@@ -2,11 +2,11 @@
 using _Project.Scripts.Runtime.Features.Input.Services;
 using _Project.Scripts.Runtime.Features.Input.Systems;
 
-namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features
+namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Input
 {
-    public sealed class InputModule : BaseModule<InputModule>
+    public sealed class InputProjectModule : BaseModule<InputProjectModule>
     {
-        public InputModule(IDomain domain) : base(domain)
+        public InputProjectModule(IDomain domain) : base(domain)
         {
         }
 

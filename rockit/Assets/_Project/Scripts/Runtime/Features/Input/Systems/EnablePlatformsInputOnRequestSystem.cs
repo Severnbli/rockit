@@ -1,4 +1,5 @@
-﻿using _Project.Scripts.Runtime.Core.Infrastructure.Requests.World;
+﻿using _Project.Scripts.Runtime.Core.Infrastructure.Requests;
+using _Project.Scripts.Runtime.Core.Infrastructure.Requests.World;
 using _Project.Scripts.Runtime.Features.Input.Configs;
 using _Project.Scripts.Runtime.Features.Input.Services;
 using _Project.Scripts.Runtime.Shared.Utils.Features.Input;
@@ -8,6 +9,7 @@ namespace _Project.Scripts.Runtime.Features.Input.Systems
 {
     public sealed class EnablePlatformsInputOnRequestSystem : IProtoRunSystem
     {
+        [DIRequests] private readonly RequestsAspect _rAspect;
         [DIRequests] private readonly InputRequestsAspect _inputAspect;
         private readonly PlatformsInputService _service;
         private readonly PlatformsInputConfig _config;
@@ -23,6 +25,7 @@ namespace _Project.Scripts.Runtime.Features.Input.Systems
             if (_service.Enabled || _inputAspect.EnablePlatformsInputRequests.IsEmptySlow()) return;
             
             PlatformsInputUtils.EnableInput(_service, _config);
+            PlatformsInputUtils.CreatePlatformsInputEnabledRequest(_rAspect);
         }
     }
 }

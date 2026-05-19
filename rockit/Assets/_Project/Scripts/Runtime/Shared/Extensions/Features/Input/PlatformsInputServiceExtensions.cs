@@ -1,4 +1,5 @@
 ﻿using _Project.Scripts.Runtime.Features.Input.Services;
+using _Project.Scripts.Runtime.Features.Input.Types;
 
 namespace _Project.Scripts.Runtime.Shared.Extensions.Features.Input
 {
@@ -12,6 +13,11 @@ namespace _Project.Scripts.Runtime.Shared.Extensions.Features.Input
             service.RotationTriggered = false;
             service.ScaleTriggered = false;
             return true;
+        }
+
+        public static void SetProfile(this PlatformsInputService service, PlatformsInputProfile profile)
+        {
+            service.Profile = profile;
         }
     }
 }

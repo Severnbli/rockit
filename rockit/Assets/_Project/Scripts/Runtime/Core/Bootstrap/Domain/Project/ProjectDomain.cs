@@ -1,6 +1,7 @@
 ﻿using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Economy.Coins;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.Effects;
+using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Input;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Stats;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Stats.Constants;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Stats.Shared;
@@ -49,7 +50,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Project
             TryRegisterModule<StorageModule>();
             TryRegisterModule<LocalizationProjectModule>();
             TryRegisterModule<ScenesModule>();
-            TryRegisterModule<InputModule>();
+            TryRegisterModule<InputProjectModule>();
             TryRegisterModule<GlitchEffectsModule>();
             TryRegisterModule<PlayerStatsModule>();
             TryRegisterModule<StatsSharedProjectModule>();
