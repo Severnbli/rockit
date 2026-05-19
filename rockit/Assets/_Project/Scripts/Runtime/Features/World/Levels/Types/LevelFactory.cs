@@ -27,6 +27,8 @@ namespace _Project.Scripts.Runtime.Features.World.Levels.Types
                 ? null 
                 : lDefinition.Prefab;
         }
+
+        protected override Transform FallbackContainer() => _lContainer.GetContainer();
     }
 
     public struct LevelFactoryCreateSettings
