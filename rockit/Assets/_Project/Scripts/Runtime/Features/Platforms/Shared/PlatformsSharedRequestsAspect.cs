@@ -14,7 +14,7 @@ namespace _Project.Scripts.Runtime.Features.Platforms.Shared
         public readonly ProtoPool<RotationPlatformTriggeredRequest> RotationPlatformTriggeredRequestPool;
         public readonly ProtoIt RotationPlatformTriggeredRequests = new (It.Inc<RequestComponent, ActiveRequestTag, RunRequestTag, RotationPlatformTriggeredRequest>());
         
-        public readonly ProtoPool<ScalePlatformsTriggeredRequest> ScalePlatformsTriggeredRequestPool;
-        public readonly ProtoIt ScalePlatformsTriggeredRequests = new (It.Inc<RequestComponent, ActiveRequestTag, RunRequestTag, ScalePlatformsTriggeredRequest>());
+        public readonly ProtoPool<ScalePlatformTriggeredRequest> ScalePlatformTriggeredRequestPool;
+        public readonly ProtoIt ScalePlatformTriggeredRequests = new (It.Inc<RequestComponent, ActiveRequestTag, RunRequestTag, ScalePlatformTriggeredRequest>());
     }
 }

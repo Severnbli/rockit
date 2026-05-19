@@ -25,7 +25,7 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Features
             ProtoPackedEntityWithWorld packed)
 
         {
-            return aspect.CreateRequest(aspect.PlatformsSharedRequestsAspect.ScalePlatformsTriggeredRequestPool, packed);
+            return aspect.CreateRequest(aspect.PlatformsSharedRequestsAspect.ScalePlatformTriggeredRequestPool, packed);
         }
     }
 }
