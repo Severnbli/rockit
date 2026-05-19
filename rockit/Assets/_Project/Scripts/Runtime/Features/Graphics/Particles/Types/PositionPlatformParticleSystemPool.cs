@@ -1,0 +1,20 @@
+﻿using _Project.Scripts.Runtime.Features.Graphics.Particles.Configs;
+using _Project.Scripts.Runtime.Features.Graphics.Particles.Monos;
+using Leopotam.EcsProto;
+using UnityEngine;
+
+namespace _Project.Scripts.Runtime.Features.Graphics.Particles.Types
+{
+    public class PositionPlatformParticleSystemPool : ParticleSystemPool
+    {
+        private readonly PlatformParticlesConfig _ppConfig;
+        
+        public PositionPlatformParticleSystemPool(ProtoWorld world, ParticleSystemsContainer psContainer, 
+            PlatformParticlesConfig ppConfig) : base(world, psContainer)
+        {
+            _ppConfig = ppConfig;
+        }
+
+        protected override GameObject GetPrefab() => _ppConfig.PositionPrefab;
+    }
+}
