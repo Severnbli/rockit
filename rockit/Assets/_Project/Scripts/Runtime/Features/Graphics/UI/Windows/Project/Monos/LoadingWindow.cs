@@ -7,8 +7,8 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Project.Monos
 {
     public class LoadingWindow : MonoFadeWindow<FadeWindowConfig>
     {
-        [SerializeField] private TextMeshProUGUI _loadingText;
+        [SerializeField] private TextMeshProUGUI _text;
         
-        public TextMeshProUGUI LoadingText => _loadingText;
+        public TextMeshProUGUI Text => _text;
     }
 }
