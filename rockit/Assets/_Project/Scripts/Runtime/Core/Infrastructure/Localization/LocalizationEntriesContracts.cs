@@ -7,6 +7,7 @@
         public const string LanguageNameV = "language_name_v";
         public const string LoadingS = "loading_s";
         public const string Collection = "collection";
+        public const string ClickToContinue = "click_to_continue";
     
         public static class Const
         {
