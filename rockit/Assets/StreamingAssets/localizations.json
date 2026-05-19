@@ -104,11 +104,8 @@
       "const_multi_info": {
         "String": "Affects the quantity of the air dashes."
       },
-      "controls_run_left": {
-        "String": "A"
-      },
-      "controls_run_right": {
-        "String": "D"
+      "controls_run": {
+        "String": "A | D"
       },
       "controls_jump": {
         "String": "Space"
@@ -250,11 +247,8 @@
       "const_multi_info": {
         "String": "Влияет на количество рывков в воздухе."
       },
-      "controls_run_left": {
-        "String": "Ф"
-      },
-      "controls_run_right": {
-        "String": "В"
+      "controls_run": {
+        "String": "Ф | В"
       },
       "controls_jump": {
         "String": "Пробел"
