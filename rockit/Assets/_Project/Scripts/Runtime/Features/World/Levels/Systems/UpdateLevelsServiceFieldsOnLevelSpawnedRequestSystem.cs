@@ -16,7 +16,7 @@ namespace _Project.Scripts.Runtime.Features.World.Levels.Systems
 
         public void Run()
         {
-            var (e, ok) = ref _lrAspect.LevelSpawnedRequests.FirstSlow();
+            var (e, ok) = _lrAspect.LevelSpawnedRequests.FirstSlow();
             if (!ok) return;
 
             ref var lsRequest = ref _lrAspect.LevelSpawnedRequestPool.Get(e);
