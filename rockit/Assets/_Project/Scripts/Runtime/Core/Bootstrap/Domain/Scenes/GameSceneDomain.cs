@@ -3,6 +3,7 @@ using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Physics.Moving;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Platforms;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.World.Levels;
 using _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes.Game.Active;
+using _Project.Scripts.Runtime.Features.Graphics.Particles.Monos;
 using _Project.Scripts.Runtime.Features.World.Levels.Monos;
 using UnityEngine;
 
@@ -11,12 +12,14 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Scenes
     public class GameSceneDomain : SceneDomain
     {
         [SerializeField] private LevelsContainer _lContainer;
+        [SerializeField] private ParticleSystemsContainer _psContainer;
         
         protected override void RegisterStates()
         {
             base.RegisterStates();
             
             Container.BindInstance(_lContainer).AsSingle();
+            Container.BindInstance(_psContainer).AsSingle();
             RegisterState<GameSceneSetupState>();
             RegisterState<SpawnLevelState>();
             RegisterState<GameState>();
