@@ -13,6 +13,8 @@ namespace _Project.Scripts.Runtime.Features.Graphics.Particles.Types
         {
             PsContainer = psContainer;
         }
+
+        protected override Transform FallbackContainer() => PsContainer.GetContainer();
     }
 
     public struct ParticleSystemPoolSpawnSettings
