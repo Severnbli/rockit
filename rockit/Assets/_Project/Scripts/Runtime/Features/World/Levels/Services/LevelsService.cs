@@ -4,6 +4,7 @@ namespace _Project.Scripts.Runtime.Features.World.Levels.Services
 {
     public sealed class LevelsService
     {
+        public int CurrLevelId;
         public Level CurrLevel;
     }
 }
