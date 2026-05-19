@@ -5,6 +5,7 @@ using _Project.Scripts.Runtime.Core.Infrastructure.Scenes;
 using _Project.Scripts.Runtime.Core.Infrastructure.Shared;
 using _Project.Scripts.Runtime.Features.Economy.Shared;
 using _Project.Scripts.Runtime.Features.Graphics.Animations.Shared;
+using _Project.Scripts.Runtime.Features.Graphics.Particles;
 using _Project.Scripts.Runtime.Features.Graphics.Platforms;
 using _Project.Scripts.Runtime.Features.Graphics.Sprites.Glow;
 using _Project.Scripts.Runtime.Features.Graphics.Sprites.Shared;
@@ -49,6 +50,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain
         public readonly EconomySharedAspect EconomySharedAspect;
         public readonly StatsSharedAspect StatsSharedAspect;
         public readonly PlayerAspect PlayerAspect;
+        public readonly ParticlesAspect ParticlesAspect;
         public readonly SharedAspect SharedAspect;
     }
 }
