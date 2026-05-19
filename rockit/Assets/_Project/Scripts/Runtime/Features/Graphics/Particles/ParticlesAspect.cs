@@ -9,5 +9,6 @@ namespace _Project.Scripts.Runtime.Features.Graphics.Particles
     {
         public readonly ProtoPool<ParticleSystemComponent> ParticleSystemComponentPool;
         public readonly ProtoIt PositionPlatformParticleSystems = new (It.Inc<PositionPlatformTag, ParticleSystemComponent>());
+        public readonly ProtoIt RotationPlatformParticleSystems = new (It.Inc<RotationPlatformTag, ParticleSystemComponent>());
     }
 }
