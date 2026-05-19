@@ -3,7 +3,7 @@ using Cysharp.Threading.Tasks;
 
 namespace _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes.Game.Active
 {
-    public class SpawnLevelState : ISceneState
+    public class SpawnLevelState : IPostControlsState
     {
         private readonly LevelFactory _lFactory;
 
