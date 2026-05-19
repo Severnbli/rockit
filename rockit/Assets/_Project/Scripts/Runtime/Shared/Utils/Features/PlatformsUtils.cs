@@ -1,24 +1,31 @@
 ﻿using _Project.Scripts.Runtime.Core.Infrastructure.Requests;
 using _Project.Scripts.Runtime.Shared.Extensions.Infrastructure;
 using Leopotam.EcsProto;
+using Leopotam.EcsProto.QoL;
 
 namespace _Project.Scripts.Runtime.Shared.Utils.Features
 {
     public static class PlatformsUtils
     {
-        public static ProtoEntity CreatePositionPlatformTriggeredRequest(RequestsAspect aspect)
+        public static ProtoEntity CreatePositionPlatformTriggeredRequest(RequestsAspect aspect,
+            ProtoPackedEntityWithWorld packed)
         {
-            return aspect.CreateRequest(aspect.PlatformsSharedRequestsAspect.PositionPlatformsTriggeredRequestPool);
+            return aspect.CreateRequest(aspect.PlatformsSharedRequestsAspect.PositionPlatformsTriggeredRequestPool,
+                packed);
         }
 
-        public static ProtoEntity CreateRotationPlatformTriggeredRequest(RequestsAspect aspect)
+        public static ProtoEntity CreateRotationPlatformTriggeredRequest(RequestsAspect aspect,
+            ProtoPackedEntityWithWorld packed)
         {
-            return aspect.CreateRequest(aspect.PlatformsSharedRequestsAspect.RotationPlatformsTriggeredRequestPool);
+            return aspect.CreateRequest(aspect.PlatformsSharedRequestsAspect.RotationPlatformsTriggeredRequestPool,
+                packed);
         }
 
-        public static ProtoEntity CreateScalePlatformTriggeredRequest(RequestsAspect aspect)
+        public static ProtoEntity CreateScalePlatformTriggeredRequest(RequestsAspect aspect,
+            ProtoPackedEntityWithWorld packed)
+
         {
-            return aspect.CreateRequest(aspect.PlatformsSharedRequestsAspect.ScalePlatformsTriggeredRequestPool);
+            return aspect.CreateRequest(aspect.PlatformsSharedRequestsAspect.ScalePlatformsTriggeredRequestPool, packed);
         }
     }
 }
