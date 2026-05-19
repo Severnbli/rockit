@@ -23,12 +23,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes.Game.Active
             await base.OnEnter(stateMachine);
             
             _mPlayer.Play(_mConfig.Game, true);
-
-#if (UNITY_ANDROID || UNITY_IOS) && !UNITY_EDITOR
             stateMachine.ChangeState<SpawnLevelState>().Forget();
-#else
-            stateMachine.ChangeState<ControlsState>().Forget();
-#endif
         }
 
         public override async UniTask OnLeave(IStateMachine stateMachine)
