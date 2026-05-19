@@ -176,17 +176,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 9056845428546682451, guid: 75b88ccbec555eb43be3b8dfd4bb6df2, type: 3}
-      propertyPath: _authoringType
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5501382934325108523, guid: 75b88ccbec555eb43be3b8dfd4bb6df2, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 460534975}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75b88ccbec555eb43be3b8dfd4bb6df2, type: 3}
 --- !u!4 &366278876 stripped
 Transform:
@@ -262,35 +255,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Runtime::_Project.Scripts.Runtime.Core.Infrastructure.Scenes.Monos.AuthoringOnSceneInitialize
   _authoring: {fileID: 439766577}
---- !u!1 &460534966 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5501382934325108523, guid: 75b88ccbec555eb43be3b8dfd4bb6df2, type: 3}
-  m_PrefabInstance: {fileID: 366278875}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &460534972 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9056845428546682451, guid: 75b88ccbec555eb43be3b8dfd4bb6df2, type: 3}
-  m_PrefabInstance: {fileID: 366278875}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 460534966}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd2e3b9377ea4b6b9d83eb1bc17d15a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Leopotam.EcsProto.Unity::Leopotam.EcsProto.Unity.ProtoUnityAuthoring
---- !u!114 &460534975
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 460534966}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2c582b842c340a7a4c5397b73ba4a56, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Runtime::_Project.Scripts.Runtime.Core.Infrastructure.Scenes.Monos.AuthoringOnSceneInitialize
-  _authoring: {fileID: 460534972}
 --- !u!114 &463506048 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4106094486035751536, guid: fa979aa7fbb04094a93f7b2ddd5a9cbb, type: 3}
