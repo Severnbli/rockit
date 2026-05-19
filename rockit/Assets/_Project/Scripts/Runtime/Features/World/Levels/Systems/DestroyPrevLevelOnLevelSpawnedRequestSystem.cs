@@ -18,7 +18,7 @@ namespace _Project.Scripts.Runtime.Features.World.Levels.Systems
         public void Run()
         {
             if (_lrAspect.LevelSpawnedRequests.IsEmptySlow()) return;
-            Object.Destroy(_lService.CurrLevel.gameObject);
+            Object.Destroy(_lService.CurrLevel?.gameObject);
         }
     }
 }
