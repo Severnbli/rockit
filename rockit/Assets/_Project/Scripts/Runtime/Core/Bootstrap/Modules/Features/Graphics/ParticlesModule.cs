@@ -14,6 +14,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics
             base.BindSystems();
             
             BindSystem<PlayPositionPlatformParticleSystemOnPositionPlatformTriggeredRequestSystem>();
+            BindSystem<PlayRotationPlatformParticleSystemOnRotationPlatformTriggeredRequestSystem>();
         }
     }
 }
