@@ -1,4 +1,5 @@
-﻿using _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Scenes.Menu;
+﻿using _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Project;
+using _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Scenes.Menu;
 using _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Scenes.Shared;
 using Leopotam.EcsProto.QoL;
 
@@ -8,5 +9,6 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Shared
     {
         public readonly MenuSceneWindowsAspect MenuSceneWindowsAspect;
         public readonly SharedSceneWindowsAspect SharedSceneWindowsAspect;
+        public readonly ProjectWindowsAspect ProjectWindowsAspect;
     }
 }
