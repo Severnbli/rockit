@@ -1,5 +1,6 @@
 ﻿using _Project.Scripts.Runtime.Core.Bootstrap.Domain;
 using _Project.Scripts.Runtime.Features.World.Levels.Services;
+using _Project.Scripts.Runtime.Features.World.Levels.Systems;
 using _Project.Scripts.Runtime.Features.World.Levels.Types;
 
 namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.World.Levels
@@ -22,6 +23,13 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.World.Levels
             base.BindServices();
             
             BindService<LevelsService>();
+        }
+
+        protected override void BindSystems()
+        {
+            base.BindSystems();
+            
+            BindSystem<SpawnLevelOnSpawnLevelRequestSystem>();
         }
     }
 }
