@@ -66,7 +66,6 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Scenes
             TryRegisterModule<DropdownsModule>();
             TryRegisterModule<InputSceneModule>();
             TryRegisterModule<PlayerModule>();
-            TryRegisterModule<ParticlesModule>();
         }
     }
 }

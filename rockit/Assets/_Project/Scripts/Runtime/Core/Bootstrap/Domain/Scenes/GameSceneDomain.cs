@@ -30,6 +30,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Scenes
             TryRegisterModule<PlatformsSharedModule>();
             TryRegisterModule<PlatformsGraphicsModule>();
             TryRegisterModule<LevelsSceneModule>();
+            TryRegisterModule<ParticlesModule>();
         }
     }
 }
