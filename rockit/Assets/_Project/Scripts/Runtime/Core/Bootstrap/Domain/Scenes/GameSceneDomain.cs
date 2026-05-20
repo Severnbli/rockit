@@ -22,6 +22,8 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Scenes
         {
             base.RegisterBindings();
             
+            Container.BindInstance(_lContainer).AsSingle();
+            Container.BindInstance(_psContainer).AsSingle();
             Container.BindInstance(_vWindow).AsSingle();
         }
 
@@ -29,8 +31,6 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Scenes
         {
             base.RegisterStates();
             
-            Container.BindInstance(_lContainer).AsSingle();
-            Container.BindInstance(_psContainer).AsSingle();
             RegisterState<GameSceneSetupState>();
             RegisterState<SpawnLevelState>();
             RegisterState<GameState>();
