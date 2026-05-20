@@ -5,14 +5,17 @@ using Leopotam.EcsProto;
 
 namespace _Project.Scripts.Runtime.Features.World.Levels.Systems
 {
-    public sealed class UpdateLevelsServiceUsedTransformsOnAnyPlatformsTriggeredRequestSystem : IProtoRunSystem
+    public sealed class UpdateLevelsStatsServiceUsedTransformsOnAnyPlatformsTriggeredRequestSystem : IProtoRunSystem
     {
         [DIRequests] private readonly PlatformsSharedRequestsAspect _psrAspect;
         private readonly LevelsService _lService;
+        private readonly LevelsStatsService _lsService;
 
-        public UpdateLevelsServiceUsedTransformsOnAnyPlatformsTriggeredRequestSystem(LevelsService lService)
+        public UpdateLevelsStatsServiceUsedTransformsOnAnyPlatformsTriggeredRequestSystem(LevelsService lService,
+            LevelsStatsService lsService)
         {
             _lService = lService;
+            _lsService = lsService;
         }
 
         public void Run()
@@ -22,7 +25,7 @@ namespace _Project.Scripts.Runtime.Features.World.Levels.Systems
             var useRate = _lService.CurrLevelDefinition?.TransformsUseRate ?? LevelsContracts.DefaultTransformsUseRate;
             var quantity = _psrAspect.AnyPlatformTriggeredRequests.LenSlow();
             
-            _lService.UsedTransforms += quantity * useRate;
+            _lsService.UsedTransforms += quantity * useRate;
         }
     }
 }

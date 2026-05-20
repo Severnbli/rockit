@@ -10,7 +10,11 @@ namespace _Project.Scripts.Runtime.Shared.Extensions.Features.World
             lService.CurrLevel = null;
             lService.CurrLevelId = ProjectContracts.NullIntId;
             lService.CurrLevelDefinition = null;
-            lService.UsedTransforms = LevelsContracts.MinUsedTransforms;
+        }
+
+        public static void Reset(this LevelsStatsService lsService)
+        {
+            lsService.UsedTransforms = LevelsContracts.MinUsedTransforms;
         }
     }
 }

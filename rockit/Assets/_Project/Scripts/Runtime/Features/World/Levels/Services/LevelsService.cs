@@ -9,6 +9,5 @@ namespace _Project.Scripts.Runtime.Features.World.Levels.Services
         public int CurrLevelId;
         public Level CurrLevel;
         public LevelDefinition CurrLevelDefinition;
-        public int UsedTransforms = LevelsContracts.MinUsedTransforms;
     }
 }
