@@ -1,14 +1,14 @@
-﻿using _Project.Scripts.Runtime.Features.Graphics.Cameras.Monos;
+﻿using _Project.Scripts.Runtime.Core.Infrastructure.Requests.World;
+using _Project.Scripts.Runtime.Features.Graphics.Cameras.Monos;
 using _Project.Scripts.Runtime.Features.World.Levels;
 using _Project.Scripts.Runtime.Shared.Extensions.Features.Graphics;
 using Leopotam.EcsProto;
-using Leopotam.EcsProto.QoL;
 
 namespace _Project.Scripts.Runtime.Features.Graphics.Cameras.Systems
 {
     public sealed class SetPlayerCameraConfinerBoundingShapeOnLevelSpawnedRequestSystem : IProtoRunSystem
     {
-        [DI] private readonly LevelsRequestsAspect _lrAspect;
+        [DIRequests] private readonly LevelsRequestsAspect _lrAspect;
         private readonly PlayerCamera _pCamera;
 
         public SetPlayerCameraConfinerBoundingShapeOnLevelSpawnedRequestSystem(PlayerCamera pCamera)
