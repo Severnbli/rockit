@@ -17,6 +17,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Scenes
         [SerializeField] private LevelsContainer _lContainer;
         [SerializeField] private ParticleSystemsContainer _psContainer;
         [SerializeField] private VoidWindow _vWindow;
+        [SerializeField] private PauseWindow _pWindow;
 
         protected override void RegisterBindings()
         {
@@ -25,6 +26,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Scenes
             Container.BindInstance(_lContainer).AsSingle();
             Container.BindInstance(_psContainer).AsSingle();
             Container.BindInstance(_vWindow).AsSingle();
+            Container.BindInstance(_pWindow).AsSingle();
         }
 
         protected override void RegisterStates()
