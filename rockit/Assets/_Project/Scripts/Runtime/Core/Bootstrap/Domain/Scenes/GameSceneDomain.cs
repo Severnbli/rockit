@@ -34,6 +34,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Scenes
             RegisterState<GameSceneSetupState>();
             RegisterState<SpawnLevelState>();
             RegisterState<GameState>();
+            RegisterState<VoidState>();
         }
 
         protected override void RegisterModules()
