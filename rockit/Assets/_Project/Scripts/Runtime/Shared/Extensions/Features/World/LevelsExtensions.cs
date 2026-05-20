@@ -16,6 +16,7 @@ namespace _Project.Scripts.Runtime.Shared.Extensions.Features.World
         {
             lsService.UsedTransforms = LevelsContracts.DefaultTransformsCount;
             lsService.RemainTransforms = LevelsContracts.DefaultTransformsCount;
+            lsService.CurrentStarsScore = LevelsContracts.MinStarsQuantity;
         }
     }
 }
