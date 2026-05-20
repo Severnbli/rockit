@@ -9,6 +9,7 @@ namespace _Project.Scripts.Runtime.Shared.Extensions.Features.World
         {
             lService.CurrLevel = null;
             lService.CurrLevelId = ProjectContracts.NullIntId;
+            lService.CurrLevelDefinition = null;
             lService.UsedTransforms = LevelsContracts.MinUsedTransforms;
         }
     }
