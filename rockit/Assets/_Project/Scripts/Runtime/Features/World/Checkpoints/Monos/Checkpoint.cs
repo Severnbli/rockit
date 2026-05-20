@@ -1,8 +1,9 @@
-﻿using UnityEngine;
+﻿using _Project.Scripts.Runtime.Core.Infrastructure.Shared.Monos;
+using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Features.World.Checkpoints.Monos
 {
-    public class Checkpoint : MonoBehaviour
+    public class Checkpoint : AuthoringLinkable
     {
         [SerializeField] private GameObject _checkLocation;
         
