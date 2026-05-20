@@ -416,6 +416,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Runtime::_Project.Scripts.Runtime.Features.Graphics.Cameras.Monos.PlayerCamera
   _camera: {fileID: 8136140490315951131}
+  _confiner: {fileID: 3166158954211734241}
 --- !u!114 &3166158954211734241
 MonoBehaviour:
   m_ObjectHideFlags: 0
