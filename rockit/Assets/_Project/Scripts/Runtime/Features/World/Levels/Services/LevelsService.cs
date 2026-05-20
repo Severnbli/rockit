@@ -1,4 +1,5 @@
 ﻿using _Project.Scripts.Runtime.Features.World.Levels.Monos;
+using _Project.Scripts.Runtime.Features.World.Levels.Types;
 
 namespace _Project.Scripts.Runtime.Features.World.Levels.Services
 {
@@ -7,6 +8,7 @@ namespace _Project.Scripts.Runtime.Features.World.Levels.Services
         public int LevelIdToSpawn;
         public int CurrLevelId;
         public Level CurrLevel;
+        public LevelDefinition CurrLevelDefinition;
         public int UsedTransforms = LevelsContracts.MinUsedTransforms;
     }
 }
