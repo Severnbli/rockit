@@ -8,6 +8,7 @@ namespace _Project.Scripts.Runtime.Features.Player
 {
     public sealed class PlayerAspect : ProtoAspectInject
     {
+        public ProtoIt Players = new (It.Inc<PlayerTag>());
         public ProtoIt TransformPlayers = new (It.Inc<PlayerTag, TransformComponent>());
         public ProtoIt ColliderPlayers = new (It.Inc<PlayerTag, Collider2DComponent>());
     }
