@@ -3,6 +3,7 @@ using _Project.Scripts.Runtime.Core.Infrastructure.Requests;
 using _Project.Scripts.Runtime.Features.Graphics.Cameras.Monos;
 using _Project.Scripts.Runtime.Features.Graphics.Cameras.Requests;
 using _Project.Scripts.Runtime.Features.Graphics.Cameras.Types;
+using _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Scenes.Game.Monos;
 using _Project.Scripts.Runtime.Shared.Utils.Features.Graphics;
 using _Project.Scripts.Runtime.Shared.Utils.Features.Input;
 using Cysharp.Threading.Tasks;
@@ -15,14 +16,16 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes.Game.Active
         private readonly PlayerCamera _pCamera;
         private readonly ICameraSwitchAwaiter _csAwaiter;
         private readonly CancellationToken _ct;
+        private readonly GameWindow _gWindow;
 
         public GameState(RequestsAspect rAspect, PlayerCamera pCamera, ICameraSwitchAwaiter csAwaiter, 
-            CancellationToken ct)
+            CancellationToken ct, GameWindow gWindow)
         {
             _rAspect = rAspect;
             _pCamera = pCamera;
             _csAwaiter = csAwaiter;
             _ct = ct;
+            _gWindow = gWindow;
         }
 
         public async UniTask OnEnter(IStateMachine stateMachine)
@@ -32,7 +35,8 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes.Game.Active
             
             PlayerInputUtils.CreateEnableRequest(_rAspect);
             PlatformsInputUtils.CreateEnableRequest(_rAspect);
-            await UniTask.NextFrame();
+            
+            await _gWindow.OpenAwait();
         }
 
         private void SwitchToPlayerCamera()
@@ -47,9 +51,10 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes.Game.Active
 
         public async UniTask OnLeave(IStateMachine stateMachine)
         {
+            await _gWindow.CloseAwait();
+            
             PlayerInputUtils.CreateDisableRequest(_rAspect);
             PlatformsInputUtils.CreateDisableRequest(_rAspect);
-            await UniTask.NextFrame();
         }
     }
 }
