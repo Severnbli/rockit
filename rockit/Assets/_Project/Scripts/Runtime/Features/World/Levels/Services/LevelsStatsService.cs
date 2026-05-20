@@ -4,5 +4,6 @@
     {
         public int UsedTransforms = LevelsContracts.MinUsedTransforms;
         public int UsedTransforms = LevelsContracts.DefaultTransformsCount;
+        public int RemainTransforms;
     }
 }

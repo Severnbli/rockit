@@ -15,6 +15,7 @@ namespace _Project.Scripts.Runtime.Shared.Extensions.Features.World
         public static void Reset(this LevelsStatsService lsService)
         {
             lsService.UsedTransforms = LevelsContracts.DefaultTransformsCount;
+            lsService.RemainTransforms = LevelsContracts.DefaultTransformsCount;
         }
     }
 }
