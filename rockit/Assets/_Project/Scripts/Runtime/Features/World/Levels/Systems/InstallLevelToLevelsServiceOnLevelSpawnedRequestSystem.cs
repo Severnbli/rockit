@@ -22,6 +22,7 @@ namespace _Project.Scripts.Runtime.Features.World.Levels.Systems
             ref var lsRequest = ref _lrAspect.LevelSpawnedRequestPool.Get(e);
             _lService.CurrLevelId = lsRequest.LevelId;
             _lService.CurrLevel = lsRequest.Level;
+            _lService.CurrLevelDefinition = lsRequest.Definition;
         }
     }
 }
