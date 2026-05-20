@@ -15,7 +15,13 @@ namespace _Project.Scripts.Runtime.Features.Graphics.Particles.Systems
         [DI] private readonly SharedAspect _sAspect;
         private readonly RotationPlatformParticleSystemPool _rppsPool;
         private readonly PlatformParticlesConfig _ppConfig;
-        
+
+        public PlayRotationPlatformParticleSystemOnRotationPlatformTriggeredRequestSystem(RotationPlatformParticleSystemPool rppsPool, PlatformParticlesConfig ppConfig)
+        {
+            _rppsPool = rppsPool;
+            _ppConfig = ppConfig;
+        }
+
         public void Run()
         {
             if (_psrAspect.RotationPlatformTriggeredRequests.IsEmptySlow()) return;
