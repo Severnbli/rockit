@@ -6,6 +6,7 @@ using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.World.Checkpoints
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.World.Levels;
 using _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes.Game.Active;
 using _Project.Scripts.Runtime.Features.Graphics.Particles.Monos;
+using _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Scenes.Game.Monos;
 using _Project.Scripts.Runtime.Features.World.Levels.Monos;
 using UnityEngine;
 
@@ -15,7 +16,15 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Scenes
     {
         [SerializeField] private LevelsContainer _lContainer;
         [SerializeField] private ParticleSystemsContainer _psContainer;
-        
+        [SerializeField] private VoidWindow _vWindow;
+
+        protected override void RegisterBindings()
+        {
+            base.RegisterBindings();
+            
+            Container.BindInstance(_vWindow).AsSingle();
+        }
+
         protected override void RegisterStates()
         {
             base.RegisterStates();
