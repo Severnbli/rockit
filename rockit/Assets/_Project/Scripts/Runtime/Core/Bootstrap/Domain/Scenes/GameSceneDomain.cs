@@ -2,6 +2,7 @@
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.UI.Windows;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Physics.Moving;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Platforms;
+using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Player;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.World;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.World.Checkpoints;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.World.Levels;
@@ -55,6 +56,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Scenes
             TryRegisterModule<CheckpointsSceneModule>();
             TryRegisterModule<VoidModule>();
             TryRegisterModule<GameSceneWindowsModule>();
+            TryRegisterModule<PlayerGameSceneModule>();
         }
     }
 }
