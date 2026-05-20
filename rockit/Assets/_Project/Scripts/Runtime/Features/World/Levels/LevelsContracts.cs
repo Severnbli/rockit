@@ -4,5 +4,6 @@
     {
         public const int MinStarsQuantity = 0;
         public const int MinUsedTransforms = 0;
+        public const int DefaultTransformsUseRate = 1;
     }
 }
