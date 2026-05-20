@@ -23,9 +23,13 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Features
 
         public static ProtoEntity CreateScalePlatformTriggeredRequest(RequestsAspect aspect,
             ProtoPackedEntityWithWorld packed)
-
         {
             return aspect.CreateRequest(aspect.PlatformsSharedRequestsAspect.ScalePlatformTriggeredRequestPool, packed);
+        }
+
+        public static ProtoEntity CreateAnyPlatformTriggeredRequest(RequestsAspect aspect)
+        {
+            return aspect.CreateRequest(aspect.PlatformsSharedRequestsAspect.AnyPlatformTriggeredRequestPool);
         }
     }
 }
