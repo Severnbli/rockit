@@ -4,6 +4,7 @@ using _Project.Scripts.Runtime.Core.Infrastructure.Shared.Configs;
 using _Project.Scripts.Runtime.Core.Infrastructure.Shared.Services;
 using _Project.Scripts.Runtime.Features.Physics.Shared;
 using _Project.Scripts.Runtime.Shared.Extensions.Infrastructure;
+using _Project.Scripts.Runtime.Shared.Extensions.Shared;
 using _Project.Scripts.Runtime.Shared.Utils.Features;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
@@ -38,7 +39,7 @@ namespace _Project.Scripts.Runtime.Features.Player.Systems
             {
                 ref var data = ref _peAspect.TriggerEnterEventPool.Get(evE);
                 if (!goIndex.TryGetEntityFromIndex(data.Sender, _world, out var tarE)) continue;
-                if (!_pAspect.Players.Has(tarE) || data.Collider.gameObject.layer != _lConfig.VoidLayer) continue;
+                if (!_pAspect.Players.Has(tarE) || !_lConfig.VoidLayer.Identical(data.Collider.gameObject.layer)) continue;
 
                 PlayerUtils.CreatePlayerTriggeredVoidRequest(_rAspect);
             }
