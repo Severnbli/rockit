@@ -34,7 +34,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.World.Levels
             BindSystem<ResetLevelsServiceOnLevelSpawnedRequestSystem>();
             BindSystem<InstallLevelToLevelsServiceOnLevelSpawnedRequestSystem>();
             BindSystem<SendPlacePlayerRequestOnLevelSpawnedRequestSystem>();
-            BindSystem<UpdateLevelsServiceUsedTransformsOnAnyPlatformsTriggeredRequestSystem>();
+            BindSystem<UpdateLevelsStatsServiceUsedTransformsOnAnyPlatformsTriggeredRequestSystem>();
         }
     }
 }
