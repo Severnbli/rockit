@@ -28,8 +28,9 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes.Game.Active
             await _vWindow.OpenAwait();
             
             PlayerUtils.CreatePlacePlayerToLastCheckpointRequest(_rAspect);
-            
             await UniTask.Delay(TimeSpan.FromSeconds(_vwConfig.Duration), cancellationToken: _ct);
+
+            stateMachine.ChangeState<GameState>().Forget();
         }
 
         public async UniTask OnLeave(IStateMachine stateMachine)
