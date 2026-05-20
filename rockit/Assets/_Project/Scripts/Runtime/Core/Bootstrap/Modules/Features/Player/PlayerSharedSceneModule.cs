@@ -1,11 +1,11 @@
 ﻿using _Project.Scripts.Runtime.Core.Bootstrap.Domain;
 using _Project.Scripts.Runtime.Features.Player.Systems;
 
-namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features
+namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Player
 {
-    public sealed class PlayerModule : BaseModule<PlayerModule>
+    public sealed class PlayerSharedSceneModule : BaseModule<PlayerSharedSceneModule>
     {
-        public PlayerModule(IDomain domain) : base(domain)
+        public PlayerSharedSceneModule(IDomain domain) : base(domain)
         {
         }
 
