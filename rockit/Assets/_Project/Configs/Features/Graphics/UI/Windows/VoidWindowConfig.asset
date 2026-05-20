@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e20a43a260e40f79d56d09df00db3ce, type: 3}
-  m_Name: LayersConfig
-  m_EditorClassIdentifier: Runtime::_Project.Scripts.Runtime.Shared.Configs.LayersConfig
+  m_Script: {fileID: 11500000, guid: 5b79091970e6437b94520d663136a08e, type: 3}
+  m_Name: VoidWindowConfig
+  m_EditorClassIdentifier: Runtime::_Project.Scripts.Runtime.Features.Graphics.UI.Windows.Scenes.Game.Configs.VoidWindowConfig
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
@@ -21,9 +21,4 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  _groundLayer:
-    serializedVersion: 2
-    m_Bits: 8
-  _voidLayer:
-    serializedVersion: 2
-    m_Bits: 64
+  _duration: 1
