@@ -10,5 +10,8 @@ namespace _Project.Scripts.Runtime.Features.Player
     {
         public readonly ProtoPool<PlacePlayerRequest> PlacePlayerRequestPool;
         public readonly ProtoIt PlacePlayerRequests = new (It.Inc<RequestComponent, ActiveRequestTag, RunRequestTag, PlacePlayerRequest>());
+        
+        public readonly ProtoPool<PlayerTriggeredVoidRequest> PlayerTriggeredVoidRequestPool;
+        public readonly ProtoIt PlayerTriggeredVoidRequests = new (It.Inc<RequestComponent, ActiveRequestTag, RunRequestTag, PlayerTriggeredVoidRequest>());
     }
 }
