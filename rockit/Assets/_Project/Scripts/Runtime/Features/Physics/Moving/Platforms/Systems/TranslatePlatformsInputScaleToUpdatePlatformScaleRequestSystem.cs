@@ -2,6 +2,7 @@
 using _Project.Scripts.Runtime.Core.Infrastructure.Requests.World;
 using _Project.Scripts.Runtime.Features.Input.Services;
 using _Project.Scripts.Runtime.Features.Platforms.Shared;
+using _Project.Scripts.Runtime.Shared.Utils.Features;
 using _Project.Scripts.Runtime.Shared.Utils.Features.Physics.Moving;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
@@ -29,10 +30,11 @@ namespace _Project.Scripts.Runtime.Features.Physics.Moving.Platforms.Systems
         {
             if (!_piService.ScaleTriggered) return;
 
-            foreach (var e in _psAspect.ScalePlatforms)
+            foreach (var e in _psAspect.ActiveScalePlatforms)
             {
                 var packed = _world.PackEntityWithWorld(e);
                 PlatformsMovingUtils.CreateUpdatePlatformScaleRequest(_rAspect, packed);
+                PlatformsUtils.CreateScalePlatformTriggeredRequest(_rAspect, packed);
             }
         }
     }

@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2891f5bea8f34745902392794a3081f1, type: 3}
+  m_Name: PlatformParticlesConfig
+  m_EditorClassIdentifier: Runtime::_Project.Scripts.Runtime.Features.Graphics.Particles.Configs.PlatformParticlesConfig
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  _positionPrefab: {fileID: 4247497082751700335, guid: 8882c6d309fc1014b8feb62f960f4a8d, type: 3}
+  _rotationPrefab: {fileID: 974837729744022635, guid: f2506140d81b3d14185779ceaeff3c90, type: 3}
+  _scalePrefab: {fileID: 9067387530296756302, guid: d66ee9d76884d0046858b57c201f198e, type: 3}
+  _playerOffset: {x: 0, y: 2}

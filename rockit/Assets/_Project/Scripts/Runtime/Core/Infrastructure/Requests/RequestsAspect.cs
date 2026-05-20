@@ -11,6 +11,7 @@ using _Project.Scripts.Runtime.Features.Graphics.UI.Shared;
 using _Project.Scripts.Runtime.Features.Input;
 using _Project.Scripts.Runtime.Features.Physics.Moving.Characters;
 using _Project.Scripts.Runtime.Features.Physics.Moving.Platforms;
+using _Project.Scripts.Runtime.Features.Platforms.Shared;
 using _Project.Scripts.Runtime.Features.Player;
 using _Project.Scripts.Runtime.Features.Stats.Player;
 using _Project.Scripts.Runtime.Features.Stats.Shared;
@@ -38,6 +39,7 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Requests
         public readonly GraphicsSharedRequestsAspect GraphicsSharedRequestsAspect;
         public readonly WorldSharedRequestsAspect WorldSharedRequestsAspect;
         public readonly PlayerRequestsAspect PlayerRequestsAspect;
+        public readonly PlatformsSharedRequestsAspect PlatformsSharedRequestsAspect;
         public readonly SharedRequestsAspect SharedRequestsAspect;
     }
 }
