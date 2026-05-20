@@ -12,6 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e20a43a260e40f79d56d09df00db3ce, type: 3}
   m_Name: LayersConfig
   m_EditorClassIdentifier: Runtime::_Project.Scripts.Runtime.Shared.Configs.LayersConfig
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   _groundLayer:
     serializedVersion: 2
     m_Bits: 8
+  _voidLayer:
+    serializedVersion: 2
+    m_Bits: 64
