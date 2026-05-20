@@ -2,7 +2,7 @@
 
 namespace _Project.Scripts.Runtime.Features.World.Checkpoints.Services
 {
-    public sealed class CheckpointService
+    public sealed class CheckpointsService
     {
         public Checkpoint LastCheckpoint;
     }
