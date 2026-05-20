@@ -1,7 +1,7 @@
 ﻿using _Project.Scripts.Runtime.Core.Bootstrap.Domain;
 using _Project.Scripts.Runtime.Features.Graphics.Cameras.Services;
 using _Project.Scripts.Runtime.Features.Graphics.Cameras.Systems;
-using _Project.Scripts.Runtime.Features.Graphics.Cameras.Types;
+using _Project.Scripts.Runtime.Features.Graphics.Cameras.Tools.Switcher;
 
 namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics
 {
