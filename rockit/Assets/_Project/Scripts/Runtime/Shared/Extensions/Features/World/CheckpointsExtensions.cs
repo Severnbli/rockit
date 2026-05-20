@@ -15,6 +15,8 @@ namespace _Project.Scripts.Runtime.Shared.Extensions.Features.World
 
             var pool = world.Pool<ActiveCheckpointTag>();
             if (pool.Has(e)) pool.Del(e);
+
+            cService.LastCheckpoint = null;
         }
     }
 }
