@@ -22,6 +22,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.World.Checkpo
             base.BindSystems();
             
             BindSystem<SendActivateCheckpointRequestByPlayerLocatorSystem>();
+            BindSystem<ActivateCheckpointOnActivateCheckpointRequestSystem>();
         }
     }
 }
