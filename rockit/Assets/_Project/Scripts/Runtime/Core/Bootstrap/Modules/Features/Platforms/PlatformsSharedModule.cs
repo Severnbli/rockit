@@ -14,7 +14,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Platforms
             base.BindSystems();
             
             BindSystem<LoadPlatformStartStatesOnInitializeRequestSystem>();
-            BindSystem<TranslatePositionPlatformTriggeredRequestIntoAnyPlatformTriggeredRequestSystem>();
+            BindSystem<TranslatePlatformTriggeredRequestsIntoAnyPlatformTriggeredRequestSystem>();
         }
     }
 }
