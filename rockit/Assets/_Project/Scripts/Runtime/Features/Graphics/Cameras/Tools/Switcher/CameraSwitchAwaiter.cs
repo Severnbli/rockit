@@ -6,7 +6,7 @@ using _Project.Scripts.Runtime.Shared.Utils.Features.Graphics;
 using _Project.Scripts.Runtime.Shared.Utils.Shared;
 using Cysharp.Threading.Tasks;
 
-namespace _Project.Scripts.Runtime.Features.Graphics.Cameras.Types
+namespace _Project.Scripts.Runtime.Features.Graphics.Cameras.Tools.Switcher
 {
     public class CameraSwitchAwaiter : ICameraSwitchAwaiter
     {
