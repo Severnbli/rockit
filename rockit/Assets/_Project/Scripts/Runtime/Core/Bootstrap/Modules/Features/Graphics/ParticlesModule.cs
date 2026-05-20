@@ -29,6 +29,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics
             
             BindSystem<DespawnPositionPlatformParticleSystemOnNotAliveSystem>();
             BindSystem<DespawnRotationPlatformParticleSystemOnNotAliveSystem>();
+            BindSystem<DespawnScalePlatformParticleSystemOnNotAliveSystem>();
         }
     }
 }
