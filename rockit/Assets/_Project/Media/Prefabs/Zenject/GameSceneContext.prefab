@@ -18,7 +18,7 @@ PrefabInstance:
       objectReference: {fileID: 3908918726912910044}
     - target: {fileID: 328559260559748816, guid: 56ec4f79dd7ba704ba4292822096d146, type: 3}
       propertyPath: _scriptableObjectInstallers.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 328559260559748816, guid: 56ec4f79dd7ba704ba4292822096d146, type: 3}
       propertyPath: '_scriptableObjectInstallers.Array.data[0]'
@@ -32,6 +32,10 @@ PrefabInstance:
       propertyPath: '_scriptableObjectInstallers.Array.data[2]'
       value: 
       objectReference: {fileID: 11400000, guid: 4c2e7d1c3c992104498f3f7fe066a676, type: 2}
+    - target: {fileID: 328559260559748816, guid: 56ec4f79dd7ba704ba4292822096d146, type: 3}
+      propertyPath: '_scriptableObjectInstallers.Array.data[3]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 9b87311c6395a2044aa8dc823f4ba789, type: 2}
     - target: {fileID: 645405204399858541, guid: 56ec4f79dd7ba704ba4292822096d146, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -74,7 +78,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6193363330238748178, guid: 56ec4f79dd7ba704ba4292822096d146, type: 3}
       propertyPath: m_Name
-      value: SceneContext (1) Variant
+      value: GameSceneContext
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -101,3 +105,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27b5acca487c4109b15ebe61bf845657, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Runtime::_Project.Scripts.Runtime.Core.Bootstrap.Domain.Scenes.GameSceneDomain
+  _mCamera: {fileID: 0}
+  _pCamera: {fileID: 0}
+  _cBrain: {fileID: 0}
+  _playerInputWindow: {fileID: 0}
+  _platformsInputWindow: {fileID: 0}
+  _lContainer: {fileID: 0}
+  _psContainer: {fileID: 0}
+  _vWindow: {fileID: 0}
