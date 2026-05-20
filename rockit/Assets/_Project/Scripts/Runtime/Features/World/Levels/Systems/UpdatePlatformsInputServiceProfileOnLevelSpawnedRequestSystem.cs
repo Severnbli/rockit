@@ -10,12 +10,10 @@ namespace _Project.Scripts.Runtime.Features.World.Levels.Systems
     {
         [DIRequests] private readonly LevelsRequestsAspect _lrAspect;
         private readonly PlatformsInputService _piService;
-        private readonly LevelsConfig _lConfig;
 
-        public UpdatePlatformsInputServiceProfileOnLevelSpawnedRequestSystem(PlatformsInputService piService, LevelsConfig lConfig)
+        public UpdatePlatformsInputServiceProfileOnLevelSpawnedRequestSystem(PlatformsInputService piService)
         {
             _piService = piService;
-            _lConfig = lConfig;
         }
 
         public void Run()
@@ -24,9 +22,7 @@ namespace _Project.Scripts.Runtime.Features.World.Levels.Systems
             if (!ok) return;
 
             ref var lsRequest = ref _lrAspect.LevelSpawnedRequestPool.Get(e);
-            if (!_lConfig.Levels.TryGetValue(lsRequest.LevelId, out var lDefinition)) return;
-            
-            _piService.SetProfile(lDefinition.PiProfile);
+            _piService.SetProfile(lsRequest.Definition.PiProfile);
         }
     }
 }
