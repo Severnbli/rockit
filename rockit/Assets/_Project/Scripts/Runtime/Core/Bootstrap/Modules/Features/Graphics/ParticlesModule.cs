@@ -28,6 +28,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics
             BindSystem<PlayScalePlatformParticleSystemOnScalePlatformTriggeredRequestSystem>();
             
             BindSystem<DespawnPositionPlatformParticleSystemOnNotAliveSystem>();
+            BindSystem<DespawnRotationPlatformParticleSystemOnNotAliveSystem>();
         }
     }
 }
