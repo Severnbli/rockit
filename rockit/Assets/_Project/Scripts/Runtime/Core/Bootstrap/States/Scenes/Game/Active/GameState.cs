@@ -34,10 +34,10 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes.Game.Active
 
         public async UniTask OnLeave(IStateMachine stateMachine)
         {
-            await _gWindow.CloseAwait();
-            
             PlayerInputUtils.CreateDisableRequest(_rAspect);
             PlatformsInputUtils.CreateDisableRequest(_rAspect);
+            
+            await _gWindow.CloseAwait();
         }
     }
 }
