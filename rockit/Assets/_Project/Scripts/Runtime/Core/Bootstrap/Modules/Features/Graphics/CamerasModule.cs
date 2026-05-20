@@ -16,6 +16,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics
             base.RegisterBindings();
             
             Container.Bind<ICameraSwitchAwaiter>().To<CameraSwitchAwaiter>().AsSingle();
+            Container.Bind<ICameraSwitcher>().To<CameraSwitcher>().AsSingle();
         }
 
         protected override void BindServices()
