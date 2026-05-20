@@ -1,4 +1,5 @@
 ﻿using _Project.Scripts.Runtime.Features.World.Levels.Monos;
+using _Project.Scripts.Runtime.Features.World.Levels.Types;
 
 namespace _Project.Scripts.Runtime.Features.World.Levels.Requests
 {
@@ -6,5 +7,6 @@ namespace _Project.Scripts.Runtime.Features.World.Levels.Requests
     {
         public int LevelId;
         public Level Level;
+        public LevelDefinition Definition;
     }
 }
