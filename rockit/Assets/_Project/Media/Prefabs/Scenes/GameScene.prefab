@@ -1,5 +1,49 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6871045378383741706
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3411388991208175650}
+  - component: {fileID: 1886305809016356415}
+  m_Layer: 0
+  m_Name: ParticleSystemsContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3411388991208175650
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6871045378383741706}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 424577868922565501}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1886305809016356415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6871045378383741706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 953965c82b3d417a9f70daf7044c0ec8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Runtime::_Project.Scripts.Runtime.Features.Graphics.Particles.Monos.ParticleSystemsContainer
 --- !u!1 &7344172055810430563
 GameObject:
   m_ObjectHideFlags: 0
@@ -140,6 +184,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 89525461916996207, guid: 47bf9f1d567b95945ac8649280703e57, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8591556498462259056}
+    - targetCorrespondingSourceObject: {fileID: 89525461916996207, guid: 47bf9f1d567b95945ac8649280703e57, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3411388991208175650}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47bf9f1d567b95945ac8649280703e57, type: 3}
 --- !u!4 &424577868922565501 stripped
@@ -495,6 +542,10 @@ PrefabInstance:
       propertyPath: _lContainer
       value: 
       objectReference: {fileID: 4482644166651779573}
+    - target: {fileID: 3908918726912910044, guid: 35198c4592a3d3640a4b00002bd01062, type: 3}
+      propertyPath: _psContainer
+      value: 
+      objectReference: {fileID: 1886305809016356415}
     - target: {fileID: 3908918726912910044, guid: 35198c4592a3d3640a4b00002bd01062, type: 3}
       propertyPath: _playerInputWindow
       value: 
