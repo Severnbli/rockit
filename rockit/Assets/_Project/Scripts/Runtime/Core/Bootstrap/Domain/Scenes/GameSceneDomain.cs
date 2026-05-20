@@ -1,6 +1,8 @@
 ﻿using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics;
+using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.UI.Windows;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Physics.Moving;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Platforms;
+using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Player;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.World;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.World.Checkpoints;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.World.Levels;
@@ -16,7 +18,9 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Scenes
     {
         [SerializeField] private LevelsContainer _lContainer;
         [SerializeField] private ParticleSystemsContainer _psContainer;
+        [SerializeField] private GameWindow _gWindow;
         [SerializeField] private VoidWindow _vWindow;
+        [SerializeField] private PauseWindow _pWindow;
 
         protected override void RegisterBindings()
         {
@@ -24,7 +28,9 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Scenes
             
             Container.BindInstance(_lContainer).AsSingle();
             Container.BindInstance(_psContainer).AsSingle();
+            Container.BindInstance(_gWindow).AsSingle();
             Container.BindInstance(_vWindow).AsSingle();
+            Container.BindInstance(_pWindow).AsSingle();
         }
 
         protected override void RegisterStates()
@@ -35,6 +41,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Scenes
             RegisterState<SpawnLevelState>();
             RegisterState<GameState>();
             RegisterState<VoidState>();
+            RegisterState<PauseState>();
         }
 
         protected override void RegisterModules()
@@ -48,6 +55,8 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Scenes
             TryRegisterModule<ParticlesModule>();
             TryRegisterModule<CheckpointsSceneModule>();
             TryRegisterModule<VoidModule>();
+            TryRegisterModule<GameSceneWindowsModule>();
+            TryRegisterModule<PlayerGameSceneModule>();
         }
     }
 }
