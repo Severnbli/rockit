@@ -1,11 +1,11 @@
 ﻿using _Project.Scripts.Runtime.Core.Bootstrap.Domain;
 using _Project.Scripts.Runtime.Features.Player.Systems;
 
-namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features
+namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Player
 {
-    public sealed class PlayerModule : BaseModule<PlayerModule>
+    public sealed class PlayerGameSceneModule : BaseModule<PlayerGameSceneModule>
     {
-        public PlayerModule(IDomain domain) : base(domain)
+        public PlayerGameSceneModule(IDomain domain) : base(domain)
         {
         }
 
@@ -13,7 +13,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features
         {
             base.BindSystems();
             
-            BindSystem<PlacePlayerOnPlacePlayerRequestSystem>();
+            
             BindSystem<SendPlayerTriggeredVoidOnTriggerEnterEventSystem>();
             BindSystem<SendPlacePlayerRequestOnPlacePlayerToLastCheckpointRequestSystem>();
         }

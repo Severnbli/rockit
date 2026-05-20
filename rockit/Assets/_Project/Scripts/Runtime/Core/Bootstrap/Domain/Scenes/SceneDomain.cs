@@ -1,5 +1,4 @@
-﻿using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features;
-using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Economy.Coins;
+﻿using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Economy.Coins;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.Animations;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.Sprites;
@@ -9,6 +8,7 @@ using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.UI.Windo
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Input;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Physics;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Physics.Moving;
+using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Player;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Stats.Constants;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Stats.Shared;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Infrastructure;
@@ -66,7 +66,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Scenes
             TryRegisterModule<AudioSceneModule>();
             TryRegisterModule<DropdownsModule>();
             TryRegisterModule<InputSceneModule>();
-            TryRegisterModule<PlayerModule>();
+            TryRegisterModule<PlayerSharedSceneModule>();
         }
     }
 }
