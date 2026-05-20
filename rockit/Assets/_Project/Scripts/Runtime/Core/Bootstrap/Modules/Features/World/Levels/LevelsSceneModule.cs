@@ -23,6 +23,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.World.Levels
             base.BindServices();
             
             BindService<LevelsService>();
+            BindService<LevelsStatsService>();
         }
 
         protected override void BindSystems()
