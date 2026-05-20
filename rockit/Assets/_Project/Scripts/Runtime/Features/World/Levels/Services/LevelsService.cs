@@ -7,5 +7,6 @@ namespace _Project.Scripts.Runtime.Features.World.Levels.Services
         public int LevelIdToSpawn;
         public int CurrLevelId;
         public Level CurrLevel;
+        public int UsedTransforms;
     }
 }
