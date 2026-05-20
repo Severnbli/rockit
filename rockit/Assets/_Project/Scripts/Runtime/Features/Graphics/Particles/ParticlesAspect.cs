@@ -13,5 +13,6 @@ namespace _Project.Scripts.Runtime.Features.Graphics.Particles
         public readonly ProtoIt PositionPlatformParticleSystems = new (It.Inc<PositionPlatformTag, ParticleSystemComponent>());
         public readonly ProtoIt RotationPlatformParticleSystems = new (It.Inc<RotationPlatformTag, ParticleSystemComponent>());
         public readonly ProtoIt ScalePlatformParticleSystems = new (It.Inc<ScalePlatformTag, ParticleSystemComponent>());
+        public readonly ProtoIt ActivePositionPlatformParticleSystems = new (It.Inc<ActiveParticleSystemTag, PositionPlatformTag, ParticleSystemComponent>());
     }
 }
