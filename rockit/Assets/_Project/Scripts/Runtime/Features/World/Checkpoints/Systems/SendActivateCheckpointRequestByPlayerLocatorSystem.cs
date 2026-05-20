@@ -5,6 +5,7 @@ using _Project.Scripts.Runtime.Features.World.Checkpoints.Configs;
 using _Project.Scripts.Runtime.Shared.Utils.Features.World;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
+using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Features.World.Checkpoints.Systems
 {
@@ -28,14 +29,23 @@ namespace _Project.Scripts.Runtime.Features.World.Checkpoints.Systems
 
         public void Run()
         {
+            ProtoEntity entity = default;
+            var minDistance = Mathf.Infinity;
+            
             foreach (var e in _cAspect.PlayerLocatorCheckpoints)
             {
                 ref var plComponent = ref _sAspect.PlayerLocatorComponentPool.Get(e);
-                if (plComponent.Distance > _cConfig.CheckDistance) continue;
-
-                var packed = _world.PackEntityWithWorld(e);
-                CheckpointsUtils.CreateActivateCheckpointRequest(_rAspect, packed);
+                var distance = plComponent.Distance;
+                
+                if (distance > _cConfig.CheckDistance || distance > minDistance) continue;
+                
+                minDistance = distance;
+                entity = e;
             }
+            if (entity == default) return;
+            
+            var packed = _world.PackEntityWithWorld(entity);
+            CheckpointsUtils.CreateActivateCheckpointRequest(_rAspect, packed);
         }
     }
 }
