@@ -201,6 +201,10 @@ PrefabInstance:
       value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 8373046128152743177, guid: 73f6229d2ba37f9458aaa95273e80f01, type: 3}
+      propertyPath: Lens.OrthographicSize
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8373046128152743177, guid: 73f6229d2ba37f9458aaa95273e80f01, type: 3}
       propertyPath: Target.TrackingTarget
       value: 
       objectReference: {fileID: 326885608}
