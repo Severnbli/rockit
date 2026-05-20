@@ -3,5 +3,6 @@
     public sealed class LevelsStatsService
     {
         public int UsedTransforms = LevelsContracts.MinUsedTransforms;
+        public int UsedTransforms = LevelsContracts.DefaultTransformsCount;
     }
 }
