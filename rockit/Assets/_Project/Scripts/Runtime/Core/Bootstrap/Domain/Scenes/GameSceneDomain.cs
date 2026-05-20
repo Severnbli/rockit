@@ -1,10 +1,12 @@
 ﻿using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Physics.Moving;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Platforms;
+using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.World;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.World.Checkpoints;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.World.Levels;
 using _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes.Game.Active;
 using _Project.Scripts.Runtime.Features.Graphics.Particles.Monos;
+using _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Scenes.Game.Monos;
 using _Project.Scripts.Runtime.Features.World.Levels.Monos;
 using UnityEngine;
 
@@ -14,16 +16,25 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Scenes
     {
         [SerializeField] private LevelsContainer _lContainer;
         [SerializeField] private ParticleSystemsContainer _psContainer;
-        
+        [SerializeField] private VoidWindow _vWindow;
+
+        protected override void RegisterBindings()
+        {
+            base.RegisterBindings();
+            
+            Container.BindInstance(_lContainer).AsSingle();
+            Container.BindInstance(_psContainer).AsSingle();
+            Container.BindInstance(_vWindow).AsSingle();
+        }
+
         protected override void RegisterStates()
         {
             base.RegisterStates();
             
-            Container.BindInstance(_lContainer).AsSingle();
-            Container.BindInstance(_psContainer).AsSingle();
             RegisterState<GameSceneSetupState>();
             RegisterState<SpawnLevelState>();
             RegisterState<GameState>();
+            RegisterState<VoidState>();
         }
 
         protected override void RegisterModules()
@@ -36,6 +47,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Scenes
             TryRegisterModule<LevelsSceneModule>();
             TryRegisterModule<ParticlesModule>();
             TryRegisterModule<CheckpointsSceneModule>();
+            TryRegisterModule<VoidModule>();
         }
     }
 }

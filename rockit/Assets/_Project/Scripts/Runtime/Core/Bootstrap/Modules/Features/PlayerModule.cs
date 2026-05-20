@@ -14,6 +14,8 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features
             base.BindSystems();
             
             BindSystem<PlacePlayerOnPlacePlayerRequestSystem>();
+            BindSystem<SendPlayerTriggeredVoidOnTriggerEnterEventSystem>();
+            BindSystem<SendPlacePlayerRequestOnPlacePlayerToLastCheckpointRequestSystem>();
         }
     }
 }

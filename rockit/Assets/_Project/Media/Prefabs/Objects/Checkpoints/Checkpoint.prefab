@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1358416016614667161
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4424642255655761160}
+  m_Layer: 0
+  m_Name: CheckLocation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4424642255655761160
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1358416016614667161}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.4375, y: -0.8125, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2022141353708343064}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5934282627425713830
 GameObject:
   m_ObjectHideFlags: 0
@@ -11,6 +42,8 @@ GameObject:
   - component: {fileID: 2022141353708343064}
   - component: {fileID: 8449854306266412984}
   - component: {fileID: 8388546583238810166}
+  - component: {fileID: 6435164587576061278}
+  - component: {fileID: 5620482574750916024}
   m_Layer: 0
   m_Name: Checkpoint
   m_TagString: Untagged
@@ -30,7 +63,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 4424642255655761160}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8449854306266412984
@@ -114,3 +148,55 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6435164587576061278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5934282627425713830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38550fe001994b49a373c876ecbcafec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Runtime::_Project.Scripts.Runtime.Features.World.Checkpoints.Monos.Checkpoint
+  _authoring: {fileID: 5620482574750916024}
+  _checkLocation: {fileID: 1358416016614667161}
+--- !u!114 &5620482574750916024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5934282627425713830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd2e3b9377ea4b6b9d83eb1bc17d15a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Leopotam.EcsProto.Unity::Leopotam.EcsProto.Unity.ProtoUnityAuthoring
+  _worldName: 
+  _authoringType: 0
+  _destroyAfterAuthoring: 0
+  Components:
+  - rid: 1499440756158365783
+  - rid: 1499440756158365784
+  - rid: 1499440756158365785
+  - rid: 1499440756158365786
+  references:
+    version: 2
+    RefIds:
+    - rid: 1499440756158365783
+      type: {class: CheckpointComponent, ns: _Project.Scripts.Runtime.Features.World.Checkpoints.Components, asm: Runtime}
+      data:
+        Checkpoint: {fileID: 6435164587576061278}
+    - rid: 1499440756158365784
+      type: {class: TransformComponent, ns: _Project.Scripts.Runtime.Core.Infrastructure.Shared.Components, asm: Runtime}
+      data:
+        Transform: {fileID: 2022141353708343064}
+    - rid: 1499440756158365785
+      type: {class: PlayerLocatorTag, ns: _Project.Scripts.Runtime.Core.Infrastructure.Shared.Tags, asm: Runtime}
+      data: 
+    - rid: 1499440756158365786
+      type: {class: AnimatorComponent, ns: _Project.Scripts.Runtime.Features.Graphics.Animations.Shared.Components, asm: Runtime}
+      data:
+        Animator: {fileID: 8388546583238810166}

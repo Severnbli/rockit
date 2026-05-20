@@ -12,7 +12,12 @@ namespace _Project.Scripts.Runtime.Features.Graphics.Animations.Checkpoints.Syst
         [DI] private readonly AnimationsSharedAspect _asAspect;
         [DI] private readonly CheckpointsAspect _cAspect;
         private readonly CheckpointsAnimationsConfig _caConfig;
-        
+
+        public UpdateCheckpointAnimatorActivatedBoolByCheckpointActiveStatusSystem(CheckpointsAnimationsConfig caConfig)
+        {
+            _caConfig = caConfig;
+        }
+
         public void Run()
         {
             foreach (var e in _caAspect.CheckpointAnimators)

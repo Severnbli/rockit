@@ -21,4 +21,4 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  _checkDistance: 0.5
+  _checkDistance: 2
