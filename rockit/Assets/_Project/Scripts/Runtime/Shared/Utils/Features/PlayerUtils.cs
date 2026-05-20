@@ -16,5 +16,10 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Features
         {
             return aspect.CreateRequest(aspect.PlayerRequestsAspect.PlayerTriggeredVoidRequestPool);
         }
+
+        public static ProtoEntity CreatePlacePlayerToLastCheckpointRequest(RequestsAspect aspect)
+        {
+            return aspect.CreateRequest(aspect.PlayerRequestsAspect.PlacePlayerToLastCheckpointRequestPool);
+        }
     }
 }
