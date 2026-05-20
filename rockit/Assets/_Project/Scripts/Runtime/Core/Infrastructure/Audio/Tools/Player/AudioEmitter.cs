@@ -22,6 +22,16 @@ namespace _Project.Scripts.Runtime.Core.Infrastructure.Audio.Tools.Player
             Source.Play();
         }
 
+        public void Pause()
+        {
+            Source.Pause();
+        }
+
+        public void Resume()
+        {
+            Source.UnPause();
+        }
+
         public void Stop()
         {
             Source.Stop();
