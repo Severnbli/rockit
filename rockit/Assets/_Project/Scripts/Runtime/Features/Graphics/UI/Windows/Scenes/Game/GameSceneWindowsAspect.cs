@@ -9,5 +9,8 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Scenes.Game
     {
         public readonly ProtoPool<PauseTag> PauseTagPool;
         public readonly ProtoIt ClickedPauses = new (It.Inc<ClickedTag, PauseTag>());
+        
+        public readonly ProtoPool<GameTag> GameTagPool;
+        public readonly ProtoIt ClickedGames = new (It.Inc<ClickedTag, GameTag>());
     }
 }
