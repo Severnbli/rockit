@@ -10,8 +10,5 @@ namespace _Project.Scripts.Runtime.Features.Graphics.Cameras
     {
         public readonly ProtoPool<SwitchCameraRequest> SwitchCameraRequestsPool;
         public readonly ProtoIt SwitchCameraRequests = new (It.Inc<RequestComponent, ActiveRequestTag, RunRequestTag, SwitchCameraRequest>());
-        
-        public readonly ProtoPool<SetCameraBoundingColliderRequest> SetCameraBoundingColliderRequestsPool;
-        public readonly ProtoIt SetCameraBoundingColliderRequests = new (It.Inc<RequestComponent, ActiveRequestTag, RunRequestTag, SetCameraBoundingColliderRequest>());
     }
 }

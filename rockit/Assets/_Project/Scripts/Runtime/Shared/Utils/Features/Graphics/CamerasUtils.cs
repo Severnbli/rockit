@@ -19,14 +19,6 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Features.Graphics
                 prepared: prepared);
         }
 
-        public static ProtoEntity CreateSetCameraBoundingColliderRequest(RequestsAspect aspect, 
-            SetCameraBoundingColliderRequest prepared)
-        {
-            return aspect.CreateRequest(
-                aspect.GraphicsSharedRequestsAspect.CamerasRequestsAspect.SetCameraBoundingColliderRequestsPool,
-                prepared: prepared);
-        }
-
         public static async UniTask AwaitCamerasSwitching(CamerasSwitchService csService, CancellationToken ct = default)
         {
             var gen = csService.SwitchGen;
