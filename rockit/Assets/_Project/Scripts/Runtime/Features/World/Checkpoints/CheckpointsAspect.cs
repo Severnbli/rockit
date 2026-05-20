@@ -11,5 +11,6 @@ namespace _Project.Scripts.Runtime.Features.World.Checkpoints
         public readonly ProtoPool<CheckpointComponent> CheckpointComponentPool;
         public readonly ProtoPool<ActiveCheckpointTag> ActiveCheckpointTagPool;
         public readonly ProtoIt PlayerLocatorCheckpoints = new (It.Inc<PlayerLocatorComponent, CheckpointComponent>());
+        public readonly ProtoIt Checkpoints = new (It.Inc<CheckpointComponent>());
     }
 }
