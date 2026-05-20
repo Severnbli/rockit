@@ -317,7 +317,7 @@ PrefabInstance:
       objectReference: {fileID: 9134997456158699172}
     - target: {fileID: 3386145027611694339, guid: 47bf9f1d567b95945ac8649280703e57, type: 3}
       propertyPath: orthographic size
-      value: 5.1458335
+      value: 4.821429
       objectReference: {fileID: 0}
     - target: {fileID: 3555950308435978321, guid: 47bf9f1d567b95945ac8649280703e57, type: 3}
       propertyPath: m_Name
@@ -1974,6 +1974,18 @@ PrefabInstance:
     - target: {fileID: 280011975774136327, guid: 6cb6308c59fbae84492a38b2fc232c9f, type: 3}
       propertyPath: m_VerticalAlignment
       value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 3076819146899392599, guid: 6cb6308c59fbae84492a38b2fc232c9f, type: 3}
+      propertyPath: Components.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3076819146899392599, guid: 6cb6308c59fbae84492a38b2fc232c9f, type: 3}
+      propertyPath: 'Components.Array.data[3]'
+      value: 1499440761896173663
+      objectReference: {fileID: 0}
+    - target: {fileID: 3076819146899392599, guid: 6cb6308c59fbae84492a38b2fc232c9f, type: 3}
+      propertyPath: 'managedReferences[1499440761896173663]'
+      value: Runtime _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Scenes.Game.Tags.GameTag
       objectReference: {fileID: 0}
     - target: {fileID: 5462832372357242896, guid: 6cb6308c59fbae84492a38b2fc232c9f, type: 3}
       propertyPath: managedReferences[1499440526611710037].Key
