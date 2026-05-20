@@ -4,12 +4,12 @@ using Leopotam.EcsProto;
 
 namespace _Project.Scripts.Runtime.Features.World.Levels.Systems
 {
-    public sealed class UpdateLevelsServiceFieldsOnLevelSpawnedRequestSystem : IProtoRunSystem
+    public sealed class InstallLevelToLevelsServiceOnLevelSpawnedRequestSystem : IProtoRunSystem
     {
         [DIRequests] private readonly LevelsRequestsAspect _lrAspect;
         private readonly LevelsService _lService;
 
-        public UpdateLevelsServiceFieldsOnLevelSpawnedRequestSystem(LevelsService lService)
+        public InstallLevelToLevelsServiceOnLevelSpawnedRequestSystem(LevelsService lService)
         {
             _lService = lService;
         }
