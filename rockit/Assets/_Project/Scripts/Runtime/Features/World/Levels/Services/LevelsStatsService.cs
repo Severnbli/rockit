@@ -2,8 +2,7 @@
 {
     public sealed class LevelsStatsService
     {
-        public int UsedTransforms = LevelsContracts.MinUsedTransforms;
-        public int UsedTransforms = LevelsContracts.DefaultTransformsCount;
+        public int UsedTransforms;
         public int RemainTransforms;
         public int CurrentStarsScore;
     }
