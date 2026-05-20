@@ -15,6 +15,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics
             base.RegisterBindings();
 
             Container.Bind<PositionPlatformParticleSystemPool>().ToSelf().AsSingle();
+            Container.Bind<RotationPlatformParticleSystemPool>().ToSelf().AsSingle();
         }
 
         protected override void BindSystems()
