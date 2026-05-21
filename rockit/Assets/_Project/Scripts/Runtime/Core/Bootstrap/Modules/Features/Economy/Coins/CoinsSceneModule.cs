@@ -19,6 +19,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Economy.Coins
             BindSystem<SendWasteCoinsAmountOnClickedCoinsAmountsSystem>();
             BindSystem<UpdateCoinsTotalizersTextUisOnRunSystem>();
             BindSystem<SendCoinTriggeredRequestOnPlayerTriggerEnterRequestSystem>();
+            BindSystem<SendDisableRequestOnCoinTriggeredRequestSystem>();
         }
     }
 }
