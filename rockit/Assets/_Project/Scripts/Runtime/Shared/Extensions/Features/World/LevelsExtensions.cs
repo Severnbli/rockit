@@ -17,6 +17,8 @@ namespace _Project.Scripts.Runtime.Shared.Extensions.Features.World
             lsService.UsedTransforms = LevelsContracts.DefaultTransformsCount;
             lsService.RemainTransforms = LevelsContracts.DefaultTransformsCount;
             lsService.StarsScore = LevelsContracts.MinStarsQuantity;
+            lsService.CachedCollectedCoins.Clear();
+            lsService.CachedInvestigatedConstants.Clear();
         }
     }
 }

@@ -41,6 +41,11 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.World.Levels
             BindSystem<RecalculateLevelsStatsOnRecalculateLevelsStatsRequestSystem>();
             BindSystem<UpdateStarsScoreStatsTextUiOnRunSystem>();
             BindSystem<UpdateRemainTransformsStatsTextUiOnRunSystem>();
+            BindSystem<CacheCollectedCoinOnCoinTriggeredRequestSystem>();
+            BindSystem<CacheCollectedConstantsOnConstantCollectedRequestSystem>();
+            BindSystem<PersistLevelsStatsServiceCachedCollectedCoinsOnLevelCompletedRequestSystem>();
+            BindSystem<PersistLevelsStatsServiceCachedInvestigatedConstantsOnLevelCompletedRequestSystem>();
+            BindSystem<PersistLevelsStatsServiceStarsScoreOnLevelCompletedRequestSystem>();
         }
     }
 }
