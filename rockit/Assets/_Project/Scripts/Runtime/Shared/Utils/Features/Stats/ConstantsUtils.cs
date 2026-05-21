@@ -37,6 +37,14 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Features.Stats
                 prepared: prepared);
         }
 
+        public static ProtoEntity CreateConstantTriggeredRequests(RequestsAspect aspect,
+            ProtoPackedEntityWithWorld packed, ConstantTriggeredRequest prepared)
+        {
+            return aspect.CreateRequest(
+                aspect.StatsSharedRequestsAspect.ConstantsRequestsAspect.ConstantTriggeredRequestPool, packed,
+                prepared: prepared);
+        }
+
         public static bool GetInvestigatedStatus(DataProvider dProvider, int constantId)
         {
             return dProvider.StatsData.InvestigatedConstants.ContainsKey(constantId);
