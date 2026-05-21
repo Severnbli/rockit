@@ -5,13 +5,12 @@ using _Project.Scripts.Runtime.Features.Economy.Coins.Requests;
 using _Project.Scripts.Runtime.Features.Player;
 using _Project.Scripts.Runtime.Shared.Extensions.Infrastructure;
 using _Project.Scripts.Runtime.Shared.Utils.Features.Economy;
-using _Project.Scripts.Runtime.Shared.Utils.Infrastructure;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
 
 namespace _Project.Scripts.Runtime.Features.Economy.Coins.Systems
 {
-    public sealed class ProcessCoinTriggeredOnPlayerTriggerEnterRequestSystem : IProtoInitSystem, IProtoRunSystem
+    public sealed class SendCoinTriggeredRequestOnPlayerTriggerEnterRequestSystem : IProtoInitSystem, IProtoRunSystem
     {
         [DIRequests] private readonly RequestsAspect _rAspect;
         [DIRequests] private readonly PlayerRequestsAspect _prAspect;
@@ -19,7 +18,7 @@ namespace _Project.Scripts.Runtime.Features.Economy.Coins.Systems
         private readonly SharedIndexService _siService;
         private ProtoWorld _world;
 
-        public ProcessCoinTriggeredOnPlayerTriggerEnterRequestSystem(SharedIndexService siService)
+        public SendCoinTriggeredRequestOnPlayerTriggerEnterRequestSystem(SharedIndexService siService)
         {
             _siService = siService;
         }
@@ -39,26 +38,16 @@ namespace _Project.Scripts.Runtime.Features.Economy.Coins.Systems
                 if (!goIndex.TryGetEntityFromIndex(petRequest.Collider.gameObject, _world, out var tarE)) continue;
                 if (!_cAspect.Coins.Has(tarE)) continue;
 
-                SendCoinCollectedRequest(tarE);
-                CreateDisableRequest(tarE);
+                ref var cComponent = ref _cAspect.CoinComponentPool.Get(tarE);
+
+                var prepared = new CoinTriggeredRequest
+                {
+                    CoinId = cComponent.Id
+                };
+                var packed = _world.PackEntityWithWorld(tarE);
+            
+                CoinsUtils.CreateCoinTriggeredRequest(_rAspect, packed, prepared);
             }
-        }
-
-        private void SendCoinCollectedRequest(ProtoEntity tarE)
-        {
-            ref var cComponent = ref _cAspect.CoinComponentPool.Get(tarE);
-
-            var prepared = new CoinCollectedRequest
-            {
-                CoinId = cComponent.Id
-            };
-            CoinsUtils.CreateCoinCollectedRequest(_rAspect, prepared);
-        }
-
-        private void CreateDisableRequest(ProtoEntity tarE)
-        {
-            var packed = _world.PackEntityWithWorld(tarE);
-            SharedUtils.CreateDisableRequest(_rAspect, packed);
         }
     }
 }

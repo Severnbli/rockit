@@ -1,6 +1,6 @@
 ﻿namespace _Project.Scripts.Runtime.Features.Economy.Coins.Requests
 {
-    public struct CoinCollectedRequest
+    public struct CoinTriggeredRequest
     {
         public int CoinId;
     }

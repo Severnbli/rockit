@@ -14,8 +14,6 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Economy.Coins
             base.BindSystems();
             
             BindSystem<WasteCoinsOnWasteCoinsRequestSystem>();
-            BindSystem<UpdateEconomyDataCoinsQuantityOnCoinCollectedRequestSystem>();
-            BindSystem<UpdateEconomyDataCollectedCoinsOnCoinCollectedRequestSystem>();
         }
     }
 }
