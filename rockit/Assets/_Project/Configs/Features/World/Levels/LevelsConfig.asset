@@ -50,6 +50,25 @@ MonoBehaviour:
     - Name: StarsToUnlock
       Entry: 3
       Data: 0
+    - Name: PiProfile
+      Entry: 7
+      Data: _Project.Scripts.Runtime.Features.Input.Types.PlatformsInputProfile,
+        Runtime
+    - Name: PositionDisabled
+      Entry: 5
+      Data: false
+    - Name: RotationDisabled
+      Entry: 5
+      Data: false
+    - Name: ScaleDisabled
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: TransformsUseRate
+      Entry: 3
+      Data: 1
     - Name: StarsStages
       Entry: 7
       Data: 2|System.Int32[], mscorlib
@@ -91,6 +110,25 @@ MonoBehaviour:
     - Name: StarsToUnlock
       Entry: 3
       Data: 0
+    - Name: PiProfile
+      Entry: 7
+      Data: _Project.Scripts.Runtime.Features.Input.Types.PlatformsInputProfile,
+        Runtime
+    - Name: PositionDisabled
+      Entry: 5
+      Data: false
+    - Name: RotationDisabled
+      Entry: 5
+      Data: false
+    - Name: ScaleDisabled
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: TransformsUseRate
+      Entry: 3
+      Data: 1
     - Name: StarsStages
       Entry: 7
       Data: 4|System.Int32[], mscorlib
@@ -132,6 +170,25 @@ MonoBehaviour:
     - Name: StarsToUnlock
       Entry: 3
       Data: 4
+    - Name: PiProfile
+      Entry: 7
+      Data: _Project.Scripts.Runtime.Features.Input.Types.PlatformsInputProfile,
+        Runtime
+    - Name: PositionDisabled
+      Entry: 5
+      Data: false
+    - Name: RotationDisabled
+      Entry: 5
+      Data: false
+    - Name: ScaleDisabled
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: TransformsUseRate
+      Entry: 3
+      Data: 1
     - Name: StarsStages
       Entry: 7
       Data: 6|System.Int32[], mscorlib
