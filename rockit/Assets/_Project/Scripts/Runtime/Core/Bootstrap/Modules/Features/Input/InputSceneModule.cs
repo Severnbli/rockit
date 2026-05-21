@@ -13,7 +13,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Input
         {
             base.BindSystems();
             
-#if UNITY_ANDROID || UNITY_IOS || UNITY_EDITOR
+#if UNITY_ANDROID || UNITY_IOS
             BindSystem<OpenClosePlayerInputWindowOnPlayerInputEnabledDisabledSystem>();
             BindSystem<OpenClosePlatformsInputWindowOnPlatformsInputEnabledDisabledSystem>();
             BindSystem<UpdatePlatformsInputWindowButtonsInteractableStatusByPlatformsInputServiceProfileSystem>();
