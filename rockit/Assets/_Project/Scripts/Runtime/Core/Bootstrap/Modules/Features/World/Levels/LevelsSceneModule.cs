@@ -43,6 +43,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.World.Levels
             BindSystem<UpdateRemainTransformsStatsTextUiOnRunSystem>();
             BindSystem<CacheCollectedCoinOnCoinTriggeredRequestSystem>();
             BindSystem<CacheCollectedConstantsOnConstantCollectedRequestSystem>();
+            BindSystem<PersistLevelsStatsServiceCachedCollectedCoinsOnLevelCompletedRequestSystem>();
         }
     }
 }
