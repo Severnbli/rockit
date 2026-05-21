@@ -17,5 +17,8 @@ namespace _Project.Scripts.Runtime.Features.Stats.Constants
         
         public readonly ProtoPool<ConstantCollectedRequest> ConstantCollectedRequestPool;
         public readonly ProtoIt ConstantCollectedRequests = new (It.Inc<RequestComponent, ActiveRequestTag, RunRequestTag, ConstantCollectedRequest>());
+        
+        public readonly ProtoPool<ConstantTriggeredRequest> ConstantTriggeredRequestPool;
+        public readonly ProtoIt ConstantTriggeredRequests = new (It.Inc<RequestComponent, ActiveRequestTag, RunRequestTag, ConstantTriggeredRequest>());
     }
 }
