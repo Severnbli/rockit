@@ -11,7 +11,7 @@ namespace _Project.Scripts.Runtime.Features.Economy.Coins
         public readonly ProtoPool<WasteCoinsRequest> WasteCoinsRequestPool;
         public readonly ProtoIt WasteCoinsRequests = new (It.Inc<RequestComponent, ActiveRequestTag, RunRequestTag, WasteCoinsRequest>());
         
-        public readonly ProtoPool<CoinCollectedRequest> CoinCollectedRequestPool;
-        public readonly ProtoIt CoinCollectedRequests = new (It.Inc<RequestComponent, ActiveRequestTag, RunRequestTag, CoinCollectedRequest>());
+        public readonly ProtoPool<CoinTriggeredRequest> CoinTriggeredRequestPool;
+        public readonly ProtoIt CoinTriggeredRequests = new (It.Inc<RequestComponent, ActiveRequestTag, RunRequestTag, CoinTriggeredRequest>());
     }
 }
