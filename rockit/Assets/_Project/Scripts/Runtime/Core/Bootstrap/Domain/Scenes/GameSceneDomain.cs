@@ -55,6 +55,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Scenes
             TryRegisterModule<ParticlesModule>();
             TryRegisterModule<CheckpointsSceneModule>();
             TryRegisterModule<VoidModule>();
+            TryRegisterModule<TeleportersModule>();
             TryRegisterModule<GameSceneWindowsModule>();
             TryRegisterModule<PlayerGameSceneModule>();
         }
