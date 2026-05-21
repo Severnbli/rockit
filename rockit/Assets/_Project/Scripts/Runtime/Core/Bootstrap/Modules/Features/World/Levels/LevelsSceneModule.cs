@@ -46,6 +46,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.World.Levels
             BindSystem<PersistLevelsStatsServiceCachedCollectedCoinsOnLevelCompletedRequestSystem>();
             BindSystem<PersistLevelsStatsServiceCachedInvestigatedConstantsOnLevelCompletedRequestSystem>();
             BindSystem<PersistLevelsStatsServiceStarsScoreOnLevelCompletedRequestSystem>();
+            BindSystem<SendLevelCompletedRequestOnTeleporterTriggeredRequestSystem>();
         }
     }
 }
