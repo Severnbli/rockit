@@ -17,6 +17,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Player
             BindSystem<SendPlayerTriggeredVoidOnTriggerEnterEventSystem>();
             BindSystem<SendPlacePlayerRequestOnPlacePlayerToLastCheckpointRequestSystem>();
             BindSystem<SendEnablePlayerRequestOnLevelSpawnedRequestSystem>();
+            BindSystem<SendDisablePlayerRequestOnLevelCompletedRequestSystem>();
         }
     }
 }
