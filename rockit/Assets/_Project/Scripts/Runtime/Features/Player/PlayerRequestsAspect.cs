@@ -16,5 +16,8 @@ namespace _Project.Scripts.Runtime.Features.Player
 
         public readonly ProtoPool<PlacePlayerToLastCheckpointRequest> PlacePlayerToLastCheckpointRequestPool;
         public readonly ProtoIt PlacePlayerToLastCheckpointRequests = new (It.Inc<RequestComponent, ActiveRequestTag, RunRequestTag, PlacePlayerToLastCheckpointRequest>());
+        
+        public readonly ProtoPool<PlayerEnterTriggerRequest> PlayerEnterTriggerRequestPool;
+        public readonly ProtoIt PlayerEnterTriggerRequests = new (It.Inc<RequestComponent, ActiveRequestTag, RunRequestTag, PlayerEnterTriggerRequest>());
     }
 }
