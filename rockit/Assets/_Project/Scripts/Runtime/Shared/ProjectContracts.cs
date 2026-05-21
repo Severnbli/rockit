@@ -5,5 +5,6 @@
         public const int ArrayEmptyInt = -1;
         public const float DefaultFloatValue = 0f;
         public const int NullIntId = -1;
+        public const string InfinitySymbol = "∞";
     }
 }
