@@ -3,6 +3,7 @@ using _Project.Scripts.Runtime.Core.Infrastructure.Storage;
 using _Project.Scripts.Runtime.Features.Stats.Constants.Requests;
 using _Project.Scripts.Runtime.Shared.Extensions.Infrastructure;
 using Leopotam.EcsProto;
+using Leopotam.EcsProto.QoL;
 
 namespace _Project.Scripts.Runtime.Shared.Utils.Features.Stats
 {
@@ -26,6 +27,14 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Features.Stats
         {
             return aspect.CreateRequest(aspect.StatsSharedRequestsAspect.ConstantsRequestsAspect
                 .HideConstantDisplayWindowRequestPool);
+        }
+
+        public static ProtoEntity CreateConstantCollectedRequests(RequestsAspect aspect,
+            ProtoPackedEntityWithWorld packed, ConstantCollectedRequest prepared)
+        {
+            return aspect.CreateRequest(
+                aspect.StatsSharedRequestsAspect.ConstantsRequestsAspect.ConstantCollectedRequestPool, packed,
+                prepared: prepared);
         }
 
         public static bool GetInvestigatedStatus(DataProvider dProvider, int constantId)
