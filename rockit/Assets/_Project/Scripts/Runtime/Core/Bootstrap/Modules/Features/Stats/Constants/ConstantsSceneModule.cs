@@ -20,6 +20,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Stats.Constan
             BindSystem<ImproveConstantOnConstantImproverClickedSystem>();
             BindSystem<SendConstantTriggeredRequestOnPlayerTriggerEnterRequestSystem>();
             BindSystem<DisableConstantColliderOnConstantTriggeredRequestSystem>();
+            BindSystem<CollectConstantOnConstantTriggeredRequestSystem>();
         }
     }
 }
