@@ -30,5 +30,11 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Features.World
             return aspect.CreateRequest(aspect.WorldSharedRequestsAspect.LevelsRequestsAspect
                 .RecalculateLevelsStatsRequestPool);
         }
+
+        public static ProtoEntity CreateLevelCompletedRequest(RequestsAspect aspect)
+        {
+            return aspect.CreateRequest(aspect.WorldSharedRequestsAspect.LevelsRequestsAspect
+                .LevelCompletedRequestPool);
+        }
     }
 }
