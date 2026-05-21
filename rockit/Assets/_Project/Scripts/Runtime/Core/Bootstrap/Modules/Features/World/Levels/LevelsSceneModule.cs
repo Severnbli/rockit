@@ -44,6 +44,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.World.Levels
             BindSystem<CacheCollectedCoinOnCoinTriggeredRequestSystem>();
             BindSystem<CacheCollectedConstantsOnConstantCollectedRequestSystem>();
             BindSystem<PersistLevelsStatsServiceCachedCollectedCoinsOnLevelCompletedRequestSystem>();
+            BindSystem<PersistLevelsStatsServiceCachedInvestigatedConstantsOnLevelCompletedRequestSystem>();
         }
     }
 }
