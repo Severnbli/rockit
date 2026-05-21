@@ -1,12 +1,15 @@
-﻿using _Project.Scripts.Runtime.Core.Infrastructure.Requests.World;
+﻿using _Project.Scripts.Runtime.Core.Infrastructure.Requests;
+using _Project.Scripts.Runtime.Core.Infrastructure.Requests.World;
 using _Project.Scripts.Runtime.Features.Platforms.Shared;
 using _Project.Scripts.Runtime.Features.World.Levels.Services;
+using _Project.Scripts.Runtime.Shared.Utils.Features.World;
 using Leopotam.EcsProto;
 
 namespace _Project.Scripts.Runtime.Features.World.Levels.Systems
 {
     public sealed class UpdateLevelsStatsServiceUsedTransformsOnAnyPlatformsTriggeredRequestSystem : IProtoRunSystem
     {
+        [DIRequests] private readonly RequestsAspect _rAspect;
         [DIRequests] private readonly PlatformsSharedRequestsAspect _psrAspect;
         private readonly LevelsService _lService;
         private readonly LevelsStatsService _lsService;
@@ -26,6 +29,8 @@ namespace _Project.Scripts.Runtime.Features.World.Levels.Systems
             var quantity = _psrAspect.AnyPlatformTriggeredRequests.LenSlow();
             
             _lsService.UsedTransforms += quantity * useRate;
+
+            LevelsUtils.CreateRecalculateLevelsStatsRequest(_rAspect);
         }
     }
 }
