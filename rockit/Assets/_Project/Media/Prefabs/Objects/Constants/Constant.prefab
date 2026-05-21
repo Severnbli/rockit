@@ -56,6 +56,7 @@ MonoBehaviour:
   - rid: 1499440778107682910
   - rid: 1499440778107682911
   - rid: 1499440786820825088
+  - rid: 1499440786820825176
   references:
     version: 2
     RefIds:
@@ -77,6 +78,10 @@ MonoBehaviour:
       type: {class: Collider2DComponent, ns: _Project.Scripts.Runtime.Features.Physics.Shared.Components, asm: Runtime}
       data:
         Collider: {fileID: 3688645321327912995}
+    - rid: 1499440786820825176
+      type: {class: AnimatorComponent, ns: _Project.Scripts.Runtime.Features.Graphics.Animations.Shared.Components, asm: Runtime}
+      data:
+        Animator: {fileID: 4922517349646241037}
 --- !u!212 &8356667151522355800
 SpriteRenderer:
   serializedVersion: 2
