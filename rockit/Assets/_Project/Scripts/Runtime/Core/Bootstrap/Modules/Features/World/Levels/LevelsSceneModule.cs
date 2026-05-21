@@ -38,6 +38,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.World.Levels
             BindSystem<SendPlacePlayerRequestOnLevelSpawnedRequestSystem>();
             BindSystem<SendRecalculateLevelsStatsRequestOnLevelSpawnedRequestSystem>();
             BindSystem<UpdateLevelsStatsServiceUsedTransformsOnAnyPlatformsTriggeredRequestSystem>();
+            BindSystem<RecalculateLevelsStatsOnRecalculateLevelsStatsRequestSystem>();
         }
     }
 }
