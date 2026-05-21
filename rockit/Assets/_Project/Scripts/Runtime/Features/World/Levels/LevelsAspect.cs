@@ -10,8 +10,8 @@ namespace _Project.Scripts.Runtime.Features.World.Levels
     {
         public readonly ProtoPool<LevelItemComponent> LevelItemComponentPool;
         
-        public readonly ProtoPool<TransformsStatsTag> TransformsStatsTagPool;
-        public readonly ProtoIt TransformsStatsTextUis = new (It.Inc<TransformsStatsTag, TextUiComponent>());
+        public readonly ProtoPool<RemainTransformsStatsTag> RemainTransformsStatsTagPool;
+        public readonly ProtoIt RemainTransformsStatsTextUis = new (It.Inc<RemainTransformsStatsTag, TextUiComponent>());
         
         public readonly ProtoPool<StarsScoreStatsTag> StarsScoreStatsTagPool;
         public readonly ProtoIt StarsScoreStatsTextUis = new (It.Inc<StarsScoreStatsTag, TextUiComponent>());
