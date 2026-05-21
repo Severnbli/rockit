@@ -23,6 +23,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.World.Levels
             base.BindServices();
             
             BindService<LevelsService>();
+            BindService<LevelsStatsService>();
         }
 
         protected override void BindSystems()
@@ -31,8 +32,15 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.World.Levels
             
             BindSystem<SpawnLevelOnSpawnLevelRequestSystem>();
             BindSystem<DestroyPrevLevelOnLevelSpawnedRequestSystem>();
-            BindSystem<UpdateLevelsServiceFieldsOnLevelSpawnedRequestSystem>();
+            BindSystem<ResetLevelsServiceOnLevelSpawnedRequestSystem>();
+            BindSystem<ResetLevelsStatsServiceOnLevelSpawnedRequestSystem>();
+            BindSystem<InstallLevelToLevelsServiceOnLevelSpawnedRequestSystem>();
             BindSystem<SendPlacePlayerRequestOnLevelSpawnedRequestSystem>();
+            BindSystem<SendRecalculateLevelsStatsRequestOnLevelSpawnedRequestSystem>();
+            BindSystem<UpdateLevelsStatsServiceUsedTransformsOnAnyPlatformsTriggeredRequestSystem>();
+            BindSystem<RecalculateLevelsStatsOnRecalculateLevelsStatsRequestSystem>();
+            BindSystem<UpdateStarsScoreStatsTextUiOnRunSystem>();
+            BindSystem<UpdateRemainTransformsStatsTextUiOnRunSystem>();
         }
     }
 }

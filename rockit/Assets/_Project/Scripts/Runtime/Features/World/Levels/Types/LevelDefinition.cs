@@ -1,4 +1,5 @@
 ﻿using System;
+using _Project.Scripts.Runtime.Features.Input.Types;
 using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Features.World.Levels.Types
@@ -9,6 +10,8 @@ namespace _Project.Scripts.Runtime.Features.World.Levels.Types
         public GameObject Prefab;
         public string NameKey;
         public int StarsToUnlock;
+        public PlatformsInputProfile PiProfile;
+        public int TransformsUseRate = 1;
         public int[] StarsStages = new[] { 1 };
     }
 }

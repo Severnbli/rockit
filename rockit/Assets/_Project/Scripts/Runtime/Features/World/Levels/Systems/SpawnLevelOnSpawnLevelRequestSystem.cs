@@ -1,5 +1,6 @@
 ﻿using _Project.Scripts.Runtime.Core.Infrastructure.Requests;
 using _Project.Scripts.Runtime.Core.Infrastructure.Requests.World;
+using _Project.Scripts.Runtime.Features.World.Levels.Configs;
 using _Project.Scripts.Runtime.Features.World.Levels.Monos;
 using _Project.Scripts.Runtime.Features.World.Levels.Requests;
 using _Project.Scripts.Runtime.Features.World.Levels.Services;
@@ -15,11 +16,13 @@ namespace _Project.Scripts.Runtime.Features.World.Levels.Systems
         [DIRequests] private readonly LevelsRequestsAspect _lrAspect;
         private readonly LevelsService _lService;
         private readonly LevelFactory _lFactory;
+        private readonly LevelsConfig _lConfig;
 
-        public SpawnLevelOnSpawnLevelRequestSystem(LevelsService lService, LevelFactory lFactory)
+        public SpawnLevelOnSpawnLevelRequestSystem(LevelsService lService, LevelFactory lFactory, LevelsConfig lConfig)
         {
             _lService = lService;
             _lFactory = lFactory;
+            _lConfig = lConfig;
         }
 
         public void Run()
@@ -28,12 +31,14 @@ namespace _Project.Scripts.Runtime.Features.World.Levels.Systems
             if (!ok) return;
             
             ref var slRequest = ref _lrAspect.SpawnLevelRequestPool.Get(e);
+            if (!_lConfig.Levels.TryGetValue(slRequest.LevelId, out var lDefinition)) return;
             if (!TrySpawnLevel(ref slRequest, out var level)) return;
 
             var prepared = new LevelSpawnedRequest
             {
                 LevelId = slRequest.LevelId,
-                Level = level
+                Level = level,
+                Definition = lDefinition
             };
 
             LevelsUtils.CreateLevelSpawnedRequest(_rAspect, prepared);

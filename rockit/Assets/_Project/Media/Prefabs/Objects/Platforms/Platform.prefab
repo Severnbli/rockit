@@ -253,6 +253,8 @@ MonoBehaviour:
   - rid: 1430329893206884469
   - rid: 1499440503904272472
   - rid: 1499440503904272473
+  - rid: 1499440761896173680
+  - rid: 1499440761896173681
   references:
     version: 2
     RefIds:
@@ -291,6 +293,13 @@ MonoBehaviour:
       type: {class: SpriteGlowComponent, ns: _Project.Scripts.Runtime.Features.Graphics.Sprites.Glow.Components, asm: Runtime}
       data:
         SpriteGlow: {fileID: 8904794437248459625}
+    - rid: 1499440761896173680
+      type: {class: GameObjectComponent, ns: _Project.Scripts.Runtime.Core.Infrastructure.Shared.Components, asm: Runtime}
+      data:
+        GameObject: {fileID: 6774882017377814434}
+    - rid: 1499440761896173681
+      type: {class: IndexableTag, ns: _Project.Scripts.Runtime.Core.Infrastructure.Shared.Tags, asm: Runtime}
+      data: 
 --- !u!1 &6774882017377814434
 GameObject:
   m_ObjectHideFlags: 0
