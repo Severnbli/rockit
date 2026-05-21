@@ -13,5 +13,6 @@ namespace _Project.Scripts.Runtime.Features.Physics.Shared
         public readonly ProtoIt Rigidbody2DCharacters = new (It.Inc<CharacterTag, Rigidbody2DComponent>());
         public readonly ProtoIt Rigidbody2DColliders2D = new (It.Inc<Rigidbody2DComponent, Collider2DComponent>());
         public readonly ProtoIt Rigidbodies2D = new(It.Inc<Rigidbody2DComponent>());
+        public readonly ProtoIt Colliders = new (It.Inc<Collider2DComponent>());
     }
 }
