@@ -19,6 +19,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Stats.Constan
             BindSystem<UpdateConstantImproversCoinsAmountOnRunSystem>();
             BindSystem<ImproveConstantOnConstantImproverClickedSystem>();
             BindSystem<SendConstantTriggeredRequestOnPlayerTriggerEnterRequestSystem>();
+            BindSystem<DisableConstantColliderOnConstantTriggeredRequestSystem>();
         }
     }
 }
