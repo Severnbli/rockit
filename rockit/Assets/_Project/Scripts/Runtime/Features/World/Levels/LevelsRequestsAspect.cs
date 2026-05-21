@@ -19,5 +19,8 @@ namespace _Project.Scripts.Runtime.Features.World.Levels
 
         public readonly ProtoPool<RecalculateLevelsStatsRequest> RecalculateLevelsStatsRequestPool;
         public readonly ProtoIt RecalculateLevelsStatsRequests = new (It.Inc<RequestComponent, ActiveRequestTag, RunRequestTag, RecalculateLevelsStatsRequest>());
+        
+        public readonly ProtoPool<LevelCompletedRequest> LevelCompletedRequestPool;
+        public readonly ProtoIt LevelCompletedRequests = new (It.Inc<RequestComponent, ActiveRequestTag, RunRequestTag, LevelCompletedRequest>());
     }
 }
