@@ -28,6 +28,8 @@ namespace _Project.Scripts.Runtime.Features.World.Levels.Systems
             {
                 statsData.InvestigatedConstants.TryAdd(kvp.Key, kvp.Value);
             }
+            
+            _dProvider.SaveTracked();
         }
     }
 }
