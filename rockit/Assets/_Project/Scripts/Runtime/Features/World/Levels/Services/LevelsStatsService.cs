@@ -4,6 +4,6 @@
     {
         public int UsedTransforms;
         public int RemainTransforms;
-        public int CurrentStarsScore;
+        public int StarsScore;
     }
 }
