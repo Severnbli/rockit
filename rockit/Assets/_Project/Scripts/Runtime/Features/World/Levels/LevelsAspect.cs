@@ -12,5 +12,8 @@ namespace _Project.Scripts.Runtime.Features.World.Levels
         
         public readonly ProtoPool<TransformsStatsTag> TransformsStatsTagPool;
         public readonly ProtoIt TransformsStatsTextUis = new (It.Inc<TransformsStatsTag, TextUiComponent>());
+        
+        public readonly ProtoPool<StarsScoreStatsTag> StarsScoreStatsTagPool;
+        public readonly ProtoIt StarsScoreStatsTextUis = new (It.Inc<StarsScoreStatsTag, TextUiComponent>());
     }
 }
