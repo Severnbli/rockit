@@ -13,6 +13,11 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Features.Economy
             return aspect.CreateRequest(aspect.CoinsRequestsAspect.WasteCoinsRequestPool, prepared: prepared);
         }
 
+        public static ProtoEntity CreateCoinCollectedRequest(RequestsAspect aspect, CoinCollectedRequest prepared)
+        {
+            return aspect.CreateRequest(aspect.CoinsRequestsAspect.CoinCollectedRequestPool, prepared: prepared);
+        }
+
         public static bool CoinsEnoughToBuy(DataProvider dProvider, int coinsAmount)
         {
             return dProvider.EconomyData.CoinsQuantity >= coinsAmount;
