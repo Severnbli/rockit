@@ -48,6 +48,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.World.Levels
             BindSystem<PersistLevelsStatsServiceStarsScoreOnLevelCompletedRequestSystem>();
             BindSystem<SendLevelCompletedRequestOnTeleporterTriggeredRequestSystem>();
             BindSystem<SwitchToLevelCompletedStateOnLevelCompletedRequestSystem>();
+            BindSystem<PrepareLevelCompletedWindowStarsOnLevelCompletedRequestSystem>();
         }
     }
 }
