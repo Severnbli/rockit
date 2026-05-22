@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8650235158701480999}
   - component: {fileID: 8217928065082337375}
   - component: {fileID: 4803036629683991050}
+  - component: {fileID: 2899097325208626278}
   m_Layer: 0
   m_Name: CoinIcon
   m_TagString: Untagged
@@ -98,3 +99,15 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2899097325208626278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4406971409033621948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3582c3bf5cd9443a990ad64af27ebeb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Runtime::_Project.Scripts.Runtime.Features.Graphics.UI.Icons.Monos.CoinIcon
