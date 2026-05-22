@@ -29,5 +29,6 @@ namespace _Project.Scripts.Runtime.Features.Platforms.Shared
         public readonly ProtoItExc InactivePlatforms = new (It.Inc<PlatformComponent>(), It.Exc<ActivePlatformTag>());
         public readonly ProtoIt PlatformsAreaParticleSystems = new (It.Inc<PlatformsAreaTag, ParticleSystemComponent>());
         public readonly ProtoIt PlatformsAreaColliders = new (It.Inc<PlatformsAreaTag, Collider2DComponent>());
+        public readonly ProtoIt PlatformAreas = new (It.Inc<PlatformsAreaTag>());
     }
 }
