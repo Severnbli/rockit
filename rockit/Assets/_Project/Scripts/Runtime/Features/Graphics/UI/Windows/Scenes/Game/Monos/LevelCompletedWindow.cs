@@ -25,6 +25,8 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Scenes.Game.Mono
             await base.PlayOpenAnimation();
             await PlayStarsAnimation();
             await PlayCoinsAnimation();
+            
+            _buttons.SetActive(true);
             await TpRunner.Run(Config.ButtonsOpen, _buttons);
         }
 
@@ -52,6 +54,8 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Scenes.Game.Mono
                 base.PlayCloseAnimation(),
                 TpRunner.Run(Config.ButtonsClose, _buttons)
             );
+            
+            _buttons.SetActive(false);
         }
     }
 }
