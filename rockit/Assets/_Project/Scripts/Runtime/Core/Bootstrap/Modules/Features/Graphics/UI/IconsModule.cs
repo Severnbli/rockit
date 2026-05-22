@@ -14,6 +14,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.UI
             base.RegisterBindings();
             
             Container.Bind<StarIconFactory>().ToSelf().AsSingle();
+            Container.Bind<CoinIconFactory>().ToSelf().AsSingle();
         }
     }
 }
