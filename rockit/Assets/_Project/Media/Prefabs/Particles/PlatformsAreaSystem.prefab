@@ -58,7 +58,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7953654151075048444, guid: 66843a211b1a06048ac4013189d99052, type: 3}
       propertyPath: Components.Array.size
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7953654151075048444, guid: 66843a211b1a06048ac4013189d99052, type: 3}
       propertyPath: 'Components.Array.data[1]'
@@ -81,6 +81,10 @@ PrefabInstance:
       value: 1499440806466420843
       objectReference: {fileID: 0}
     - target: {fileID: 7953654151075048444, guid: 66843a211b1a06048ac4013189d99052, type: 3}
+      propertyPath: 'Components.Array.data[6]'
+      value: 1499440806466420844
+      objectReference: {fileID: 0}
+    - target: {fileID: 7953654151075048444, guid: 66843a211b1a06048ac4013189d99052, type: 3}
       propertyPath: 'managedReferences[1499440806466420839]'
       value: Runtime _Project.Scripts.Runtime.Features.Physics.Shared.Components.Collider2DComponent
       objectReference: {fileID: 0}
@@ -101,9 +105,17 @@ PrefabInstance:
       value: Runtime _Project.Scripts.Runtime.Core.Infrastructure.Shared.Tags.IndexableTag
       objectReference: {fileID: 0}
     - target: {fileID: 7953654151075048444, guid: 66843a211b1a06048ac4013189d99052, type: 3}
+      propertyPath: 'managedReferences[1499440806466420844]'
+      value: Runtime _Project.Scripts.Runtime.Core.Infrastructure.Shared.Components.TransformComponent
+      objectReference: {fileID: 0}
+    - target: {fileID: 7953654151075048444, guid: 66843a211b1a06048ac4013189d99052, type: 3}
       propertyPath: managedReferences[1499440806466420839].Collider
       value: 
       objectReference: {fileID: 5283526162586556716}
+    - target: {fileID: 7953654151075048444, guid: 66843a211b1a06048ac4013189d99052, type: 3}
+      propertyPath: managedReferences[1499440806466420844].Transform
+      value: 
+      objectReference: {fileID: 8535565999618597066}
     - target: {fileID: 7953654151075048444, guid: 66843a211b1a06048ac4013189d99052, type: 3}
       propertyPath: managedReferences[1499440806466420841].GameObject
       value: 
@@ -130,6 +142,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd2e3b9377ea4b6b9d83eb1bc17d15a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Leopotam.EcsProto.Unity::Leopotam.EcsProto.Unity.ProtoUnityAuthoring
+--- !u!4 &8535565999618597066 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2637181108406187185, guid: 66843a211b1a06048ac4013189d99052, type: 3}
+  m_PrefabInstance: {fileID: 5975513864614237307}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &9030901920604508318 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3438919710606263525, guid: 66843a211b1a06048ac4013189d99052, type: 3}
