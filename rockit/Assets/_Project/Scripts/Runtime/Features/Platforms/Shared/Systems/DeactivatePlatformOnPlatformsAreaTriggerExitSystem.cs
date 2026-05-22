@@ -31,9 +31,9 @@ namespace _Project.Scripts.Runtime.Features.Platforms.Shared.Systems
         {
             var goIndex = _siService.GameObjectIndex;
             
-            foreach (var evE in _peAspect.TriggerEnterEvents)
+            foreach (var evE in _peAspect.TriggerExitEvents)
             {
-                ref var data = ref _peAspect.TriggerEnterEventPool.Get(evE);
+                ref var data = ref _peAspect.TriggerExitEventPool.Get(evE);
                 if (!goIndex.TryGetEntityFromIndex(data.Sender, _world, out var firstE)) continue;
                 if (!goIndex.TryGetEntityFromIndex(data.Collider.gameObject, _world, out var secondE)) continue;
 
