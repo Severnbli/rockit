@@ -33,12 +33,12 @@ MonoBehaviour:
     _loopType: 0
   _fadeOpen:
     _steps:
-    - rid: 1499440786820825184
+    - rid: 1499440786820825194
     _loops: 1
     _loopType: 0
   _fadeClose:
     _steps:
-    - rid: 1499440786820825185
+    - rid: 1499440786820825195
     _loops: 1
     _loopType: 0
   _starsAppear:
@@ -94,36 +94,6 @@ MonoBehaviour:
           _ease: 0
           _loops: 1
           _loopType: 0
-    - rid: 1499440786820825184
-      type: {class: CanvasGroupFadeStep, ns: _Project.Scripts.Runtime.Core.Infrastructure.Animations.Tools.Pipeline.Steps, asm: Runtime}
-      data:
-        _connector: 0
-        _settings:
-          _to: 1
-          _from: 0
-          _fromExact: 1
-          _relative: 0
-          _duration: 0.5
-          _speedBased: 0
-          _delay: 0
-          _ease: 0
-          _loops: 1
-          _loopType: 0
-    - rid: 1499440786820825185
-      type: {class: CanvasGroupFadeStep, ns: _Project.Scripts.Runtime.Core.Infrastructure.Animations.Tools.Pipeline.Steps, asm: Runtime}
-      data:
-        _connector: 0
-        _settings:
-          _to: 0
-          _from: 0
-          _fromExact: 0
-          _relative: 0
-          _duration: 0.5
-          _speedBased: 0
-          _delay: 0
-          _ease: 0
-          _loops: 1
-          _loopType: 0
     - rid: 1499440786820825186
       type: {class: IntervalStep, ns: _Project.Scripts.Runtime.Core.Infrastructure.Animations.Tools.Pipeline.Steps, asm: Runtime}
       data:
@@ -160,6 +130,36 @@ MonoBehaviour:
           _loopType: 0
     - rid: 1499440786820825189
       type: {class: CanvasGroupFadeStep, ns: _Project.Scripts.Runtime.Core.Infrastructure.Animations.Tools.Pipeline.Steps, asm: Runtime}
+      data:
+        _connector: 0
+        _settings:
+          _to: 0
+          _from: 0
+          _fromExact: 0
+          _relative: 0
+          _duration: 0.5
+          _speedBased: 0
+          _delay: 0
+          _ease: 0
+          _loops: 1
+          _loopType: 0
+    - rid: 1499440786820825194
+      type: {class: ImageFadeStep, ns: _Project.Scripts.Runtime.Core.Infrastructure.Animations.Tools.Pipeline.Steps, asm: Runtime}
+      data:
+        _connector: 0
+        _settings:
+          _to: 1
+          _from: 0
+          _fromExact: 1
+          _relative: 0
+          _duration: 0.5
+          _speedBased: 0
+          _delay: 0
+          _ease: 0
+          _loops: 1
+          _loopType: 0
+    - rid: 1499440786820825195
+      type: {class: ImageFadeStep, ns: _Project.Scripts.Runtime.Core.Infrastructure.Animations.Tools.Pipeline.Steps, asm: Runtime}
       data:
         _connector: 0
         _settings:
