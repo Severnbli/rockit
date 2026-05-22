@@ -8,12 +8,12 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Scenes.Game.Conf
     {
         [SerializeField] private TweenPipeline _starsAppear;
         [SerializeField] private TweenPipeline _coinsAppear;
-        [SerializeField] private TweenPipeline _buttonsAppear;
-        [SerializeField] private TweenPipeline _buttonsDisappear;
+        [SerializeField] private TweenPipeline _buttonsOpen;
+        [SerializeField] private TweenPipeline _buttonsClose;
         
         public TweenPipeline StarsAppear => _starsAppear;
         public TweenPipeline CoinsAppear => _coinsAppear;
-        public TweenPipeline ButtonsAppear => _buttonsAppear;
-        public TweenPipeline ButtonsDisappear => _buttonsDisappear;
+        public TweenPipeline ButtonsOpen => _buttonsOpen;
+        public TweenPipeline ButtonsClose => _buttonsClose;
     }
 }
