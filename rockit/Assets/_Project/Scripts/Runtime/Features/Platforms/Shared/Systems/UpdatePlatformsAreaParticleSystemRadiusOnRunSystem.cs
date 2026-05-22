@@ -13,6 +13,8 @@ namespace _Project.Scripts.Runtime.Features.Platforms.Shared.Systems
         
         public void Run()
         {
+            if (!_paService.Enabled) return;
+            
             foreach (var e in _psAspect.PlatformsAreaParticleSystems)
             {
                 ref var psComponent = ref _pAspect.ParticleSystemComponentPool.Get(e);
