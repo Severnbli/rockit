@@ -4,6 +4,7 @@ using System.Linq;
 using _Project.Scripts.Runtime.Shared.Utils.Shared;
 using Leopotam.EcsProto.Unity;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace _Project.Scripts.Runtime.Shared.Extensions.Shared
 {
@@ -99,6 +100,14 @@ namespace _Project.Scripts.Runtime.Shared.Extensions.Shared
         {
             TryGetChildrenComponents<T>(gameObject, out var components, false);
             return components;
+        }
+
+        public static void RemoveChildren(this GameObject gameObject)
+        {
+            foreach (Transform tf in gameObject.transform)
+            {
+                Object.Destroy(tf.gameObject);
+            }
         }
     }
 }
