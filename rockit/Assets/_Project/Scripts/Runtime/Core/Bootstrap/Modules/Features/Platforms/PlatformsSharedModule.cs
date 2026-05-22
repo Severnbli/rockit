@@ -23,7 +23,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Platforms
             
             BindSystem<LoadPlatformStartStatesOnInitializeRequestSystem>();
             BindSystem<TranslatePlatformTriggeredRequestsIntoAnyPlatformTriggeredRequestSystem>();
-            BindSystem<PlayPlatformsAreaParticleSystemOnLevelSpawnedRequestSystem>();
+            BindSystem<PlayPlatformsAreaParticleSystemOnPlatformsAreaServiceEnabledRequestSystem>();
             BindSystem<StopPlatformsAreaParticleSystemOnLevelCompletedRequestSystem>();
             BindSystem<UpdatePlatformsAreaParticleSystemRadiusOnRunSystem>();
             BindSystem<UpdatePlatformsAreaColliderRadiusOnRunSystem>();
