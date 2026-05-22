@@ -19,6 +19,8 @@ namespace _Project.Scripts.Runtime.Features.Platforms.Shared.Systems
 
         public void Run()
         {
+            if (!_paService.Enabled) return; 
+            
             foreach (var e in _plsAspect.PlatformsAreaColliders)
             {
                 ref var cComponent = ref _phsAspect.Collider2DComponentPool.Get(e);
