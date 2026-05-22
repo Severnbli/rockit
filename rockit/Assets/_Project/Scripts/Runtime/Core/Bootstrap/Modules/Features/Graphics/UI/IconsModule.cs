@@ -15,6 +15,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.UI
             
             Container.Bind<StarIconFactory>().ToSelf().AsSingle();
             Container.Bind<CoinIconFactory>().ToSelf().AsSingle();
+            Container.Bind<AnimatableStarIconFactory>().ToSelf().AsSingle();
         }
     }
 }
