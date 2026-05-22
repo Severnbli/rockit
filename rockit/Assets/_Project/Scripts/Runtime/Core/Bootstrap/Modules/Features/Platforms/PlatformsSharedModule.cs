@@ -30,6 +30,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Platforms
             BindSystem<DisablePlatformsAreaServiceOnLevelCompletedRequestSystem>();
             BindSystem<EnablePlatformsAreaServiceOnLevelSpawnedRequestSystem>();
             BindSystem<ResetPlatformsAreaColliderRadiusOnPlatformsAreaServiceDisabledRequestSystem>();
+            BindSystem<ActivatePlatformOnPlatformsAreaTriggerEnterSystem>();
         }
     }
 }
