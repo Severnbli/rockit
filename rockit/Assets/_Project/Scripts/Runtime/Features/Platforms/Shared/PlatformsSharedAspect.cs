@@ -13,6 +13,7 @@ namespace _Project.Scripts.Runtime.Features.Platforms.Shared
         public readonly ProtoPool<RotationPlatformTag> RotationPlatformTagPool;
         public readonly ProtoPool<ScalePlatformTag> ScalePlatformTagPool;
         public readonly ProtoPool<ActivePlatformTag> ActivePlatformTagPool;
+        public readonly ProtoPool<PlatformsAreaTag> PlatformsAreaTagPool;
         public readonly ProtoIt Platforms = new (It.Inc<PlatformComponent>());
         public readonly ProtoIt PlatformStates = new (It.Inc<PlatformStatesComponent>());
         public readonly ProtoIt PlatformsWithPlatformStates = new (It.Inc<PlatformComponent, PlatformStatesComponent>());
