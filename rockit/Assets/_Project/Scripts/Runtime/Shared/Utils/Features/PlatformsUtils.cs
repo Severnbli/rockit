@@ -42,7 +42,7 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Features
             return aspect.CreateRequest(aspect.PlatformsSharedRequestsAspect.PlatformsAreaServiceDisabledRequestPool);
         }
 
-        public static ProtoEntity CreateActivatePlatformRequest(RequestsAspect aspect,
+        public static ProtoEntity CreatePlatformActivatedRequest(RequestsAspect aspect,
             ProtoPackedEntityWithWorld packed)
         {
             return aspect.CreateRequest(aspect.PlatformsSharedRequestsAspect.PlatformActivatedRequestPool, packed);
