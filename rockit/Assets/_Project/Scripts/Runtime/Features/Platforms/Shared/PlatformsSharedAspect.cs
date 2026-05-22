@@ -1,4 +1,7 @@
-﻿using _Project.Scripts.Runtime.Features.Platforms.Shared.Components;
+﻿using _Project.Scripts.Runtime.Core.Infrastructure.Shared.Components;
+using _Project.Scripts.Runtime.Features.Graphics.Particles.Components;
+using _Project.Scripts.Runtime.Features.Physics.Shared.Components;
+using _Project.Scripts.Runtime.Features.Platforms.Shared.Components;
 using _Project.Scripts.Runtime.Features.Platforms.Shared.Tags;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
@@ -13,6 +16,7 @@ namespace _Project.Scripts.Runtime.Features.Platforms.Shared
         public readonly ProtoPool<RotationPlatformTag> RotationPlatformTagPool;
         public readonly ProtoPool<ScalePlatformTag> ScalePlatformTagPool;
         public readonly ProtoPool<ActivePlatformTag> ActivePlatformTagPool;
+        public readonly ProtoPool<PlatformsAreaTag> PlatformsAreaTagPool;
         public readonly ProtoIt Platforms = new (It.Inc<PlatformComponent>());
         public readonly ProtoIt PlatformStates = new (It.Inc<PlatformStatesComponent>());
         public readonly ProtoIt PlatformsWithPlatformStates = new (It.Inc<PlatformComponent, PlatformStatesComponent>());
@@ -24,5 +28,9 @@ namespace _Project.Scripts.Runtime.Features.Platforms.Shared
         public readonly ProtoIt ActiveRotationPlatforms = new (It.Inc<PlatformComponent, ActivePlatformTag, RotationPlatformTag>());
         public readonly ProtoIt ActiveScalePlatforms = new (It.Inc<PlatformComponent, ActivePlatformTag, ScalePlatformTag>());
         public readonly ProtoItExc InactivePlatforms = new (It.Inc<PlatformComponent>(), It.Exc<ActivePlatformTag>());
+        public readonly ProtoIt PlatformsAreaParticleSystems = new (It.Inc<PlatformsAreaTag, ParticleSystemComponent>());
+        public readonly ProtoIt PlatformsAreaColliders = new (It.Inc<PlatformsAreaTag, Collider2DComponent>());
+        public readonly ProtoIt PlatformsAreas = new (It.Inc<PlatformsAreaTag>());
+        public readonly ProtoIt TransformPlatformsAreas = new (It.Inc<TransformComponent, PlatformsAreaTag>());
     }
 }
