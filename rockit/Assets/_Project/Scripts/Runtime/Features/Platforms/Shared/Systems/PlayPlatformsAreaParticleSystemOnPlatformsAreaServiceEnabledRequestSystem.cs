@@ -6,15 +6,15 @@ using Leopotam.EcsProto.QoL;
 
 namespace _Project.Scripts.Runtime.Features.Platforms.Shared.Systems
 {
-    public sealed class PlayPlatformsAreaParticleSystemOnLevelSpawnedRequestSystem : IProtoRunSystem
+    public sealed class PlayPlatformsAreaParticleSystemOnPlatformsAreaServiceEnabledRequestSystem : IProtoRunSystem
     {
-        [DIRequests] private readonly LevelsRequestsAspect _lrAspect;
+        [DIRequests] private readonly PlatformsSharedRequestsAspect _psrAspect;
         [DI] private readonly PlatformsSharedAspect _psAspect;
         [DI] private readonly ParticlesAspect _pAspect;
         
         public void Run()
         {
-            if (_lrAspect.LevelSpawnedRequests.IsEmptySlow()) return;
+            if (_psrAspect.PlatformsAreaServiceEnabledRequests.IsEmptySlow()) return;
 
             foreach (var e in _psAspect.PlatformsAreaParticleSystems)
             {
