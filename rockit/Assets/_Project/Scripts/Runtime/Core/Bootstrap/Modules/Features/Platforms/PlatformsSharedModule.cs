@@ -21,6 +21,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Platforms
         {
             base.BindSystems();
             
+            BindSystem<LoadPlatformsAreaServiceRadiusOnInitSystem>();
             BindSystem<LoadPlatformStartStatesOnInitializeRequestSystem>();
             BindSystem<TranslatePlatformTriggeredRequestsIntoAnyPlatformTriggeredRequestSystem>();
             BindSystem<PlayPlatformsAreaParticleSystemOnPlatformsAreaServiceEnabledRequestSystem>();
