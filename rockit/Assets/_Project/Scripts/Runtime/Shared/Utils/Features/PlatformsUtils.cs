@@ -36,5 +36,10 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Features
         {
             return aspect.CreateRequest(aspect.PlatformsSharedRequestsAspect.PlatformsAreaServiceEnabledRequestPool);
         }
+
+        public static ProtoEntity CreatePlatformsAreaServiceDisabledRequests(RequestsAspect aspect)
+        {
+            return aspect.CreateRequest(aspect.PlatformsSharedRequestsAspect.PlatformsAreaServiceDisabledRequestPool);
+        }
     }
 }
