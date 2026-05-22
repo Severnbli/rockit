@@ -28,5 +28,8 @@ namespace _Project.Scripts.Runtime.Features.Platforms.Shared
         
         public readonly ProtoPool<ActivatePlatformRequest> ActivatePlatformRequestPool;
         public readonly ProtoIt ActivatePlatformRequests = new (It.Inc<RequestComponent, ActiveRequestTag, RunRequestTag, ActivatePlatformRequest>());
+        
+        public readonly ProtoPool<DeactivatePlatformRequest> DeactivatePlatformRequestPool;
+        public readonly ProtoIt DeactivatePlatformRequests = new (It.Inc<RequestComponent, ActiveRequestTag, RunRequestTag, DeactivatePlatformRequest>());
     }
 }
