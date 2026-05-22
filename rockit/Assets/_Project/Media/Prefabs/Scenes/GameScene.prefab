@@ -955,6 +955,68 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 190ca56e347e4e3e893fce9f992c2c02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Runtime::_Project.Scripts.Runtime.Features.World.Levels.Monos.LevelsContainer
+--- !u!1001 &115005455863877617
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8776188613038371128}
+    m_Modifications:
+    - target: {fileID: 8535565999618597066, guid: 5c92978970bc4374abd8f35a38e5a23a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8535565999618597066, guid: 5c92978970bc4374abd8f35a38e5a23a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8535565999618597066, guid: 5c92978970bc4374abd8f35a38e5a23a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8535565999618597066, guid: 5c92978970bc4374abd8f35a38e5a23a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8535565999618597066, guid: 5c92978970bc4374abd8f35a38e5a23a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8535565999618597066, guid: 5c92978970bc4374abd8f35a38e5a23a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8535565999618597066, guid: 5c92978970bc4374abd8f35a38e5a23a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8535565999618597066, guid: 5c92978970bc4374abd8f35a38e5a23a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8535565999618597066, guid: 5c92978970bc4374abd8f35a38e5a23a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8535565999618597066, guid: 5c92978970bc4374abd8f35a38e5a23a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030901920604508318, guid: 5c92978970bc4374abd8f35a38e5a23a, type: 3}
+      propertyPath: m_Name
+      value: PlatformsAreaSystem
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5c92978970bc4374abd8f35a38e5a23a, type: 3}
+--- !u!4 &8641555391275380539 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8535565999618597066, guid: 5c92978970bc4374abd8f35a38e5a23a, type: 3}
+  m_PrefabInstance: {fileID: 115005455863877617}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &349708179052257554
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1046,6 +1108,9 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 9012020303765671978, guid: 47bf9f1d567b95945ac8649280703e57, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8641555391275380539}
     - targetCorrespondingSourceObject: {fileID: 1264910336837634924, guid: 47bf9f1d567b95945ac8649280703e57, type: 3}
       insertIndex: 1
       addedObject: {fileID: 5485444567025400203}
@@ -1117,6 +1182,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a541e20acfd24fdfad4cb7f5ba67fd73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Runtime::_Project.Scripts.Runtime.Features.Graphics.Cameras.Monos.PlayerCamera
+--- !u!4 &8776188613038371128 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9012020303765671978, guid: 47bf9f1d567b95945ac8649280703e57, type: 3}
+  m_PrefabInstance: {fileID: 349708179052257554}
+  m_PrefabAsset: {fileID: 0}
 --- !u!20 &9134997456158699172 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 8799029221119414198, guid: 47bf9f1d567b95945ac8649280703e57, type: 3}

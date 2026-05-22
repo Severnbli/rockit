@@ -1,4 +1,5 @@
 ﻿using _Project.Scripts.Runtime.Core.Bootstrap.Domain;
+using _Project.Scripts.Runtime.Features.Platforms.Shared.Services;
 using _Project.Scripts.Runtime.Features.Platforms.Shared.Systems;
 
 namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Platforms
@@ -9,12 +10,30 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Platforms
         {
         }
 
+        protected override void BindServices()
+        {
+            base.BindServices();
+            
+            BindService<PlatformsAreaService>();
+        }
+
         protected override void BindSystems()
         {
             base.BindSystems();
             
+            BindSystem<LoadPlatformsAreaServiceRadiusOnInitSystem>();
             BindSystem<LoadPlatformStartStatesOnInitializeRequestSystem>();
             BindSystem<TranslatePlatformTriggeredRequestsIntoAnyPlatformTriggeredRequestSystem>();
+            BindSystem<PlayPlatformsAreaParticleSystemOnPlatformsAreaServiceEnabledRequestSystem>();
+            BindSystem<StopPlatformsAreaParticleSystemOnPlatformsAreaServiceDisabledRequestSystem>();
+            BindSystem<UpdatePlatformsAreaParticleSystemRadiusOnRunSystem>();
+            BindSystem<UpdatePlatformsAreaColliderRadiusOnRunSystem>();
+            BindSystem<DisablePlatformsAreaServiceOnLevelCompletedRequestSystem>();
+            BindSystem<EnablePlatformsAreaServiceOnLevelSpawnedRequestSystem>();
+            BindSystem<ResetPlatformsAreaColliderRadiusOnPlatformsAreaServiceDisabledRequestSystem>();
+            BindSystem<ActivatePlatformOnPlatformsAreaTriggerEnterSystem>();
+            BindSystem<DeactivatePlatformOnPlatformsAreaTriggerExitSystem>();
+            BindSystem<MovePlatformsAreasToPlayerOnRunSystem>();
         }
     }
 }

@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 489212c14f504873bdc3ce209a162dde, type: 3}
-  m_Name: PlatformsGraphicsConfig
-  m_EditorClassIdentifier: Runtime::_Project.Scripts.Runtime.Features.Graphics.Platforms.Configs.PlatformsGraphicsConfig
+  m_Script: {fileID: 11500000, guid: 740f7113fbdb4e3d8529962410b7d042, type: 3}
+  m_Name: PlatformsAreaConfig
+  m_EditorClassIdentifier: Runtime::_Project.Scripts.Runtime.Features.Platforms.Shared.Configs.PlatformsAreaConfig
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
@@ -21,9 +21,5 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  _fallbackColor: {r: 1, g: 1, b: 1, a: 1}
-  _posColor: {r: 0.26981127, g: 0.58961356, b: 1, a: 1}
-  _rotColor: {r: 1, g: 0.65884537, b: 0.3150943, a: 1}
-  _scaleColor: {r: 0.8627452, g: 0.1921569, b: 0.1960784, a: 1}
-  _stayDuration: 0.5
-  _transitionSpeed: 2
+  _radius: 4
+  _playerOffset: {x: 0, y: 1.5}
