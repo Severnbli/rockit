@@ -498,7 +498,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Elringus.SpriteGlow.Runtime::SpriteGlow.SpriteGlowEffect
   glowColor: {r: 1, g: 1, b: 1, a: 1}
-  glowBrightness: 10
+  glowBrightness: 5
   outlineWidth: 10
   alphaThreshold: 0.01
   drawOutside: 0
