@@ -1,4 +1,5 @@
 ﻿using _Project.Scripts.Runtime.Features.Graphics.Particles.Components;
+using _Project.Scripts.Runtime.Features.Physics.Shared.Components;
 using _Project.Scripts.Runtime.Features.Platforms.Shared.Components;
 using _Project.Scripts.Runtime.Features.Platforms.Shared.Tags;
 using Leopotam.EcsProto;
@@ -27,5 +28,6 @@ namespace _Project.Scripts.Runtime.Features.Platforms.Shared
         public readonly ProtoIt ActiveScalePlatforms = new (It.Inc<PlatformComponent, ActivePlatformTag, ScalePlatformTag>());
         public readonly ProtoItExc InactivePlatforms = new (It.Inc<PlatformComponent>(), It.Exc<ActivePlatformTag>());
         public readonly ProtoIt PlatformsAreaParticleSystems = new (It.Inc<PlatformsAreaTag, ParticleSystemComponent>());
+        public readonly ProtoIt PlatformsAreaColliders = new (It.Inc<PlatformsAreaTag, Collider2DComponent>());
     }
 }
