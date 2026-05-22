@@ -21,6 +21,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Scenes
         [SerializeField] private GameWindow _gWindow;
         [SerializeField] private VoidWindow _vWindow;
         [SerializeField] private PauseWindow _pWindow;
+        [SerializeField] private LevelCompletedWindow _lcWindow;
 
         protected override void RegisterBindings()
         {
@@ -31,6 +32,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Scenes
             Container.BindInstance(_gWindow).AsSingle();
             Container.BindInstance(_vWindow).AsSingle();
             Container.BindInstance(_pWindow).AsSingle();
+            Container.BindInstance(_lcWindow).AsSingle();
         }
 
         protected override void RegisterStates()
