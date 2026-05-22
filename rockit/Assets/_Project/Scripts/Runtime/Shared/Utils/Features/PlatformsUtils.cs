@@ -47,5 +47,11 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Features
         {
             return aspect.CreateRequest(aspect.PlatformsSharedRequestsAspect.ActivatePlatformRequestPool, packed);
         }
+
+        public static ProtoEntity CreateDeactivatePlatformRequest(RequestsAspect aspect,
+            ProtoPackedEntityWithWorld packed)
+        {
+            return aspect.CreateRequest(aspect.PlatformsSharedRequestsAspect.DeactivatePlatformRequestPool, packed);
+        }
     }
 }
