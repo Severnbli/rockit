@@ -2,7 +2,7 @@
 {
     public sealed class PlatformsAreaService
     {
-        public bool Enabled;
+        public bool Enabled = true;
         public float Radius;
     }
 }
