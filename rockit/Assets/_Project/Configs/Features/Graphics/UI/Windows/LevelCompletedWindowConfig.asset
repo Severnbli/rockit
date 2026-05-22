@@ -1,0 +1,175 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f40d0aaa47d649d7af69aa0f7ee5f836, type: 3}
+  m_Name: LevelCompletedWindowConfig
+  m_EditorClassIdentifier: Runtime::_Project.Scripts.Runtime.Features.Graphics.UI.Windows.Scenes.Game.Configs.LevelCompletedWindowConfig
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  _bodyOpen:
+    _steps:
+    - rid: 1499440786820825182
+    _loops: 1
+    _loopType: 0
+  _bodyClose:
+    _steps:
+    - rid: 1499440786820825183
+    _loops: 1
+    _loopType: 0
+  _fadeOpen:
+    _steps:
+    - rid: 1499440786820825184
+    _loops: 1
+    _loopType: 0
+  _fadeClose:
+    _steps:
+    - rid: 1499440786820825185
+    _loops: 1
+    _loopType: 0
+  _starsAppear:
+    _steps:
+    - rid: 1499440786820825186
+    _loops: 1
+    _loopType: 0
+  _coinsAppear:
+    _steps:
+    - rid: 1499440786820825187
+    _loops: 1
+    _loopType: 0
+  _buttonsOpen:
+    _steps:
+    - rid: 1499440786820825188
+    _loops: 1
+    _loopType: 0
+  _buttonsClose:
+    _steps:
+    - rid: 1499440786820825189
+    _loops: 1
+    _loopType: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 1499440786820825182
+      type: {class: CanvasGroupFadeStep, ns: _Project.Scripts.Runtime.Core.Infrastructure.Animations.Tools.Pipeline.Steps, asm: Runtime}
+      data:
+        _connector: 0
+        _settings:
+          _to: 1
+          _from: 0
+          _fromExact: 1
+          _relative: 0
+          _duration: 0.5
+          _speedBased: 0
+          _delay: 0
+          _ease: 0
+          _loops: 1
+          _loopType: 0
+    - rid: 1499440786820825183
+      type: {class: CanvasGroupFadeStep, ns: _Project.Scripts.Runtime.Core.Infrastructure.Animations.Tools.Pipeline.Steps, asm: Runtime}
+      data:
+        _connector: 0
+        _settings:
+          _to: 0
+          _from: 0
+          _fromExact: 0
+          _relative: 0
+          _duration: 0.5
+          _speedBased: 0
+          _delay: 0
+          _ease: 0
+          _loops: 1
+          _loopType: 0
+    - rid: 1499440786820825184
+      type: {class: CanvasGroupFadeStep, ns: _Project.Scripts.Runtime.Core.Infrastructure.Animations.Tools.Pipeline.Steps, asm: Runtime}
+      data:
+        _connector: 0
+        _settings:
+          _to: 1
+          _from: 0
+          _fromExact: 1
+          _relative: 0
+          _duration: 0.5
+          _speedBased: 0
+          _delay: 0
+          _ease: 0
+          _loops: 1
+          _loopType: 0
+    - rid: 1499440786820825185
+      type: {class: CanvasGroupFadeStep, ns: _Project.Scripts.Runtime.Core.Infrastructure.Animations.Tools.Pipeline.Steps, asm: Runtime}
+      data:
+        _connector: 0
+        _settings:
+          _to: 0
+          _from: 0
+          _fromExact: 0
+          _relative: 0
+          _duration: 0.5
+          _speedBased: 0
+          _delay: 0
+          _ease: 0
+          _loops: 1
+          _loopType: 0
+    - rid: 1499440786820825186
+      type: {class: IntervalStep, ns: _Project.Scripts.Runtime.Core.Infrastructure.Animations.Tools.Pipeline.Steps, asm: Runtime}
+      data:
+        _duration: 0.5
+    - rid: 1499440786820825187
+      type: {class: FloatScaleStep, ns: _Project.Scripts.Runtime.Core.Infrastructure.Animations.Tools.Pipeline.Steps, asm: Runtime}
+      data:
+        _connector: 0
+        _settings:
+          _to: 1
+          _from: 2
+          _fromExact: 1
+          _relative: 0
+          _duration: 0.5
+          _speedBased: 0
+          _delay: 0
+          _ease: 24
+          _loops: 1
+          _loopType: 0
+    - rid: 1499440786820825188
+      type: {class: CanvasGroupFadeStep, ns: _Project.Scripts.Runtime.Core.Infrastructure.Animations.Tools.Pipeline.Steps, asm: Runtime}
+      data:
+        _connector: 0
+        _settings:
+          _to: 1
+          _from: 0
+          _fromExact: 1
+          _relative: 0
+          _duration: 0.5
+          _speedBased: 0
+          _delay: 0
+          _ease: 0
+          _loops: 1
+          _loopType: 0
+    - rid: 1499440786820825189
+      type: {class: CanvasGroupFadeStep, ns: _Project.Scripts.Runtime.Core.Infrastructure.Animations.Tools.Pipeline.Steps, asm: Runtime}
+      data:
+        _connector: 0
+        _settings:
+          _to: 0
+          _from: 0
+          _fromExact: 0
+          _relative: 0
+          _duration: 0.5
+          _speedBased: 0
+          _delay: 0
+          _ease: 0
+          _loops: 1
+          _loopType: 0
