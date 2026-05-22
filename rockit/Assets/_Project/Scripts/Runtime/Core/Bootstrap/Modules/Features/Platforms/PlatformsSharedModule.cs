@@ -28,6 +28,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Platforms
             BindSystem<UpdatePlatformsAreaParticleSystemRadiusOnRunSystem>();
             BindSystem<UpdatePlatformsAreaColliderRadiusOnRunSystem>();
             BindSystem<DisablePlatformsAreaServiceOnLevelCompletedRequestSystem>();
+            BindSystem<EnablePlatformsAreaServiceOnLevelSpawnedRequestSystem>();
         }
     }
 }
