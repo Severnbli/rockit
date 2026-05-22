@@ -314,6 +314,8 @@ GameObject:
   - component: {fileID: 3817937755237948832}
   - component: {fileID: 6722746392157842085}
   - component: {fileID: 8904794437248459625}
+  - component: {fileID: 3246735586754707029}
+  - component: {fileID: 7547942472119763107}
   m_Layer: 3
   m_Name: Object
   m_TagString: Untagged
@@ -505,6 +507,34 @@ MonoBehaviour:
   alphaThreshold: 0.01
   drawOutside: 0
   enableInstancing: 0
+--- !u!114 &3246735586754707029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6774882017377814434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fb0cc4ee5fa84b02a63d3a6771d6d81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Leopotam.EcsProto.Unity.Physics2D::Leopotam.EcsProto.Unity.Physics2D.UnityPhysics2DTriggerEnterAction
+  _senderName: 
+  _worldName: 
+--- !u!114 &7547942472119763107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6774882017377814434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e336dc1142994ebe9fe41899ab4b30e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Leopotam.EcsProto.Unity.Physics2D::Leopotam.EcsProto.Unity.Physics2D.UnityPhysics2DTriggerExitAction
+  _senderName: 
+  _worldName: 
 --- !u!1 &8576081661139417491
 GameObject:
   m_ObjectHideFlags: 0
