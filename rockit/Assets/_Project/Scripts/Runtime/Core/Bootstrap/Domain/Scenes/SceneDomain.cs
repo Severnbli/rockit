@@ -51,6 +51,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Scenes
             TryRegisterModule<CharactersAnimationsModule>();
             TryRegisterModule<ConstantsAnimationsModule>();
             TryRegisterModule<CheckpointsAnimationsModule>();
+            TryRegisterModule<TeleportersAnimationsModule>();
             TryRegisterModule<SpritesSharedModule>();
             TryRegisterModule<SpritesGlowModule>();
             TryRegisterModule<TextSharedModule>();
