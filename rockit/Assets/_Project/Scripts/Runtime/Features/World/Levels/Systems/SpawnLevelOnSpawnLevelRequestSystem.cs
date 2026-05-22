@@ -37,7 +37,7 @@ namespace _Project.Scripts.Runtime.Features.World.Levels.Systems
             if (!_lConfig.Levels.ContainsKey(targetId)) targetId = _lConfig.Levels.FirstOrDefault().Key;
             
             if (!_lConfig.Levels.TryGetValue(targetId, out var lDefinition)) return;
-            if (!TrySpawnLevel(ref slRequest, out var level)) return;
+            if (!TrySpawnLevel(targetId, out var level)) return;
 
             var prepared = new LevelSpawnedRequest
             {
@@ -49,9 +49,9 @@ namespace _Project.Scripts.Runtime.Features.World.Levels.Systems
             LevelsUtils.CreateLevelSpawnedRequest(_rAspect, prepared);
         }
 
-        private bool TrySpawnLevel(ref SpawnLevelRequest slRequest, out Level level)
+        private bool TrySpawnLevel(int levelId, out Level level)
         {
-            _lService.LevelIdToSpawn = slRequest.LevelId;
+            _lService.LevelIdToSpawn = levelId;
             level = _lFactory.Create();
             return level != null;
         }
