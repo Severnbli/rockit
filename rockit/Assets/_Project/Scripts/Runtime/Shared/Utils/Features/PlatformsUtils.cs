@@ -48,10 +48,10 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Features
             return aspect.CreateRequest(aspect.PlatformsSharedRequestsAspect.ActivatePlatformRequestPool, packed);
         }
 
-        public static ProtoEntity CreateDeactivatePlatformRequest(RequestsAspect aspect,
+        public static ProtoEntity CreatePlatformDeactivatedRequest(RequestsAspect aspect,
             ProtoPackedEntityWithWorld packed)
         {
-            return aspect.CreateRequest(aspect.PlatformsSharedRequestsAspect.DeactivatePlatformRequestPool, packed);
+            return aspect.CreateRequest(aspect.PlatformsSharedRequestsAspect.PlatformDeactivatedRequestPool, packed);
         }
     }
 }
