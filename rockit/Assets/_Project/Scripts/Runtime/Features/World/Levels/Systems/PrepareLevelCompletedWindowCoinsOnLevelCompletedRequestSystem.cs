@@ -4,6 +4,7 @@ using _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Scenes.Game.Monos;
 using _Project.Scripts.Runtime.Features.World.Levels.Services;
 using _Project.Scripts.Runtime.Shared.Extensions.Shared;
 using Leopotam.EcsProto;
+using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Features.World.Levels.Systems
 {
@@ -34,6 +35,7 @@ namespace _Project.Scripts.Runtime.Features.World.Levels.Systems
             for (var i = 0; i < coinsCount; i++)
             {
                 var coin = _ciFactory.Create(_lcWindow.CoinsContainer.transform);
+                coin.gameObject.SetActive(false);
                 _lcWindow.CollectedCoins.Add(coin);
             }
         }

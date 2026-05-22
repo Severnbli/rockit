@@ -41,6 +41,7 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Scenes.Game.Mono
         {
             foreach (var coin in CollectedCoins)
             {
+                coin.gameObject.SetActive(true);
                 await TpRunner.Run(Config.CoinsAppear, coin.gameObject);
             }
         }
