@@ -2892,6 +2892,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2386965938280266484}
     - target: {fileID: 3908918726912910044, guid: 35198c4592a3d3640a4b00002bd01062, type: 3}
+      propertyPath: _lcWindow
+      value: 
+      objectReference: {fileID: 8959781406946636787}
+    - target: {fileID: 3908918726912910044, guid: 35198c4592a3d3640a4b00002bd01062, type: 3}
       propertyPath: _lContainer
       value: 
       objectReference: {fileID: 4482644166651779573}
