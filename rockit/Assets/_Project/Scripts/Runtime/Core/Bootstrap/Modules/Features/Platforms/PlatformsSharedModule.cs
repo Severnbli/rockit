@@ -32,6 +32,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Platforms
             BindSystem<ResetPlatformsAreaColliderRadiusOnPlatformsAreaServiceDisabledRequestSystem>();
             BindSystem<ActivatePlatformOnPlatformsAreaTriggerEnterSystem>();
             BindSystem<DeactivatePlatformOnPlatformsAreaTriggerExitSystem>();
+            BindSystem<MovePlatformsAreasToPlayerOnRunSystem>();
         }
     }
 }
