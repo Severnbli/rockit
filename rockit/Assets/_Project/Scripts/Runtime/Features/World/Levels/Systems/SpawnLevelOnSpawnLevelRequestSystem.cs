@@ -1,4 +1,5 @@
-﻿using _Project.Scripts.Runtime.Core.Infrastructure.Requests;
+﻿using System.Linq;
+using _Project.Scripts.Runtime.Core.Infrastructure.Requests;
 using _Project.Scripts.Runtime.Core.Infrastructure.Requests.World;
 using _Project.Scripts.Runtime.Features.World.Levels.Configs;
 using _Project.Scripts.Runtime.Features.World.Levels.Monos;
@@ -31,7 +32,11 @@ namespace _Project.Scripts.Runtime.Features.World.Levels.Systems
             if (!ok) return;
             
             ref var slRequest = ref _lrAspect.SpawnLevelRequestPool.Get(e);
-            if (!_lConfig.Levels.TryGetValue(slRequest.LevelId, out var lDefinition)) return;
+            var targetId = slRequest.LevelId;
+            
+            if (!_lConfig.Levels.ContainsKey(targetId)) targetId = _lConfig.Levels.FirstOrDefault().Key;
+            
+            if (!_lConfig.Levels.TryGetValue(targetId, out var lDefinition)) return;
             if (!TrySpawnLevel(ref slRequest, out var level)) return;
 
             var prepared = new LevelSpawnedRequest
