@@ -25,5 +25,5 @@ MonoBehaviour:
   _posColor: {r: 0.26981127, g: 0.58961356, b: 1, a: 1}
   _rotColor: {r: 1, g: 0.65884537, b: 0.3150943, a: 1}
   _scaleColor: {r: 0.8627452, g: 0.1921569, b: 0.1960784, a: 1}
-  _stayDuration: 1
-  _transitionSpeed: 1
+  _stayDuration: 0.5
+  _transitionSpeed: 2
