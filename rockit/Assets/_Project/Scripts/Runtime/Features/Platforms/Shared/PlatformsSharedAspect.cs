@@ -1,4 +1,5 @@
-﻿using _Project.Scripts.Runtime.Features.Graphics.Particles.Components;
+﻿using _Project.Scripts.Runtime.Core.Infrastructure.Shared.Components;
+using _Project.Scripts.Runtime.Features.Graphics.Particles.Components;
 using _Project.Scripts.Runtime.Features.Physics.Shared.Components;
 using _Project.Scripts.Runtime.Features.Platforms.Shared.Components;
 using _Project.Scripts.Runtime.Features.Platforms.Shared.Tags;
@@ -30,5 +31,6 @@ namespace _Project.Scripts.Runtime.Features.Platforms.Shared
         public readonly ProtoIt PlatformsAreaParticleSystems = new (It.Inc<PlatformsAreaTag, ParticleSystemComponent>());
         public readonly ProtoIt PlatformsAreaColliders = new (It.Inc<PlatformsAreaTag, Collider2DComponent>());
         public readonly ProtoIt PlatformsAreas = new (It.Inc<PlatformsAreaTag>());
+        public readonly ProtoIt TransformPlatformsAreas = new (It.Inc<TransformComponent, PlatformsAreaTag>());
     }
 }
