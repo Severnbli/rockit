@@ -1,4 +1,5 @@
-﻿using _Project.Scripts.Runtime.Features.Platforms.Shared.Components;
+﻿using _Project.Scripts.Runtime.Features.Graphics.Particles.Components;
+using _Project.Scripts.Runtime.Features.Platforms.Shared.Components;
 using _Project.Scripts.Runtime.Features.Platforms.Shared.Tags;
 using Leopotam.EcsProto;
 using Leopotam.EcsProto.QoL;
@@ -25,5 +26,6 @@ namespace _Project.Scripts.Runtime.Features.Platforms.Shared
         public readonly ProtoIt ActiveRotationPlatforms = new (It.Inc<PlatformComponent, ActivePlatformTag, RotationPlatformTag>());
         public readonly ProtoIt ActiveScalePlatforms = new (It.Inc<PlatformComponent, ActivePlatformTag, ScalePlatformTag>());
         public readonly ProtoItExc InactivePlatforms = new (It.Inc<PlatformComponent>(), It.Exc<ActivePlatformTag>());
+        public readonly ProtoIt PlatformsAreaParticleSystems = new (It.Inc<PlatformsAreaTag, ParticleSystemComponent>());
     }
 }
