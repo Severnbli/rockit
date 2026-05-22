@@ -10,7 +10,12 @@ namespace _Project.Scripts.Runtime.Features.Platforms.Shared.Systems
         [DI] private readonly PlatformsSharedAspect _psAspect;
         [DI] private readonly ParticlesAspect _pAspect;
         private readonly PlatformsAreaService _paService;
-        
+
+        public UpdatePlatformsAreaParticleSystemRadiusOnRunSystem(PlatformsAreaService paService)
+        {
+            _paService = paService;
+        }
+
         public void Run()
         {
             if (!_paService.Enabled) return;
