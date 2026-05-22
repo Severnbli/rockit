@@ -15,6 +15,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Platforms
             
             BindSystem<LoadPlatformStartStatesOnInitializeRequestSystem>();
             BindSystem<TranslatePlatformTriggeredRequestsIntoAnyPlatformTriggeredRequestSystem>();
+            BindSystem<PlayPlatformsAreaParticleSystemOnLevelSpawnedRequestSystem>();
         }
     }
 }
