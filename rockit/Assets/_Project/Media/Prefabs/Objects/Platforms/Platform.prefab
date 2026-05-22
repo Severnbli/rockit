@@ -251,7 +251,6 @@ MonoBehaviour:
   - rid: 1430329893206884435
   - rid: 1430329893206884436
   - rid: 1430329893206884469
-  - rid: 1499440503904272472
   - rid: 1499440503904272473
   - rid: 1499440761896173680
   - rid: 1499440761896173681
@@ -286,9 +285,6 @@ MonoBehaviour:
       type: {class: TransformComponent, ns: _Project.Scripts.Runtime.Core.Infrastructure.Shared.Components, asm: Runtime}
       data:
         Transform: {fileID: 8404677373987993712}
-    - rid: 1499440503904272472
-      type: {class: ActivePlatformTag, ns: _Project.Scripts.Runtime.Features.Platforms.Shared.Tags, asm: Runtime}
-      data: 
     - rid: 1499440503904272473
       type: {class: SpriteGlowComponent, ns: _Project.Scripts.Runtime.Features.Graphics.Sprites.Glow.Components, asm: Runtime}
       data:
