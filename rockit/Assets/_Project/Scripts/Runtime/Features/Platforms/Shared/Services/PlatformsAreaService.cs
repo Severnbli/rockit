@@ -3,6 +3,6 @@
     public sealed class PlatformsAreaService
     {
         public bool Enabled = true;
-        public float Radius;
+        public float Radius = PlatformsSharedContracts.DefaultPlatformsAreaRadius;
     }
 }
