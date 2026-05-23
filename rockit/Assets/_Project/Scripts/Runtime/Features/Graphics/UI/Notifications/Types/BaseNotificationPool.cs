@@ -28,5 +28,7 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Notifications.Types
             
             instance.gameObject.transform.SetParent(NArea.transform);
         }
+
+        protected override Transform FallbackContainer() => NArea.FallbackContainer.transform;
     }
 }
