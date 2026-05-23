@@ -404,7 +404,7 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 1
+  m_ChildAlignment: 4
   m_Spacing: 0
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 0
@@ -1321,7 +1321,7 @@ PrefabInstance:
       objectReference: {fileID: 9134997456158699172}
     - target: {fileID: 3386145027611694339, guid: 47bf9f1d567b95945ac8649280703e57, type: 3}
       propertyPath: orthographic size
-      value: 5.1458335
+      value: 4.821429
       objectReference: {fileID: 0}
     - target: {fileID: 3555950308435978321, guid: 47bf9f1d567b95945ac8649280703e57, type: 3}
       propertyPath: m_Name
