@@ -1,18 +1,14 @@
-﻿using _Project.Scripts.Runtime.Core.Infrastructure.Objects.Lifecycle.Pools;
-using _Project.Scripts.Runtime.Features.Graphics.UI.Notifications.Configs;
+﻿using _Project.Scripts.Runtime.Features.Graphics.UI.Notifications.Configs;
 using _Project.Scripts.Runtime.Features.Graphics.UI.Notifications.Monos;
 using Leopotam.EcsProto;
 using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Features.Graphics.UI.Notifications.Types
 {
-    public class MonoNotificationPool : BasePrefabPool<MonoNotification, MonoNotificationPoolSpawnSettings, MonoNotificationPoolDespawnSettings>
+    public class MonoNotificationPool : BaseNotificationPool<MonoNotification, MonoNotificationPoolSpawnSettings, MonoNotificationPoolDespawnSettings>
     {
-        protected readonly NotificationsConfig NConfig;
-        
-        public MonoNotificationPool(ProtoWorld world, NotificationsConfig nConfig) : base(world)
+        public MonoNotificationPool(ProtoWorld world, NotificationsArea nArea, NotificationsConfig nConfig) : base(world, nArea, nConfig)
         {
-            NConfig = nConfig;
         }
 
         protected override void PostSpawn(MonoNotification instance, Transform at = null, MonoNotificationPoolSpawnSettings settings = default)
