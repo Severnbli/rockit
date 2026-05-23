@@ -9,6 +9,7 @@ using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.World.Checkpoints
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.World.Levels;
 using _Project.Scripts.Runtime.Core.Bootstrap.States.Scenes.Game.Active;
 using _Project.Scripts.Runtime.Features.Graphics.Particles.Monos;
+using _Project.Scripts.Runtime.Features.Graphics.UI.Notifications.Monos;
 using _Project.Scripts.Runtime.Features.Graphics.UI.Windows.Scenes.Game.Monos;
 using _Project.Scripts.Runtime.Features.World.Levels.Monos;
 using UnityEngine;
@@ -23,6 +24,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Scenes
         [SerializeField] private VoidWindow _vWindow;
         [SerializeField] private PauseWindow _pWindow;
         [SerializeField] private LevelCompletedWindow _lcWindow;
+        [SerializeField] private NotificationsArea _nArea;
 
         protected override void RegisterBindings()
         {
@@ -34,6 +36,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Scenes
             Container.BindInstance(_vWindow).AsSingle();
             Container.BindInstance(_pWindow).AsSingle();
             Container.BindInstance(_lcWindow).AsSingle();
+            Container.BindInstance(_nArea).AsSingle();
         }
 
         protected override void RegisterStates()
