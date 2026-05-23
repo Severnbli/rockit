@@ -26,7 +26,7 @@ namespace _Project.Scripts.Runtime.Features.Graphics.UI.Notifications.Types
         {
             base.PostDespawn(instance, settings);
             
-            instance.gameObject.transform.SetParent(NArea.transform);
+            instance.transform.SetParent(FallbackContainer());
         }
 
         protected override Transform FallbackContainer() => NArea.FallbackContainer.transform;
