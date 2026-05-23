@@ -1,4 +1,5 @@
 ﻿using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics;
+using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.UI;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.UI.Windows;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Physics.Moving;
 using _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Platforms;
@@ -61,6 +62,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Domain.Scenes
             TryRegisterModule<TeleportersModule>();
             TryRegisterModule<GameSceneWindowsModule>();
             TryRegisterModule<PlayerGameSceneModule>();
+            TryRegisterModule<NotificationsModule>();
         }
     }
 }
