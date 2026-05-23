@@ -22,6 +22,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Stats.Constan
             BindSystem<DisableConstantColliderOnConstantTriggeredRequestSystem>();
             BindSystem<CollectConstantOnConstantTriggeredRequestSystem>();
             BindSystem<DisableConstantOnInitializeRequestSystem>();
+            BindSystem<SendShowCenterNotificationRequestOnConstantCollectedRequestSystem>();
         }
     }
 }
