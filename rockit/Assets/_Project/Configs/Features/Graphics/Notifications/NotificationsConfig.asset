@@ -21,7 +21,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  _monoNotificationPrefab: {fileID: 0}
+  _monoNotificationPrefab: {fileID: 1358059215288969514, guid: 8bab83fdb910f6e42b159a4edbc3a2e8, type: 3}
   _center:
     _steps:
     - rid: 1499440833341947989
