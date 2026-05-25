@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1649995147252851062, guid: 8c518e99ed4e89d42b7fa4510627df4c, type: 3}
       propertyPath: m_Name
-      value: Signpost Variant
+      value: DownSignpost
       objectReference: {fileID: 0}
     - target: {fileID: 3243629724021799073, guid: 8c518e99ed4e89d42b7fa4510627df4c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.29539
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3243629724021799073, guid: 8c518e99ed4e89d42b7fa4510627df4c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.34527
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3243629724021799073, guid: 8c518e99ed4e89d42b7fa4510627df4c, type: 3}
       propertyPath: m_LocalPosition.z
