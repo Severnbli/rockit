@@ -12,6 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f957023f0144afabe012ceabd27bcb5, type: 3}
   m_Name: RigidbodyPlatformMovingConfig
   m_EditorClassIdentifier: Runtime::_Project.Scripts.Runtime.Features.Physics.Moving.Platforms.Configs.RigidbodyPlatformMovingConfig
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   _posChangeSpeed: 5
   _rotChangeSpeed: 60
-  _scaleChangeSpeed: 1.5
+  _scaleChangeSpeed: 3
