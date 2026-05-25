@@ -23,19 +23,19 @@ MonoBehaviour:
     SerializationNodes: []
   _walkFactorUpdates:
   - CoinsAmount: 2
-    Value: 1.15
+    Value: 1.05
   - CoinsAmount: 3
-    Value: 1.2
+    Value: 1.1
   _jumpFactorUpdates:
-  - CoinsAmount: 1
+  - CoinsAmount: 2
     Value: 1.1
   - CoinsAmount: 4
-    Value: 1.3
+    Value: 1.2
   _dashFactorUpdates:
   - CoinsAmount: 4
-    Value: 2
+    Value: 1.2
   - CoinsAmount: 5
-    Value: 3
+    Value: 1.5
   _dashQuantityUpdates:
   - CoinsAmount: 6
     Value: 2
