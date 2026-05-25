@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlatformsAreaSystem
       objectReference: {fileID: 0}
+    - target: {fileID: 7778124214684012743, guid: 66843a211b1a06048ac4013189d99052, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7953654151075048444, guid: 66843a211b1a06048ac4013189d99052, type: 3}
       propertyPath: _authoringType
       value: 1
