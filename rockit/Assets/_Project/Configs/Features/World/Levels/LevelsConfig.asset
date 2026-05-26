@@ -18,6 +18,7 @@ MonoBehaviour:
     ReferencedUnityObjects:
     - {fileID: 5538577017430202836, guid: 367f1d58046077149b49c4215294d9b6, type: 3}
     - {fileID: 7407857897991092467, guid: b7e236a3c4987df4b99e9e476f35afba, type: 3}
+    - {fileID: 2626588465216164975, guid: cffbee8447bbd0548a5ffba7b4c50f77, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -29,7 +30,7 @@ MonoBehaviour:
         Runtime]], System
     - Name: 
       Entry: 12
-      Data: 2
+      Data: 3
     - Name: 
       Entry: 7
       Data: System.Collections.Generic.KeyValuePair`2[[System.Int32, mscorlib],[_Project.Scripts.Runtime.Features.World.Levels.Types.LevelDefinition,
@@ -150,6 +151,72 @@ MonoBehaviour:
     - Name: 
       Entry: 3
       Data: 4
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: System.Collections.Generic.KeyValuePair`2[[System.Int32, mscorlib],[_Project.Scripts.Runtime.Features.World.Levels.Types.LevelDefinition,
+        Runtime]], mscorlib
+    - Name: 
+      Entry: 3
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 5|_Project.Scripts.Runtime.Features.World.Levels.Types.LevelDefinition,
+        Runtime
+    - Name: Prefab
+      Entry: 10
+      Data: 2
+    - Name: NameKey
+      Entry: 6
+      Data: 
+    - Name: StarsToUnlock
+      Entry: 3
+      Data: 4
+    - Name: PiProfile
+      Entry: 7
+      Data: _Project.Scripts.Runtime.Features.Input.Types.PlatformsInputProfile,
+        Runtime
+    - Name: PositionDisabled
+      Entry: 5
+      Data: false
+    - Name: RotationDisabled
+      Entry: 5
+      Data: false
+    - Name: ScaleDisabled
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: TransformsUseRate
+      Entry: 3
+      Data: 1
+    - Name: StarsStages
+      Entry: 7
+      Data: 6|System.Int32[], mscorlib
+    - Name: 
+      Entry: 14
+      Data: 3
+    - Name: 
+      Entry: 3
+      Data: 3
+    - Name: 
+      Entry: 3
+      Data: 4
+    - Name: 
+      Entry: 3
+      Data: 5
     - Name: 
       Entry: 13
       Data: 
