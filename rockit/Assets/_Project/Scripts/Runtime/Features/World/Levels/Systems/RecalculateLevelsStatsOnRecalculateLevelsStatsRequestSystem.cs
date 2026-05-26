@@ -38,13 +38,9 @@ namespace _Project.Scripts.Runtime.Features.World.Levels.Systems
                     break;
                 }
 
-                if (i != starsStages.Length - 1)
-                {
-                    starsScore--;
-                    break;
-                }
-
-                starsScore = LevelsContracts.MinStarsQuantity;
+                starsScore = i != starsStages.Length - 1
+                    ? starsScore - 1
+                    : LevelsContracts.MinStarsQuantity;
             }
             
             _lsService.StarsScore = starsScore;
