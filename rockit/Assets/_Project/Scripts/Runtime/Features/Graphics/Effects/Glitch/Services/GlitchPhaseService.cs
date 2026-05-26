@@ -5,6 +5,7 @@
         public bool Applied;
         public float StartTime;
         public float Timeout;
+        public float SoundTimeout;
         public float LastApplyTime;
     }
 }
