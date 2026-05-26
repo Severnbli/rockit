@@ -9,6 +9,7 @@ namespace _Project.Scripts.Runtime.Features.Graphics.Effects.Glitch.Types
         [Range(0,1)] public float ProgressOfPassage01;
         public float Timeout;
         public float Delay;
+        public float SoundTimeout;
         public GlitchSettings GlitchSettings;
     }
 }
