@@ -4,6 +4,7 @@ using _Project.Scripts.Runtime.Core.Infrastructure.Requests;
 using _Project.Scripts.Runtime.Core.Infrastructure.Storage;
 using _Project.Scripts.Runtime.Shared.Extensions.Infrastructure;
 using Leopotam.EcsProto;
+using UnityEngine;
 
 namespace _Project.Scripts.Runtime.Shared.Utils.Infrastructure
 {
@@ -12,6 +13,16 @@ namespace _Project.Scripts.Runtime.Shared.Utils.Infrastructure
         public static ProtoEntity CreatePlaySfxRequest(RequestsAspect aspect, PlaySfxRequest prepared)
         {
             return aspect.CreateRequest(aspect.AudioRequestsAspect.PlaySfxRequestPool, prepared: prepared);
+        }
+
+        public static ProtoEntity CreatePlaySfxRequest(RequestsAspect aspect, AudioClip clip)
+        {
+            var prepared = new PlaySfxRequest
+            {
+                Clip = clip
+            };
+            
+            return CreatePlaySfxRequest(aspect, prepared);
         }
 
         public static ProtoEntity CreatePlayMusicRequest(RequestsAspect aspect, PlayMusicRequest prepared)
