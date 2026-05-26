@@ -9,14 +9,14 @@ using Leopotam.EcsProto;
 
 namespace _Project.Scripts.Runtime.Features.Graphics.Effects.Glitch.Systems
 {
-    public sealed class PlayErrorClipOnRunSystem : IProtoRunSystem
+    public sealed class PlayErrorClipOnGlitchPhaseRunSystem : IProtoRunSystem
     {
         [DIRequests] private readonly RequestsAspect _rAspect;
         private readonly GlitchPhaseService _gpService;
         private readonly SfxConfig _sConfig;
         private readonly TimeService _tService;
 
-        public PlayErrorClipOnRunSystem(GlitchPhaseService gpService, SfxConfig sConfig, TimeService tService)
+        public PlayErrorClipOnGlitchPhaseRunSystem(GlitchPhaseService gpService, SfxConfig sConfig, TimeService tService)
         {
             _gpService = gpService;
             _sConfig = sConfig;
