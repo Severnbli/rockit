@@ -35,6 +35,8 @@ namespace _Project.Scripts.Runtime.Features.Graphics.Effects.Glitch.Systems
             _gpService.Applied = true;
             _gpService.StartTime = _tService.UnscaledTime;
             _gpService.Timeout = phase.Timeout;
+            _gpService.SoundTimeout = phase.SoundTimeout;
+            _gpService.LastSoundTime = _tService.UnscaledTime;
             
             _gService.SetValuesFromSettings(phase.GlitchSettings);
         }
