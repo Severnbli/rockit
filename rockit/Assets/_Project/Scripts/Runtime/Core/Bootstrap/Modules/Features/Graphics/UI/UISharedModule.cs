@@ -24,6 +24,7 @@ namespace _Project.Scripts.Runtime.Core.Bootstrap.Modules.Features.Graphics.UI
             BindSystem<SendLoadLevelRequestOnClickedLevelItemSceneLoaderSystem>();
             BindSystem<SendSwitchSceneRequestOnClickedMenuSceneLoaderSystem>();
             BindSystem<SendSwitchSceneRequestOnClickedGameSceneLoaderSystem>();
+            BindSystem<PlayClickClipOnClickedTagSystem>();
         }
     }
 }
