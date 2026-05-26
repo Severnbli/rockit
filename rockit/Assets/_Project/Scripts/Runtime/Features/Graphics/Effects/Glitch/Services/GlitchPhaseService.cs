@@ -6,6 +6,7 @@
         public float StartTime;
         public float Timeout;
         public float SoundTimeout;
+        public float LastSoundTime;
         public float LastApplyTime;
     }
 }
