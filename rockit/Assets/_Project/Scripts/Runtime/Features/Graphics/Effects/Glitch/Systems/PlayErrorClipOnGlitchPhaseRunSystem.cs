@@ -26,6 +26,7 @@ namespace _Project.Scripts.Runtime.Features.Graphics.Effects.Glitch.Systems
         public void Run()
         {
             if (!_gpService.Applied || !_tService.Expired(_gpService.LastSoundTime, _gpService.SoundTimeout)) return;
+            _gpService.LastSoundTime = _tService.UnscaledTime;
 
             AudioUtils.CreatePlaySfxRequest(_rAspect, _sConfig.ErrorClip);
         }
