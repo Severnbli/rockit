@@ -23,3 +23,4 @@ MonoBehaviour:
     SerializationNodes: []
   _audioSourcePrefab: {fileID: 3806661814791769264, guid: bcf3bc6c21deaaf44bd126238fb5f123, type: 3}
   _clickClip: {fileID: 8300000, guid: 7fdad39ab3e0ebe4bb6bd3aa54e7ddd4, type: 3}
+  _errorClip: {fileID: 8300000, guid: 8fecd4d3d9c15d94781193d2e9d9e6ce, type: 3}
