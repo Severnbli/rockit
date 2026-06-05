@@ -1,5 +1,14 @@
 # RockIt
 
+<img width="320" height="180" alt="image" src="https://github.com/user-attachments/assets/431012ca-44e2-4f54-8fcd-65eb9ee01ef6" />
+
+<details>
+<summary>Gameplay preview</summary>
+
+https://github.com/user-attachments/assets/33d2a090-6607-492f-8474-6f31f61af18f
+
+</details>
+
 ## Description
 
 Unity 2D puzzle-platformer about putting order in space.
@@ -17,16 +26,13 @@ Unity 2D puzzle-platformer about putting order in space.
 
 ## Getting Started
 
-### Installing
+* Android: [link](https://github.com/Severnbli/rockit/releases/download/mvp/rockit.apk).
+* Windows: [link](https://github.com/Severnbli/rockit/releases/download/mvp/Windows.zip).
+* Linux: [link](https://github.com/Severnbli/rockit/releases/download/mvp/Linux.zip).
+* Browser: [link](https://severnbli.itch.io/rockit).
 
-// TODO: Add installing guides
+## Notices
 
-### Building
-
-1. Download project via `git clone`.
-2. Go to Unity and open project.
-3. Download and [import](https://docs.unity3d.com/6000.3/Documentation/Manual/AssetPackagesImport.html) packages with `#proprietary` tag.
-4. In Editor go to File → Build Profiles.
-5. Build project.
+_Source code doesn't prepared for building._
 
 _License: MIT_
